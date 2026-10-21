@@ -10,8 +10,8 @@ Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh
 - [Công việc dự án](TASKS.md).
 - [Hướng dẫn mô phỏng](simulation/README.md) và [ma trận kiểm thử](test_results/test-matrix.md).
 - [Checklist theo giai đoạn và từng thành viên](tasks-assignment.md) - nguồn checklist chính thức.
-- [Đề bài Assignment 2](Assignment%202-Network%20Design%20For%20A%20Company.pdf), ký hiệu **[A]**: 5 trang; yêu cầu 7 bước ở trang 3-4, sơ đồ minh họa ở trang 5.
-- [Tham khảo Multi-site](Reference%20Multi-site%20network.pdf), ký hiệu **[R]**: 11 trang; ví dụ NAT/PAT, DHCP, OSPF và packet tracing cho **2 site LTK/DiAn**.
+- `Assignment 2-Network Design For A Company.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[A]**: 5 trang; yêu cầu 7 bước ở trang 3-4, sơ đồ minh họa ở trang 5.
+- `Reference Multi-site network.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[R]**: 11 trang; ví dụ NAT/PAT, DHCP, OSPF và packet tracing cho **2 site LTK/DiAn**.
 
 Tên file [A] có chữ “Company”, nhưng nội dung chính là **bệnh viện**; HIS, RIS/PACS, LIS và yêu cầu an toàn bệnh viện là căn cứ thiết kế. [R] là bài thực hành kỹ thuật, không thay quy mô 3 site của [A]. Không coi thiết bị, tên phòng ban hoặc số lượng kết nối trong hình minh họa trang 5 [A] là bảng thiết bị bắt buộc.
 

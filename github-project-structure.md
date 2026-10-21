@@ -6,7 +6,7 @@ Repository phục vụ mạng bệnh viện **Main - DBP - BHTQ**, 5 thành viê
 
 ## 1. Cây thư mục chuẩn hóa
 
-**Cấu trúc đã được khởi tạo bằng thư mục và mẫu tài liệu có trạng thái rõ ràng.** Cây dưới đây gồm cả các sản phẩm cuối còn phải triển khai: `report.pdf`, `.pkt`/project GNS3 và config thực chưa có. Thư mục chưa có sản phẩm có README hoặc `.gitkeep`; không dùng file nhị phân trống thay kết quả. Hai PDF nguồn giữ nguyên tên tại gốc.
+**Cấu trúc đã được khởi tạo bằng thư mục và mẫu tài liệu có trạng thái rõ ràng.** Cây dưới đây gồm cả các sản phẩm cuối còn phải triển khai: `report.pdf`, `.pkt`/project GNS3 và config thực chưa có. Thư mục chưa có sản phẩm có README hoặc `.gitkeep`; không dùng file nhị phân trống thay kết quả. Hai PDF đặc tả chỉ giữ ở máy local và được loại khỏi Git bằng `.gitignore`; repository chỉ chứa tài liệu dự án, mẫu và sản phẩm cần bàn giao.
 
 ```text
 hospital-network-btl2/
@@ -99,8 +99,6 @@ hospital-network-btl2/
 │   ├── SHA256SUMS                      # Hash báo cáo và mô phỏng tại thời điểm khóa
 │   ├── approval.md                     # TV1 duyệt PDF + mô phỏng, bản tái duyệt nếu có
 │   └── bkel-receipt/                   # Xác nhận sau nộp; che thông tin nhạy cảm
-├── Assignment 2-Network Design For A Company.pdf
-├── Reference Multi-site network.pdf
 ├── README.md                           # Trang chủ và điều hướng
 ├── TASKS.md                            # Trang điều hướng đến tasks-assignment.md
 ├── tasks-assignment.md                 # Nguồn duy nhất của checklist 4 tuần × 5 TV
@@ -167,7 +165,7 @@ Mốc **06/12/2026** là hạn nội bộ khóa bản nộp sau dự phòng; **1
 4. Reviewer chuyên môn kiểm tra phần liên quan. TV1 duyệt tích hợp/release; phần TV1 tự viết cần có TV2/TV3/TV4 đọc chéo phù hợp trước khi TV1 xác nhận toàn bộ.
 5. Sau merge, cập nhật checklist, thiết kế, test matrix và report contribution. Thay đổi subnet/ACL/đường đi phải cập nhật đồng thời bảng IP, config và test bị ảnh hưởng.
 
-Không commit mật khẩu thật, tài khoản BKeL, cấu hình mạng vận hành hoặc thông tin bệnh nhân. Cấu hình nộp là cấu hình lab với bí mật minh họa đã ghi rõ. Hai PDF nguồn phục vụ học tập; [R] có thông báo bản quyền sử dụng trong môn học, nên kiểm tra quyền chia sẻ nguồn trước khi công khai repository. Việc này không cản trở tạo và sử dụng nội bộ ba file quản lý.
+Không commit mật khẩu thật, tài khoản BKeL, cấu hình mạng vận hành hoặc thông tin bệnh nhân. Cấu hình nộp là cấu hình lab với bí mật minh họa đã ghi rõ. Hai PDF đặc tả là tài liệu tham khảo local, không được commit. Giữ ký hiệu [A]/[R] và số trang để truy vết nguồn; chỉ đưa tài liệu dự án và sản phẩm bàn giao cần thiết lên Git. Quy tắc ignore chỉ áp dụng đúng hai tên PDF nguồn, không chặn báo cáo PDF cuối.
 
 ## 4. Chuẩn sản phẩm và bằng chứng
 

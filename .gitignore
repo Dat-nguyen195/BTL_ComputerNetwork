@@ -38,3 +38,7 @@ tmp/
 *.out
 *.fls
 *.fdb_latexmk
+
+# Local assignment/reference PDFs; keep final report PDFs trackable
+/Assignment 2-Network Design For A Company.pdf
+/Reference Multi-site network.pdf
