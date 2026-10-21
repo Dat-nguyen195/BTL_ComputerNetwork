@@ -1,0 +1,40 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*~
+*.swp
+*.tmp
+~$*
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Python/cache
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+# GNS3 runtime, captures and licensed images
+**/project-files/
+**/snapshots/
+*.qcow2
+*.vmdk
+*.vdi
+*.iso
+*.bin
+# Packet Tracer backup; keep actual .pkt deliverables
+*.pkt.bak
+*.pka.bak
+# Temporary PDF/LaTeX build files; keep final PDF and sources
+tmp/
+*.aux
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk

@@ -1,0 +1,33 @@
+flowchart TB
+    NET["Internet / Web server ngoài bệnh viện"]
+    ISP1["xDSL 1"]
+    ISP2["xDSL 2"]
+    EDGE["Main Internet Edge - cân bằng tải theo luồng, PAT"]
+    SEC["Main Firewall / vùng bảo mật / VPN"]
+    DMZ["DMZ - dịch vụ công khai"]
+    CORE["Main Core / Distribution - HA theo thiết kế"]
+    SF["Server Farm - dịch vụ nội bộ"]
+    A["Tòa A - 5 tầng x 10 phòng"]
+    B["Tòa B - 5 tầng x 10 phòng"]
+    WIFI["Wi-Fi nhân viên / Wi-Fi khách - VLAN riêng"]
+    CAM["Camera VLAN / NVR"]
+    HUB["Main WAN Gateway - OSPF / chính sách WAN"]
+    DBP["DBP Gateway - LAN 2 tầng, 260 PC, 2 server"]
+    BHTQ["BHTQ Gateway - LAN 2 tầng, 260 PC, 2 server"]
+    REMOTE["Teleworker"]
+    NET --- ISP1
+    NET --- ISP2
+    ISP1 --- EDGE
+    ISP2 --- EDGE
+    EDGE --- SEC
+    SEC --- DMZ
+    SEC --- CORE
+    CORE --- SF
+    CORE --- A
+    CORE --- B
+    CORE --- WIFI
+    CORE --- CAM
+    SEC --- HUB
+    HUB ---|"Leased line 1 / OSPF"| DBP
+    HUB ---|"Leased line 2 / OSPF"| BHTQ
+    REMOTE -.->|"Remote-access VPN qua Internet"| SEC

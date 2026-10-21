@@ -1,0 +1,18 @@
+parameter,site,value,unit,source,status
+workstations,Main,600,devices,A p1,specified
+workstations,DBP,260,devices,A p2,per-site interpretation
+workstations,BHTQ,260,devices,A p2,per-site interpretation
+servers,Main,10,devices,A p1,specified
+servers,DBP,2,devices,A p2,per-site interpretation
+servers,BHTQ,2,devices,A p2,per-site interpretation
+workstation_download,all,500,MB/day/device,A p2,specified
+workstation_upload,all,100,MB/day/device,A p2,specified
+server_download,all,1000,MB/day,A p2,scope needs confirmation
+server_upload,all,2000,MB/day,A p2,scope needs confirmation
+guest_download,all,500,MB/day,A p2,per-device interpretation needs confirmation
+guest_devices_daily,all,,devices/day,survey,unknown
+guest_devices_concurrent,all,,devices,survey,unknown
+peak_fraction,all,0.8,ratio,A p2,80 percent in peak-window assumption
+peak_window,all,3,hours/day,A p2,09-11 and 15-16
+growth_5years,all,0.2,ratio,A p3,not annual
+target_utilization,all,0.7,ratio,design,proposed assumption

@@ -1,0 +1,42 @@
+name: Lỗi thiết kế hoặc mô phỏng
+description: Lỗi có thể tái hiện, có phiên bản và người xử lý.
+title: "[BUG] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Commit / file mô phỏng / phiên bản công cụ
+    validations:
+      required: true
+  - type: input
+    id: related_test
+    attributes:
+      label: TC / task ID / node liên quan
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Điều kiện và bước tái hiện
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Kết quả thực tế và bằng chứng
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Mức ảnh hưởng
+      options:
+        - Chặn tích hợp / nghiệm thu
+        - Sai chức năng
+        - Sai tài liệu / trình bày
+    validations:
+      required: true

@@ -1,0 +1,56 @@
+name: Công việc dự án
+description: Đầu việc gắn checklist, Step, người chủ trì và tiêu chí nghiệm thu.
+title: "[Wn-TVx-yy][Step n] "
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      description: Dùng đúng ID trong tasks-assignment.md.
+      placeholder: W1-TV1-02
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Giai đoạn
+      options:
+        - "1 - 26/10/2026 đến 01/11/2026"
+        - "2 - 02/11/2026 đến 08/11/2026"
+        - "3 - 09/11/2026 đến 15/11/2026"
+        - "4 - 16/11/2026 đến 22/11/2026"
+        - "Rà soát / nộp bài"
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Chủ trì và người phối hợp
+      placeholder: TV1; reviewer TV2
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: Hạn hoàn thành theo giờ Việt Nam
+      placeholder: 29/10/2026
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Yêu cầu và nguồn
+      description: Ghi Step, trang PDF và giả định liên quan.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependency / vướng mắc
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Sản phẩm và tiêu chí nghiệm thu
+      description: Đường dẫn file, cách kiểm tra, bằng chứng và reviewer.
+    validations:
+      required: true

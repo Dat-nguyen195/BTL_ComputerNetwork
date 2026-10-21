@@ -1,0 +1,30 @@
+# TC04 - Truy cập dịch vụ DMZ
+
+**Trạng thái:** NOT RUN. **Chuẩn bị:** TV3. **Người chạy/lưu bằng chứng:** TV4 phối hợp thành viên kỹ thuật.
+
+| Thuộc tính | Giá trị |
+| --- | --- |
+| Ngày / người chạy | Chưa chạy |
+| Công cụ / phiên bản | Chưa xác nhận |
+| File mô phỏng / commit / hash | Chưa có |
+| Nguồn / IP / VLAN | Chờ cấu hình |
+| Đích / IP / VLAN | Chờ cấu hình |
+| Điều kiện trước | Thiết bị, route, DHCP và dịch vụ đích phải hoạt động phù hợp |
+
+## Các bước kiểm tra
+
+HTTP/HTTPS vào DMZ từ nguồn được phép; client ngoài qua static PAT nếu công bố; xem NAT/firewall.
+
+## Kết quả mong đợi
+
+Đúng dịch vụ/mapping được công bố.
+
+## Kết quả thực tế và bằng chứng
+
+Chưa thực hiện. Lưu ảnh tại `screenshots/`, log tại `logs/`; ghi nguồn/đích rõ và dùng đúng phiên bản mô phỏng. Không đổi thành PASS nếu thiếu actual/evidence.
+
+## Lỗi và retest
+
+- Issue / ảnh hưởng:
+- Phiên bản sau sửa:
+- Kết quả retest / reviewer:
