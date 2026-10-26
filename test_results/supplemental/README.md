@@ -1,3 +1,3 @@
-# supplemental
+# Kiểm thử bổ sung
 
-Chờ test bổ sung DHCP, dual ISP/load balancing/failover, VPN, HA, IDS/IPS nếu áp dụng.
+[SUPP-01 dual ISP](dual-isp-failover.md): thủ tục kiểm PBR theo nguồn, NAT egress, upstream failure, default OSPF, phục hồi và giới hạn health target. **Trạng thái runtime: NOT RUN.** DHCP/VPN/HA/IDS-IPS bổ sung khi có module hỗ trợ; không thay sáu nhóm test bắt buộc.

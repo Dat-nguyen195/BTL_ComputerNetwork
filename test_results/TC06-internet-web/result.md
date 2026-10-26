@@ -1,30 +1,25 @@
-# TC06 - Web Internet qua Main
+# TC06 — Web Internet qua Main
 
-**Trạng thái:** NOT RUN. **Chuẩn bị:** TV4 + TV1 + TV3. **Người chạy/lưu bằng chứng:** TV4 phối hợp thành viên kỹ thuật.
+**Trạng thái:** NOT RUN. **Chuẩn bị:** TV4 + TV1 + TV3. **Cập nhật mẫu:** 26/10/2026.
 
-| Thuộc tính | Giá trị |
+| Thuộc tính | Giá trị thực tế |
 | --- | --- |
-| Ngày / người chạy | Chưa chạy |
-| Công cụ / phiên bản | Chưa xác nhận |
-| File mô phỏng / commit / hash | Chưa có |
-| Nguồn / IP / VLAN | Chờ cấu hình |
-| Đích / IP / VLAN | Chờ cấu hình |
-| Điều kiện trước | Thiết bị, route, DHCP và dịch vụ đích phải hoạt động phù hợp |
+| Ngày/người chạy | Chưa chạy |
+| Platform/model/phiên bản | Chưa chọn/kiểm |
+| Project/commit/SHA256 | Chưa có project |
+| Đích Web chung dự kiến | `http://192.0.2.100` và `http://web.hospital.test` |
+| Web/DNS lab | Web `192.0.2.100/26`, gateway `192.0.2.65`, DNS record `web.hospital.test -> 192.0.2.100` |
+| Điều kiện trước | HTTP/DNS và ICMP health probe hoạt động; gateway/route đúng; chính sách TV3 đã cho phép guest ra Internet, DHCP/DNS phù hợp |
 
-## Các bước kiểm tra
+## Các ca cần chạy
 
-PC tại mỗi site và guest mở Web ngoài lab; kiểm đường đi qua Main và PAT đúng egress.
+| Nguồn | Bước kiểm | Expected | Actual / evidence |
+| --- | --- | --- | --- |
+| Main nội bộ | HTTP tới IP rồi hostname; xem đường đi và NAT | HTTP thành công qua Main-Edge, PAT đúng egress | Chưa chạy |
+| DBP nội bộ | Tương tự, ghi source IP/VLAN thật | Đi leased line về Main, không local breakout | Chưa chạy |
+| BHTQ nội bộ | Tương tự | Đi leased line về Main, không local breakout | Chưa chạy |
+| Guest mỗi site được triển khai | Tương tự sau khi TV3 bật policy | Internet/DNS được phép, test cô lập LAN ở TC05 vẫn đúng | Chưa chạy |
 
-## Kết quả mong đợi
+Thu route/default nguồn, traceroute/PDU đường đi, NAT translation/counter và HTTP thực. Lưu ảnh `screenshots/`, log `logs/`, gắn đúng project/hash. Ping không thay HTTP; IP truy cập được nhưng hostname không được thì kiểm DNS riêng. Không suy PASS từ routing-only stand-in chưa có guest isolation.
 
-Web thành công qua Main, không local breakout ở Aux.
-
-## Kết quả thực tế và bằng chứng
-
-Chưa thực hiện. Lưu ảnh tại `screenshots/`, log tại `logs/`; ghi nguồn/đích rõ và dùng đúng phiên bản mô phỏng. Không đổi thành PASS nếu thiếu actual/evidence.
-
-## Lỗi và retest
-
-- Issue / ảnh hưởng:
-- Phiên bản sau sửa:
-- Kết quả retest / reviewer:
+Test failover cùng đích và từng egress ở [dual ISP](../supplemental/dual-isp-failover.md). Kết luận, reviewer và bug/retest: chưa có; giữ NOT RUN đến khi có actual.

@@ -10,6 +10,7 @@ Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh
 - [Công việc dự án](TASKS.md).
 - [Hướng dẫn mô phỏng](simulation/README.md) và [ma trận kiểm thử](test_results/test-matrix.md).
 - [Checklist theo giai đoạn và từng thành viên](tasks-assignment.md) - nguồn checklist chính thức.
+- [Kế hoạch chi tiết TV1](docs/00-management/tv1-execution-plan.md) và [tình trạng sau review](docs/00-management/tv1-review-status.md): có cấu hình tham chiếu hiệu chỉnh, chưa có project/evidence mô phỏng; đọc trạng thái trước khi dùng.
 - `Assignment 2-Network Design For A Company.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[A]**: 5 trang; yêu cầu 7 bước ở trang 3-4, sơ đồ minh họa ở trang 5.
 - `Reference Multi-site network.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[R]**: 11 trang; ví dụ NAT/PAT, DHCP, OSPF và packet tracing cho **2 site LTK/DiAn**.
 

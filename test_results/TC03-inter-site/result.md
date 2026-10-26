@@ -1,30 +1,34 @@
-# TC03 - Main với DBP và BHTQ
+# TC03 — Main với DBP và BHTQ
 
-**Trạng thái:** NOT RUN. **Chuẩn bị:** TV1. **Người chạy/lưu bằng chứng:** TV4 phối hợp thành viên kỹ thuật.
+**Trạng thái:** NOT RUN. **Chuẩn bị:** TV1. **Chạy/lưu bằng chứng:** TV4 phối hợp TV1. **Cập nhật mẫu:** 26/10/2026.
 
-| Thuộc tính | Giá trị |
+## 1. Môi trường và điều kiện trước
+
+| Thuộc tính | Giá trị thực tế |
 | --- | --- |
-| Ngày / người chạy | Chưa chạy |
-| Công cụ / phiên bản | Chưa xác nhận |
-| File mô phỏng / commit / hash | Chưa có |
-| Nguồn / IP / VLAN | Chờ cấu hình |
-| Đích / IP / VLAN | Chờ cấu hình |
-| Điều kiện trước | Thiết bị, route, DHCP và dịch vụ đích phải hoạt động phù hợp |
+| Ngày/người chạy | Chưa chạy |
+| Công cụ/model/image/phiên bản | Chưa xác nhận |
+| Project/commit/SHA256 | Chưa có project |
+| Điều kiện trước | Link/trunk/gateway đúng IP plan; OSPF hội tụ; host đích hoạt động; ACL cho phép luồng test; xác định có/không VPN |
 
-## Các bước kiểm tra
+Các địa chỉ sau là host dự kiến trong lab tối thiểu, phải thay bằng địa chỉ thật nếu khác: Main-PC `10.10.10.10/25`; DBP-PC `10.20.10.10/25`; BHTQ-PC `10.30.10.10/25`; gateway `.1` cùng subnet. Server Aux tùy chọn `.70.10/28`.
 
-Ping/traceroute Main↔DBP và Main↔BHTQ, đủ chiều về; kiểm OSPF/routes.
+## 2. Ca kiểm và expected
 
-## Kết quả mong đợi
+| Ca | Thao tác | Expected | Actual / evidence |
+| --- | --- | --- | --- |
+| TC03-A | Ping/traceroute Main-PC → DBP-PC, rồi chạy lại từ DBP-PC → Main-PC | Liên lạc được theo policy, qua Main-Core/Main-GW/DBP-GW | Chưa chạy |
+| TC03-B | Ping/traceroute Main-PC → BHTQ-PC, rồi BHTQ-PC → Main-PC | Đủ hai chiều và đủ chi nhánh thứ hai | Chưa chạy |
+| TC03-C bổ sung | DBP-PC ↔ BHTQ-PC | Qua Main-GW, không có cáp trực tiếp DBP–BHTQ | Chưa chạy |
+| TC03-D bổ sung | Main-PC ↔ server Aux nếu có | Đúng IP, port/dịch vụ được phép; ghi ICMP/ứng dụng riêng | Chưa chạy |
 
-Cả hai chi nhánh liên thông theo chính sách.
+Lưu `show ip ospf neighbor` trên Main-GW, route đến subnet đích và chiều về trên gateway; source/destination IP/VLAN, ping/traceroute từ hai đầu, phiên bản cấu hình và chính sách áp dụng. Không suy số metric/route tổng hợp /16 từ ví dụ tự soạn; ghi output thực. RTT mô phỏng không chứng minh hiệu năng HIS/PACS sản xuất.
 
-## Kết quả thực tế và bằng chứng
+## 3. Bằng chứng và kết luận
 
-Chưa thực hiện. Lưu ảnh tại `screenshots/`, log tại `logs/`; ghi nguồn/đích rõ và dùng đúng phiên bản mô phỏng. Không đổi thành PASS nếu thiếu actual/evidence.
+- Actual/ảnh trong `screenshots/`, log trong `logs/`: chưa có.
+- Kết quả từng ca: chưa có; kết luận chung giữ NOT RUN.
+- Ngày/người chạy và reviewer: chờ thực hiện.
+- Issue/bước tái hiện, phiên bản sau sửa, ca retest và kết quả: điền khi phát sinh.
 
-## Lỗi và retest
-
-- Issue / ảnh hưởng:
-- Phiên bản sau sửa:
-- Kết quả retest / reviewer:
+Các đoạn CLI/RTT trước review không có project/hash đi kèm đã được bỏ khỏi actual; không dùng làm bằng chứng nghiệm thu. Chỉ chuyển PASS sau khi đủ kết quả cho Main↔cả DBP và BHTQ trên đúng bản mô phỏng.

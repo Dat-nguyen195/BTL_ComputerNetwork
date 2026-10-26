@@ -1,6 +1,6 @@
 # Mô phỏng 3 site
 
-**Chủ trì tích hợp:** TV4. **Trạng thái:** CHƯA CÓ FILE MÔ PHỎNG. **Nền tảng:** Packet Tracer dự kiến; chưa chốt phiên bản/model.
+**Chủ trì tích hợp:** TV4. **Trạng thái:** CHƯA CÓ FILE MÔ PHỎNG. **Nền tảng:** Packet Tracer dự kiến; cần thử tính năng trước khi chốt phiên bản/model. Đã có [bộ cấu hình tham chiếu TV1](modules/tv1-wan/README.md), chưa có project hoặc runtime test.
 
 | Thuộc tính | Giá trị |
 | --- | --- |

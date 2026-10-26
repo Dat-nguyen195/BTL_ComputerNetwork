@@ -1,7 +1,7 @@
 # Cấu hình thiết bị
 
-Mỗi site lưu một file text cho từng node, ví dụ `MAIN-WAN-R1.cfg`; tên node phải khớp mô phỏng. Hiện chưa có cấu hình triển khai.
+Có bộ **cấu hình tham chiếu TV1, chưa nạp/kiểm IOS runtime**. Mỗi file `.cfg` nạp đúng một node; danh mục và thứ tự nạp ở [module WAN](../simulation/modules/tv1-wan/README.md). Core/FW reference dùng IOS router để kiểm đường đi; chưa thay campus LAN của TV2 hoặc firewall/VPN của TV3.
 
-Mỗi lần bàn giao ghi: node/model, phiên bản phần mềm, interface mapping, VLAN/IP, thứ tự nạp và test liên quan. TV1 phụ trách routing/edge, TV2 LAN/Wi-Fi, TV3 firewall/NAT/server/VPN; TV4 ghép và kiểm.
+TV1 phụ trách WAN/edge; TV2 LAN/Wi-Fi; TV3 firewall/NAT policy/server/VPN; TV4 tích hợp. Khi ghép node dùng chung, đọc chéo một cấu hình hợp nhất, tránh ghi đè. Ghi model/image/version, interface mapping, subnet, thứ tự nạp, project/hash và test liên quan. Tên hostname khớp node thật.
 
-Chỉ dùng secret lab minh họa đã ghi rõ; không commit mật khẩu thật. Lưu running/startup config phù hợp, kiểm persist sau mở lại. Thay đổi IP/ACL/route phải cập nhật thiết kế và retest.
+Console dùng trong lab; VTY đang tắt, SSH/AAA chưa thiết lập. Không có secret vận hành trong bộ tham chiếu. Giữ trạng thái NOT RUN đến khi có project/evidence; lưu startup và kiểm đóng/mở lại. Thay IP/route/NAT/ACL phải đồng bộ thiết kế và retest.

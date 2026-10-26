@@ -4,6 +4,8 @@
 
 **Bắt đầu:** Thứ Hai **26/10/2026**. **Kết thúc 4 tuần triển khai:** **22/11/2026**. **Target Completion nội bộ:** **06/12/2026** sau dự phòng rà soát. **BKeL:** nộp trước hạn **11/12/2026** do nhóm cung cấp. Toàn bộ ngày/giờ dùng múi giờ Việt Nam. Không có đầu việc slide.
 
+**Cập nhật TV1 ngày 26/10/2026:** hoàn thành **1/20 task chính: W1-TV1-03 (thiết kế WAN)**. Các bước con đã có sản phẩm/kiểm tra được tích riêng; task chính còn mở nếu chưa đủ toàn bộ đầu ra. Chưa có project, runtime evidence hoặc xác nhận đọc chéo TV2/TV3/TV4. Chi tiết tại [tv1-review-status.md](docs/00-management/tv1-review-status.md).
+
 ## Quy tắc thực hiện và cân bằng tải
 
 - Mỗi giai đoạn có checklist riêng cho **TV1, TV2, TV3, TV4, TV5**. Task ID `Wn-TVx-yy` dùng để tạo issue/PR và truy vết; mặc định mọi task chưa hoàn thành.
@@ -28,10 +30,21 @@
 ### TV1 - Trưởng nhóm, WAN & Routing Lead
 
 - [ ] **W1-TV1-01** - Khởi tạo cấu trúc repo và quy tắc issue/PR, phân quyền/handle khi có; lập 4 milestone đúng ngày, liên kết checklist và sổ quyết định. **Hạn 26/10; đầu ra:** `.github/`, `TASKS.md`, `docs/00-management/`.
+  - [x] Cấu trúc repo, template issue/PR, workflow kiểm tra, `TASKS.md`, kế hoạch và sổ quyết định đã có trong workspace.
+  - [ ] Cần xác nhận đủ tài khoản/quyền và 4 milestone thực tế trên GitHub trước khi đóng task chính.
 - [ ] **W1-TV1-02** - Chốt IP/VLSM tổng thể cho 3 site, VLAN theo nhóm phòng ban và transit/VPN pool, DHCP/gateway/reserved; kiểm không overlap và đủ **20% tăng trưởng trong 5 năm**. **Hạn 29/10; đầu ra:** `docs/02-design/ip-vlan-plan.md`; TV2 đọc chéo.
-- [ ] **W1-TV1-03** - Thiết kế **2 leased lines Main-DBP/Main-BHTQ**, OSPF, default route Internet tập trung, vai trò SD-WAN/MPLS và các điểm giới hạn mô phỏng. **Hạn 30/10; đầu ra:** phần WAN trong `architecture.md` và sơ đồ WAN.
+  - [x] Đã lập bảng IP ba site, transit, gateway/reserved/DHCP và VPN pool dự trù trong `ip-vlan-plan.md`.
+  - [x] Đã kiểm tĩnh 33 subnet VLAN/transit không overlap và tính sức chứa workstation tăng trưởng tổng 20%.
+  - [ ] Chờ TV2 đọc chéo, TV3 xác nhận pool/gateway DMZ và khóa số liệu khảo sát trước khi chốt IP plan.
+- [x] **W1-TV1-03** - Thiết kế **2 leased lines Main-DBP/Main-BHTQ**, OSPF, default route Internet tập trung, vai trò SD-WAN/MPLS và các điểm giới hạn mô phỏng. **Hạn 30/10; đầu ra:** phần WAN trong `architecture.md` và sơ đồ WAN.
+  - [x] Đã có kiến trúc/sơ đồ Mermaid, interface mapping, OSPF, default có tracking, vai trò MPLS/SD-WAN và giới hạn mô hình trong `architecture.md`; đã rà soát logic và kiểm tĩnh. Nghiệm thu nhóm G1 và kiểm runtime thuộc các task tiếp theo.
 - [ ] **W1-TV1-04** - Phối hợp TV4 tính năng lực từng chiều của **2 xDSL**, chọn cơ chế load balancing/failover theo phiên; so sánh WAN khả dụng, ưu/nhược, CAPEX/OPEX/TCO và nguồn báo giá hoặc mục chờ xác nhận. **Hạn 30/10; đầu ra:** `wan-options-cost.md` và yêu cầu ISP.
+  - [x] Đã lập bảng down/up và kịch bản hai ISP/một ISP, cơ chế PBR/failover và yêu cầu ISP theo giả định baseline.
+  - [x] Đã so sánh bốn phương án WAN, tính CAPEX/OPEX/TCO minh họa và ghi rõ giá/SLA/thuế chưa có nguồn.
+  - [ ] Chờ TV4 xác nhận tải/phân loại LAN–WAN–Internet và hoàn tất danh mục dữ liệu/báo giá chờ xác nhận có chủ trì/hạn để chốt phương án.
 - [ ] **W1-TV1-05** - Rà soát G1 cùng cả nhóm: dữ kiện/giả định, IP, sizing, chi phí, rủi ro công cụ; chốt Packet Tracer hoặc GNS3 và ghi mục nào chỉ thiết kế. **Hạn 01/11; đầu ra:** biên bản G1 và baseline được duyệt.
+  - [x] Đã liệt kê tính năng/model cần thử và phần mô hình hóa/chỉ thiết kế trong hướng dẫn module.
+  - [ ] Chưa thử nền tảng thực tế, chốt công cụ hoặc có biên bản G1 được nhóm xác nhận.
 
 ### TV2 - LAN & Wireless Engineer
 
@@ -74,8 +87,14 @@
 ### TV1 - Trưởng nhóm, WAN & Routing Lead
 
 - [ ] **W2-TV1-01** - Cấu hình kết nối Main-DBP/Main-BHTQ và OSPF, quảng bá subnet cần thiết, default hướng Main; ghi route chiều về và điều kiện quảng bá default. **Hạn 04/11; đầu ra:** module WAN và `configs/main/`, `configs/dbp/`, `configs/bhtq/` phần routing.
+  - [x] Đã viết cấu hình tham chiếu Main-GW/DBP/BHTQ và Core/FW routing, gồm OSPF, route chiều về, default có track và bảo vệ vòng lặp.
+  - [ ] Chưa nạp trên IOS/công cụ mô phỏng và bàn giao module project hoạt động.
 - [ ] **W2-TV1-02** - Dựng Internet edge hai xDSL/ISP lab, cơ chế phân phối luồng và dự phòng theo thiết bị hỗ trợ; phối hợp TV3 gắn NAT đúng egress. **Hạn 05/11; đầu ra:** cấu hình edge/ISP, mô tả phần mô hình hóa so với xDSL thật.
+  - [x] Đã viết cấu hình tham chiếu Edge, ISP1/ISP2, INET-Core chung, PBR, probe phía sau ISP và PAT theo egress; đã kiểm tĩnh các tình huống lỗi.
+  - [ ] Chưa kiểm feature support, dựng project và xác nhận routing/NAT trên công cụ cùng TV3.
 - [ ] **W2-TV1-03** - Giao module/config, sơ đồ interface và thứ tự nạp cho TV4; hỗ trợ ghép route với LAN/firewall, sửa loop/blackhole và ngăn local breakout tại Aux. **Hạn 06/11; đầu ra:** module WAN được tích hợp, integration log.
+  - [x] Đã chuẩn bị config text, sơ đồ giao diện, bảng host mẫu và thứ tự nạp trong `simulation/modules/tv1-wan/README.md`.
+  - [ ] Chưa có lần TV4 nhận/ghép module project, log tích hợp và kết quả sửa lỗi trên mô phỏng.
 - [ ] **W2-TV1-04** - Kiểm tra route/OSPF neighbor, ping/traceroute Main↔DBP và Main↔BHTQ; bổ sung phương án chi phí và quyết định WAN sau phản hồi nhóm. **Hạn 07/11; đầu ra:** smoke log WAN và `wan-options-cost.md` cập nhật.
 - [ ] **W2-TV1-05** - Rà soát tiến độ/PR và G2; xác nhận file tổng 3 site mở lại được, baseline routing và Internet qua Main nhất quán. **Hạn 08/11; đầu ra:** biên bản G2 và phần đóng góp WAN/routing bản đầu.
 
@@ -124,6 +143,8 @@
 - [ ] **W3-TV1-03** - Cùng TV3/TV4 kiểm Internet của tất cả site qua Main, default chiều về, route VPN và các lỗi routing phát hiện khi ACL bật. **Hạn 14/11; đầu ra:** cấu hình sửa lỗi, log retest liên quan TC03/TC06.
 - [ ] **W3-TV1-04** - Rà soát kỹ thuật và bằng chứng 6 nhóm test, phân biệt triển khai thật/mô hình hóa/design only, theo dõi lỗi chặn và chủ trì xử lý. **Hạn 15/11; đầu ra:** biên bản G3 và danh sách lỗi được phân loại.
 - [ ] **W3-TV1-05** - Giao phần WAN/IP/OSPF/load balancing/chi phí đã hoàn chỉnh cho TV5; đánh giá khả năng chịu lỗi và nâng cấp 5 năm với giả định đã duyệt. **Hạn 15/11; đầu ra:** `TV1-wan-routing.md` và nhận xét Step 6.
+  - [x] Đã soạn contribution WAN/IP/OSPF/dual ISP/chi phí, phân tích SPOF và tăng trưởng trong `TV1-wan-routing.md`.
+  - [ ] Chờ kết quả test, xác nhận giả định và bàn giao nội dung chính thức cho TV5; hiện vẫn là bản thảo kỹ thuật.
 
 ### TV2 - LAN & Wireless Engineer
 
