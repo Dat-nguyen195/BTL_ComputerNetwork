@@ -43,3 +43,7 @@ Linux model dùng hai Ethernet P2P thay leased-line/DSL PHY; OSPF dùng hello1/d
 Suricata trên Main-FW sử dụng NFQUEUE repeat, mark1/1 để quay lại firewall; không có queue-bypass. Nếu IPS không chạy, forwarding qua FW ngừng (fail closed). Hai URI marker chỉ kiểm rule mẫu; không kết luận chống mọi phishing/attack. DNS blocklist dùng miền `.invalid` an toàn. Xem [security plan](../../docs/04-security/ids-ips-plan.md).
 
 Nguồn nền tảng: [GNS3 Docker](https://docs.gns3.com/docs/emulators/docker-support-in-gns3), [APIv2](https://api.gns3.net/en/stable/), [FRR OSPF](https://docs.frrouting.org/en/stable-8.4/ospfd.html), [Suricata NFQUEUE](https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html). Package/image chính xác trong evidence; rebuild apt có thể nhận bản vá mới nên không cam kết binary bit-identical.
+
+## Tương thích trình duyệt tích hợp Electron
+
+Đã sửa lỗi `null.on` khi trình duyệt nhận diện Electron nhưng không cung cấp IPC; bản sửa được áp dụng trong image controller và đã chạy trên lab hiện tại. [Browser regression/screenshot](../../test_results/web-ui/README.md) kiểm trình duyệt thường, Electron không có Node và tải lại URL project. Mở `http://127.0.0.1:3080/?webfix=2`; nếu tab cũ dùng cache, Ctrl+Shift+R. Dùng Pan workspace/Zoom out để đưa sơ đồ vào vùng nhìn.
