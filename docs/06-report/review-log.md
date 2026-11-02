@@ -15,3 +15,7 @@ Khi có PDF: ghi file/phiên bản/hash, ngày/reviewer thật, trang/mục, nh�
 ## QA báo cáo sau GNS3 ngày02/11/2026
 
 Đã xuất PDF từ Markdown/SVG và JSON evidence, render đủ10 trang; kiểm font Việt, bảng/hình/mục lục, ngắt trang và tràn lề. Đã sửa các chuỗi hash dài bằng ngắt dòng và tách bìa/mục lục. Đã đối chiếu209 kiểm tích hợp +137 kiểm sau reopen, hash native project và giới hạn mô hình. Đây là QA do trợ lý thực hiện theo yêu cầu chủ repo, không phải chữ ký cá nhân TV1/TV5. Hash sản phẩm cuối ở `submission/SHA256SUMS`; biên nhận BKeL chưa có.
+
+## Bổ sung nguồn LaTeX và logo Bách Khoa ngày02/11/2026
+
+Trước cập nhật này chỉ bàn giao Markdown/SVG và PDF, chưa giữ bộ LaTeX độc lập. Đã bổ sung [nguồn LaTeX](latex/README.md), [ZIP biên dịch độc lập](final/report-latex.zip), bìa có logo do người dùng cung cấp và `metadata.tex` để sửa thông tin nhóm. PDF mới có12 trang, font Việt, mục lục/số trang, bảng và sơ đồ vector. Đã render kiểm đủ12 trang và biên dịch ZIP bằng XeLaTeX/latexmk trong thư mục riêng; không còn overfull box hoặc thiếu glyph. [Bằng chứng QA và hash](../../test_results/report-latex/README.md). Giảng viên/lớp/MSSV chưa có dữ liệu xác nhận nên các trường này được để rỗng và tự ẩn trên bìa.

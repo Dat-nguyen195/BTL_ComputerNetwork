@@ -4,6 +4,8 @@ Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh
 
 **Trạng thái hoàn thiện 02/11/2026:** đã có [báo cáo PDF](docs/06-report/final/report.pdf), [native GNS3 ba cơ sở](simulation/gns3/hospital-3sites.gns3), [hướng dẫn chạy](simulation/gns3/README.md) và [bằng chứng runtime](test_results/runtime/README.md). Mô hình Linux/FRR có52 node/52 link,18 pool;209 kiểm tích hợp và137 sau mở lại đạt, gồm sáu nhóm demo, OSPF, DHCP/DNS, IDS/IPS rule mẫu và lỗi upstream hai ISP. [Review đối chiếu đặc tả](docs/00-management/project-review.md) ghi phạm vi/giới hạn. GPON có thiết kế hybrid; RF/quang/DSL PHY, VPN crypto, HA chassis, workload y tế và IOS chưa thử. [Gói bàn giao/checksum](submission/manifest.md) chuẩn bị cho nhóm duyệt và tự nộp BKeL. Các lịch/task và trạng thái chuẩn bị bên dưới được giữ làm lịch sử; đọc kết quả cuối trước khi kết luận.
 
+Báo cáo đã có [nguồn LaTeX đầy đủ](docs/06-report/latex/README.md) và [ZIP LaTeX](docs/06-report/final/report-latex.zip), biên dịch bằng XeLaTeX; bìa dùng logo Bách Khoa do người dùng cung cấp. Thông tin nhóm/giảng viên/lớp/MSSV có thể sửa trong `docs/06-report/latex/metadata.tex`.
+
 ## Bàn giao TV1, TV3, TV4 ngày 02/11/2026
 
 - [Phân tích và đối chiếu từng task](docs/00-management/tv1-tv3-tv4-status.md): sản phẩm đã có, việc còn thiếu, chủ trì và hạn đề xuất.

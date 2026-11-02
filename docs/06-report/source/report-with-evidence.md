@@ -41,12 +41,12 @@ Khối Main là 10.10.0.0/16, DBP là 10.20.0.0/16, BHTQ là 10.30.0.0/16. Đây
 
 Hai leased line Main–DBP và Main–BHTQ là 10.255.0.0/30 và 10.255.0.4/30. Core–Main-GW là .8/30, Core–FW là .12/30, FW–Edge là .16/30. OSPF area0 chạy giữa Main-Core/Main-GW/DBP-GW/BHTQ-GW; interface người dùng passive. Firewall/Edge dùng route cụ thể và default có điều kiện. Static discard của khối dự trữ tránh vòng lặp trên địa chỉ chưa phân bổ.
 
-Địa chỉ Internet mô phỏng thuộc TEST-NET: ISP1 203.0.113.0/30, ISP2 198.51.100.0/30, Web-Lab192.0.2.100. Đây không phải Internet công cộng thật. Bảng IP đầy đủ, địa chỉ endpoint, cổng và cấu hình được bàn giao cùng project.
+Địa chỉ Internet mô phỏng thuộc TEST-NET: ISP1 `203.0.113.0/30`, ISP2 `198.51.100.0/30` và Web-Lab `192.0.2.100`. Đây không phải Internet công cộng thật. Bảng IP đầy đủ, địa chỉ endpoint, cổng và cấu hình được bàn giao cùng project.
 
 ## Thiết bị và dự phòng cổng
 
 | Hạng mục | Main | Mỗi Aux | Cơ sở thiết kế |
-|:---|:---|:---|:---|
+|:-----------------------------|:------------------|:------------------|:-----------------------------------|
 | Access switch48 cổng | 20 | 8 | Main2/tầng; Aux4/tầng |
 | Cổng dùng hiện tại / năm5 | 670 /810 | 277 /334 | Bao gồm PC, server tại access, AP, camera, NVR theo vị trí |
 | Tổng cổng / dư năm5 | 960 /150 | 384 /50 | Chưa phải khả năng forwarding đã đo |
@@ -136,7 +136,7 @@ IPv6 chưa được thiết kế; không bật dual stack rồi để vượt ch
 
 # Bàn giao và quy trình nộp - Step7
 
-Bộ bàn giao gồm project `.gns3`, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF/Markdown và evidence JSON/log kèm SHA256. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
+Bộ bàn giao gồm project `.gns3`, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
 
 Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận xét và phê duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
 
@@ -151,14 +151,18 @@ Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận x
 
 Nguồn tham khảo kỹ thuật được đối chiếu ngày02/11/2026. Các bảng chi phí là giả định dự toán đã ghi rõ, không được trích dẫn như báo giá nhà cung cấp.
 
+\clearpage
+
 # Phụ lục A - Kết quả chạy thực tế
 
 Bảng này được dựng từ JSON evidence; số lần kiểm bao gồm hai lượt smoke trong ca failover. Không quy đổi thành điểm môn học hoặc SLA.
 
 
-## Run validated-runtime
+\Needspace{22\baselineskip}
 
-Thời điểm UTC: 2026-11-02T13:59:14.562056+00:00. Nền tảng GNS3 2.2.55.
+## Run after-firewall-restart-runtime
+
+Thời điểm UTC: 2026-11-02T15:25:25.557372+00:00. Nền tảng GNS3 2.2.55.
 
 | Nhóm kiểm | Số kiểm tra | Kết quả |
 |:---|---:|:---|
@@ -179,12 +183,14 @@ Thời điểm UTC: 2026-11-02T13:59:14.562056+00:00. Nền tảng GNS3 2.2.55.
 
 Tổng 209 kiểm tra, không có FAIL trong lần chạy này.
 
-Mất upstream ISP1/ISP2: phục hồi HTTP từ năm endpoint lần lượt 8.707 giây, 6.521 giây. Có gián đoạn tạm thời trong các sample; không phải chuyển mạch không mất phiên.
+Mất upstream ISP1/ISP2: phục hồi HTTP từ năm endpoint lần lượt 5.526 giây, 5.186 giây. Có gián đoạn tạm thời trong các sample; không phải chuyển mạch không mất phiên.
 
-Image ID: `sha256:f688010da04c55df4d263de5cad79284c6ab8b147abe5266133f889f2a8068b4`.
+Image ID của tag trong controller tại thời điểm test: `sha256:85e44ab0965cf251cec2fb1aca0973a3fa3a0735f5fc82bcef3b8860b3e3ead2`.
 
-Evidence: `test_results/runtime/validated-runtime/results.json`; SHA256 `ceffe2814915f3262af0749ca3293860f516a2b9967d3df6fc8b17430d111d30`.
+Evidence: `test_results/runtime/after-firewall-restart-runtime/results.json`; SHA256 `aa937a55c13bf97633efebe3e769f932e4d1f5456a57c446f9b9f462a7c8224a`.
 
+
+\Needspace{22\baselineskip}
 
 ## Run after-reopen-runtime
 
@@ -204,7 +210,7 @@ Thời điểm UTC: 2026-11-02T14:04:06.477140+00:00. Nền tảng GNS3 2.2.55.
 
 Tổng 137 kiểm tra, không có FAIL trong lần chạy này.
 
-Image ID: `sha256:f688010da04c55df4d263de5cad79284c6ab8b147abe5266133f889f2a8068b4`.
+Image ID của tag trong controller tại thời điểm test: `sha256:f688010da04c55df4d263de5cad79284c6ab8b147abe5266133f889f2a8068b4`.
 
 Evidence: `test_results/runtime/after-reopen-runtime/results.json`; SHA256 `4b4dc6adca6c91e7c850868cffcdc262134e34ebfc619b6e75478c278753df4b`.
 
@@ -215,6 +221,10 @@ File GNS3 bàn giao được chép lại từ source, mở bằng chính GNS3 v�
 
 Run initial-runtime giữ hai FAIL khi thử HTTP ở Aux ngay sau Edge chuyển trạng thái; OSPF/default chưa hội tụ. Bộ thử sau đó đo cả quá trình từ fault tới phục hồi đầu cuối, lưu các sample gián đoạn và kiểm lại sau hội tụ. Không xóa evidence lỗi ban đầu hoặc diễn giải thành zero-downtime.
 
+Bản hiện tại sửa PID Suricata còn sót sau khi dừng container. Hai chu kỳ dừng/bật firewall đã xác nhận tiến trình Suricata sống và HTTP phục hồi; lần kiểm đầy đủ sau sửa đạt209/209. Source được cập nhật trong container hiện có, còn image mới được build/load cho lần tạo node sau. Base image ID của từng container và phép kiểm restart nằm tại `test_results/runtime/firewall-restart/restart.json`; hash file đang chạy được kiểm riêng trong `persistence/live-provenance.json`. Lần reopen137 kiểm ở trên là bằng chứng lịch sử trước bản sửa PID, không được diễn giải thành kiểm reopen lại source mới.
+
+
+\clearpage
 
 # Phụ lục B - Tái lập và danh mục sản phẩm
 

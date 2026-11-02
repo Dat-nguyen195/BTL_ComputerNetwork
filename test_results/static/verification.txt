@@ -1,6 +1,6 @@
 
 $ python3 scripts/check_docs.py
-OK: 84 Markdown files; UTF-8, local links, code fences and task IDs checked.
+OK: 85 Markdown files; UTF-8, local links, code fences and task IDs checked.
 
 $ python3 scripts/build_lab.py --check
 OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
@@ -11,7 +11,7 @@ OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapter
 $ python3 scripts/test_capacity.py
 ......
 ----------------------------------------------------------------------
-Ran 6 tests in 0.002s
+Ran 6 tests in 0.004s
 
 OK
 
