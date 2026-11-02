@@ -16,3 +16,7 @@ Có [PCAP thật](persistence/hospital-demo.pcap) ở phía ngoài Main-FW cho H
 JSON lưu lệnh, stdout, returncode, expected/actual, thời gian, source/project/image hash, package versions, OSPF, NAT, ACL counters và DHCP leases. Kiểm tra tĩnh dùng `check_gns3.py` để xác nhận evidence/phạm vi/hash, không tự chạy lại mạng. Muốn chạy mới dùng [hướng dẫn GNS3](../../simulation/gns3/README.md); đổi `--run-name` để giữ lịch sử, không ghi đè kết quả cũ.
 
 VPN crypto, RF/WLC/AAA, GPON PHY, xDSL PHY/throughput, HA chassis/state sync và ứng dụng y tế thật chưa được thử. File `.pkt` gốc vẫn PARTIAL/NOT RUN trên Packet Tracer; không chuyển kết quả GNS3 thành bằng chứng IOS.
+
+## Sau sửa lỗi Web UI Electron
+
+[after-webui-fix-runtime](after-webui-fix-runtime/results.json) chạy lại137 kiểm chức năng sau khi sửa tương thích Web UI,0 FAIL. Native project, mã/config trong52 node không đổi; manifest cập nhật controller/patch. [Bài kiểm Chrome/Electron](../web-ui/README.md) là bằng chứng giao diện riêng, không lấy kết quả HTTP200 thay kết luận trang đã render.

@@ -183,7 +183,7 @@ def artifacts():
     project={'name':'Hospital-3Sites-FRR','project_id':ident('project'),'version':'2.2.55','type':'topology','revision':9,'auto_start':False,'auto_close':False,'auto_open':False,'zoom':65,'scene_width':2400,'scene_height':2200,'topology':{'nodes':nodes,'links':links,'drawings':[],'computes':[]}}
     output={'hospital-3sites.gns3':json.dumps(project,indent=2)+'\n'}
     output.update({'runtime/config/'+n+'.json':json.dumps(c,indent=2)+'\n' for n,c in sorted(configs.items())})
-    source_paths=[*sorted((ROOT/'simulation/generated/configs').glob('*.cfg')),ROOT/'simulation/lab/endpoints.csv',ROOT/'simulation/lab/cabling.csv',ROOT/'scripts/build_gns3.py',OUT/'runtime/node.py',OUT/'runtime/Dockerfile',OUT/'controller/Dockerfile',OUT/'controller/start.sh']
+    source_paths=[*sorted((ROOT/'simulation/generated/configs').glob('*.cfg')),ROOT/'simulation/lab/endpoints.csv',ROOT/'simulation/lab/cabling.csv',ROOT/'scripts/build_gns3.py',OUT/'runtime/node.py',OUT/'runtime/Dockerfile',OUT/'controller/Dockerfile',OUT/'controller/start.sh',OUT/'controller/patch_web_ui.py']
     source_hashes={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
     output['runtime-manifest.json']=json.dumps({'source_sha256':source_hashes,'image':IMAGE,'platform':'GNS3 2.2.55 / FRR / Linux; not Cisco IOS','sha256':{p:hashlib.sha256(s.encode()).hexdigest() for p,s in sorted(output.items())}},indent=2)+'\n'
     return output
