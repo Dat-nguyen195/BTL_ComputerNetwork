@@ -1,0 +1,13 @@
+{
+  "name": "DBP-Staff",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.20.120.11/24"
+  },
+  "gateway": "10.20.120.1",
+  "dns": "10.20.70.6",
+  "mac": "02:d7:c7:51:57:6a",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}

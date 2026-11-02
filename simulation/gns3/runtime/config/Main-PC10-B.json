@@ -1,0 +1,13 @@
+{
+  "name": "Main-PC10-B",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.10.11/25"
+  },
+  "gateway": "10.10.10.1",
+  "dns": "10.10.70.10",
+  "mac": "02:23:c3:fd:b6:2c",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}

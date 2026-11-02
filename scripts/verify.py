@@ -11,14 +11,14 @@ def main():
     checks = [
         ['check_docs.py'], ['build_lab.py', '--check'], ['build_campus.py', '--check'], ['test_capacity.py'],
         ['check_wan.py'], ['check_wan.py', '--config-dir', 'simulation/generated/configs'],
-        ['check_security.py'], ['check_inventory.py'], ['check_lan.py'],
+        ['check_security.py'], ['check_inventory.py'], ['check_lan.py'], ['build_gns3.py', '--check'], ['check_gns3.py'],
     ]
     for script, *args in checks:
         print(f"\n$ python3 scripts/{script} {' '.join(args)}".rstrip(), flush=True)
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), *args], cwd=ROOT)
         if result.returncode:
             return result.returncode
-    print('\nALL OFFLINE CHECKS OK. TC01-TC06 / VPN / IDS-IPS runtime remain NOT RUN.')
+    print('\nALL OFFLINE CHECKS OK. Runtime evidence is recorded separately under test_results/runtime/; these checks do not execute the network.')
     return 0
 
 

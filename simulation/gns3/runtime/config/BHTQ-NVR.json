@@ -1,0 +1,12 @@
+{
+  "name": "BHTQ-NVR",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.30.110.11/24"
+  },
+  "gateway": "10.30.110.1",
+  "dns": "10.30.70.6",
+  "mac": "02:a7:a0:0d:fc:59",
+  "adapters": 1,
+  "services": "NVR-design-only"
+}

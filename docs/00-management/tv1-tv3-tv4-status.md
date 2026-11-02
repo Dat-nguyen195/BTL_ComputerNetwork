@@ -1,5 +1,7 @@
 # Phân tích và bàn giao TV1, TV3, TV4
 
+**Cập nhật sau hoàn thiện:** [review hiện tại](project-review.md) ghi GNS352 node, runtime và PDF đã có; các checklist/trạng thái chuẩn bị bên dưới là bàn giao trước đợt này. Phê duyệt người phụ trách, khảo sát và triển khai vật lý vẫn cần xác nhận riêng.
+
 **Ngày 02/11/2026. Phạm vi: hoàn thiện thiết kế, cấu hình, tính tải và hồ sơ có thể thực hiện trong repo.** Chưa có môi trường Packet Tracer/GNS3/IOS, project, runtime evidence, xác nhận reviewer hoặc PDF tổng của TV5. Không coi bộ text/config là đã hoàn thành Step4–5; không ký duyệt thay thành viên.
 
 ## Phát hiện và xử lý

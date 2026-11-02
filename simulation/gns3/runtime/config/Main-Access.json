@@ -1,0 +1,128 @@
+{
+  "name": "Main-Access",
+  "role": "switch",
+  "interfaces": {},
+  "adapters": 20,
+  "ports": [
+    {
+      "name": "uplink",
+      "port_number": 0,
+      "type": "dot1q",
+      "vlan": 1
+    },
+    {
+      "name": "Main-Infra",
+      "port_number": 1,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-HIS",
+      "port_number": 2,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-PACS",
+      "port_number": 3,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-LIS",
+      "port_number": 4,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-CRM",
+      "port_number": 5,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-DB",
+      "port_number": 6,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-Backup",
+      "port_number": 7,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-Monitor",
+      "port_number": 8,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "Main-PC10-A",
+      "port_number": 9,
+      "type": "access",
+      "vlan": 10
+    },
+    {
+      "name": "Main-PC10-B",
+      "port_number": 10,
+      "type": "access",
+      "vlan": 10
+    },
+    {
+      "name": "Main-PC20",
+      "port_number": 11,
+      "type": "access",
+      "vlan": 20
+    },
+    {
+      "name": "Main-PC30",
+      "port_number": 12,
+      "type": "access",
+      "vlan": 30
+    },
+    {
+      "name": "Main-PC40",
+      "port_number": 13,
+      "type": "access",
+      "vlan": 40
+    },
+    {
+      "name": "Main-Guest",
+      "port_number": 14,
+      "type": "access",
+      "vlan": 100
+    },
+    {
+      "name": "Main-Staff",
+      "port_number": 15,
+      "type": "access",
+      "vlan": 120
+    },
+    {
+      "name": "Main-Admin",
+      "port_number": 16,
+      "type": "access",
+      "vlan": 90
+    },
+    {
+      "name": "Main-NVR",
+      "port_number": 17,
+      "type": "access",
+      "vlan": 110
+    },
+    {
+      "name": "Main-PC50",
+      "port_number": 18,
+      "type": "access",
+      "vlan": 50
+    },
+    {
+      "name": "Main-PC60",
+      "port_number": 19,
+      "type": "access",
+      "vlan": 60
+    }
+  ]
+}

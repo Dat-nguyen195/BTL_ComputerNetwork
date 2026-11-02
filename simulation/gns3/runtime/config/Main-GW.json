@@ -1,0 +1,27 @@
+{
+  "loopbacks": [
+    "10.10.255.2/32"
+  ],
+  "name": "Main-GW",
+  "role": "router",
+  "interfaces": {
+    "lo": "10.10.255.2/32",
+    "eth0": "10.255.0.1/30",
+    "eth1": "10.255.0.5/30",
+    "eth2": "10.255.0.10/30"
+  },
+  "interface_map": {
+    "Serial0/0/0": "eth0",
+    "Serial0/0/1": "eth1",
+    "GigabitEthernet0/0": "eth2",
+    "Loopback0": "lo"
+  },
+  "commands": [],
+  "frr": "frr defaults traditional\nhostname Main-GW\nservice integrated-vtysh-config\nlog file /tmp/frr.log\ninterface eth0\n ip ospf network point-to-point\n ip ospf hello-interval 1\n ip ospf dead-interval 4\n ip ospf cost 10\ninterface eth1\n ip ospf network point-to-point\n ip ospf hello-interval 1\n ip ospf dead-interval 4\n ip ospf cost 10\ninterface eth2\n ip ospf network point-to-point\n ip ospf hello-interval 1\n ip ospf dead-interval 4\n ip ospf cost 1\nrouter ospf\n ospf router-id 10.10.255.2\n passive-interface default\n no passive-interface eth0\n no passive-interface eth1\n no passive-interface eth2\n network 10.10.255.2/32 area 0\n network 10.255.0.1/30 area 0\n network 10.255.0.5/30 area 0\n network 10.255.0.10/30 area 0\n default-information originate metric 10\nip route 192.0.2.100/32 10.255.0.9 1\nip route 192.0.2.100/32 Null0 254\nip route 10.10.0.0/16 Null0 254\nip route 10.20.0.0/16 Null0 254\nip route 10.30.0.0/16 Null0 254\n",
+  "adapters": 3,
+  "health_default": {
+    "target": "192.0.2.100",
+    "source": "10.10.255.2",
+    "gateway": "10.255.0.9"
+  }
+}

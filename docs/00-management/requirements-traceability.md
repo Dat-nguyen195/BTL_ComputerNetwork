@@ -1,26 +1,15 @@
-# Truy vết 7 bước yêu cầu
+# Truy vết đặc tả và sản phẩm thực tế
 
-**Chủ trì:** TV5; TV1 duyệt. **Trạng thái:** BASELINE / CHƯA NGHIỆM THU.
+**02/11/2026. Đối chiếu trực tiếp đề gốc5 trang.** [Review cuối](project-review.md) ghi đủ bảy Step và giới hạn. Phân biệt hồ sơ thiết kế, mô phỏng chức năng và bằng chứng triển khai thực.
 
-Các đường dẫn bên dưới là **sản phẩm dự kiến** sẽ được tạo khi triển khai; repository đã có scaffold; các sản phẩm kỹ thuật cuối vẫn đang chờ triển khai.
+| Step | Điểm | Sản phẩm hiện có | Trạng thái |
+| --- | --- | --- | --- |
+|1 |1 | [Site requirements](../01-survey/site-requirements.md), [survey](../01-survey/survey-checklist.md), [architecture](../02-design/architecture.md), [wireless](../02-design/wireless-plan.md) | Hồ sơ thiết kế đủ; khảo sát thực chưa có |
+|2 |1 | [IP/VLAN](../02-design/ip-vlan-plan.md), [BOM](../02-design/equipment-bom.md), [cabling](../02-design/physical-cabling.md), [GPON](../02-design/gpon-design.md), [WAN/cost](../02-design/wan-options-cost.md) | Thiết kế có; model/quote/physical cần xác nhận |
+|3 |1 | [Tính tải](../03-capacity/throughput.md), CSV, capacity.py và6 nhóm unit số học | Đã tính đủ kịch bản; chưa đo workload/ISP thật |
+|4 |2 | [Native GNS3](../../simulation/gns3/hospital-3sites.gns3), image source và [hướng dẫn](../../simulation/gns3/README.md) | Đã chạy và mở lại file52 node/52 link |
+|5 |2 | [Sáu nhóm bắt buộc](../../test_results/test-matrix.md), [JSON/PCAP](../../test_results/runtime/README.md) | PASS trong GNS3 Linux; không phải IOS/RF/throughput |
+|6 |2 | [Evaluation](../05-evaluation/evaluation.md), [risks](../05-evaluation/risks.md), report và best practices | Đánh giá dựa thiết kế và runtime có giới hạn |
+|7 |1 | [PDF](../06-report/final/report.pdf), [source](../06-report/source/report.md), project và [manifest](../../submission/manifest.md) | Đã chuẩn bị kỹ thuật; duyệt/nộp BKeL chờ nhóm |
 
-| Bước | Điểm | Nội dung và điều kiện nghiệm thu | Chủ trì / phối hợp | Sản phẩm dự kiến |
-| --- | --- | --- | --- | --- |
-| Step 1 | 1 | Phân tích 3 site; checklist khảo sát; vùng tải cao/load balancer; kiến trúc phù hợp tòa nhà/mỹ quan; wireless và phân vùng server/DMZ/firewall | TV5 / TV1, TV2, TV3, TV4 | `docs/01-survey/`, `docs/02-design/architecture.md` |
-| Step 2 | 1 | BOM/spec; IP plan; sơ đồ vật lý/cabling; WAN và OSPF; phương án có chi phí và ưu/nhược | TV2 / TV1, TV3 | `docs/02-design/`, `configs/` |
-| Step 3 | 1 | Tính down/up, 80% trong 3 giờ, kịch bản Wi-Fi/server, tăng trưởng; đề xuất ISP và cấu hình theo tải | TV4 / TV1, TV2 | `docs/03-capacity/throughput.md` |
-| Step 4 | 2 | Mô phỏng tích hợp 3 site; file mở lại được, IP/VLAN/config khớp thiết kế, ghi rõ phần mô hình hóa | TV4 / TV1, TV2, TV3 | `simulation/packet-tracer/hospital-3sites.pkt` hoặc GNS3 |
-| Step 5 | 2 | Chạy 6 nhóm test bắt buộc bên dưới; có expected/actual, ảnh/log, môi trường và liên hệ phiên bản | TV4 / TV1, TV2, TV3 | `test_results/test-matrix.md`, `test_results/TC01-*/` đến `TC06-*/` |
-| Step 6 | 2 | Đánh giá tin cậy, dễ nâng cấp, đa dạng phần mềm, an toàn và bảo mật; vấn đề còn lại, hướng phát triển | TV5 / tất cả | `docs/05-evaluation/evaluation.md`, `docs/05-evaluation/risks.md` |
-| Step 7 | 1 | Báo cáo PDF và mô phỏng được TV1 duyệt, đóng gói, nộp BKeL, lưu bằng chứng nộp | TV1 / TV5, TV4 | `docs/06-report/final/report.pdf`, `submission/` |
-| **Tổng** | **10** | **Không bỏ bước đánh giá hoặc bước nộp bài** | | |
-
-## Theo dõi cập nhật
-
-- [ ] Xác nhận giả định và thông số với người phụ trách.
-- [ ] Cập nhật kết quả triển khai/bằng chứng thực tế.
-- [ ] Ghi reviewer, ngày rà soát và quyết định vào issue/PR liên quan.
-
-## Trạng thái sau tích hợp TV2 ngày 02/11/2026
-
-Đã có thiết kế/config/tính toán và 4 contribution kỹ thuật, không còn chỉ scaffold. Có module `.pkt` Main của Tiendat đã audit/hash, **chưa có file tổng 3 site được mở/chạy lại**,6 nhóm runtime vẫnNOT RUN và PDF cuối chưa có. Bảng [review toàn dự án](project-review.md) đối chiếu từngStep với sản phẩm có thật/phần thiếu; không tự chuyểnStep4/5/7 sang hoàn thành vì có một filebinary.
+Quy mô600/260/260 PC,10/2/2 server, Main2x5 tầng và Aux2 tầng, tăng20% trong5 năm được giữ trong nguồn thiết kế. GPON được bổ sung cho80→96 PC hành chính trong tổng Main, không bỏ yêu cầu. Hai ISP/leased line được mô hình chức năng bằng Ethernet; không suy DSL/quang/RF thực từ mô phỏng IP. PhầnVPN là đề xuất đủ hai loại; crypto NOT RUN. Mốc deadline/nhân sự theo yêu cầu nhóm cần đối chiếu đăng ký học phần riêng.

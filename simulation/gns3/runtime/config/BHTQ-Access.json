@@ -1,0 +1,62 @@
+{
+  "name": "BHTQ-Access",
+  "role": "switch",
+  "interfaces": {},
+  "adapters": 9,
+  "ports": [
+    {
+      "name": "uplink",
+      "port_number": 0,
+      "type": "dot1q",
+      "vlan": 1
+    },
+    {
+      "name": "BHTQ-Infra",
+      "port_number": 1,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "BHTQ-Local",
+      "port_number": 2,
+      "type": "access",
+      "vlan": 70
+    },
+    {
+      "name": "BHTQ-PC10",
+      "port_number": 3,
+      "type": "access",
+      "vlan": 10
+    },
+    {
+      "name": "BHTQ-Guest",
+      "port_number": 4,
+      "type": "access",
+      "vlan": 100
+    },
+    {
+      "name": "BHTQ-NVR",
+      "port_number": 5,
+      "type": "access",
+      "vlan": 110
+    },
+    {
+      "name": "BHTQ-PC20",
+      "port_number": 6,
+      "type": "access",
+      "vlan": 20
+    },
+    {
+      "name": "BHTQ-PC30",
+      "port_number": 7,
+      "type": "access",
+      "vlan": 30
+    },
+    {
+      "name": "BHTQ-Staff",
+      "port_number": 8,
+      "type": "access",
+      "vlan": 120
+    }
+  ]
+}

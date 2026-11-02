@@ -1,0 +1,24 @@
+{
+  "loopbacks": [
+    "192.0.2.11/32",
+    "192.0.2.22/32"
+  ],
+  "name": "INET-Core",
+  "role": "router",
+  "interfaces": {
+    "eth0": "192.0.2.130/30",
+    "eth1": "192.0.2.134/30",
+    "eth2": "192.0.2.65/26",
+    "lo": "192.0.2.22/32"
+  },
+  "interface_map": {
+    "GigabitEthernet0/0": "eth0",
+    "GigabitEthernet0/1": "eth1",
+    "GigabitEthernet0/2": "eth2",
+    "Loopback11": "lo",
+    "Loopback22": "lo"
+  },
+  "commands": [],
+  "frr": "frr defaults traditional\nhostname INET-Core\nservice integrated-vtysh-config\nlog file /tmp/frr.log\nip route 203.0.113.0/30 192.0.2.129 1\nip route 198.51.100.0/30 192.0.2.133 1\n",
+  "adapters": 3
+}

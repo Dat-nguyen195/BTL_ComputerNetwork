@@ -32,3 +32,7 @@ Nguồn drawio và SVG cùng geometry sinh từ `scripts/build_campus.py`; khôn
 | Dịch vụ |Chỉ chọn vùng office/guest sau khảo sát; tách VLAN và quản trị |PACS/video peak cần đánh giá shared medium và uplink ONT |
 
 Theo [Cisco GPON](https://www.cisco.com/c/en/us/support/docs/switches/catalyst-pon-series/216230-understand-gpon-technology.html), PON chia sẻ khoảng 2,488 Gbps down/1,244 Gbps up; không phải mỗi ONT được toàn bộ tốc độ. Tính optical loss riêng từng chiều từ Tx/Rx/budget model: `L=fiber+splitter+connector+splice+margin`, kiểm cả mất mát tối đa và công suất nhận quá cao. Chưa có model/đo OTDR nên không tự gán kết luận optical budget PASS. OLT/splitter/ONT/OS2 không được âm thầm cộng chung baseline OM3 hoặc gọi labEthernet là GPON.
+
+## Bổ sung GPON trong phương án hybrid
+
+[Thiết kế GPON](gpon-design.md) chọn 80→96 PC VLAN60 Main qua 20→24 ONT; các máy này đã nằm trong tổng PC. Hai uplink OLT bổ sung mỗi Core một cổng (28→29/32), hai splitter1:16 và ODN/OS2 có budget ví dụ, cần đo quang thực. Bảng cổng/cáp Ethernet giữ chỗ dự phòng để rollback. Đây là thiết kế, không phải GPON đã chạy trong GNS3.

@@ -1,0 +1,12 @@
+{
+  "name": "BHTQ-Local",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.30.70.7/28"
+  },
+  "gateway": "10.30.70.1",
+  "dns": "10.30.70.6",
+  "mac": "02:16:28:f9:db:a2",
+  "adapters": 1,
+  "services": "local-cache-design-only"
+}

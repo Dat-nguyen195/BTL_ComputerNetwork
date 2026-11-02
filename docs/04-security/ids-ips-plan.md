@@ -1,5 +1,7 @@
 # Kế hoạch IDS/IPS và chống phishing
 
+**Cập nhật thực thi:** đã có Suricata NFQUEUE alert/drop marker và positive control trên GNS3 Linux. [Evidence](../../test_results/supplemental/ids-ips.md); các phần thiết kế sản xuất/IDS feed/HA bên dưới vẫn cần triển khai riêng.
+
 **TV3; 02/11/2026. DESIGN ONLY / runtime NOT RUN.** Yêu cầu nâng cao của chương trình kỹ sư tài năng phải xác nhận có áp dụng. ACL/ZBF không thay bằng chứng IDS/IPS; phát hiện phishing cũng chưa được triển khai chỉ từ lọc cổng.
 
 ## Vị trí và phạm vi quan sát

@@ -1,5 +1,7 @@
 # Hướng dẫn vận hành bảo mật
 
+**Cập nhật kiểm chứng:** [GNS3 runtime](../../test_results/runtime/README.md) đã kiểm ACL/firewall/IDS/IPS rule mẫu; hardening, phishing feed, AAA, crypto, restore dữ liệu và HA sản xuất vẫn cần kiểm riêng.
+
 **TV3; 02/11/2026. Hướng dẫn đề xuất; chỉ ACL/ZBF/NAT/relay đã có cấu hình tham chiếu. Chưa nghiệm thu runtime.**
 
 | Hạng mục | Cách thực hiện / tiêu chí kiểm | Tình trạng baseline |

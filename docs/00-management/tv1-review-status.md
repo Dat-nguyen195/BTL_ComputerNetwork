@@ -1,5 +1,7 @@
 # Tình trạng TV1 sau hiệu chỉnh review
 
+**Cập nhật sau hoàn thiện:** [review hiện tại](project-review.md) ghi GNS352 node, runtime và PDF đã có; các checklist/trạng thái chuẩn bị bên dưới là bàn giao trước đợt này. Phê duyệt người phụ trách, khảo sát và triển khai vật lý vẫn cần xác nhận riêng.
+
 **Ngày cập nhật:** 02/11/2026. Phần kết quả26/10 bên dưới được giữ làm lịch sử; bản bàn giao mới nằm ở mục cập nhật cuối. **Trạng thái chung:** ĐÃ HIỆU CHỈNH THIẾT KẾ/CẤU HÌNH THAM CHIẾU, CHƯA NGHIỆM THU TRIỂN KHAI. Checklist task chính thức vẫn ở [tasks-assignment.md](../../tasks-assignment.md).
 
 ## Những điểm đã hiệu chỉnh

@@ -1,0 +1,12 @@
+{
+  "name": "Main-PACS",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.70.12/27"
+  },
+  "gateway": "10.10.70.1",
+  "dns": "10.10.70.10",
+  "mac": "02:6c:bc:b2:38:4a",
+  "adapters": 1,
+  "services": "HTTP-stand-in-PACS"
+}

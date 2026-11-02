@@ -1,5 +1,7 @@
 # Đánh giá hệ thống - Step6
 
+**Cập nhật sau runtime:** GNS3 Linux đã đạt209 kiểm tích hợp và137 sau reopen, có19 lease/18 pool, OSPF, NAT/PBR, Suricata và samples hội tụ8,707s/6,521s. [Review cuối](../00-management/project-review.md) và [PDF](../06-report/final/report.pdf) thay phần trạng thái runtime pending trong bảng review thiết kế lịch sử bên dưới. Chưa có bằng chứng RF/quang/DSL PHY/VPN/HA hoặc ứng dụng y tế thật.
+
 **Rà soát thiết kế toàn dự án02/11/2026; TV5 tổng hợp, TV1 duyệt cuối. DESIGN REVIEWED / RUNTIME PENDING.** Đánh giá dưới đây dựa vào source/config/audit của bản tích hợp, chưa phải benchmark hoặc nghiệm thu mô phỏng.
 
 | Tiêu chí | Kết quả rà soát thiết kế | Hạn chế /việc cần chứng minh |

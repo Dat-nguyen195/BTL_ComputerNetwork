@@ -1,5 +1,7 @@
 # Nội dung TV4: tính tải, tích hợp và kiểm thử
 
+**Cập nhật tổng hợp:** đã tích hợp vào [báo cáo PDF](../final/report.pdf) và [GNS3/evidence](../../../test_results/runtime/README.md). Trạng thái IOS/Packet Tracer hoặc thiết kế sản xuất trong nội dung bàn giao gốc được giữ riêng; không suy PASS các nền tảng/tính năng chưa thử.
+
 **Cập nhật 02/11/2026. Đã có tính toán tái lập, gói cấu hình và hồ sơ test; chưa có project mô phỏng hoặc evidence runtime. TV5 biên tập; TV1 duyệt.**
 
 ## Đầu vào Step3 và các cách hiểu

@@ -1,0 +1,13 @@
+{
+  "name": "Main-Guest",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.100.11/23"
+  },
+  "gateway": "10.10.100.1",
+  "dns": "192.0.2.100",
+  "mac": "02:23:da:f6:8b:09",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}
