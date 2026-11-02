@@ -1,6 +1,6 @@
 # Mô phỏng ba site: gói cấu hình và cách tái hiện
 
-**TV4 điều phối; cập nhật 02/11/2026. CÓ GÓI THAM CHIẾU, CHƯA CÓ PROJECT `.pkt`/GNS3 HOẶC RUNTIME EVIDENCE.** Môi trường hiện tại có Python3/Docker nhưng không tìm thấy executable Packet Tracer/GNS3/Dynamips hoặc IOS image. Không tạo file đổi đuôi giả làm mô phỏng.
+**TV4 điều phối; cập nhật 02/11/2026. CÓ GÓI THAM CHIẾU, ĐÃ CÓ MODULE `.pkt` MAIN CỦA TV2; CHƯA CÓ PROJECT TỔNG/RUNTIME EVIDENCE.** Môi trường hiện tại có Python3/Docker nhưng không tìm thấy executable Packet Tracer/GNS3/Dynamips hoặc IOS image. Đã nhận file gốc9.0.0.0810 của Tiendat; xem module/audit bên dưới. Không tạo file đổi đuôi giả làm mô phỏng.
 
 | Thành phần | Đã chuẩn bị | Trạng thái |
 | --- | --- | --- |
@@ -28,6 +28,10 @@
 
 ## Phạm vi chức năng
 
-OSPF/routing/PBR/ACL/ZBF/NAT cần kiểm IOS thực; hiện chỉ có kiểm tĩnh. Ethernet tới ISP mô hình chức năng xDSL; Serial2 Mbps mô hình leased line; không dùng chúng để đo năng lực150–200 Mbps hoặc chứng minh 1/10/40GbE/GPON. HTTP không mô phỏng HIS/DICOM/TLS thật. MPLS/SD-WAN, IPsec, teleworker, IDS/IPS và HA chưa triển khai. Guest isolation cùng SSID/L2, campus A/B/GPON/RF và BOM còn phụ thuộc TV2.
+OSPF/routing/PBR/ACL/ZBF/NAT cần kiểm IOS thực; hiện chỉ có kiểm tĩnh. Ethernet tới ISP mô hình chức năng xDSL; Serial2 Mbps mô hình leased line; không dùng chúng để đo năng lực150–200 Mbps hoặc chứng minh 1/10/40 GbE/GPON. HTTP không mô phỏng HIS/DICOM/TLS thật. MPLS/SD-WAN, IPsec, teleworker, IDS/IPS và HA chưa triển khai. Guest isolation cùng SSID/L2, campus A/B/GPON/RF và BOM còn phụ thuộc TV2.
 
 Cấu hình ACL chỉ IPv4 và TCP established không phải session firewall cho east-west. Main-FW có ZBF transit nhưng self-zone chưa harden đầy đủ. DMZ chỉ công bố ISP2:8080; ISP2 hỏng thì inbound service mất, dù outbound có thể failover ISP1. Các hạn chế này phải giữ trong báo cáo.
+
+## Tiếp nhận TV2 sau review
+
+Có [module gốc](modules/tv2-lan-wireless/README.md)10 node Main, đãhash/audit cục bộ, chưa chạy. [3 adapter](modules/tv2-lan-wireless/configs/) chuyểnROASCore sang3650 SVI cùngACL/relay/OSPF/default và sửa2 access2960; chỉnạp vào bản sao. Chạy `build_lab.py` rồi `build_campus.py` trước `verify.py`. Không đểROAS .1 vàSVI .1 cùng hoạt động. Metadata9.0.0.0810 không thay kết quả thửcompatibility/reopen. Chưa có file tổng 3 site dù đã có module binary.

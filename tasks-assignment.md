@@ -8,6 +8,8 @@
 
 **Bổ sung02/11/2026 cho TV1/TV3/TV4:** đã soạn nội dung kỹ thuật, gói cấu hình hợp nhất, tính tải tự động và runbook; xem [bảng đối chiếu60 task](docs/00-management/tv1-tv3-tv4-status.md) và [kiểm tĩnh](test_results/static/README.md). Task chính cần runtime/reviewer/project vẫn mở. Các dấu tích bước con bên dưới chỉ xác nhận sản phẩm offline đã có.
 
+**Review TV2 ngày02/11/2026:** đã nhận commitTiendat `3f52588`, audit `.pkt` Main gốc và giữ nguyênbyte/hash; sửa BOM/cabling/camera/wireless/portplan, thêm3adapter3650/2960 và4contribution. [Review TV2](docs/00-management/tv2-review.md) và [review toàn dự án](docs/00-management/project-review.md) phân biệt rõ sản phẩm tĩnh với projecttổng/runtime/reviewer. Task cần nghiệmthu vẫn mở; không lấy đoạnPASS cũ làm bằng chứng.
+
 ## Quy tắc thực hiện và cân bằng tải
 
 - Mỗi giai đoạn có checklist riêng cho **TV1, TV2, TV3, TV4, TV5**. Task ID `Wn-TVx-yy` dùng để tạo issue/PR và truy vết; mặc định mọi task chưa hoàn thành.
@@ -52,10 +54,15 @@
 ### TV2 - LAN & Wireless Engineer
 
 - [ ] **W1-TV2-01** - Lập kiến trúc LAN A/B **mỗi tòa 5 tầng × 10 phòng**, phòng trung tâm cách **50 m**; mỗi Aux **2 tầng, IT/CCL ở tầng 1**. Phân biệt vị trí vật lý với nhóm VLAN nghiệp vụ. **Hạn 28/10; đầu ra:** sơ đồ logic và mặt bằng giả định có nhãn.
+  - [x] Đã có sơ đồ logic/physical Main-Aux theo đúng tầng/phòng, MDF/IDF và nhãn thiết kế/giả định; chưa có khảo sát thực.
 - [ ] **W1-TV2-02** - Phân bổ VLAN phòng ban/SSID và cổng trunk/access cho **600 PC Main, 260 PC mỗi Aux**; phối hợp TV1 kiểm host, DHCP và dự phòng. **Hạn 29/10; đầu ra:** bảng VLAN/port và nhận xét IP plan.
+  - [x] Đã có lan-port-plan.md, phân bổ600/260PC, VLAN/SSID/trunk/access và kiểm pool/gateway; runtime/chốt nhóm chưa thực hiện.
 - [ ] **W1-TV2-03** - Thiết kế GPON/Ethernet: MDF/IDF, patch panel/ODF, tuyến quang/cáp đồng, OLT/splitter/ONT nếu dùng GPON, 1/10/40GbE theo tầng mạng. **Hạn 30/10; đầu ra:** `physical-cabling.md` và sơ đồ nguồn.
+  - [x] Đã sửa cabling/72uplink/tuyếnA-B và điều kiệnLACP; có GPONalternativeOS2/OLT/ONT; GPON vẫndesign/chờxácnhận.
 - [ ] **W1-TV2-04** - Lập BOM/spec và port/PoE/uplink budget hiện tại/5 năm; không giới hạn Main ở 12 thiết bị nếu số cổng không đủ; phối hợp TV3 tính camera/NVR và server/DMZ. **Hạn 30/10; đầu ra:** `equipment-bom.md`, phần cáp/PoE trong `camera-plan.md`.
+  - [x] Đã tính CSV3site, PoE197W/tầng5năm, cổngMain810/Aux334, SFP/NVR và giới hạnmodel; giá/license/điện/khảo sát chờchốt.
 - [ ] **W1-TV2-05** - Quy hoạch Wi-Fi phủ Main, kiểm nhu cầu Aux; tách nhân viên/khách, dự kiến AP theo RF/dung lượng, không tự gán số khách; đọc chéo baseline G1. **Hạn 01/11; đầu ra:** `wireless-plan.md`, sơ đồ SSID/VLAN và vùng cần khảo sát.
+  - [x] Đã có wirelessplan táchSSID100/120/management90, RF/concurrency/AAA/isolation và42→56AP giảđịnh; chưaRF/runtime/G1.
 
 ### TV3 - Security & Systems Specialist
 
@@ -115,10 +122,13 @@
 ### TV2 - LAN & Wireless Engineer
 
 - [ ] **W2-TV2-01** - Dựng access/distribution/core đại diện A/B, VLAN, trunk/access, SVI hoặc router-on-a-stick theo baseline; đánh nhãn tầng/phòng/port. **Hạn 04/11; đầu ra:** module LAN Main và cấu hình switch.
+  - [x] Đã nhận moduleMain10node củaTiendat và3adapter sửa3650/2960; chưa nạp bản sao/mở lại/kiểmruntime.
 - [ ] **W2-TV2-02** - Dựng LAN DBP và BHTQ, VLAN và uplink 2 tầng; ghi bảng ánh xạ PC đại diện sang quy mô 260 máy mỗi site. **Hạn 04/11; đầu ra:** module Aux và sơ đồ vật lý tương ứng.
 - [ ] **W2-TV2-03** - Cấu hình DHCP/relay cùng TV3, SSID nhân viên/khách và VLAN tương ứng theo khả năng công cụ; kiểm địa chỉ/gateway đúng subnet, không chép gateway DiAn lỗi từ [R]. **Hạn 05/11; đầu ra:** LAN/Wi-Fi module và bảng pool.
+  - [x] Đã sửa portAP-PTGuest access100/Staff120 trongadapter, giữ relay/poolTV3; filegốcPCchưaIP, chưaDHCP/SSIDruntime.
 - [ ] **W2-TV2-04** - Giao module/config cho TV4, kiểm trunk, VLAN, DHCP và smoke test cùng/khác VLAN; điều chỉnh port/PoE/BOM theo topology thực tế. **Hạn 07/11; đầu ra:** log LAN, module được tích hợp, BOM/cabling cập nhật.
 - [ ] **W2-TV2-05** - Hoàn thiện sơ đồ logic/vật lý/cabling nguồn có thể sửa và bản xuất; viết nội dung LAN/Wi-Fi/BOM cho TV5 và đọc chéo G2. **Hạn 08/11; đầu ra:** `TV2-lan-wireless.md`, diagrams và tham số cấu hình.
+  - [x] Đã có drawio/SVGMain-Aux sinhcùngsource vàcontributionTV2; đangchờnative/PDF/reviewG2.
 
 ### TV3 - Security & Systems Specialist
 
@@ -173,6 +183,7 @@
 - [ ] **W3-TV2-02** - Kiểm SSID/VLAN nhân viên và khách, DHCP/gateway/DNS; phối hợp TV3 bảo đảm khách không nối nhầm VLAN nội bộ và cung cấp máy khách từng site cho **TC05/TC06**. **Hạn 12/11; đầu ra:** bảng SSID/VLAN và precondition test.
 - [ ] **W3-TV2-03** - Sửa lỗi LAN/Wi-Fi từ test tích hợp; rà soát port budget, PoE, uplink và dư địa 20%, đối chiếu sơ đồ vật lý với file mô phỏng. **Hạn 14/11; đầu ra:** config/sơ đồ/BOM đồng bộ, log retest.
 - [ ] **W3-TV2-04** - Cùng TV3 kiểm thiết kế camera, VLAN/quyền NVR và nhu cầu băng thông/lưu trữ; tách thông số chưa khảo sát khỏi kết quả chạy trong mô phỏng. **Hạn 14/11; đầu ra:** `camera-plan.md` và nhận xét tính khả thi.
+  - [x] Đã đồng bộcamera/PoE/NVR/growth vớiTV3 quaCSV; lưu trữusable5nămMain85050GB/Aux17010GB làgiảđịnh, chưađo.
 - [ ] **W3-TV2-05** - Bàn giao phần LAN/Wi-Fi/BOM/cabling chính thức và ảnh sơ đồ rõ chữ cho TV5; đọc chéo tiêu chí nâng cấp, reliability và G3. **Hạn 15/11; đầu ra:** `TV2-lan-wireless.md` hoàn chỉnh và nhận xét Step 6.
 
 ### TV3 - Security & Systems Specialist

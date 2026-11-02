@@ -1,9 +1,12 @@
 
 $ python3 scripts/check_docs.py
-OK: 73 Markdown files; UTF-8, local links, code fences and task IDs checked.
+OK: 76 Markdown files; UTF-8, local links, code fences and task IDs checked.
 
 $ python3 scripts/build_lab.py --check
 OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
+
+$ python3 scripts/build_campus.py --check
+OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapters (freshness checked)
 
 $ python3 scripts/test_capacity.py
 ......
@@ -44,5 +47,9 @@ NOT IOS runtime: no stateful sessions, DHCP leases, DNS/HTTP, VPN or IDS/IPS exe
 
 $ python3 scripts/check_inventory.py
 OK static inventory: 14 cables, 30 endpoints, 10/2/2 servers, unique addresses and switch ports
+
+$ python3 scripts/check_lan.py
+OK static TV2: 3 campus budgets/storage,72 uplinks,2 diagrams,3 adapters, 37 preserved Main ACL flows; original PKT hash verified
+Native file is a partial Main module. Packet Tracer runtime, Wi-Fi/RF and persistence NOT RUN.
 
 ALL OFFLINE CHECKS OK. TC01-TC06 / VPN / IDS-IPS runtime remain NOT RUN.

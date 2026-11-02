@@ -2,7 +2,7 @@
 
 Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh viện gồm **Main Site tại TP.HCM**, **Auxiliary Site DBP** và **Auxiliary Site BHTQ**. Đầu ra cuối cùng là **báo cáo chính thức PDF, nguồn báo cáo có thể chỉnh sửa và mô phỏng Packet Tracer hoặc GNS3**. Nhóm có **5 thành viên**, thực hiện **4 giai đoạn, mỗi giai đoạn đúng 1 tuần**, từ **Thứ Hai 26/10/2026**.
 
-**Trạng thái02/11/2026:** Đã có thiết kế,3 contribution TV1/TV3/TV4, gói cấu hình hợp nhất và bộ kiểm tĩnh; chưa có project mô phỏng, kiểm thử runtime hoặc nghiệm thu. Các subnet, tên nhóm phòng ban, cấu hình, số lượng thiết bị đề xuất và ngưỡng thiết kế dưới đây là baseline để nhóm kiểm chứng, không phải dữ kiện bổ sung từ đề bài.
+**Trạng thái 02/11/2026:** Đã có thiết kế,3 contribution TV1/TV3/TV4, gói cấu hình hợp nhất và bộ kiểm tĩnh; đã nhận module `.pkt` Main của TV2 nhưng chưa có mô phỏng tổng 3 site, kiểm thử runtime hoặc nghiệm thu. Các subnet, tên nhóm phòng ban, cấu hình, số lượng thiết bị đề xuất và ngưỡng thiết kế dưới đây là baseline để nhóm kiểm chứng, không phải dữ kiện bổ sung từ đề bài.
 
 ## Bàn giao TV1, TV3, TV4 ngày 02/11/2026
 
@@ -17,6 +17,20 @@ python3 scripts/capacity.py --guests 200 50 50 --overhead 0.10
 ```
 
 Bản hợp nhất có 9 router/5 switch lab,18 pool DHCP, ACL gateway ba site, ZBF và static PAT DMZ ISP2. Đây là cấu hình tham chiếu, chưa phải `.pkt`/GNS3 hoặc PASS runtime. Camera/VPN/IDS-IPS/HA còn giới hạn thiết kế ghi rõ trong từng phần.
+
+## Review và tích hợp TV2
+
+Đã nhận commitTiendat `3f52588`, giữ [module Packet Tracer gốc và audit](simulation/modules/tv2-lan-wireless/README.md), bổ sung3 adapter3650/2960, BOM/cổng/PoE/NVR/cabling và sơ đồdrawio/SVG. File native chỉ là Main một phần, chưa phải tổng 3 site hoặc evidencePASS.
+
+- [Review TV2 và phần sửa](docs/00-management/tv2-review.md).
+- [Review toàn bộ dự án, gap và ưu tiên](docs/00-management/project-review.md).
+- [Nội dung báo cáo TV2](docs/06-report/contributions/TV2-lan-wireless.md).
+
+```bash
+python3 scripts/build_lab.py
+python3 scripts/build_campus.py
+python3 scripts/verify.py
+```
 
 ## 1. Điều hướng và nguồn đặc tả
 
@@ -64,7 +78,7 @@ TV5 chủ trì biên tập nhưng **mỗi người phải giao phần nội dung
 | Main | **600 workstation, 10 server, 12 thiết bị mạng hoặc nhiều hơn** khi cần thiết bị bảo mật | [A] tr.1 |
 | Mỗi Aux Site | **2 tầng**; tầng 1 có **1 phòng IT và 1 Cabling Central Local**; **260 workstation, 2 server, ít nhất 5 thiết bị mạng** | [A] tr.2 |
 | Tổng hệ thống | **1.120 workstation, 14 server** theo cách hiểu quy mô trên là cho từng chi nhánh | Suy ra từ [A] tr.1-2 |
-| Hạ tầng | Có dây và không dây; cáp quang **GPON**; Ethernet **1GbE/10GbE/40GbE**; VLAN theo phòng ban | [A] tr.1 |
+| Hạ tầng | Có dây và không dây; cáp quang **GPON**; Ethernet **1 GbE/10 GbE/40 GbE**; VLAN theo phòng ban | [A] tr.1 |
 | Wi-Fi | Phủ toàn Main Site; quy hoạch Wi-Fi chi nhánh theo khảo sát, tách khách khỏi nội bộ | [A] tr.1, 3-4 |
 | WAN | **2 leased lines**, mỗi tuyến nối Main với một Aux Site; xem xét SD-WAN, MPLS và phương án thay thế theo chi phí | [A] tr.2-3 |
 | Internet | **2 đường xDSL có load balancing**; Internet của cả 3 site **đều đi qua Main** | [A] tr.2 |
@@ -115,9 +129,9 @@ flowchart TB
 
 Sơ đồ là kiến trúc logic; ranh giới bảo mật Server Farm được thực thi bằng firewall/ACL giữa các vùng tại core hoặc firewall phân đoạn. Sơ đồ vật lý phải tách rõ MDF, IDF, uplink, port và vị trí firewall; không diễn giải một đường logic thành một dây duy nhất.
 
-- **Main:** core/distribution tập trung tại phòng trung tâm; backbone quang đến IDF A/B, access theo tầng/phòng. Dự kiến 1GbE đến máy trạm, 10GbE uplink/distribution, 40GbE cho core hoặc aggregation khi tính tải và thiết bị cho thấy cần thiết. TV2 phân biệt phương án GPON (OLT/ODN/splitter/ONT) với Ethernet quang (switch/transceiver); không nối ONT thẳng vào cổng Ethernet quang như OLT.
+- **Main:** core/distribution tập trung tại phòng trung tâm; backbone quang đến IDF A/B, access theo tầng/phòng. Dự kiến 1 GbE đến máy trạm, 10 GbE uplink/distribution, 40 GbE cho core hoặc aggregation khi tính tải và thiết bị cho thấy cần thiết. TV2 phân biệt phương án GPON (OLT/ODN/splitter/ONT) với Ethernet quang (switch/transceiver); không nối ONT thẳng vào cổng Ethernet quang như OLT.
 - **Chi nhánh:** kiến trúc collapsed core/access, rack tầng 1 và IDF nếu khảo sát yêu cầu. VLAN ID có thể lặp giữa site nhưng subnet phải khác nhau; không kéo dài miền broadcast qua WAN.
-- **WAN:** baseline mô phỏng là leased Ethernet/L3 transit có OSPF trên các đường hỗ trợ adjacency. Với MPLS L3VPN, phải mô tả PE/CE và giao thức handoff; với SD-WAN, phải mô tả controller, overlay và underlay. Không gọi một topology OSPF thông thường là đã triển khai MPLS hoặc SD-WAN.
+- **WAN:** baseline mô phỏng là leased Ethernet/L3 transit có OSPF trên các đường hỗ trợ adjacency. Với MPLS L3 VPN, phải mô tả PE/CE và giao thức handoff; với SD-WAN, phải mô tả controller, overlay và underlay. Không gọi một topology OSPF thông thường là đã triển khai MPLS hoặc SD-WAN.
 - **Đường ra Internet:** DBP/BHTQ nhận default route hướng Main; không có local Internet breakout. OSPF quảng bá mạng nội bộ cần thiết và default có điều kiện khi Main còn đường ra, không quảng bá giao diện Internet vào miền nội bộ. Routed WAN/VPN nội bộ không áp dụng PAT; Internet PAT thực hiện tập trung tại Main cho cả 3 site.
 - **Hai xDSL:** load balancing theo phiên/luồng, gắn NAT với đúng egress và kiểm tra chiều về. Hai tuyến đi hai chi nhánh khác nhau không phải cặp dự phòng cho nhau. Hai xDSL cũng không cộng tốc độ cho một phiên TCP; mất một tuyến có thể làm đứt phiên NAT cũ.
 - **VPN:** đề xuất IPsec site-to-site bảo vệ lưu lượng 2 chi nhánh qua hạ tầng WAN hỗ trợ IP; teleworker kết thúc VPN tại Main và chỉ được vào subnet/dịch vụ đã cấp quyền. Không giả định có tuyến Internet dự phòng tại chi nhánh khi đề chưa cấp.
@@ -232,11 +246,11 @@ Số AP phải dựa trên vùng phủ, dung lượng và khảo sát RF; số c
 | Phương án cần khảo sát | Điểm mạnh | Điểm yếu/điều kiện | Chi phí cần tính |
 | --- | --- | --- | --- |
 | **2 leased Ethernet/Metro-E**, routed OSPF tại handoff phù hợp | Đường riêng, mô hình dễ giải thích và mô phỏng | Khả dụng hạ tầng và SLA do nhà mạng; hai nhánh chưa có dự phòng tuyến | `C_E + 2L_E/tháng` |
-| **MPLS L3VPN** đến 3 site | Tách mạng, hỗ trợ nhiều site theo dịch vụ nhà cung cấp | Phụ thuộc nhà mạng/PE-CE; MPLS không tự mã hóa payload | `C_M + (L_Main + L_DBP + L_BHTQ)/tháng` |
+| **MPLS L3 VPN** đến 3 site | Tách mạng, hỗ trợ nhiều site theo dịch vụ nhà cung cấp | Phụ thuộc nhà mạng/PE-CE; MPLS không tự mã hóa payload | `C_M + (L_Main + L_DBP + L_BHTQ)/tháng` |
 | **SD-WAN overlay** trên leased/MPLS | Chính sách ứng dụng, quản lý tập trung; có thể thêm underlay sau | License/controller, độ phức tạp; SD-WAN không thay đường truyền vật lý | `C_S + license + chi phí underlay` |
 | **IPsec routed overlay** trên 2 leased lines | Mã hóa liên site, giữ baseline truyền dẫn | Overhead, CPU, MTU và quản lý khóa; không có đầy đủ tính năng SD-WAN | `C_V + phí 2 leased lines + license nếu có` |
 | Internet business + IPsec/SD-WAN | Có thể phù hợp phương án tối ưu ngân sách | Chỉ là phương án thay thế cần phê duyệt vì đề yêu cầu 2 leased lines; vẫn backhaul qua Main | `C_I + cước 3 site + license` |
-| 4G/5G hoặc radio/microwave dự phòng | Đa dạng đường truyền nếu khảo sát cho phép | Sóng/LOS, quota, IP và vận hành; chưa nằm trong hạ tầng đã cho | `C_backup + cước/thiết bị + dữ liệu phát sinh` |
+| 4 G/5 G hoặc radio/microwave dự phòng | Đa dạng đường truyền nếu khảo sát cho phép | Sóng/LOS, quota, IP và vận hành; chưa nằm trong hạ tầng đã cho | `C_backup + cước/thiết bị + dữ liệu phát sinh` |
 
 `C_*` là CAPEX/khởi tạo; `L_*` là cước dịch vụ theo kỳ. **Các biến là ô chờ báo giá, không phải giá thị trường đã xác thực.** TV1 cùng TV2 lấy đơn giá, loại thuế, thời hạn hợp đồng, tốc độ đối xứng, SLA, IP tĩnh, phí lắp đặt/license, nguồn và ngày báo giá; dùng `TCO 5 năm = CAPEX + 60 × OPEX tháng + bảo trì/license chưa nằm trong OPEX`. Khi so sánh, giữ cùng băng thông/SLA và không tính trùng phí underlay. Không thể liệt kê tất cả gói nhà mạng nếu chưa biết địa chỉ khảo sát; bảng này là danh mục công nghệ để lấy phương án khả dụng và chi phí ở Step 2-3.
 
@@ -295,7 +309,7 @@ Repository đã có cấu trúc thư mục, mẫu quản lý/thiết kế/kiểm
 
 Mỗi test có **điều kiện trước, nguồn/đích, IP/VLAN, lệnh/bước chạy, expected, actual, PASS/FAIL/NOT RUN, ảnh/log, người chạy, ngày chạy, phiên bản file mô phỏng và lỗi liên quan**. Mặc định trạng thái hiện tại là **NOT RUN**. Không dùng một ảnh ping thất bại để kết luận ACL đúng nếu chưa loại trừ lỗi route, DHCP hoặc server.
 
-Kiểm tra bổ sung: DHCP từng VLAN; default route và NAT cả hai ISP; nhiều phiên độc lập để chứng minh load balancing; tắt từng xDSL để quan sát failover và phiên mới; VPN/site-to-site/teleworker theo tính năng công cụ; backup/restore, lỗi uplink/core nếu có dự phòng. OSPF nhanh hội tụ không chứng minh hệ thống dự phòng khi không có đường thay thế. Tính năng SD-WAN/MPLS, GPON, 40GbE, IDS/IPS chưa chạy được phải ghi **DESIGN ONLY/MODELED**, tách khỏi PASS test chức năng.
+Kiểm tra bổ sung: DHCP từng VLAN; default route và NAT cả hai ISP; nhiều phiên độc lập để chứng minh load balancing; tắt từng xDSL để quan sát failover và phiên mới; VPN/site-to-site/teleworker theo tính năng công cụ; backup/restore, lỗi uplink/core nếu có dự phòng. OSPF nhanh hội tụ không chứng minh hệ thống dự phòng khi không có đường thay thế. Tính năng SD-WAN/MPLS, GPON, 40 GbE, IDS/IPS chưa chạy được phải ghi **DESIGN ONLY/MODELED**, tách khỏi PASS test chức năng.
 
 ## 11. Hướng dẫn mở và kiểm tra mô phỏng
 

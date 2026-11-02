@@ -15,3 +15,7 @@
 ## Gói tham chiếu02/11/2026
 
 Đã có [manifest config SHA256](../simulation/generated/manifest.json) cho9 router/5 switch, DHCP và port map; [3 contribution](../docs/06-report/contributions/) và [hồ sơ kiểm tĩnh](../test_results/static/README.md). Những hash này không thay hash PDF/project cuối. `SHA256SUMS` bản nộp vẫn chưa lập vì chưa có hai sản phẩm cuối; approval giữ PENDING.
+
+## Module TV2 đã nhận
+
+[tiendat-lan-original.pkt](../simulation/modules/tv2-lan-wireless/tiendat-lan-original.pkt) là filethật10 node Main, giữ nguyên byte của Tiendat; [auditSHA256](../simulation/modules/tv2-lan-wireless/audit/inventory.json) ghi version9.0.0.0810. Trạng thái PARTIAL/NOT RUN, không phải mô phỏngtổng hoặc bản đãduyệt. `SHA256SUMS` final vàapproval vẫn chờ PDF/project cuối, không dùnghashmodule làmhashbản nộp.

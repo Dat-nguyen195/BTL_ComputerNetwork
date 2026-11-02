@@ -14,3 +14,7 @@ Ngày/người giữ file tổng; module/PR nhận; project/commit/hash trước
 Lịch 06–08/11 trong kế hoạch là hạn dự kiến, không phải lần tích hợp đã thực hiện. Không dùng tag phiên bản tự đặt trong biên bản thay file project/hash thật.
 
 Hồ sơ mới: [đối chiếu task](../docs/00-management/tv1-tv3-tv4-status.md), [kiểm tĩnh](../test_results/static/README.md), [manifest config](generated/manifest.json). Đây là lịch sử sửa file trong workspace, không phải biên bản bàn giao có chữ ký hoặc ghép `.pkt`.
+
+## Tiếp nhận TV2 và review02/11/2026
+
+Nhận `origin/tiendat` tại`3f52588`; file gốc chuyển đúng thư mụcmodule, giữhash/byte; kiểm cấu trúc bằngdecode cục bộ, không mở/chạyPacketTracer. Sửa conflictcamera/logicaldiagram theo hợpđồngWAN/security và giữgiả địnhcáp/PoE của TV2 trongcampusCSV đãhiệuchỉnh. Có3 adapter3650/2960,72 uplink,2 drawio/SVG, port/wireless/BOM/cameraplan và 4 contribution. Reviewsource theo yêu cầu chủ repo; không cóbiênbản G1–G4 hoặc xác nhậnruntime. Chi tiết [review TV2](../docs/00-management/tv2-review.md) và [reviewtoàn bộ](../docs/00-management/project-review.md).

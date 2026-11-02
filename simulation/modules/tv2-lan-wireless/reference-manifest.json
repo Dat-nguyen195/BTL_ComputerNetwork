@@ -1,0 +1,14 @@
+{
+  "status": "REFERENCE ONLY; ORIGINAL PKT UNCHANGED; RUNTIME NOT RUN",
+  "sha256": {
+    "docs/02-design/campus-budget.csv": "ef88c14b35c29995d00d059c9cdc28291cdd306baf69bce9a0e2b25efa19b76a",
+    "docs/02-design/campus-uplinks.csv": "77bf3536b134fc4f2ca2a45c293b85bbaf9bf72ef02f2a28ede7575c0b20c8dd",
+    "docs/02-design/diagrams/exports/physical-aux.svg": "f13ae0194c88f4c6ede9a9f618f4d0859f0dbed9a1db3d65ea2c91cd5d18a814",
+    "docs/02-design/diagrams/exports/physical-main.svg": "da39b7583d5e2029b91daeb708ecb6dee754a4b2419fcc6dd009185b745bc888",
+    "docs/02-design/diagrams/physical-aux.drawio": "6d075a0e2d89ccbf99f31028249d94e831b518970ee30cdc267f3fd1db379c3d",
+    "docs/02-design/diagrams/physical-main.drawio": "364482da3fc870e04f4065719e07dc321aeec924d94fa96d3a2f23765019e0ec",
+    "simulation/modules/tv2-lan-wireless/configs/Main-Access-A-2960.cfg": "9ad9e361424c883fcb2153514004b5592b00e6d368343f5e50d92a2bea217ba9",
+    "simulation/modules/tv2-lan-wireless/configs/Main-Access-B-2960.cfg": "ebf893751d121cadd49d5e51309a41d3e9895a24701edb6b1fe49d5d9e70e6f3",
+    "simulation/modules/tv2-lan-wireless/configs/Main-Core-3650.cfg": "7418151e5284856ec6c53d4b213f2fbe894846c3a580de01d99c2a67095cc696"
+  }
+}

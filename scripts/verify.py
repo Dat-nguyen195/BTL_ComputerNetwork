@@ -9,9 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     checks = [
-        ['check_docs.py'], ['build_lab.py', '--check'], ['test_capacity.py'],
+        ['check_docs.py'], ['build_lab.py', '--check'], ['build_campus.py', '--check'], ['test_capacity.py'],
         ['check_wan.py'], ['check_wan.py', '--config-dir', 'simulation/generated/configs'],
-        ['check_security.py'], ['check_inventory.py'],
+        ['check_security.py'], ['check_inventory.py'], ['check_lan.py'],
     ]
     for script, *args in checks:
         print(f"\n$ python3 scripts/{script} {' '.join(args)}".rstrip(), flush=True)

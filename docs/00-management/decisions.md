@@ -31,3 +31,14 @@ Mỗi quyết định được phê duyệt thực tế phải thêm ngày/ngư�
 | D18 | Capacity script giữ3 scope server và unknown guest upload | Đã tái lập số học, chưa khảo sát/nghiệm thu sizing |
 | D19 | VTI10.255.1.0/29 chỉ dự trù; pool teleworker10.255.100/24 chưa bật | Chưa cấp interface/route/crypto vào bản lab |
 | D20 | Chưa có executable Packet Tracer/GNS3/IOS image; giữ runtime NOT RUN | Có precheck, runbook và gói tham chiếu; TV4 dựng môi trường |
+
+## Bổ sung reviewTV2 ngày02/11/2026
+
+| ID | Quyết định tích hợp | Trạng thái |
+| --- | --- | --- |
+| D21 | Tiếp nhận moduleTiendat nguyênbyte, chuyển đúng thư mục; metadata9.0.0.0810 chỉMain10node | Audit/hash có thật; chưa chạy hoặc sửabinary |
+| D22 | Adapter3650 thayROASCore, giữSVI/IP/ACL/relay/OSPF/default; không gatewaytrùng;AP-PT untagged dùngaccess100/120 | Đã kiểm tĩnh37flowMain, cần nạp bản sao/runtime |
+| D23 | Giữ20/8access; tăngAP/camera ceil từngtầng, tínhcảNVRAux; sửamodelPoE/cáp/RAID | Thiết kếgiảđịnh đãkiểmCSV; chưakhảosát/báogiá |
+| D24 | Coređộc lập dùngRSTP;DMZswitchriêng chỉnốiFW;GPONchưa được tựbỏ | Sourcecabling/logical/physical đãsửa; triểnkhai/HA/GPON cầnxácnhận |
+
+Review/merge source theo yêu cầu chủrepo không thay G1–G4, PASSruntime hoặc approval hai sản phẩm cuối.

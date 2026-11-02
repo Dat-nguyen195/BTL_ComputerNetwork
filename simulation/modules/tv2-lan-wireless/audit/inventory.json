@@ -1,0 +1,258 @@
+{
+  "status": "PARTIAL MAIN LAN MODULE; STATIC XML AUDIT ONLY; RUNTIME NOT RUN",
+  "artifact": "simulation/modules/tv2-lan-wireless/tiendat-lan-original.pkt",
+  "sha256": "918a884a10e7dd759ad5ae6518e42270dc8a81aa5a7fc01f394cf38b70db922c",
+  "size_bytes": 60343,
+  "saved_packet_tracer_version": "9.0.0.0810",
+  "decoder": {
+    "upstream": "https://github.com/Punkcake21/Unpacket",
+    "commit": "54cb6d6a9b46c6b4973356258cb8df6ae58b2ec7"
+  },
+  "type_counts": {
+    "AccessPoint": 2,
+    "MultiLayerSwitch": 1,
+    "Pc": 4,
+    "Power Distribution Device": 1,
+    "Switch": 2
+  },
+  "devices": [
+    {
+      "name": "Multilayer Switch0",
+      "type": "MultiLayerSwitch",
+      "command_set": "3650_daneli_16.3.2",
+      "vlans": [
+        1,
+        10,
+        20,
+        100,
+        120,
+        1002,
+        1003,
+        1004,
+        1005
+      ],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [],
+      "running_config_lines": 157,
+      "startup_config_lines": 0,
+      "exported_config": "Multilayer-Switch0.txt"
+    },
+    {
+      "name": "Power Distribution Device0",
+      "type": "Power Distribution Device",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "Switch_toa_A",
+      "type": "Switch",
+      "command_set": "2960_15.0_SE4",
+      "vlans": [
+        1,
+        10,
+        20,
+        100,
+        120,
+        1002,
+        1003,
+        1004,
+        1005
+      ],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [],
+      "running_config_lines": 102,
+      "startup_config_lines": 0,
+      "exported_config": "Switch_toa_A.txt"
+    },
+    {
+      "name": "Switch_toa_B",
+      "type": "Switch",
+      "command_set": "2960_15.0_SE4",
+      "vlans": [
+        1,
+        10,
+        20,
+        100,
+        120,
+        1002,
+        1003,
+        1004,
+        1005
+      ],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [],
+      "running_config_lines": 99,
+      "startup_config_lines": 0,
+      "exported_config": "Switch_toa_B.txt"
+    },
+    {
+      "name": "PC0",
+      "type": "Pc",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "Default",
+        "ptcellular"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "PC1",
+      "type": "Pc",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "Default",
+        "ptcellular"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "Access Point1",
+      "type": "AccessPoint",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "BenhVien_Guest"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "PC2",
+      "type": "Pc",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "Default",
+        "ptcellular"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "PC3",
+      "type": "Pc",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "Default",
+        "ptcellular"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    },
+    {
+      "name": "Access Point2",
+      "type": "AccessPoint",
+      "command_set": null,
+      "vlans": [],
+      "ipv4_values": [],
+      "gateway": null,
+      "ssids": [
+        "BenhVien_Guest"
+      ],
+      "running_config_lines": 0,
+      "startup_config_lines": 0,
+      "exported_config": null
+    }
+  ],
+  "links": [
+    {
+      "source": "Multilayer Switch0",
+      "source_port": "GigabitEthernet1/0/1",
+      "target": "Switch_toa_A",
+      "target_port": "GigabitEthernet0/1",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Multilayer Switch0",
+      "source_port": "GigabitEthernet1/0/2",
+      "target": "Switch_toa_A",
+      "target_port": "GigabitEthernet0/2",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_A",
+      "source_port": "FastEthernet0/1",
+      "target": "PC0",
+      "target_port": "FastEthernet0",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_A",
+      "source_port": "FastEthernet0/2",
+      "target": "PC1",
+      "target_port": "FastEthernet0",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Multilayer Switch0",
+      "source_port": "GigabitEthernet1/0/3",
+      "target": "Switch_toa_B",
+      "target_port": "GigabitEthernet0/1",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Multilayer Switch0",
+      "source_port": "GigabitEthernet1/0/4",
+      "target": "Switch_toa_B",
+      "target_port": "GigabitEthernet0/2",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_B",
+      "source_port": "FastEthernet0/1",
+      "target": "PC2",
+      "target_port": "FastEthernet0",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_B",
+      "source_port": "FastEthernet0/2",
+      "target": "PC3",
+      "target_port": "FastEthernet0",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_B",
+      "source_port": "FastEthernet0/3",
+      "target": "Access Point1",
+      "target_port": "Port 0",
+      "medium": "eStraightThrough"
+    },
+    {
+      "source": "Switch_toa_A",
+      "source_port": "FastEthernet0/3",
+      "target": "Access Point2",
+      "target_port": "Port 0",
+      "medium": "eStraightThrough"
+    }
+  ]
+}

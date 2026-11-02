@@ -17,3 +17,7 @@
 | Suricata IDS/IPS | Sensor/inline riêng, rule -T, EVE | Không ghi ACL là IDS/IPS | DESIGN ONLY |
 
 Mẫu ghi: ngày/người thử, tên công cụ, version, node/model/image (không commit image có license), lệnh nhận/bị từ chối, log/ảnh, cách xử lý và test bị ảnh hưởng. Chốt công cụ sau thử thực tế, không ký G1 chỉ từ bảng này.
+
+## Metadata module TV2
+
+Đã đọc file gốcTiendat lưu PacketTracer9.0.0.0810: core3650 commandset16.3.2 vàaccess2960 15.0-SE4. Đây là metadata trongfile, không phải xác nhận command parser/feature đãthử trênmáy hiện tại. Đã cóadapterSVI/port theo model này; cần mở bản sao/kiểm lệnh trước nghiệm thu.
