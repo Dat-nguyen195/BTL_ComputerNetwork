@@ -20,3 +20,9 @@ VPN crypto, RF/WLC/AAA, GPON PHY, xDSL PHY/throughput, HA chassis/state sync và
 ## Sau sửa lỗi Web UI Electron
 
 [after-webui-fix-runtime](after-webui-fix-runtime/results.json) chạy lại137 kiểm chức năng sau khi sửa tương thích Web UI,0 FAIL. Native project, mã/config trong52 node không đổi; manifest cập nhật controller/patch. [Bài kiểm Chrome/Electron](../web-ui/README.md) là bằng chứng giao diện riêng, không lấy kết quả HTTP200 thay kết luận trang đã render.
+
+## Chuẩn bị demo và kiểm khởi động firewall
+
+Khi luyện demo, Main-FW không khởi động lại vì Docker giữ `/var/run/suricata.pid` sau khi container dừng; Suricata báo `exists but appears stale`. Entrypoint PID1 hiện dọn PID cũ trước khi khởi động Suricata trong namespace mới. Không bỏ qua NFQUEUE hoặc tắt IPS để khôi phục HTTP.
+
+[Hai chu kỳ stop/start](firewall-restart/restart.json) xác nhận tiến trình Suricata thực đang chạy và HTTP xuyên firewall thành công sau mỗi lần bật. Source mới được chép vào các container hiện có; [live provenance](persistence/live-provenance.json) kiểm hash file/config ở đủ52 node. JSON restart ghi base image ID của các container, tách với image tag mới đã build/load cho node tạo trong tương lai. [Lần kiểm sau sửa](after-firewall-restart-runtime/results.json) lưu sáu nhóm, dịch vụ, security và thử lỗi ISP; xem `summary.json` cùng thư mục để đối chiếu từng nhóm. [Kịch bản demo](../../simulation/gns3/demo-guide.md) ghi rõ kết quả mong đợi và giới hạn cần trình bày.

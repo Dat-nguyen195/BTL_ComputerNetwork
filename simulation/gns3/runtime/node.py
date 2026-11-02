@@ -122,6 +122,9 @@ def main():
             rules.write_text('alert http any any -> 10.0.0.0/8 any (msg:"Hospital lab IDS marker"; flow:established,to_server; http.uri; content:"/hospital-ids-test"; sid:1000001; rev:1;)\n'
                              'drop http any any -> 10.0.0.0/8 any (msg:"Hospital lab IPS marker blocked"; flow:established,to_server; http.uri; content:"/hospital-ips-test"; sid:1000002; rev:1;)\n')
             run('suricata','-T','-S',str(rules),'-l',str(directory))
+            # PID 1 runs once per container start; no previous Suricata process
+            # survives that namespace. Docker retains files after a hard stop.
+            Path('/var/run/suricata.pid').unlink(missing_ok=True)
             run('suricata','-D','-q','0','--runmode','workers','-S',str(rules),'-l',str(directory),
                 '--set','nfq.mode=repeat','--set','nfq.repeat-mark=1','--set','nfq.repeat-mask=1',
                 '--set','stream.inline=yes','--set','max-pending-packets=1024')

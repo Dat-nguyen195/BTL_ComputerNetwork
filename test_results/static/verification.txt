@@ -1,6 +1,6 @@
 
 $ python3 scripts/check_docs.py
-OK: 83 Markdown files; UTF-8, local links, code fences and task IDs checked.
+OK: 84 Markdown files; UTF-8, local links, code fences and task IDs checked.
 
 $ python3 scripts/build_lab.py --check
 OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
@@ -9,6 +9,11 @@ $ python3 scripts/build_campus.py --check
 OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapters (freshness checked)
 
 $ python3 scripts/test_capacity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK
 
 $ python3 scripts/check_wan.py
 OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
@@ -51,7 +56,7 @@ $ python3 scripts/build_gns3.py --check
 OK: GNS3 project, 9 FRR/Linux routers, 5 VLAN switches, 38 endpoints, compiled ACLs/DHCP and source manifest
 
 $ python3 scripts/check_gns3.py
-OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; 209 + 137 recorded checks; actual PCAP/reopen and Web UI browser regression
+OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; recorded smoke/failover; firewall restart cycles; actual PCAP/reopen and Web UI browser regression
 This checker validates recorded evidence; it does not rerun the GNS3 network.
 
 ALL OFFLINE CHECKS OK. Runtime evidence is recorded separately under test_results/runtime/; these checks do not execute the network.

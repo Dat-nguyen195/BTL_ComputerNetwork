@@ -40,7 +40,7 @@ def main():
     manifest=json.loads((BASE/'runtime-manifest.json').read_text())
     for name,expected in manifest['sha256'].items():assert digest(BASE/name)==expected,name
     for name,expected in manifest['source_sha256'].items():assert digest(ROOT/name)==expected,name
-    latest=json.loads((ROOT/'test_results/runtime/after-webui-fix-runtime/results.json').read_text())
+    latest=json.loads((ROOT/'test_results/runtime/after-firewall-restart-runtime/results.json').read_text())
     validated=json.loads((ROOT/'test_results/runtime/validated-runtime/results.json').read_text())
     for run in (latest,validated):
         assert run['platform']['version']=='2.2.55'
@@ -50,6 +50,9 @@ def main():
         assert run['project_id']==project['project_id']
     assert {'ISP-FAILOVER','ISP-BOTH-DOWN','ISP-RECOVERY','ISP-PBR','ISP-CONVERGENCE'}<={c['group'] for c in validated['cases']}
     for name,expected in latest['source_sha256'].items():assert digest(ROOT/name)==expected,name
+    restart=json.loads((ROOT/'test_results/runtime/firewall-restart/restart.json').read_text())
+    assert restart['status']=='PASS' and restart['source_sha256']==digest(BASE/'runtime/node.py')
+    assert len(restart['cycles'])==2 and all(c['status']=='PASS' and c['live_suricata_process_check']==0 for c in restart['cycles'])
     reopen=json.loads((ROOT/'test_results/runtime/persistence/reopen.json').read_text())
     assert reopen['status']=='PASS' and reopen['loaded_committed_template']
     assert reopen['project_sha256']==digest(BASE/'hospital-3sites.gns3')
@@ -65,7 +68,7 @@ def main():
     assert all(r['status']=='PASS' and not r['page_errors'] and not r['has_node_require'] for r in browser['results'])
     capture=ROOT/'test_results/runtime/persistence/hospital-demo.pcap'
     assert capture.stat().st_size>100 and capture.read_bytes()[:4] in (b'\xd4\xc3\xb2\xa1',b'\xa1\xb2\xc3\xd4')
-    print('OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; 209 + 137 recorded checks; actual PCAP/reopen and Web UI browser regression')
+    print('OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; recorded smoke/failover; firewall restart cycles; actual PCAP/reopen and Web UI browser regression')
     print('This checker validates recorded evidence; it does not rerun the GNS3 network.')
 
 if __name__=='__main__':main()

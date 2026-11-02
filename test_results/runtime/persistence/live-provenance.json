@@ -1,214 +1,214 @@
 {
   "status": "PASS",
-  "timestamp_utc": "2026-11-02T14:06:46.069332+00:00",
+  "timestamp_utc": "2026-11-02T15:23:37.610194+00:00",
   "project_id": "55ac9e6a-caa2-5f46-b475-be6bd3c8affd",
   "live_node_sha256": {
     "BHTQ-GW": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-GW.json": "affc275ef1e8c220ba1d4c1021ba3df2ae5cbac9ef545782fe6ff1594061b5eb"
     },
     "DBP-GW": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-GW.json": "459a2a08a39e9c4d832bde7aa986d968b85d20ea15a5d8a17c0153f0af5ea4e6"
     },
     "INET-Core": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/INET-Core.json": "fefd4e6f9175dd95333953d50b40d428bbfde11255374ec30ccf5ceff912d00e"
     },
     "ISP1": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/ISP1.json": "445df5a621b4a208f36ea44e1cd019296bc9f704944749f4a6b97220b6c9551d"
     },
     "ISP2": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/ISP2.json": "a6afcb115097a85e1ba2dff99b650c9a685cc96625c20efce19b22d0fd396f4c"
     },
     "Main-Core": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Core.json": "32d3746bc07febc101e77551325cb0289db8277e657c5185be0325f4861df62d"
     },
     "Main-Edge": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Edge.json": "7fb3b9ae254ff78847f2265dccd36f9b3d179d5997e7a1fcd5b907bfc083feea"
     },
     "Main-FW": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-FW.json": "3affb1796da4be6018d4e79ec3bb50b0cba38f8ea549596f2d45c8c6dd37df1e"
     },
     "Main-GW": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-GW.json": "fa4a1a42ad6f57ae3c5999e7265b756d249f9f1240f72b6aa62b8c0acf9b220d"
     },
     "Main-Access": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Access.json": "6785964f51df246a4a879e4cb3997aef992dfbdd7d9992f870cbe411be4ec71d"
     },
     "DBP-Access": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-Access.json": "f137dcf380e90a924a00cf02e2e12bc76a21e0a5c2548dc558fa816d0acc62eb"
     },
     "BHTQ-Access": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-Access.json": "a294c49b9b1227d51305b55d26eaca6a2aaa249f99c23482c78eecd712d67baa"
     },
     "DMZ-Access": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DMZ-Access.json": "5d75522d755ec2a27a3e7ebbcc5e987b2a23a858b9afeb2e49f50b730cdfe6ff"
     },
     "Web-Access": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Web-Access.json": "54441a4abfde7ecd90bd7917475a3786216c33f5398dfbc639d7ab3471337d91"
     },
     "Main-Infra": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Infra.json": "f0142d9974d313b0db89ffd2bc0b73dbfd65cfb13ebd018c4acb91c9dec4b96f"
     },
     "Main-HIS": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-HIS.json": "ffbc2fdf8264119e9cb12c52aa025d873c8e02f217d104b93f271238476bf984"
     },
     "Main-PACS": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PACS.json": "30f06243704896d12acbeb7318ea27aef78ab86ebe910048f1efed2845e49b58"
     },
     "Main-LIS": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-LIS.json": "9c5f68a832f48ae9d23fb6a48d37eed163b694e88d47ee72d5fe59319bb42b24"
     },
     "Main-CRM": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-CRM.json": "365bbef7d2e83c5cdbb46b5c80f8f75b47e77de389cfde07dee9e53af5609cb1"
     },
     "Main-DB": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-DB.json": "518bea08619d230eb6f12241b1741661eb527c24cdcddccf60cfb7d53d438e53"
     },
     "Main-Backup": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Backup.json": "c421dd521bdde6ae012e2eabde963b53fae036a5d9486850172b81ac1ace0957"
     },
     "Main-Monitor": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Monitor.json": "cec712430ec726c2ba9b8976c00369ee6e9674d4f73f2d53616bc3d8574b3c46"
     },
     "Main-WebDMZ": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-WebDMZ.json": "ccc114c7d1b9116f3614473cf3e1a8c75bb8b5f1fe43b78f11f68d5c436b482d"
     },
     "Main-ProxyDMZ": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-ProxyDMZ.json": "76c7b1c1a457af79cffa561d14e79d448f32cb470a3ed886c3080897d3030d57"
     },
     "DBP-Infra": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-Infra.json": "ec964a37e1ff14f7286df7870b8daa17cea49a4a43ec9b118454d3d079c79878"
     },
     "DBP-Local": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-Local.json": "275a77447345fbc69395287b5498ab6394044c3ad719e963f6db9899b905cad9"
     },
     "BHTQ-Infra": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-Infra.json": "bcc53c5e0cabfe968f458a804c9c5cfc32f4b3a00488e19e3d0cecdfe08e7a33"
     },
     "BHTQ-Local": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-Local.json": "341558567be6366b09390f9496ea37467616c9c55de2b9b5a6046e8732844e4b"
     },
     "Web-Lab": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Web-Lab.json": "34a1cbc282c159988397a3b9b8f85b306df8c78147ad6dd7883dd69d46e2d2b3"
     },
     "Main-PC10-A": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC10-A.json": "0ac5b378837dae5c133876e36daa209befe6da0b35a1edb3366beeed45d7886f"
     },
     "Main-PC10-B": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC10-B.json": "91f1fe671bd2f8261b08d67c23e2b7c75aac9a3a5cb93547ad0a01607f4df6e5"
     },
     "Main-PC20": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC20.json": "48a9bb0d010c59c0146fff7bc75a8cc9186cc778d73e52e3a93c4dfb2d479a2b"
     },
     "Main-PC30": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC30.json": "faa22303e97b7344b8942c14302d0583751cba5d2ccd439333a033f9b771c5a3"
     },
     "Main-PC40": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC40.json": "47792e9eb32bcdc42dcdc467ba4b461ab6fa3bf1748811a68298dc676f2069f0"
     },
     "Main-Guest": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Guest.json": "c1260d6fc421878943a7499519657b27cd274e7010df8ad4c451547dd6739408"
     },
     "Main-Staff": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Staff.json": "fa3126162cc18f4f7643ce01a128638f7f3ef70af61db0d027a268332f19f002"
     },
     "DBP-PC10": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-PC10.json": "3d372ed034862aac6057106a9b09ddcfaabc37f1619610281e3705d7864ade2a"
     },
     "DBP-Guest": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-Guest.json": "b43fb2f5332d394758e2b765fafa914da1f538a2ff908ae2c7b5f9b73824ada5"
     },
     "BHTQ-PC10": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-PC10.json": "94ceef9acf64017299a2ea0028094bf727f8289206c0c18010346a1ab96f9d06"
     },
     "BHTQ-Guest": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-Guest.json": "4c5679bc8506cd7a889309353d691113bd261c8aba82d2a69dd5e250184ddb34"
     },
     "Main-Admin": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-Admin.json": "8ec7cd23519fce15beedee3b9b8816fabc436e18021d51bcd89ad78b8e9ea801"
     },
     "Main-NVR": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-NVR.json": "0b75ceddbdbed5fc0362d59b832c096a7616be697eef71691dc00c22d311792b"
     },
     "DBP-NVR": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-NVR.json": "f4e16b7019c1cfc1e1ac9a67d0db6593d845119da82ed3542cbc4df02c1ffcc5"
     },
     "BHTQ-NVR": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-NVR.json": "fa9ed81a0923da346b1fd640ca26caf47605ec3258d45cd15eb5899d37af9648"
     },
     "Main-PC50": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC50.json": "012006ee0d3f592f6eeddc732016970fefa3f99c799383c53d5bd7acd39aa8b8"
     },
     "Main-PC60": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/Main-PC60.json": "5b0b515b5340d07d0a2c61871e9fc588e9c2e728a3cae76b9998121682ac0f2f"
     },
     "DBP-PC20": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-PC20.json": "9b74dcabeafcd4975d577f5a487da8e8fd71a08597cf481e1d68b245cb04379d"
     },
     "DBP-PC30": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-PC30.json": "59efb4b31bc1177184dab9a1938a8a5f2deec6ef5dc51241c7d0998a55fe73ff"
     },
     "DBP-Staff": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/DBP-Staff.json": "9cf7a030eeebc835fd95e123a4cf6cd5caee8a6442a3aeb502304209c637b329"
     },
     "BHTQ-PC20": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-PC20.json": "0d1e88948e097f52062b8573e757917434416d998840d5565211358fc6252f39"
     },
     "BHTQ-PC30": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-PC30.json": "cf3d61ab7c736eaa2dae2aab567dd47bca57f755fcf09d7a58d15b2163ab7398"
     },
     "BHTQ-Staff": {
-      "/usr/local/bin/hospital-node": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+      "/usr/local/bin/hospital-node": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
       "/opt/hospital/config/BHTQ-Staff.json": "1cd33dd39bc4ae1869a6a72c88e9079ea4c24c302956802a26f0d2787f4d499d"
     }
   }

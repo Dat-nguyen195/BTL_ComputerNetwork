@@ -12,7 +12,7 @@
     "simulation/lab/endpoints.csv": "37ce4c7c5dc52c1434be47294f6b99129c9dddc135dcba5a3fa8345f51d9a3e8",
     "simulation/lab/cabling.csv": "382c3e0a6d029341b4140b65f1cc39ea6e98d0536a68ee64fe8f26506093bf83",
     "scripts/build_gns3.py": "eeb66ad122c15c7a810d8f1609cb24ef91ab943d6ee155331394c33a95aca0df",
-    "simulation/gns3/runtime/node.py": "43a397c2e81fdd8e880342840b62878731c8ef27154ede0a2d040989c200911c",
+    "simulation/gns3/runtime/node.py": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
     "simulation/gns3/runtime/Dockerfile": "aa10c4ae033ceba35994ba663607ea8754ecf678f4d6e71fb054f0a0deebda4d",
     "simulation/gns3/controller/Dockerfile": "fb73027c2ed56d85efdc1740f36fd8f96d174d7554b0c5eb7cea4eba009f6001",
     "simulation/gns3/controller/start.sh": "7c79fcc1570fb843ff5f2830ef4b05b2918cf819e2019b11b3e027f244e651b7",
