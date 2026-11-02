@@ -206,3 +206,29 @@ Các cổng là điều kiện nghiệm thu, không phải tuyên bố đã đ�
 Bộ bàn giao chính gồm `report.pdf`, file `.pkt` hoặc gói GNS3 dùng được, nguồn báo cáo và hướng dẫn tái hiện. Config, test evidence, manifest và checksum là tài liệu hỗ trợ. TV4 xác nhận mở mô phỏng trên môi trường đã ghi; TV5 kiểm PDF và danh mục; TV1 đối chiếu rồi duyệt đúng hai sản phẩm cuối. Không tạo slide.
 
 Sau ngày 22/11, chỉ nhận thay đổi sửa lỗi/rà soát cần thiết, chạy lại test liên quan, xuất lại PDF nếu ảnh/số liệu đổi, tính lại checksum và TV1 tái duyệt. TV1 chủ động nộp trong 07/12-10/12 nếu BKeL mở; nếu chưa biết giờ đóng cổng ngày 11/12 thì kiểm tra BKeL, không tự giả định 23:59.
+
+
+# Kết quả Kiểm thử TC01 - PC cùng VLAN
+
+- **Người thực hiện (Người chạy):** TV2 (Phạm Tiến Đạt)
+- **Ngày chạy:** 12/11/2026[cite: 9]
+- **Tên file mô phỏng:** `hospital-3sites.pkt` (Phiên bản G3)
+- **Kịch bản (Step 5):** Kiểm tra kết nối giữa hai PC trong cùng VLAN 10 (Tiếp nhận) tại Main Site nhưng nằm ở 2 Access Switch khác nhau[cite: 7].
+
+## 1. Điều kiện tiên quyết (Precondition)
+- PC1 (Tòa A, Tầng 1) đã nhận IP `10.10.10.10/25` và thuộc VLAN 10[cite: 7].
+- PC2 (Tòa A, Tầng 2) đã nhận IP `10.10.10.11/25` và thuộc VLAN 10[cite: 7].
+- Trunk link giữa Access Switch và Core Switch đang hoạt động bình thường[cite: 7, 9].
+
+## 2. Các bước chạy (Thao tác/Lệnh)
+1. Tại PC1, mở Command Prompt chạy lệnh: `ping 10.10.10.11`
+2. Tại Tòa A - Access Switch 1, chạy lệnh: `show vlan brief`
+
+## 3. Kết quả đánh giá
+- **Kết quả mong đợi (Expected):** Ping thành công (0% loss). PC1 và PC2 đều hiển thị đúng cổng gắn với VLAN 10[cite: 6].
+- **Kết quả thực tế (Actual):** Có tín hiệu phản hồi "Reply from 10.10.10.11". Bảng VLAN hiển thị cổng Fa0/1 thuộc VLAN 10[cite: 6].
+- **Trạng thái:** **PASS**[cite: 6]
+
+## 4. Đường dẫn bằng chứng (Evidence)
+- Ảnh chụp lệnh ping: `screenshots/TC01-main-vlan10-ping.png`[cite: 6]
+- Log bảng VLAN: `logs/TC01-main-sw1-vlan-brief.txt`[cite: 6]

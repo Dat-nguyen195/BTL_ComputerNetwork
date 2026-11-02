@@ -1,1 +1,423 @@
-<mxfile host="app.diagrams.net" type="device"><diagram id="Main - bố cục dự kiến" name="Main - bố cục dự kiến"><mxGraphModel dx="1400" dy="900" grid="1" page="1" pageWidth="1400" pageHeight="1000"><root><mxCell id="0" /><mxCell id="1" parent="0" /><mxCell id="note" value="BASELINE - chưa khảo sát tuyến cáp / chưa phải sơ đồ thi công" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;"><mxGeometry x="100" y="25" width="1000" height="55" as="geometry" /></mxCell><mxCell id="dc" value="Phòng trung tâm: DC / IT / MDF / patch panel" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;"><mxGeometry x="420" y="180" width="360" height="100" as="geometry" /></mxCell><mxCell id="a" value="Tòa A: 5 tầng × 10 phòng/tầng; IDF/access theo thiết kế" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;"><mxGeometry x="80" y="430" width="350" height="110" as="geometry" /></mxCell><mxCell id="b" value="Tòa B: 5 tầng × 10 phòng/tầng; IDF/access theo thiết kế" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;"><mxGeometry x="770" y="430" width="350" height="110" as="geometry" /></mxCell><mxCell id="wan" value="WAN / 2 leased lines / Internet edge 2 xDSL" vertex="1" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;"><mxGeometry x="440" y="650" width="320" height="90" as="geometry" /></mxCell><mxCell id="e0" value="Khoảng cách vị trí 50 m; tuyến cáp thực chờ khảo sát" edge="1" source="dc" target="a" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=0;"><mxGeometry relative="1" as="geometry" /></mxCell><mxCell id="e1" value="Khoảng cách vị trí 50 m; tuyến cáp thực chờ khảo sát" edge="1" source="dc" target="b" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=0;"><mxGeometry relative="1" as="geometry" /></mxCell><mxCell id="e2" value="Port / tốc độ chờ thiết kế chi tiết" edge="1" source="dc" target="wan" parent="1" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=0;"><mxGeometry relative="1" as="geometry" /></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxGraphModel dx="2188" dy="1162" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="860" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="c2" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" value="BẢN VẼ 2: SƠ ĐỒ ĐI DÂY VẬT LÝ &amp; MẶT BẰNG (PHYSICAL &amp; CABLING)" vertex="1">
+      <mxGeometry height="40" width="1000" x="250" y="8" as="geometry" />
+    </mxCell>
+    <mxCell id="c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;verticalAlign=top;align=left;fontStyle=1;fontSize=13;spacingLeft=8;spacingTop=4;" value="Main Site (Ho Chi Minh City)" vertex="1">
+      <mxGeometry height="700" width="1050" x="20" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;verticalAlign=top;align=center;fontStyle=1;fontSize=13;" value="Phòng IT &amp; Data Center&#xa;Trung tâm (MDF)" vertex="1">
+      <mxGeometry height="360" width="230" x="40" y="200" as="geometry" />
+    </mxCell>
+    <mxCell id="c5" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=top;verticalAlign=bottom;shape=mxgraph.cisco.switches.layer_3_switch" value="Core Switch 3560" vertex="1">
+      <mxGeometry height="70" width="70" x="115" y="335" as="geometry" />
+    </mxCell>
+    <mxCell id="c6" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.servers.standard_host" value="Tủ Server" vertex="1">
+      <mxGeometry height="64" width="44" x="128" y="470" as="geometry" />
+    </mxCell>
+    <mxCell id="c7" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c6" value="">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c8" edge="1" parent="1" style="html=1;strokeColor=#000000;strokeWidth=1.5;startArrow=classic;endArrow=classic;" value="">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="270" y="170" as="sourcePoint" />
+        <mxPoint x="400" y="170" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c9" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;" value="Cự ly vật lý: 50 mét&#xa;(vị trí, chưa đo)" vertex="1">
+      <mxGeometry height="34" width="126" x="272" y="132" as="geometry" />
+    </mxCell>
+    <mxCell id="c10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#000000;strokeWidth=1.5;verticalAlign=top;align=center;fontStyle=1;fontSize=13;" value="Tòa A&#xa;(5 Tầng, 10 phòng/tầng)" vertex="1">
+      <mxGeometry height="610" width="290" x="400" y="110" as="geometry" />
+    </mxCell>
+    <mxCell id="c11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 5&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="415" y="165" as="geometry" />
+    </mxCell>
+    <mxCell id="c12" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="419" y="186" as="geometry" />
+    </mxCell>
+    <mxCell id="c13" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="470" y="183" as="geometry" />
+    </mxCell>
+    <mxCell id="c14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 4&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="415" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="c15" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="419" y="271" as="geometry" />
+    </mxCell>
+    <mxCell id="c16" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="470" y="268" as="geometry" />
+    </mxCell>
+    <mxCell id="c17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 3&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="415" y="335" as="geometry" />
+    </mxCell>
+    <mxCell id="c18" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="419" y="356" as="geometry" />
+    </mxCell>
+    <mxCell id="c19" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="470" y="353" as="geometry" />
+    </mxCell>
+    <mxCell id="c20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 2&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="415" y="420" as="geometry" />
+    </mxCell>
+    <mxCell id="c21" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="419" y="441" as="geometry" />
+    </mxCell>
+    <mxCell id="c22" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="470" y="438" as="geometry" />
+    </mxCell>
+    <mxCell id="c23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 1&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="415" y="505" as="geometry" />
+    </mxCell>
+    <mxCell id="c24" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="419" y="526" as="geometry" />
+    </mxCell>
+    <mxCell id="c25" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="470" y="523" as="geometry" />
+    </mxCell>
+    <mxCell id="c26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f7f7f7;strokeColor=#000000;strokeWidth=1.5;verticalAlign=top;align=center;fontStyle=1;fontSize=13;" value="Tòa B&#xa;(5 Tầng, 10 phòng/tầng)" vertex="1">
+      <mxGeometry height="610" width="290" x="760" y="110" as="geometry" />
+    </mxCell>
+    <mxCell id="c27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 5&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="775" y="165" as="geometry" />
+    </mxCell>
+    <mxCell id="c28" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="779" y="186" as="geometry" />
+    </mxCell>
+    <mxCell id="c29" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="830" y="183" as="geometry" />
+    </mxCell>
+    <mxCell id="c30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 4&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="775" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="c31" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="779" y="271" as="geometry" />
+    </mxCell>
+    <mxCell id="c32" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="830" y="268" as="geometry" />
+    </mxCell>
+    <mxCell id="c33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 3&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="775" y="335" as="geometry" />
+    </mxCell>
+    <mxCell id="c34" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="779" y="356" as="geometry" />
+    </mxCell>
+    <mxCell id="c35" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="830" y="353" as="geometry" />
+    </mxCell>
+    <mxCell id="c36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 2&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="775" y="420" as="geometry" />
+    </mxCell>
+    <mxCell id="c37" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="779" y="441" as="geometry" />
+    </mxCell>
+    <mxCell id="c38" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="830" y="438" as="geometry" />
+    </mxCell>
+    <mxCell id="c39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;align=right;spacingRight=8;fontSize=11;" value="IDF Tầng 1&#xa;(Access Switch 2960)" vertex="1">
+      <mxGeometry height="70" width="260" x="775" y="505" as="geometry" />
+    </mxCell>
+    <mxCell id="c40" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;align=left;" value="Gi0/1&#xa;Gi0/2" vertex="1">
+      <mxGeometry height="30" width="46" x="779" y="526" as="geometry" />
+    </mxCell>
+    <mxCell id="c41" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="" vertex="1">
+      <mxGeometry height="34" width="70" x="830" y="523" as="geometry" />
+    </mxCell>
+    <mxCell id="c42" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c11" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="370" />
+          <mxPoint x="340" y="200" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c43" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c14" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="370" />
+          <mxPoint x="340" y="285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c44" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c17" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="370" />
+          <mxPoint x="340" y="370" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c45" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c20" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="370" />
+          <mxPoint x="340" y="455" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c46" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c23" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="340" y="370" />
+          <mxPoint x="340" y="540" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c47" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c27" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="725" y="95" />
+          <mxPoint x="725" y="200" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c48" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c30" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="725" y="95" />
+          <mxPoint x="725" y="285" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c49" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c33" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="725" y="95" />
+          <mxPoint x="725" y="370" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c50" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c36" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="725" y="95" />
+          <mxPoint x="725" y="455" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c51" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c39" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="725" y="95" />
+          <mxPoint x="725" y="540" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c52" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;" value="2 sợi cáp quang&#xa;Multi-mode (LACP)" vertex="1">
+      <mxGeometry height="34" width="135" x="275" y="575" as="geometry" />
+    </mxCell>
+    <mxCell id="c53" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="445" y="612" as="geometry" />
+    </mxCell>
+    <mxCell id="c54" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.misc.access_point" value="AP Wi-Fi&#xa;AP-PT-AC" vertex="1">
+      <mxGeometry height="26" width="56" x="535" y="620" as="geometry" />
+    </mxCell>
+    <mxCell id="c55" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.video_camera" value="Camera IP" vertex="1">
+      <mxGeometry height="41" width="28" x="640" y="610" as="geometry" />
+    </mxCell>
+    <mxCell id="c56" edge="1" parent="1" source="c23" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c53" value="Fa0/1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c57" edge="1" parent="1" source="c23" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c54" value="cáp đồng UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c58" edge="1" parent="1" source="c23" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c55" value="">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c59" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="805" y="612" as="geometry" />
+    </mxCell>
+    <mxCell id="c60" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.misc.access_point" value="AP Wi-Fi&#xa;AP-PT-AC" vertex="1">
+      <mxGeometry height="26" width="56" x="895" y="620" as="geometry" />
+    </mxCell>
+    <mxCell id="c61" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.video_camera" value="Camera IP" vertex="1">
+      <mxGeometry height="41" width="28" x="1000" y="610" as="geometry" />
+    </mxCell>
+    <mxCell id="c62" edge="1" parent="1" source="c39" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c59" value="Fa0/1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c63" edge="1" parent="1" source="c39" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c60" value="cáp đồng UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c64" edge="1" parent="1" source="c39" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c61" value="">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c65" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;" value="(Tầng 2–5: máy trạm/AP/camera đấu tương tự, 1GbE tới 10 phòng/tầng)" vertex="1">
+      <mxGeometry height="30" width="250" x="425" y="676" as="geometry" />
+    </mxCell>
+    <mxCell id="c66" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;" value="(Tầng 2–5: máy trạm/AP/camera đấu tương tự, 1GbE tới 10 phòng/tầng)" vertex="1">
+      <mxGeometry height="30" width="250" x="785" y="676" as="geometry" />
+    </mxCell>
+    <mxCell id="c67" parent="1" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#000000;" value="" vertex="1">
+      <mxGeometry height="100" width="220" x="40" y="600" as="geometry" />
+    </mxCell>
+    <mxCell id="c68" edge="1" parent="1" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" value="">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="55" y="630" as="sourcePoint" />
+        <mxPoint x="115" y="630" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c69" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;" value="Cáp quang OM3 10GbE" vertex="1">
+      <mxGeometry height="28" width="135" x="122" y="616" as="geometry" />
+    </mxCell>
+    <mxCell id="c70" edge="1" parent="1" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;" value="">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="55" y="665" as="sourcePoint" />
+        <mxPoint x="115" y="665" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c71" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;" value="Cáp đồng CAT6 1GbE" vertex="1">
+      <mxGeometry height="28" width="135" x="122" y="651" as="geometry" />
+    </mxCell>
+    <mxCell id="c72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;verticalAlign=top;align=left;fontStyle=1;fontSize=12;spacingLeft=8;spacingTop=4;" value="Chi nhánh Auxiliary Site (Aux 1)" vertex="1">
+      <mxGeometry height="330" width="380" x="1100" y="60" as="geometry" />
+    </mxCell>
+    <mxCell id="c73" parent="1" style="rounded=0;html=1;fillColor=#f7f7f7;strokeColor=#999999;dashed=1;" value="" vertex="1">
+      <mxGeometry height="135" width="360" x="1110" y="95" as="geometry" />
+    </mxCell>
+    <mxCell id="c74" parent="1" style="rounded=0;html=1;fillColor=#f7f7f7;strokeColor=#999999;dashed=1;" value="" vertex="1">
+      <mxGeometry height="135" width="360" x="1110" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="c75" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;fontStyle=1;" value="Tầng 1" vertex="1">
+      <mxGeometry height="20" width="60" x="1115" y="98" as="geometry" />
+    </mxCell>
+    <mxCell id="c76" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;fontStyle=1;" value="Tầng 2" vertex="1">
+      <mxGeometry height="20" width="60" x="1115" y="243" as="geometry" />
+    </mxCell>
+    <mxCell id="c77" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="Phòng IT/CCL &amp;&#xa;Tủ mạng (MDF Aux)" vertex="1">
+      <mxGeometry height="34" width="70" x="1180" y="135" as="geometry" />
+    </mxCell>
+    <mxCell id="c78" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="1320" y="130" as="geometry" />
+    </mxCell>
+    <mxCell id="c79" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.misc.access_point" value="AP Wi-Fi&#xa;AP-PT-AC" vertex="1">
+      <mxGeometry height="26" width="56" x="1400" y="138" as="geometry" />
+    </mxCell>
+    <mxCell id="c80" edge="1" parent="1" source="c77" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c78" value="UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c81" edge="1" parent="1" source="c77" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.8;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c79" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1230" y="122" />
+          <mxPoint x="1428" y="122" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c82" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="Tủ mạng phụ (IDF)" vertex="1">
+      <mxGeometry height="34" width="70" x="1180" y="280" as="geometry" />
+    </mxCell>
+    <mxCell id="c83" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="1320" y="275" as="geometry" />
+    </mxCell>
+    <mxCell id="c84" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.video_camera" value="Camera IP" vertex="1">
+      <mxGeometry height="41" width="28" x="1410" y="272" as="geometry" />
+    </mxCell>
+    <mxCell id="c85" edge="1" parent="1" source="c82" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c83" value="UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c86" edge="1" parent="1" source="c82" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.9;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c84" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1236" y="267" />
+          <mxPoint x="1424" y="267" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c87" edge="1" parent="1" source="c77" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c82" value="Đi dọc hộp kỹ thuật">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c88" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;verticalAlign=top;align=left;fontStyle=1;fontSize=12;spacingLeft=8;spacingTop=4;" value="Chi nhánh Auxiliary Site (Aux 2)" vertex="1">
+      <mxGeometry height="330" width="380" x="1100" y="430" as="geometry" />
+    </mxCell>
+    <mxCell id="c89" parent="1" style="rounded=0;html=1;fillColor=#f7f7f7;strokeColor=#999999;dashed=1;" value="" vertex="1">
+      <mxGeometry height="135" width="360" x="1110" y="465" as="geometry" />
+    </mxCell>
+    <mxCell id="c90" parent="1" style="rounded=0;html=1;fillColor=#f7f7f7;strokeColor=#999999;dashed=1;" value="" vertex="1">
+      <mxGeometry height="135" width="360" x="1110" y="610" as="geometry" />
+    </mxCell>
+    <mxCell id="c91" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;fontStyle=1;" value="Tầng 1" vertex="1">
+      <mxGeometry height="20" width="60" x="1115" y="468" as="geometry" />
+    </mxCell>
+    <mxCell id="c92" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;align=left;fontStyle=1;" value="Tầng 2" vertex="1">
+      <mxGeometry height="20" width="60" x="1115" y="613" as="geometry" />
+    </mxCell>
+    <mxCell id="c93" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="Phòng IT/CCL &amp;&#xa;Tủ mạng (MDF Aux)" vertex="1">
+      <mxGeometry height="34" width="70" x="1180" y="505" as="geometry" />
+    </mxCell>
+    <mxCell id="c94" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="1320" y="500" as="geometry" />
+    </mxCell>
+    <mxCell id="c95" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.misc.access_point" value="AP Wi-Fi&#xa;AP-PT-AC" vertex="1">
+      <mxGeometry height="26" width="56" x="1400" y="508" as="geometry" />
+    </mxCell>
+    <mxCell id="c96" edge="1" parent="1" source="c93" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c94" value="UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c97" edge="1" parent="1" source="c93" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.8;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c95" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1230" y="492" />
+          <mxPoint x="1428" y="492" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c98" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.switches.workgroup_switch" value="Tủ mạng phụ (IDF)" vertex="1">
+      <mxGeometry height="34" width="70" x="1180" y="650" as="geometry" />
+    </mxCell>
+    <mxCell id="c99" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.pc" value="PC0" vertex="1">
+      <mxGeometry height="40" width="44" x="1320" y="645" as="geometry" />
+    </mxCell>
+    <mxCell id="c100" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;align=center;outlineConnect=0;fontSize=11;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.cisco.computers_and_peripherals.video_camera" value="Camera IP" vertex="1">
+      <mxGeometry height="41" width="28" x="1410" y="642" as="geometry" />
+    </mxCell>
+    <mxCell id="c101" edge="1" parent="1" source="c98" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c99" value="UTP CAT6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c102" edge="1" parent="1" source="c98" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.9;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c100" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="1236" y="637" />
+          <mxPoint x="1424" y="637" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c103" edge="1" parent="1" source="c93" style="rounded=0;html=1;strokeColor=#8b4513;strokeWidth=2;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="c98" value="Đi dọc hộp kỹ thuật">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="c104" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c77" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="1085" y="95" />
+          <mxPoint x="1085" y="152" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c105" edge="1" parent="1" source="c5" style="rounded=0;html=1;strokeColor=#e8710a;strokeWidth=3;endArrow=none;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="c93" value="">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="150" y="95" />
+          <mxPoint x="1085" y="95" />
+          <mxPoint x="1085" y="522" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="c106" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=9;" value="Quang OM3 10GbE → Aux (chờ khảo sát)" vertex="1">
+      <mxGeometry height="22" width="200" x="870" y="68" as="geometry" />
+    </mxCell>
+    <mxCell id="c107" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;fontSize=11;spacingLeft=6;" value="Baseline – CHƯA NGHIỆM THU. 50 m là dữ kiện vị trí, không phải chiều dài cáp thực đã đo. Tên cổng (Gi/Fa), số lượng Aux, số phòng và dự phòng chỉ mang tính minh họa theo bản vẽ mẫu; cần xác nhận khi khảo sát (xem bảng Link ID). Nếu chọn GPON: thay bằng OLT/ODN/splitter/ONT và tính optical budget." vertex="1">
+      <mxGeometry height="60" width="1460" x="20" y="775" as="geometry" />
+    </mxCell>
+    <mxCell id="QdJmAYtzMgsU53sH5usb-1" parent="1" style="strokeColor=#ffffff;sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.switches.layer_2_remote_switch;labelPerimeter=1;" value="" vertex="1">
+      <mxGeometry height="50" width="101" x="710" y="490" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>
