@@ -2,6 +2,8 @@
 
 **02/11/2026. GNS3 2.2.55 + Linux/FRR.** [Project](hospital-3sites.gns3) có52 node:9 router/firewall,5 switch bridge VLAN và38 endpoint;52 link,18 pool DHCP,14 server nội bộ đúng10/2/2. [Kết quả](../../test_results/runtime/README.md) có log thực sáu nhóm TC01–06, OSPF, DHCP/DNS, IDS/IPS, dual ISP và save/close/reopen. Đây là project GNS3 nguồn mở; cấu hình Cisco và `.pkt` TV2 là bộ tham chiếu riêng.
 
+[Kịch bản demo với giảng viên](demo-guide.md) gồm lệnh chạy trực tiếp, kết quả mong đợi của sáu nhóm bắt buộc, phần mở rộng DHCP/DNS–IDS/IPS–hai ISP và cách giải thích các giới hạn mô phỏng.
+
 ## Chạy tự động trên máy Linux có Docker
 
 Lần đầu cần Internet tải image/package, khoảng3GB image/cache và khoảng2GB RAM trống cho lab; số liệu dung lượng là dự trù, phụ thuộc Docker/cache. Controller có Docker daemon riêng trong container, không mount socket máy thật. Namespace và interface thử lỗi nằm trong lab. API chỉ publish localhost3080; cần Docker hỗ trợ privileged container và cổng3080 đang trống.
