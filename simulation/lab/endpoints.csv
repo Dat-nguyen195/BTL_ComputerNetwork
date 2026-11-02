@@ -29,3 +29,11 @@ Main-Admin,Main,90,10.10.90.11,24,10.10.90.1,10.10.70.10,admin-console,admin
 Main-NVR,Main,110,10.10.110.11,24,10.10.110.1,10.10.70.10,NVR-design-only,appliance
 DBP-NVR,DBP,110,10.20.110.11,24,10.20.110.1,10.20.70.6,NVR-design-only,appliance
 BHTQ-NVR,BHTQ,110,10.30.110.11,24,10.30.110.1,10.30.70.6,NVR-design-only,appliance
+Main-PC50,Main,50,10.10.50.10,25,10.10.50.1,10.10.70.10,client,client-dhcp-example
+Main-PC60,Main,60,10.10.60.10,25,10.10.60.1,10.10.70.10,client,client-dhcp-example
+DBP-PC20,DBP,20,10.20.20.10,25,10.20.20.1,10.20.70.6,client,client-dhcp-example
+DBP-PC30,DBP,30,10.20.30.10,25,10.20.30.1,10.20.70.6,client,client-dhcp-example
+DBP-Staff,DBP,120,10.20.120.11,24,10.20.120.1,10.20.70.6,client,client-dhcp-example
+BHTQ-PC20,BHTQ,20,10.30.20.10,25,10.30.20.1,10.30.70.6,client,client-dhcp-example
+BHTQ-PC30,BHTQ,30,10.30.30.10,25,10.30.30.1,10.30.70.6,client,client-dhcp-example
+BHTQ-Staff,BHTQ,120,10.30.120.11,24,10.30.120.1,10.30.70.6,client,client-dhcp-example

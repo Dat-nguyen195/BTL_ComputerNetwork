@@ -1,5 +1,7 @@
 # Nội dung TV1: quy hoạch IP, WAN và định tuyến
 
+**Cập nhật tổng hợp:** đã tích hợp vào [báo cáo PDF](../final/report.pdf) và [GNS3/evidence](../../../test_results/runtime/README.md). Trạng thái IOS/Packet Tracer hoặc thiết kế sản xuất trong nội dung bàn giao gốc được giữ riêng; không suy PASS các nền tảng/tính năng chưa thử.
+
 **Người viết:** TV1. **Người nhận/biên tập:** TV5. **Cập nhật:** 02/11/2026. **Trạng thái:** BẢN THẢO KỸ THUẬT ĐÃ HIỆU CHỈNH, CHỜ ĐỌC CHÉO VÀ KIỂM THỬ. **Ngày bàn giao chính thức/PR:** chưa có. Không coi ngày hạn 17/11 là ngày đã thực hiện.
 
 ## 1. Yêu cầu và giả định

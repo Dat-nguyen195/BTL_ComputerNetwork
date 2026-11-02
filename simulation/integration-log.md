@@ -1,6 +1,6 @@
 # Nhật ký tích hợp mô phỏng
 
-**Điều phối:** TV4. **Trạng thái:** chưa có project hoặc lần tích hợp/kiểm mở lại được xác nhận.
+**Điều phối:** TV4. **Trạng thái hiện tại:** đã có GNS3 Linux/FRR và runtime/reopen evidence; các dòng chuẩn bị bên dưới là lịch sử.
 
 | Ngày | Loại cập nhật | Nội dung | Kết quả / giới hạn |
 | --- | --- | --- | --- |
@@ -18,3 +18,7 @@ Hồ sơ mới: [đối chiếu task](../docs/00-management/tv1-tv3-tv4-status.m
 ## Tiếp nhận TV2 và review02/11/2026
 
 Nhận `origin/tiendat` tại`3f52588`; file gốc chuyển đúng thư mụcmodule, giữhash/byte; kiểm cấu trúc bằngdecode cục bộ, không mở/chạyPacketTracer. Sửa conflictcamera/logicaldiagram theo hợpđồngWAN/security và giữgiả địnhcáp/PoE của TV2 trongcampusCSV đãhiệuchỉnh. Có3 adapter3650/2960,72 uplink,2 drawio/SVG, port/wireless/BOM/cameraplan và 4 contribution. Reviewsource theo yêu cầu chủ repo; không cóbiênbản G1–G4 hoặc xác nhậnruntime. Chi tiết [review TV2](../docs/00-management/tv2-review.md) và [reviewtoàn bộ](../docs/00-management/project-review.md).
+
+## Tích hợp thực thi GNS3 ngày02/11/2026
+
+Đã dựng52 node/52 link từ nguồn đã review, bổ sung máy cho đủ18 pool. Chạy209 kiểm gồm fault upstream từng ISP/cả hai; sau khi chép lại native template từ source, mở bằng GNS3 và chạy137 kiểm. Cả hai run cuối0 FAIL; [evidence/provenance](../test_results/runtime/README.md) có hash/code/config/image và PCAP. Lần đầu2 FAIL trong cửa sổ hội tụ được giữ; các sample outage không bị xóa. Không có kết quả IOS/Packet Tracer, RF/quang hoặc VPN crypto.

@@ -1,0 +1,16 @@
+{
+  "loopbacks": [],
+  "name": "ISP2",
+  "role": "router",
+  "interfaces": {
+    "eth0": "198.51.100.1/30",
+    "eth1": "192.0.2.133/30"
+  },
+  "interface_map": {
+    "GigabitEthernet0/0": "eth0",
+    "GigabitEthernet0/1": "eth1"
+  },
+  "commands": [],
+  "frr": "frr defaults traditional\nhostname ISP2\nservice integrated-vtysh-config\nlog file /tmp/frr.log\nip route 192.0.2.0/24 192.0.2.134 1\n",
+  "adapters": 2
+}

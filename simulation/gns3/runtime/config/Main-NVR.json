@@ -1,0 +1,12 @@
+{
+  "name": "Main-NVR",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.110.11/24"
+  },
+  "gateway": "10.10.110.1",
+  "dns": "10.10.70.10",
+  "mac": "02:a8:e2:90:bb:01",
+  "adapters": 1,
+  "services": "NVR-design-only"
+}

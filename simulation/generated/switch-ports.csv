@@ -29,3 +29,11 @@ Main-Access,FastEthernet0/16,Main-Admin,90
 Main-Access,FastEthernet0/17,Main-NVR,110
 DBP-Access,FastEthernet0/5,DBP-NVR,110
 BHTQ-Access,FastEthernet0/5,BHTQ-NVR,110
+Main-Access,FastEthernet0/18,Main-PC50,50
+Main-Access,FastEthernet0/19,Main-PC60,60
+DBP-Access,FastEthernet0/6,DBP-PC20,20
+DBP-Access,FastEthernet0/7,DBP-PC30,30
+DBP-Access,FastEthernet0/8,DBP-Staff,120
+BHTQ-Access,FastEthernet0/6,BHTQ-PC20,20
+BHTQ-Access,FastEthernet0/7,BHTQ-PC30,30
+BHTQ-Access,FastEthernet0/8,BHTQ-Staff,120

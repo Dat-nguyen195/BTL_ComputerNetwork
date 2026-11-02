@@ -1,0 +1,13 @@
+{
+  "name": "Web-Lab",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "192.0.2.100/26"
+  },
+  "gateway": "192.0.2.65",
+  "dns": "192.0.2.100",
+  "mac": "02:34:1e:38:3a:3e",
+  "adapters": 1,
+  "services": "HTTP;DNS;ICMP",
+  "dnsmasq": "no-resolv\nno-hosts\nbind-interfaces\ninterface=eth0\nlog-dhcp\nlog-queries\nuser=root\naddress=/bhtq-guest.hospital.test/10.30.100.11\naddress=/bhtq-infra.hospital.test/10.30.70.6\naddress=/bhtq-local.hospital.test/10.30.70.7\naddress=/bhtq-nvr.hospital.test/10.30.110.11\naddress=/bhtq-pc10.hospital.test/10.30.10.10\naddress=/bhtq-pc20.hospital.test/10.30.20.10\naddress=/bhtq-pc30.hospital.test/10.30.30.10\naddress=/bhtq-staff.hospital.test/10.30.120.11\naddress=/dbp-guest.hospital.test/10.20.100.11\naddress=/dbp-infra.hospital.test/10.20.70.6\naddress=/dbp-local.hospital.test/10.20.70.7\naddress=/dbp-nvr.hospital.test/10.20.110.11\naddress=/dbp-pc10.hospital.test/10.20.10.10\naddress=/dbp-pc20.hospital.test/10.20.20.10\naddress=/dbp-pc30.hospital.test/10.20.30.10\naddress=/dbp-staff.hospital.test/10.20.120.11\naddress=/main-admin.hospital.test/10.10.90.11\naddress=/main-backup.hospital.test/10.10.70.16\naddress=/main-crm.hospital.test/10.10.70.14\naddress=/main-db.hospital.test/10.10.70.15\naddress=/main-guest.hospital.test/10.10.100.11\naddress=/main-his.hospital.test/10.10.70.11\naddress=/main-infra.hospital.test/10.10.70.10\naddress=/main-lis.hospital.test/10.10.70.13\naddress=/main-monitor.hospital.test/10.10.70.17\naddress=/main-nvr.hospital.test/10.10.110.11\naddress=/main-pacs.hospital.test/10.10.70.12\naddress=/main-pc10-a.hospital.test/10.10.10.10\naddress=/main-pc10-b.hospital.test/10.10.10.11\naddress=/main-pc20.hospital.test/10.10.20.10\naddress=/main-pc30.hospital.test/10.10.30.10\naddress=/main-pc40.hospital.test/10.10.40.10\naddress=/main-pc50.hospital.test/10.10.50.10\naddress=/main-pc60.hospital.test/10.10.60.10\naddress=/main-proxydmz.hospital.test/10.10.80.11\naddress=/main-staff.hospital.test/10.10.120.11\naddress=/main-webdmz.hospital.test/10.10.80.10\naddress=/web-lab.hospital.test/192.0.2.100\naddress=/phishing-test.invalid/0.0.0.0\naddress=/web.hospital.test/192.0.2.100\naddress=/portal.hospital.test/10.10.80.10\n"
+}

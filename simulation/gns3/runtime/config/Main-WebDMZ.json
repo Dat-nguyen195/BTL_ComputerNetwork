@@ -1,0 +1,12 @@
+{
+  "name": "Main-WebDMZ",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.80.10/27"
+  },
+  "gateway": "10.10.80.1",
+  "dns": "192.0.2.100",
+  "mac": "02:96:d1:4f:4d:f0",
+  "adapters": 1,
+  "services": "HTTP"
+}

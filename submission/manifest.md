@@ -1,21 +1,19 @@
-# Manifest bản nộp
+# Bộ bàn giao kỹ thuật
 
-**Trạng thái:** CHƯA CÓ BẢN NỘP. **Biên tập:** TV5. **Mô phỏng/hash:** TV4. **Duyệt cuối:** TV1.
+**Đã có sản phẩm và kiểm thử; chưa nộp BKeL.**
 
-| Sản phẩm | Đường dẫn dự kiến | Phiên bản / hash | Trạng thái |
-| --- | --- | --- | --- |
-| Báo cáo PDF | `docs/06-report/final/report.pdf` | Chưa có | NOT GENERATED |
-| Nguồn báo cáo | `docs/06-report/source/` | Chưa có | NOT GENERATED |
-| Mô phỏng | `.pkt` hoặc gói GNS3 trong `simulation/` | Chưa có | NOT GENERATED |
-| Bằng chứng test | `test_results/` | Mẫu trống, chưa chạy | NOT RUN |
-| TV1 duyệt | `approval.md` | Chưa có xác nhận | PENDING |
+| Sản phẩm | Đường dẫn | Trạng thái |
+| --- | --- | --- |
+| Báo cáo PDF | [report.pdf](../docs/06-report/final/report.pdf) | Nội dung đủ7 Step và phụ lục evidence; đã render QA |
+| Nguồn báo cáo | [Markdown/SVG](../docs/06-report/source/README.md) | Có thể chỉnh sửa/build lại |
+| Mô hình chính | [hospital-3sites.gns3](../simulation/gns3/hospital-3sites.gns3) | GNS3 2.2.55,52 node/52 link, mở lại đã thử |
+| Mã nguồn dựng/chạy | [GNS3 runtime/controller](../simulation/gns3/README.md) và scripts | Dockerfile/config/FRR/Linux, không cần IOS license |
+| Bằng chứng | [runtime JSON/PCAP/provenance](../test_results/runtime/README.md) |209 +137 kiểm đạt ở hai run cuối; giữ lỗi hội tụ ban đầu |
+| File TV2 gốc | [tiendat-lan-original.pkt](../simulation/modules/tv2-lan-wireless/tiendat-lan-original.pkt) | Bảo toàn byte/hash; module Main một phần, chưa chạy PT |
+| Gói bàn giao | `hospital-network-delivery.zip` | Sinh bằng package_submission.py, gồm source/PDF/project/evidence |
+| Checksum | `SHA256SUMS`, `package-manifest.json` | Hash nội dung và gói, không thay chữ ký duyệt |
+| Duyệt/nộp | [approval](approval.md), `bkel-receipt/` | PENDING người phụ trách; không tạo receipt giả |
 
-Đóng gói dự kiến 22/11/2026, khóa bản nội bộ 06/12/2026, nộp BKeL trước hạn 11/12/2026. Sau mọi sửa đổi cần cập nhật hash, retest và tái duyệt. File README/scaffold không thay thế sản phẩm nộp.
+Từ root repo: `python3 scripts/package_submission.py --check` kiểm gói đã tạo; `sha256sum -c submission/SHA256SUMS` kiểm file trực tiếp. Gói có manifest nội bộ; checksum ngoài còn bao gồm ZIP và package manifest. Sau sửa source/PDF cần chạy kiểm liên quan, rebuild report nếu cần, rồi `python3 scripts/package_submission.py` để cập nhật gói/hash. Không đưa file đặc tả local bị gitignore, IOS image, cache, khóa hoặc runtime container vào ZIP.
 
-## Gói tham chiếu02/11/2026
-
-Đã có [manifest config SHA256](../simulation/generated/manifest.json) cho9 router/5 switch, DHCP và port map; [3 contribution](../docs/06-report/contributions/) và [hồ sơ kiểm tĩnh](../test_results/static/README.md). Những hash này không thay hash PDF/project cuối. `SHA256SUMS` bản nộp vẫn chưa lập vì chưa có hai sản phẩm cuối; approval giữ PENDING.
-
-## Module TV2 đã nhận
-
-[tiendat-lan-original.pkt](../simulation/modules/tv2-lan-wireless/tiendat-lan-original.pkt) là filethật10 node Main, giữ nguyên byte của Tiendat; [auditSHA256](../simulation/modules/tv2-lan-wireless/audit/inventory.json) ghi version9.0.0.0810. Trạng thái PARTIAL/NOT RUN, không phải mô phỏngtổng hoặc bản đãduyệt. `SHA256SUMS` final vàapproval vẫn chờ PDF/project cuối, không dùnghashmodule làmhashbản nộp.
+Trước nộp nhóm kiểm thông tin lớp/MSSV/nhân sự, yêu cầu2–3 người của đề so với kế hoạch vai tròTV1–TV5 và phê duyệt học phần. Chạy demo trên máy trình bày, đối chiếu checksum, tự nộp BKeL và lưu biên nhận. GNS3 mô phỏng chức năng, chưa chứng minh GPON/DSL PHY/RF, HA chassis, VPN crypto hoặc workload bệnh viện thực.

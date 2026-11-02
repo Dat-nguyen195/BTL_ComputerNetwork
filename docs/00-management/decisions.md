@@ -1,6 +1,6 @@
 # Sổ quyết định và giả định
 
-**Cập nhật:** 02/11/2026. Phân biệt yêu cầu bắt buộc với baseline đề xuất; chưa có biên bản nhóm khóa thiết kế hoặc xác nhận tính năng mô phỏng.
+**Cập nhật:** 02/11/2026. Phân biệt yêu cầu bắt buộc với baseline đề xuất; biên bản duyệt nhóm còn PENDING; chức năng GNS3 đã có evidence ở phần cập nhật cuối, các bảng chuẩn bị bên dưới giữ lịch sử.
 
 | ID | Nội dung | Căn cứ | Trạng thái / phụ trách |
 | --- | --- | --- | --- |
@@ -42,3 +42,7 @@ Mỗi quyết định được phê duyệt thực tế phải thêm ngày/ngư�
 | D24 | Coređộc lập dùngRSTP;DMZswitchriêng chỉnốiFW;GPONchưa được tựbỏ | Sourcecabling/logical/physical đãsửa; triểnkhai/HA/GPON cầnxácnhận |
 
 Review/merge source theo yêu cầu chủrepo không thay G1–G4, PASSruntime hoặc approval hai sản phẩm cuối.
+
+## Hoàn thiện thực thi GNS3 và báo cáo
+
+D25: Chọn GNS3 2.2.55 + FRR/Linux làm nền tảng nộp chính theo quyền chọn GNS3 trong đề; giữ IOS/Packet Tracer tham chiếu riêng. Đã chạy sáu nhóm,18 pool, OSPF, NAT/PBR và Suricata IDS/IPS; file nguồn mở lại được. D26: GPON hybrid80→96 PC VLAN60 qua20→24 ONT, OLT/ODN và budget có thiết kế, không tự bỏ GPON hoặc gọi quang đã thử. D27: Có PDF/source/JSON/PCAP/provenance/checksum; approval/BKeL pending người thực hiện thật. [Review hiện tại](project-review.md) và [evidence](../../test_results/runtime/README.md) là trạng thái cuối.

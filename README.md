@@ -2,7 +2,7 @@
 
 Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh viện gồm **Main Site tại TP.HCM**, **Auxiliary Site DBP** và **Auxiliary Site BHTQ**. Đầu ra cuối cùng là **báo cáo chính thức PDF, nguồn báo cáo có thể chỉnh sửa và mô phỏng Packet Tracer hoặc GNS3**. Nhóm có **5 thành viên**, thực hiện **4 giai đoạn, mỗi giai đoạn đúng 1 tuần**, từ **Thứ Hai 26/10/2026**.
 
-**Trạng thái 02/11/2026:** Đã có thiết kế,3 contribution TV1/TV3/TV4, gói cấu hình hợp nhất và bộ kiểm tĩnh; đã nhận module `.pkt` Main của TV2 nhưng chưa có mô phỏng tổng 3 site, kiểm thử runtime hoặc nghiệm thu. Các subnet, tên nhóm phòng ban, cấu hình, số lượng thiết bị đề xuất và ngưỡng thiết kế dưới đây là baseline để nhóm kiểm chứng, không phải dữ kiện bổ sung từ đề bài.
+**Trạng thái hoàn thiện 02/11/2026:** đã có [báo cáo PDF](docs/06-report/final/report.pdf), [native GNS3 ba cơ sở](simulation/gns3/hospital-3sites.gns3), [hướng dẫn chạy](simulation/gns3/README.md) và [bằng chứng runtime](test_results/runtime/README.md). Mô hình Linux/FRR có52 node/52 link,18 pool;209 kiểm tích hợp và137 sau mở lại đạt, gồm sáu nhóm demo, OSPF, DHCP/DNS, IDS/IPS rule mẫu và lỗi upstream hai ISP. [Review đối chiếu đặc tả](docs/00-management/project-review.md) ghi phạm vi/giới hạn. GPON có thiết kế hybrid; RF/quang/DSL PHY, VPN crypto, HA chassis, workload y tế và IOS chưa thử. [Gói bàn giao/checksum](submission/manifest.md) chuẩn bị cho nhóm duyệt và tự nộp BKeL. Các lịch/task và trạng thái chuẩn bị bên dưới được giữ làm lịch sử; đọc kết quả cuối trước khi kết luận.
 
 ## Bàn giao TV1, TV3, TV4 ngày 02/11/2026
 
@@ -16,7 +16,7 @@ python3 scripts/verify.py
 python3 scripts/capacity.py --guests 200 50 50 --overhead 0.10
 ```
 
-Bản hợp nhất có 9 router/5 switch lab,18 pool DHCP, ACL gateway ba site, ZBF và static PAT DMZ ISP2. Đây là cấu hình tham chiếu, chưa phải `.pkt`/GNS3 hoặc PASS runtime. Camera/VPN/IDS-IPS/HA còn giới hạn thiết kế ghi rõ trong từng phần.
+Bản hợp nhất có 9 router/5 switch lab,18 pool DHCP, ACL gateway ba site, ZBF và static PAT DMZ ISP2. Bộ IOS này là tham chiếu chưa chạy IOS. Mô hình GNS3 Linux thực thi riêng và evidence đã có; camera/VPN/HA/RF/quang còn giới hạn ghi trong review cuối.
 
 ## Review và tích hợp TV2
 
@@ -38,7 +38,7 @@ python3 scripts/verify.py
 - [Công việc dự án](TASKS.md).
 - [Hướng dẫn mô phỏng](simulation/README.md) và [ma trận kiểm thử](test_results/test-matrix.md).
 - [Checklist theo giai đoạn và từng thành viên](tasks-assignment.md) - nguồn checklist chính thức.
-- [Kế hoạch chi tiết TV1](docs/00-management/tv1-execution-plan.md) và [tình trạng sau review](docs/00-management/tv1-review-status.md): có cấu hình tham chiếu hiệu chỉnh, chưa có project/evidence mô phỏng; đọc trạng thái trước khi dùng.
+- [Kế hoạch chi tiết TV1](docs/00-management/tv1-execution-plan.md) và [tình trạng sau review](docs/00-management/tv1-review-status.md): giữ lịch sử chuẩn bị; [review hiện tại](docs/00-management/project-review.md) ghi project/evidence GNS3 đã có.
 - `Assignment 2-Network Design For A Company.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[A]**: 5 trang; yêu cầu 7 bước ở trang 3-4, sơ đồ minh họa ở trang 5.
 - `Reference Multi-site network.pdf` (tài liệu local, không đưa vào Git), ký hiệu **[R]**: 11 trang; ví dụ NAT/PAT, DHCP, OSPF và packet tracing cho **2 site LTK/DiAn**.
 
@@ -283,7 +283,7 @@ Số AP phải dựa trên vùng phủ, dung lượng và khảo sát RF; số c
 
 ## 9. Truy vết đầy đủ 7 bước
 
-Repository đã có cấu trúc thư mục, mẫu quản lý/thiết kế/kiểm thử, sơ đồ nguồn và kiểm tra tài liệu tự động. Các sản phẩm kỹ thuật cuối trong bảng dưới đây vẫn **chưa được triển khai/nghiệm thu**; chưa có báo cáo PDF hoặc file mô phỏng chính thức.
+Repository đã có sản phẩm kỹ thuật tương ứng bảy bước: PDF, source, GNS3 đã chạy và evidence. Bảng dưới giữ phân công/tiêu chí; [truy vết hiện tại](docs/00-management/requirements-traceability.md) ghi sản phẩm thực và phần còn cần xác nhận ngoài workspace.
 
 | Bước | Điểm | Nội dung và điều kiện nghiệm thu | Chủ trì / phối hợp | Sản phẩm dự kiến |
 | --- | --- | --- | --- | --- |
@@ -307,15 +307,15 @@ Repository đã có cấu trúc thư mục, mẫu quản lý/thiết kế/kiểm
 | TC05 | **Khách không được vào PC LAN** | Khách thử ping và TCP/HTTP tới host nội bộ đang bật dịch vụ, thực hiện tại các site có guest; thêm ca đối chứng khách ra Internet và host nội bộ truy cập dịch vụ đó | Truy cập LAN bị chặn có ACL/firewall hit; DHCP/DNS và Internet khách vẫn hoạt động | TV3, TV2 / TV4 |
 | TC06 | Truy cập Web server Internet | PC tại **mỗi site** và Wi-Fi khách mở Web ngoài hệ thống; traceroute và NAT table tại Main | Thành công, đường đi qua Main; có PAT đúng nguồn/egress | TV4, TV1, TV3 / TV4 |
 
-Mỗi test có **điều kiện trước, nguồn/đích, IP/VLAN, lệnh/bước chạy, expected, actual, PASS/FAIL/NOT RUN, ảnh/log, người chạy, ngày chạy, phiên bản file mô phỏng và lỗi liên quan**. Mặc định trạng thái hiện tại là **NOT RUN**. Không dùng một ảnh ping thất bại để kết luận ACL đúng nếu chưa loại trừ lỗi route, DHCP hoặc server.
+Mỗi test có **điều kiện trước, nguồn/đích, IP/VLAN, lệnh/bước chạy, expected, actual, PASS/FAIL/NOT RUN, ảnh/log, người chạy, ngày chạy, phiên bản file mô phỏng và lỗi liên quan**. TC01–TC06 hiện **PASS trên GNS3 Linux/FRR** theo [evidence](test_results/runtime/README.md); ca khác chưa thử vẫn NOT RUN. Không dùng một ảnh ping thất bại để kết luận ACL đúng nếu chưa loại trừ lỗi route, DHCP hoặc server.
 
 Kiểm tra bổ sung: DHCP từng VLAN; default route và NAT cả hai ISP; nhiều phiên độc lập để chứng minh load balancing; tắt từng xDSL để quan sát failover và phiên mới; VPN/site-to-site/teleworker theo tính năng công cụ; backup/restore, lỗi uplink/core nếu có dự phòng. OSPF nhanh hội tụ không chứng minh hệ thống dự phòng khi không có đường thay thế. Tính năng SD-WAN/MPLS, GPON, 40 GbE, IDS/IPS chưa chạy được phải ghi **DESIGN ONLY/MODELED**, tách khỏi PASS test chức năng.
 
 ## 11. Hướng dẫn mở và kiểm tra mô phỏng
 
-**Hiện chưa có file mô phỏng trong bộ tài liệu quản lý này.** TV4 sẽ ghi phiên bản phần mềm và thiết bị đã thực sự dùng vào `simulation/README.md`; không tự điền một phiên bản Packet Tracer chưa kiểm chứng.
+**Nền tảng chính đã chạy: GNS3 2.2.55 + Linux/FRR.** Xem [project/hướng dẫn](simulation/gns3/README.md); native template đã được mở lại và kiểm137 lệnh. Hướng dẫn Packet Tracer bên dưới là phương án tham chiếu nếu chuyển nền tảng, không phải sản phẩm đã thử.
 
-### Packet Tracer - lựa chọn mặc định của kế hoạch
+### Packet Tracer - phương án tham chiếu chưa chạy
 
 1. Lấy bản release/commit do TV1 duyệt và phần mềm đúng phiên bản ghi trong `simulation/README.md`.
 2. Mở **File → Open → `simulation/packet-tracer/hospital-3sites.pkt`**. Lưu bản làm việc riêng trước khi sửa, chờ cổng/STP/OSPF và DHCP ổn định.
@@ -324,7 +324,7 @@ Kiểm tra bổ sung: DHCP từng VLAN; default route và NAT cả hai ISP; nhi�
 5. Chạy TC01-TC06 theo test matrix, dùng địa chỉ đích ghi trong release. Trong PC dùng `ping`, `tracert`; trên IOS dùng `ping`, `traceroute`, `show ip route`, `show ip ospf neighbor`, `show vlan brief`, `show interfaces trunk`, `show access-lists`, `show ip nat translations` và `show ip nat statistics` theo thiết bị hỗ trợ.
 6. Ghi kết quả/ảnh/log và lưu file; mở lại file đã lưu để xác nhận cấu hình persist. Không ghi đè bản đã duyệt chỉ để thử lệnh.
 
-### GNS3 - phương án thay thế
+### GNS3 - nền tảng bàn giao
 
 Nếu chọn GNS3, TV4 bàn giao `simulation/gns3/` gồm project `.gns3`, cấu hình, hướng dẫn appliance/node, phiên bản GNS3 và dependency; mở project theo hướng dẫn đó và kiểm tra interface/link trước khi chạy test. Bản đóng gói phải đủ cấu hình và tài nguyên được phép chia sẻ; người dùng tự cung cấp image có license khi cần. Chỉ cần **một nền tảng chính hoạt động đầy đủ**; không bắt nhóm làm cả `.pkt` và GNS3. Kiểm tra khả năng nền tảng sớm trong tuần 1, nhất là nếu phải chạy IDS/IPS thực sự.
 

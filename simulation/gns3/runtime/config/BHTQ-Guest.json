@@ -1,0 +1,13 @@
+{
+  "name": "BHTQ-Guest",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.30.100.11/23"
+  },
+  "gateway": "10.30.100.1",
+  "dns": "192.0.2.100",
+  "mac": "02:43:b9:87:0e:60",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}

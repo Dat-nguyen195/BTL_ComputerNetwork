@@ -1,0 +1,13 @@
+{
+  "name": "Main-Staff",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.120.11/24"
+  },
+  "gateway": "10.10.120.1",
+  "dns": "10.10.70.10",
+  "mac": "02:f4:0b:57:18:ac",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}

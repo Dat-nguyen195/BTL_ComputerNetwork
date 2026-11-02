@@ -1,5 +1,7 @@
 # Nội dung TV2: LAN, Wi-Fi, cabling và thiết bị
 
+**Cập nhật tổng hợp:** đã tích hợp vào [báo cáo PDF](../final/report.pdf) và [GNS3/evidence](../../../test_results/runtime/README.md). Trạng thái IOS/Packet Tracer hoặc thiết kế sản xuất trong nội dung bàn giao gốc được giữ riêng; không suy PASS các nền tảng/tính năng chưa thử.
+
 **Chủ trì gốc: Phạm Tiến Đạt, nhánh `tiendat`, commit `3f52588`. Hiệu chỉnh tích hợp 02/11/2026. TV5 biên tập; TV1 duyệt cuối. Đã rà soát thiết kế/config tĩnh; chưa nghiệm thu runtime hoặc ký nhận chính thức.**
 
 ## Quy mô và kiến trúc

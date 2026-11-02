@@ -103,3 +103,7 @@ Các hàng là expected, không phải output CLI thu được. Kiểm lệnh v�
 - [Cisco: bandwidth](https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/bandwidth.htm): thông số bandwidth không đổi tốc độ vật lý.
 
 Chưa thử IOS parser/Packet Tracer cho model cụ thể. Cấu hình sử dụng IP SLA, tracking, PBR verify-availability, NAT route-map và selective redistribution; nếu nền tảng không nhận lệnh, giữ mục đó BLOCKED/DESIGN ONLY và dùng môi trường có image hợp pháp hỗ trợ chức năng. Mỗi nhánh có một leased line; Edge/FW/Core tham chiếu cũng là thiết bị đơn, nên hai ISP không loại bỏ mọi SPOF.
+
+## Bổ sung GPON trong phương án hybrid
+
+[Thiết kế GPON](gpon-design.md) chọn 80→96 PC VLAN60 Main qua 20→24 ONT; các máy này đã nằm trong tổng PC. Hai uplink OLT bổ sung mỗi Core một cổng (28→29/32), hai splitter1:16 và ODN/OS2 có budget ví dụ, cần đo quang thực. Bảng cổng/cáp Ethernet giữ chỗ dự phòng để rollback. Đây là thiết kế, không phải GPON đã chạy trong GNS3.

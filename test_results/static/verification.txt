@@ -1,6 +1,6 @@
 
 $ python3 scripts/check_docs.py
-OK: 76 Markdown files; UTF-8, local links, code fences and task IDs checked.
+OK: 82 Markdown files; UTF-8, local links, code fences and task IDs checked.
 
 $ python3 scripts/build_lab.py --check
 OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
@@ -9,11 +9,6 @@ $ python3 scripts/build_campus.py --check
 OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapters (freshness checked)
 
 $ python3 scripts/test_capacity.py
-......
-----------------------------------------------------------------------
-Ran 6 tests in 0.003s
-
-OK
 
 $ python3 scripts/check_wan.py
 OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
@@ -46,10 +41,17 @@ OK static security: 61 first-match flow cases, 18 DHCP pools, ingress bindings, 
 NOT IOS runtime: no stateful sessions, DHCP leases, DNS/HTTP, VPN or IDS/IPS executed.
 
 $ python3 scripts/check_inventory.py
-OK static inventory: 14 cables, 30 endpoints, 10/2/2 servers, unique addresses and switch ports
+OK static inventory: 14 cables, 38 endpoints, 10/2/2 servers, unique addresses and switch ports
 
 $ python3 scripts/check_lan.py
 OK static TV2: 3 campus budgets/storage,72 uplinks,2 diagrams,3 adapters, 37 preserved Main ACL flows; original PKT hash verified
 Native file is a partial Main module. Packet Tracer runtime, Wi-Fi/RF and persistence NOT RUN.
 
-ALL OFFLINE CHECKS OK. TC01-TC06 / VPN / IDS-IPS runtime remain NOT RUN.
+$ python3 scripts/build_gns3.py --check
+OK: GNS3 project, 9 FRR/Linux routers, 5 VLAN switches, 38 endpoints, compiled ACLs/DHCP and source manifest
+
+$ python3 scripts/check_gns3.py
+OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; 209 + 137 recorded checks; actual PCAP and reopen
+This checker validates recorded evidence; it does not rerun the GNS3 network.
+
+ALL OFFLINE CHECKS OK. Runtime evidence is recorded separately under test_results/runtime/; these checks do not execute the network.

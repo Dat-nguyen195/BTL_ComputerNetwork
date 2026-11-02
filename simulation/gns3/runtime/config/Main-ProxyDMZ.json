@@ -1,0 +1,12 @@
+{
+  "name": "Main-ProxyDMZ",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.80.11/27"
+  },
+  "gateway": "10.10.80.1",
+  "dns": "192.0.2.100",
+  "mac": "02:09:ac:ae:fd:ed",
+  "adapters": 1,
+  "services": "proxy-design-only-unpublished"
+}

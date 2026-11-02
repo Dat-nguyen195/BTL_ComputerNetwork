@@ -1,30 +1,15 @@
-# TC06 - Web Internet qua Main
+# TC06 - Internet Web
 
-**Trạng thái: NOT RUN. Chuẩn bị: TV4 + TV1 + TV3. Người chạy/lưu bằng chứng: TV4 phối hợp chủ trì. Cập nhật: 02/11/2026.**
+**PASS trên GNS3 Linux/FRR; Packet Tracer/IOS chưa chạy.** Run `after-reopen-runtime`, UTC 2026-11-02T14:04:06.477140+00:00. Native project52 node đã được mở lại từ source. [Toàn bộ command output, source/image/hash](../runtime/after-reopen-runtime/results.json), [bối cảnh/giới hạn](../runtime/README.md), [runbook Cisco tham chiếu](../../simulation/test-runbook.md).
 
-| Thuộc tính | Giá trị |
-| --- | --- |
-| Ngày / người chạy | Chưa chạy |
-| Công cụ / version / model | Chưa xác nhận |
-| Project / commit / SHA256 | Chưa có |
-| Nguồn / đích mẫu | PC10 và Guest ở Main/DBP/BHTQ→192.0.2.100:80 / web.hospital.test |
-| Giao thức / công cụ | HTTP theo IP/tên, NAT/route-map/track/session |
-| Điều kiện trước | Web/DNS lab bật, route hai ISP và return public đúng, ZBF đã nạp |
+| Index trong cases | Node | Lệnh | Expected | Returncode actual | Kết luận |
+| --- | --- | --- | --- | --- | --- |
+| 35 | Main-PC10-A | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 36 | DBP-Guest | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 37 | DBP-PC10 | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 38 | Main-PC20 | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 39 | BHTQ-PC10 | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 40 | Main-Guest | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
+| 41 | BHTQ-Guest | `curl --noproxy * --connect-timeout 2 --max-time 3 --fail --silent --show-error http://web.hospital.test` | success | 0 | PASS |
 
-## Bước chạy và expected
-
-Thực hiện đúng mục tương ứng trong [runbook](../../simulation/test-runbook.md). Cả6 nguồn ra Web được; Aux qua Main; PAT đúng egress; không local breakout. IP client lấy từ lease thực, không khẳng định mẫu là IP đã được cấp.
-
-## Actual và evidence
-
-Chưa thực hiện. Lưu ảnh ở `screenshots/`, log văn bản `.txt` ở `logs/`, có run ID và liên kết từng bước. Mỗi hướng/nguồn phải có actual riêng. Output CLI/RTT/NAT port không tự soạn. Bộ kiểm tĩnh không thay runtime.
-
-| Lần chạy / bước | Expected | Actual | Evidence / hash | Kết luận |
-| --- | --- | --- | --- | --- |
-| Chưa chạy | Theo runbook | Chưa có | Chưa có | NOT RUN |
-
-## Lỗi và retest
-
-- Lỗi/bước tái hiện/người sửa: chưa có kết quả để kết luận.
-- Project sau sửa và hash: chưa có.
-- Ca chạy lại / actual / reviewer: chưa thực hiện.
+Chỉ số index bắt đầu0 trong JSON `cases`. Trường `output` chứa kết quả CLI/HTTP thật; negative case phải thất bại đúng dự kiến. TC05 có đối chứng Web/DNS và counter DROP tại cả ba gateway. Không dùng log GNS3 để khẳng định command/timer IOS hoặc ứng dụng thật đã được kiểm.

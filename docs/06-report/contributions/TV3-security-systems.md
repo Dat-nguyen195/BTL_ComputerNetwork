@@ -1,5 +1,7 @@
 # Nội dung TV3: server, DMZ và bảo mật
 
+**Cập nhật tổng hợp:** đã tích hợp vào [báo cáo PDF](../final/report.pdf) và [GNS3/evidence](../../../test_results/runtime/README.md). Trạng thái IOS/Packet Tracer hoặc thiết kế sản xuất trong nội dung bàn giao gốc được giữ riêng; không suy PASS các nền tảng/tính năng chưa thử.
+
 **Cập nhật 02/11/2026. Nội dung kỹ thuật và cấu hình tham chiếu đã soạn; chưa bàn giao có ký nhận/review, chưa kiểm IOS runtime. Người nhận/biên tập: TV5; người duyệt cuối: TV1.**
 
 ## Yêu cầu và phạm vi

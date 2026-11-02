@@ -1,0 +1,3872 @@
+{
+  "run_id": "initial-runtime",
+  "timestamp_utc": "2026-11-02T13:44:46.058014+00:00",
+  "platform": {
+    "local": false,
+    "version": "2.2.55"
+  },
+  "image_id": "sha256:b0ce6cc4817796a60985950702a0b15815be173038aa8f3bad07174187d6ca6e",
+  "project_id": "55ac9e6a-caa2-5f46-b475-be6bd3c8affd",
+  "source_sha256": {
+    "simulation/gns3/hospital-3sites.gns3": "ed7c5ca354f7faa54756e0a808082ea5dce2d2ea41d1d18d6be9b5e06dbf1955",
+    "simulation/gns3/runtime-manifest.json": "36421dbb5a4bf236e2c1c9fb9f22d85065cc08aae099df1e9d13dc1fb68c42bb",
+    "simulation/gns3/runtime/node.py": "8b1aec7a4b645c0ccd52154d2872767e60f5742951756b2ef5ee37009b22e069",
+    "scripts/test_gns3_runtime.py": "4459e16052d9c48b2913336502e50f09c3f7217521210768974169ecfcb749e7"
+  },
+  "scope": "Actual GNS3 Linux/FRR/iptables/DHCP/DNS/HTTP; not Cisco IOS or clinical workload",
+  "duration_seconds": 100.27,
+  "versions": {
+    "Main-Core": {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show version"
+      ],
+      "returncode": 0,
+      "output": "FRRouting 8.4.4 (Main-Core) on Linux(7.0.0-42-generic).\nCopyright 1996-2005 Kunihiro Ishiguro, et al.\nconfigured with:\n    '--build=x86_64-linux-gnu' '--prefix=/usr' '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var' '--disable-option-checking' '--disable-silent-rules' '--libdir=${prefix}/lib/x86_64-linux-gnu' '--libexecdir=${prefix}/lib/x86_64-linux-gnu' '--disable-maintainer-mode' '--localstatedir=/var/run/frr' '--sbindir=/usr/lib/frr' '--sysconfdir=/etc/frr' '--with-vtysh-pager=/usr/bin/pager' '--libdir=/usr/lib/x86_64-linux-gnu/frr' '--with-moduledir=/usr/lib/x86_64-linux-gnu/frr/modules' '--disable-dependency-tracking' '--enable-rpki' '--disable-scripting' '--disable-pim6d' '--with-libpam' '--enable-doc' '--enable-doc-html' '--enable-snmp' '--enable-fpm' '--disable-protobuf' '--disable-zeromq' '--enable-ospfapi' '--enable-bgp-vnc' '--enable-multipath=256' '--enable-user=frr' '--enable-group=frr' '--enable-vty-group=frrvty' '--enable-configfile-mask=0640' '--enable-logfile-mask=0640' 'build_alias=x86_64-linux-gnu' 'PYTHON=python3'\n",
+      "duration_seconds": 0.456
+    },
+    "Main-FW": {
+      "node": "Main-FW",
+      "command": [
+        "iptables",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "iptables v1.8.9 (nf_tables)\n",
+      "duration_seconds": 0.215
+    },
+    "Main-Infra": {
+      "node": "Main-Infra",
+      "command": [
+        "dnsmasq",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "Dnsmasq version 2.90  Copyright (c) 2000-2024 Simon Kelley\nCompile time options: IPv6 GNU-getopt DBus no-UBus i18n IDN2 DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC loop-detect inotify dumpfile\n\nThis software comes with ABSOLUTELY NO WARRANTY.\nDnsmasq is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License, version 2 or 3.\n",
+      "duration_seconds": 0.251
+    }
+  },
+  "cases": [
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-HIS\", \"client\": \"10.10.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.387,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=63 time=1.12 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=63 time=1.95 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.123/1.535/1.948/0.412 ms\n",
+      "duration_seconds": 1.282,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.11"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.11 (10.10.10.11) 56(84) bytes of data.\n64 bytes from 10.10.10.11: icmp_seq=1 ttl=64 time=0.313 ms\n64 bytes from 10.10.10.11: icmp_seq=2 ttl=64 time=1.12 ms\n\n--- 10.10.10.11 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1047ms\nrtt min/avg/max/mdev = 0.313/0.716/1.119/0.403 ms\n",
+      "duration_seconds": 1.33,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=64 time=0.729 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=64 time=0.836 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1048ms\nrtt min/avg/max/mdev = 0.729/0.782/0.836/0.053 ms\n",
+      "duration_seconds": 1.333,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.20.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.20.10 (10.10.20.10) 56(84) bytes of data.\n64 bytes from 10.10.20.10: icmp_seq=1 ttl=63 time=1.17 ms\n64 bytes from 10.10.20.10: icmp_seq=2 ttl=63 time=1.61 ms\n\n--- 10.10.20.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.166/1.385/1.605/0.219 ms\n",
+      "duration_seconds": 1.405,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=1.92 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=3.52 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.922/2.720/3.518/0.798 ms\n",
+      "duration_seconds": 1.269,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n64 bytes from 10.20.10.10: icmp_seq=1 ttl=61 time=1.93 ms\n64 bytes from 10.20.10.10: icmp_seq=2 ttl=61 time=3.57 ms\n\n--- 10.20.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.933/2.752/3.572/0.819 ms\n",
+      "duration_seconds": 1.265,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=61 time=1.37 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=61 time=5.33 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1003ms\nrtt min/avg/max/mdev = 1.372/3.353/5.334/1.981 ms\n",
+      "duration_seconds": 1.309,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n64 bytes from 10.20.10.10: icmp_seq=1 ttl=61 time=0.963 ms\n64 bytes from 10.20.10.10: icmp_seq=2 ttl=61 time=2.77 ms\n\n--- 10.20.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 0.963/1.864/2.766/0.901 ms\n",
+      "duration_seconds": 1.334,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=61 time=3.67 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=61 time=2.71 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1002ms\nrtt min/avg/max/mdev = 2.710/3.187/3.665/0.477 ms\n",
+      "duration_seconds": 1.329,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=1.20 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=3.20 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.195/2.198/3.202/1.003 ms\n",
+      "duration_seconds": 1.335,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.10.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.27,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.20.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.285,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.30.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.297,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8081"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 198.51.100.2 port 8081 after 1 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.342,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8080"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"192.0.2.100\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.481,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://203.0.113.2:8080"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 203.0.113.2 port 8080 after 5 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.484,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.289,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.289,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.299,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.234,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2000 ms: Timeout was reached\n",
+      "duration_seconds": 2.233,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2000 ms: Timeout was reached\n",
+      "duration_seconds": 2.244,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.295,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2000 ms: Timeout was reached\n",
+      "duration_seconds": 2.295,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.305,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.275,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.347,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.274,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.34,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.391,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.389,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.3,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.341,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.446,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.321,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.32,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.325,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.333,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.337,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.346,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.376,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "traceroute",
+        "-I",
+        "-n",
+        "-m",
+        "10",
+        "-w",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "traceroute to 10.30.10.10 (10.30.10.10), 10 hops max, 60 byte packets\n 1  10.20.10.1  1.180 ms  1.165 ms  1.169 ms\n 2  10.255.0.1  1.822 ms  1.864 ms  1.872 ms\n 3  10.255.0.6  2.680 ms  2.699 ms  2.725 ms\n 4  10.30.10.10  3.739 ms  5.238 ms  5.332 ms\n",
+      "duration_seconds": 0.43,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 0,
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.10.255.2       1 Full/-          58.784s            3.226s 10.255.0.10     eth0:10.255.0.9                      0     0     0\n\n",
+      "duration_seconds": 0.513,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 0,
+      "output": "Codes: K - kernel route, C - connected, S - static, R - RIP,\n       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nO   10.10.10.0/25 [110/10] is directly connected, eth2.10, weight 1, 00:01:00\nO   10.10.20.0/25 [110/10] is directly connected, eth2.20, weight 1, 00:01:00\nO   10.10.30.0/25 [110/10] is directly connected, eth2.30, weight 1, 00:01:00\nO   10.10.40.0/25 [110/10] is directly connected, eth2.40, weight 1, 00:01:00\nO   10.10.50.0/25 [110/10] is directly connected, eth2.50, weight 1, 00:01:00\nO   10.10.60.0/25 [110/10] is directly connected, eth2.60, weight 1, 00:01:00\nO   10.10.70.0/27 [110/10] is directly connected, eth2.70, weight 1, 00:01:00\nO   10.10.90.0/24 [110/10] is directly connected, eth2.90, weight 1, 00:01:00\nO   10.10.100.0/23 [110/10] is directly connected, eth2.100, weight 1, 00:01:00\nO   10.10.110.0/24 [110/10] is directly connected, eth2.110, weight 1, 00:01:00\nO   10.10.120.0/24 [110/10] is directly connected, eth2.120, weight 1, 00:01:00\nO   10.10.255.1/32 [110/0] is directly connected, lo, weight 1, 00:01:00\nO>* 10.10.255.2/32 [110/1] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.10.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.20.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.30.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.70.0/28 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.90.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.100.0/23 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.110.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.120.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.20.255.1/32 [110/11] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.10.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.20.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.30.0/25 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.70.0/28 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.90.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.100.0/23 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.110.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.120.0/24 [110/21] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.30.255.1/32 [110/11] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.255.0.0/30 [110/11] via 10.255.0.10, eth0, weight 1, 00:00:50\nO>* 10.255.0.4/30 [110/11] via 10.255.0.10, eth0, weight 1, 00:00:50\nO   10.255.0.8/30 [110/1] is directly connected, eth0, weight 1, 00:01:00\nO   10.255.0.12/30 [110/10] is directly connected, eth1, weight 1, 00:01:00\n",
+      "duration_seconds": 0.401,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 0,
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.20.255.1       1 Full/-          1m00s              3.320s 10.255.0.2      eth0:10.255.0.1                      0     0     0\n10.30.255.1       1 Full/-          1m00s              3.320s 10.255.0.6      eth1:10.255.0.5                      0     0     0\n10.10.255.1       1 Full/-          59.734s            3.618s 10.255.0.9      eth2:10.255.0.10                     0     0     0\n\n",
+      "duration_seconds": 0.553,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 0,
+      "output": "Codes: K - kernel route, C - connected, S - static, R - RIP,\n       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nO>* 10.10.10.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.20.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.30.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.40.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.50.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.60.0/25 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.70.0/27 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.80.0/27 [110/20] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.90.0/24 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.100.0/23 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.110.0/24 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.120.0/24 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\nO>* 10.10.255.1/32 [110/1] via 10.255.0.9, eth2, weight 1, 00:00:51\nO   10.10.255.2/32 [110/0] is directly connected, lo, weight 1, 00:01:02\nO>* 10.20.10.0/25 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.20.0/25 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.30.0/25 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.70.0/28 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.90.0/24 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.100.0/23 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.110.0/24 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.120.0/24 [110/20] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.20.255.1/32 [110/10] via 10.255.0.2, eth0, weight 1, 00:00:52\nO>* 10.30.10.0/25 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.20.0/25 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.30.0/25 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.70.0/28 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.90.0/24 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.100.0/23 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.110.0/24 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.120.0/24 [110/20] via 10.255.0.6, eth1, weight 1, 00:00:52\nO>* 10.30.255.1/32 [110/10] via 10.255.0.6, eth1, weight 1, 00:00:52\nO   10.255.0.0/30 [110/10] is directly connected, eth0, weight 1, 00:01:02\nO   10.255.0.4/30 [110/10] is directly connected, eth1, weight 1, 00:01:02\nO   10.255.0.8/30 [110/1] is directly connected, eth2, weight 1, 00:01:02\nO>* 10.255.0.12/30 [110/11] via 10.255.0.9, eth2, weight 1, 00:00:51\n",
+      "duration_seconds": 0.474,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 0,
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.10.255.2       1 Full/-          1m01s              3.361s 10.255.0.1      eth0:10.255.0.2                      0     0     0\n\n",
+      "duration_seconds": 0.439,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 0,
+      "output": "Codes: K - kernel route, C - connected, S - static, R - RIP,\n       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nO>* 0.0.0.0/0 [110/10] via 10.255.0.1, eth0, weight 1, 00:00:47\nO>* 10.10.10.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.20.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.30.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.40.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.50.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.60.0/25 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.70.0/27 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.80.0/27 [110/20] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.90.0/24 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.100.0/23 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.110.0/24 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.120.0/24 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.255.1/32 [110/11] via 10.255.0.1, eth0, weight 1, 00:00:51\nO>* 10.10.255.2/32 [110/10] via 10.255.0.1, eth0, weight 1, 00:00:52\nO   10.20.10.0/25 [110/10] is directly connected, eth1.10, weight 1, 00:01:03\nO   10.20.20.0/25 [110/10] is directly connected, eth1.20, weight 1, 00:01:03\nO   10.20.30.0/25 [110/10] is directly connected, eth1.30, weight 1, 00:01:03\nO   10.20.70.0/28 [110/10] is directly connected, eth1.70, weight 1, 00:01:03\nO   10.20.90.0/24 [110/10] is directly connected, eth1.90, weight 1, 00:01:03\nO   10.20.100.0/23 [110/10] is directly connected, eth1.100, weight 1, 00:01:03\nO   10.20.110.0/24 [110/10] is directly connected, eth1.110, weight 1, 00:01:03\nO   10.20.120.0/24 [110/10] is directly connected, eth1.120, weight 1, 00:01:03\nO   10.20.255.1/32 [110/0] is directly connected, lo, weight 1, 00:01:03\nO>* 10.30.10.0/25 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.20.0/25 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.30.0/25 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.70.0/28 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.90.0/24 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.100.0/23 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.110.0/24 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.120.0/24 [110/30] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.30.255.1/32 [110/20] via 10.255.0.1, eth0, weight 1, 00:00:52\nO   10.255.0.0/30 [110/10] is directly connected, eth0, weight 1, 00:01:03\nO>* 10.255.0.4/30 [110/20] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.255.0.8/30 [110/11] via 10.255.0.1, eth0, weight 1, 00:00:52\nO>* 10.255.0.12/30 [110/21] via 10.255.0.1, eth0, weight 1, 00:00:51\n",
+      "duration_seconds": 0.455,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 0,
+      "output": "\nNeighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL\n10.10.255.2       1 Full/-          1m02s              3.445s 10.255.0.5      eth0:10.255.0.6                      0     0     0\n\n",
+      "duration_seconds": 0.463,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 0,
+      "output": "Codes: K - kernel route, C - connected, S - static, R - RIP,\n       O - OSPF, I - IS-IS, B - BGP, E - EIGRP, N - NHRP,\n       T - Table, v - VNC, V - VNC-Direct, A - Babel, F - PBR,\n       f - OpenFabric,\n       > - selected route, * - FIB route, q - queued, r - rejected, b - backup\n       t - trapped, o - offload failure\n\nO>* 0.0.0.0/0 [110/10] via 10.255.0.5, eth0, weight 1, 00:00:48\nO>* 10.10.10.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.20.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.30.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.40.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.50.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.60.0/25 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.70.0/27 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.80.0/27 [110/20] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.90.0/24 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.100.0/23 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.110.0/24 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.120.0/24 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.255.1/32 [110/11] via 10.255.0.5, eth0, weight 1, 00:00:52\nO>* 10.10.255.2/32 [110/10] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.10.0/25 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.20.0/25 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.30.0/25 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.70.0/28 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.90.0/24 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.100.0/23 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.110.0/24 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.120.0/24 [110/30] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.20.255.1/32 [110/20] via 10.255.0.5, eth0, weight 1, 00:00:53\nO   10.30.10.0/25 [110/10] is directly connected, eth1.10, weight 1, 00:01:04\nO   10.30.20.0/25 [110/10] is directly connected, eth1.20, weight 1, 00:01:04\nO   10.30.30.0/25 [110/10] is directly connected, eth1.30, weight 1, 00:01:04\nO   10.30.70.0/28 [110/10] is directly connected, eth1.70, weight 1, 00:01:04\nO   10.30.90.0/24 [110/10] is directly connected, eth1.90, weight 1, 00:01:04\nO   10.30.100.0/23 [110/10] is directly connected, eth1.100, weight 1, 00:01:04\nO   10.30.110.0/24 [110/10] is directly connected, eth1.110, weight 1, 00:01:04\nO   10.30.120.0/24 [110/10] is directly connected, eth1.120, weight 1, 00:01:04\nO   10.30.255.1/32 [110/0] is directly connected, lo, weight 1, 00:01:04\nO>* 10.255.0.0/30 [110/20] via 10.255.0.5, eth0, weight 1, 00:00:53\nO   10.255.0.4/30 [110/10] is directly connected, eth0, weight 1, 00:01:04\nO>* 10.255.0.8/30 [110/11] via 10.255.0.5, eth0, weight 1, 00:00:53\nO>* 10.255.0.12/30 [110/21] via 10.255.0.5, eth0, weight 1, 00:00:52\n",
+      "duration_seconds": 0.473,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "95: eth0    inet 10.30.100.11/23 brd 10.30.101.255 scope global dynamic eth0\\       valid_lft 3548sec preferred_lft 3548sec\n",
+      "duration_seconds": 0.408,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.30.100.1 dev eth0 \n",
+      "duration_seconds": 0.396,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.456,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:43:b9:87:0e:60\nSending on   LPF/eth0/02:43:b9:87:0e:60\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 8\nDHCPOFFER of 10.30.100.11 from 10.30.100.1\nDHCPREQUEST for 10.30.100.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.30.100.11 from 10.30.100.1\nbound to 10.30.100.11 -- renewal in 1790 seconds.\n",
+      "duration_seconds": 0.408,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "93: eth0    inet 10.30.10.10/25 brd 10.30.10.127 scope global dynamic eth0\\       valid_lft 3546sec preferred_lft 3546sec\n",
+      "duration_seconds": 0.399,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.30.10.1 dev eth0 \n",
+      "duration_seconds": 0.335,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.444,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:29:62:b5:c5:02\nSending on   LPF/eth0/02:29:62:b5:c5:02\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 8\nDHCPOFFER of 10.30.10.10 from 10.30.10.1\nDHCPREQUEST for 10.30.10.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.30.10.10 from 10.30.10.1\nbound to 10.30.10.10 -- renewal in 1718 seconds.\n",
+      "duration_seconds": 0.423,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "105: eth0    inet 10.30.20.10/25 brd 10.30.20.127 scope global dynamic eth0\\       valid_lft 3548sec preferred_lft 3548sec\n",
+      "duration_seconds": 0.364,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.30.20.1 dev eth0 \n",
+      "duration_seconds": 0.371,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.423,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:2b:56:a6:1c:0e\nSending on   LPF/eth0/02:2b:56:a6:1c:0e\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3\nDHCPOFFER of 10.30.20.10 from 10.30.20.1\nDHCPREQUEST for 10.30.20.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.30.20.10 from 10.30.20.1\nbound to 10.30.20.10 -- renewal in 1484 seconds.\n",
+      "duration_seconds": 0.365,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "106: eth0    inet 10.30.30.10/25 brd 10.30.30.127 scope global dynamic eth0\\       valid_lft 3547sec preferred_lft 3547sec\n",
+      "duration_seconds": 0.349,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.30.30.1 dev eth0 \n",
+      "duration_seconds": 0.325,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.384,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:e8:2e:08:c9:01\nSending on   LPF/eth0/02:e8:2e:08:c9:01\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.30.30.10 from 10.30.30.1\nDHCPREQUEST for 10.30.30.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.30.30.10 from 10.30.30.1\nbound to 10.30.30.10 -- renewal in 1450 seconds.\n",
+      "duration_seconds": 0.228,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "107: eth0    inet 10.30.120.11/24 brd 10.30.120.255 scope global dynamic eth0\\       valid_lft 3546sec preferred_lft 3546sec\n",
+      "duration_seconds": 0.403,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.30.120.1 dev eth0 \n",
+      "duration_seconds": 0.426,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.32,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:a5:1e:79:63:c3\nSending on   LPF/eth0/02:a5:1e:79:63:c3\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 5\nDHCPOFFER of 10.30.120.11 from 10.30.120.1\nDHCPREQUEST for 10.30.120.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.30.120.11 from 10.30.120.1\nbound to 10.30.120.11 -- renewal in 1591 seconds.\n",
+      "duration_seconds": 0.261,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "94: eth0    inet 10.20.100.11/23 brd 10.20.101.255 scope global dynamic eth0\\       valid_lft 3540sec preferred_lft 3540sec\n",
+      "duration_seconds": 0.369,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.20.100.1 dev eth0 \n",
+      "duration_seconds": 0.386,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.458,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:33:68:59:b9:f5\nSending on   LPF/eth0/02:33:68:59:b9:f5\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.20.100.11 from 10.20.100.1\nDHCPREQUEST for 10.20.100.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.20.100.11 from 10.20.100.1\nbound to 10.20.100.11 -- renewal in 1630 seconds.\n",
+      "duration_seconds": 0.235,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "92: eth0    inet 10.20.10.10/25 brd 10.20.10.127 scope global dynamic eth0\\       valid_lft 3538sec preferred_lft 3538sec\n",
+      "duration_seconds": 0.417,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.20.10.1 dev eth0 \n",
+      "duration_seconds": 0.392,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.458,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:18:33:47:31:5b\nSending on   LPF/eth0/02:18:33:47:31:5b\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 7\nDHCPOFFER of 10.20.10.10 from 10.20.10.1\nDHCPREQUEST for 10.20.10.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.20.10.10 from 10.20.10.1\nbound to 10.20.10.10 -- renewal in 1469 seconds.\n",
+      "duration_seconds": 0.392,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "103: eth0    inet 10.20.20.10/25 brd 10.20.20.127 scope global dynamic eth0\\       valid_lft 3539sec preferred_lft 3539sec\n",
+      "duration_seconds": 0.405,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.20.20.1 dev eth0 \n",
+      "duration_seconds": 0.352,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.305,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:4a:d8:09:0e:aa\nSending on   LPF/eth0/02:4a:d8:09:0e:aa\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 8\nDHCPOFFER of 10.20.20.10 from 10.20.20.1\nDHCPREQUEST for 10.20.20.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.20.20.10 from 10.20.20.1\nbound to 10.20.20.10 -- renewal in 1763 seconds.\n",
+      "duration_seconds": 0.305,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "102: eth0    inet 10.20.30.10/25 brd 10.20.30.127 scope global dynamic eth0\\       valid_lft 3538sec preferred_lft 3538sec\n",
+      "duration_seconds": 0.279,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.20.30.1 dev eth0 \n",
+      "duration_seconds": 0.291,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.325,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:64:fa:3d:a0:69\nSending on   LPF/eth0/02:64:fa:3d:a0:69\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.20.30.10 from 10.20.30.1\nDHCPREQUEST for 10.20.30.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.20.30.10 from 10.20.30.1\nbound to 10.20.30.10 -- renewal in 1626 seconds.\n",
+      "duration_seconds": 0.313,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "104: eth0    inet 10.20.120.11/24 brd 10.20.120.255 scope global dynamic eth0\\       valid_lft 3538sec preferred_lft 3538sec\n",
+      "duration_seconds": 0.376,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.20.120.1 dev eth0 \n",
+      "duration_seconds": 0.375,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.452,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:d7:c7:51:57:6a\nSending on   LPF/eth0/02:d7:c7:51:57:6a\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.20.120.11 from 10.20.120.1\nDHCPREQUEST for 10.20.120.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.20.120.11 from 10.20.120.1\nbound to 10.20.120.11 -- renewal in 1522 seconds.\n",
+      "duration_seconds": 0.386,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "90: eth0    inet 10.10.100.11/23 brd 10.10.101.255 scope global dynamic eth0\\       valid_lft 3531sec preferred_lft 3531sec\n",
+      "duration_seconds": 0.389,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.100.1 dev eth0 \n",
+      "duration_seconds": 0.392,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.45,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:23:da:f6:8b:09\nSending on   LPF/eth0/02:23:da:f6:8b:09\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.10.100.11 from 10.10.100.1\nDHCPREQUEST for 10.10.100.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.100.11 from 10.10.100.1\nbound to 10.10.100.11 -- renewal in 1706 seconds.\n",
+      "duration_seconds": 0.393,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "85: eth0    inet 10.10.10.10/25 brd 10.10.10.127 scope global dynamic eth0\\       valid_lft 3528sec preferred_lft 3528sec\n",
+      "duration_seconds": 0.402,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.10.1 dev eth0 \n",
+      "duration_seconds": 0.366,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.445,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:98:a3:8d:9e:df\nSending on   LPF/eth0/02:98:a3:8d:9e:df\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 5\nDHCPOFFER of 10.10.10.10 from 10.10.10.1\nDHCPREQUEST for 10.10.10.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.10.10 from 10.10.10.1\nbound to 10.10.10.10 -- renewal in 1758 seconds.\n",
+      "duration_seconds": 0.327,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "86: eth0    inet 10.10.10.11/25 brd 10.10.10.127 scope global dynamic eth0\\       valid_lft 3527sec preferred_lft 3527sec\n",
+      "duration_seconds": 0.407,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.10.1 dev eth0 \n",
+      "duration_seconds": 0.408,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.465,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:23:c3:fd:b6:2c\nSending on   LPF/eth0/02:23:c3:fd:b6:2c\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 5\nDHCPOFFER of 10.10.10.11 from 10.10.10.1\nDHCPREQUEST for 10.10.10.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.10.11 from 10.10.10.1\nbound to 10.10.10.11 -- renewal in 1782 seconds.\n",
+      "duration_seconds": 0.374,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "87: eth0    inet 10.10.20.10/25 brd 10.10.20.127 scope global dynamic eth0\\       valid_lft 3526sec preferred_lft 3526sec\n",
+      "duration_seconds": 0.367,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.20.1 dev eth0 \n",
+      "duration_seconds": 0.367,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.447,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:b9:e4:f2:90:64\nSending on   LPF/eth0/02:b9:e4:f2:90:64\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.10.20.10 from 10.10.20.1\nDHCPREQUEST for 10.10.20.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.20.10 from 10.10.20.1\nbound to 10.10.20.10 -- renewal in 1460 seconds.\n",
+      "duration_seconds": 0.412,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "88: eth0    inet 10.10.30.10/25 brd 10.10.30.127 scope global dynamic eth0\\       valid_lft 3524sec preferred_lft 3524sec\n",
+      "duration_seconds": 0.424,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.30.1 dev eth0 \n",
+      "duration_seconds": 0.413,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.345,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:d7:6b:53:d5:b0\nSending on   LPF/eth0/02:d7:6b:53:d5:b0\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3\nDHCPOFFER of 10.10.30.10 from 10.10.30.1\nDHCPREQUEST for 10.10.30.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.30.10 from 10.10.30.1\nbound to 10.10.30.10 -- renewal in 1755 seconds.\n",
+      "duration_seconds": 0.353,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "89: eth0    inet 10.10.40.10/25 brd 10.10.40.127 scope global dynamic eth0\\       valid_lft 3523sec preferred_lft 3523sec\n",
+      "duration_seconds": 0.416,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.40.1 dev eth0 \n",
+      "duration_seconds": 0.352,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.483,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:6b:32:84:eb:4c\nSending on   LPF/eth0/02:6b:32:84:eb:4c\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.10.40.10 from 10.10.40.1\nDHCPREQUEST for 10.10.40.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.40.10 from 10.10.40.1\nbound to 10.10.40.10 -- renewal in 1452 seconds.\n",
+      "duration_seconds": 0.411,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "100: eth0    inet 10.10.50.10/25 brd 10.10.50.127 scope global dynamic eth0\\       valid_lft 3525sec preferred_lft 3525sec\n",
+      "duration_seconds": 0.392,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.50.1 dev eth0 \n",
+      "duration_seconds": 0.401,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.42,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:be:d7:27:7a:ec\nSending on   LPF/eth0/02:be:d7:27:7a:ec\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 4\nDHCPOFFER of 10.10.50.10 from 10.10.50.1\nDHCPREQUEST for 10.10.50.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.50.10 from 10.10.50.1\nbound to 10.10.50.10 -- renewal in 1437 seconds.\n",
+      "duration_seconds": 0.256,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "101: eth0    inet 10.10.60.10/25 brd 10.10.60.127 scope global dynamic eth0\\       valid_lft 3524sec preferred_lft 3524sec\n",
+      "duration_seconds": 0.422,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.60.1 dev eth0 \n",
+      "duration_seconds": 0.429,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.453,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:19:35:f6:64:3c\nSending on   LPF/eth0/02:19:35:f6:64:3c\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 8\nDHCPOFFER of 10.10.60.10 from 10.10.60.1\nDHCPREQUEST for 10.10.60.10 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.60.10 from 10.10.60.1\nbound to 10.10.60.10 -- renewal in 1612 seconds.\n",
+      "duration_seconds": 0.416,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 0,
+      "output": "91: eth0    inet 10.10.120.11/24 brd 10.10.120.255 scope global dynamic eth0\\       valid_lft 3519sec preferred_lft 3519sec\n",
+      "duration_seconds": 0.39,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "default via 10.10.120.1 dev eth0 \n",
+      "duration_seconds": 0.361,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "192.0.2.100\n",
+      "duration_seconds": 0.497,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 0,
+      "output": "Internet Systems Consortium DHCP Client 4.4.3-P1\nCopyright 2004-2022 Internet Systems Consortium.\nAll rights reserved.\nFor info, please visit https://www.isc.org/software/dhcp/\n\nListening on LPF/eth0/02:f4:0b:57:18:ac\nSending on   LPF/eth0/02:f4:0b:57:18:ac\nSending on   Socket/fallback\nDHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 8\nDHCPOFFER of 10.10.120.11 from 10.10.120.1\nDHCPREQUEST for 10.10.120.11 on eth0 to 255.255.255.255 port 67\nDHCPACK of 10.10.120.11 from 10.10.120.1\nbound to 10.10.120.11 -- renewal in 1454 seconds.\n",
+      "duration_seconds": 0.391,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "MAIN-V100-IN"
+      ],
+      "returncode": 0,
+      "output": "Chain MAIN-V100-IN (2 references)\n    pkts      bytes target     prot opt in     out     source               destination         \n       2      656 RETURN     17   --  *      *       0.0.0.0              255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.10.100.0/23       255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.10.100.0/23       10.10.70.10          udp spt:68 dpt:67\n       5      338 RETURN     17   --  *      *       10.10.100.0/23       192.0.2.100          udp dpt:53\n       0        0 RETURN     6    --  *      *       10.10.100.0/23       192.0.2.100          tcp dpt:53\n       7      492 DROP       0    --  *      *       0.0.0.0/0            10.0.0.0/8          \n       0        0 DROP       0    --  *      *       0.0.0.0/0            172.16.0.0/12       \n       0        0 DROP       0    --  *      *       0.0.0.0/0            192.168.0.0/16      \n       0        0 DROP       0    --  *      *       0.0.0.0/0            169.254.0.0/16      \n      10      698 RETURN     6    --  *      *       10.10.100.0/23       0.0.0.0/0            tcp dpt:80\n       0        0 RETURN     6    --  *      *       10.10.100.0/23       0.0.0.0/0            tcp dpt:443\n       0        0 RETURN     1    --  *      *       10.10.100.0/23       192.0.2.100         \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n",
+      "duration_seconds": 0.409,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "DBP-V100-IN"
+      ],
+      "returncode": 0,
+      "output": "Chain DBP-V100-IN (2 references)\n    pkts      bytes target     prot opt in     out     source               destination         \n       2      656 RETURN     17   --  *      *       0.0.0.0              255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.20.100.0/23       255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.20.100.0/23       10.20.70.6           udp spt:68 dpt:67\n       5      338 RETURN     17   --  *      *       10.20.100.0/23       192.0.2.100          udp dpt:53\n       0        0 RETURN     6    --  *      *       10.20.100.0/23       192.0.2.100          tcp dpt:53\n       7      492 DROP       0    --  *      *       0.0.0.0/0            10.0.0.0/8          \n       0        0 DROP       0    --  *      *       0.0.0.0/0            172.16.0.0/12       \n       0        0 DROP       0    --  *      *       0.0.0.0/0            192.168.0.0/16      \n       0        0 DROP       0    --  *      *       0.0.0.0/0            169.254.0.0/16      \n      10      698 RETURN     6    --  *      *       10.20.100.0/23       0.0.0.0/0            tcp dpt:80\n       0        0 RETURN     6    --  *      *       10.20.100.0/23       0.0.0.0/0            tcp dpt:443\n       0        0 RETURN     1    --  *      *       10.20.100.0/23       192.0.2.100         \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n",
+      "duration_seconds": 0.388,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "BHTQ-V100-IN"
+      ],
+      "returncode": 0,
+      "output": "Chain BHTQ-V100-IN (2 references)\n    pkts      bytes target     prot opt in     out     source               destination         \n       2      656 RETURN     17   --  *      *       0.0.0.0              255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.30.100.0/23       255.255.255.255      udp spt:68 dpt:67\n       0        0 RETURN     17   --  *      *       10.30.100.0/23       10.30.70.6           udp spt:68 dpt:67\n       5      338 RETURN     17   --  *      *       10.30.100.0/23       192.0.2.100          udp dpt:53\n       0        0 RETURN     6    --  *      *       10.30.100.0/23       192.0.2.100          tcp dpt:53\n       7      492 DROP       0    --  *      *       0.0.0.0/0            10.0.0.0/8          \n       0        0 DROP       0    --  *      *       0.0.0.0/0            172.16.0.0/12       \n       0        0 DROP       0    --  *      *       0.0.0.0/0            192.168.0.0/16      \n       0        0 DROP       0    --  *      *       0.0.0.0/0            169.254.0.0/16      \n      10      698 RETURN     6    --  *      *       10.30.100.0/23       0.0.0.0/0            tcp dpt:80\n       0        0 RETURN     6    --  *      *       10.30.100.0/23       0.0.0.0/0            tcp dpt:443\n       0        0 RETURN     1    --  *      *       10.30.100.0/23       192.0.2.100         \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n",
+      "duration_seconds": 0.312,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.455,
+      "group": "ISP-PBR",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.41,
+      "group": "ISP-PBR",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.376,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 192.0.2.100 port 80 after 0 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.233,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 192.0.2.100 port 80 after 0 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.241,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.254,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.255,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.256,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=3.19 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=3.76 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1002ms\nrtt min/avg/max/mdev = 3.187/3.472/3.758/0.285 ms\n",
+      "duration_seconds": 1.361,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "up"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.369,
+      "group": "ISP-RECOVERY",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP2",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.342,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.279,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.279,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.284,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.292,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.299,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=3.54 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=4.16 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1002ms\nrtt min/avg/max/mdev = 3.543/3.849/4.155/0.306 ms\n",
+      "duration_seconds": 1.34,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP2",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "up"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.393,
+      "group": "ISP-RECOVERY",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.389,
+      "group": "ISP-BOTH-DOWN",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP2",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.436,
+      "group": "ISP-BOTH-DOWN",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 192.0.2.100 port 80 after 3 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.416,
+      "group": "ISP-BOTH-DOWN",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=3.12 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=4.43 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1002ms\nrtt min/avg/max/mdev = 3.118/3.775/4.433/0.657 ms\n",
+      "duration_seconds": 1.422,
+      "group": "ISP-BOTH-DOWN",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.413,
+      "group": "ISP-BOTH-DOWN",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "up"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.398,
+      "group": "ISP-RECOVERY",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "ISP2",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "up"
+      ],
+      "returncode": 0,
+      "output": "",
+      "duration_seconds": 0.391,
+      "group": "ISP-RECOVERY",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-HIS\", \"client\": \"10.10.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.494,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=63 time=1.28 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=63 time=2.70 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.282/1.989/2.697/0.707 ms\n",
+      "duration_seconds": 1.286,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.11"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.11 (10.10.10.11) 56(84) bytes of data.\n64 bytes from 10.10.10.11: icmp_seq=1 ttl=64 time=0.599 ms\n64 bytes from 10.10.10.11: icmp_seq=2 ttl=64 time=0.977 ms\n\n--- 10.10.10.11 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1041ms\nrtt min/avg/max/mdev = 0.599/0.788/0.977/0.189 ms\n",
+      "duration_seconds": 1.325,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=64 time=0.382 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=64 time=0.972 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1035ms\nrtt min/avg/max/mdev = 0.382/0.677/0.972/0.295 ms\n",
+      "duration_seconds": 1.325,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.20.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.20.10 (10.10.20.10) 56(84) bytes of data.\n64 bytes from 10.10.20.10: icmp_seq=1 ttl=63 time=2.42 ms\n64 bytes from 10.10.20.10: icmp_seq=2 ttl=63 time=2.92 ms\n\n--- 10.10.20.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 2.422/2.669/2.917/0.247 ms\n",
+      "duration_seconds": 1.369,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n64 bytes from 10.20.10.10: icmp_seq=1 ttl=61 time=0.734 ms\n64 bytes from 10.20.10.10: icmp_seq=2 ttl=61 time=1.97 ms\n\n--- 10.20.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1011ms\nrtt min/avg/max/mdev = 0.734/1.351/1.969/0.617 ms\n",
+      "duration_seconds": 1.3,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=61 time=0.717 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=61 time=1.90 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1011ms\nrtt min/avg/max/mdev = 0.717/1.308/1.899/0.591 ms\n",
+      "duration_seconds": 1.303,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n64 bytes from 10.20.10.10: icmp_seq=1 ttl=61 time=0.697 ms\n64 bytes from 10.20.10.10: icmp_seq=2 ttl=61 time=2.00 ms\n\n--- 10.20.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1010ms\nrtt min/avg/max/mdev = 0.697/1.346/1.996/0.649 ms\n",
+      "duration_seconds": 1.3,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=1.97 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=2.52 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.974/2.245/2.517/0.271 ms\n",
+      "duration_seconds": 1.355,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n64 bytes from 10.10.10.10: icmp_seq=1 ttl=61 time=2.21 ms\n64 bytes from 10.10.10.10: icmp_seq=2 ttl=61 time=2.23 ms\n\n--- 10.10.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 2.208/2.219/2.231/0.011 ms\n",
+      "duration_seconds": 1.355,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 0,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n64 bytes from 10.30.10.10: icmp_seq=1 ttl=61 time=1.89 ms\n64 bytes from 10.30.10.10: icmp_seq=2 ttl=61 time=3.01 ms\n\n--- 10.30.10.10 ping statistics ---\n2 packets transmitted, 2 received, 0% packet loss, time 1001ms\nrtt min/avg/max/mdev = 1.887/2.450/3.013/0.563 ms\n",
+      "duration_seconds": 1.358,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8081"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 198.51.100.2 port 8081 after 1 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.275,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.10.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.284,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.30.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.284,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"10.20.10.10\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.287,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8080"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Main-WebDMZ\", \"client\": \"192.0.2.100\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.455,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://203.0.113.2:8080"
+      ],
+      "returncode": 7,
+      "output": "curl: (7) Failed to connect to 203.0.113.2 port 8080 after 2 ms: Couldn't connect to server\n",
+      "duration_seconds": 0.492,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.307,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.316,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.34,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.246,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.25,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.276,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.80.10 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.301,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2000 ms: Timeout was reached\n",
+      "duration_seconds": 2.308,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 28,
+      "output": "curl: (28) Failed to connect to 10.10.70.11 port 80 after 2001 ms: Timeout was reached\n",
+      "duration_seconds": 2.321,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.31,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.311,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.397,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.376,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.429,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.421,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.10.10.10 (10.10.10.10) 56(84) bytes of data.\n\n--- 10.10.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.168,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.20.10.10 (10.20.10.10) 56(84) bytes of data.\n\n--- 10.20.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.167,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "PING 10.30.10.10 (10.30.10.10) 56(84) bytes of data.\n\n--- 10.30.10.10 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+      "duration_seconds": 1.245,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.346,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.4,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.416,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.415,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.42,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"203.0.113.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.424,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 0,
+      "output": "{\"node\": \"Web-Lab\", \"client\": \"198.51.100.2\", \"path\": \"/\", \"application\": \"HTTP demonstration; not clinical software\"}",
+      "duration_seconds": 0.294,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "PASS"
+    }
+  ],
+  "captures": {
+    "Main-FW-iptables-save--c": {
+      "node": "Main-FW",
+      "command": [
+        "iptables-save",
+        "-c"
+      ],
+      "returncode": 0,
+      "output": "# Generated by iptables-save v1.8.9 (nf_tables) on Mon Nov  2 13:44:43 2026\n*filter\n:INPUT ACCEPT [0:0]\n:FORWARD DROP [0:0]\n:OUTPUT ACCEPT [0:0]\n:FW-DMZ-UPDATE - [0:0]\n:FW-INTERNET - [0:0]\n:FW-LAN-DMZ - [0:0]\n:FW-PUBLISHED-WEB - [0:0]\n[510:45596] -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT\n[198:15390] -A FORWARD -i eth0 -o eth1 -j FW-INTERNET\n[6:360] -A FORWARD -i eth0 -o eth2 -j FW-LAN-DMZ\n[2:120] -A FORWARD -i eth1 -o eth2 -j FW-PUBLISHED-WEB\n[0:0] -A FORWARD -i eth2 -o eth1 -j FW-DMZ-UPDATE\n[0:0] -A FW-DMZ-UPDATE -s 10.10.80.0/27 -d 192.0.2.100/32 -p udp -m udp --dport 53 -j ACCEPT\n[0:0] -A FW-DMZ-UPDATE -s 10.10.80.0/27 -d 192.0.2.100/32 -p tcp -m tcp --dport 53 -j ACCEPT\n[0:0] -A FW-DMZ-UPDATE -s 10.10.80.0/27 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-DMZ-UPDATE -s 10.10.80.0/27 -p tcp -m tcp --dport 443 -j ACCEPT\n[0:0] -A FW-DMZ-UPDATE -j DROP\n[17:1020] -A FW-INTERNET -s 10.10.0.0/16 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-INTERNET -s 10.10.0.0/16 -p tcp -m tcp --dport 443 -j ACCEPT\n[7:420] -A FW-INTERNET -s 10.20.0.0/16 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-INTERNET -s 10.20.0.0/16 -p tcp -m tcp --dport 443 -j ACCEPT\n[7:420] -A FW-INTERNET -s 10.30.0.0/16 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-INTERNET -s 10.30.0.0/16 -p tcp -m tcp --dport 443 -j ACCEPT\n[27:1770] -A FW-INTERNET -s 10.0.0.0/8 -d 192.0.2.100/32 -p udp -m udp --dport 53 -j ACCEPT\n[0:0] -A FW-INTERNET -s 10.0.0.0/8 -d 192.0.2.100/32 -p tcp -m tcp --dport 53 -j ACCEPT\n[140:11760] -A FW-INTERNET -s 10.0.0.0/8 -d 192.0.2.100/32 -p icmp -j ACCEPT\n[0:0] -A FW-INTERNET -j DROP\n[0:0] -A FW-LAN-DMZ -s 10.10.100.0/23 -j DROP\n[0:0] -A FW-LAN-DMZ -s 10.20.100.0/23 -j DROP\n[0:0] -A FW-LAN-DMZ -s 10.30.100.0/23 -j DROP\n[0:0] -A FW-LAN-DMZ -s 10.10.90.11/32 -d 10.10.80.0/27 -p tcp -m tcp --dport 22 -j ACCEPT\n[2:120] -A FW-LAN-DMZ -s 10.10.0.0/16 -d 10.10.80.10/32 -p tcp -m tcp --dport 80 -j ACCEPT\n[2:120] -A FW-LAN-DMZ -s 10.20.0.0/16 -d 10.10.80.10/32 -p tcp -m tcp --dport 80 -j ACCEPT\n[2:120] -A FW-LAN-DMZ -s 10.30.0.0/16 -d 10.10.80.10/32 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-LAN-DMZ -j DROP\n[2:120] -A FW-PUBLISHED-WEB -d 10.10.80.10/32 -p tcp -m tcp --dport 80 -j ACCEPT\n[0:0] -A FW-PUBLISHED-WEB -j DROP\nCOMMIT\n# Completed on Mon Nov  2 13:44:43 2026\n",
+      "duration_seconds": 0.352
+    },
+    "Main-Edge-conntrack--L": {
+      "node": "Main-Edge",
+      "command": [
+        "conntrack",
+        "-L"
+      ],
+      "returncode": 0,
+      "output": "tcp      6 119 TIME_WAIT src=10.10.20.10 dst=192.0.2.100 sport=47954 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=47954 [ASSURED] mark=0 use=1\ntcp      6 113 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=50076 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=50076 [ASSURED] mark=0 use=1\ntcp      6 33 TIME_WAIT src=10.30.100.11 dst=192.0.2.100 sport=39976 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=39976 [ASSURED] mark=0 use=1\nicmp     1 1 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30051 [UNREPLIED] src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30051 mark=0 use=1\nicmp     1 29 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61231 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61231 mark=0 use=1\nicmp     1 3 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61207 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61207 mark=0 use=1\nudp      17 29 src=10.30.100.11 dst=192.0.2.100 sport=50517 dport=53 src=192.0.2.100 dst=198.51.100.2 sport=53 dport=50517 mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.10.20.10 dst=192.0.2.100 sport=40616 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=40616 [ASSURED] mark=0 use=1\ntcp      6 74 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=41820 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=41820 [ASSURED] mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.20.10.10 dst=192.0.2.100 sport=55524 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=55524 [ASSURED] mark=0 use=1\nicmp     1 6 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61209 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61209 mark=0 use=1\nicmp     1 26 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30063 src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30063 mark=0 use=1\nicmp     1 28 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30064 src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30064 mark=0 use=1\nicmp     1 3 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30052 [UNREPLIED] src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30052 mark=0 use=1\ntcp      6 27 TIME_WAIT src=192.0.2.100 dst=198.51.100.2 sport=42442 dport=8080 src=10.10.80.10 dst=192.0.2.100 sport=80 dport=42442 [ASSURED] mark=0 use=1\nicmp     1 6 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61210 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61210 mark=0 use=1\nicmp     1 10 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61214 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61214 mark=0 use=1\nicmp     1 1 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61205 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61205 mark=0 use=1\nicmp     1 27 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61230 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61230 mark=0 use=1\nicmp     1 18 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61222 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61222 mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.30.100.11 dst=192.0.2.100 sport=38272 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=38272 [ASSURED] mark=0 use=1\ntcp      6 74 TIME_WAIT src=10.10.20.10 dst=192.0.2.100 sport=47942 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=47942 [ASSURED] mark=0 use=1\nicmp     1 16 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61219 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61219 mark=0 use=1\nicmp     1 20 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8624 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8624 mark=0 use=1\ntcp      6 27 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=34234 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=34234 [ASSURED] mark=0 use=1\nicmp     1 10 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61213 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61213 mark=0 use=1\ntcp      6 74 TIME_WAIT src=10.10.10.10 dst=192.0.2.100 sport=36802 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=36802 [ASSURED] mark=0 use=1\nicmp     1 2 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8615 [UNREPLIED] src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8615 mark=0 use=1\nicmp     1 0 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8614 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8614 mark=0 use=1\nudp      17 29 src=10.10.100.11 dst=192.0.2.100 sport=52437 dport=53 src=192.0.2.100 dst=198.51.100.2 sport=53 dport=52437 mark=0 use=1\ntcp      6 85 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=40892 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=40892 [ASSURED] mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.10.10.10 dst=192.0.2.100 sport=57350 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=57350 [ASSURED] mark=0 use=1\nicmp     1 26 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8627 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8627 mark=0 use=1\nicmp     1 29 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61232 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61232 mark=0 use=1\ntcp      6 113 TIME_WAIT src=192.0.2.100 dst=198.51.100.2 sport=49260 dport=8080 src=10.10.80.10 dst=192.0.2.100 sport=80 dport=49260 [ASSURED] mark=0 use=1\ntcp      6 85 TIME_WAIT src=10.10.20.10 dst=192.0.2.100 sport=56314 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=56314 [ASSURED] mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.10.10.10 dst=192.0.2.100 sport=53810 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=53810 [ASSURED] mark=0 use=1\nicmp     1 24 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8626 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8626 mark=0 use=1\nicmp     1 8 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61212 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61212 mark=0 use=1\nudp      17 29 src=10.20.100.11 dst=192.0.2.100 sport=60568 dport=53 src=192.0.2.100 dst=203.0.113.2 sport=53 dport=60568 mark=0 use=1\nicmp     1 23 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61226 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61226 mark=0 use=1\nicmp     1 12 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61215 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61215 mark=0 use=1\ntcp      6 27 TIME_WAIT src=10.30.100.11 dst=192.0.2.100 sport=39964 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=39964 [ASSURED] mark=0 use=1\nicmp     1 25 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61227 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61227 mark=0 use=1\ntcp      6 85 TIME_WAIT src=10.10.10.10 dst=192.0.2.100 sport=58636 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=58636 [ASSURED] mark=0 use=1\nicmp     1 20 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61224 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61224 mark=0 use=1\nicmp     1 19 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30060 src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30060 mark=0 use=1\nicmp     1 25 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61228 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61228 mark=0 use=1\nicmp     1 27 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61229 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61229 mark=0 use=1\nicmp     1 20 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61223 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61223 mark=0 use=1\nudp      17 23 src=10.30.100.11 dst=192.0.2.100 sport=54780 dport=53 src=192.0.2.100 dst=198.51.100.2 sport=53 dport=54780 mark=0 use=1\nicmp     1 24 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30062 src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30062 mark=0 use=1\ntcp      6 27 TIME_WAIT src=10.20.100.11 dst=192.0.2.100 sport=52344 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=52344 [ASSURED] mark=0 use=1\nicmp     1 4 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8616 [UNREPLIED] src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8616 mark=0 use=1\nicmp     1 14 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61218 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61218 mark=0 use=1\nicmp     1 16 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61220 src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61220 mark=0 use=1\nicmp     1 1 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61206 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61206 mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.20.10.10 dst=192.0.2.100 sport=46598 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=46598 [ASSURED] mark=0 use=1\nicmp     1 22 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8625 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8625 mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.20.100.11 dst=192.0.2.100 sport=47684 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=47684 [ASSURED] mark=0 use=1\nicmp     1 22 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61225 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61225 mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.30.10.10 dst=192.0.2.100 sport=45608 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=45608 [ASSURED] mark=0 use=1\nudp      17 23 src=10.10.100.11 dst=192.0.2.100 sport=40973 dport=53 src=192.0.2.100 dst=198.51.100.2 sport=53 dport=40973 mark=0 use=1\ntcp      6 68 TIME_WAIT src=10.10.20.10 dst=192.0.2.100 sport=47926 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=47926 [ASSURED] mark=0 use=1\nicmp     1 28 src=10.10.255.1 dst=192.0.2.100 type=8 code=0 id=8628 src=192.0.2.100 dst=198.51.100.2 type=0 code=0 id=8628 mark=0 use=1\nicmp     1 4 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61208 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61208 mark=0 use=1\ntcp      6 68 TIME_WAIT src=10.10.10.10 dst=192.0.2.100 sport=36800 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=36800 [ASSURED] mark=0 use=1\nicmp     1 14 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61217 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61217 mark=0 use=1\nicmp     1 21 src=10.10.255.2 dst=192.0.2.100 type=8 code=0 id=30061 src=192.0.2.100 dst=203.0.113.2 type=0 code=0 id=30061 mark=0 use=1\nicmp     1 18 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61221 src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61221 mark=0 use=1\ntcp      6 113 TIME_WAIT src=10.30.100.11 dst=192.0.2.100 sport=57406 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=57406 [ASSURED] mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=34248 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=34248 [ASSURED] mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.30.10.10 dst=192.0.2.100 sport=43288 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=43288 [ASSURED] mark=0 use=1\ntcp      6 85 TIME_WAIT src=10.30.10.10 dst=192.0.2.100 sport=44660 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=44660 [ASSURED] mark=0 use=1\nicmp     1 12 src=198.51.100.2 dst=192.0.2.22 type=8 code=0 id=61216 [UNREPLIED] src=192.0.2.22 dst=198.51.100.2 type=0 code=0 id=61216 mark=0 use=1\nudp      17 23 src=10.20.100.11 dst=192.0.2.100 sport=47121 dport=53 src=192.0.2.100 dst=203.0.113.2 sport=53 dport=47121 mark=0 use=1\ntcp      6 85 TIME_WAIT src=10.20.10.10 dst=192.0.2.100 sport=35960 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=35960 [ASSURED] mark=0 use=1\ntcp      6 119 TIME_WAIT src=10.10.100.11 dst=192.0.2.100 sport=40898 dport=80 src=192.0.2.100 dst=198.51.100.2 sport=80 dport=40898 [ASSURED] mark=0 use=1\ntcp      6 32 TIME_WAIT src=10.20.100.11 dst=192.0.2.100 sport=52354 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=52354 [ASSURED] mark=0 use=1\ntcp      6 113 TIME_WAIT src=10.20.100.11 dst=192.0.2.100 sport=42384 dport=80 src=192.0.2.100 dst=203.0.113.2 sport=80 dport=42384 [ASSURED] mark=0 use=1\nicmp     1 8 src=203.0.113.2 dst=192.0.2.11 type=8 code=0 id=61211 [UNREPLIED] src=192.0.2.11 dst=203.0.113.2 type=0 code=0 id=61211 mark=0 use=1\nconntrack v1.4.7 (conntrack-tools): 81 flow entries have been shown.\n",
+      "duration_seconds": 0.313
+    },
+    "Main-Edge-ip-rule-show": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "rule",
+        "show"
+      ],
+      "returncode": 0,
+      "output": "0:\tfrom all lookup local\n50:\tfrom all to 10.0.0.0/8 lookup main\n10100:\tfrom 10.10.10.0/25 lookup 101\n10101:\tfrom 10.10.30.0/25 lookup 101\n10102:\tfrom 10.10.50.0/25 lookup 101\n10103:\tfrom 10.10.70.0/27 lookup 101\n10104:\tfrom 10.10.90.0/24 lookup 101\n10105:\tfrom 10.10.110.0/24 lookup 101\n10106:\tfrom 10.10.255.2 lookup 101\n10107:\tfrom 10.20.0.0/16 lookup 101\n10200:\tfrom 10.10.20.0/25 lookup 102\n10201:\tfrom 10.10.40.0/25 lookup 102\n10202:\tfrom 10.10.60.0/25 lookup 102\n10203:\tfrom 10.10.80.0/27 lookup 102\n10204:\tfrom 10.10.100.0/23 lookup 102\n10205:\tfrom 10.10.120.0/24 lookup 102\n10206:\tfrom 10.10.255.1 lookup 102\n10207:\tfrom 10.30.0.0/16 lookup 102\n32766:\tfrom all lookup main\n32767:\tfrom all lookup default\n",
+      "duration_seconds": 0.336
+    },
+    "Main-Edge-ip-route-show-table-101": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "table",
+        "101"
+      ],
+      "returncode": 0,
+      "output": "default via 203.0.113.1 dev eth1 \n",
+      "duration_seconds": 0.421
+    },
+    "Main-Edge-ip-route-show-table-102": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "table",
+        "102"
+      ],
+      "returncode": 0,
+      "output": "default via 198.51.100.1 dev eth2 \n",
+      "duration_seconds": 0.373
+    },
+    "Main-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "Main-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 0,
+      "output": "1793630550 02:19:35:f6:64:3c 10.10.60.10 main-pc60 *\n1793630550 02:be:d7:27:7a:ec 10.10.50.10 main-pc50 *\n1793630546 02:f4:0b:57:18:ac 10.10.120.11 main-staff *\n1793630546 02:6b:32:84:eb:4c 10.10.40.10 main-pc40 *\n1793630546 02:23:da:f6:8b:09 10.10.100.11 main-guest *\n1793630546 02:d7:6b:53:d5:b0 10.10.30.10 main-pc30 *\n1793630546 02:b9:e4:f2:90:64 10.10.20.10 main-pc20 *\n1793630546 02:23:c3:fd:b6:2c 10.10.10.11 main-pc10-b *\n1793630544 02:98:a3:8d:9e:df 10.10.10.10 main-pc10-a *\n",
+      "duration_seconds": 0.413
+    },
+    "DBP-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "DBP-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 0,
+      "output": "1793630552 02:d7:c7:51:57:6a 10.20.120.11 dbp-staff *\n1793630550 02:4a:d8:09:0e:aa 10.20.20.10 dbp-pc20 *\n1793630550 02:64:fa:3d:a0:69 10.20.30.10 dbp-pc30 *\n1793630548 02:33:68:59:b9:f5 10.20.100.11 dbp-guest *\n1793630548 02:18:33:47:31:5b 10.20.10.10 dbp-pc10 *\n",
+      "duration_seconds": 0.378
+    },
+    "BHTQ-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "BHTQ-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 0,
+      "output": "1793630552 02:a5:1e:79:63:c3 10.30.120.11 bhtq-staff *\n1793630552 02:2b:56:a6:1c:0e 10.30.20.10 bhtq-pc20 *\n1793630552 02:e8:2e:08:c9:01 10.30.30.10 bhtq-pc30 *\n1793630548 02:43:b9:87:0e:60 10.30.100.11 bhtq-guest *\n1793630548 02:29:62:b5:c5:02 10.30.10.10 bhtq-pc10 *\n",
+      "duration_seconds": 0.368
+    }
+  }
+}

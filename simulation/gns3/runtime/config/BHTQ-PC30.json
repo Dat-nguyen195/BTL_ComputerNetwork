@@ -1,0 +1,13 @@
+{
+  "name": "BHTQ-PC30",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.30.30.10/25"
+  },
+  "gateway": "10.30.30.1",
+  "dns": "10.30.70.6",
+  "mac": "02:e8:2e:08:c9:01",
+  "adapters": 1,
+  "services": "client",
+  "dhcp": true
+}

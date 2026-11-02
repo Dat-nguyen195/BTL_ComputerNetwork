@@ -1,0 +1,12 @@
+{
+  "name": "Main-Backup",
+  "role": "endpoint",
+  "interfaces": {
+    "eth0": "10.10.70.16/27"
+  },
+  "gateway": "10.10.70.1",
+  "dns": "10.10.70.10",
+  "mac": "02:31:37:a5:75:b9",
+  "adapters": 1,
+  "services": "backup-design-only"
+}

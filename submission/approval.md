@@ -1,25 +1,14 @@
-# Hồ sơ TV1 duyệt sản phẩm cuối
+# Hồ sơ duyệt bản bàn giao
 
-**Trạng thái:** PENDING / CHƯA DUYỆT. **Cập nhật:** 26/10/2026. **Người duyệt cuối theo phân công:** TV1. Ngày G4 dự kiến 22/11/2026, không phải ngày đã ký.
+**PENDING xác nhận người phụ trách; cập nhật02/11/2026.** Tác vụ hoàn thiện/kiểm kỹ thuật đã thực hiện theo yêu cầu chủ repo; không tự ký thay TV1/TV5 hoặc tạo biên nhận BKeL.
 
-## Sản phẩm và điều kiện duyệt
-
-| Sản phẩm | Đường dẫn dự kiến | Phiên bản / SHA256 | Kết luận hiện tại |
-| --- | --- | --- | --- |
-| PDF | `docs/06-report/final/report.pdf` | Chưa có file/hash | PENDING |
-| Mô phỏng | `simulation/packet-tracer/hospital-3sites.pkt` hoặc gói GNS3 | Chưa có file/hash | PENDING |
-| Config | `configs/` | Cấu hình tham chiếu, chưa đối chiếu running-config | Chờ tích hợp và test |
-| Evidence | `test_results/` | Mẫu/thủ tục; chưa có runtime evidence | NOT RUN |
-
-## Bảng xác nhận để điền khi có sản phẩm thật
-
-| Phần xác nhận | Người chủ trì | Trạng thái |
+| Sản phẩm/điều kiện | Kiểm kỹ thuật đã có | Phê duyệt học phần |
 | --- | --- | --- |
-| PDF đủ nội dung, font/hình/bảng/mục lục, nguồn và giới hạn | TV5 chuẩn bị, TV1 đọc | Chưa có PDF |
-| Mô phỏng lưu/đóng/mở lại; đủ dependency; smoke test đúng bản | TV4 | Chưa kiểm |
-| LAN/IP/security/DMZ/VPN được đọc chéo đúng phạm vi | TV2/TV3 với TV1 | Chưa xác nhận |
-| TC01–TC06 và test bổ sung có actual, ngày/người chạy, evidence gắn phiên bản | TV4 và chủ trì chuyên môn | NOT RUN |
-| Manifest và SHA256 khớp đúng PDF/mô phỏng | TV4/TV5 | Chưa lập hash |
-| TV1 ký riêng hai sản phẩm cuối theo phiên bản/hash | TV1 | PENDING |
+| PDF/source | Có bản10 trang, đã render QA; hash ởSHA256SUMS | PENDING TV1/TV5 |
+| Native GNS3 | Đã chép template từ source, mở lại bằng GNS3,52 node started và137 kiểm PASS | PENDING TV4/TV1 |
+| LAN/WAN/security |209 kiểm tích hợp PASS,18 pool/OSPF/NAT/PBR/IDS-IPS; giới hạn có ghi | PENDING đọc chéo nhóm |
+| Config thực | Hash mã/config trong52 node khớp source; IOS vẫn chưa chạy | PENDING phạm vi nền tảng |
+| Gói/checksum | package_submission.py và manifest/checksum, không thay chữ ký | PENDING bản nộp đã chọn |
+| Thông tin môn học/nhân sự/BKeL | Nhóm xác nhận tên/lớp/MSSV, quy định nhóm và hạn; chưa nộp | PENDING |
 
-Ngày/người duyệt, nhận xét, lỗi cần sửa, kết luận từng sản phẩm: điền khi nghiệm thu thực tế. Chỉ ghi APPROVED sau khi kiểm đủ điều kiện. Mọi sửa đổi sau duyệt phải cập nhật manifest/hash, retest phần ảnh hưởng và tái duyệt. Chưa có xác nhận của TV2/TV3/TV4/TV5 hoặc xác nhận nộp BKeL trong hồ sơ hiện tại.
+[Manifest](manifest.md), [review cuối](../docs/00-management/project-review.md), [evidence](../test_results/runtime/README.md) ghi kết quả có thật. Khi người phụ trách duyệt, ghi ngày/người/hash và kết luận riêng cho PDF/project. Sửa sau duyệt phải cập nhật hash, kiểm phần bị ảnh hưởng và tái duyệt.

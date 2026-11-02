@@ -1,0 +1,20 @@
+{
+  "name": "Web-Access",
+  "role": "switch",
+  "interfaces": {},
+  "adapters": 2,
+  "ports": [
+    {
+      "name": "uplink",
+      "port_number": 0,
+      "type": "access",
+      "vlan": 1
+    },
+    {
+      "name": "Web-Lab",
+      "port_number": 1,
+      "type": "access",
+      "vlan": 1
+    }
+  ]
+}

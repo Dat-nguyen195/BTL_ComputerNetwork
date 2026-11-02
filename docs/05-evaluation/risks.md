@@ -1,5 +1,7 @@
 # Rủi ro, tồn tại và hướng phát triển
 
+**Cập nhật:** sáu nhóm và các chức năng mạng chính đã kiểm trên GNS3; [review cuối](../00-management/project-review.md) ghi rủi ro còn lại. Gián đoạn hội tụ ISP đã đo, không gọi zero-downtime; OLT/Core/FW/Edge/leased line vẫn SPOF, xDSL cần xác nhận năng lực và GPON/RF cần đo thực.
+
 | ID | Rủi ro / thiếu dữ liệu | Ảnh hưởng | Phụ trách | Hành động | Trạng thái |
 | --- | --- | --- | --- | --- | --- |
 | R01 | Chưa rõ tải server tổng hay từng máy | Sizing ISP/WAN sai | TV4 | Tính kịch bản và xác nhận | OPEN |

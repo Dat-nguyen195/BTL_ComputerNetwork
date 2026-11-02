@@ -1,0 +1,13 @@
+14:06:47.233472 IP 10.10.255.1 > 192.0.2.100: ICMP echo request, id 36016, seq 1, length 64
+14:06:47.236488 IP 192.0.2.100 > 10.10.255.1: ICMP echo reply, id 36016, seq 1, length 64
+14:06:48.105520 IP 192.0.2.100.59246 > 10.10.80.10.80: Flags [S], seq 3851100365, win 64240, options [mss 1460,sackOK,TS val 11178623 ecr 0,nop,wscale 10], length 0
+14:06:48.106718 IP 10.10.80.10.80 > 192.0.2.100.59246: Flags [S.], seq 2223667076, ack 3851100366, win 65160, options [mss 1460,sackOK,TS val 3592831577 ecr 11178623,nop,wscale 10], length 0
+14:06:48.108355 IP 192.0.2.100.59246 > 10.10.80.10.80: Flags [.], ack 1, win 63, options [nop,nop,TS val 11178626 ecr 3592831577], length 0
+14:06:48.109141 IP 192.0.2.100.59246 > 10.10.80.10.80: Flags [P.], seq 1:81, ack 1, win 63, options [nop,nop,TS val 11178626 ecr 3592831577], length 80: HTTP: GET / HTTP/1.1
+14:06:48.110712 IP 10.10.80.10.80 > 192.0.2.100.59246: Flags [.], ack 81, win 64, options [nop,nop,TS val 3592831581 ecr 11178626], length 0
+14:06:48.115498 IP 10.10.80.10.80 > 192.0.2.100.59246: Flags [P.], seq 1:146, ack 81, win 64, options [nop,nop,TS val 3592831582 ecr 11178626], length 145: HTTP: HTTP/1.0 200 OK
+14:06:48.115792 IP 10.10.80.10.80 > 192.0.2.100.59246: Flags [FP.], seq 146:267, ack 81, win 64, options [nop,nop,TS val 3592831582 ecr 11178626], length 121: HTTP
+14:06:48.116824 IP 192.0.2.100.59246 > 10.10.80.10.80: Flags [.], ack 146, win 63, options [nop,nop,TS val 11178635 ecr 3592831582], length 0
+14:06:48.118416 IP 192.0.2.100.59246 > 10.10.80.10.80: Flags [F.], seq 81, ack 268, win 63, options [nop,nop,TS val 11178636 ecr 3592831582], length 0
+14:06:48.119050 IP 10.10.80.10.80 > 192.0.2.100.59246: Flags [.], ack 82, win 64, options [nop,nop,TS val 3592831589 ecr 11178636], length 0
+reading from file /tmp/hospital-demo.pcap, link-type EN10MB (Ethernet), snapshot length 262144
