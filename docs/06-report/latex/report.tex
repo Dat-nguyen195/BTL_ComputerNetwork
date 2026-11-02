@@ -1,0 +1,712 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{setspace}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{DejaVu Serif}
+  \setsansfont[]{DejaVu Sans}
+  \setmonofont[]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\input{header.tex}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={BKBlue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={BKBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\input{cover.tex}
+
+{
+\hypersetup{linkcolor=BKBlue}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\setstretch{1.08}
+\clearpage
+
+\hypertarget{phux1ea1m-vi-yuxeau-cux1ea7u-vuxe0-nguyuxean-tux1eafc-kiux1ec3m-chux1ee9ng}{%
+\section{Phạm vi, yêu cầu và nguyên tắc kiểm
+chứng}\label{phux1ea1m-vi-yuxeau-cux1ea7u-vuxe0-nguyuxean-tux1eafc-kiux1ec3m-chux1ee9ng}}
+
+Báo cáo đối chiếu đề \emph{Network Design and Simulation for a Critical
+Large Hospital} của Lai Nguyen, gồm bảy bước thiết kế, tính tải, mô
+phỏng, kiểm thử, đánh giá và bàn giao. Main có hai tòa A/B, mỗi tòa năm
+tầng và mười phòng mỗi tầng; phòng DC/IT/MDF riêng cách hai tòa khoảng
+50m. Quy mô ban đầu là 600 máy trạm, 10 server tại Main và 260 máy trạm,
+2 server tại mỗi cơ sở DBP/BHTQ. Hai cơ sở phụ có hai tầng, phòng IT/MDF
+ở tầng1.
+
+Mức tăng trưởng của đề là \textbf{20\% trong cả năm năm}, không phải
+20\% mỗi năm. Số PC tương lai là 720+312+312=1.344. Server dự trù theo
+từng cơ sở là 12+3+3=18. Số máy trong mô phỏng chỉ là đại diện chức
+năng; không dùng 38 endpoint để tuyên bố đã chạy tải của 1.120 PC hiện
+tại hoặc 1.344 PC tương lai.
+
+Ba mức bằng chứng được tách rõ: thiết kế và phép tính; kết quả chạy GNS3
+với gói tin thật trong môi trường ảo; và khảo sát/đo triển khai thực
+chưa thực hiện. Kết quả GNS3 sử dụng FRRouting, Linux, iptables, dnsmasq
+và Suricata. Cấu hình Cisco IOS là bộ tham chiếu riêng, chưa được chạy
+trên IOS/Packet Tracer. File Packet Tracer gốc của Tiendat được bảo toàn
+để đối chiếu, không phải mô hình tổng ba cơ sở.
+
+Đề nêu nhóm hai hoặc ba sinh viên. Các nhãn TV1--TV5 trong repository là
+vai trò công việc; nhóm phải kiểm tra danh sách đăng ký và việc chia vai
+trò với giảng viên trước nộp. Báo cáo này không tự xác nhận thay đổi số
+người được phép, thông tin MSSV hoặc chữ ký duyệt học phần.
+
+\hypertarget{khux1ea3o-suxe1t-vuxe0-kiux1ebfn-truxfac-phuxf9-hux1ee3p-cuxf4ng-truxecnh---step1}{%
+\section{Khảo sát và kiến trúc phù hợp công trình -
+Step1}\label{khux1ea3o-suxe1t-vuxe0-kiux1ebfn-truxfac-phuxf9-hux1ee3p-cuxf4ng-truxecnh---step1}}
+
+\hypertarget{checklist-trux1b0ux1edbc-thi-cuxf4ng}{%
+\subsection{Checklist trước thi
+công}\label{checklist-trux1b0ux1edbc-thi-cuxf4ng}}
+
+Khảo sát số người/thiết bị theo phòng, lượng khách đồng thời và lease
+Wi-Fi; ứng dụng HIS/RIS-PACS/LIS/CRM/DB, tải ảnh DICOM và thời điểm
+backup; SLA, tải thiết yếu khi lỗi và lịch bảo trì. Kiểm diện tích
+rack/MDF/IDF, nguồn và UPS, điều hòa, tiếp địa, phòng cháy, khóa cửa và
+kiểm soát người vào. Khảo sát ống/máng cáp, chiều dài, tuyến A/B độc
+lập, vị trí ODF/patch panel và nhãn; chiều dài Cat6 phải đáp ứng giới
+hạn thiết bị/cabling được chọn.
+
+Khảo sát RF theo vật liệu tường, nhiễu, kênh, công suất, roaming và khả
+năng các thiết bị y tế; khảo sát góc camera, vùng riêng tư, ánh sáng,
+đường truyền và thời hạn lưu. Checklist không được đánh dấu đã khảo sát
+khi chưa có biên bản hoặc số đo. Số AP, camera và chiều dài cáp bên dưới
+là đầu vào thiết kế cần xác nhận.
+
+\hypertarget{phuxe2n-tux1ea7ng-vuxe0-vuxf9ng-tux1ea3i-cao}{%
+\subsection{Phân tầng và vùng tải
+cao}\label{phuxe2n-tux1ea7ng-vuxe0-vuxf9ng-tux1ea3i-cao}}
+
+Dùng cấu trúc core/distribution/access ở Main; hai cơ sở phụ dùng
+collapsed core/access. Mỗi IDF có patch panel, uplink quang và UPS.
+Server Farm, DMZ, người dùng, quản trị, khách, camera và Wi-Fi nhân viên
+thuộc các VLAN riêng. DMZ chỉ kết thúc trên firewall, không bridge vào
+core hoặc trunk campus.
+
+Server Farm/PACS/backup và đường Main--Aux là các vùng cần kiểm tải.
+Thiết kế ưu tiên liên kết 10GbE ở access uplink/server và 40GbE liên
+core; không suy throughput ứng dụng từ tốc độ cổng. Hai ISP dùng PBR
+phân nhóm nguồn, PAT theo egress và probe độc lập. PBR không bảo đảm
+chia tải 50/50 hoặc cộng tốc độ cho một phiên. Cân bằng tải ứng dụng
+HIS/Web là hướng bổ sung khi có yêu cầu session, health check và HA ứng
+dụng cụ thể.
+
+Wi-Fi dùng SSID Staff/VLAN120, Guest/VLAN100 và quản trị AP/VLAN90.
+AP/WLC sản xuất cần WPA2/WPA3 Enterprise tùy khả năng client,
+802.1X/RADIUS, ACL và cách ly khách cùng lớp2. Mô hình hiện kiểm các
+host đại diện Staff/Guest qua VLAN có dây; chưa kiểm vô tuyến, WLC,
+802.1X hoặc roaming. AP-PT một SSID không được coi là WLC nhiều VLAN.
+
+\hypertarget{thiux1ebft-bux1ecb-ux111ux1ecba-chux1ec9-vuxe0-hux1ea1-tux1ea7ng-cuxe1p---step2}{%
+\section{Thiết bị, địa chỉ và hạ tầng cáp -
+Step2}\label{thiux1ebft-bux1ecb-ux111ux1ecba-chux1ec9-vuxe0-hux1ea1-tux1ea7ng-cuxe1p---step2}}
+
+\hypertarget{quy-houx1ea1ch-vlan-vuxe0-ip}{%
+\subsection{Quy hoạch VLAN và IP}\label{quy-houx1ea1ch-vlan-vuxe0-ip}}
+
+Khối Main là 10.10.0.0/16, DBP là 10.20.0.0/16, BHTQ là 10.30.0.0/16.
+Đây là khối phân bổ; interface chỉ dùng subnet con. Gateway là .1. Sáu
+VLAN PC tại Main và ba VLAN PC mỗi Aux dùng /25 với pool .7--.126,
+đúng120 lease/pool. Main có 100→120 PC mỗi VLAN; Aux có
+90/90/80→108/108/96 PC. VLAN server70 dùng /27 Main, /28 Aux; VLAN90
+quản trị và110 camera dùng /24; Guest100 dùng /23, Staff120 dùng /24.
+VLAN80 DMZ chỉ có tại Main, /27.
+
+Hai leased line Main--DBP và Main--BHTQ là 10.255.0.0/30 và
+10.255.0.4/30. Core--Main-GW là .8/30, Core--FW là .12/30, FW--Edge là
+.16/30. OSPF area0 chạy giữa Main-Core/Main-GW/DBP-GW/BHTQ-GW; interface
+người dùng passive. Firewall/Edge dùng route cụ thể và default có điều
+kiện. Static discard của khối dự trữ tránh vòng lặp trên địa chỉ chưa
+phân bổ.
+
+Địa chỉ Internet mô phỏng thuộc TEST-NET: ISP1
+\nolinkurl{203.0.113.0/30}, ISP2 \nolinkurl{198.51.100.0/30} và Web-Lab
+\nolinkurl{192.0.2.100}. Đây không phải Internet công cộng thật. Bảng IP
+đầy đủ, địa chỉ endpoint, cổng và cấu hình được bàn giao cùng project.
+
+\hypertarget{thiux1ebft-bux1ecb-vuxe0-dux1ef1-phuxf2ng-cux1ed5ng}{%
+\subsection{Thiết bị và dự phòng
+cổng}\label{thiux1ebft-bux1ecb-vuxe0-dux1ef1-phuxf2ng-cux1ed5ng}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2885}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1827}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1827}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3462}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Hạng mục
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Main
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Mỗi Aux
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cơ sở thiết kế
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Access switch48 cổng & 20 & 8 & Main2/tầng; Aux4/tầng \\
+Cổng dùng hiện tại / năm5 & 670 /810 & 277 /334 & Bao gồm PC, server tại
+access, AP, camera, NVR theo vị trí \\
+Tổng cổng / dư năm5 & 960 /150 & 384 /50 & Chưa phải khả năng forwarding
+đã đo \\
+AP hiện tại / năm5 & 30 /40 & 6 /8 & Ceil tăng trưởng theo tầng;
+tổng42→56 \\
+Camera hiện tại / năm5 & 40 /50 & 8 /10 & Bốn→năm camera mỗi tầng \\
+PoE mỗi tầng hiện tại / năm5 & 151,6 /197W & 151,6 /197W & Giả định
+AP30W, camera15,4W \\
+\end{longtable}
+
+Thiết bị tham chiếu access C9200L-48P-4X với PSU PWR-C5-1KWAC có budget
+PoE740W; không nhầm với bản PSU600W/budget370W. AP C9115AXI hỗ trợ
+uplink2,5G nhưng cổng downlink1G của switch làm giới hạn thương lượng1G.
+Model, license, SFP, nhiệt độ, dự phòng nguồn và throughput khi bật
+inspect/crypto cần xác nhận trước mua. WLC mỗi thiết bị cần capacity ít
+nhất64 AP để chứa56 AP tương lai; HA WLC chưa triển khai.
+
+Các core độc lập dùng hai trunk/RSTP. Chỉ dùng LACP xuyên hai chassis
+khi có stack/virtual chassis tương thích. Hai link LACP trong file TV2
+gốc cùng nối một core nên không tạo dự phòng chassis.
+
+\hypertarget{cuxe1p-quang-ux111ux1ed3ng-vuxe0-gpon-hybrid}{%
+\subsection{Cáp quang, đồng và GPON
+hybrid}\label{cuxe1p-quang-ux111ux1ed3ng-vuxe0-gpon-hybrid}}
+
+Thiết kế Ethernet có72 uplink quang access:40 tại Main,16 tại mỗi Aux.
+Một link duplex cần hai sợi; không gọi hai sợi là hai đường độc lập.
+Main mỗi IDF có hai tuyến OM3 độc lập12 sợi; Aux tầng2 dự trù hai
+tuyến12 sợi. Tuyến khác ống/máng phải được khảo sát, không được suy từ
+hai nét trên sơ đồ. SFP có dự phòng10\% làm tròn:88 Main và36 mỗi Aux.
+Ước lượng Cat6 là88 thùng Main,37 mỗi Aux, dựa trên30m/drop,10\% hao hụt
+và305m/thùng; cần bóc khối lượng thực.
+
+GPON phục vụ80 PC hành chính VLAN60 Main, tăng96 trong năm5. Hai cổng
+PON của một OLT tại MDF nối hai splitter1:16 tại A/B; mỗi tòa có10
+ONT4GE, hai ONT mỗi tầng. Năm5 tăng tổng24 ONT, vẫn trong32 nhánh. Hai
+uplink OLT10GbE tới hai core bổ sung mỗi core một cổng:28→29 trên tối
+thiểu32. Những PC GPON đã nằm trong tổng600→720; budget Ethernet giữ chỗ
+để rollback, không cộng thêm PC.
+
+Theo ITU-T G.984.2, GPON ví dụ dùng2,488Gbit/s down,1,244Gbit/s up chia
+sẻ theo PON. Ví dụ tuyến0,5km, sợi0,35dB/km, splitter13,5dB, bốn
+connector0,5dB và bốn mối hàn0,1dB cho16,075dB; thêm3dB dự phòng
+là19,075dB. Ví dụ nằm trong cửa sổ class B+13--28dB, nhưng phải thay
+Tx/Rx và suy hao theo vendor rồi đo OTDR/optical power. GPON chỉ nằm ở
+thiết kế vật lý; GNS3 không mô phỏng tín hiệu quang/DBA/OMCI. OLT đơn và
+nhánh PON là SPOF cần đánh giá riêng.
+
+\hypertarget{camera-vuxe0-muxe1y-chux1ee7}{%
+\subsection{Camera và máy chủ}\label{camera-vuxe0-muxe1y-chux1ee7}}
+
+Camera dùng4Mbps, lưu30 ngày, overhead5\% và chỉ lấp80\% usable storage.
+Main40 camera cần68.040GB usable hiện tại;50 camera cần85.050GB tương
+lai. Mỗi Aux8 camera cần13.608GB;10 camera cần17.010GB. Đây là phép tính
+đơn vị thập phân; RAID/format/hot-spare và throughput ingest phải kiểm
+với NVR thật. RAID6 10x8TB chỉ64TB lý thuyết, không đủ mức Main hiện
+tại. Ví dụ12x10TB RAID6 cho100TB lý thuyết và4x12TB RAID6 cho24TB tại
+Aux cần đối chiếu hệ thống file, ổ dự phòng và tiêu chí vendor.
+
+Main có8 server nội bộ cho infra, HIS, PACS, LIS, CRM, DB, backup,
+monitor; hai server DMZ Web và proxy. Mỗi Aux có Infra và Local. HTTP
+trong mô phỏng là dịch vụ đại diện, không triển khai bệnh án, DICOM, DB
+hoặc sản phẩm y tế thương mại.
+
+\hypertarget{tuxednh-tux1ea3i-lux1ef1a-chux1ecdn-wan-vuxe0-isp---step3}{%
+\section{Tính tải, lựa chọn WAN và ISP -
+Step3}\label{tuxednh-tux1ea3i-lux1ef1a-chux1ecdn-wan-vuxe0-isp---step3}}
+
+Đề cho server1.000MB download và2.000MB upload mỗi ngày; mỗi
+workstation500MB download/100MB upload; thiết bị Wi-Fi khách500MB
+download. Khoảng80\% tải tập trung9--11h và15--16h, tổng3 giờ. Dùng MB
+thập phân và hệ số sử dụng70\% làm giả định dự phòng:
+\texttt{Mbps\ =\ MB/ngày\ ×8\ ×0,8\ /(3×3600)\ ×1,2\ /0,7}.
+
+Từ ``total'' ở server có thể chỉ toàn bộ hệ thống, từng site hoặc từng
+server. Công cụ bàn giao tính cả ba cách và các biến khách, upload
+khách, protocol overhead, tỷ lệ đi LAN/WAN/Internet. Baseline bảo thủ
+bên dưới chọn từng server, tất cả tải đã cho đi Internet, chưa có khách
+và tải ngoài đề; đây là envelope giả định, không phải số đo.
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+Phạm vi & Design down Mbps & Design up Mbps \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Main & 314,92 & 81,27 \\
+DBP & 134,10 & 30,48 \\
+BHTQ & 134,10 & 30,48 \\
+Internet tập trung & 583,11 & 142,22 \\
+\end{longtable}
+
+Mỗi Aux dự trù leased line150--200Mbps đối xứng để khảo sát; tải
+PACS/backup và VPN có thể làm thay đổi mức này. Đề yêu cầu hai xDSL có
+chia tải và mọi Internet qua Main; lab dùng hai handoff Ethernet để kiểm
+logic. Không dùng thông số Ethernet để khẳng định đường đồng xDSL đạt
+tốc độ tương ứng. Hai đường500/500Mbps chỉ là ví dụ tính toán: mất một
+đường thiếu ít nhất83,11Mbps down so với baseline chưa khách. Nếu phải
+giữ đủ tải khi lỗi, mỗi ISP phải đáp ứng toàn bộ tải được chốt và kiểm
+QoS/tải thiết yếu.
+
+So sánh WAN giữ cùng phạm vi ba site, SLA, CPE, license và thuế:
+Metro-E/P2P đơn giản và phù hợp hai leased line; MPLS L3VPN thuận mở
+rộng nhưng không tự mã hóa; SD-WAN bổ sung overlay/controller/license;
+IPsec bổ sung mã hóa và overhead. Chọn Metro-E/P2P + OSPF làm baseline
+chức năng, trình bày MPLS/SD-WAN là phương án thay thế. Không gọi
+OSPF/PBR là SD-WAN hoặc MPLS đã triển khai.
+
+TCO minh họa5 năm là CAPEX +60 tháng OPEX +bảo trì. Bảng giả định trong
+hồ sơ cho Metro-E1,745 tỷ, MPLS1,948 tỷ, SD-WAN+leased2,105 tỷ,
+IPsec+leased1,775 tỷ VNĐ. Đây là dự toán để so công thức, không phải báo
+giá thị trường, chưa có VAT/điều kiện hợp đồng. OLT/ONT/ODN bổ sung phải
+được đối soát riêng để tránh thiếu hoặc tính trùng CAPEX. Cần thu báo
+giá cùng SLA, băng thông nội địa/quốc tế cam kết, IP public, handoff,
+tuyến độc lập và hiệu lực trước quyết định thương mại.
+
+\hypertarget{muxf4-phux1ecfng-gns3-tuxedch-hux1ee3p---step4}{%
+\section{Mô phỏng GNS3 tích hợp -
+Step4}\label{muxf4-phux1ecfng-gns3-tuxedch-hux1ee3p---step4}}
+
+Mô hình thực thi có9 router/firewall Linux/FRR,5 switch VLAN và38
+endpoint đại diện, bao gồm14 server nội bộ và Web-Lab. Cấu hình được
+sinh từ IP/cabling/endpoint/ACL đã review; phần dịch IOS sang Linux chỉ
+hỗ trợ cú pháp có trong repository và dừng khi gặp cú pháp ngoài phạm
+vi. Điều này không chứng minh CLI IOS được chấp nhận hoặc hành vi timer
+giống Cisco.
+
+Switch Linux thực hiện bridge VLAN filtering; router-on-a-stick
+dùng802.1Q; FRR chạy OSPF thật. DHCP relay chuyển yêu cầu tới Infra từng
+site; dnsmasq phục vụ đủ18 pool và DNS. HTTP trả tên node và địa chỉ
+client để kiểm NAT. Firewall iptables conntrack tách LAN/OUTSIDE/DMZ;
+ACL ingress tại gateway kiểm east-west. NAT tập trung tại Edge, exempt
+traffic nội bộ. Static PAT chỉ ISP2:8080 tới10.10.80.10:80, giữ đường
+reply qua ISP2.
+
+Controller GNS3 được đóng trong một container; Docker daemon con và các
+namespace mạng thuộc riêng lab, không mount Docker socket máy thật. API
+chỉ publish127.0.0.1:3080. Script bootstrap xây image, dựng node/link và
+chờ DHCP, OSPF, Web hoạt động. Tên image/version, package, source hash
+và output được ghi cùng lần chạy. Có lệnh dừng, mở lại và tái tạo; không
+đưa IOS image có bản quyền vào repository.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=\textheight]{assets/topology.pdf}
+\caption{Mô hình chức năng; cấu trúc vật lý và GPON có sơ đồ riêng trong
+bộ thiết kế.}
+\end{figure}
+
+\hypertarget{chuxednh-suxe1ch-bux1ea3o-mux1eadt-vuxe0-kiux1ec3m-thux1eed---step5}{%
+\section{Chính sách bảo mật và kiểm thử -
+Step5}\label{chuxednh-suxe1ch-bux1ea3o-mux1eadt-vuxe0-kiux1ec3m-thux1eed---step5}}
+
+Khách bị chặn tới mạng nội bộ, server/DMZ, quản trị và camera; vẫn được
+DHCP/DNS và Web Internet. Người dùng chỉ được truy cập ứng dụng theo vai
+trò; DB không công bố cho client. Camera không được tự truy cập LAN.
+Quản trị tập trung từ Main-Admin. Truy cập cùng VLAN cần host
+firewall/L2 isolation bổ sung, không được coi ACL gateway đã bảo vệ toàn
+bộ east-west.
+
+VPN được đề xuất đủ hai trường hợp theo đề: site-to-site route-based
+IPsec/IKEv2 qua leased line; teleworker kết thúc trên firewall, tài
+khoản riêng/MFA, split tunnel chỉ tới HIS/CRM được duyệt. Chưa triển
+khai crypto, chứng thư, MFA hoặc kiểm MTU; không ghi VPN PASS. Trước
+triển khai phải tránh tuyến cleartext ưu tiên hơn tunnel và thêm route
+về pool, NAT exemption, ACL/VPN zone.
+
+Suricata được đưa vào mô hình Linux để kiểm IDS/IPS bằng hai URI vô hại:
+một marker phát cảnh báo, một marker phải bị chặn. NFQUEUE repeat đánh
+dấu và đưa gói trở lại các luật firewall; verdict accept của IPS không
+được dùng để bỏ qua ACL/zone policy. DNS có miền thử \texttt{.invalid}
+bị trả0.0.0.0 để minh họa blocklist. Đây chỉ là bằng chứng rule mẫu,
+không chứng minh phát hiện mọi tấn công/phishing hoặc hiệu năng bảo vệ
+bệnh viện.
+
+Sáu nhóm bắt buộc gồm: cùng VLAN; giữa VLAN; giữa Main và hai Aux; truy
+cập DMZ; chặn Guest tới LAN với đối chứng Internet; truy cập Internet
+Web theo IP/tên. Các ca bổ sung kiểm OSPF Full, DHCP ACK/route/DNS trên
+tất cả pool, counters DROP, phân nhóm NAT, mất từng ISP, mất cả hai,
+phục hồi và lưu/mở lại project. Kết quả chi tiết và hash được tổng hợp
+tự động ở phụ lục bằng chứng.
+
+Khi lỗi ISP, có thời gian gián đoạn do probe, route default và OSPF hội
+tụ; không cam kết chuyển mạch tức thời. Bộ test đo phục hồi HTTP từ năm
+endpoint trong ngân sách thử45 giây, không coi45 giây là SLA. Phiên NAT
+cũ qua ISP hỏng có thể mất; thử HTTP phiên mới không chứng minh session
+preservation. Internet thật, TLS, RF, GPON PHY, dung lượng đường truyền
+và ứng dụng y tế không nằm trong phép thử này.
+
+\hypertarget{ux111uxe1nh-giuxe1-hux1ea1n-chux1ebf-vuxe0-hux1b0ux1edbng-phuxe1t-triux1ec3n---step6}{%
+\section{Đánh giá, hạn chế và hướng phát triển -
+Step6}\label{ux111uxe1nh-giuxe1-hux1ea1n-chux1ebf-vuxe0-hux1b0ux1edbng-phuxe1t-triux1ec3n---step6}}
+
+\hypertarget{tin-cux1eady-mux1edf-rux1ed9ng-vuxe0-phux1ea7n-mux1ec1m}{%
+\subsection{Tin cậy, mở rộng và phần
+mềm}\label{tin-cux1eady-mux1edf-rux1ed9ng-vuxe0-phux1ea7n-mux1ec1m}}
+
+Hai ISP giúp dự phòng kết nối Internet nhưng Core/FW/Edge, OLT và mỗi
+leased line Aux vẫn có SPOF. Mô hình không có firewall state sync hoặc
+bảo vệ PON; công bố DMZ phụ thuộc ISP2. Cần hai tuyến WAN độc lập, HA
+thiết bị, nguồn/UPS, backup cấu hình và thử khôi phục trước triển khai.
+Chọn RPO/RTO và tải thiết yếu cùng đơn vị y tế, không tự công bố một mức
+uptime từ ping.
+
+Pool /25 Main còn đúng120 lease tại năm5; thêm thiết bị sẽ cần mở rộng
+subnet/pool. Guest500 lease/site và Staff244 lease/site cần xác nhận số
+truy cập đồng thời/lease/RF. Sizing cổng/PoE/quang/storage có dự phòng
+nhưng phải đo workload, throughput inspect/crypto, phiên NAT và radio
+contention.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Nhóm phần mềm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Phương án
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Phạm vi thực hiện
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Hệ điều hành/office & Windows/office có license hoặc Linux/phần mềm phù
+hợp & Đề xuất; cần ma trận tương thích và bản quyền \\
+HIS/RIS-PACS/LIS/CRM & Sản phẩm được đơn vị y tế chọn & HTTP đại diện,
+chưa tích hợp nghiệp vụ \\
+Định tuyến/bảo mật & Cisco tham chiếu; FRR/Linux/Suricata trong lab & Có
+kết quả GNS3, chưa benchmark sản phẩm thương mại \\
+DNS/DHCP/giám sát/backup & dnsmasq trong lab; hệ thống quản trị/backup
+theo vận hành & DHCP/DNS đã thử; backup/restore dữ liệu thật chưa thử \\
+\end{longtable}
+
+\hypertarget{an-touxe0n-vuxe0-vux1eadn-huxe0nh}{%
+\subsection{An toàn và vận
+hành}\label{an-touxe0n-vuxe0-vux1eadn-huxe0nh}}
+
+Áp dụng tài khoản riêng, MFA cho truy cập từ xa, quản trị từ VLAN riêng,
+cập nhật/backup có kiểm tra restore, log tập trung, NTP, cảnh báo IDS và
+quy trình xử lý. Tắt dịch vụ/cổng không dùng, bảo vệ rack/IDF/ODF và
+UPS; đào tạo nhận diện phishing kết hợp DNS/mail filtering, không xem
+block một miền mẫu là giải pháp hoàn chỉnh. Thiết bị y tế cần cập nhật
+theo khả năng hỗ trợ của nhà cung cấp và lịch bảo trì được phê duyệt.
+
+IPv6 chưa được thiết kế; không bật dual stack rồi để vượt chính sách
+IPv4. OSPF authentication, TLS/certificate ứng dụng, 802.1X/WLC, guest
+cùng VLAN, malware/signature feed, quản lý khóa VPN và HA cần triển
+khai/đo riêng. Mô hình Linux không thay kiểm parser/tính năng trên Cisco
+nếu nhóm chọn nộp \texttt{.pkt}.
+
+\hypertarget{buxe0n-giao-vuxe0-quy-truxecnh-nux1ed9p---step7}{%
+\section{Bàn giao và quy trình nộp -
+Step7}\label{buxe0n-giao-vuxe0-quy-truxecnh-nux1ed9p---step7}}
+
+Bộ bàn giao gồm project \texttt{.gns3}, Dockerfile/source cấu hình để
+dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào
+CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và
+evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách
+Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch
+trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở.
+Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo;
+người nhận cần dựng image trước khi mở project trên GNS3 khác.
+
+Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận xét và phê
+duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên
+nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả.
+Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo
+RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
+
+\hypertarget{tuxe0i-liux1ec7u-tham-khux1ea3o}{%
+\section{Tài liệu tham khảo}\label{tuxe0i-liux1ec7u-tham-khux1ea3o}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Lai Nguyen. \emph{Network Design and Simulation for a Critical Large
+  Hospital}. Đề gốc trong workspace, trang1--4; trang5 minh họa.
+\item
+  GNS3. \emph{Docker support in GNS3} và \emph{Controller API v2}.
+  \url{https://docs.gns3.com/docs/emulators/docker-support-in-gns3} ;
+  \url{https://api.gns3.net/en/stable/}.
+\item
+  FRRouting. \emph{OSPFv2}.
+  \url{https://docs.frrouting.org/en/stable-8.4/ospfd.html}.
+\item
+  OISF. \emph{Suricata - IPS mode/NFQUEUE and configuration}.
+  \url{https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html}.
+\item
+  ITU-T. \emph{G.984.2 (08/2019), GPON PMD, Annex A}.
+  \url{https://www.itu.int/rec/T-REC-G.984.2/en}.
+\item
+  Cisco. \emph{Catalyst9200 Series Switches Data Sheet}.
+  \url{https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html}.
+\end{enumerate}
+
+Nguồn tham khảo kỹ thuật được đối chiếu ngày02/11/2026. Các bảng chi phí
+là giả định dự toán đã ghi rõ, không được trích dẫn như báo giá nhà cung
+cấp.
+
+\clearpage
+
+\hypertarget{phux1ee5-lux1ee5c-a---kux1ebft-quux1ea3-chux1ea1y-thux1ef1c-tux1ebf}{%
+\section{Phụ lục A - Kết quả chạy thực
+tế}\label{phux1ee5-lux1ee5c-a---kux1ebft-quux1ea3-chux1ea1y-thux1ef1c-tux1ebf}}
+
+Bảng này được dựng từ JSON evidence; số lần kiểm bao gồm hai lượt smoke
+trong ca failover. Không quy đổi thành điểm môn học hoặc SLA.
+
+\Needspace{22\baselineskip}
+
+\hypertarget{run-after-firewall-restart-runtime}{%
+\subsection{Run
+after-firewall-restart-runtime}\label{run-after-firewall-restart-runtime}}
+
+Thời điểm UTC: 2026-11-02T15:25:25.557372+00:00. Nền tảng GNS3 2.2.55.
+
+\begin{longtable}[]{@{}lrl@{}}
+\toprule\noalign{}
+Nhóm kiểm & Số kiểm tra & Kết quả \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+DHCP-DNS & 76 & PASS \\
+IDS-IPS & 7 & PASS \\
+ISP-BOTH-DOWN & 5 & PASS \\
+ISP-CONVERGENCE & 2 & PASS \\
+ISP-FAILOVER & 14 & PASS \\
+ISP-PBR & 2 & PASS \\
+ISP-RECOVERY & 7 & PASS \\
+OSPF & 8 & PASS \\
+TC01 & 4 & PASS \\
+TC02 & 6 & PASS \\
+TC03 & 13 & PASS \\
+TC04 & 12 & PASS \\
+TC05 & 39 & PASS \\
+TC06 & 14 & PASS \\
+\end{longtable}
+
+Tổng 209 kiểm tra, không có FAIL trong lần chạy này.
+
+Mất upstream ISP1/ISP2: phục hồi HTTP từ năm endpoint lần lượt 5.526
+giây, 5.186 giây. Có gián đoạn tạm thời trong các sample; không phải
+chuyển mạch không mất phiên.
+
+Image ID của tag trong controller tại thời điểm test:
+\nolinkurl{sha256:85e44ab0965cf251cec2fb1aca0973a3fa3a0735f5fc82bcef3b8860b3e3ead2}.
+
+Evidence:
+\texttt{test\_results/runtime/after-firewall-restart-runtime/results.json};
+SHA256
+\nolinkurl{aa937a55c13bf97633efebe3e769f932e4d1f5456a57c446f9b9f462a7c8224a}.
+
+\Needspace{22\baselineskip}
+
+\hypertarget{run-after-reopen-runtime}{%
+\subsection{Run after-reopen-runtime}\label{run-after-reopen-runtime}}
+
+Thời điểm UTC: 2026-11-02T14:04:06.477140+00:00. Nền tảng GNS3 2.2.55.
+
+\begin{longtable}[]{@{}lrl@{}}
+\toprule\noalign{}
+Nhóm kiểm & Số kiểm tra & Kết quả \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+DHCP-DNS & 76 & PASS \\
+IDS-IPS & 7 & PASS \\
+OSPF & 8 & PASS \\
+TC01 & 2 & PASS \\
+TC02 & 3 & PASS \\
+TC03 & 7 & PASS \\
+TC04 & 6 & PASS \\
+TC05 & 21 & PASS \\
+TC06 & 7 & PASS \\
+\end{longtable}
+
+Tổng 137 kiểm tra, không có FAIL trong lần chạy này.
+
+Image ID của tag trong controller tại thời điểm test:
+\nolinkurl{sha256:f688010da04c55df4d263de5cad79284c6ab8b147abe5266133f889f2a8068b4}.
+
+Evidence:
+\texttt{test\_results/runtime/after-reopen-runtime/results.json}; SHA256
+\nolinkurl{4b4dc6adca6c91e7c850868cffcdc262134e34ebfc619b6e75478c278753df4b}.
+
+\hypertarget{ux111ux1ed1i-chiux1ebfu-phiuxean-bux1ea3n-vuxe0-lux1ed7i-ban-ux111ux1ea7u}{%
+\subsection{Đối chiếu phiên bản và lỗi ban
+đầu}\label{ux111ux1ed1i-chiux1ebfu-phiuxean-bux1ea3n-vuxe0-lux1ed7i-ban-ux111ux1ea7u}}
+
+File GNS3 bàn giao được chép lại từ source, mở bằng chính GNS3 và chạy
+lại smoke. Có52 node (9 router/firewall,5 switch,38 endpoint),52 link.
+Hash project đã thử:
+\nolinkurl{8047cff9ca418dc52a43cb1b546e3179e3962224136122f65fd00d35cff2d5bb}.
+
+Run initial-runtime giữ hai FAIL khi thử HTTP ở Aux ngay sau Edge chuyển
+trạng thái; OSPF/default chưa hội tụ. Bộ thử sau đó đo cả quá trình từ
+fault tới phục hồi đầu cuối, lưu các sample gián đoạn và kiểm lại sau
+hội tụ. Không xóa evidence lỗi ban đầu hoặc diễn giải thành
+zero-downtime.
+
+Bản hiện tại sửa PID Suricata còn sót sau khi dừng container. Hai chu kỳ
+dừng/bật firewall đã xác nhận tiến trình Suricata sống và HTTP phục hồi;
+lần kiểm đầy đủ sau sửa đạt209/209. Source được cập nhật trong container
+hiện có, còn image mới được build/load cho lần tạo node sau. Base image
+ID của từng container và phép kiểm restart nằm tại
+\texttt{test\_results/runtime/firewall-restart/restart.json}; hash file
+đang chạy được kiểm riêng trong
+\texttt{persistence/live-provenance.json}. Lần reopen137 kiểm ở trên là
+bằng chứng lịch sử trước bản sửa PID, không được diễn giải thành kiểm
+reopen lại source mới.
+
+\clearpage
+
+\hypertarget{phux1ee5-lux1ee5c-b---tuxe1i-lux1eadp-vuxe0-danh-mux1ee5c-sux1ea3n-phux1ea9m}{%
+\section{Phụ lục B - Tái lập và danh mục sản
+phẩm}\label{phux1ee5-lux1ee5c-b---tuxe1i-lux1eadp-vuxe0-danh-mux1ee5c-sux1ea3n-phux1ea9m}}
+
+Các lệnh được chạy ở root repository trên Linux có Docker. Lần đầu dựng
+cần Internet để tải package/image, đủ RAM/disk; không cần IOS image có
+bản quyền.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ExtensionTok{python3}\NormalTok{ scripts/verify.py}
+\ExtensionTok{python3}\NormalTok{ scripts/gns3\_lab.py bootstrap}
+\ExtensionTok{python3}\NormalTok{ scripts/test\_gns3\_runtime.py }\AttributeTok{{-}{-}failover}
+\ExtensionTok{python3}\NormalTok{ scripts/gns3\_lab.py status}
+\end{Highlighting}
+\end{Shaded}
+
+Trên máy đã có lab, dùng \texttt{start} hoặc \texttt{reopen}, không
+bootstrap lần hai đè môi trường. Xem \texttt{simulation/gns3/README.md}
+để mở GUI, xây image trên compute khác và dừng lab. Bản nộp kèm
+\texttt{submission/SHA256SUMS} và gói ZIP; việc đóng gói không thay phê
+duyệt hoặc biên nhận BKeL.
+
+\end{document}

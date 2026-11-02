@@ -39,12 +39,12 @@ Khối Main là 10.10.0.0/16, DBP là 10.20.0.0/16, BHTQ là 10.30.0.0/16. Đây
 
 Hai leased line Main–DBP và Main–BHTQ là 10.255.0.0/30 và 10.255.0.4/30. Core–Main-GW là .8/30, Core–FW là .12/30, FW–Edge là .16/30. OSPF area0 chạy giữa Main-Core/Main-GW/DBP-GW/BHTQ-GW; interface người dùng passive. Firewall/Edge dùng route cụ thể và default có điều kiện. Static discard của khối dự trữ tránh vòng lặp trên địa chỉ chưa phân bổ.
 
-Địa chỉ Internet mô phỏng thuộc TEST-NET: ISP1 203.0.113.0/30, ISP2 198.51.100.0/30, Web-Lab192.0.2.100. Đây không phải Internet công cộng thật. Bảng IP đầy đủ, địa chỉ endpoint, cổng và cấu hình được bàn giao cùng project.
+Địa chỉ Internet mô phỏng thuộc TEST-NET: ISP1 `203.0.113.0/30`, ISP2 `198.51.100.0/30` và Web-Lab `192.0.2.100`. Đây không phải Internet công cộng thật. Bảng IP đầy đủ, địa chỉ endpoint, cổng và cấu hình được bàn giao cùng project.
 
 ## Thiết bị và dự phòng cổng
 
 | Hạng mục | Main | Mỗi Aux | Cơ sở thiết kế |
-|:---|:---|:---|:---|
+|:-----------------------------|:------------------|:------------------|:-----------------------------------|
 | Access switch48 cổng | 20 | 8 | Main2/tầng; Aux4/tầng |
 | Cổng dùng hiện tại / năm5 | 670 /810 | 277 /334 | Bao gồm PC, server tại access, AP, camera, NVR theo vị trí |
 | Tổng cổng / dư năm5 | 960 /150 | 384 /50 | Chưa phải khả năng forwarding đã đo |
@@ -132,7 +132,7 @@ IPv6 chưa được thiết kế; không bật dual stack rồi để vượt ch
 
 # Bàn giao và quy trình nộp - Step7
 
-Bộ bàn giao gồm project `.gns3`, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF/Markdown và evidence JSON/log kèm SHA256. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
+Bộ bàn giao gồm project `.gns3`, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
 
 Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận xét và phê duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
 

@@ -1,0 +1,39 @@
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \draw[BKBlue,line width=0.9pt]
+    ([xshift=15mm,yshift=-15mm]current page.north west)
+    rectangle ([xshift=-15mm,yshift=15mm]current page.south east);
+\end{tikzpicture}
+\centering
+\vspace*{3mm}
+{\fontsize{12}{17}\selectfont\ReportUniversity\par}
+\vspace{2mm}
+{\fontsize{15}{20}\selectfont\bfseries\ReportSchool\par}
+\vspace{3mm}
+{\color{BKBlue}\rule{65mm}{0.6pt}\par}
+\vspace{13mm}
+% Giữ nguyên PNG người dùng cung cấp. Chỉ cắt vùng trong suốt khi dàn trang.
+% Ảnh 3509x2481 px, 300 dpi; alpha bbox (1078,233)-(2822,2007).
+\includegraphics[width=38mm,trim={258.72bp 113.76bp 164.88bp 55.92bp},clip]{assets/logo-bach-khoa.png}\par
+\vspace{13mm}
+{\fontsize{16}{21}\selectfont\bfseries BÁO CÁO BÀI TẬP LỚN 2\par}
+\vspace{3mm}
+{\large Môn học: \ReportCourse\par}
+\vspace{12mm}
+{\color{BKBlue}\fontsize{21}{29}\selectfont\bfseries\ReportTitle\par}
+\vspace{5mm}
+{\fontsize{12}{18}\selectfont\ReportSubtitle\par}
+\vspace{17mm}
+\begin{minipage}{0.82\textwidth}
+  \setlength{\parskip}{3mm}
+  \textbf{Nhóm thực hiện:} \ReportTeam\par
+  \ifdefempty{\ReportLecturer}{}{\textbf{Giảng viên hướng dẫn:} \ReportLecturer\par}
+  \ifdefempty{\ReportClass}{}{\textbf{Lớp:} \ReportClass\par}
+  \ifdefempty{\ReportMembers}{}{\textbf{Thành viên:}\par\ReportMembers\par}
+\end{minipage}
+\vfill
+{\fontsize{12}{17}\selectfont\ReportPlaceDate\par}
+\vspace*{5mm}
+\end{titlepage}
+\pagenumbering{roman}

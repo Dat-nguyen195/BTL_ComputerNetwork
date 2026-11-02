@@ -5,7 +5,7 @@
 | Sản phẩm | Đường dẫn | Trạng thái |
 | --- | --- | --- |
 | Báo cáo PDF | [report.pdf](../docs/06-report/final/report.pdf) | Nội dung đủ7 Step và phụ lục evidence; đã render QA |
-| Nguồn báo cáo | [Markdown/SVG](../docs/06-report/source/README.md) | Có thể chỉnh sửa/build lại |
+| Nguồn báo cáo | [Markdown/SVG](../docs/06-report/source/README.md), [LaTeX](../docs/06-report/latex/README.md), [ZIP LaTeX](../docs/06-report/final/report-latex.zip) | Có thể chỉnh sửa/build lại; bìa có logo Bách Khoa |
 | Mô hình chính | [hospital-3sites.gns3](../simulation/gns3/hospital-3sites.gns3) | GNS3 2.2.55,52 node/52 link, mở lại đã thử |
 | Mã nguồn dựng/chạy | [GNS3 runtime/controller](../simulation/gns3/README.md) và scripts | Dockerfile/config/FRR/Linux, không cần IOS license |
 | Bằng chứng | [runtime JSON/PCAP/provenance](../test_results/runtime/README.md) |209 +137 kiểm đạt ở hai run cuối; giữ lỗi hội tụ ban đầu |
