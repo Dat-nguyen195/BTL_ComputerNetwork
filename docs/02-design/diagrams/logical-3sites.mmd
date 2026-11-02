@@ -1,11 +1,11 @@
 flowchart TB
     NET["Internet / Web server ngoài bệnh viện"]
-    ISP1["xDSL 1"]
-    ISP2["xDSL 2"]
-    EDGE["Main Internet Edge - cân bằng tải theo luồng, PAT"]
-    SEC["Main Firewall / vùng bảo mật / VPN"]
-    DMZ["DMZ - dịch vụ công khai"]
-    CORE["Main Core / Distribution - HA theo thiết kế"]
+    ISP1["xDSL 1 - mô hình Ethernet ISP1"]
+    ISP2["xDSL 2 - mô hình Ethernet ISP2"]
+    EDGE["Main Internet Edge - PBR theo nguồn, PAT theo egress"]
+    SEC["Main Firewall - ZBF tham chiếu / VPN chỉ thiết kế"]
+    DMZ["DMZ - Web ISP2:8080 / chưa inbound HA"]
+    CORE["Main Core / Distribution - lab một node, HA dự trù"]
     SF["Server Farm - dịch vụ nội bộ"]
     A["Tòa A - 5 tầng x 10 phòng"]
     B["Tòa B - 5 tầng x 10 phòng"]
@@ -27,7 +27,7 @@ flowchart TB
     CORE --- B
     CORE --- WIFI
     CORE --- CAM
-    SEC --- HUB
+    CORE --- HUB
     HUB ---|"Leased line 1 / OSPF"| DBP
     HUB ---|"Leased line 2 / OSPF"| BHTQ
-    REMOTE -.->|"Remote-access VPN qua Internet"| SEC
+    REMOTE -.->|"Remote-access VPN qua Internet - DESIGN ONLY"| SEC

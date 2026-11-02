@@ -1,6 +1,6 @@
 # Nội dung TV1: quy hoạch IP, WAN và định tuyến
 
-**Người viết:** TV1. **Người nhận/biên tập:** TV5. **Cập nhật:** 26/10/2026. **Trạng thái:** BẢN THẢO KỸ THUẬT ĐÃ HIỆU CHỈNH, CHỜ ĐỌC CHÉO VÀ KIỂM THỬ. **Ngày bàn giao chính thức/PR:** chưa có. Không coi ngày hạn 17/11 là ngày đã thực hiện.
+**Người viết:** TV1. **Người nhận/biên tập:** TV5. **Cập nhật:** 02/11/2026. **Trạng thái:** BẢN THẢO KỸ THUẬT ĐÃ HIỆU CHỈNH, CHỜ ĐỌC CHÉO VÀ KIỂM THỬ. **Ngày bàn giao chính thức/PR:** chưa có. Không coi ngày hạn 17/11 là ngày đã thực hiện.
 
 ## 1. Yêu cầu và giả định
 
@@ -18,7 +18,7 @@ Chi tiết [IP plan](../../02-design/ip-vlan-plan.md); script kiểm tĩnh khôn
 
 Theo [kiến trúc](../../02-design/architecture.md), OSPF area0 nối Main-Core–Main-GW–DBP/BHTQ, passive mặc định và mở đúng các liên kết. Cost WAN10, Core–GW1; route học theo subnet cụ thể, không tự tổng hợp /16 từ lệnh `network`. DMZ80 nối firewall, Core chỉ redistribute đúng static DMZ, không phát default thứ hai.
 
-Lab Serial cấu hình 2 Mbps và cost định tuyến riêng, chỉ mô hình chức năng leased line; không phải phép đo năng lực 150–200 Mbps. Edge/FW dùng static route trả về ba site. Firewall tham chiếu là router để kiểm đường đi; TV3 còn phải triển khai policy/VPN/ACL/DMZ thật. Chưa có bằng chứng kiểm thử an toàn mạng.
+Lab Serial cấu hình 2 Mbps và cost định tuyến riêng, chỉ mô hình chức năng leased line; không phải phép đo năng lực 150–200 Mbps. Edge/FW dùng static route trả về ba site. File base FW vẫn là routing reference; bộ hợp nhất tại `simulation/generated/configs/` đã ghép IOS ZBF, ACL gateway/relay và static PAT từ TV3. Chưa qua IOS parser hoặc test bảo mật runtime; VPN vẫn DESIGN ONLY.
 
 Main-GW có IP SLA10 tới Web `192.0.2.100`, default track10 và `default-information originate metric 10` không `always`. Static /32 tới Web độc lập với default giúp probe hoạt động lại sau khi thu hồi route. Khi cả hai ISP mất và track down, default OSPF cần biến mất ở Aux sau hội tụ; route liên site vẫn còn nếu leased lines tốt.
 
@@ -41,7 +41,7 @@ Kịch bản bảo thủ, chưa có khách: design Internet tổng 583,11/142,22
 | [TC03](../../../test_results/TC03-inter-site/result.md) | NOT RUN | Ping/traceroute Main↔cả hai Aux, route/neighbor hai chiều, nguồn/đích và phiên bản |
 | [TC06](../../../test_results/TC06-internet-web/result.md) | NOT RUN | HTTP/Web từ ba site và guest theo policy; đường đi qua Main và NAT đúng egress |
 | [Dual ISP](../../../test_results/supplemental/dual-isp-failover.md) | NOT RUN | Cùng đích HTTP qua hai ISP, upstream failure, rút default, phục hồi, phiên cũ/mới |
-| Kiểm tĩnh config | Chạy `python3 scripts/check_wan.py` | Chỉ kiểm các điều kiện config/route trong mô hình script; không kết luận IOS/NAT/OSPF runtime |
+| Kiểm tĩnh config | Chạy `python3 scripts/verify.py` | Chỉ kiểm các điều kiện config/route trong mô hình script; không kết luận IOS/NAT/OSPF runtime |
 
 Chưa có project mô phỏng, ảnh/log runtime, hash bản test hoặc xác nhận reviewer. Không đưa số RTT, thời gian chuyển tuyến hay output CLI tự soạn vào mục actual.
 
@@ -54,5 +54,13 @@ Mỗi Aux có một leased line; mất tuyến là mất đường về Main, ha
 - Thiết kế: [IP](../../02-design/ip-vlan-plan.md), [WAN](../../02-design/architecture.md), [chi phí](../../02-design/wan-options-cost.md).
 - Cấu hình, mapping, thứ tự nạp và điểm kiểm tra: [module WAN](../../../simulation/modules/tv1-wan/README.md).
 - TV4 cần chọn môi trường/model có IP SLA, tracking, PBR verify-availability, NAT route-map và redistribution; lưu project rồi thu evidence.
-- TV2/TV3 đọc chéo IP, gateway DMZ, campus LAN và firewall rules; TV1 sửa phần chuyên môn sau phản hồi.
+- TV2/TV3 đọc chéo IP, gateway DMZ, campus LAN và firewall rules; TV1 sửa phần chuyên môn sau phản hồi. Chính sách/port đã có trong contribution TV3; chưa có xác nhận reviewer thật.
 - Reviewer/ngày/PR chính thức: chờ xác nhận. TV5 tổng hợp bản báo cáo; TV1 chỉ duyệt khi có PDF và mô phỏng đúng hash.
+
+## 9. Bổ sung tích hợp ngày 02/11/2026
+
+[build_lab.py](../../../scripts/build_lab.py) tạo 9 router hợp nhất,5 switch tối thiểu và 18 pool DHCP, giữ nguyên hợp đồng OSPF/default/NAT nội bộ TV1. [Kiểm tĩnh](../../../test_results/static/README.md) chạy cả cấu hình base và bản ghép, cùng61 flow ACL; runtime vẫn NOT RUN. [Tình trạng60 task TV1/TV3/TV4](../../00-management/tv1-tv3-tv4-status.md) có đầu ra, dependency, chủ trì và hạn đề xuất.
+
+DMZ công bố duy nhất ISP2:8080→.80.10:80 để đi cùng PBR nguồn DMZ ưu tiên ISP2; chưa inbound HA. Không thêm mapping ISP1 nếu chưa xử lý đối xứng đường trả lời. Pool VPN10.255.100/24 chưa có route/termination đang hoạt động; VTI10.255.1.0/29 chỉ là dự trù mới trong VPN plan, không cấp interface vào baseline hiện tại.
+
+TV4 đã có script tính tải theo3 phạm vi server, overhead/Internet shares và kịch bản thiếu từng chiều. Các giá TCO giữ là giả định; danh mục chờ báo giá/khảo sát có owner/hạn trong WAN plan. Chưa có cơ sở chốt gói xDSL, HA, RTO/RPO hoặc ký G1–G4. Tất cả thực thi phải theo [runbook](../../../simulation/test-runbook.md), lưu project/hash và evidence thật.

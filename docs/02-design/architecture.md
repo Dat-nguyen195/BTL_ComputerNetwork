@@ -1,6 +1,6 @@
 # Kiến trúc 3 site và thiết kế WAN/routing
 
-**Chủ trì:** TV1; TV2 đọc chéo LAN, TV3 đọc chéo security, TV4 tích hợp. **Cập nhật:** 26/10/2026. **Trạng thái:** BẢN THIẾT KẾ ĐÃ HIỆU CHỈNH / CHƯA NGHIỆM THU MÔ PHỎNG.
+**Chủ trì:** TV1; TV2 đọc chéo LAN, TV3 đọc chéo security, TV4 tích hợp. **Cập nhật:** 02/11/2026. **Trạng thái:** THIẾT KẾ/CẤU HÌNH THAM CHIẾU ĐÃ GHÉP SECURITY / CHƯA NGHIỆM THU MÔ PHỎNG.
 
 ## 1. Kiến trúc và phạm vi
 
@@ -13,7 +13,7 @@ flowchart TB
     ISP1["ISP1 lab"]
     ISP2["ISP2 lab"]
     EDGE["Main-Edge\nPBR theo nguồn / IP SLA / PAT"]
-    FW["Main-FW\nFirewall/VPN do TV3 triển khai"]
+    FW["Main-FW\nZBF tham chiếu / VPN chỉ thiết kế"]
     CORE["Main-Core\nLAN và OSPF area 0"]
     GW["Main-GW\nOSPF và default có tracking"]
     DBP["DBP-GW / LAN 260 PC, 2 server"]
@@ -34,11 +34,11 @@ flowchart TB
     GW ---|"10.255.0.4/30"| BHTQ
 ```
 
-Đây là kiến trúc logic. TV2 giữ thiết kế MDF/IDF, GPON/Ethernet, Wi-Fi, port/PoE và thiết bị theo quy mô thật. Lab WAN dùng PC đại diện; không chứng minh tốc độ 1/10/40GbE, xDSL hay chất lượng dịch vụ nhà mạng. Camera, số AP, khách đồng thời và lưu lượng PACS còn phải khảo sát. Server Farm tại core cần chính sách phân đoạn của TV3; các cấu hình routing tham chiếu chưa thực thi chính sách này.
+Đây là kiến trúc logic. TV2 giữ thiết kế MDF/IDF, GPON/Ethernet, Wi-Fi, port/PoE và thiết bị theo quy mô thật. Lab WAN dùng PC đại diện; không chứng minh tốc độ 1/10/40GbE, xDSL hay chất lượng dịch vụ nhà mạng. Camera, số AP, khách đồng thời và lưu lượng PACS còn phải khảo sát. Bản base routing chưa có policy; [bản hợp nhất](../../simulation/generated/configs/) đã thêm ACL nguồn tại Core/Aux và ZBF tại FW theo [security policy](../04-security/security-policy.md), chưa kiểm IOS/runtime. Giao tiếp app–DB cùng VLAN70 vẫn cần host firewall hoặc tách subnet.
 
 ## 2. Interface mapping để dựng lab WAN
 
-Cấu hình tham chiếu IOS dùng router 2911, có Serial module tại ba WAN gateway; Main-Core dùng router-on-a-stick trong lab tối thiểu. TV2 có thể thay Core bằng switch L3 và map lại tên cổng, SVI. Main-FW tham chiếu là **router chỉ định tuyến**, chưa phải firewall bảo mật. Không nạp cấu hình IOS này trực tiếp vào ASA.
+Cấu hình tham chiếu IOS dùng router 2911, có Serial module tại ba WAN gateway; Main-Core dùng router-on-a-stick trong lab tối thiểu. TV2 có thể thay Core bằng switch L3 và map lại tên cổng, SVI/ACL. Main-FW base chỉ định tuyến; bản hợp nhất ghép IOS ZBF ba vùng, không NAT. Không nạp cấu hình IOS này trực tiếp vào ASA. Khi dựng dùng bản hợp nhất theo [hướng dẫn tổng](../../simulation/README.md).
 
 | Link | Đầu A / interface / IP | Đầu B / interface / IP |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 # So sánh WAN, định cỡ hai ISP và dự toán chi phí
 
-**Chủ trì:** TV1; TV4 cung cấp tải, TV2 cung cấp BOM. **Cập nhật:** 26/10/2026. **Trạng thái:** THIẾT KẾ ĐỀ XUẤT / CHƯA CÓ BÁO GIÁ HOẶC KIỂM CHỨNG NĂNG LỰC.
+**Chủ trì:** TV1; TV4 cung cấp tải, TV2 cung cấp BOM. **Cập nhật:** 02/11/2026. **Trạng thái:** THIẾT KẾ ĐỀ XUẤT / CHƯA CÓ BÁO GIÁ HOẶC KIỂM CHỨNG NĂNG LỰC.
 
 ## 1. Đầu vào định cỡ
 
@@ -67,3 +67,16 @@ Báo giá cần: địa chỉ ba site, tốc độ down/up nội địa/quốc t
 Chi tiết tại [architecture.md](architecture.md) và [module WAN](../../simulation/modules/tv1-wan/README.md). PBR phân nhóm nguồn, failover theo track, PAT theo egress; không bảo đảm 50/50. Probe dùng đích phía sau ISP và /32 ghim đường; Main-GW theo dõi Web chung để điều khiển default OSPF. Các timer là cấu hình dự kiến, thời gian hội tụ và hành vi phiên cũ phải đo trong [test dual ISP](../../test_results/supplemental/dual-isp-failover.md), hiện NOT RUN.
 
 Baseline chức năng giữ hai leased lines và OSPF; MPLS/SD-WAN và VPN chỉ ở mức thiết kế đến khi có triển khai/bằng chứng tương ứng. Mã hóa là một biện pháp bảo vệ, không tự chứng minh tuân thủ toàn bộ yêu cầu pháp lý/vận hành bệnh viện.
+
+## 6. Bổ sung đối chiếu TV4 và dữ liệu chờ
+
+Tính tải được tái lập bằng `python3 scripts/capacity.py`;3 scope server, tải khách, overhead và shares được giữ riêng. [Throughput](../03-capacity/throughput.md) có bảng2×100/20,2×500/500,2×750/250 Mbps giả định và khoảng thiếu khi còn một ISP. Tổng đủ chưa bảo đảm từng nhóm PBR đủ: chưa khách, nhóm1 khoảng 294,60/77,21, nhóm2 288,51/65,02 Mbps; khách Main/BHTQ dồn nhóm2. Không chốt gói dịch vụ từ các số ví dụ.
+
+| Dữ liệu chờ | Chủ trì | Hạn đề xuất | Cần ghi nhận |
+| --- | --- | --- | --- |
+| Phạm vi total server/khách, số khách và tải thiết yếu | TV4/TV5 |05/11/2026 | Dữ liệu khảo sát, down/up, LAN/WAN/Internet, cách tránh đếm trùng |
+| Báo giá/SLA hai leased lines và hai xDSL | TV1 |08/11/2026 | Địa chỉ, ngày/hiệu lực, down/up hiệu dụng, cước/thuế, IP public/handoff/CPE |
+| BOM/CAPEX/license có bị tính trùng | TV2 + TV3 |08/11/2026 | Model, throughput khi inspect/crypto, support/license/PoE/quang |
+| Tải khi chỉ một ISP, QoS/downgrade | TV1 + TV4 |08/11/2026 | Mức HIS/LIS tối thiểu, guest/backup giảm bao nhiêu; chưa gán tỷ lệ ưu tiên giả |
+
+Các hạn là đề xuất xử lý, chưa phải cam kết của reviewer. Hai ISP không tạo dự phòng leased line/Core/FW/Edge. DMZ inbound hiện chỉ ISP2:8080 và gián đoạn khi ISP2 mất; tính sẵn sàng dịch vụ công bố phải đánh giá riêng outbound failover.

@@ -11,3 +11,7 @@
 | TV1 duyệt | `approval.md` | Chưa có xác nhận | PENDING |
 
 Đóng gói dự kiến 22/11/2026, khóa bản nội bộ 06/12/2026, nộp BKeL trước hạn 11/12/2026. Sau mọi sửa đổi cần cập nhật hash, retest và tái duyệt. File README/scaffold không thay thế sản phẩm nộp.
+
+## Gói tham chiếu02/11/2026
+
+Đã có [manifest config SHA256](../simulation/generated/manifest.json) cho9 router/5 switch, DHCP và port map; [3 contribution](../docs/06-report/contributions/) và [hồ sơ kiểm tĩnh](../test_results/static/README.md). Những hash này không thay hash PDF/project cuối. `SHA256SUMS` bản nộp vẫn chưa lập vì chưa có hai sản phẩm cuối; approval giữ PENDING.

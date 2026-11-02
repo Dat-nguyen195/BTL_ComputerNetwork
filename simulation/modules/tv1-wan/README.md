@@ -1,6 +1,6 @@
 # Module TV1 — WAN/routing và Internet tập trung
 
-**Chủ trì:** TV1. **Tích hợp:** TV4. **Cập nhật:** 26/10/2026. **Trạng thái:** CÓ CẤU HÌNH THAM CHIẾU VÀ HƯỚNG DẪN / CHƯA CÓ PROJECT, CHƯA CHẠY IOS.
+**Chủ trì:** TV1. **Tích hợp:** TV4. **Cập nhật:** 02/11/2026. **Trạng thái:** CÓ CẤU HÌNH THAM CHIẾU VÀ HƯỚNG DẪN / CHƯA CÓ PROJECT, CHƯA CHẠY IOS.
 
 ## 1. Đầu ra và điều kiện công cụ
 
@@ -79,3 +79,7 @@ Không tự đặt kết quả 50/50, RTT hay thời gian chuyển tuyến. Time
 Ghi project/hash, platform/image/version, interface mapping thực tế, ngày/người chạy, expected/actual, log/ảnh và nhận xét TV2/TV3. Hồ sơ: [TC03](../../../test_results/TC03-inter-site/result.md), [TC06](../../../test_results/TC06-internet-web/result.md), [dual ISP](../../../test_results/supplemental/dual-isp-failover.md). Cập nhật [integration log](../../integration-log.md).
 
 Chưa có phép đo băng thông, kiểm IOS parser, OSPF hội tụ thật, phiên NAT, firewall security hoặc kiểm mở lại project. Không gọi router stand-in là firewall đạt nghiệm thu, PBR là SD-WAN hay Serial 2 Mbps là leased Ethernet 150 Mbps. Công việc còn lại được theo dõi trong [tình trạng TV1](../../../docs/00-management/tv1-review-status.md).
+
+## Bổ sung bản hợp nhất TV1/TV3 ngày 02/11
+
+File base trong `configs/` giữ routing để truy vết. [build_lab.py](../../../scripts/build_lab.py) tạo [9 router hợp nhất](../../generated/configs/) với ACL/relay/ZBF/PAT DMZ; khi dựng dùng bản hợp nhất theo [hướng dẫn tổng](../../README.md), không nạp base sau cùng. Main-FW base vẫn routing-only; bản ghép đã có policy tham chiếu nhưng chưa runtime. Bảng host/DNS cũ ở trên là lab WAN tĩnh; bản tích hợp dùng [endpoints](../../lab/endpoints.csv) và 18 pool để cấp DHCP thật, tránh static/client pool trùng IP. Chưa có project hoặc kết quả runtime.

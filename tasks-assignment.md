@@ -6,6 +6,8 @@
 
 **Cập nhật TV1 ngày 26/10/2026:** hoàn thành **1/20 task chính: W1-TV1-03 (thiết kế WAN)**. Các bước con đã có sản phẩm/kiểm tra được tích riêng; task chính còn mở nếu chưa đủ toàn bộ đầu ra. Chưa có project, runtime evidence hoặc xác nhận đọc chéo TV2/TV3/TV4. Chi tiết tại [tv1-review-status.md](docs/00-management/tv1-review-status.md).
 
+**Bổ sung02/11/2026 cho TV1/TV3/TV4:** đã soạn nội dung kỹ thuật, gói cấu hình hợp nhất, tính tải tự động và runbook; xem [bảng đối chiếu60 task](docs/00-management/tv1-tv3-tv4-status.md) và [kiểm tĩnh](test_results/static/README.md). Task chính cần runtime/reviewer/project vẫn mở. Các dấu tích bước con bên dưới chỉ xác nhận sản phẩm offline đã có.
+
 ## Quy tắc thực hiện và cân bằng tải
 
 - Mỗi giai đoạn có checklist riêng cho **TV1, TV2, TV3, TV4, TV5**. Task ID `Wn-TVx-yy` dùng để tạo issue/PR và truy vết; mặc định mọi task chưa hoàn thành.
@@ -39,6 +41,7 @@
 - [x] **W1-TV1-03** - Thiết kế **2 leased lines Main-DBP/Main-BHTQ**, OSPF, default route Internet tập trung, vai trò SD-WAN/MPLS và các điểm giới hạn mô phỏng. **Hạn 30/10; đầu ra:** phần WAN trong `architecture.md` và sơ đồ WAN.
   - [x] Đã có kiến trúc/sơ đồ Mermaid, interface mapping, OSPF, default có tracking, vai trò MPLS/SD-WAN và giới hạn mô hình trong `architecture.md`; đã rà soát logic và kiểm tĩnh. Nghiệm thu nhóm G1 và kiểm runtime thuộc các task tiếp theo.
 - [ ] **W1-TV1-04** - Phối hợp TV4 tính năng lực từng chiều của **2 xDSL**, chọn cơ chế load balancing/failover theo phiên; so sánh WAN khả dụng, ưu/nhược, CAPEX/OPEX/TCO và nguồn báo giá hoặc mục chờ xác nhận. **Hạn 30/10; đầu ra:** `wan-options-cost.md` và yêu cầu ISP.
+  - [x] Đã bổ sung kịch bản ISP từng chiều/PBR group và danh mục dữ liệu/báo giá chờ có chủ trì/hạn đề xuất ngày 02/11.
   - [x] Đã lập bảng down/up và kịch bản hai ISP/một ISP, cơ chế PBR/failover và yêu cầu ISP theo giả định baseline.
   - [x] Đã so sánh bốn phương án WAN, tính CAPEX/OPEX/TCO minh họa và ghi rõ giá/SLA/thuế chưa có nguồn.
   - [ ] Chờ TV4 xác nhận tải/phân loại LAN–WAN–Internet và hoàn tất danh mục dữ liệu/báo giá chờ xác nhận có chủ trì/hạn để chốt phương án.
@@ -57,18 +60,28 @@
 ### TV3 - Security & Systems Specialist
 
 - [ ] **W1-TV3-01** - Phân bổ vai trò **10 server Main, 2 server mỗi Aux**, tách Server Farm/DMZ; ghi DHCP/DNS, HIS/RIS-PACS/LIS/CRM/database/backup và IP tĩnh. **Hạn 29/10; đầu ra:** `server-dmz-plan.md`.
+  - [x] Đã phân bổ14 server đúng 10/2/2, IP tĩnh/role/DHCP-DNS/backup và inventory trong server-dmz-plan.md.
 - [ ] **W1-TV3-02** - Lập ma trận nguồn-đích-dịch vụ cho liên VLAN, DMZ, quản trị, Wi-Fi khách; đặt firewall/ACL và ranh giới chính sách, chặn guest tới LAN ở cả 3 site. **Hạn 29/10; đầu ra:** `docs/04-security/security-policy.md`.
+  - [x] Đã có matrix nguồn–đích–port, rule order và ACL inbound cả 3 gateway + IOS ZBF trong bản hợp nhất.
 - [ ] **W1-TV3-03** - Thiết kế PAT tại Main cho tất cả site, hai egress xDSL, static PAT DMZ và NAT exemption cho luồng nội bộ/VPN; đối chiếu inside/outside và các lỗi/caveat của [R]. **Hạn 30/10; đầu ra:** `nat-pat.md`.
+  - [x] Đã có PAT hai egress, static PAT ISP2:8080→DMZ:80, NAT exemption và giải thích tính đối xứng.
 - [ ] **W1-TV3-04** - Đề xuất site-to-site VPN và teleworker VPN; đánh giá firewall/IDS/IPS/chống phishing/HA, khả năng chạy trên công cụ và điều kiện chương trình kỹ sư tài năng. **Hạn 30/10; đầu ra:** `vpn-plan.md`, `ids-ips-plan.md`, danh sách chức năng chạy/thiết kế.
+  - [x] Đã soạn chi tiết VPN VTI/teleworker, route pool/quyền và IDS/IPS plan; tính năng còn DESIGN ONLY.
 - [ ] **W1-TV3-05** - Cùng TV2 thiết kế camera VLAN/quyền xem/NVR/bitrate/lưu trữ; soạn khung security best practices và đọc chéo G1. **Hạn 01/11; đầu ra:** `camera-plan.md`, `security-best-practices.md` bản đầu.
+  - [x] Đã có camera bitrate/lưu trữ/PoE/quyền và security guide; chờ khảo sát/TV2 đọc chéo/G1.
 
 ### TV4 - Simulation & Testing Lead
 
 - [ ] **W1-TV4-01** - Lập đầu vào Step 3: 1.120 workstation/14 server, tải PC 500/100 MB, server 1.000/2.000 MB theo các cách hiểu, Wi-Fi 500 MB và số khách chưa biết; ghi nguồn/giả định. **Hạn 28/10; đầu ra:** `docs/03-capacity/assumptions.md`, `capacity-inputs.csv`.
+  - [x] Đã đối chiếu đề gốc, chuẩn hóa1120 PC/14 server/3h và các phạm vi total; CSV có source/unknown.
 - [ ] **W1-TV4-02** - Tính riêng down/up cho site và tổng: **80% tải trong 09:00-11:00 + 15:00-16:00 = 3 giờ**, tăng trưởng tổng 20%; làm rõ MB/Mbps, overhead/headroom và tỷ lệ LAN/WAN/Internet. **Hạn 29/10; đầu ra:** `throughput.md`; chuyển kết quả sớm cho TV1/TV2.
+  - [x] Đã có capacity.py, baseline CSV, độ nhạy và 6 nhóm kiểm số học; Internet share vẫn chờ khảo sát.
 - [ ] **W1-TV4-03** - Đề xuất băng thông ISP/leased line theo biến khách, từng chiều và tải quan trọng khi hỏng một xDSL; không tự khẳng định gói xDSL đủ tốc độ. **Hạn 30/10; đầu ra:** bảng kịch bản năng lực và khoảng thiếu.
+  - [x] Đã có bảng giả định năng lực down/up hai/một ISP, khoảng thiếu và điều kiện ưu tiên tải.
 - [ ] **W1-TV4-04** - Thử khả năng thiết bị/phần mềm cần dùng trước khi khóa công cụ; dựng skeleton Main/DBP/BHTQ, mapping node/interface và lịch bàn giao module. **Hạn 30/10; đầu ra:** `simulation/README.md`, `integration-log.md`, khung mô phỏng.
+  - [x] Đã kiểm môi trường, chuẩn bị14 link/30 endpoint/port map và capability matrix; chưa có skeleton project.
 - [ ] **W1-TV4-05** - Soạn ma trận **TC01-TC06** cùng các test DHCP/dual ISP/VPN bổ sung; đặt expected, precondition, mẫu evidence và trạng thái NOT RUN; kiểm G1. **Hạn 01/11; đầu ra:** `test_results/test-matrix.md`.
+  - [x] Đã có TC01–TC06 và SUPP01–05, precondition/expected/positive-negative/evidence NOT RUN.
 
 ### TV5 - Documentation & Report Specialist, chủ trì báo cáo
 
@@ -93,6 +106,7 @@
   - [x] Đã viết cấu hình tham chiếu Edge, ISP1/ISP2, INET-Core chung, PBR, probe phía sau ISP và PAT theo egress; đã kiểm tĩnh các tình huống lỗi.
   - [ ] Chưa kiểm feature support, dựng project và xác nhận routing/NAT trên công cụ cùng TV3.
 - [ ] **W2-TV1-03** - Giao module/config, sơ đồ interface và thứ tự nạp cho TV4; hỗ trợ ghép route với LAN/firewall, sửa loop/blackhole và ngăn local breakout tại Aux. **Hạn 06/11; đầu ra:** module WAN được tích hợp, integration log.
+  - [x] Đã có bộ9 router hợp nhất với TV3,5 switch lab/18 pool và runbook; chưa có project nhận ghép.
   - [x] Đã chuẩn bị config text, sơ đồ giao diện, bảng host mẫu và thứ tự nạp trong `simulation/modules/tv1-wan/README.md`.
   - [ ] Chưa có lần TV4 nhận/ghép module project, log tích hợp và kết quả sửa lỗi trên mô phỏng.
 - [ ] **W2-TV1-04** - Kiểm tra route/OSPF neighbor, ping/traceroute Main↔DBP và Main↔BHTQ; bổ sung phương án chi phí và quyết định WAN sau phản hồi nhóm. **Hạn 07/11; đầu ra:** smoke log WAN và `wan-options-cost.md` cập nhật.
@@ -109,18 +123,25 @@
 ### TV3 - Security & Systems Specialist
 
 - [ ] **W2-TV3-01** - Dựng Server Farm/DMZ đại diện theo phân bổ 10/2/2, cấu hình IP tĩnh, DHCP/DNS/HTTP cần thiết; ghi cách đại diện ứng dụng bệnh viện chưa mô phỏng được. **Hạn 04/11; đầu ra:** module server/security, `server-dmz-plan.md` cập nhật.
+  - [x] Đã có inventory/IP/services/DNS records và 18 pool để nhập server; chưa tạo server trên project.
 - [ ] **W2-TV3-02** - Cấu hình PAT cơ bản tại Main cho các subnet được phép ở cả 3 site; phối hợp TV1 bảo đảm inside/outside và egress/route chiều về đúng. **Hạn 05/11; đầu ra:** cấu hình NAT và bảng kiểm lệnh.
+  - [x] Đã hợp nhất PAT TV1/TV3, kiểm hợp đồng egress/exemption tĩnh; runtime chưa chạy.
 - [ ] **W2-TV3-03** - Cấu hình static PAT dịch vụ DMZ và rule cho dịch vụ được phép; dựng khung firewall/zone/ACL, tách rule NAT khỏi rule bảo mật. **Hạn 05/11; đầu ra:** module DMZ/firewall và ma trận dịch vụ được công bố.
+  - [x] Đã có ZBF3 vùng và static PAT DMZ trong config hợp nhất; chưa kiểm parser/HTTP/session.
 - [ ] **W2-TV3-04** - Giao module/config cho TV4; kiểm HTTP, bảng NAT và luồng liên site không bị NAT ngoài ý muốn; sửa xung đột ACL/routing trước hardening tuần 3. **Hạn 07/11; đầu ra:** smoke log NAT/DMZ, integration log.
 - [ ] **W2-TV3-05** - Viết phần Server Farm/DMZ/NAT ban đầu cho TV5, cập nhật kế hoạch VPN/IDS/IPS theo công cụ thực tế và tham gia G2. **Hạn 08/11; đầu ra:** `TV3-security-systems.md`, kế hoạch bảo mật bản cập nhật.
+  - [x] Đã viết contribution TV3 đầy đủ, có link config/test/giới hạn; chưa bàn giao có xác nhận/G2.
 
 ### TV4 - Simulation & Testing Lead
 
 - [ ] **W2-TV4-01** - Chuẩn bị file mô phỏng tổng, đặt tên node/port/site, nhãn VLAN/subnet; thống nhất bàn giao module và giữ lịch chỉnh file `.pkt` để tránh ghi đè. **Hạn 03/11; đầu ra:** khung tổng và integration log.
+  - [x] Đã có naming/cabling/VLAN/subnet,9 router+5 switch config và mapping; chưa có file tổng.
 - [ ] **W2-TV4-02** - Nhận và ghép LAN/Server/WAN Main, DBP, BHTQ; kiểm mapping interface, subnet, router ID, trunk và kết nối ISP/Web lab. **Hạn 06/11; đầu ra:** `hospital-3sites.pkt` hoặc project GNS3 tích hợp.
 - [ ] **W2-TV4-03** - Chạy smoke test DHCP/VLAN, route 3 site, Web qua Main và NAT; tạo issue kèm bước tái hiện cho lỗi, phân người sửa và chạy lại sau ghép. **Hạn 07/11; đầu ra:** log tích hợp, danh sách lỗi và test matrix cập nhật.
 - [ ] **W2-TV4-04** - Ghi phiên bản phần mềm/model và cách mở lại, PC/server đại diện, chức năng mô hình hóa hoặc không hỗ trợ; đối chiếu thiết bị với bảng tính thông lượng. **Hạn 07/11; đầu ra:** `simulation/README.md`, capacity/config notes.
+  - [x] Đã có hướng dẫn dựng/nạp/mapping/giới hạn; model/image/version thực còn chờ thử.
 - [ ] **W2-TV4-05** - Lưu file, mở lại để kiểm persistence, đóng baseline G2 và chuyển nội dung tính tải/triển khai cho TV5. **Hạn 08/11; đầu ra:** file tổng có phiên bản, `TV4-capacity-testing.md` bản đầu, biên bản kiểm mở lại.
+  - [x] Đã viết contribution TV4; persistence procedure có sẵn, chưa kiểm project/mở lại/G2.
 
 ### TV5 - Documentation & Report Specialist, chủ trì báo cáo
 
@@ -157,14 +178,17 @@
 ### TV3 - Security & Systems Specialist
 
 - [ ] **W3-TV3-01** - Hoàn thiện firewall/ACL theo ma trận quyền, ưu tiên chặn guest tới PC/server/quản trị/liên site nhưng cho DHCP/DNS và Internet cần thiết; lưu đúng hướng/interface áp rule. **Hạn 11/11; đầu ra:** config hardening và `security-policy.md`.
+  - [x] Đã có ACL/ZBF/relay/NAT và 61 flow kiểm tĩnh; chưa hardening/test runtime.
 - [ ] **W3-TV3-02** - Phối hợp chạy **TC04** dịch vụ DMZ, thêm đường truy cập từ ngoài qua static PAT khi công bố; chụp translation và firewall hit, giải thích đổi địa chỉ/cổng theo [R]. **Hạn 12/11; đầu ra:** cấu hình DMZ/NAT và evidence đầu vào cho TV4.
 - [ ] **W3-TV3-03** - Phối hợp chạy **TC05**: guest không tới LAN, gồm ICMP và TCP tới host đang hoạt động; thêm ca đối chứng guest vẫn ra Web ngoài, internal vẫn dùng được dịch vụ. **Hạn 13/11; đầu ra:** ACL hit/log và test negative/positive ở các site có guest.
 - [ ] **W3-TV3-04** - Triển khai/test site-to-site và teleworker VPN trong khả năng nền tảng; thử firewall/IDS/IPS nếu áp dụng yêu cầu kỹ sư tài năng, ghi rõ phần chưa chạy và cách khắc phục bằng công cụ phù hợp. **Hạn 14/11; đầu ra:** `supplemental/` và hồ sơ VPN/IDS/IPS.
 - [ ] **W3-TV3-05** - Hoàn thiện security best practices: SSH/AAA, secrets, log/NTP, backup/restore, cập nhật, chống phishing và phân quyền camera; giao nội dung/bằng chứng bảo mật cho TV5 và G3. **Hạn 15/11; đầu ra:** `TV3-security-systems.md`, security guide và đánh giá rủi ro.
+  - [x] Đã soạn best practices cho SSH/AAA/log/NTP/backup/rollback/phishing/camera; runtime/review còn thiếu.
 
 ### TV4 - Simulation & Testing Lead
 
 - [ ] **W3-TV4-01** - Khóa phiên bản chạy test, xác nhận precondition/expected, định danh node/IP/VLAN và trạng thái ban đầu; cập nhật công thức tải khi có thay đổi đã được duyệt. **Hạn 11/11; đầu ra:** test matrix gắn phiên bản, capacity baseline cuối.
+  - [x] Đã có manifest SHA256 cho config tham chiếu, capacity baseline và expected cụ thể; chưa khóa project test.
 - [ ] **W3-TV4-02** - Điều phối chạy và lưu ảnh/log **TC01 cùng VLAN, TC02 liên VLAN, TC03 liên site với cả DBP và BHTQ**; nhận xác nhận chuyên môn TV2/TV1. **Hạn 13/11; đầu ra:** `TC01-*/`, `TC02-*/`, `TC03-*/` có result và bằng chứng.
 - [ ] **W3-TV4-03** - Điều phối **TC04 DMZ, TC05 cô lập khách, TC06 Web Internet qua Main từ mỗi site**; chụp NAT/PDU theo [R], lưu negative/positive control, không chỉ ảnh ping. **Hạn 14/11; đầu ra:** `TC04-*/`, `TC05-*/`, `TC06-*/` đủ evidence.
 - [ ] **W3-TV4-04** - Chạy test bổ sung dual ISP/VPN/HA và IDS/IPS nếu hỗ trợ/yêu cầu; mở issue lỗi, ghép cấu hình sửa và retest liên quan, thống nhất trạng thái PASS/FAIL/NOT RUN. **Hạn 15/11; đầu ra:** test matrix, `supplemental/`, bug log và file mô phỏng cập nhật.
@@ -213,6 +237,7 @@
 - [ ] **W4-TV4-01** - Giao phần Step 3-5 cuối, file mô phỏng tổng, bảng tính tải và bộ evidence 6 test có phiên bản cho TV5; nêu đầy đủ giới hạn/known issues. **Hạn 17/11; đầu ra:** contribution TV4 và baseline ứng viên.
 - [ ] **W4-TV4-02** - Tích hợp sửa lỗi tuần 4 từ TV1-TV3; chạy lại TC bị ảnh hưởng và test nhanh đủ 6 nhóm trên đúng bản ứng viên, không tái dùng ảnh từ topology cũ khi khác kết quả. **Hạn 20/11; đầu ra:** test matrix/evidence cập nhật, integration log.
 - [ ] **W4-TV4-03** - Hoàn thiện `simulation/README.md`: phiên bản, dependency/node, cách mở, IP đích và lệnh test, mapping thiết bị đại diện, phần không hỗ trợ; đối chiếu phần này trong PDF. **Hạn 20/11; đầu ra:** hướng dẫn tái hiện và review gửi TV5.
+  - [x] Đã hoàn thiện README tái hiện/capability/runbook/known issues; chờ điền version/model/runtime thực.
 - [ ] **W4-TV4-04** - Lưu/đóng/mở lại bản mô phỏng đóng gói trên môi trường ghi nhận, kiểm config persist và dependency GNS3 nếu chọn; bàn giao bản có checksum để TV1 duyệt. **Hạn 21/11; đầu ra:** file `.pkt` hoặc gói GNS3 dùng được và log kiểm mở lại.
 - [ ] **W4-TV4-05** - Cùng TV5 lập manifest/version/hash, kiểm đúng cặp PDF-mô phỏng và evidence; phối hợp TV1 nghiệm thu kỹ thuật G4. **Hạn 22/11; đầu ra:** `submission/manifest.md`, `SHA256SUMS`, xác nhận kỹ thuật cho TV1.
 

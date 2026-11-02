@@ -9,6 +9,7 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from ipaddress import IPv4Address, IPv4Interface, IPv4Network
 from pathlib import Path
+import argparse
 import re
 import sys
 
@@ -226,8 +227,11 @@ def check_scenario(nodes, label, off, expected, web_up=True):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--config-dir', type=Path, default=ROOT / 'configs')
+    args = parser.parse_args()
     nodes = {}
-    for path in sorted((ROOT / 'configs').rglob('*.cfg')):
+    for path in sorted(args.config_dir.rglob('*.cfg')):
         node = load_node(path)
         assert node.name not in nodes, f'Duplicate hostname: {node.name}'
         nodes[node.name] = node

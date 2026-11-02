@@ -2,7 +2,21 @@
 
 Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh viện gồm **Main Site tại TP.HCM**, **Auxiliary Site DBP** và **Auxiliary Site BHTQ**. Đầu ra cuối cùng là **báo cáo chính thức PDF, nguồn báo cáo có thể chỉnh sửa và mô phỏng Packet Tracer hoặc GNS3**. Nhóm có **5 thành viên**, thực hiện **4 giai đoạn, mỗi giai đoạn đúng 1 tuần**, từ **Thứ Hai 26/10/2026**.
 
-**Trạng thái:** Đã lập kế hoạch; chưa triển khai mô phỏng, chạy kiểm thử hoặc nghiệm thu. Các subnet, tên nhóm phòng ban, cấu hình, số lượng thiết bị đề xuất và ngưỡng thiết kế dưới đây là baseline để nhóm kiểm chứng, không phải dữ kiện bổ sung từ đề bài.
+**Trạng thái02/11/2026:** Đã có thiết kế,3 contribution TV1/TV3/TV4, gói cấu hình hợp nhất và bộ kiểm tĩnh; chưa có project mô phỏng, kiểm thử runtime hoặc nghiệm thu. Các subnet, tên nhóm phòng ban, cấu hình, số lượng thiết bị đề xuất và ngưỡng thiết kế dưới đây là baseline để nhóm kiểm chứng, không phải dữ kiện bổ sung từ đề bài.
+
+## Bàn giao TV1, TV3, TV4 ngày 02/11/2026
+
+- [Phân tích và đối chiếu từng task](docs/00-management/tv1-tv3-tv4-status.md): sản phẩm đã có, việc còn thiếu, chủ trì và hạn đề xuất.
+- [TV1 WAN/routing](docs/06-report/contributions/TV1-wan-routing.md), [TV3 security/server](docs/06-report/contributions/TV3-security-systems.md), [TV4 capacity/testing](docs/06-report/contributions/TV4-capacity-testing.md): nội dung để TV5 biên tập.
+- [Dựng/nạp mô phỏng](simulation/README.md), [runbook](simulation/test-runbook.md) và [kết quả kiểm tĩnh](test_results/static/README.md).
+
+```bash
+python3 scripts/build_lab.py
+python3 scripts/verify.py
+python3 scripts/capacity.py --guests 200 50 50 --overhead 0.10
+```
+
+Bản hợp nhất có 9 router/5 switch lab,18 pool DHCP, ACL gateway ba site, ZBF và static PAT DMZ ISP2. Đây là cấu hình tham chiếu, chưa phải `.pkt`/GNS3 hoặc PASS runtime. Camera/VPN/IDS-IPS/HA còn giới hạn thiết kế ghi rõ trong từng phần.
 
 ## 1. Điều hướng và nguồn đặc tả
 
