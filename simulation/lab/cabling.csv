@@ -1,0 +1,15 @@
+link,node_a,interface_a,node_b,interface_b,subnet,mode
+L01,Main-GW,Serial0/0/0,DBP-GW,Serial0/0/0,10.255.0.0/30,Serial-DCE-at-Main
+L02,Main-GW,Serial0/0/1,BHTQ-GW,Serial0/0/0,10.255.0.4/30,Serial-DCE-at-Main
+L03,Main-Core,GigabitEthernet0/1,Main-GW,GigabitEthernet0/0,10.255.0.8/30,Ethernet
+L04,Main-Core,GigabitEthernet0/2,Main-FW,GigabitEthernet0/0,10.255.0.12/30,Ethernet
+L05,Main-FW,GigabitEthernet0/1,Main-Edge,GigabitEthernet0/0,10.255.0.16/30,Ethernet
+L06,Main-Edge,GigabitEthernet0/1,ISP1,GigabitEthernet0/0,203.0.113.0/30,Ethernet-xDSL-model
+L07,Main-Edge,GigabitEthernet0/2,ISP2,GigabitEthernet0/0,198.51.100.0/30,Ethernet-xDSL-model
+L08,ISP1,GigabitEthernet0/1,INET-Core,GigabitEthernet0/0,192.0.2.128/30,Ethernet
+L09,ISP2,GigabitEthernet0/1,INET-Core,GigabitEthernet0/1,192.0.2.132/30,Ethernet
+L10,Main-Core,GigabitEthernet0/0,Main-Access,GigabitEthernet0/1,,802.1Q-trunk-exclude-VLAN80
+L11,DBP-GW,GigabitEthernet0/0,DBP-Access,GigabitEthernet0/1,,802.1Q-trunk
+L12,BHTQ-GW,GigabitEthernet0/0,BHTQ-Access,GigabitEthernet0/1,,802.1Q-trunk
+L13,Main-FW,GigabitEthernet0/2,DMZ-Access,GigabitEthernet0/1,10.10.80.0/27,access-VLAN80
+L14,INET-Core,GigabitEthernet0/2,Web-Access,GigabitEthernet0/1,192.0.2.64/26,access-Web-Lab

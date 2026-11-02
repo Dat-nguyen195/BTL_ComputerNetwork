@@ -1,8 +1,10 @@
 # NAT/PAT và kiểm chứng địa chỉ
 
-**Chủ trì:** TV3; TV1 phối hợp dual ISP. **Trạng thái:** BASELINE / CHƯA NGHIỆM THU.
+**Chủ trì:** TV3; TV1 phối hợp dual ISP. **Cập nhật:** 02/11/2026. **Trạng thái:** CÓ CẤU HÌNH THAM CHIẾU / CHƯA KIỂM IOS RUNTIME.
 
- và hiệu chỉnh tài liệu Multi-site
+## Tham khảo và hiệu chỉnh tài liệu Multi-site
+
+[R] là nguồn tham khảo được mô tả trong README; file hiện không có trong workspace nên chưa kiểm lại trực tiếp nội dung/trang của [R]. Bảng dưới giữ ghi chú của dự án, không coi là bằng chứng đã đọc lại nguồn gốc.
 
 [R] tr.2-7 minh họa DHCP, router inside/outside, PAT overload, static TCP port mapping và kiểm tra bằng `show ip nat statistics`, `show ip nat translations`, `show access-lists`. [R] tr.8-11 yêu cầu quan sát địa chỉ/cổng ở PC, gateway nguồn, router trung gian, gateway đích và server. TV3/TV4 áp dụng cách kiểm chứng này cho TC04/TC06 và viết chú thích ảnh trước/sau NAT.
 
@@ -19,11 +21,32 @@
 
 ## Baseline bệnh viện
 
-NAT Internet tại Main cho cả 3 site; không PAT liên LAN/WAN nội bộ/VPN. Hai egress phải có route/NAT nhất quán với chiều về. DMZ static PAT chỉ mở cổng công bố. Ghi inside/outside, ACL chọn nguồn NAT, rule firewall và địa chỉ/cổng trước/sau NAT. Chưa có mapping chạy thực tế.
+Main-Edge G0/0 `10.255.0.18` là **inside**; G0/1 `203.0.113.2` và G0/2 `198.51.100.2` là **outside**. Main-FW không NAT. ACL100 loại luồng 10/8→10/8 trước khi chọn nguồn ba site. Route-map NAT-ISP1/NAT-ISP2 chọn interface thực ra; PBR không áp sang mạng 10/8. Không bật NAT ở Aux.
+
+| Luồng ví dụ | Trước Edge | Sau Edge / đường trả lời |
+| --- | --- | --- |
+| Main-PC10→Web | 10.10.10.10:p → 192.0.2.100:80 | 203.0.113.2:q → Web:80 nếu ISP1 tốt |
+| BHTQ-PC10→Web | 10.30.10.10:p → Web:80 | 198.51.100.2:q → Web:80 nếu ISP2 tốt |
+| Internet→WebDMZ | 192.0.2.100:p → 198.51.100.2:8080 | Web:p → 10.10.80.10:80; trả về ISP2 và đổi source thành public:8080 |
+| Main↔Aux | IP riêng nguồn → IP riêng đích | Giữ nguyên source/destination; không NAT |
+
+`p/q` là biến cổng, không phải cổng đo được. Lấy giá trị thật từ translation/PDU khi chạy. [Cisco NAT](https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/nat/nat-configuration-guide/nat.html) mô tả mapping theo protocol, inside local IP/port và global IP/port. Cấu hình trong [overlay Edge](../../configs/security/main-edge-dmz.inc):
+
+```ios
+ip nat inside source static tcp 10.10.80.10 80 198.51.100.2 8080 extendable
+```
+
+**Chỉ công bố ISP2.** DMZ80 thuộc nhóm PBR ưu tiên ISP2 nên đường trả lời bình thường cùng egress. Nếu thêm mapping ISP1 mà vẫn PBR theo nguồn, phản hồi phiên vào ISP1 có thể đi sai ISP. Khi ISP2 hỏng, Web công bố bị gián đoạn; chưa có inbound HA. Outbound có thể failover; phiên cũ vẫn có thể đứt. HA inbound cần thêm thiết kế DNS/địa chỉ công bố và routing theo phiên, rồi kiểm riêng.
+
+FW nhận packet **sau DNAT** từ Edge nên OUTSIDE→DMZ match `10.10.80.10:80`, không match public:8080. Static PAT tạo ánh xạ; firewall mới cho quyền qua vùng. Main-ProxyDMZ .11, DB .70.15 và SSH không được công bố. Nội bộ dùng `portal.hospital.test → 10.10.80.10`; không dựa vào NAT hairpin. Guest không được phép mở public:8080 theo ACL hiện tại.
+
+VPN pool thuộc 10/8 nên được loại NAT khi đích cũng 10/8; điều đó chưa triển khai VPN. Route về pool, termination, crypto và quyền nằm ở [VPN plan](vpn-plan.md). Không thêm public mapping UDP500/4500 hoặc permit pool trong baseline chưa có VPN.
+
+Kiểm runtime: Edge `show ip nat statistics`, `show ip nat translations`, `show route-map`, `show track`; FW `show policy-map type inspect zone-pair sessions`; route hai chiều và HTTP client. Kiểm cùng đích qua mỗi ISP, không NAT nội bộ và dịch vụ không công bố bị chặn. Bảng NAT không thay kết quả ứng dụng.
 
 
 ## Theo dõi cập nhật
 
-- [ ] Xác nhận giả định và thông số với người phụ trách.
+- [x] Đã có mapping cụ thể và cấu hình hợp nhất cho baseline.
 - [ ] Cập nhật kết quả triển khai/bằng chứng thực tế.
 - [ ] Ghi reviewer, ngày rà soát và quyết định vào issue/PR liên quan.

@@ -1,0 +1,55 @@
+
+$ python3 scripts/check_docs.py
+OK: 76 Markdown files; UTF-8, local links, code fences and task IDs checked.
+
+$ python3 scripts/build_lab.py --check
+OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
+
+$ python3 scripts/build_campus.py --check
+OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapters (freshness checked)
+
+$ python3 scripts/test_capacity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
+
+$ python3 scripts/check_wan.py
+OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
+OK static model: both ISP up; edge tracks=(True, True); GW default=True
+OK static model: ISP1 local down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 local down; edge tracks=(True, False); GW default=True
+OK static model: ISP1 upstream down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 upstream down; edge tracks=(True, False); GW default=True
+OK static model: both upstream down; edge tracks=(False, False); GW default=False
+OK static model: both local down; edge tracks=(False, False); GW default=False
+OK static model: recovery; edge tracks=(True, True); GW default=True
+OK static model: Web health target unavailable; edge tracks=(True, True); GW default=False
+Static checks only. IOS parser, OSPF convergence, NAT sessions, HTTP/DNS and runtime test results are NOT verified.
+
+$ python3 scripts/check_wan.py --config-dir simulation/generated/configs
+OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
+OK static model: both ISP up; edge tracks=(True, True); GW default=True
+OK static model: ISP1 local down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 local down; edge tracks=(True, False); GW default=True
+OK static model: ISP1 upstream down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 upstream down; edge tracks=(True, False); GW default=True
+OK static model: both upstream down; edge tracks=(False, False); GW default=False
+OK static model: both local down; edge tracks=(False, False); GW default=False
+OK static model: recovery; edge tracks=(True, True); GW default=True
+OK static model: Web health target unavailable; edge tracks=(True, True); GW default=False
+Static checks only. IOS parser, OSPF convergence, NAT sessions, HTTP/DNS and runtime test results are NOT verified.
+
+$ python3 scripts/check_security.py
+OK static security: 61 first-match flow cases, 18 DHCP pools, ingress bindings, ZBF/PAT contracts
+NOT IOS runtime: no stateful sessions, DHCP leases, DNS/HTTP, VPN or IDS/IPS executed.
+
+$ python3 scripts/check_inventory.py
+OK static inventory: 14 cables, 30 endpoints, 10/2/2 servers, unique addresses and switch ports
+
+$ python3 scripts/check_lan.py
+OK static TV2: 3 campus budgets/storage,72 uplinks,2 diagrams,3 adapters, 37 preserved Main ACL flows; original PKT hash verified
+Native file is a partial Main module. Packet Tracer runtime, Wi-Fi/RF and persistence NOT RUN.
+
+ALL OFFLINE CHECKS OK. TC01-TC06 / VPN / IDS-IPS runtime remain NOT RUN.

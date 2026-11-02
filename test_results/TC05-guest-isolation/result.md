@@ -1,30 +1,30 @@
-# TC05 - Khách bị chặn vào LAN
+# TC05 - Guest isolation ba site
 
-**Trạng thái:** NOT RUN. **Chuẩn bị:** TV3 + TV2. **Người chạy/lưu bằng chứng:** TV4 phối hợp thành viên kỹ thuật.
+**Trạng thái: NOT RUN. Chuẩn bị: TV3 + TV2. Người chạy/lưu bằng chứng: TV4 phối hợp chủ trì. Cập nhật: 02/11/2026.**
 
 | Thuộc tính | Giá trị |
 | --- | --- |
 | Ngày / người chạy | Chưa chạy |
-| Công cụ / phiên bản | Chưa xác nhận |
-| File mô phỏng / commit / hash | Chưa có |
-| Nguồn / IP / VLAN | Chờ cấu hình |
-| Đích / IP / VLAN | Chờ cấu hình |
-| Điều kiện trước | Thiết bị, route, DHCP và dịch vụ đích phải hoạt động phù hợp |
+| Công cụ / version / model | Chưa xác nhận |
+| Project / commit / SHA256 | Chưa có |
+| Nguồn / đích mẫu | Guest10.10/20/30.100.x→PC10 cả 3 site và HIS10.10.70.11:80 |
+| Giao thức / công cụ | ICMP/TCP negative; DHCP/DNS/HTTP ngoài positive |
+| Điều kiện trước | Chứng minh PC đang up/HIS80 đang chạy bằng nguồn có quyền; guest có lease |
 
-## Các bước kiểm tra
+## Bước chạy và expected
 
-Guest thử ICMP/TCP đến host nội bộ đang hoạt động; kiểm deny hit; đối chứng guest ra Internet và internal dùng dịch vụ.
+Thực hiện đúng mục tương ứng trong [runbook](../../simulation/test-runbook.md). Guest không tới PC/server/DMZ/admin; DNS/DHCP/Web ngoài vẫn được; có deny counter. IP client lấy từ lease thực, không khẳng định mẫu là IP đã được cấp.
 
-## Kết quả mong đợi
+## Actual và evidence
 
-LAN bị chặn có bằng chứng; DHCP/DNS/Internet khách vẫn dùng được.
+Chưa thực hiện. Lưu ảnh ở `screenshots/`, log văn bản `.txt` ở `logs/`, có run ID và liên kết từng bước. Mỗi hướng/nguồn phải có actual riêng. Output CLI/RTT/NAT port không tự soạn. Bộ kiểm tĩnh không thay runtime.
 
-## Kết quả thực tế và bằng chứng
-
-Chưa thực hiện. Lưu ảnh tại `screenshots/`, log tại `logs/`; ghi nguồn/đích rõ và dùng đúng phiên bản mô phỏng. Không đổi thành PASS nếu thiếu actual/evidence.
+| Lần chạy / bước | Expected | Actual | Evidence / hash | Kết luận |
+| --- | --- | --- | --- | --- |
+| Chưa chạy | Theo runbook | Chưa có | Chưa có | NOT RUN |
 
 ## Lỗi và retest
 
-- Issue / ảnh hưởng:
-- Phiên bản sau sửa:
-- Kết quả retest / reviewer:
+- Lỗi/bước tái hiện/người sửa: chưa có kết quả để kết luận.
+- Project sau sửa và hash: chưa có.
+- Ca chạy lại / actual / reviewer: chưa thực hiện.

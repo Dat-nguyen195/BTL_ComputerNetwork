@@ -1,6 +1,6 @@
 # Đầu vào và giả định tính tải
 
-**Chủ trì:** TV4; TV1 duyệt. **Trạng thái:** BASELINE / CHƯA NGHIỆM THU.
+**Chủ trì:** TV4; TV1 duyệt. **Cập nhật:** 02/11/2026. **Trạng thái:** ĐÃ TÁCH KỊCH BẢN VÀ KIỂM SỐ HỌC / CHỜ XÁC NHẬN DỮ LIỆU.
 
 ### 6.1. Dữ liệu gốc và giả định phải chốt
 
@@ -17,6 +17,8 @@ Không có số lượng khách hoặc tỷ lệ đồng thời trong [A]. Đặ
 
 
 ## Theo dõi cập nhật
+
+Nguồn gốc đã đối chiếu trực tiếp với đề PDF trong workspace: trang1 quy mô Main, trang2 quy mô Aux/tải/hai ISP/VPN/camera, trang3 tăng trưởng và Step3. Các tỷ lệ Internet, overhead, số khách và phân loại giao dịch vẫn là biến khảo sát; xem [cách tái lập](throughput.md) và [danh mục chờ xác nhận](../00-management/tv1-tv3-tv4-status.md).
 
 - [ ] Xác nhận giả định và thông số với người phụ trách.
 - [ ] Cập nhật kết quả triển khai/bằng chứng thực tế.

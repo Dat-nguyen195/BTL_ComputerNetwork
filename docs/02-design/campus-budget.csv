@@ -1,0 +1,4 @@
+site,floors,access_switches,access_ports,pcs_now,pcs_future,aps_now,aps_future,cameras_now,cameras_future,used_now,used_future,spare_future,worst_floor_future,floor_ports,floor_poe_now_w,floor_poe_future_w,floor_poe_budget_w,optical_links,sfp_required,sfp_with_spares,cat6_boxes_305m,video_now_mbps,video_future_mbps,nvr_raw_now_gb,nvr_usable_now_gb,nvr_usable_future_gb
+Main,10,20,960,600,720,30,40,40,50,670,810,150,81,96,151.6,197.0,1480.0,40,80,88,88,160.0,200.0,51840.0,68040.0,85050.0
+DBP,2,8,384,260,312,6,8,8,10,277,334,50,169,192,151.6,197.0,2960.0,16,32,36,37,32.0,40.0,10368.0,13607.999999999998,17010.0
+BHTQ,2,8,384,260,312,6,8,8,10,277,334,50,169,192,151.6,197.0,2960.0,16,32,36,37,32.0,40.0,10368.0,13607.999999999998,17010.0

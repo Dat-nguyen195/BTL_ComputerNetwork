@@ -19,6 +19,10 @@ def main():
             continue
         if '\ufffd' in text:
             errors.append(f'{relative}: Unicode replacement character')
+        if re.search(r'\[cite:\s*[\d, ]+\]', text):
+            errors.append(f'{relative}: unresolved citation placeholder')
+        if re.search(r'^(<<<<<<< |=======\s*$|>>>>>>> )', text, re.M):
+            errors.append(f'{relative}: unresolved merge conflict')
         fence = None
         for line_number, line in enumerate(text.splitlines(), 1):
             marker = re.match(r'^\s{0,3}(`{3,}|~{3,})(.*)$', line)

@@ -1,34 +1,30 @@
-# TC03 — Main với DBP và BHTQ
+# TC03 - Main với cả hai Aux
 
-**Trạng thái:** NOT RUN. **Chuẩn bị:** TV1. **Chạy/lưu bằng chứng:** TV4 phối hợp TV1. **Cập nhật mẫu:** 26/10/2026.
+**Trạng thái: NOT RUN. Chuẩn bị: TV1. Người chạy/lưu bằng chứng: TV4 phối hợp chủ trì. Cập nhật: 02/11/2026.**
 
-## 1. Môi trường và điều kiện trước
-
-| Thuộc tính | Giá trị thực tế |
+| Thuộc tính | Giá trị |
 | --- | --- |
-| Ngày/người chạy | Chưa chạy |
-| Công cụ/model/image/phiên bản | Chưa xác nhận |
-| Project/commit/SHA256 | Chưa có project |
-| Điều kiện trước | Link/trunk/gateway đúng IP plan; OSPF hội tụ; host đích hoạt động; ACL cho phép luồng test; xác định có/không VPN |
+| Ngày / người chạy | Chưa chạy |
+| Công cụ / version / model | Chưa xác nhận |
+| Project / commit / SHA256 | Chưa có |
+| Nguồn / đích mẫu | PC10 Main/DBP/BHTQ; mẫu10.10.10.10/10.20.10.10/10.30.10.10 |
+| Giao thức / công cụ | ICMP; tracert/traceroute; OSPF route/neighbor |
+| Điều kiện trước | Hai Serial và 3 adjacency ổn định; ACL cho ICMP giữa subnetPC10 |
 
-Các địa chỉ sau là host dự kiến trong lab tối thiểu, phải thay bằng địa chỉ thật nếu khác: Main-PC `10.10.10.10/25`; DBP-PC `10.20.10.10/25`; BHTQ-PC `10.30.10.10/25`; gateway `.1` cùng subnet. Server Aux tùy chọn `.70.10/28`.
+## Bước chạy và expected
 
-## 2. Ca kiểm và expected
+Thực hiện đúng mục tương ứng trong [runbook](../../simulation/test-runbook.md). Đủ Main→DBP, DBP→Main, Main→BHTQ, BHTQ→Main; không NAT nội bộ. IP client lấy từ lease thực, không khẳng định mẫu là IP đã được cấp.
 
-| Ca | Thao tác | Expected | Actual / evidence |
-| --- | --- | --- | --- |
-| TC03-A | Ping/traceroute Main-PC → DBP-PC, rồi chạy lại từ DBP-PC → Main-PC | Liên lạc được theo policy, qua Main-Core/Main-GW/DBP-GW | Chưa chạy |
-| TC03-B | Ping/traceroute Main-PC → BHTQ-PC, rồi BHTQ-PC → Main-PC | Đủ hai chiều và đủ chi nhánh thứ hai | Chưa chạy |
-| TC03-C bổ sung | DBP-PC ↔ BHTQ-PC | Qua Main-GW, không có cáp trực tiếp DBP–BHTQ | Chưa chạy |
-| TC03-D bổ sung | Main-PC ↔ server Aux nếu có | Đúng IP, port/dịch vụ được phép; ghi ICMP/ứng dụng riêng | Chưa chạy |
+## Actual và evidence
 
-Lưu `show ip ospf neighbor` trên Main-GW, route đến subnet đích và chiều về trên gateway; source/destination IP/VLAN, ping/traceroute từ hai đầu, phiên bản cấu hình và chính sách áp dụng. Không suy số metric/route tổng hợp /16 từ ví dụ tự soạn; ghi output thực. RTT mô phỏng không chứng minh hiệu năng HIS/PACS sản xuất.
+Chưa thực hiện. Lưu ảnh ở `screenshots/`, log văn bản `.txt` ở `logs/`, có run ID và liên kết từng bước. Mỗi hướng/nguồn phải có actual riêng. Output CLI/RTT/NAT port không tự soạn. Bộ kiểm tĩnh không thay runtime.
 
-## 3. Bằng chứng và kết luận
+| Lần chạy / bước | Expected | Actual | Evidence / hash | Kết luận |
+| --- | --- | --- | --- | --- |
+| Chưa chạy | Theo runbook | Chưa có | Chưa có | NOT RUN |
 
-- Actual/ảnh trong `screenshots/`, log trong `logs/`: chưa có.
-- Kết quả từng ca: chưa có; kết luận chung giữ NOT RUN.
-- Ngày/người chạy và reviewer: chờ thực hiện.
-- Issue/bước tái hiện, phiên bản sau sửa, ca retest và kết quả: điền khi phát sinh.
+## Lỗi và retest
 
-Các đoạn CLI/RTT trước review không có project/hash đi kèm đã được bỏ khỏi actual; không dùng làm bằng chứng nghiệm thu. Chỉ chuyển PASS sau khi đủ kết quả cho Main↔cả DBP và BHTQ trên đúng bản mô phỏng.
+- Lỗi/bước tái hiện/người sửa: chưa có kết quả để kết luận.
+- Project sau sửa và hash: chưa có.
+- Ca chạy lại / actual / reviewer: chưa thực hiện.

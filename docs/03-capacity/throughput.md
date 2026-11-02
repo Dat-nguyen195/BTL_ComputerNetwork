@@ -1,6 +1,6 @@
 # Tính thông lượng và băng thông ISP
 
-**Chủ trì:** TV4; TV1 phối hợp WAN/ISP. **Trạng thái:** BASELINE / CHƯA NGHIỆM THU.
+**Chủ trì:** TV4; TV1 phối hợp WAN/ISP. **Cập nhật:** 02/11/2026. **Trạng thái:** TÍNH TOÁN TÁI LẬP ĐƯỢC / CHƯA NGHIỆM THU NĂNG LỰC THỰC.
 
 ### 6.1. Dữ liệu gốc và giả định phải chốt
 
@@ -46,6 +46,50 @@ Mỗi thiết bị khách/ngày thêm khoảng **0,2963 Mbps peak down**, hoặc
 
 ## Theo dõi cập nhật
 
+- [x] Đã tái lập số học bằng script, tách ba cách hiểu server và tải chưa biết.
 - [ ] Xác nhận giả định và thông số với người phụ trách.
 - [ ] Cập nhật kết quả triển khai/bằng chứng thực tế.
 - [ ] Ghi reviewer, ngày rà soát và quyết định vào issue/PR liên quan.
+
+## Tái lập và phân tích độ nhạy
+
+[capacity.py](../../scripts/capacity.py) đọc [capacity-inputs.csv](capacity-inputs.csv), dùng thư viện chuẩn Python. [Baseline CSV](calculated-baseline.csv) là đầu ra tính toán, không phải log thiết bị. Upload khách chưa biết hiện bằng `UNKNOWN`; tổng upload là **phần đã biết**, không khẳng định tải khách bằng 0. Biến overhead không có trong đề nên mặc định 0, cần chỉ định riêng khi phân tích.
+
+```bash
+python3 scripts/capacity.py
+python3 scripts/capacity.py --server-scope global
+python3 scripts/capacity.py --server-scope per-site
+python3 scripts/capacity.py --guests 200 50 50 --overhead 0.10
+python3 scripts/capacity.py --guest-scope global
+python3 scripts/capacity.py --internet-down-share 0.4 --internet-up-share 0.6
+python3 scripts/test_capacity.py
+```
+
+`global` không tự phân bổ số tổng cho site. `--guest-scope global` thay tổng download khách bằng 500 MB/ngày toàn hệ thống, không nhân số thiết bị. `--guest-upload-mb` là upload mỗi thiết bị/ngày nếu có khảo sát. Internet share down/up là tỷ lệ **giả định của phần tải đã biết**, không suy ra từ đếm thiết bị; phần còn lại chưa tự động trở thành WAN vì cần biết cặp nguồn/đích.
+
+| Giả định server, khách | Design down/up Mbps, chưa overhead | Cách dùng |
+| --- | --- | --- |
+| Server tổng toàn hệ thống, N=0 | 569,90 / 115,81 | Giữ cách hiểu sát chữ total để so sánh |
+| Server tổng mỗi site, N=0 | 571,94 / 119,87 | Chỉ dùng nếu xác nhận phạm vi từng site |
+| Mỗi server, N=0 | 583,11 / 142,22 | Envelope bảo thủ của baseline |
+| Mỗi server, N=300 | 735,49 / 142,22 + upload khách chưa biết | Số khách minh họa |
+| Mỗi server, N=0, thêm overhead10% | 641,42 / 156,44 | 10% là giả định, không phải benchmark |
+| Mỗi server, N=300, thêm overhead10% | 809,04 / 156,44 + upload khách chưa biết | Chưa thêm workload ngoài định mức |
+
+`B_design = B_peak × (1 + growth) × (1 + overhead) / utilization`. Growth tổng 20%, overhead và utilization là ba yếu tố khác nhau; không gọi phần dự phòng utilization là tốc độ đường dây thực. PACS/camera/backup có thể đã góp vào định mức tổng; chỉ thêm **phần chưa được tính** sau khi xác định phạm vi để tránh đếm hai lần.
+
+## Kịch bản ISP từng chiều và khi lỗi
+
+Các gói dưới chỉ là **giả định số học**, chưa có nhà mạng/báo giá/SLA và không gọi 500/500 Mbps là gói xDSL đã tồn tại.
+
+| Năng lực hiệu dụng giả định | Hai đường tốt down/up | Chỉ một đường tốt | Khoảng thiếu so baseline 583,11/142,22 khi còn một đường |
+| --- | --- | --- | --- |
+| 2×100/20 Mbps | 200/40; thiếu 383,11/102,22 | 100/20 | 483,11/122,22 Mbps |
+| 2×500/500 Mbps | 1000/1000, đủ tổng phần đã biết | 500/500 | 83,11/0 Mbps down/up |
+| 2×750/250 Mbps | 1500/500, đủ tổng phần đã biết | 750/250 | 0/0 với N=0; N=300 + overhead10% thiếu ít nhất59,04 Mbps down |
+
+Không chọn gói chỉ bằng tổng down: phải đủ up, tải theo egress và tải ưu tiên khi một ISP mất. Chính sách giảm tải đề xuất: ưu tiên HIS/LIS và giao dịch; hạn chế guest, dời backup/cập nhật/PACS bulk. Chưa biết tỷ lệ tải thiết yếu nên chưa có số Mbps QoS hay cam kết duy trì đủ dịch vụ.
+
+PBR tham chiếu chia Main VLAN10/30/50 + 8 server nội bộ + DBP vào ISP1; nhóm Main20/40/60 + 2 DMZ + BHTQ vào ISP2. Theo cùng giả định mỗi máy và chưa khách: nhóm1 khoảng 294,60/77,21 Mbps, nhóm2 288,51/65,02 Mbps. Khách Main/BHTQ dồn nhóm2, khách DBP nhóm1; vì vậy không được suy tỷ lệ50/50 hoặc kết luận đủ từ tổng hai ISP. Một phiên chỉ dùng một egress.
+
+Với mỗi Aux, tải ISP envelope134,10/30,48 Mbps là phần phải qua leased line; chiều Main→Aux tương ứng download, Aux→Main tương ứng upload. Lưu lượng HIS/PACS liên site, backup và VPN bổ sung phải thống kê riêng. Mức150–200 Mbps đối xứng trong WAN plan là điểm bắt đầu lấy báo giá, chưa đủ cơ sở khẳng định đáp ứng camera/PACS. Serial2 Mbps của lab chỉ test chức năng, không nghiệm thu sizing.

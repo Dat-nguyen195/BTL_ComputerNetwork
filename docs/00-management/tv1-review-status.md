@@ -1,6 +1,6 @@
 # Tình trạng TV1 sau hiệu chỉnh review
 
-**Ngày:** 26/10/2026. **Trạng thái chung:** ĐÃ HIỆU CHỈNH THIẾT KẾ/CẤU HÌNH THAM CHIẾU, CHƯA NGHIỆM THU TRIỂN KHAI. Checklist task chính thức vẫn ở [tasks-assignment.md](../../tasks-assignment.md).
+**Ngày cập nhật:** 02/11/2026. Phần kết quả26/10 bên dưới được giữ làm lịch sử; bản bàn giao mới nằm ở mục cập nhật cuối. **Trạng thái chung:** ĐÃ HIỆU CHỈNH THIẾT KẾ/CẤU HÌNH THAM CHIẾU, CHƯA NGHIỆM THU TRIỂN KHAI. Checklist task chính thức vẫn ở [tasks-assignment.md](../../tasks-assignment.md).
 
 ## Những điểm đã hiệu chỉnh
 
@@ -13,7 +13,7 @@
 | Kết luận 50/50/timer không có số đo | Mô tả đúng PBR theo nguồn, timer cấu hình và phiên PAT cũ/mới | Counter/số phiên/byte và timestamp thực |
 | Giá/SLA không có nguồn | Ghi toàn bộ số tiền là giả định; bỏ cam kết giá/thuế/SLA không nguồn | Báo giá theo địa chỉ, SLA, model và ngày hiệu lực |
 | FTTH thay yêu cầu xDSL | Tách mô hình chức năng hai ISP và phương án nâng cấp | Chấp thuận ngoại lệ nếu dùng thay yêu cầu gốc |
-| Serial bị hiểu là 150Mbps | Serial2Mbps cho chức năng, explicit OSPF cost; sizing leased line riêng | Không dùng RTT/Serial chứng minh tải sản xuất |
+| Serial bị hiểu là 150 Mbps | Serial2 Mbps cho chức năng, explicit OSPF cost; sizing leased line riêng | Không dùng RTT/Serial chứng minh tải sản xuất |
 
 Bổ sung thêm discard route cho các vùng site chưa cấp và route trả về Aux tại Core, nhằm ngăn vòng lặp default Core–FW/Core–GW. Chỉ static DMZ được redistribute vào OSPF. Đây là bảo vệ thiết kế; cần giữ khi TV2/TV3 tích hợp.
 
@@ -51,3 +51,9 @@ Bổ sung thêm discard route cho các vùng site chưa cấp và route trả v�
 - Đã thử trên các bản sao tạm: checker phát hiện đủ 5 lỗi cố tình đưa lại (default GW bỏ track, probe quay về gateway local, thiếu route trả về ISP2, thiếu đường ISP1 tới Internet chung, bỏ discard gây vòng lặp địa chỉ Main chưa cấp). Không sửa file làm việc trong các ca thử lỗi này.
 - `git diff --check`: đạt sau sửa khoảng trắng. Workflow local đã bổ sung bước chạy checker WAN; chưa xác nhận một lần chạy CI trên GitHub.
 - Các kết quả trên **chỉ là kiểm tra tĩnh**. Chưa chạy Cisco IOS/Packet Tracer/GNS3, chưa có project/hash hay bằng chứng runtime; TC03/TC06/SUPP-01 giữ NOT RUN, hồ sơ duyệt giữ PENDING.
+
+## Cập nhật 02/11/2026: bàn giao TV1/TV3/TV4
+
+Đã bổ sung [bảng đối chiếu60 task](tv1-tv3-tv4-status.md),3 contribution, tính tải tự động, server10/2/2,18 pool, ACL tại gateway ba site, IOS ZBF tại FW, static PAT DMZ và gói cấu hình hợp nhất. Có [hướng dẫn dựng/nạp/test](../../simulation/README.md) và [hồ sơ kiểm tĩnh mới](../../test_results/static/README.md). Các config base routing vẫn giữ để truy vết; khi dựng dùng bản hợp nhất, không dùng riêng base FW rồi coi có security.
+
+Không có Packet Tracer/GNS3/IOS image trong môi trường thực hiện nên chưa tạo project, không có IOS/HTTP/DHCP/OSPF runtime hoặc xác nhận review. Checklist chính giữ nguyên điều kiện nghiệm thu; không tăng số task hoàn thành chính chỉ từ subtask offline. TC01–TC06/SUPP01–05 vẫn NOT RUN; approval PENDING.

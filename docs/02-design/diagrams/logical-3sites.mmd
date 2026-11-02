@@ -1,33 +1,99 @@
 flowchart TB
-    NET["Internet / Web server ngoài bệnh viện"]
-    ISP1["xDSL 1"]
-    ISP2["xDSL 2"]
-    EDGE["Main Internet Edge - cân bằng tải theo luồng, PAT"]
-    SEC["Main Firewall / vùng bảo mật / VPN"]
-    DMZ["DMZ - dịch vụ công khai"]
-    CORE["Main Core / Distribution - HA theo thiết kế"]
-    SF["Server Farm - dịch vụ nội bộ"]
-    A["Tòa A - 5 tầng x 10 phòng"]
-    B["Tòa B - 5 tầng x 10 phòng"]
-    WIFI["Wi-Fi nhân viên / Wi-Fi khách - VLAN riêng"]
-    CAM["Camera VLAN / NVR"]
-    HUB["Main WAN Gateway - OSPF / chính sách WAN"]
-    DBP["DBP Gateway - LAN 2 tầng, 260 PC, 2 server"]
-    BHTQ["BHTQ Gateway - LAN 2 tầng, 260 PC, 2 server"]
-    REMOTE["Teleworker"]
-    NET --- ISP1
-    NET --- ISP2
-    ISP1 --- EDGE
-    ISP2 --- EDGE
-    EDGE --- SEC
-    SEC --- DMZ
-    SEC --- CORE
-    CORE --- SF
-    CORE --- A
-    CORE --- B
-    CORE --- WIFI
-    CORE --- CAM
-    SEC --- HUB
-    HUB ---|"Leased line 1 / OSPF"| DBP
-    HUB ---|"Leased line 2 / OSPF"| BHTQ
-    REMOTE -.->|"Remote-access VPN qua Internet"| SEC
+    classDef internet fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#312e81
+    classDef security fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d
+    classDef core fill:#1e3a8a,stroke:#1e40af,stroke-width:2px,color:#ffffff
+    classDef access fill:#bfdbfe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    classDef server fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef endpoint fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#374151
+
+    subgraph INET ["Internet"]
+        direction LR
+        WEB(["Internet / Web server ngoài"])
+        ISP1(["xDSL1 / ISP1 lab"])
+        ISP2(["xDSL2 / ISP2 lab"])
+        TELE(["Teleworker"])
+    end
+
+    subgraph MAIN ["Main Site - TP.HCM"]
+        direction TB
+        REDGE["Internet Edge<br/>PBR theo nguồn, PAT đúng egress"]
+        FW["Firewall: ZBF tham chiếu<br/>HA/VPN/IDS-IPS: DESIGN ONLY"]
+        DMZ[("DMZ - VLAN80, switch riêng<br/>ISP2:8080; chưa inbound HA")]
+        WANGW["Main WAN Gateway<br/>OSPF"]
+        CORE1["Core-1 L3 (dự trù)<br/>ACL tại SVI; lab một core"]
+        CORE2["Core-2 L3 (dự trù)<br/>HSRP/RSTP cần triển khai"]
+        SRV[("Server Farm - VLAN 70<br/>HIS, RIS/PACS, LIS, CRM, DB")]
+        NVR[("NVR - VLAN 110")]
+
+        subgraph TOA_A ["Tòa A - 5 tầng x 10 phòng"]
+            direction TB
+            ACC_A["Access A: 10 switch<br/>2 switch/tầng"]
+            PC_A("PC VLAN 10-60")
+            AP_A("AP Wi-Fi<br/>VLAN 100/120")
+            CAM_A("Camera IP<br/>VLAN 110")
+            ACC_A --- PC_A & AP_A & CAM_A
+        end
+
+        subgraph TOA_B ["Tòa B - 5 tầng x 10 phòng"]
+            direction TB
+            ACC_B["Access B: 10 switch<br/>2 switch/tầng"]
+            PC_B("PC VLAN 10-60")
+            AP_B("AP Wi-Fi<br/>VLAN 100/120")
+            CAM_B("Camera IP<br/>VLAN 110")
+            ACC_B --- PC_B & AP_B & CAM_B
+        end
+    end
+
+    subgraph AUX_DBP ["Chi nhánh DBP - 2 tầng"]
+        direction TB
+        R_DBP["Gateway L3<br/>OSPF"]
+        D_DBP["Distribution x2 (HA dự trù)"]
+        A_DBP["Access: 8 switch"]
+        S_DBP[("Server cục bộ<br/>VLAN 70")]
+        E_DBP("PC, AP, Camera<br/>VLAN 10-30, 100-120")
+        R_DBP --- D_DBP --- A_DBP
+        A_DBP --- S_DBP & E_DBP
+    end
+
+    subgraph AUX_BHTQ ["Chi nhánh BHTQ - 2 tầng"]
+        direction TB
+        R_BHTQ["Gateway L3<br/>OSPF"]
+        D_BHTQ["Distribution x2 (HA dự trù)"]
+        A_BHTQ["Access: 8 switch"]
+        S_BHTQ[("Server cục bộ<br/>VLAN 70")]
+        E_BHTQ("PC, AP, Camera<br/>VLAN 10-30, 100-120")
+        R_BHTQ --- D_BHTQ --- A_BHTQ
+        A_BHTQ --- S_BHTQ & E_BHTQ
+    end
+
+    WEB --- ISP1 & ISP2
+    ISP1 --> REDGE
+    ISP2 --> REDGE
+    TELE -. "VPN qua Internet - DESIGN ONLY" .-> FW
+    REDGE --> FW
+    FW --> DMZ
+    CORE1 --> WANGW
+    CORE2 -. "HA dự trù" .-> WANGW
+    FW ==> CORE1 & CORE2
+    CORE1 ===|"2 x 40G - DESIGN ONLY"| CORE2
+    CORE1 --- SRV & NVR
+    CORE2 --- SRV & NVR
+    CORE1 ---|"10G"| ACC_A & ACC_B
+    CORE2 ---|"10G"| ACC_A & ACC_B
+
+    WANGW ==>|"Leased line 1 - 10.255.0.0/30 - OSPF"| R_DBP
+    WANGW ==>|"Leased line 2 - 10.255.0.4/30 - OSPF"| R_BHTQ
+
+    class WEB,ISP1,ISP2,TELE internet;
+    class FW security;
+    class REDGE,WANGW,CORE1,CORE2,R_DBP,R_BHTQ,D_DBP,D_BHTQ core;
+    class ACC_A,ACC_B,A_DBP,A_BHTQ access;
+    class DMZ,SRV,NVR,S_DBP,S_BHTQ server;
+    class PC_A,AP_A,CAM_A,PC_B,AP_B,CAM_B,E_DBP,E_BHTQ endpoint;
+
+    style INET fill:#eef2ff,stroke:#a5b4fc
+    style MAIN fill:#f8fafc,stroke:#94a3b8
+    style TOA_A fill:#ffffff,stroke:#cbd5e1
+    style TOA_B fill:#ffffff,stroke:#cbd5e1
+    style AUX_DBP fill:#f8fafc,stroke:#94a3b8
+    style AUX_BHTQ fill:#f8fafc,stroke:#94a3b8

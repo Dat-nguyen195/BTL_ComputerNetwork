@@ -20,3 +20,7 @@ Các đường dẫn bên dưới là **sản phẩm dự kiến** sẽ được
 - [ ] Xác nhận giả định và thông số với người phụ trách.
 - [ ] Cập nhật kết quả triển khai/bằng chứng thực tế.
 - [ ] Ghi reviewer, ngày rà soát và quyết định vào issue/PR liên quan.
+
+## Trạng thái sau tích hợp TV2 ngày 02/11/2026
+
+Đã có thiết kế/config/tính toán và 4 contribution kỹ thuật, không còn chỉ scaffold. Có module `.pkt` Main của Tiendat đã audit/hash, **chưa có file tổng 3 site được mở/chạy lại**,6 nhóm runtime vẫnNOT RUN và PDF cuối chưa có. Bảng [review toàn dự án](project-review.md) đối chiếu từngStep với sản phẩm có thật/phần thiếu; không tự chuyểnStep4/5/7 sang hoàn thành vì có một filebinary.
