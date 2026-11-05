@@ -40,6 +40,7 @@ tmp/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.synctex(busy)
 *.xdv
 # Local LaTeX output mirror; canonical PDF is docs/06-report/final/report.pdf
 /output/pdf/

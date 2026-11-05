@@ -5,3 +5,6 @@
 *.zip -text
 *.png -text
 *.pcap -text
+# Preserve pinned third-party files and historical QA evidence byte for byte.
+scripts/vendor/unpacket/** -text
+test_results/report-latex/history/*.json -text
