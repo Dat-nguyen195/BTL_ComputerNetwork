@@ -1,5 +1,7 @@
-# Báo cáo kỹ thuật đã xuất
+# File báo cáo để nộp
 
-[report.pdf](report.pdf) có nội dung đủ bảy Step, phụ lục GNS3 evidence và giới hạn; nguồn tại [source](../source/README.md). Đã render để kiểm font, bảng, sơ đồ, tràn lề và số trang. Hash cuối ở [submission](../../../submission/manifest.md); file này không tự xác nhận người duyệt/nộp BKeL.
+- **[report.pdf](report.pdf): báo cáo chính**, gồm bảy Step, bằng chứng GNS3/Packet Tracer/MPLS, bảng IP/VLAN, BOM, sơ đồ vật lý và hướng dẫn demo.
+- **[report-latex.zip](report-latex.zip): nguồn của báo cáo chính**, dùng XeLaTeX; [hướng dẫn](../latex/README.md).
+- **[packet-tracer-validation.pdf](packet-tracer-validation.pdf): phụ lục kiểm thử hai trang**, nội dung khác báo cáo chính, dùng để tra nhanh 32 quan sát, Wi-Fi và ISP thủ công.
 
-Bản hiện tại có trang bìa với logo Bách Khoa do người dùng cung cấp. [report-latex.zip](report-latex.zip) chứa đầy đủ nguồn LaTeX và hình để biên dịch bằng XeLaTeX; [hướng dẫn LaTeX](../latex/README.md) chỉ cách sửa thông tin nhóm và dùng Overleaf.
+PDF sinh trong `latex/build/` hoặc `output/pdf/` là bản xem trước local. Thư mục này là nơi lấy PDF để nộp. [QA/hash](../../../test_results/report-latex/README.md) và [manifest bàn giao](../../../submission/manifest.md) xác nhận đúng phiên bản. Nguồn Markdown nằm ở [source](../source/README.md).

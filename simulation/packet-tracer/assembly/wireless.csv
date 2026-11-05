@@ -1,0 +1,7 @@
+ap,client,ssid,vlan,switch,port,addressing,security
+Main-Guest-AP,Main-Guest,Main_Guest,100,Main-Access,FastEthernet0/14,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim
+Main-Staff-AP,Main-Staff,Main_Staff,120,Main-Access,FastEthernet0/15,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim
+DBP-Guest-AP,DBP-Guest,DBP_Guest,100,DBP-Access,FastEthernet0/4,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim
+BHTQ-Guest-AP,BHTQ-Guest,BHTQ_Guest,100,BHTQ-Access,FastEthernet0/4,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim
+DBP-Staff-AP,DBP-Staff,DBP_Staff,120,DBP-Access,FastEthernet0/8,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim
+BHTQ-Staff-AP,BHTQ-Staff,BHTQ_Staff,120,BHTQ-Access,FastEthernet0/8,"DHCP; compare with site pool, not a fixed reserved client IP",Configure WPA2-PSK if available; supply a lab key locally; no AAA/RF claim

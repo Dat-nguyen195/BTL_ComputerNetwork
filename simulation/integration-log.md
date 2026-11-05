@@ -1,5 +1,11 @@
 # Nhật ký tích hợp mô phỏng
 
+**Kết quả kỹ thuật Packet Tracer04/11/2026:** native58 node/53 cáp/sáu Wi-Fi đã lưu/mở lại; 32/32 quan sát phù hợp kỳ vọng,19 client DHCP và18 pool có sức chứa. Bốn HTTP chọn ISP1 thủ công/khôi phục ISP2 đạt; không có tự động failover trên Packet Tracer. Chi tiết ở [hồ sơ Packet Tracer](../test_results/packet-tracer/README.md). Phê duyệt nhóm/thông tin nhân sự/BKeL vẫn chờ xác nhận. Các ghi nhận đang dựng/đang chờ bên dưới là lịch sử.
+
+**04/11/2026:** Packet Tracer đã mở và chạy candidate native tổng sau sửa đầu cáp firewall và cấu hình ba vùng vật lý trên2811. Đã lưu24 quan sát có dây riêng;1 job thiếu đầu ra và2 ping mất gói cần lặp lại. Đã hoàn tất card AC/profile WPA2-PSK trên sáu Guest/Staff, quan sát sáu BSSID/IP đúng dải và đang chạy32 job mới. Đã nhúng controller hiện hành vào file; kiểm nghiệm persistence và ISP dự phòng thủ công còn tiếp tục. [Hồ sơ riêng Packet Tracer](../test_results/packet-tracer/README.md) là nguồn trạng thái hiện tại; các dòng tạm dừng trước đó là lịch sử.
+
+**03/11/2026:** bộ sinh GNS3 dùng đường dẫn POSIX và UTF-8/LF để tái tạo cùng byte trên Windows. Đã giữ snapshot manifest của lần runtime trước; native project, cấu hình và mã runtime không đổi byte. Bộ lắp ráp Packet Tracer có58 node dự kiến/52 cáp/6 WLAN, chưa phải project đã dựng. Đã cài PT9.0.1 từ Cisco và mở được Main gốc; chưa kiểm parser/luồng. Người dùng yêu cầu tạm dừng điều khiển Packet Tracer đến khi cho phép tiếp tục. Kiểm offline/tài liệu/đóng gói vẫn thực hiện; không tạo lần chạy mạng mới hoặc xác nhận G1–G4.
+
 **Điều phối:** TV4. **Trạng thái hiện tại:** đã có GNS3 Linux/FRR và runtime/reopen evidence; các dòng chuẩn bị bên dưới là lịch sử.
 
 | Ngày | Loại cập nhật | Nội dung | Kết quả / giới hạn |

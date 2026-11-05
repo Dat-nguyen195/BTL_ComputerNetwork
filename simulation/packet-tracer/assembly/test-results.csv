@@ -1,0 +1,7 @@
+id,source,destination,steps,expected,actual,status,evidence,tester,timestamp,project_sha256
+TC01,Main-PC10-A,Main-PC10-B,ping; verify same subnet and VLAN,ICMP replies,,NOT RUN,,,,
+TC02,Main-PC10-A,10.10.20.10; http://10.10.70.11,ping; Web Browser,Allowed routing and HIS HTTP,,NOT RUN,,,,
+TC03,Main-PC10-A; DBP-PC10; BHTQ-PC10,10.20.10.10; 10.30.10.10; 10.10.10.10,ping both directions; tracert; show ip ospf neighbor,Both branches via Main,,NOT RUN,,,,
+TC04,Main-PC10-A; Web-Lab,http://10.10.80.10; http://198.51.100.2:8080,Web Browser; show ip nat translations,HTTP through policy; inbound static PAT on ISP2,,NOT RUN,,,,
+TC05,Main-Guest; DBP-Guest; BHTQ-Guest,local PC10; http://10.10.70.11; http://web.hospital.test,Blocked ICMP/HTTP to LAN with internal positive control; ACL counters; guest Web/DNS,LAN denied; Internet and DNS allowed,,NOT RUN,,,,
+TC06,PC10 and Guest at each of 3 sites,http://web.hospital.test,Web Browser; tracert 192.0.2.100; show ip nat translations at Main,All 6 sources through Main with PAT,,NOT RUN,,,,

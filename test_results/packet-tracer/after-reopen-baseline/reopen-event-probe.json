@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "ping",
+    "group": "REOPEN-EVENT-PROBE",
+    "source": "Main-PC10-A",
+    "target": "10.10.10.7",
+    "source_ip": "10.10.10.8",
+    "expected": "allow",
+    "command": "ping 10.10.10.7",
+    "completion": "statistics",
+    "output": "ping 10.10.10.7\n\nPinging 10.10.10.7 with 32 bytes of data:\n\nReply from 10.10.10.7: bytes=32 time<1ms TTL=128\nReply from 10.10.10.7: bytes=32 time=1ms TTL=128\nReply from 10.10.10.7: bytes=32 time=1ms TTL=128\nReply from 10.10.10.7: bytes=32 time<1ms TTL=128\n\nPing statistics for 10.10.10.7:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:42:13.997Z"
+  }
+]

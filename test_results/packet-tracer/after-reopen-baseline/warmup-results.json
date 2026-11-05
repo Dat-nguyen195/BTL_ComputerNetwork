@@ -1,0 +1,98 @@
+[
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC10-A",
+    "target": "10.10.10.7",
+    "source_ip": "10.10.10.8",
+    "expected": "allow",
+    "command": "ping 10.10.10.7",
+    "completion": "statistics",
+    "output": "ping 10.10.10.7\n\nPinging 10.10.10.7 with 32 bytes of data:\n\nReply from 10.10.10.7: bytes=32 time=6ms TTL=128\nReply from 10.10.10.7: bytes=32 time<1ms TTL=128\nReply from 10.10.10.7: bytes=32 time<1ms TTL=128\nReply from 10.10.10.7: bytes=32 time<1ms TTL=128\n\nPing statistics for 10.10.10.7:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:44:27.918Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC10-B",
+    "target": "10.10.10.8",
+    "source_ip": "10.10.10.7",
+    "expected": "allow",
+    "command": "ping 10.10.10.8",
+    "completion": "statistics",
+    "output": "ping 10.10.10.8\n\nPinging 10.10.10.8 with 32 bytes of data:\n\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time=1ms TTL=128\n\nPing statistics for 10.10.10.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:44:31.761Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC10-A",
+    "target": "10.10.20.7",
+    "source_ip": "10.10.10.8",
+    "expected": "allow",
+    "command": "ping 10.10.20.7",
+    "completion": "statistics",
+    "output": "ping 10.10.20.7\n\nPinging 10.10.20.7 with 32 bytes of data:\n\nRequest timed out.\nReply from 10.10.20.7: bytes=32 time=1ms TTL=127\nReply from 10.10.20.7: bytes=32 time=11ms TTL=127\nReply from 10.10.20.7: bytes=32 time<1ms TTL=127\n\nPing statistics for 10.10.20.7:\n    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),\n",
+    "time": "2026-11-04T10:44:41.004Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC20",
+    "target": "10.10.10.8",
+    "source_ip": "10.10.20.7",
+    "expected": "allow",
+    "command": "ping 10.10.10.8",
+    "completion": "statistics",
+    "output": "ping 10.10.10.8\n\nPinging 10.10.10.8 with 32 bytes of data:\n\nReply from 10.10.10.8: bytes=32 time<1ms TTL=127\nReply from 10.10.10.8: bytes=32 time<1ms TTL=127\nReply from 10.10.10.8: bytes=32 time=1ms TTL=127\nReply from 10.10.10.8: bytes=32 time<1ms TTL=127\n\nPing statistics for 10.10.10.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:44:44.745Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC10-A",
+    "target": "10.20.10.7",
+    "source_ip": "10.10.10.8",
+    "expected": "allow",
+    "command": "ping 10.20.10.7",
+    "completion": "statistics",
+    "output": "ping 10.20.10.7\n\nPinging 10.20.10.7 with 32 bytes of data:\n\nRequest timed out.\nRequest timed out.\nReply from 10.20.10.7: bytes=32 time<1ms TTL=125\nReply from 10.20.10.7: bytes=32 time<1ms TTL=125\n\nPing statistics for 10.20.10.7:\n    Packets: Sent = 4, Received = 2, Lost = 2 (50% loss),\n",
+    "time": "2026-11-04T10:44:59.352Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "DBP-PC10",
+    "target": "10.10.10.8",
+    "source_ip": "10.20.10.7",
+    "expected": "allow",
+    "command": "ping 10.10.10.8",
+    "completion": "statistics",
+    "output": "ping 10.10.10.8\n\nPinging 10.10.10.8 with 32 bytes of data:\n\nReply from 10.10.10.8: bytes=32 time<1ms TTL=125\nReply from 10.10.10.8: bytes=32 time=12ms TTL=125\nReply from 10.10.10.8: bytes=32 time<1ms TTL=125\nReply from 10.10.10.8: bytes=32 time=10ms TTL=125\n\nPing statistics for 10.10.10.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:45:03.191Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "Main-PC10-A",
+    "target": "10.30.10.7",
+    "source_ip": "10.10.10.8",
+    "expected": "allow",
+    "command": "ping 10.30.10.7",
+    "completion": "statistics",
+    "output": "ping 10.30.10.7\n\nPinging 10.30.10.7 with 32 bytes of data:\n\nRequest timed out.\nReply from 10.30.10.7: bytes=32 time<1ms TTL=125\nReply from 10.30.10.7: bytes=32 time=11ms TTL=125\nReply from 10.30.10.7: bytes=32 time<1ms TTL=125\n\nPing statistics for 10.30.10.7:\n    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),\n",
+    "time": "2026-11-04T10:45:12.418Z"
+  },
+  {
+    "kind": "ping",
+    "group": "WARMUP",
+    "source": "BHTQ-PC10",
+    "target": "10.10.10.8",
+    "source_ip": "10.30.10.7",
+    "expected": "allow",
+    "command": "ping 10.10.10.8",
+    "completion": "statistics",
+    "output": "ping 10.10.10.8\n\nPinging 10.10.10.8 with 32 bytes of data:\n\nReply from 10.10.10.8: bytes=32 time=10ms TTL=125\nReply from 10.10.10.8: bytes=32 time=11ms TTL=125\nReply from 10.10.10.8: bytes=32 time=13ms TTL=125\nReply from 10.10.10.8: bytes=32 time=6ms TTL=125\n\nPing statistics for 10.10.10.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+    "time": "2026-11-04T10:45:16.270Z"
+  }
+]

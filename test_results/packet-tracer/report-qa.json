@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "pages": 2,
+  "runtime_native_sha256": "45ff85657fc08186f4863d541ac7b12de1bd09a72fbf305c445c01f3cf839289",
+  "visual_review": {
+    "status": "PASS",
+    "pages_rendered_and_inspected": [
+      1,
+      2
+    ],
+    "notes": "Rendered with Poppler at 1400px; Vietnamese glyphs, tables, margins, page breaks and footers inspected; no clipping or overlap"
+  },
+  "sha256": {
+    "docs/06-report/final/packet-tracer-validation.pdf": "5ff45d5df1746dd4cb54ddf3b1149135936bf246be73b92a31ee67fd66c53189",
+    "docs/06-report/source/packet-tracer-validation.md": "d3d67eb7984e391b9515b6029dbed3dc642988596d86cb10e812729c9fe0f2d2",
+    "scripts/build_packet_report.py": "bee7ee8fe5426dab45dedf3262add2189c7233abd103386f3c88ec413c50b686"
+  },
+  "timestamp_utc": "2026-11-04T15:30:50.426895+00:00",
+  "revision": "L08 group 2; two BTL2 authors; both pages rendered and visually inspected"
+}

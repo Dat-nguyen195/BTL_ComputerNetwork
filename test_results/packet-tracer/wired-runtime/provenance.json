@@ -1,0 +1,26 @@
+{
+  "scope": "Saved native application state and data stores; collector does not run tests",
+  "version": "9.0.1.0858",
+  "native_sha256": "8af2274c9a975ce3b281fbe66ba0a0cf8d8e6b155b66378f3921aa29572096e2",
+  "network_devices": 58,
+  "power_devices": 1,
+  "links": 59,
+  "dhcp_pools": 18,
+  "inactive_dhcp_pools": 12,
+  "dhcp_leases": 19,
+  "embedded_script_sha256": {
+    "hospital-controller.js": "0497ba7697782a115a7f552cf1dd57cbb98322738cd7cd9007a0a8741f556b97"
+  },
+  "sha256": {
+    "lab.pkt": "8af2274c9a975ce3b281fbe66ba0a0cf8d8e6b155b66378f3921aa29572096e2",
+    "addresses.json": "5dea59aa01caa440bb962eb117c5bde15b1fbfb171c0abc92aa5f6b880485e57",
+    "config-check.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "hardware.json": "b50ccb26c6f3af8d00650ca4b75317094087b8946d3461191bef3083c8e27c2a",
+    "hospital-results.json": "45cd12fddaeacb912a75dc9f626870115863979b37e7c1dd90795e3787bbba3a",
+    "hospital-spec.json": "81dd18deb5ac78b8cfcb465e9a6a7edfdda73cc1a93e418271211bcfa7fefc88",
+    "services-check.json": "9bd6437739fba6fe2e7edc73236dad2394beee6f2b4aeeed74e254d959409fb6",
+    "inventory.json": "569646c050fd44ee2adb588b4683345db3372897041d9a975f8e9aefe2a0c04e",
+    "dhcp-pools-leases.json": "1b1ca369c9242789ee0f2a3d08ed118517e3bc2a9cbb612e23771f7dd7a9f5ad",
+    "config-readback.json": "ddb1b78425d85ce06620104388955620f9d39055901bf1d602af36f190f98a39"
+  }
+}

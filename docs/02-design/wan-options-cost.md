@@ -31,7 +31,7 @@ FTTH/DIA là phương án thay thế/nâng cấp đề xuất khi hồ sơ dịc
 | Phương án | Vai trò/ưu điểm | Điều kiện và giới hạn | Khoản cần báo giá |
 | --- | --- | --- | --- |
 | 2 Metro-E/leased Ethernet P2P | Bám hai kết nối Main–Aux; chạy routed OSPF nếu handoff hỗ trợ | Mỗi nhánh một tuyến, chưa có dự phòng; SLA/độ trễ theo hợp đồng | Hòa mạng, hai kênh, CPE/quang, SLA, bảo trì |
-| MPLS L3VPN ba site | Nhà mạng cung cấp L3VPN và VRF, thuận tiện mở thêm site | Chốt PE/CE và handoff; không mặc định mã hóa payload; chưa triển khai trong lab | Ba access port/cước, QoS, CPE, hỗ trợ |
+| MPLS L3VPN ba site | Nhà mạng cung cấp L3VPN và VRF, thuận tiện mở thêm site | Chốt PE/CE và handoff; không mặc định mã hóa payload; đã có module MPLS Linux riêng | Ba access port/cước, QoS, CPE, hỗ trợ |
 | SD-WAN trên leased/MPLS | Chính sách ứng dụng, quản lý overlay tập trung | Cần controller, edge, license và underlay; không gọi OSPF/PBR là triển khai SD-WAN | Thiết bị, license/controller, underlay và vận hành |
 | IPsec trên hai leased lines | Đề xuất mã hóa lưu lượng liên site | TV3 chốt crypto, MTU/MSS, khóa và route; overhead/CPU phải kiểm, chưa có số đo | Crypto/license, hai kênh, bảo trì |
 
@@ -64,9 +64,9 @@ Báo giá cần: địa chỉ ba site, tốc độ down/up nội địa/quốc t
 
 ## 5. Cơ chế dual ISP được bàn giao
 
-Chi tiết tại [architecture.md](architecture.md) và [module WAN](../../simulation/modules/tv1-wan/README.md). PBR phân nhóm nguồn, failover theo track, PAT theo egress; không bảo đảm 50/50. Probe dùng đích phía sau ISP và /32 ghim đường; Main-GW theo dõi Web chung để điều khiển default OSPF. Các timer là cấu hình dự kiến, thời gian hội tụ và hành vi phiên cũ phải đo trong [test dual ISP](../../test_results/supplemental/dual-isp-failover.md), hiện NOT RUN.
+Chi tiết tại [architecture.md](architecture.md) và [module WAN](../../simulation/modules/tv1-wan/README.md). PBR phân nhóm nguồn, failover theo track, PAT theo egress; không bảo đảm 50/50. Probe dùng đích phía sau ISP và /32 ghim đường; Main-GW theo dõi Web chung để điều khiển default OSPF. Các timer là cấu hình dự kiến, thời gian hội tụ và hành vi phiên cũ phải đo trong [test dual ISP](../../test_results/supplemental/dual-isp-failover.md), đã có evidence PASS trong GNS3 Linux; timer/CLI IOS không được suy từ lần chạy Linux. Packet Tracer chỉ chuyển ISP thủ công.
 
-Baseline chức năng giữ hai leased lines và OSPF; MPLS/SD-WAN và VPN chỉ ở mức thiết kế đến khi có triển khai/bằng chứng tương ứng. Mã hóa là một biện pháp bảo vệ, không tự chứng minh tuân thủ toàn bộ yêu cầu pháp lý/vận hành bệnh viện.
+Baseline chức năng giữ hai leased lines và OSPF; MPLS đã có module/evidence thực thi riêng; SD-WAN và VPN crypto còn ở mức thiết kế. Mã hóa là một biện pháp bảo vệ, không tự chứng minh tuân thủ toàn bộ yêu cầu pháp lý/vận hành bệnh viện.
 
 ## 6. Bổ sung đối chiếu TV4 và dữ liệu chờ
 
@@ -80,3 +80,25 @@ Tính tải được tái lập bằng `python3 scripts/capacity.py`;3 scope ser
 | Tải khi chỉ một ISP, QoS/downgrade | TV1 + TV4 |08/11/2026 | Mức HIS/LIS tối thiểu, guest/backup giảm bao nhiêu; chưa gán tỷ lệ ưu tiên giả |
 
 Các hạn là đề xuất xử lý, chưa phải cam kết của reviewer. Hai ISP không tạo dự phòng leased line/Core/FW/Edge. DMZ inbound hiện chỉ ISP2:8080 và gián đoạn khi ISP2 mất; tính sẵn sàng dịch vụ công bố phải đánh giá riêng outbound failover.
+
+## 7. Nguồn dịch vụ đối chiếu và căn cứ chọn phương án
+
+Đối chiếu ngày 04/11/2026: [VNPT - Kênh thuê riêng](https://vnpt.vn/doanh-nghiep/san-pham-dich-vu/kenh-thue-rieng/) mô tả dịch vụ kết nối các địa điểm cố định, hỗ trợ handoff Ethernet và hướng dẫn liên hệ đơn vị kinh doanh để có chi tiết. Trang này là nguồn xác nhận loại dịch vụ, không phải báo giá cho bệnh viện hoặc xác nhận khả dụng tại ba địa chỉ. Vì vậy các giá trong mục 4 vẫn là giả định minh họa có nhãn; chưa thể thay bằng giá thương mại được xác thực.
+
+Baseline hai leased line Ethernet + OSPF được chọn để giữ đúng hai nhánh Main–Aux và thực thi được trên cả hai mô hình. Phương án MPLS cần ba CE kết nối PE của nhà mạng, một VRF bệnh viện tại provider, handoff CE–PE và quảng bá ba khối site; không dùng Internet PAT cho lưu lượng nội bộ. Phương án SD-WAN cần ba edge, controller/orchestrator, overlay mã hóa trên underlay leased lines, chính sách ứng dụng và probe chất lượng. OSPF/PBR trong lab không thay thế triển khai MPLS/SD-WAN. MPLS L3VPN đã được dựng/test riêng trong [module MPLS](../../simulation/mpls/README.md): 28/28 và28/28 sau dựng lại bằng Linux namespaces/QEMU, có PCAP hai nhãn. Native GNS3 module được sinh chung cấu hình nhưng chưa chạy trong GNS3. SD-WAN còn ở mức thiết kế.
+
+[VNPT - Dịch vụ Mạng riêng ảo](https://vnpt.vn/doanh-nghiep/san-pham-dich-vu/dich-vu-mang-rieng-ao-vpn/) phân biệt Metronet là MPLS VPN lớp 2 và Megawan là MPLS VPN lớp 3. Vì vậy Metro-E/leased Ethernet chỉ mô tả handoff của baseline; không tự suy ra underlay nhà mạng hoặc gọi mô hình OSPF là đã chạy MPLS. Nguồn đọc ngày 04/11/2026; báo giá ba điểm vẫn cần nhà cung cấp xác nhận.
+
+## 8. Bảng cước công khai có nguồn và giới hạn sử dụng
+
+Nguồn kiểm ngày 04/11/2026: [VNPT Hải Phòng - Báo giá TSL Metronet](https://vnpthaiphong.vn/SiteFolders/Root/2345/B%C3%A1o%20gi%C3%A1%20d%E1%BB%8Bch%20v%E1%BB%A5%20TSL%20Metronet.pdf), tài liệu một trang ghi năm **2020**, ngày/tháng để trống. Đây là tham khảo lịch sử tại Hải Phòng, không phải bảng giá hiện hành TP.HCM.
+
+| Tốc độ | Nội hạt, VNĐ/điểm theo tài liệu | Phạm vi sử dụng trong bài |
+| --- | ---: | --- |
+| 20 Mbps | 10.557.000 | Tham chiếu lịch sử, thấp hơn nhu cầu Aux đã tính |
+| 50 Mbps | 19.077.000 | Tham chiếu lịch sử, thấp hơn nhu cầu Aux đã tính |
+| 100 Mbps | 31.343.000 | Tham chiếu lịch sử, vẫn thấp hơn envelope Aux 134,10 Mbps down |
+
+Tài liệu ghi giá theo điểm kết nối, thời hạn tối thiểu 24 tháng và chưa gồm VAT 10% tại thời điểm tài liệu. Không tự áp mức thuế đó cho hợp đồng hiện tại. Không nội suy giá 150–200 Mbps hoặc coi phí một điểm là phí toàn bộ ba site. Bảng TCO mục 4 tiếp tục là kịch bản giả định, không lấy các con số cũ này để gắn nhãn báo giá mới.
+
+Để chốt chi phí triển khai cần nhà cung cấp xác nhận ba địa chỉ, hai nhánh/ba điểm, băng thông và SLA, công nghệ/handoff, IP public, CPE/license, phí khởi tạo, thuế và hiệu lực. Dự án học thuật đã có phương án/công thức/phân tích chi phí có nguồn; giá hợp đồng theo địa chỉ là đầu việc thương mại bên ngoài mô phỏng.

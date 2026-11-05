@@ -1,8 +1,8 @@
 ---
 title: "THIẾT KẾ VÀ MÔ PHỎNG MẠNG BỆNH VIỆN BA CƠ SỞ"
 subtitle: "Báo cáo kỹ thuật - Main, Điện Biên Phủ và Bà Huyện Thanh Quan"
-author: "Dự án BTL Computer Network"
-date: "02/11/2026"
+author: "L08 - Nhóm 2 | Nguyễn Thành Đạt và Phạm Tiến Đạt"
+date: "04/11/2026"
 ---
 
 \clearpage
@@ -13,9 +13,21 @@ Báo cáo đối chiếu đề *Network Design and Simulation for a Critical Lar
 
 Mức tăng trưởng của đề là **20% trong cả năm năm**, không phải 20% mỗi năm. Số PC tương lai là 720+312+312=1.344. Server dự trù theo từng cơ sở là 12+3+3=18. Số máy trong mô phỏng chỉ là đại diện chức năng; không dùng 38 endpoint để tuyên bố đã chạy tải của 1.120 PC hiện tại hoặc 1.344 PC tương lai.
 
-Ba mức bằng chứng được tách rõ: thiết kế và phép tính; kết quả chạy GNS3 với gói tin thật trong môi trường ảo; và khảo sát/đo triển khai thực chưa thực hiện. Kết quả GNS3 sử dụng FRRouting, Linux, iptables, dnsmasq và Suricata. Cấu hình Cisco IOS là bộ tham chiếu riêng, chưa được chạy trên IOS/Packet Tracer. File Packet Tracer gốc của Tiendat được bảo toàn để đối chiếu, không phải mô hình tổng ba cơ sở.
+Bằng chứng gồm thiết kế/phép tính, runtime GNS3 Linux/FRR và mô phỏng Cisco Packet Tracer 9.0.1.0858. GNS3 có 209 kiểm tích hợp đạt sau sửa firewall; 137 kiểm reopen là bằng chứng lịch sử trước sửa PID. Packet Tracer tổng ba cơ sở đã lưu/mở lại, có 58 thiết bị, 53 cáp và sáu association Wi-Fi; 32 quan sát phù hợp kỳ vọng và bốn HTTP chuyển ISP thủ công đạt. File Packet Tracer gốc của Tiendat vẫn được bảo toàn riêng. Khảo sát và đo triển khai thực chưa thực hiện. Lượt kiểm trực tiếp bổ sung ngày 05/11/2026 và kiểm sau restart controller được trình bày riêng ở phụ lục G; các kết quả lịch sử ở phụ lục A vẫn được giữ nguyên.
 
-Đề nêu nhóm hai hoặc ba sinh viên. Các nhãn TV1–TV5 trong repository là vai trò công việc; nhóm phải kiểm tra danh sách đăng ký và việc chia vai trò với giảng viên trước nộp. Báo cáo này không tự xác nhận thay đổi số người được phép, thông tin MSSV hoặc chữ ký duyệt học phần.
+## Thành viên và phạm vi thực hiện BTL2
+
+**Lớp L08 - Nhóm 2. Nhóm trưởng: Nguyễn Thành Đạt (2410709).**
+
+| Họ và tên | MSSV | Email | Phân công |
+|:-------------------------|:-------------|:-----------------------------------------|:-----------------|
+| Nguyễn Thành Đạt | 2410709 | <dat.nguyen19052006@hcmut.edu.vn> | BTL2; nhóm trưởng |
+| Nguyễn Phúc Bảo Đạt | 2410696 | <dat.nguyen662006@hcmut.edu.vn> | BTL1 |
+| Bùi Công Danh | 2410448 | <danh.buicong@hcmut.edu.vn> | BTL1 |
+| Nguyễn Minh Đạt | 2410694 | <dat.nguyen2410694@hcmut.edu.vn> | BTL1 |
+| Phạm Tiến Đạt | 2410723 | <dat.pham123qwe@hcmut.edu.vn> | BTL2 |
+
+Theo phân công lại của nhóm, BTL1 do Nguyễn Phúc Bảo Đạt, Bùi Công Danh và Nguyễn Minh Đạt thực hiện; **BTL2 do Nguyễn Thành Đạt và Phạm Tiến Đạt thực hiện**. Báo cáo này trình bày BTL2, đồng thời ghi đủ danh sách nhóm. Các nhãn TV1–TV5 trong kế hoạch là vai trò kỹ thuật, không phải năm người cùng thực hiện BTL2.
 
 # Khảo sát và kiến trúc phù hợp công trình - Step1
 
@@ -31,7 +43,7 @@ Dùng cấu trúc core/distribution/access ở Main; hai cơ sở phụ dùng co
 
 Server Farm/PACS/backup và đường Main–Aux là các vùng cần kiểm tải. Thiết kế ưu tiên liên kết 10GbE ở access uplink/server và 40GbE liên core; không suy throughput ứng dụng từ tốc độ cổng. Hai ISP dùng PBR phân nhóm nguồn, PAT theo egress và probe độc lập. PBR không bảo đảm chia tải 50/50 hoặc cộng tốc độ cho một phiên. Cân bằng tải ứng dụng HIS/Web là hướng bổ sung khi có yêu cầu session, health check và HA ứng dụng cụ thể.
 
-Wi-Fi dùng SSID Staff/VLAN120, Guest/VLAN100 và quản trị AP/VLAN90. AP/WLC sản xuất cần WPA2/WPA3 Enterprise tùy khả năng client, 802.1X/RADIUS, ACL và cách ly khách cùng lớp2. Mô hình hiện kiểm các host đại diện Staff/Guest qua VLAN có dây; chưa kiểm vô tuyến, WLC, 802.1X hoặc roaming. AP-PT một SSID không được coi là WLC nhiều VLAN.
+Wi-Fi dùng SSID Staff/VLAN120, Guest/VLAN100 và quản trị AP/VLAN90. AP/WLC sản xuất cần WPA2/WPA3 Enterprise tùy khả năng client, 802.1X/RADIUS, ACL và cách ly khách cùng lớp2. GNS3 kiểm host Staff/Guest đại diện qua VLAN có dây. Packet Tracer đã kiểm sáu client Wi-Fi thật trong lab với WPA2-PSK/AES, DHCP và HTTP; chưa kiểm RF thực, WLC, 802.1X hoặc roaming. AP-PT một SSID không được coi là WLC nhiều VLAN.
 
 # Thiết bị, địa chỉ và hạ tầng cáp - Step2
 
@@ -87,11 +99,13 @@ Từ “total” ở server có thể chỉ toàn bộ hệ thống, từng site
 
 Mỗi Aux dự trù leased line150–200Mbps đối xứng để khảo sát; tải PACS/backup và VPN có thể làm thay đổi mức này. Đề yêu cầu hai xDSL có chia tải và mọi Internet qua Main; lab dùng hai handoff Ethernet để kiểm logic. Không dùng thông số Ethernet để khẳng định đường đồng xDSL đạt tốc độ tương ứng. Hai đường500/500Mbps chỉ là ví dụ tính toán: mất một đường thiếu ít nhất83,11Mbps down so với baseline chưa khách. Nếu phải giữ đủ tải khi lỗi, mỗi ISP phải đáp ứng toàn bộ tải được chốt và kiểm QoS/tải thiết yếu.
 
-So sánh WAN giữ cùng phạm vi ba site, SLA, CPE, license và thuế: Metro-E/P2P đơn giản và phù hợp hai leased line; MPLS L3VPN thuận mở rộng nhưng không tự mã hóa; SD-WAN bổ sung overlay/controller/license; IPsec bổ sung mã hóa và overhead. Chọn Metro-E/P2P + OSPF làm baseline chức năng, trình bày MPLS/SD-WAN là phương án thay thế. Không gọi OSPF/PBR là SD-WAN hoặc MPLS đã triển khai.
+So sánh WAN giữ cùng phạm vi ba site, SLA, CPE, license và thuế: Metro-E/P2P đơn giản và phù hợp hai leased line; MPLS L3VPN thuận mở rộng nhưng không tự mã hóa; SD-WAN bổ sung overlay/controller/license; IPsec bổ sung mã hóa và overhead. Chọn Metro-E/P2P + OSPF làm baseline chức năng, MPLS L3VPN được triển khai thêm bằng module riêng; SD-WAN còn ở mức phương án. OSPF/PBR của baseline không được gọi là MPLS/SD-WAN.
 
-TCO minh họa5 năm là CAPEX +60 tháng OPEX +bảo trì. Bảng giả định trong hồ sơ cho Metro-E1,745 tỷ, MPLS1,948 tỷ, SD-WAN+leased2,105 tỷ, IPsec+leased1,775 tỷ VNĐ. Đây là dự toán để so công thức, không phải báo giá thị trường, chưa có VAT/điều kiện hợp đồng. OLT/ONT/ODN bổ sung phải được đối soát riêng để tránh thiếu hoặc tính trùng CAPEX. Cần thu báo giá cùng SLA, băng thông nội địa/quốc tế cam kết, IP public, handoff, tuyến độc lập và hiệu lực trước quyết định thương mại.
+TCO minh họa5 năm là CAPEX +60 tháng OPEX +bảo trì. Bảng giả định trong hồ sơ cho Metro-E1,745 tỷ, MPLS1,948 tỷ, SD-WAN+leased2,105 tỷ, IPsec+leased1,775 tỷ VNĐ. Đây là dự toán để so công thức, không phải báo giá thị trường, chưa có VAT/điều kiện hợp đồng. OLT/ONT/ODN bổ sung phải được đối soát riêng để tránh thiếu hoặc tính trùng CAPEX. Cần thu báo giá cùng SLA, băng thông nội địa/quốc tế cam kết, IP public, handoff, tuyến độc lập và hiệu lực trước quyết định thương mại. Nguồn VNPT Kênh thuê riêng (đối chiếu 04/11/2026) xác nhận loại dịch vụ và handoff Ethernet; trang hướng dẫn liên hệ đơn vị kinh doanh, không công bố báo giá áp dụng cho ba cơ sở này.
 
-# Mô phỏng GNS3 tích hợp - Step4
+# Mô phỏng hai nền tảng - Step4
+
+## GNS3 - nền tảng kiểm dual ISP và IDS/IPS
 
 Mô hình thực thi có9 router/firewall Linux/FRR,5 switch VLAN và38 endpoint đại diện, bao gồm14 server nội bộ và Web-Lab. Cấu hình được sinh từ IP/cabling/endpoint/ACL đã review; phần dịch IOS sang Linux chỉ hỗ trợ cú pháp có trong repository và dừng khi gặp cú pháp ngoài phạm vi. Điều này không chứng minh CLI IOS được chấp nhận hoặc hành vi timer giống Cisco.
 
@@ -100,6 +114,22 @@ Switch Linux thực hiện bridge VLAN filtering; router-on-a-stick dùng802.1Q;
 Controller GNS3 được đóng trong một container; Docker daemon con và các namespace mạng thuộc riêng lab, không mount Docker socket máy thật. API chỉ publish127.0.0.1:3080. Script bootstrap xây image, dựng node/link và chờ DHCP, OSPF, Web hoạt động. Tên image/version, package, source hash và output được ghi cùng lần chạy. Có lệnh dừng, mở lại và tái tạo; không đưa IOS image có bản quyền vào repository.
 
 ![Mô hình chức năng; cấu trúc vật lý và GPON có sơ đồ riêng trong bộ thiết kế.](topology.svg){width=100%}
+
+## Packet Tracer - mô hình Cisco ba cơ sở
+
+File `simulation/packet-tracer/hospital-3sites.pkt` có 58 thiết bị, 53 cáp, sáu client kết nối Wi-Fi thực tới sáu AP. Có 19 client DHCP và 18 pool có sức chứa; ba serverPool mặc định đặt sức chứa 0. Main-FW dùng 2811 với module NM-1FE-TX và ba cổng LAN/OUTSIDE/DMZ; tám router còn lại dùng 2911. Mô hình đã được lưu và mở lại để đối chiếu cấu hình, địa chỉ, DHCP và association.
+
+ISP2/PAT 198.51.100.2 là đường chính của Packet Tracer. ISP1/PAT 203.0.113.2 được kiểm bằng chọn đường thủ công rồi khôi phục ISP2. Phần chứng minh cân bằng tải theo nhóm nguồn, phát hiện lỗi upstream, failover tự động và IDS/IPS thuộc GNS3. Hai mô hình cùng mô tả kiến trúc logic; Ethernet đại diện leased line/xDSL, không đo tín hiệu hoặc tốc độ đường truyền vật lý.
+
+## MPLS L3VPN - phần WAN mới đã thực thi
+
+Module `simulation/mpls/` có 11 nút/10 liên kết: ba CE Main/DBP/BHTQ, ba PE, một P, ba PC và Web-Lab. Provider dùng OSPF area 0 và LDP; ba PE trao đổi VPNv4 bằng MP-BGP AS65000. VRF HOSPITAL/table1001 dùng RT65000:100, RD65000:1/2/3; CE dùng eBGP AS65101–65103. Ba LAN đại diện giữ 10.10.10.0/25, 10.20.10.0/25, 10.30.10.0/25. Internet hai Aux vẫn đi qua Main/PAT198.51.100.2.
+
+Đã chạy thực trên Linux namespaces trong QEMU/WHPX, Alpine3.22.7, kernel6.12.114-lts và FRR10.2.2. Lượt validated đạt **28/28**, sau xóa/dựng lại đạt **28/28**: sáu ping hai chiều liên site, ba HTTP/PAT tại Main, MP-BGP/LDP/VRF, provider không truy cập LAN, tắt/khôi phục đường DBP và bắt gói MPLS. PCAP có EtherType0x8847 và hai nhãn transport/VPN trên ICMP DBP→Main, kèm gói trả lời; đây là bằng chứng chuyển tiếp nhãn thực trong môi trường ảo.
+
+Khi đường DBP mất, DBP không liên lạc được; Main–BHTQ tiếp tục hoạt động và DBP phục hồi sau khi bật lại. Module vẫn có SPOF ở P và từng đường truy nhập, không công bố dự phòng MPLS. MPLS tách bảng định tuyến nhưng không mã hóa payload. Bộ thử đầu có lỗi HTTP/cú pháp show BGP được giữ riêng; không chuyển lỗi lịch sử thành PASS.
+
+Project `simulation/mpls/hospital-mpls.gns3` được sinh từ cùng cấu hình và có Dockerfile/runbook. Project MPLS mới chưa được mở/chạy bằng GNS3; bằng chứng 28+28 thuộc Linux namespaces, không gắn nhãn GNS3 runtime. Mô hình GNS3 tổng và Packet Tracer tổng giữ bằng chứng riêng. Kiểm evidence bằng `python scripts/check_mpls.py`; raw CLI, PCAP, source hash nằm ở `test_results/mpls/`.
 
 # Chính sách bảo mật và kiểm thử - Step5
 
@@ -112,6 +142,22 @@ Suricata được đưa vào mô hình Linux để kiểm IDS/IPS bằng hai URI
 Sáu nhóm bắt buộc gồm: cùng VLAN; giữa VLAN; giữa Main và hai Aux; truy cập DMZ; chặn Guest tới LAN với đối chứng Internet; truy cập Internet Web theo IP/tên. Các ca bổ sung kiểm OSPF Full, DHCP ACK/route/DNS trên tất cả pool, counters DROP, phân nhóm NAT, mất từng ISP, mất cả hai, phục hồi và lưu/mở lại project. Kết quả chi tiết và hash được tổng hợp tự động ở phụ lục bằng chứng.
 
 Khi lỗi ISP, có thời gian gián đoạn do probe, route default và OSPF hội tụ; không cam kết chuyển mạch tức thời. Bộ test đo phục hồi HTTP từ năm endpoint trong ngân sách thử45 giây, không coi45 giây là SLA. Phiên NAT cũ qua ISP hỏng có thể mất; thử HTTP phiên mới không chứng minh session preservation. Internet thật, TLS, RF, GPON PHY, dung lượng đường truyền và ứng dụng y tế không nằm trong phép thử này.
+
+## Kết quả Packet Tracer sau mở lại
+
+| Nhóm | Phạm vi kiểm | Số lượt |
+|:---|:---|---:|
+| TC01 | Cùng VLAN, hai chiều | 2 |
+| TC02 | Liên VLAN và HIS | 3 |
+| TC03 | Main với DBP/BHTQ, hai chiều | 4 |
+| TC04 | DMZ và static PAT từ ngoài | 2 |
+| TC05 | Guest bị chặn LAN/HIS, có đối chứng | 9 |
+| TC06 | PC/Guest mỗi site tới Web/DNS | 6 |
+| WIFI | Staff mỗi site tới HIS/Web qua Wi-Fi | 6 |
+
+Tổng 32 quan sát phù hợp kỳ vọng sau warmup. Tám ping được phép đều nhận đủ 4/4; ba ping Guest không phản hồi. HTTP cho phép trả đúng URL/nội dung; HTTP Guest thất bại được đối chiếu với Guest ra Web thành công, PC nội bộ tới cùng HIS thành công và ACL deny tăng (Main 16, DBP 16, BHTQ 26). Lịch sử lần thử lỗi và warmup được giữ riêng.
+
+Bốn lượt HTTP bổ sung gồm ba nguồn Main-PC10-A, DBP-Guest, BHTQ-Staff qua ISP1 và một lượt sau khôi phục ISP2; NAT public đúng egress, cấu hình Edge được khôi phục. Evidence ở `test_results/packet-tracer/after-reopen/`; chạy `python scripts/check_packet_runtime.py` để kiểm hash và kết quả đã lưu. Phụ lục `packet-tracer-validation.pdf` kèm bảng sáu BSSID, IP, SSID và hash native. Checker offline không chạy lại mạng.
 
 # Đánh giá, hạn chế và hướng phát triển - Step6
 
@@ -132,13 +178,13 @@ Pool /25 Main còn đúng120 lease tại năm5; thêm thiết bị sẽ cần m�
 
 Áp dụng tài khoản riêng, MFA cho truy cập từ xa, quản trị từ VLAN riêng, cập nhật/backup có kiểm tra restore, log tập trung, NTP, cảnh báo IDS và quy trình xử lý. Tắt dịch vụ/cổng không dùng, bảo vệ rack/IDF/ODF và UPS; đào tạo nhận diện phishing kết hợp DNS/mail filtering, không xem block một miền mẫu là giải pháp hoàn chỉnh. Thiết bị y tế cần cập nhật theo khả năng hỗ trợ của nhà cung cấp và lịch bảo trì được phê duyệt.
 
-IPv6 chưa được thiết kế; không bật dual stack rồi để vượt chính sách IPv4. OSPF authentication, TLS/certificate ứng dụng, 802.1X/WLC, guest cùng VLAN, malware/signature feed, quản lý khóa VPN và HA cần triển khai/đo riêng. Mô hình Linux không thay kiểm parser/tính năng trên Cisco nếu nhóm chọn nộp `.pkt`.
+IPv6 chưa được thiết kế; không bật dual stack rồi để vượt chính sách IPv4. OSPF authentication, TLS/certificate ứng dụng, 802.1X/WLC, guest cùng VLAN, malware/signature feed, quản lý khóa VPN và HA cần triển khai/đo riêng. Kết quả GNS3 và Packet Tracer được đánh giá theo từng nền tảng; tính năng chưa thử trên Packet Tracer không được suy từ GNS3.
 
 # Bàn giao và quy trình nộp - Step7
 
-Bộ bàn giao gồm project `.gns3`, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
+Bộ bàn giao gồm project `.gns3`, module MPLS L3VPN và evidence28+28, mô hình tổng `.pkt`, phụ lục kiểm thử Packet Tracer, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
 
-Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận xét và phê duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
+Thông tin lớp L08, nhóm 2 và phân công BTL2 hai thành viên đã được cập nhật theo nhóm trưởng. Trước nộp, nhóm kiểm nhận xét và phê duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
 
 # Tài liệu tham khảo
 
@@ -150,6 +196,14 @@ Trước nộp, nhóm kiểm tên/MSSV/lớp, số người hợp lệ, nhận x
 6. Cisco. *Catalyst9200 Series Switches Data Sheet*. <https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html>.
 
 Nguồn tham khảo kỹ thuật được đối chiếu ngày02/11/2026. Các bảng chi phí là giả định dự toán đã ghi rõ, không được trích dẫn như báo giá nhà cung cấp.
+
+Nguồn bổ sung đối chiếu dịch vụ WAN ngày 04/11/2026: VNPT, *Kênh thuê riêng*, <https://vnpt.vn/doanh-nghiep/san-pham-dich-vu/kenh-thue-rieng/>. Giá tại bảng TCO vẫn là giả định minh họa.
+
+VNPT, *Dịch vụ Mạng riêng ảo*, <https://vnpt.vn/doanh-nghiep/san-pham-dich-vu/dich-vu-mang-rieng-ao-vpn/> (04/11/2026), phân biệt Metronet/MPLS VPN L2 và Megawan/MPLS VPN L3. Handoff Ethernet trong lab không chứng minh underlay MPLS của nhà mạng.
+
+Nguồn MPLS: FRRouting, *LDP* và *Layer 3 VPN configuration*, <https://docs.frrouting.org/en/stable-10.4/ldpd.html>, <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cú pháp đã kiểm bằng FRR10.2.2 trong module.
+
+Tham khảo giá có nguồn: VNPT Hải Phòng, *Báo giá TSL Metronet*, tài liệu ghi năm2020 (ngày/tháng trống), 100Mbps nội hạt31.343.000VNĐ/điểm. Đây là dữ liệu lịch sử, không phải báo giá hiện hành TP.HCM hoặc gói đủ tải Aux134,10Mbps. Nguồn và các mức20/50Mbps nằm trong `docs/02-design/wan-options-cost.md`; không nội suy giá150–200Mbps từ bảng cũ.
 
 \clearpage
 
@@ -238,3 +292,203 @@ python3 scripts/gns3_lab.py status
 ```
 
 Trên máy đã có lab, dùng `start` hoặc `reopen`, không bootstrap lần hai đè môi trường. Xem `simulation/gns3/README.md` để mở GUI, xây image trên compute khác và dừng lab. Bản nộp kèm `submission/SHA256SUMS` và gói ZIP; việc đóng gói không thay phê duyệt hoặc biên nhận BKeL.
+
+
+\clearpage
+
+# Phụ lục C - Bảng IP/VLAN và kết nối
+
+Các bảng dưới dùng địa chỉ của bộ cấu hình bàn giao. Gateway là địa chỉ .1 trong subnet tương ứng; subnet mask được xác định từ prefix. Server, quản trị và camera dùng địa chỉ tĩnh. Dải .2-.6 của VLAN máy trạm được giữ cho hạ tầng; pool .7-.126 có 120 lease. Số máy mô phỏng chỉ đại diện chức năng.
+
+## Main Site
+
+| VLAN | Phân vùng | Subnet | Cấp phát / quy mô |
+|:---------|:--------------------------|:---------------------|:-----------------------------------|
+| 10 | Tiếp nhận, khám bệnh | `10.10.10.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 20 | Điều trị, nội trú | `10.10.20.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 30 | Chẩn đoán hình ảnh | `10.10.30.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 40 | Xét nghiệm | `10.10.40.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 50 | Dược, nghiệp vụ y | `10.10.50.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 60 | Hành chính | `10.10.60.0/25` | DHCP .7-.126; 100 lên 120 PC |
+| 70 | Server Farm | `10.10.70.0/27` | Tĩnh .10-.30; 8 lên 10 server |
+| 80 | DMZ, gateway trên FW | `10.10.80.0/27` | Tĩnh .10-.30; 2 server |
+| 90 | Quản trị thiết bị | `10.10.90.0/24` | Tĩnh .11-.254 |
+| 100 | Wi-Fi khách | `10.10.100.0/23` | DHCP .100.11-.101.254; 500 lease |
+| 110 | Camera/NVR | `10.10.110.0/24` | Tĩnh theo camera plan; không cấp DHCP trong lab |
+| 120 | Wi-Fi nhân viên | `10.10.120.0/24` | DHCP .11-.254; 244 lease |
+
+DNS nội bộ Main là `10.10.70.10`. Khách dùng DNS lab `192.0.2.100`. HIS .70.11, PACS .70.12, LIS .70.13, CRM .70.14, DB .70.15, Backup .70.16, Monitor .70.17; DMZ Web .80.10 và Proxy .80.11. Main-Admin dùng .90.11, Main-NVR dùng .110.11. Các địa chỉ rút gọn giữ tiền tố `10.10`.
+
+## Hai cơ sở phụ DBP và BHTQ
+
+Đặt S=20 cho DBP và S=30 cho BHTQ. Mỗi site dùng gateway `10.S.VLAN.1`; DNS/Infra `10.S.70.6`, Local server `10.S.70.7`. Các subnet là các mạng riêng tại từng site, không kéo VLAN lớp 2 qua WAN.
+
+| VLAN | Phân vùng | Subnet mỗi site | Cấp phát / quy mô |
+|:---------|:--------------------------|:---------------------|:-----------------------------------|
+| 10 | Khám bệnh | `10.S.10.0/25` | DHCP .7-.126; 90 lên 108 PC |
+| 20 | Điều trị | `10.S.20.0/25` | DHCP .7-.126; 90 lên 108 PC |
+| 30 | Hành chính | `10.S.30.0/25` | DHCP .7-.126; 80 lên 96 PC |
+| 70 | Server cục bộ | `10.S.70.0/28` | Tĩnh .6-.14; 2 lên 3 server |
+| 90 | Quản trị | `10.S.90.0/24` | Tĩnh .11-.254 |
+| 100 | Wi-Fi khách | `10.S.100.0/23` | DHCP .100.11-.101.254; 500 lease |
+| 110 | Camera/NVR | `10.S.110.0/24` | Tĩnh; NVR .11 |
+| 120 | Wi-Fi nhân viên | `10.S.120.0/24` | DHCP .11-.254; 244 lease |
+
+\clearpage
+
+## Transit, ISP và VPN đề xuất
+
+| Kết nối | Subnet | Hai đầu / phạm vi |
+|:--------------------------|:----------------------|:-------------------------------------------|
+| Main-GW - DBP-GW | `10.255.0.0/30` | Main .1; DBP .2 |
+| Main-GW - BHTQ-GW | `10.255.0.4/30` | Main .5; BHTQ .6 |
+| Main-Core - Main-GW | `10.255.0.8/30` | Core .9; GW .10 |
+| Main-Core - Main-FW | `10.255.0.12/30` | Core .13; FW .14 |
+| Main-FW - Main-Edge | `10.255.0.16/30` | FW .17; Edge .18 |
+| Main-Edge - ISP1 | `203.0.113.0/30` | ISP1 .1; Edge .2 |
+| Main-Edge - ISP2 | `198.51.100.0/30` | ISP2 .1; Edge .2 |
+| ISP1 - INET-Core | `192.0.2.128/30` | ISP1 .129; INET .130 |
+| ISP2 - INET-Core | `192.0.2.132/30` | ISP2 .133; INET .134 |
+| Web Internet mô phỏng | `192.0.2.64/26` | INET .65; Web/DNS .100 |
+| Teleworker, đề xuất | `10.255.100.0/24` | Kết thúc trên FW; chưa chạy crypto |
+
+OSPF area 0 chạy Core-Main-GW-hai Aux, interface người dùng passive; không NAT lưu lượng liên site. GNS3 dùng PBR và health probe để chọn ISP; Packet Tracer dùng ISP2 mặc định và kiểm chuyển ISP1 thủ công. Tất cả Internet của Aux đi qua Main. Các dải TEST-NET chỉ phục vụ lab.
+
+## Chính sách truy cập dùng trong demo
+
+| Nguồn | Đích | Hành vi cần chứng minh |
+|:------------------------|:---------------------------|:----------------------------------|
+| PC cùng VLAN | PC cùng VLAN | Ping hai chiều |
+| PC nghiệp vụ | VLAN khác được phép / HIS | Ping/HTTP theo ACL |
+| Main PC, Aux PC | PC khác site | Ping hai chiều; traceroute qua WAN |
+| PC được phép | DMZ Web | HTTP tới `10.10.80.10` |
+| Web-Lab bên ngoài | ISP2 TCP8080 | PAT tới DMZ Web TCP80 |
+| Guest mỗi site | PC/HIS/DMZ nội bộ | Chặn; ACL deny tăng |
+| PC/Guest mỗi site | Web-Lab | DNS và HTTP thành công |
+
+Khách vẫn được DHCP/DNS; kiểm Internet thành công trước khi dùng HTTP/ping thất bại để kết luận bị chặn. VPN đề xuất chỉ mở quyền ứng dụng đã duyệt; không mở toàn bộ LAN cho teleworker. Cùng VLAN cần biện pháp lớp 2/host firewall riêng.
+
+\clearpage
+
+# Phụ lục D - Danh mục thiết bị và vật tư
+
+Đây là số lượng và tiêu chí chọn thiết bị cho thiết kế học thuật. Giá WAN/TCO là kịch bản minh họa đã nêu ở Step 3; các model, license, giá mua, nguồn điện và SLA sản xuất phải được xác nhận bằng báo giá cùng phạm vi. Số lượng HA dưới đây là đề xuất; lab dùng thiết bị đại diện.
+
+## Main Site
+
+| Hạng mục | Số lượng | Thông số / mục đích |
+|:--------------------------|:-----------|:------------------------------------------------------|
+| Core L3 | 2 | Tối thiểu 32 cổng 1/10G, 2 cổng 40G; OSPF/SVI/ACL; 29/32 cổng khi thêm OLT |
+| Access switch | 20 | 48 cổng 1G PoE+, 4 uplink 10G; C9200L-48P-4X tham chiếu; PSU 1kW/budget 740W |
+| Switch Server Farm | 2 | Tối thiểu 24 cổng 10G; server/NVR, uplink core; dual NIC theo cấu hình hỗ trợ |
+| Switch DMZ | 2 | Tối thiểu 24 cổng 1/10G; chỉ kết nối DMZ và FW, không bridge campus |
+| Firewall | 2 | HA đề xuất; ít nhất 4 cổng 10G; kiểm throughput khi bật IPS/crypto |
+| WAN gateway | 2 | OSPF, handoff hai leased line, IPsec nếu chọn; lab dùng một gateway |
+| Edge và modem | 2 + 2 | Hai ISP xDSL, PAT/PBR/tracking; sizing theo tải down/up và khi lỗi |
+| WLC | 2 | Mỗi WLC hỗ trợ ít nhất 64 AP; license/HA/compatibility cần xác nhận |
+| AP Wi-Fi 6 | 30 lên 40 | 3 lên 4 AP/tầng; uplink 1G trong baseline, PoE dự trù 30W/AP |
+| Server | 10 lên 12 | 8 nội bộ + 2 DMZ hiện tại; dual NIC 10G nếu chọn; CPU/RAM theo workload |
+| Camera | 40 lên 50 | PoE, 4MP/H.265 giả định, 4Mbps/camera; không đặt ở vùng riêng tư |
+| NVR | 1 hệ | Ít nhất 64 kênh; video 200Mbps năm 5 trước headroom; usable ít nhất 85.050GB |
+| OLT GPON | 1 | Ít nhất 2 PON class B+, 2 uplink 10G; nguồn/slot/VLAN/OMCI cần xác nhận |
+| ONT 4GE | 20 lên 24 | 80 lên 96 PC hành chính trong tổng 600 lên 720; 20 lên 24 điểm nguồn/UPS |
+| Splitter PLC 1:16 | 2 | Hai nhánh A/B, dùng 20 lên 24 trong 32 cổng nhánh |
+
+\clearpage
+
+## Mỗi cơ sở phụ
+
+| Hạng mục | Số lượng/site | Thông số / mục đích |
+|:--------------------------|:----------------|:--------------------------------------------------|
+| Distribution L3 | 2 | Ít nhất 16 cổng 10G; SVI/ACL/OSPF; HA đề xuất |
+| Access switch | 8 | 48 cổng 1G PoE+, 4 uplink 10G; 4 switch/tầng |
+| WAN router | 1 | Leased line về Main, OSPF; một tuyến vẫn là SPOF |
+| Server cục bộ | 2 lên 3 | Infra và Local; CPU/RAM/storage theo ứng dụng |
+| AP | 6 lên 8 | 3 lên 4 AP/tầng; VLAN Staff/Guest, Internet qua Main |
+| Camera | 8 lên 10 | 4Mbps/camera giả định, ghi local |
+| NVR | 1 | Ít nhất 16 kênh; usable ít nhất 17.010GB năm 5 |
+
+## Cáp, quang, tủ và nguồn
+
+| Hạng mục | Main | Mỗi Aux | Cơ sở tính |
+|:---------------------------|:-------------|:--------------|:---------------------------------|
+| Uplink access 10G | 40 link | 16 link | Hai uplink mỗi access switch |
+| SFP+ access có dự phòng | 88 module | 36 module | Hai module/link, thêm 10% làm tròn |
+| Cat6, thùng 305m | 88 | 37 | 30m/drop và 10% hao hụt giả định |
+| Patch panel 48 cổng | 20 | 8 | Theo tổng cổng access dự trù |
+| Tuyến quang trục | 20 tuyến 12 sợi | 2 tuyến 12 sợi | Main hai tuyến/IDF; Aux lên tầng 2 |
+| GPON ODN và uplink | OS2/ODF/SC-APC | Theo khảo sát | Hai feeder, 20 lên 24 drop; 4 module uplink OLT |
+| Rack/UPS/tiếp địa | MDF và 10 IDF | MDF và 1 IDF | Chọn theo công suất, runtime và mặt bằng |
+
+SFP/DAC cho Server Farm, FW, WLC, core 40G và GPON được bóc riêng; 88/36 module chỉ tính access. Dự toán Cat6 giữ chỗ Ethernet để rollback GPON, không cộng thêm 80 PC vào quy mô. Tuyến A/B phải đi đường vật lý độc lập; hai sợi của cùng cáp duplex không được coi là hai tuyến dự phòng.
+
+\clearpage
+```{=latex}
+\begin{landscape}
+```
+
+# Phụ lục E - Sơ đồ vật lý Main Site
+
+![Hai tòa A/B, MDF riêng cách khoảng 50m, IDF từng tầng và hai tuyến uplink. Đây là sơ đồ thiết kế, vị trí và chiều dài thực cần khảo sát.](../../02-design/diagrams/exports/physical-main.svg){width=100% height=125mm keepaspectratio=true}
+
+\clearpage
+
+## Sơ đồ vật lý cho mỗi cơ sở DBP/BHTQ
+
+![Hai tầng của mỗi Aux, MDF/IT ở tầng 1, IDF tầng 2, camera/NVR local và một leased line về Main.](../../02-design/diagrams/exports/physical-aux.svg){width=100% height=125mm keepaspectratio=true}
+
+```{=latex}
+\end{landscape}
+```
+
+\clearpage
+
+# Phụ lục F - Kịch bản trình bày và phạm vi bằng chứng
+
+## Trình tự demo sáu nhóm bắt buộc
+
+1. **Cùng VLAN:** Main-PC10-A ping `10.10.10.11` và chiều ngược lại.
+2. **Giữa VLAN:** Main-PC10-A ping `10.10.20.10`, mở HTTP HIS `10.10.70.11`.
+3. **Liên site:** Main-PC10-A ping `10.20.10.10`, `10.30.10.10`; Aux ping ngược Main và traceroute liên site.
+4. **DMZ:** PC được phép mở `http://10.10.80.10`; Web-Lab mở `http://198.51.100.2:8080`.
+5. **Cách ly khách:** Guest truy cập Web-Lab thành công nhưng ping PC/mở HIS thất bại; đối chiếu bộ đếm ACL deny tăng.
+6. **Internet:** PC/Guest cả ba site mở `http://web.hospital.test`; kiểm DNS và NAT tại Main.
+
+## Chứng minh phần mở rộng
+
+GNS3 là nền tảng demo **PBR hai nhóm, lỗi upstream ISP1/ISP2, mất cả hai và phục hồi**, cùng **Suricata IDS alert/IPS drop**. Dùng runbook `simulation/gns3/demo-guide.md` và bộ thử `scripts/test_gns3_runtime.py --failover`. Khi mất cả hai ISP, Internet mất nhưng liên lạc nội bộ liên site vẫn phải hoạt động. Phiên NAT cũ có thể mất; phép thử HTTP mới không chứng minh giữ nguyên phiên.
+
+Packet Tracer đã có Wi-Fi thật trong lab: sáu association, DHCP và HTTP. ISP2 là đường chính, chuyển ISP1 bằng thao tác thủ công rồi trả lại cấu hình. Không gọi thao tác này là load balancing hay failover tự động. Dùng Packet Tracer 9.0.1.0858 và file `simulation/packet-tracer/hospital-3sites.pkt` đã đối chiếu provenance.
+
+MPLS riêng chứng minh LDP/MP-BGP/VRF và gói hai nhãn qua PCAP trong Linux namespaces/QEMU. Không gán 28+28 quan sát đó cho project native GNS3 chưa chạy. VPN site-to-site/teleworker, GPON PHY, RF thực, HA chassis và tải đủ 1.120 PC là phạm vi thiết kế/chưa đo; trình bày đúng giới hạn này khi được hỏi.
+
+## Chọn file nộp
+
+**Báo cáo chính:** `docs/06-report/final/report.pdf`. **Nguồn LaTeX:** `docs/06-report/final/report-latex.zip`. PDF `packet-tracer-validation.pdf` là phụ lục kiểm thử ngắn hai trang, có nội dung khác báo cáo chính. Các PDF trong thư mục `build/` hoặc `output/pdf/` là sản phẩm biên dịch local.
+
+Nộp kèm cả mô hình Packet Tracer, GNS3, source dựng image và bằng chứng qua gói `submission/hospital-network-delivery.zip`. Giải nén gói và kiểm trước khi dùng:
+
+```bash
+python3 scripts/verify.py
+python3 scripts/package_submission.py --check
+```
+
+Máy demo GNS3 phải có image được build/load trên compute. Việc nộp BKeL và biên nhận do nhóm thực hiện.
+
+
+\clearpage
+
+# Phụ lục G - Kiểm tra trực tiếp trước nộp ngày 05/11/2026
+
+Đã sửa lỗi controller GNS3 không lên sau stop/start do PID/socket Docker cũ. Entrypoint tạo exec-root mới mỗi lần bật, giữ dữ liệu image/project trong volume riêng. Lệnh start tự mở project đã lưu nếu server khởi động với project ở trạng thái closed. Hai lần bật controller đã xác nhận đủ52 node started, Docker/API hoạt động và hash entrypoint thực khớp source.
+
+| Lần chạy | Phạm vi | Số kiểm tra | Kết quả |
+|:------------------------|:--------------------------------------|------:|:--------|
+| submission-20261105 | Sáu nhóm, DHCP/DNS, IDS/IPS, PBR và lỗi hai ISP | 209 | PASS |
+| submission-reopen-20261105 | Sau restart controller: sáu nhóm, OSPF, DHCP/DNS, IDS/IPS | 137 | PASS |
+
+Thời gian phục hồi HTTP trong lượt mới khi mất upstream ISP1/ISP2 là 8.344, 5.178 giây. Đây là kết quả của lần chạy, không phải SLA hoặc chuyển mạch không mất phiên.
+
+File code/config thực của52 node khớp nguồn. Các kết quả cũ ở phụ lục A được giữ nguyên để truy vết; lượt kiểm mới nằm tại `test_results/runtime/submission-20261105/` và `test_results/runtime/submission-reopen-20261105/`. Chứng cứ restart và hash ở `test_results/runtime/controller-restart/`. Kiểm offline bằng `scripts/check_gns3.py` xác nhận tính toàn vẹn, không tự chạy lại mạng.
+
+Đã chốt Packet Tracer về đúng byte của bản native có evidence32+4; bản lưu lại chỉ khác đồng hồ/môi trường được bảo toàn trong backup local. Lượt05/11 không chạy lại Packet Tracer; không gán kết quả mới của GNS3 cho Cisco IOS.

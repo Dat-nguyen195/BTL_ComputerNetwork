@@ -1,0 +1,11 @@
+server,name,address,type
+10.10.70.10,web.hospital.test,192.0.2.100,A
+10.20.70.6,web.hospital.test,192.0.2.100,A
+10.30.70.6,web.hospital.test,192.0.2.100,A
+192.0.2.100,web.hospital.test,192.0.2.100,A
+10.10.70.10,his.hospital.test,10.10.70.11,A
+10.10.70.10,dmz.hospital.test,10.10.80.10,A
+10.20.70.6,his.hospital.test,10.10.70.11,A
+10.20.70.6,dmz.hospital.test,10.10.80.10,A
+10.30.70.6,his.hospital.test,10.10.70.11,A
+10.30.70.6,dmz.hospital.test,10.10.80.10,A

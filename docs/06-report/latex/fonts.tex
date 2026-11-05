@@ -1,0 +1,5 @@
+% Unicode fonts available both in a normal TeX Live install and on Windows.
+% No dependency on Microsoft fonts on Linux or Overleaf.
+\IfFontExistsTF{TeX Gyre Termes}{\setmainfont{TeX Gyre Termes}}{\setmainfont{DejaVu Serif}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{DejaVu Sans}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}{\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]}

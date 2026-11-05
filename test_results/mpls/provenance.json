@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "collected_at_utc": "2026-11-04T16:18:47.859371+00:00",
+  "scope": "Executed MPLS L3VPN in Linux network namespaces inside an isolated QEMU WHPX VM on Windows; generated GNS3 project NOT executed in GNS3",
+  "runs": {
+    "validated": 28,
+    "recreated": 28
+  },
+  "kernel": "Alpine 3.22.7 / Linux 6.12.114-0-lts",
+  "frr": "10.2.2",
+  "qemu_version": "QEMU emulator version 11.0.93 (v11.1.0-rc3-12129-g50892b90e4)\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+  "vendor_downloads": [
+    {
+      "url": "https://qemu.weilnetz.de/w64/qemu-w64-setup-20260805.exe",
+      "sha512": "0e4ff303ae0e7ef15b8dc963ea50a7daf6b706f1ceb31e07a228ef4e686272abd161507684b02976964a6112b6af0a7d49981de36d73ec6fcbaec6f418bec04c",
+      "checksum_verified_against_vendor": true
+    },
+    {
+      "url": "https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/x86_64/alpine-standard-3.22.7-x86_64.iso",
+      "sha256": "0c6a54479aaba67911d1bbb41b7ddce2c71d25a4fd3b5ad7e2420f8ea9a00fba",
+      "checksum_verified_against_vendor": true
+    }
+  ],
+  "sha256": {
+    "simulation/mpls/mpls_runtime.py": "5ecbdd92a13488c6be5cbc609f4ed04a9487f9b86b5c5b269eca3cdc1b968330",
+    "simulation/mpls/test_mpls.py": "3cf7f5b00f2aa47328bcbcb8d6d77c7ef15ede09d41c6fd4959acafc7ba36a6e",
+    "simulation/mpls/hospital-mpls.gns3": "75cf0dfd9c84fcc1f32ee294609776231a9d0f7120f7c0c4a30b73b0c6cf272c",
+    "test_results/mpls/validated/results.json": "63e820f06757a573dca00ad406d11b553f6f47eb1468a03f1470977241a1c2b0",
+    "test_results/mpls/validated/mpls.pcap": "f8df15eb5ae9a734eb5dac89c655ccf29d7e726a4a6821aeddc981e323086800",
+    "test_results/mpls/recreated/results.json": "226be0e30eb0e6d8c1ef7c1ed487439930f379e680f959307f7367e5d8ff4ae6",
+    "test_results/mpls/recreated/mpls.pcap": "be649410100a5a893bdb50943d1a87c216f70a99387eadb65b11863e98f5ba33"
+  }
+}

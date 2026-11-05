@@ -1,0 +1,28 @@
+{
+  "timestamp_utc": "2026-11-03T01:55:59.604347+00:00",
+  "platform": "Cisco Packet Tracer 9.0.1 on Windows 11",
+  "scope": "File Script Module capability probe in a new empty lab",
+  "status": "BLOCKED - SCRIPT PRIVILEGES NOT GRANTED",
+  "observed_debug_prefix": "IPC Call ERROR: IPC - ExApp or Script Module does not have the necessary privilege for IPC call",
+  "execution_reached": "ipc.network() denied before router creation or CLI probes",
+  "required_script_privileges": [
+    "Get Network Info",
+    "Change Network Info",
+    "Change User Interface"
+  ],
+  "probe_sha256": "1570f0f01e53e47baf06438dc756e72c952a6cfb21aec8a0cc09df604acaee3f",
+  "test_cases": {
+    "TC01": "NOT RUN on integrated Packet Tracer model",
+    "TC02": "NOT RUN on integrated Packet Tracer model",
+    "TC03": "NOT RUN on integrated Packet Tracer model",
+    "TC04": "NOT RUN on integrated Packet Tracer model",
+    "TC05": "NOT RUN on integrated Packet Tracer model",
+    "TC06": "NOT RUN on integrated Packet Tracer model"
+  },
+  "original_pkt_sha256": "918a884a10e7dd759ad5ae6518e42270dc8a81aa5a7fc01f394cf38b70db922c",
+  "notes": [
+    "The original audited Main PKT was restored after Packet Tracer resaved it as 9.0.1; the resaved session is preserved separately in tmp/.",
+    "No GNS3 result is reused as Packet Tracer evidence.",
+    "The probe has no Internet or host-file access."
+  ]
+}

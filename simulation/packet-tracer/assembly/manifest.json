@@ -1,0 +1,30 @@
+{
+  "status": "ASSEMBLY KIT ONLY; NATIVE PKT AND PACKET TRACER RUNTIME NOT RUN",
+  "nodes": 58,
+  "wired_links": 52,
+  "wireless_associations": 6,
+  "sha256": {
+    "cabling.csv": "55b976ab53d0cb632dad9ee1d9d95049d6e6403e8946f63e99e2042c36228d6e",
+    "configs/BHTQ-Access.cfg": "c3305d786c2ecd47031372329d2abe840c81442803edd9957a5b2ddcb0303b3d",
+    "configs/BHTQ-GW.cfg": "bb5a1f9a762929224e040dcbf4aa37a955e31fd8e0e5a23b309633fa05e040f0",
+    "configs/DBP-Access.cfg": "f78f79c9353534ca594c1575ed291079e98caf3a02a6f5be8cd8d1258f89d684",
+    "configs/DBP-GW.cfg": "391a3e2d66995f418f04fdf581c4f934a9b627b6abf8c099be6491e631a39c6f",
+    "configs/DMZ-Access.cfg": "bf7b3f66fa6c50febb63f8028def8fca967651cbb50cb37c855dd29d5859fdaa",
+    "configs/INET-Core.cfg": "f8b1e1a85a11086f5e90a242197aaa6c57b942b7a23b3aa815b9d6102b24ad36",
+    "configs/ISP1.cfg": "d7b13d12d4928d67ad89fa30c1ddefc695f51dd3a9d7ec10fd7c1b8ba2de9b52",
+    "configs/ISP2.cfg": "38f5921abb65aef8603977121528d93c7ee13889bf34fb0b7b14a523b350acb3",
+    "configs/Main-Access.cfg": "c54f7b563d570d8674995c2db12a14f7a5775884bf087b9bab1b948b50edee4c",
+    "configs/Main-Core.cfg": "7be45b694fb00033427f709c0c0801c43eab9c3f6bb1ca553c7504cf1fa92d83",
+    "configs/Main-Edge.cfg": "3ce2d3b32990bb27cacfb62ed216e3c67e191427a2dd168637ccd456ab5295d2",
+    "configs/Main-FW.cfg": "75f35c46625c51a4669e84875578acc9068bdb3849e355ba3800622720a3e66a",
+    "configs/Main-GW.cfg": "7c00cff9d5f926219d87f68449b1255f873eedab802ab2773ecdd7b01d66ffb6",
+    "configs/Web-Access.cfg": "ed14a5bf0594d4d9b33dced42acce663d9a180dcd3bb8f134efd1f0003627ce0",
+    "devices.csv": "e68b51c673f3aeb058dd8bc2546e135e5bce7b831021b5fddadc572280607cac",
+    "dhcp-pools.csv": "befe6b41095d9b8e18aca69b7e5ae93b736752a3da78857192c97bb9437377ac",
+    "dns-records.csv": "ceeabc5d99f95fa97a9e976880101edc3b5306c76abe8e4c521e9f5850e66d95",
+    "endpoints.csv": "37ce4c7c5dc52c1434be47294f6b99129c9dddc135dcba5a3fa8345f51d9a3e8",
+    "feature-probes.csv": "d69ba9d9e97123aef0ab507fe710865f92377f94163fca3c14064706c94c3fec",
+    "test-results.csv": "374ce21518e0bf1c29674def6fcef6d767935a518c0b0bf6b49bce89819f7e97",
+    "wireless.csv": "ef91db6bddd960ebf25be17ee3b9af553d15d3bb11084b0449b95c2912c1b93b"
+  }
+}

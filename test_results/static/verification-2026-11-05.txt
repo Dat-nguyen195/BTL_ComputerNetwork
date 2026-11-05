@@ -1,0 +1,105 @@
+
+$ python3 scripts/check_docs.py
+OK: 94 Markdown files; UTF-8, local links, code fences and task IDs checked.
+
+$ python3 scripts/build_lab.py --check
+OK: composed 9 router + 5 lab switch configs, 18 DHCP pools, port map and manifest (freshness checked)
+
+$ python3 scripts/build_campus.py --check
+OK TV2: 3 site budgets,72 optical links,2 editable diagrams/SVG and3 IOS adapters (freshness checked)
+
+$ python3 scripts/test_capacity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+OK
+
+$ python3 scripts/check_wan.py
+OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
+OK static model: both ISP up; edge tracks=(True, True); GW default=True
+OK static model: ISP1 local down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 local down; edge tracks=(True, False); GW default=True
+OK static model: ISP1 upstream down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 upstream down; edge tracks=(True, False); GW default=True
+OK static model: both upstream down; edge tracks=(False, False); GW default=False
+OK static model: both local down; edge tracks=(False, False); GW default=False
+OK static model: recovery; edge tracks=(True, True); GW default=True
+OK static model: Web health target unavailable; edge tracks=(True, True); GW default=False
+Static checks only. IOS parser, OSPF convergence, NAT sessions, HTTP/DNS and runtime test results are NOT verified.
+
+$ python3 scripts/check_wan.py --config-dir simulation/generated/configs
+OK static declarations: 9 nodes; 33 allocated VLAN/transit subnets; OSPF/NAT contracts
+OK static model: both ISP up; edge tracks=(True, True); GW default=True
+OK static model: ISP1 local down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 local down; edge tracks=(True, False); GW default=True
+OK static model: ISP1 upstream down; edge tracks=(False, True); GW default=True
+OK static model: ISP2 upstream down; edge tracks=(True, False); GW default=True
+OK static model: both upstream down; edge tracks=(False, False); GW default=False
+OK static model: both local down; edge tracks=(False, False); GW default=False
+OK static model: recovery; edge tracks=(True, True); GW default=True
+OK static model: Web health target unavailable; edge tracks=(True, True); GW default=False
+Static checks only. IOS parser, OSPF convergence, NAT sessions, HTTP/DNS and runtime test results are NOT verified.
+
+$ python3 scripts/check_security.py
+OK static security: 61 first-match flow cases, 18 DHCP pools, ingress bindings, ZBF/PAT contracts
+NOT IOS runtime: no stateful sessions, DHCP leases, DNS/HTTP, VPN or IDS/IPS executed.
+
+$ python3 scripts/check_inventory.py
+OK static inventory: 14 cables, 38 endpoints, 10/2/2 servers, unique addresses and switch ports
+
+$ python3 scripts/check_lan.py
+OK static TV2: 3 campus budgets/storage,72 uplinks,2 diagrams,3 adapters, 37 preserved Main ACL flows; original PKT hash verified
+Original native file is a partial Main module. This static audit does not run it; integrated Packet Tracer evidence is validated separately.
+
+$ python3 scripts/build_gns3.py --check
+OK: GNS3 project, 9 FRR/Linux routers, 5 VLAN switches, 38 endpoints, compiled ACLs/DHCP and source manifest
+
+$ python3 scripts/check_gns3.py
+OK current controller: 2 successful boots, 209 live checks and 137 checks after controller restart
+OK: portable GNS3 52 nodes/52 links; 18 pools/19 clients; source/live hashes; recorded smoke/failover; firewall restart cycles; actual PCAP/reopen and Web UI browser regression
+This checker validates recorded evidence; it does not rerun the GNS3 network.
+
+$ python3 scripts/build_packet_tracer.py --check
+OK static Packet Tracer assembly: 58 planned nodes, 52 cables, 6 WLAN associations, 18 DHCP pools; this check does not execute the native lab; see separate runtime evidence
+
+$ python3 scripts/test_packet_results.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.008s
+
+OK
+
+$ python3 scripts/check_packet_runtime.py
+OK recorded manual ISP selection: 3 HTTP via ISP1/PAT, 1 HTTP after ISP2 restoration; Main-Edge configuration restored exactly
+OK recorded Packet Tracer evidence: 32 complete observations, 6 BSSIDs, 19 DHCP clients, 18 allocatable pools, 3 zero-capacity defaults; guest deny counter deltas {'Main': 16, 'DBP': 16, 'BHTQ': 26}
+Recorded evidence only; no network executed, automatic ISP failover or human approval claimed.
+
+$ python3 scripts/build_mpls.py --check
+OK MPLS artifacts: 11 nodes, 10 links; shared namespace/GNS3 node configurations; no runtime implied
+
+$ python3 scripts/test_mpls_evidence.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.014s
+
+OK
+
+$ python3 scripts/check_mpls.py
+OK recorded MPLS validated: 28 observations, 7 actual labelled frames; source hashes match
+OK recorded MPLS recreated: 28 observations, 6 actual labelled frames; source hashes match
+MPLS runtime is Linux namespaces inside QEMU; generated GNS3 module is separate. This checker does not execute the network.
+
+$ python3 scripts/test_delivery.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.100s
+
+OK
+
+$ python3 scripts/check_report.py
+OK: report/PDF/source hashes match recorded 21-page visual QA; standalone LaTeX bundle matches source
+This check validates existing QA evidence; it does not render or recompile the PDF.
+OK: 2-page Packet Tracer supplement/source/generator hashes match visual QA and the tested native lab
+
+ALL OFFLINE CHECKS OK. Runtime evidence is recorded separately under test_results/runtime/; these checks do not execute the network.

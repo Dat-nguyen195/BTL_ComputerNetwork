@@ -1,0 +1,8 @@
+{
+  "source_sha256": "5ecbdd92a13488c6be5cbc609f4ed04a9487f9b86b5c5b269eca3cdc1b968330",
+  "artifacts": {
+    "generated/topology.json": "b6918026077b4b0285c8024a053c23250e3338e3a9642b26c744caa53c8fdf97",
+    "hospital-mpls.gns3": "75cf0dfd9c84fcc1f32ee294609776231a9d0f7120f7c0c4a30b73b0c6cf272c"
+  },
+  "scope": "Portable topology and shared config; runtime results recorded separately"
+}

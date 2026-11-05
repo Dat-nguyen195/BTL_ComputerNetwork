@@ -1,6 +1,6 @@
 # Ma trận kiểm thử - Step5
 
-**Runtime GNS3 Linux/FRR đã chạy và mở lại project ngày02/11/2026.** [Evidence đầy đủ](runtime/README.md). Config IOS/Packet Tracer vẫn là tham chiếu chưa chạy; mỗi PASS dưới đây chỉ áp dụng mô hình GNS3 này.
+**Runtime GNS3 Linux/FRR đã chạy và mở lại project ngày02/11/2026.** [Evidence đầy đủ](runtime/README.md). Bảng dưới ghi bằng chứng GNS3; Packet Tracer có kết quả độc lập ở bảng tiếp theo. Không suy PASS của nền tảng này sang nền tảng kia.
 
 | ID | Nội dung | Kết quả GNS3 | Hồ sơ |
 | --- | --- | --- | --- |
@@ -17,3 +17,20 @@
 | SUPP05 | Chép đúng template, save/close/reopen và chạy lại137 kiểm | PASS | [persistence](supplemental/persistence.md) |
 
 Không suy PASS RF, quang, DSL, throughput, HA hoặc dữ liệu y tế từ những ca trên. Hai FAIL của lần đầu được giữ trong `runtime/initial-runtime/`; run sau đo hội tụ đầu cuối và lưu samples gián đoạn. Không có kiểm tra nào tự tạo approval hoặc biên nhận BKeL.
+
+## Packet Tracer sau lưu/mở lại
+
+[Evidence và hash](packet-tracer/README.md) xác nhận bản native chính: 32 quan sát, sáu association Wi-Fi, 19 client DHCP và bốn HTTP chọn ISP thủ công.
+
+| Nhóm | Số lượt | Kết quả / phạm vi |
+| --- | ---: | --- |
+| TC01 | 2 | Cùng VLAN hai chiều, ping đủ 4/4 |
+| TC02 | 3 | Liên VLAN và HTTP HIS |
+| TC03 | 4 | Main-DBP/BHTQ hai chiều |
+| TC04 | 2 | DMZ và PAT tĩnh từ ngoài |
+| TC05 | 9 | Guest bị chặn LAN/HIS, có đối chứng và ACL deny tăng |
+| TC06 | 6 | PC/Guest ba site tới Web/DNS |
+| WIFI | 6 | Staff ba site tới HIS/Web qua Wi-Fi |
+| ISP thủ công | 4 | Ba HTTP qua ISP1, một HTTP sau trả ISP2; không phải failover tự động |
+
+VPN crypto vẫn DESIGN ONLY. PBR/failover tự động và IDS/IPS được chứng minh bằng GNS3, không thuộc kết quả Packet Tracer này.

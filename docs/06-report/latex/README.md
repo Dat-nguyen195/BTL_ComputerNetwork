@@ -1,39 +1,52 @@
-# Báo cáo LaTeX có logo Bách Khoa
+# Nguồn LaTeX của báo cáo chính
 
-Bộ nguồn đầy đủ, không phải file bọc một PDF có sẵn. Biên dịch bằng **XeLaTeX**, UTF-8; font DejaVu Serif/Sans/Mono hỗ trợ tiếng Việt. Bìa dùng đúng ảnh `01_logobachkhoatoi.png` do người dùng cung cấp, được sao chép nguyên byte vào [assets/logo-bach-khoa.png](assets/logo-bach-khoa.png). LaTeX chỉ cắt phần trong suốt khi dàn trang, không sửa hoặc vẽ lại logo.
+Bản PDF chính thức để đọc, in và nộp là [final/report.pdf](../final/report.pdf). Bộ nguồn này biên dịch ra cùng nội dung. [packet-tracer-validation.pdf](../final/packet-tracer-validation.pdf) là phụ lục kiểm thử ngắn hai trang, không phải một bản báo cáo trùng.
 
-## Các file
+## Biên dịch trên máy local
 
-- [report.tex](report.tex): toàn bộ nội dung bảy Step, bảng biểu, tài liệu tham khảo và phụ lục kiểm thử; có thể sửa trực tiếp.
-- [cover.tex](cover.tex): trang bìa, khung và vị trí logo.
-- [metadata.tex](metadata.tex): tên trường, môn học, đề tài, nhóm, giảng viên, lớp, thành viên/MSSV và ngày.
-- [header.tex](header.tex): font, màu, mục lục, header/footer và số trang.
-- [assets/topology.pdf](assets/topology.pdf): sơ đồ vector từ SVG của dự án.
+Dùng **XeLaTeX**, UTF-8. Lỗi `Unicode character ... not set up for use with LaTeX` là do chọn pdfLaTeX. File `report.tex` có chỉ dẫn engine và thông báo lỗi rõ ràng nếu chạy nhầm. `fonts.tex` chọn font có sẵn trên Windows/TeX Live; không cần cài Times New Roman trên Linux.
 
-Thông tin giảng viên, lớp và danh sách họ tên/MSSV chưa có dữ liệu xác nhận nên để rỗng trong `metadata.tex`; các dòng này tự ẩn trên bìa. Điền dữ liệu thật vào các macro tương ứng trước khi nộp, không cần sửa bố cục. Ví dụ danh sách thành viên có thể dùng `tabular` trong `\ReportMembers`.
-
-## Biên dịch bộ nguồn hiện có
-
-Không cần Python, Pandoc hoặc GNS3 để biên dịch các file đã bàn giao. Cần XeLaTeX với các package fontspec/unicode-math, graphicx, geometry, longtable/booktabs, fancyhdr, microtype, xurl, TikZ, etoolbox, needspace và font DejaVu. Có thể cài trên Ubuntu bằng `texlive-xetex texlive-latex-extra texlive-fonts-recommended fonts-dejavu-core`.
-
-Từ root repository:
+Trong thư mục `docs/06-report/latex`:
 
 ```bash
-mkdir -p output/pdf
-cd docs/06-report/latex
-latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=../../../output/pdf report.tex
+latexmk report.tex
 ```
 
-PDF ở `output/pdf/report.pdf`. Nếu không dùng `latexmk`, chạy `xelatex -output-directory=../../../output/pdf report.tex` ba lần để cập nhật mục lục và số trang.
+`.latexmkrc` tự chọn XeLaTeX, cập nhật mục lục và đưa PDF/file phụ vào `build/`. Nếu gọi từ root repository:
 
-Trên Overleaf: tải lên gói `docs/06-report/final/report-latex.zip`, đặt **Main document = report.tex**, **Compiler = XeLaTeX**, rồi Recompile. Các đường dẫn hình đều tương đối, không phụ thuộc máy người tạo. Chỉ dẫn này là cách dùng bộ nguồn; lần QA đã biên dịch bằng XeLaTeX local, chưa chạy dịch vụ Overleaf.
+```bash
+latexmk -xelatex -cd docs/06-report/latex/report.tex
+```
 
-## Cập nhật lại từ Markdown và JSON evidence
+Trong VS Code/LaTeX Workshop, mở root dự án rồi build `report.tex`: recipe mặc định của workspace là **XeLaTeX (Vietnamese report)**. Nếu editor đã mở trước khi cập nhật, reload cửa sổ hoặc chọn recipe này. PDF xem trước nằm ở `latex/build/report.pdf`; bản nộp nằm ở `final/report.pdf`.
+
+Nếu không có latexmk, chạy XeLaTeX ba lượt từ thư mục nguồn với output directory đã tạo:
+
+```bash
+mkdir -p build
+xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error -output-directory=build report.tex
+```
+
+Trên Ubuntu cần `texlive-xetex`, `texlive-latex-extra`, `texlive-fonts-recommended`; `fonts-dejavu-core` là font dự phòng. Không dùng pdfLaTeX cho báo cáo này.
+
+## Overleaf và bộ nguồn độc lập
+
+Upload toàn bộ [report-latex.zip](../final/report-latex.zip), chọn **Main document: report.tex**, **Compiler: XeLaTeX**, rồi Recompile. Bộ nguồn không cần Python, Pandoc, GNS3 hoặc đường dẫn tuyệt đối. Overleaf không tự đọc cấu hình LaTeX Workshop; cần đặt compiler một lần trong Menu.
+
+- `report.tex`: toàn bộ nội dung, bảng và phụ lục A-F.
+- `header.tex`, `fonts.tex`: kiểu trình bày, font và hỗ trợ trang ngang.
+- `cover.tex`, `metadata.tex`: bìa/logo, L08, nhóm 2, hai người thực hiện BTL2; dòng giảng viên tự ẩn khi chưa có thông tin.
+- `assets/`: logo gốc, sơ đồ logic, sơ đồ vật lý Main và Aux dạng PDF vector.
+- `.latexmkrc`: cấu hình compiler và thư mục build.
+
+## Cập nhật báo cáo từ nguồn dự án
+
+Nguồn nội dung là [report.md](../source/report.md) và [design-appendices.md](../source/design-appendices.md). `report-with-evidence.md` và `report.tex` được sinh lại; sửa trực tiếp các file này sẽ bị ghi đè khi build từ Markdown.
+
+Từ root, dùng Python có CairoSVG, Pandoc và XeLaTeX:
 
 ```bash
 python3 scripts/build_report.py
 ```
 
-Chạy lệnh này ở root bằng Python có `cairosvg`; cần Pandoc và XeLaTeX. Script sinh lại `report.tex`, `assets/topology.pdf`, Markdown ghép evidence, PDF chuẩn tại `docs/06-report/final/report.pdf`, bản PDF local tại `output/pdf/report.pdf` và ZIP LaTeX. Các file `metadata.tex`, `cover.tex`, `header.tex` không bị ghi đè.
-
-**Chọn một nguồn sửa nội dung:** nếu muốn tiếp tục dùng script, sửa `docs/06-report/source/report.md` rồi build; script sẽ ghi đè mọi thay đổi trực tiếp trong `report.tex`. Nếu sửa LaTeX trực tiếp, chỉ dùng XeLaTeX/latexmk cho đến khi đã đồng bộ lại Markdown. Khi nộp bản tự biên dịch, chép PDF đã kiểm vào đường dẫn PDF chuẩn và cập nhật package/checksum của dự án.
+Script cập nhật Markdown ghép bằng chứng, LaTeX, hình vector, `output/pdf/report.pdf`, PDF chính thức và ZIP nguồn. Windows có thể dùng `python -X utf8 scripts/build_report.py --engine tectonic`. Sau thay đổi cần render/kiểm PDF, cập nhật QA/hash rồi đóng gói lại bằng `scripts/package_submission.py`. Bản PDF local do build editor chỉ để xem trước; không dùng file PDF cũ nằm cạnh `report.tex` để nộp.

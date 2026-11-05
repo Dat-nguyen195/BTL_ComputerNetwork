@@ -1,0 +1,154 @@
+[
+  {
+    "node": "Main-Infra",
+    "ip": "10.10.70.10"
+  },
+  {
+    "node": "Main-HIS",
+    "ip": "10.10.70.11"
+  },
+  {
+    "node": "Main-PACS",
+    "ip": "10.10.70.12"
+  },
+  {
+    "node": "Main-LIS",
+    "ip": "10.10.70.13"
+  },
+  {
+    "node": "Main-CRM",
+    "ip": "10.10.70.14"
+  },
+  {
+    "node": "Main-DB",
+    "ip": "10.10.70.15"
+  },
+  {
+    "node": "Main-Backup",
+    "ip": "10.10.70.16"
+  },
+  {
+    "node": "Main-Monitor",
+    "ip": "10.10.70.17"
+  },
+  {
+    "node": "Main-WebDMZ",
+    "ip": "10.10.80.10"
+  },
+  {
+    "node": "Main-ProxyDMZ",
+    "ip": "10.10.80.11"
+  },
+  {
+    "node": "DBP-Infra",
+    "ip": "10.20.70.6"
+  },
+  {
+    "node": "DBP-Local",
+    "ip": "10.20.70.7"
+  },
+  {
+    "node": "BHTQ-Infra",
+    "ip": "10.30.70.6"
+  },
+  {
+    "node": "BHTQ-Local",
+    "ip": "10.30.70.7"
+  },
+  {
+    "node": "Web-Lab",
+    "ip": "192.0.2.100"
+  },
+  {
+    "node": "Main-PC10-A",
+    "ip": "10.10.10.7"
+  },
+  {
+    "node": "Main-PC10-B",
+    "ip": "10.10.10.8"
+  },
+  {
+    "node": "Main-PC20",
+    "ip": "10.10.20.7"
+  },
+  {
+    "node": "Main-PC30",
+    "ip": "10.10.30.7"
+  },
+  {
+    "node": "Main-PC40",
+    "ip": "10.10.40.7"
+  },
+  {
+    "node": "Main-Guest",
+    "ip": "10.10.100.11"
+  },
+  {
+    "node": "Main-Staff",
+    "ip": "10.10.120.11"
+  },
+  {
+    "node": "DBP-PC10",
+    "ip": "10.20.10.7"
+  },
+  {
+    "node": "DBP-Guest",
+    "ip": "10.20.100.11"
+  },
+  {
+    "node": "BHTQ-PC10",
+    "ip": "10.30.10.7"
+  },
+  {
+    "node": "BHTQ-Guest",
+    "ip": "10.30.100.11"
+  },
+  {
+    "node": "Main-Admin",
+    "ip": "10.10.90.11"
+  },
+  {
+    "node": "Main-NVR",
+    "ip": "10.10.110.11"
+  },
+  {
+    "node": "DBP-NVR",
+    "ip": "10.20.110.11"
+  },
+  {
+    "node": "BHTQ-NVR",
+    "ip": "10.30.110.11"
+  },
+  {
+    "node": "Main-PC50",
+    "ip": "10.10.50.7"
+  },
+  {
+    "node": "Main-PC60",
+    "ip": "10.10.60.7"
+  },
+  {
+    "node": "DBP-PC20",
+    "ip": "10.20.20.7"
+  },
+  {
+    "node": "DBP-PC30",
+    "ip": "10.20.30.7"
+  },
+  {
+    "node": "DBP-Staff",
+    "ip": "10.20.120.11"
+  },
+  {
+    "node": "BHTQ-PC20",
+    "ip": "10.30.20.7"
+  },
+  {
+    "node": "BHTQ-PC30",
+    "ip": "10.30.30.7"
+  },
+  {
+    "node": "BHTQ-Staff",
+    "ip": "10.30.120.11"
+  }
+]

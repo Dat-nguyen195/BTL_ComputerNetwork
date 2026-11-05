@@ -184,7 +184,7 @@ def artifacts():
     output={'hospital-3sites.gns3':json.dumps(project,indent=2)+'\n'}
     output.update({'runtime/config/'+n+'.json':json.dumps(c,indent=2)+'\n' for n,c in sorted(configs.items())})
     source_paths=[*sorted((ROOT/'simulation/generated/configs').glob('*.cfg')),ROOT/'simulation/lab/endpoints.csv',ROOT/'simulation/lab/cabling.csv',ROOT/'scripts/build_gns3.py',OUT/'runtime/node.py',OUT/'runtime/Dockerfile',OUT/'controller/Dockerfile',OUT/'controller/start.sh',OUT/'controller/patch_web_ui.py']
-    source_hashes={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
+    source_hashes={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
     output['runtime-manifest.json']=json.dumps({'source_sha256':source_hashes,'image':IMAGE,'platform':'GNS3 2.2.55 / FRR / Linux; not Cisco IOS','sha256':{p:hashlib.sha256(s.encode()).hexdigest() for p,s in sorted(output.items())}},indent=2)+'\n'
     return output
 
@@ -195,9 +195,9 @@ def main():
     for rel,content in artifacts().items():
         path=OUT/rel
         if args.check:
-            if not path.exists() or path.read_text()!=content:stale.append(rel)
+            if not path.exists() or path.read_bytes()!=content.encode('utf-8'):stale.append(rel)
         else:
-            path.parent.mkdir(parents=True,exist_ok=True);path.write_text(content)
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(content.encode('utf-8'))
     if stale:parser.exit(1,'Stale GNS3 artifacts: '+', '.join(stale)+'\n')
     print('OK: GNS3 project, 9 FRR/Linux routers, 5 VLAN switches, 38 endpoints, compiled ACLs/DHCP and source manifest')
 

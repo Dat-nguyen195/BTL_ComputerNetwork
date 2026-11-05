@@ -34,9 +34,25 @@ Có thể kết nối GNS3 GUI2.2.55 tới controller localhost3080 để xem to
 3. Start all nodes, chờ OSPF/DHCP/health probe; kiểm Web và Main–Aux trước demo. Không dùng biểu tượng xanh của node thay kiểm kết nối.
 4. Fileproject đã được chép lại từ source, mở bằng GNS3 và chạy lại toàn bộ smoke; bằng chứng tại `test_results/runtime/persistence/`. Host/package khác vẫn cần chạy lại test, không mặc định PASS theo máy tạo.
 
+## Bật lại sau khi tắt máy hoặc dừng controller
+
+Bản chốt05/11 sửa PID/socket Docker cũ trong controller và tự mở project đang closed. [Hai lần boot và346 kiểm trực tiếp](../../test_results/runtime/controller-restart/README.md) xác nhận52 node hoạt động; không cần xóa volume hay bootstrap lại project đã có.
+
+Trên Linux có controller đã tạo:
+
+```bash
+docker start btl2-gns3-controller
+curl --retry 30 --retry-connrefused --retry-delay 1 --fail http://127.0.0.1:3080/v2/version
+python3 scripts/gns3_lab.py start
+```
+
+`start` đợi DHCP/OSPF/Web hoạt động rồi mới báo Ready. Controller API vẫn chỉ bind localhost3080. Với workspace được giải nén trên máy mới, dùng bootstrap ở phần đầu hoặc build image trên GNS3 compute; không giả định máy nhận đã có image.
+
 ## Nguồn, cập nhật và giới hạn
 
 `build_gns3.py` lấy9 cấu hình IOS hợp nhất, CSV cáp/endpoint/port, ACL và18 pool; chuyển policy sang iptables/FRR và tạo native project/config JSON. Các cú pháp ACL ngoài parser hiện có làm build thất bại. `runtime-manifest.json` lưu hash source và sản phẩm; [live provenance](../../test_results/runtime/persistence/live-provenance.json) xác nhận file trong52 container khớp source.
+
+Ngày03/11 sửa công cụ sinh file cho Windows: đường dẫn manifest dùng `/`, UTF-8/LF cố định. [Manifest tại lần chạy đã lưu](../../test_results/runtime/persistence/runtime-manifest-tested.json) giữ nguyên; sản phẩm native/config/runtime không đổi byte. Kiểm offline xác nhận điều đó, không thay một lần chạy mạng mới.
 
 Khi sửa nguồn: chạy `build_lab.py`, `build_campus.py`, `build_gns3.py`, rebuild/load image, tái tạo lab của riêng dự án rồi test lại. Chỉ sửa image tag không cập nhật container đang tồn tại. Không đưa private key hoặc thông tin người bệnh vào image/evidence.
 

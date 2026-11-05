@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check project Markdown without third-party dependencies."""
 from pathlib import Path
+import os
 import re
 import sys
 from urllib.parse import unquote, urlsplit
@@ -9,7 +10,13 @@ from urllib.parse import unquote, urlsplit
 def main():
     root = Path(__file__).resolve().parents[1]
     errors = []
-    files = sorted(p for p in root.rglob('*.md') if '.git' not in p.parts)
+    # Prune caches and temporary clones; also works from the ZIP without Git.
+    excluded = {'.git', 'tmp', 'output', '.venv', 'node_modules', '__pycache__', '.pytest_cache'}
+    files = []
+    for directory, subdirs, names in os.walk(root):
+        subdirs[:] = [name for name in subdirs if name not in excluded]
+        files.extend(Path(directory) / name for name in names if name.endswith('.md'))
+    files.sort()
     for path in files:
         relative = path.relative_to(root)
         try:
@@ -49,9 +56,18 @@ def main():
             errors.append(f'{relative}: unclosed fenced code block')
     checklist = root / 'tasks-assignment.md'
     if checklist.exists():
-        ids = re.findall(r'^- \[[ xX]\] \*\*(W\d+-TV\d+-\d+)\*\*', checklist.read_text(), re.M)
+        ids = re.findall(r'^- \[[ xX]\] \*\*(W\d+-TV\d+-\d+)\*\*', checklist.read_text(encoding='utf-8'), re.M)
         if len(ids) != len(set(ids)):
             errors.append('tasks-assignment.md: duplicate task IDs')
+        expected = {f'W{week}-TV{member}-{task:02d}'
+                    for week in range(1, 5) for member in range(1, 6) for task in range(1, 6)}
+        if set(ids) != expected:
+            errors.append('tasks-assignment.md: expected all 100 assigned task IDs')
+        status = root / 'docs/00-management/completion-status.md'
+        if status.exists():
+            status_ids = re.findall(r'^\| (W\d+-TV\d+-\d+) \|', status.read_text(encoding='utf-8'), re.M)
+            if len(status_ids) != len(set(status_ids)) or set(status_ids) != expected:
+                errors.append('completion-status.md: task rows must match the 100 assigned tasks')
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1

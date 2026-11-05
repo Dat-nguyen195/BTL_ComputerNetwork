@@ -56,6 +56,9 @@ def create():
 
 
 def start():
+    # A restarted controller discovers saved projects in the closed state.
+    if api(f'/projects/{PID}')['status'] != 'opened':
+        api(f'/projects/{PID}/open', 'POST')
     api(f'/projects/{PID}/nodes/start','POST')
     print('GNS3 nodes started; waiting for services/OSPF/DHCP',flush=True)
     time.sleep(8)

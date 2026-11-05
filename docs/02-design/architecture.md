@@ -1,5 +1,7 @@
 # Kiến trúc 3 site và thiết kế WAN/routing
 
+**Trạng thái hiện tại:** baseline GNS3/Packet Tracer đã có evidence riêng; phần dưới giữ thiết kế IOS ban đầu. [MPLS L3VPN bổ sung](../../simulation/mpls/README.md) đã chạy28+28 trên Linux namespaces/QEMU, có provider OSPF/LDP và MP-BGP/VRF; không áp kết quả này cho baseline IOS hoặc SD-WAN.
+
 **Chủ trì:** TV1; TV2 đọc chéo LAN, TV3 đọc chéo security, TV4 tích hợp. **Cập nhật:** 02/11/2026. **Trạng thái:** THIẾT KẾ/CẤU HÌNH THAM CHIẾU ĐÃ GHÉP SECURITY / CHƯA NGHIỆM THU MÔ PHỎNG.
 
 ## 1. Kiến trúc và phạm vi

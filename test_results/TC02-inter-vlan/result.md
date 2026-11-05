@@ -1,6 +1,6 @@
 # TC02 - Giữa VLAN
 
-**PASS trên GNS3 Linux/FRR; Packet Tracer/IOS chưa chạy.** Run `after-reopen-runtime`, UTC 2026-11-02T14:04:06.477140+00:00. Native project52 node đã được mở lại từ source. [Toàn bộ command output, source/image/hash](../runtime/after-reopen-runtime/results.json), [bối cảnh/giới hạn](../runtime/README.md), [runbook Cisco tham chiếu](../../simulation/test-runbook.md).
+**PASS trên GNS3 Linux/FRR.** Hồ sơ này giữ bằng chứng GNS3; [kết quả Packet Tracer riêng](../packet-tracer/README.md) đã có và không thay thế log của lần chạy này. Run `after-reopen-runtime`, UTC 2026-11-02T14:04:06.477140+00:00. Native project52 node đã được mở lại từ source. [Toàn bộ command output, source/image/hash](../runtime/after-reopen-runtime/results.json), [bối cảnh/giới hạn](../runtime/README.md), [runbook Cisco tham chiếu](../../simulation/test-runbook.md).
 
 | Index trong cases | Node | Lệnh | Expected | Returncode actual | Kết luận |
 | --- | --- | --- | --- | --- | --- |

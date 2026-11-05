@@ -1,0 +1,53 @@
+node_a,port_a,node_b,port_b,medium,vlan_or_network
+Main-GW,Serial0/0/0,DBP-GW,Serial0/0/0,Serial DCE at Main-GW,10.255.0.0/30
+Main-GW,Serial0/0/1,BHTQ-GW,Serial0/0/0,Serial DCE at Main-GW,10.255.0.4/30
+Main-Core,GigabitEthernet0/1,Main-GW,GigabitEthernet0/0,Copper; choose Auto if needed,10.255.0.8/30
+Main-Core,GigabitEthernet0/2,Main-FW,GigabitEthernet0/0,Copper; choose Auto if needed,10.255.0.12/30
+Main-FW,GigabitEthernet0/1,Main-Edge,GigabitEthernet0/0,Copper; choose Auto if needed,10.255.0.16/30
+Main-Edge,GigabitEthernet0/1,ISP1,GigabitEthernet0/0,Copper; choose Auto if needed,203.0.113.0/30
+Main-Edge,GigabitEthernet0/2,ISP2,GigabitEthernet0/0,Copper; choose Auto if needed,198.51.100.0/30
+ISP1,GigabitEthernet0/1,INET-Core,GigabitEthernet0/0,Copper; choose Auto if needed,192.0.2.128/30
+ISP2,GigabitEthernet0/1,INET-Core,GigabitEthernet0/1,Copper; choose Auto if needed,192.0.2.132/30
+Main-Core,GigabitEthernet0/0,Main-Access,GigabitEthernet0/1,Copper; choose Auto if needed,802.1Q-trunk-exclude-VLAN80
+DBP-GW,GigabitEthernet0/0,DBP-Access,GigabitEthernet0/1,Copper; choose Auto if needed,802.1Q-trunk
+BHTQ-GW,GigabitEthernet0/0,BHTQ-Access,GigabitEthernet0/1,Copper; choose Auto if needed,802.1Q-trunk
+Main-FW,GigabitEthernet0/2,DMZ-Access,GigabitEthernet0/1,Copper; choose Auto if needed,10.10.80.0/27
+INET-Core,GigabitEthernet0/2,Web-Access,GigabitEthernet0/1,Copper; choose Auto if needed,192.0.2.64/26
+Main-Access,FastEthernet0/1,Main-Infra,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/2,Main-HIS,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/3,Main-PACS,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/4,Main-LIS,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/5,Main-CRM,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/6,Main-DB,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/7,Main-Backup,FastEthernet0,Copper straight-through,70
+Main-Access,FastEthernet0/8,Main-Monitor,FastEthernet0,Copper straight-through,70
+DMZ-Access,FastEthernet0/1,Main-WebDMZ,FastEthernet0,Copper straight-through,80
+DMZ-Access,FastEthernet0/2,Main-ProxyDMZ,FastEthernet0,Copper straight-through,80
+DBP-Access,FastEthernet0/1,DBP-Infra,FastEthernet0,Copper straight-through,70
+DBP-Access,FastEthernet0/2,DBP-Local,FastEthernet0,Copper straight-through,70
+BHTQ-Access,FastEthernet0/1,BHTQ-Infra,FastEthernet0,Copper straight-through,70
+BHTQ-Access,FastEthernet0/2,BHTQ-Local,FastEthernet0,Copper straight-through,70
+Web-Access,FastEthernet0/1,Web-Lab,FastEthernet0,Copper straight-through,0
+Main-Access,FastEthernet0/9,Main-PC10-A,FastEthernet0,Copper straight-through,10
+Main-Access,FastEthernet0/10,Main-PC10-B,FastEthernet0,Copper straight-through,10
+Main-Access,FastEthernet0/11,Main-PC20,FastEthernet0,Copper straight-through,20
+Main-Access,FastEthernet0/12,Main-PC30,FastEthernet0,Copper straight-through,30
+Main-Access,FastEthernet0/13,Main-PC40,FastEthernet0,Copper straight-through,40
+Main-Access,FastEthernet0/14,Main-Guest-AP,Port 0,Copper straight-through,100
+Main-Access,FastEthernet0/15,Main-Staff-AP,Port 0,Copper straight-through,120
+DBP-Access,FastEthernet0/3,DBP-PC10,FastEthernet0,Copper straight-through,10
+DBP-Access,FastEthernet0/4,DBP-Guest-AP,Port 0,Copper straight-through,100
+BHTQ-Access,FastEthernet0/3,BHTQ-PC10,FastEthernet0,Copper straight-through,10
+BHTQ-Access,FastEthernet0/4,BHTQ-Guest-AP,Port 0,Copper straight-through,100
+Main-Access,FastEthernet0/16,Main-Admin,FastEthernet0,Copper straight-through,90
+Main-Access,FastEthernet0/17,Main-NVR,FastEthernet0,Copper straight-through,110
+DBP-Access,FastEthernet0/5,DBP-NVR,FastEthernet0,Copper straight-through,110
+BHTQ-Access,FastEthernet0/5,BHTQ-NVR,FastEthernet0,Copper straight-through,110
+Main-Access,FastEthernet0/18,Main-PC50,FastEthernet0,Copper straight-through,50
+Main-Access,FastEthernet0/19,Main-PC60,FastEthernet0,Copper straight-through,60
+DBP-Access,FastEthernet0/6,DBP-PC20,FastEthernet0,Copper straight-through,20
+DBP-Access,FastEthernet0/7,DBP-PC30,FastEthernet0,Copper straight-through,30
+DBP-Access,FastEthernet0/8,DBP-Staff-AP,Port 0,Copper straight-through,120
+BHTQ-Access,FastEthernet0/6,BHTQ-PC20,FastEthernet0,Copper straight-through,20
+BHTQ-Access,FastEthernet0/7,BHTQ-PC30,FastEthernet0,Copper straight-through,30
+BHTQ-Access,FastEthernet0/8,BHTQ-Staff-AP,Port 0,Copper straight-through,120

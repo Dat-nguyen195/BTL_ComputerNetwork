@@ -49,7 +49,36 @@ def main():
         assert {'TC01','TC02','TC03','TC04','TC05','TC06','OSPF','DHCP-DNS','IDS-IPS'}<=groups
         assert run['project_id']==project['project_id']
     assert {'ISP-FAILOVER','ISP-BOTH-DOWN','ISP-RECOVERY','ISP-PBR','ISP-CONVERGENCE'}<={c['group'] for c in validated['cases']}
-    for name,expected in latest['source_sha256'].items():assert digest(ROOT/name)==expected,name
+    # Keep the original tested manifest intact when only the build tool changes.
+    # Runtime products and executable sources must still match the tested bytes.
+    tested_path=ROOT/'test_results/runtime/persistence/runtime-manifest-tested.json'
+    tested=json.loads(tested_path.read_text(encoding='utf-8'))
+    assert digest(tested_path)==latest['source_sha256']['simulation/gns3/runtime-manifest.json']
+    assert tested['sha256']==manifest['sha256'],'Runtime products differ from the tested build; rerun the lab'
+    changed_sources={name for name in set(tested['source_sha256'])|set(manifest['source_sha256'])
+                     if tested['source_sha256'].get(name)!=manifest['source_sha256'].get(name)}
+    assert changed_sources <= {'scripts/build_gns3.py', 'simulation/gns3/controller/start.sh'},changed_sources
+    if 'simulation/gns3/controller/start.sh' in changed_sources:
+        # A controller lifecycle fix needs fresh runtime evidence; it cannot be
+        # justified by the historical manifest whose node products are unchanged.
+        proof=json.loads((ROOT/'test_results/runtime/controller-restart/restart.json').read_text())
+        assert proof['status']=='PASS' and len(proof['cycles'])==2
+        for name,expected in proof['source_sha256'].items():assert digest(ROOT/name)==expected,name
+        for name,expected in proof['sha256'].items():assert digest(ROOT/name)==expected,name
+        assert proof['live_controller_sha256']==digest(BASE/'controller/start.sh')
+        for cycle in proof['cycles']:
+            assert len(cycle['nodes'])==52 and all(s=='started' for _,s in cycle['nodes'])
+            assert cycle['docker_info_returncode']==0
+        for index,name in enumerate(proof['runs']):
+            fresh=json.loads((ROOT/name).read_text())
+            assert fresh['project_id']==project['project_id'] and fresh['platform']['version']=='2.2.55'
+            assert all(c['status']=='PASS' for c in fresh['cases'])
+            assert len(fresh['cases'])==(209 if index==0 else 137)
+            for source,expected in fresh['source_sha256'].items():assert digest(ROOT/source)==expected,source
+        print('OK current controller: 2 successful boots, 209 live checks and 137 checks after controller restart')
+    for name,expected in latest['source_sha256'].items():
+        if name=='simulation/gns3/runtime-manifest.json':continue
+        assert digest(ROOT/name)==expected,name
     restart=json.loads((ROOT/'test_results/runtime/firewall-restart/restart.json').read_text())
     assert restart['status']=='PASS' and restart['source_sha256']==digest(BASE/'runtime/node.py')
     assert len(restart['cycles'])==2 and all(c['status']=='PASS' and c['live_suricata_process_check']==0 for c in restart['cycles'])

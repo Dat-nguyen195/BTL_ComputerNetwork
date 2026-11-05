@@ -1,0 +1,36 @@
+{
+  "scope": "Saved native application state and data stores; collector does not run tests",
+  "collected_at_utc": "2026-11-04T10:56:10.518589+00:00",
+  "clock_note": "Collection time is host UTC. Raw record time is the application JavaScript clock; preserved without correction.",
+  "version": "9.0.1.0858",
+  "native_sha256": "0b53f52a21a1c69f2cfe8cbdac05764eaf8c4999e2c5d7354b0973b70ca98f64",
+  "network_devices": 58,
+  "power_devices": 1,
+  "links": 53,
+  "dhcp_pools": 21,
+  "allocatable_dhcp_pools": 18,
+  "zero_capacity_dhcp_pools": 3,
+  "inactive_dhcp_pools": 12,
+  "dhcp_leases": 19,
+  "embedded_script_sha256": {
+    "hospital-controller.js": "506ef0ef1c900513f87b755d1da938bd8a513b1a9dc4c00dd49535e56efb57a4"
+  },
+  "sha256": {
+    "lab.pkt": "0b53f52a21a1c69f2cfe8cbdac05764eaf8c4999e2c5d7354b0973b70ca98f64",
+    "addresses.json": "8c80a787ae9a49905750316e7618b171438d7068d28a0f31730407d64a93dc00",
+    "config-check.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "hardware.json": "b50ccb26c6f3af8d00650ca4b75317094087b8946d3461191bef3083c8e27c2a",
+    "hospital-results.json": "c0fd25bf9ef6d1d76007a143cc856a8d56bd7feed82d109f32ba4a5c5e02a86a",
+    "hospital-spec.json": "81dd18deb5ac78b8cfcb465e9a6a7edfdda73cc1a93e418271211bcfa7fefc88",
+    "normalization.json": "f75c21a5e0b8df29e26ff7412a0d44ed54fad2f90447616ea4b8b2b011fa40c2",
+    "pretest-snapshots.json": "5ca993f7fa996a6ade35938a55aa38f2e0e798e5628f293d19136698682c3982",
+    "reopen-event-probe.json": "04b6fc195e6fa7414ed5ee19424570c933c42985a080e92ee253a546aa80df92",
+    "services-check.json": "9bd6437739fba6fe2e7edc73236dad2394beee6f2b4aeeed74e254d959409fb6",
+    "warmup-results.json": "b02d89168bb92c12cc03b4367a22c6d26b3262532df91a2ebdbf7811b2a8fb8a",
+    "wireless-associations.json": "140b4e66d514410991bd72c2772d416fc66aa3704ca0383f9a6d3128346ef9f5",
+    "inventory.json": "569646c050fd44ee2adb588b4683345db3372897041d9a975f8e9aefe2a0c04e",
+    "dhcp-pools-leases.json": "21faaa99ffdf1f0adae7f406135f9ceb309bff4574ab257eff164f5e80adf75e",
+    "config-readback.json": "ef565d03272f16989b99539351601a5f3bb5844b125ef3974901f21eb7277603",
+    "wireless-readback.json": "ddd8800b59888a0ce139a413a3b8c6962d593fa778ee2d990cf8033f22ed5903"
+  }
+}

@@ -59,7 +59,7 @@ def main():
                 if cell.get(key): assert cell.get(key) in ids
         ET.parse(ROOT / f'docs/02-design/diagrams/exports/{name}.svg')
     print(f'OK static TV2: 3 campus budgets/storage,72 uplinks,2 diagrams,3 adapters, {len(cases)} preserved Main ACL flows; original PKT hash verified')
-    print('Native file is a partial Main module. Packet Tracer runtime, Wi-Fi/RF and persistence NOT RUN.')
+    print('Original native file is a partial Main module. This static audit does not run it; integrated Packet Tracer evidence is validated separately.')
 
 
 if __name__ == '__main__':

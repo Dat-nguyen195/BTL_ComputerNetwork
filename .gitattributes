@@ -1,0 +1,7 @@
+# Hashes and generated artifacts must match on Windows and Linux.
+* text=auto eol=lf
+*.pkt -text
+*.pdf -text
+*.zip -text
+*.png -text
+*.pcap -text

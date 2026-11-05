@@ -7,11 +7,15 @@ permissions:
   contents: read
 jobs:
   check-docs:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Check generated configs, docs, capacity, WAN, security and GNS3 evidence (offline)
-        run: python3 scripts/verify.py
+        run: python -X utf8 scripts/verify.py
       - name: Check submission ZIP and checksums
-        run: python3 scripts/package_submission.py --check
+        run: python -X utf8 scripts/package_submission.py --check

@@ -1,0 +1,30 @@
+{
+  "scope": "Saved native application state and data stores; collector does not run tests",
+  "collected_at_utc": "2026-11-04T10:23:50.964879+00:00",
+  "clock_note": "Collection time is host UTC. Raw record time is the application JavaScript clock; preserved without correction.",
+  "version": "9.0.1.0858",
+  "native_sha256": "06dfa9b3fcfbb21e06a85fddf73918df944f9d9ed0c5eb0ab964d4cea7c66040",
+  "network_devices": 58,
+  "power_devices": 1,
+  "links": 53,
+  "dhcp_pools": 21,
+  "inactive_dhcp_pools": 12,
+  "dhcp_leases": 19,
+  "embedded_script_sha256": {
+    "hospital-controller.js": "a289c12b2920272fc085c9169741ac273413bdc12bce09741315a5530ad0eb0f"
+  },
+  "sha256": {
+    "lab.pkt": "06dfa9b3fcfbb21e06a85fddf73918df944f9d9ed0c5eb0ab964d4cea7c66040",
+    "addresses.json": "8403ae30cdea0d731ea245900f5978cb5e7667153da2975f3e9132c279a95461",
+    "config-check.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "hardware.json": "b50ccb26c6f3af8d00650ca4b75317094087b8946d3461191bef3083c8e27c2a",
+    "hospital-results.json": "0b608e948f7a570d0d8d382ea58ae1fe76fd7c391adcfca5943ea4c25b2046dc",
+    "hospital-spec.json": "81dd18deb5ac78b8cfcb465e9a6a7edfdda73cc1a93e418271211bcfa7fefc88",
+    "services-check.json": "9bd6437739fba6fe2e7edc73236dad2394beee6f2b4aeeed74e254d959409fb6",
+    "wireless-associations.json": "3cc5c4b953df013e27d889993c37ee4e8c53e41b979cd0e55078394c371e01ec",
+    "inventory.json": "569646c050fd44ee2adb588b4683345db3372897041d9a975f8e9aefe2a0c04e",
+    "dhcp-pools-leases.json": "c29470a6bb2e479f0df76d58a1074dfc0b7e5199ea8306e925b5a55e42af4ad3",
+    "config-readback.json": "ddb1b78425d85ce06620104388955620f9d39055901bf1d602af36f190f98a39",
+    "wireless-readback.json": "ddd8800b59888a0ce139a413a3b8c6962d593fa778ee2d990cf8033f22ed5903"
+  }
+}

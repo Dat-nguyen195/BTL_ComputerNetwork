@@ -1,0 +1,104 @@
+{
+  "platform": "9.0.1.0858",
+  "model": "2911",
+  "command_set": "2900_universal_base_15.1",
+  "scope": "actual parser responses from IPC in Packet Tracer",
+  "cases": [
+    {
+      "command": "show version",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2)\nTechnical Support: http://www.cisco.com/techsupport\nCopyright (c) 1986-2012 by Cisco Systems, Inc.\nCompiled Thurs 5-Jan-12 15:41 by pt_team\n\nROM: System Bootstrap, Version 15.1(4)M4, RELEASE SOFTWARE (fc1)\ncisco2911 uptime is 2 minutes, 52 seconds\nSystem returned to ROM by power-on\nSystem image file is \"flash0:c2900-universalk9-mz.SPA.151-1.M4.bin\"\nLast reload type: Normal Reload\n\nThis product contains cryptographic features and is subject to United\nStates and local country laws governing import, export, transfer and\nuse. Delivery of Cisco cryptographic products does not imply\nthird-party authority to import, export, distribute or use encryption.\nImporters, exporters, distributors and users are responsible for\ncompliance with U.S. and local country laws. By using this product you\nagree to comply with applicable laws and regulations. If you are unable\nto comply with U.S. and local laws, return this product immediately.\n\nA summary of U.S. laws governing Cisco cryptographic products may be found at:\nhttp://www.cisco.com/wwl/export/crypto/tool/stqrg.html\n\nIf you require further assistance please contact us by sending email to\nexport@cisco.com.\nCisco CISCO2911/K9 (revision 1.0) with 491520K/32768K bytes of memory.\nProcessor board ID FTX152400KS\n3 Gigabit Ethernet interfaces\nDRAM configuration is 64 bits wide with parity disabled.\n255K bytes of non-volatile configuration memory.\n249856K bytes of ATA System CompactFlash 0 (Read/Write)\n\nLicense Info:\n\nLicense UDI:\n\n-------------------------------------------------\nDevice#   PID                   SN\n-------------------------------------------------\n*0        CISCO2911/K9          FTX1524H595-\n\n\nTechnology Package License Information for Module:'c2900'\n\n----------------------------------------------------------------\nTechnology    Technology-package          Technology-package\n              Current       Type          Next reboot\n-----------------------------------------------------------------\nipbase        ipbasek9      Permanent     ipbasek9\nsecurity      None          None          None\nuc            None          None          None\ndata          None          None          None\n\nConfiguration register is 0x2102\n\n\n\n"
+      }
+    },
+    {
+      "command": "show ip interface brief",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Interface              IP-Address      OK? Method Status                Protocol \nGigabitEthernet0/0     unassigned      YES unset  administratively down down \nGigabitEthernet0/1     unassigned      YES unset  administratively down down \nGigabitEthernet0/2     unassigned      YES unset  administratively down down \nVlan1                  unassigned      YES unset  administratively down down\n\n"
+      }
+    },
+    {
+      "command": "ip sla ?",
+      "mode": "global",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "track ?",
+      "mode": "global",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "route-map HOSPITAL-PROBE permit 10",
+      "mode": "global",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "match interface GigabitEthernet0/1",
+      "mode": "",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "set ip next-hop verify-availability 203.0.113.1 1 track 1",
+      "mode": "",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "end",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "ip nat inside source route-map ?",
+      "mode": "global",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "class-map type inspect match-all PROBE",
+      "mode": "global",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "end",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    }
+  ],
+  "provenance": {
+    "native_file": "test_results/packet-tracer/probe-2911.pkt",
+    "native_sha256": "13e3d319ac6a58b11f49fb86d6eb524dfa2d945b57052e06d01eb67728930334",
+    "data_store": "probe-results.json",
+    "extraction": "Unpacket 54cb6d6a9b46c6b4973356258cb8df6ae58b2ec7; decoded data store compared exactly",
+    "execution": "Current probe.js entered in native Debug console; embedded script in saved lab is older and stops safely when devices already exist",
+    "executed_script_sha256": "4cf4500a13f743df3f4a50cb11ebf15423ba7e60438eb2982b15c10eee6a38e7"
+  }
+}

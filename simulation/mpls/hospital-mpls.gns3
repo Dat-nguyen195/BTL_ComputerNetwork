@@ -1,0 +1,391 @@
+{
+  "name": "Hospital-MPLS-L3VPN",
+  "project_id": "de9869cb-b7eb-5763-81ab-2638d2942c0d",
+  "version": "2.2.55",
+  "type": "topology",
+  "revision": 1,
+  "auto_start": false,
+  "auto_close": false,
+  "auto_open": false,
+  "zoom": 80,
+  "scene_width": 1800,
+  "scene_height": 1200,
+  "topology": {
+    "nodes": [
+      {
+        "node_id": "c35607bb-82fe-5e57-bed5-9b0d8859a742",
+        "name": "P-Core",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": 0,
+        "y": -150,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 3,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name P-Core"
+        },
+        "label": {
+          "text": "P-Core",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "72785acd-2383-56d2-815f-544483d43e3c",
+        "name": "PE-Main",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": 0,
+        "y": 0,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 2,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PE-Main"
+        },
+        "label": {
+          "text": "PE-Main",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "2ae9b662-31a6-5fbb-92ec-40c0c642e9e4",
+        "name": "CE-Main",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": 0,
+        "y": 150,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 3,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name CE-Main"
+        },
+        "label": {
+          "text": "CE-Main",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "49035b68-6637-50b4-8af8-474483d553d7",
+        "name": "PC-Main",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/computer.svg",
+        "x": -120,
+        "y": 300,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 1,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PC-Main"
+        },
+        "label": {
+          "text": "PC-Main",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "ddb5f3a4-4e8d-5357-a530-bac60e64ee5d",
+        "name": "PE-DBP",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": -500,
+        "y": 0,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 2,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PE-DBP"
+        },
+        "label": {
+          "text": "PE-DBP",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "f287163b-6b50-5968-88cb-d89986a5bc77",
+        "name": "CE-DBP",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": -500,
+        "y": 150,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 2,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name CE-DBP"
+        },
+        "label": {
+          "text": "CE-DBP",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "fe15761c-1753-5a84-840e-fbe926aea369",
+        "name": "PC-DBP",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/computer.svg",
+        "x": -500,
+        "y": 300,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 1,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PC-DBP"
+        },
+        "label": {
+          "text": "PC-DBP",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "07cc6407-4d2f-5ace-9147-369ec07cc046",
+        "name": "PE-BHTQ",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": 500,
+        "y": 0,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 2,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PE-BHTQ"
+        },
+        "label": {
+          "text": "PE-BHTQ",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "c7681891-98a0-54a3-aae8-4465b2aad8b6",
+        "name": "CE-BHTQ",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/router.svg",
+        "x": 500,
+        "y": 150,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 2,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name CE-BHTQ"
+        },
+        "label": {
+          "text": "CE-BHTQ",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "e8630fdb-26be-5723-8e42-e1aeb810cefc",
+        "name": "PC-BHTQ",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/computer.svg",
+        "x": 500,
+        "y": 300,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 1,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name PC-BHTQ"
+        },
+        "label": {
+          "text": "PC-BHTQ",
+          "x": 0,
+          "y": -25
+        }
+      },
+      {
+        "node_id": "cf2d474a-b9a8-592a-a514-57afd6fa9fb4",
+        "name": "Web-Lab",
+        "node_type": "docker",
+        "compute_id": "local",
+        "console_type": "telnet",
+        "symbol": ":/symbols/computer.svg",
+        "x": 140,
+        "y": 300,
+        "properties": {
+          "image": "hospital-mpls:20261104",
+          "adapters": 1,
+          "start_command": "python3 /opt/mpls/mpls_runtime.py node --name Web-Lab"
+        },
+        "label": {
+          "text": "Web-Lab",
+          "x": 0,
+          "y": -25
+        }
+      }
+    ],
+    "links": [
+      {
+        "link_id": "01fc52b1-d6c8-5e21-9960-1b3e96316cf8",
+        "nodes": [
+          {
+            "node_id": "72785acd-2383-56d2-815f-544483d43e3c",
+            "adapter_number": 0,
+            "port_number": 0
+          },
+          {
+            "node_id": "c35607bb-82fe-5e57-bed5-9b0d8859a742",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "a5e22494-0c8a-554d-86be-bdc9e546bcca",
+        "nodes": [
+          {
+            "node_id": "72785acd-2383-56d2-815f-544483d43e3c",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "2ae9b662-31a6-5fbb-92ec-40c0c642e9e4",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "1f235a2b-2441-5f4b-9540-176b1d985fb7",
+        "nodes": [
+          {
+            "node_id": "2ae9b662-31a6-5fbb-92ec-40c0c642e9e4",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "49035b68-6637-50b4-8af8-474483d553d7",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "cc6899c5-580b-5cc4-a933-f89077052958",
+        "nodes": [
+          {
+            "node_id": "ddb5f3a4-4e8d-5357-a530-bac60e64ee5d",
+            "adapter_number": 0,
+            "port_number": 0
+          },
+          {
+            "node_id": "c35607bb-82fe-5e57-bed5-9b0d8859a742",
+            "adapter_number": 1,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "93df968e-cc01-5143-8e86-0b499b76cef9",
+        "nodes": [
+          {
+            "node_id": "ddb5f3a4-4e8d-5357-a530-bac60e64ee5d",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "f287163b-6b50-5968-88cb-d89986a5bc77",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "ae57d24d-7c87-5e7a-972e-6d7153b68518",
+        "nodes": [
+          {
+            "node_id": "f287163b-6b50-5968-88cb-d89986a5bc77",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "fe15761c-1753-5a84-840e-fbe926aea369",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "edc909e2-9b08-50dd-9c7d-3f0094073d14",
+        "nodes": [
+          {
+            "node_id": "07cc6407-4d2f-5ace-9147-369ec07cc046",
+            "adapter_number": 0,
+            "port_number": 0
+          },
+          {
+            "node_id": "c35607bb-82fe-5e57-bed5-9b0d8859a742",
+            "adapter_number": 2,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "19c2483e-542a-5f93-a312-8529deb64235",
+        "nodes": [
+          {
+            "node_id": "07cc6407-4d2f-5ace-9147-369ec07cc046",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "c7681891-98a0-54a3-aae8-4465b2aad8b6",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "e3acd911-de69-5512-b357-a2f0f36256bf",
+        "nodes": [
+          {
+            "node_id": "c7681891-98a0-54a3-aae8-4465b2aad8b6",
+            "adapter_number": 1,
+            "port_number": 0
+          },
+          {
+            "node_id": "e8630fdb-26be-5723-8e42-e1aeb810cefc",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      },
+      {
+        "link_id": "4fa0014b-df5f-509d-89e1-d09fe7ff8f82",
+        "nodes": [
+          {
+            "node_id": "2ae9b662-31a6-5fbb-92ec-40c0c642e9e4",
+            "adapter_number": 2,
+            "port_number": 0
+          },
+          {
+            "node_id": "cf2d474a-b9a8-592a-a514-57afd6fa9fb4",
+            "adapter_number": 0,
+            "port_number": 0
+          }
+        ]
+      }
+    ],
+    "drawings": [],
+    "computes": []
+  }
+}

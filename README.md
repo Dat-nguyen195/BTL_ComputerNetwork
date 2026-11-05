@@ -1,10 +1,27 @@
-# BTL 2 - Thiết kế và mô phỏng mạng bệnh viện 3 site
+# Thiết kế và mô phỏng mạng bệnh viện ba cơ sở
 
-Tài liệu quản lý và định hướng kỹ thuật cho hệ thống bệnh viện gồm **Main Site tại TP.HCM**, **Auxiliary Site DBP** và **Auxiliary Site BHTQ**. Đầu ra cuối cùng là **báo cáo chính thức PDF, nguồn báo cáo có thể chỉnh sửa và mô phỏng Packet Tracer hoặc GNS3**. Nhóm có **5 thành viên**, thực hiện **4 giai đoạn, mỗi giai đoạn đúng 1 tuần**, từ **Thứ Hai 26/10/2026**.
+**Bản chốt kỹ thuật ngày 05/11/2026.** Lớp L08, nhóm 2; BTL2 do Nguyễn Thành Đạt (2410709) và Phạm Tiến Đạt (2410723) thực hiện. [Thông tin nhóm](docs/00-management/team-members.md).
 
-**Trạng thái hoàn thiện 02/11/2026:** đã có [báo cáo PDF](docs/06-report/final/report.pdf), [native GNS3 ba cơ sở](simulation/gns3/hospital-3sites.gns3), [hướng dẫn chạy](simulation/gns3/README.md) và [bằng chứng runtime](test_results/runtime/README.md). Mô hình Linux/FRR có52 node/52 link,18 pool;209 kiểm tích hợp và137 sau mở lại đạt, gồm sáu nhóm demo, OSPF, DHCP/DNS, IDS/IPS rule mẫu và lỗi upstream hai ISP. [Review đối chiếu đặc tả](docs/00-management/project-review.md) ghi phạm vi/giới hạn. GPON có thiết kế hybrid; RF/quang/DSL PHY, VPN crypto, HA chassis, workload y tế và IOS chưa thử. [Gói bàn giao/checksum](submission/manifest.md) chuẩn bị cho nhóm duyệt và tự nộp BKeL. Các lịch/task và trạng thái chuẩn bị bên dưới được giữ làm lịch sử; đọc kết quả cuối trước khi kết luận.
+- **Gói nộp `submission/hospital-network-delivery.zip`**: báo cáo, nguồn LaTeX, mô hình, cấu hình và bằng chứng; [hướng dẫn chọn file](submission/README.md).
+- **[Báo cáo chính PDF](docs/06-report/final/report.pdf)**: bảy Step, IP/VLAN, BOM, sơ đồ vật lý Main/Aux, kết quả và kịch bản demo.
+- **[Nguồn LaTeX](docs/06-report/final/report-latex.zip)**: dùng XeLaTeX; [cách build và phân biệt các PDF](docs/06-report/latex/README.md).
+- **[Packet Tracer tổng](simulation/packet-tracer/hospital-3sites.pkt)**: đúng bản đã kiểm32+4,58 node,53 cáp và sáu Wi-Fi.
+- **[GNS3 tổng](simulation/gns3/hospital-3sites.gns3)**:52 node/52 link; [demo](simulation/gns3/demo-guide.md), [cách chạy](simulation/gns3/README.md).
 
-Báo cáo đã có [nguồn LaTeX đầy đủ](docs/06-report/latex/README.md) và [ZIP LaTeX](docs/06-report/final/report-latex.zip), biên dịch bằng XeLaTeX; bìa dùng logo Bách Khoa do người dùng cung cấp. Thông tin nhóm/giảng viên/lớp/MSSV có thể sửa trong `docs/06-report/latex/metadata.tex`.
+Đã chạy lại trực tiếp GNS3: **209/209 PASS**, sau restart controller **137/137 PASS**; [bằng chứng mới và hash](test_results/runtime/controller-restart/README.md). Đã sửa lỗi PID/socket Docker cũ khi khởi động lại controller và lỗi start project đang closed. MPLS riêng có28+28 quan sát Linux namespaces/QEMU; [phạm vi](simulation/mpls/README.md). Packet Tracer dùng ISP thủ công; GNS3 chứng minh PBR/failover tự động và IDS/IPS.
+
+```bash
+python3 scripts/verify.py
+python3 scripts/package_submission.py --check
+```
+
+Kiểm offline xác nhận cấu hình và bằng chứng đã lưu; không tự chạy mạng. Muốn thử trực tiếp dùng runbook GNS3. Bản PDF trong `latex/build/` hoặc `output/pdf/` chỉ là bản build local. `packet-tracer-validation.pdf` là phụ lục kiểm thử ngắn hai trang, khác nội dung báo cáo chính. Nguồn nội dung ở `docs/06-report/source/`, LaTeX sinh ở `docs/06-report/latex/`.
+
+[Đối chiếu đặc tả và trạng thái chốt](docs/00-management/project-review.md), [manifest](submission/manifest.md) ghi giới hạn và sản phẩm. VPN crypto, RF/quang/DSL PHY, HA chassis và workload y tế thực chưa được đo. Gói được chuẩn bị để nhóm tự nộp BKeL; chưa có biên nhận nộp.
+
+Các mục dưới giữ tài liệu kế hoạch và lịch sử bàn giao của TV1–TV5; trạng thái bản chốt nằm ở các liên kết phía trên.
+
+Đã dọn bộ công cụ tải tạm, các bản giải nén/biên dịch, cache và scaffold Packet Tracer thử nghiệm. `tmp/gns3-state/` là dữ liệu của lab GNS3 đang chạy, cần giữ để tiếp tục demo. Chỉ lấy báo cáo trong `docs/06-report/final/` và mô hình chính trong các thư mục `simulation/` tương ứng; bản có dây lịch sử nằm trong hồ sơ kiểm thử.
 
 ## Bàn giao TV1, TV3, TV4 ngày 02/11/2026
 
@@ -46,7 +63,7 @@ python3 scripts/verify.py
 
 Tên file [A] có chữ “Company”, nhưng nội dung chính là **bệnh viện**; HIS, RIS/PACS, LIS và yêu cầu an toàn bệnh viện là căn cứ thiết kế. [R] là bài thực hành kỹ thuật, không thay quy mô 3 site của [A]. Không coi thiết bị, tên phòng ban hoặc số lượng kết nối trong hình minh họa trang 5 [A] là bảng thiết bị bắt buộc.
 
-**Quy ước ưu tiên:** Quy mô và yêu cầu kỹ thuật theo [A]; tham khảo cách kiểm chứng theo [R]; nhân sự, lịch và việc không làm slide theo yêu cầu mới của nhóm. [A] ghi nhóm 2-3 người và hạn tương đối 4 tuần; kế hoạch này dùng **5 người**, 4 tuần triển khai và các mốc năm 2026 bên dưới. Ngày BKeL **11/12/2026 do người giao việc cung cấp**, không được ghi trực tiếp trong PDF. Báo cáo cần sẵn sàng in nếu môn học yêu cầu bản cứng; không lập đầu việc làm slide.
+**Quy ước ưu tiên:** Quy mô và yêu cầu kỹ thuật theo [A]; tham khảo cách kiểm chứng theo [R]; nhân sự, lịch và việc không làm slide theo yêu cầu mới của nhóm. [A] ghi nhóm 2-3 người và hạn tương đối 4 tuần; nhóm học phần có **5 người**, đã phân BTL1 cho ba người và BTL2 cho hai người; kế hoạch vai trò ban đầu giữ để truy vết, 4 tuần triển khai và các mốc năm 2026 bên dưới. Ngày BKeL **11/12/2026 do người giao việc cung cấp**, không được ghi trực tiếp trong PDF. Báo cáo cần sẵn sàng in nếu môn học yêu cầu bản cứng; không lập đầu việc làm slide.
 
 ## 2. Lịch trình và trách nhiệm
 
@@ -315,9 +332,9 @@ Kiểm tra bổ sung: DHCP từng VLAN; default route và NAT cả hai ISP; nhi�
 
 ## 11. Hướng dẫn mở và kiểm tra mô phỏng
 
-**Nền tảng chính đã chạy: GNS3 2.2.55 + Linux/FRR.** Xem [project/hướng dẫn](simulation/gns3/README.md); native template đã được mở lại và kiểm137 lệnh. Hướng dẫn Packet Tracer bên dưới là phương án tham chiếu nếu chuyển nền tảng, không phải sản phẩm đã thử.
+**Nền tảng chính đã chạy: GNS3 2.2.55 + Linux/FRR.** Xem [project/hướng dẫn](simulation/gns3/README.md); native template đã được mở lại và kiểm137 lệnh. Packet Tracer tổng đã kiểm riêng 32 quan sát sau reopen và bốn HTTP ISP thủ công; xem runbook của nền tảng.
 
-### Packet Tracer - phương án tham chiếu chưa chạy
+### Packet Tracer - quy trình tham chiếu và bản native đã kiểm
 
 1. Lấy bản release/commit do TV1 duyệt và phần mềm đúng phiên bản ghi trong `simulation/README.md`.
 2. Mở **File → Open → `simulation/packet-tracer/hospital-3sites.pkt`**. Lưu bản làm việc riêng trước khi sửa, chờ cổng/STP/OSPF và DHCP ổn định.

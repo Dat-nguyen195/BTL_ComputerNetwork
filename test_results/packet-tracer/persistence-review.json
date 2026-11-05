@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "Technical validation of recorded native reopen and subsequent tests; no team approval",
+  "recorded_at_utc": "2026-11-04T11:06:23.954454+00:00",
+  "opened_project": "simulation/packet-tracer/hospital-3sites.pkt",
+  "pre_reopen_sha256": "4a84d5ca8d7e2f0f53bba26019bf55a53b8d540d72ef8a2101bac547b15e8570",
+  "final_native_sha256": "45ff85657fc08186f4863d541ac7b12de1bd09a72fbf305c445c01f3cf839289",
+  "configurations_compared": 14,
+  "only_config_changes_after_reopen": [
+    {
+      "node": "Main-Edge",
+      "config": "RUNNINGCONFIG",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -41,7 +41,7 @@\n",
+        " !",
+        " !",
+        " interface GigabitEthernet0/0",
+        "- description ISP2-primary",
+        "+ description Inside-to-Main-FW-Fa0/1",
+        "  ip address 10.255.0.18 255.255.255.252",
+        "  ip nat inside",
+        "  duplex auto"
+      ]
+    },
+    {
+      "node": "Main-Edge",
+      "config": "STARTUPCONFIG",
+      "diff": [
+        "--- \n",
+        "+++ \n",
+        "@@ -41,7 +41,7 @@\n",
+        " !",
+        " !",
+        " interface GigabitEthernet0/0",
+        "- description ISP2-primary",
+        "+ description Inside-to-Main-FW-Fa0/1",
+        "  ip address 10.255.0.18 255.255.255.252",
+        "  ip nat inside",
+        "  duplex auto"
+      ]
+    }
+  ],
+  "reopen_event_probe": "4/4 replies; native callbacks work despite EVENT_MANAGER console warnings",
+  "warmup_records": 8,
+  "suite_records": 32,
+  "manual_isp_records": 4,
+  "embedded_sources_sha256": {
+    "controller.js": "5f4dfec0fd742ebdd6334e37e3f52bbba33d3a728c52a699bcc2a7bbfb1eb49b",
+    "wireless.js": "74ba39dc2b5f917a8df4ac79d5a714dbbc0e64191fa8d729a0eae1af2fe689f6",
+    "repair-profile.js": "315bf7de97bc770c79a239355d4bc2519127f0d2639b996a757b9326e518f8f1",
+    "normalize-runtime.js": "7842b18a36c4bf57bcc66bb5d20b855c973eafa112e07582bd05bb9e00f46642"
+  },
+  "manual_test_source_sha256": "3813a259d2ce4c55ed35be778237ff73dd9bcc38ea35887cd9427ad9293ef787",
+  "manual_execution": "Source loaded through native Debug console; helper is not part of embedded controller",
+  "verification_log_sha256": "259997fb9ec2374bc61f4847634dbeab884c9791abe4195e622ba1bcb661e406"
+}

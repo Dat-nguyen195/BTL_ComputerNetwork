@@ -1,0 +1,3 @@
+OK recorded manual ISP selection: 3 HTTP via ISP1/PAT, 1 HTTP after ISP2 restoration; Main-Edge configuration restored exactly
+OK recorded Packet Tracer evidence: 32 complete observations, 6 BSSIDs, 19 DHCP clients, 18 allocatable pools, 3 zero-capacity defaults; guest deny counter deltas {'Main': 16, 'DBP': 16, 'BHTQ': 26}
+Recorded evidence only; no network executed, automatic ISP failover or human approval claimed.

@@ -3,7 +3,8 @@
 Thumbs.db
 desktop.ini
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 *~
 *.swp
 *.tmp
@@ -38,9 +39,12 @@ tmp/
 *.out
 *.fls
 *.fdb_latexmk
+*.synctex.gz
+*.xdv
 # Local LaTeX output mirror; canonical PDF is docs/06-report/final/report.pdf
 /output/pdf/
 /docs/06-report/latex/report.pdf
+/docs/06-report/latex/build/
 
 # Local assignment/reference PDFs; keep final report PDFs trackable
 /Assignment 2-Network Design For A Company.pdf

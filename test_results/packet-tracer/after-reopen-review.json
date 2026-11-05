@@ -1,0 +1,363 @@
+{
+  "scope": "Offline review of saved observations; no new tests executed and no lab acceptance",
+  "source_sha256": "aa1d83812794008f1b1b23548ddb94629e495e7686aec41c3f88837bb1c90558",
+  "record_count": 32,
+  "counts": {
+    "OBSERVED_ALLOW": 26,
+    "OBSERVED_NO_REPLY": 3,
+    "OBSERVED_FAILURE_WITH_CONTROLS": 2,
+    "OBSERVED_BLOCK_WITH_CONTROLS": 1
+  },
+  "limitations": [
+    "No-reply ICMP alone does not prove an ACL caused the block.",
+    "Successful pings with packet loss require a repeat after convergence.",
+    "This summary does not cover absent jobs, Wi-Fi association, failover, or reopen."
+  ],
+  "records": [
+    {
+      "record_index": 0,
+      "group": "TC01",
+      "kind": "ping",
+      "source": "Main-PC10-A",
+      "target": "10.10.10.7",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 1,
+      "group": "TC01",
+      "kind": "ping",
+      "source": "Main-PC10-B",
+      "target": "10.10.10.8",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 2,
+      "group": "TC02",
+      "kind": "ping",
+      "source": "Main-PC10-A",
+      "target": "10.10.20.7",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 3,
+      "group": "TC02",
+      "kind": "ping",
+      "source": "Main-PC20",
+      "target": "10.10.10.8",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 4,
+      "group": "TC03",
+      "kind": "ping",
+      "source": "Main-PC10-A",
+      "target": "10.20.10.7",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 5,
+      "group": "TC03",
+      "kind": "ping",
+      "source": "DBP-PC10",
+      "target": "10.10.10.8",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 6,
+      "group": "TC03",
+      "kind": "ping",
+      "source": "Main-PC10-A",
+      "target": "10.30.10.7",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 7,
+      "group": "TC03",
+      "kind": "ping",
+      "source": "BHTQ-PC10",
+      "target": "10.10.10.8",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW",
+      "sent": 4,
+      "received": 4,
+      "lost": 0
+    },
+    {
+      "record_index": 8,
+      "group": "TC02",
+      "kind": "http",
+      "source": "Main-PC10-A",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 9,
+      "group": "TC04",
+      "kind": "http",
+      "source": "Main-PC10-A",
+      "target": "http://10.10.80.10",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 10,
+      "group": "TC04",
+      "kind": "http",
+      "source": "Web-Lab",
+      "target": "http://198.51.100.2:8080",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 11,
+      "group": "TC05",
+      "kind": "ping",
+      "source": "Main-Guest",
+      "target": "10.10.10.8",
+      "expected": "deny",
+      "status": "OBSERVED_NO_REPLY",
+      "sent": 4,
+      "received": 0,
+      "lost": 4
+    },
+    {
+      "record_index": 12,
+      "group": "TC05",
+      "kind": "http",
+      "source": "Main-PC10-A",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 13,
+      "group": "TC05",
+      "kind": "http",
+      "source": "Main-Guest",
+      "target": "http://10.10.70.11",
+      "expected": "deny",
+      "status": "OBSERVED_FAILURE_WITH_CONTROLS",
+      "control_record_indexes": [
+        8,
+        12,
+        15,
+        16
+      ],
+      "response_types": [
+        7
+      ],
+      "reason": "Native responseType 7 with empty content; enum meaning is not inferred. Check ACL counters separately."
+    },
+    {
+      "record_index": 14,
+      "group": "TC06",
+      "kind": "http",
+      "source": "Main-PC10-A",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 15,
+      "group": "TC06",
+      "kind": "http",
+      "source": "Main-Guest",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 16,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "Main-Staff",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 17,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "Main-Staff",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 18,
+      "group": "TC05",
+      "kind": "ping",
+      "source": "DBP-Guest",
+      "target": "10.20.10.7",
+      "expected": "deny",
+      "status": "OBSERVED_NO_REPLY",
+      "sent": 4,
+      "received": 0,
+      "lost": 4
+    },
+    {
+      "record_index": 19,
+      "group": "TC05",
+      "kind": "http",
+      "source": "DBP-PC10",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 20,
+      "group": "TC05",
+      "kind": "http",
+      "source": "DBP-Guest",
+      "target": "http://10.10.70.11",
+      "expected": "deny",
+      "status": "OBSERVED_FAILURE_WITH_CONTROLS",
+      "control_record_indexes": [
+        19,
+        22,
+        23
+      ],
+      "response_types": [
+        7
+      ],
+      "reason": "Native responseType 7 with empty content; enum meaning is not inferred. Check ACL counters separately."
+    },
+    {
+      "record_index": 21,
+      "group": "TC06",
+      "kind": "http",
+      "source": "DBP-PC10",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 22,
+      "group": "TC06",
+      "kind": "http",
+      "source": "DBP-Guest",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 23,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "DBP-Staff",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 24,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "DBP-Staff",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 25,
+      "group": "TC05",
+      "kind": "ping",
+      "source": "BHTQ-Guest",
+      "target": "10.30.10.7",
+      "expected": "deny",
+      "status": "OBSERVED_NO_REPLY",
+      "sent": 4,
+      "received": 0,
+      "lost": 4
+    },
+    {
+      "record_index": 26,
+      "group": "TC05",
+      "kind": "http",
+      "source": "BHTQ-PC10",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 27,
+      "group": "TC05",
+      "kind": "http",
+      "source": "BHTQ-Guest",
+      "target": "http://10.10.70.11",
+      "expected": "deny",
+      "status": "OBSERVED_BLOCK_WITH_CONTROLS",
+      "control_record_indexes": [
+        26,
+        29,
+        30
+      ]
+    },
+    {
+      "record_index": 28,
+      "group": "TC06",
+      "kind": "http",
+      "source": "BHTQ-PC10",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 29,
+      "group": "TC06",
+      "kind": "http",
+      "source": "BHTQ-Guest",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 30,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "BHTQ-Staff",
+      "target": "http://10.10.70.11",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    },
+    {
+      "record_index": 31,
+      "group": "WIFI",
+      "kind": "http",
+      "source": "BHTQ-Staff",
+      "target": "http://web.hospital.test",
+      "expected": "allow",
+      "status": "OBSERVED_ALLOW"
+    }
+  ]
+}

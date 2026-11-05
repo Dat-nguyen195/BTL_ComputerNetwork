@@ -1,0 +1,8 @@
+feature,node,probe,status,actual,fallback
+OSPF and serial,Main-GW,show controllers serial 0/0/0; show ip ospf neighbor,NOT RUN,,Check DCE clock and HWIC slot
+802.1Q and relay,Main-Core,show ip interface brief; show interfaces gigabitEthernet 0/0.10,NOT RUN,,Verify subinterface support
+IP SLA and track,Main-GW; Main-Edge,ip sla ?; track ?,NOT RUN,,Record unsupported CLI; keep advanced tests NOT RUN
+PBR verify-availability,Main-Edge,route-map capability; show route-map,NOT RUN,,Do not silently replace monitored dual ISP with static ECMP
+NAT route-map and interface match,Main-Edge,ip nat inside source ?; show ip nat statistics,NOT RUN,,Record support before loading both PAT rules
+ZBF inspection,Main-FW,class-map type inspect ?; show zone-pair security,NOT RUN,,Keep explicit ACL/ZBF scope and test positive/negative flows
+WLAN client,Each Guest/Staff laptop,Wireless adapter; PC Wireless; SSID; DHCP,NOT RUN,,A wired VLAN test does not prove wireless association

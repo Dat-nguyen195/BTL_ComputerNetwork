@@ -1,0 +1,59 @@
+node,model,module,config
+BHTQ-GW,2911,HWIC-2T in slot 0; power off before inserting,configs/BHTQ-GW.cfg
+DBP-GW,2911,HWIC-2T in slot 0; power off before inserting,configs/DBP-GW.cfg
+INET-Core,2911,,configs/INET-Core.cfg
+ISP1,2911,,configs/ISP1.cfg
+ISP2,2911,,configs/ISP2.cfg
+Main-Core,2911,,configs/Main-Core.cfg
+Main-Edge,2911,,configs/Main-Edge.cfg
+Main-FW,2911,,configs/Main-FW.cfg
+Main-GW,2911,HWIC-2T in slot 0; power off before inserting,configs/Main-GW.cfg
+BHTQ-Access,2960-24TT,,configs/BHTQ-Access.cfg
+DBP-Access,2960-24TT,,configs/DBP-Access.cfg
+DMZ-Access,2960-24TT,,configs/DMZ-Access.cfg
+Main-Access,2960-24TT,,configs/Main-Access.cfg
+Web-Access,2960-24TT,,configs/Web-Access.cfg
+Main-Infra,Server-PT,,GUI endpoints.csv
+Main-HIS,Server-PT,,GUI endpoints.csv
+Main-PACS,Server-PT,,GUI endpoints.csv
+Main-LIS,Server-PT,,GUI endpoints.csv
+Main-CRM,Server-PT,,GUI endpoints.csv
+Main-DB,Server-PT,,GUI endpoints.csv
+Main-Backup,Server-PT,,GUI endpoints.csv
+Main-Monitor,Server-PT,,GUI endpoints.csv
+Main-WebDMZ,Server-PT,,GUI endpoints.csv
+Main-ProxyDMZ,Server-PT,,GUI endpoints.csv
+DBP-Infra,Server-PT,,GUI endpoints.csv
+DBP-Local,Server-PT,,GUI endpoints.csv
+BHTQ-Infra,Server-PT,,GUI endpoints.csv
+BHTQ-Local,Server-PT,,GUI endpoints.csv
+Web-Lab,Server-PT,,GUI endpoints.csv
+Main-PC10-A,PC-PT,,GUI endpoints.csv
+Main-PC10-B,PC-PT,,GUI endpoints.csv
+Main-PC20,PC-PT,,GUI endpoints.csv
+Main-PC30,PC-PT,,GUI endpoints.csv
+Main-PC40,PC-PT,,GUI endpoints.csv
+Main-Guest,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+Main-Guest-AP,AccessPoint-PT,,GUI wireless.csv
+Main-Staff,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+Main-Staff-AP,AccessPoint-PT,,GUI wireless.csv
+DBP-PC10,PC-PT,,GUI endpoints.csv
+DBP-Guest,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+DBP-Guest-AP,AccessPoint-PT,,GUI wireless.csv
+BHTQ-PC10,PC-PT,,GUI endpoints.csv
+BHTQ-Guest,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+BHTQ-Guest-AP,AccessPoint-PT,,GUI wireless.csv
+Main-Admin,PC-PT,,GUI endpoints.csv
+Main-NVR,PC-PT,,GUI endpoints.csv
+DBP-NVR,PC-PT,,GUI endpoints.csv
+BHTQ-NVR,PC-PT,,GUI endpoints.csv
+Main-PC50,PC-PT,,GUI endpoints.csv
+Main-PC60,PC-PT,,GUI endpoints.csv
+DBP-PC20,PC-PT,,GUI endpoints.csv
+DBP-PC30,PC-PT,,GUI endpoints.csv
+DBP-Staff,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+DBP-Staff-AP,AccessPoint-PT,,GUI wireless.csv
+BHTQ-PC20,PC-PT,,GUI endpoints.csv
+BHTQ-PC30,PC-PT,,GUI endpoints.csv
+BHTQ-Staff,Laptop-PT,Install WPC300N while powered off; verify adapter in target version,GUI endpoints.csv
+BHTQ-Staff-AP,AccessPoint-PT,,GUI wireless.csv

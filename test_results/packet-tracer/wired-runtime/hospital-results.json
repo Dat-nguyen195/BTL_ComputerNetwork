@@ -1,0 +1,521 @@
+{
+  "records": [
+    {
+      "kind": "ping",
+      "group": "TC01",
+      "source": "Main-PC10-A",
+      "target": "10.10.10.8",
+      "source_ip": "10.10.10.7",
+      "expected": "allow",
+      "command": "ping 10.10.10.8",
+      "completion": "statistics",
+      "output": "ping 10.10.10.8\n\nPinging 10.10.10.8 with 32 bytes of data:\n\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\nReply from 10.10.10.8: bytes=32 time<1ms TTL=128\n\nPing statistics for 10.10.10.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+      "time": "2026-11-03T09:16:39.028Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC02",
+      "source": "Main-PC10-A",
+      "target": "10.10.20.7",
+      "source_ip": "10.10.10.7",
+      "expected": "allow",
+      "command": "ping 10.10.20.7",
+      "completion": "timeout",
+      "output": "Approximate round trip times in milli-seconds:\n    Minimum = 0ms, Maximum = 0ms, Average = 0ms\n\nC:\\>",
+      "time": "2026-11-03T09:17:01.030Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC03",
+      "source": "Main-PC10-A",
+      "target": "10.20.10.7",
+      "source_ip": "10.10.10.7",
+      "expected": "allow",
+      "command": "ping 10.20.10.7",
+      "completion": "statistics",
+      "output": "ping 10.20.10.7\n\nPinging 10.20.10.7 with 32 bytes of data:\n\nRequest timed out.\nRequest timed out.\nReply from 10.20.10.7: bytes=32 time=10ms TTL=125\nReply from 10.20.10.7: bytes=32 time=11ms TTL=125\n\nPing statistics for 10.20.10.7:\n    Packets: Sent = 4, Received = 2, Lost = 2 (50% loss),\n",
+      "time": "2026-11-03T09:17:17.987Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC03",
+      "source": "DBP-PC10",
+      "target": "10.10.10.7",
+      "source_ip": "10.20.10.7",
+      "expected": "allow",
+      "command": "ping 10.10.10.7",
+      "completion": "statistics",
+      "output": "ping 10.10.10.7\n\nPinging 10.10.10.7 with 32 bytes of data:\n\nReply from 10.10.10.7: bytes=32 time<1ms TTL=125\nReply from 10.10.10.7: bytes=32 time=10ms TTL=125\nReply from 10.10.10.7: bytes=32 time=12ms TTL=125\nReply from 10.10.10.7: bytes=32 time=12ms TTL=125\n\nPing statistics for 10.10.10.7:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+      "time": "2026-11-03T09:17:21.830Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC03",
+      "source": "Main-PC10-A",
+      "target": "10.30.10.7",
+      "source_ip": "10.10.10.7",
+      "expected": "allow",
+      "command": "ping 10.30.10.7",
+      "completion": "statistics",
+      "output": "ping 10.30.10.7\n\nPinging 10.30.10.7 with 32 bytes of data:\n\nRequest timed out.\nReply from 10.30.10.7: bytes=32 time<1ms TTL=125\nReply from 10.30.10.7: bytes=32 time=10ms TTL=125\nReply from 10.30.10.7: bytes=32 time=11ms TTL=125\n\nPing statistics for 10.30.10.7:\n    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),\n",
+      "time": "2026-11-03T09:17:32.492Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC03",
+      "source": "BHTQ-PC10",
+      "target": "10.10.10.7",
+      "source_ip": "10.30.10.7",
+      "expected": "allow",
+      "command": "ping 10.10.10.7",
+      "completion": "statistics",
+      "output": "ping 10.10.10.7\n\nPinging 10.10.10.7 with 32 bytes of data:\n\nReply from 10.10.10.7: bytes=32 time<1ms TTL=125\nReply from 10.10.10.7: bytes=32 time<1ms TTL=125\nReply from 10.10.10.7: bytes=32 time=11ms TTL=125\nReply from 10.10.10.7: bytes=32 time=11ms TTL=125\n\nPing statistics for 10.10.10.7:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\n",
+      "time": "2026-11-03T09:17:36.596Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC02",
+      "source": "Main-PC10-A",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.10.7",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-03T09:17:48.626Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC04",
+      "source": "Main-PC10-A",
+      "url": "http://10.10.80.10",
+      "source_ip": "10.10.10.7",
+      "marker": "HOSPITAL-LAB-Main-WebDMZ",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-WebDMZ</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.80.10",
+          "url": "http://10.10.80.10"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-WebDMZ</h1></body></html>",
+      "time": "2026-11-03T09:18:00.638Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC04",
+      "source": "Web-Lab",
+      "url": "http://198.51.100.2:8080",
+      "source_ip": "192.0.2.100",
+      "marker": "HOSPITAL-LAB-Main-WebDMZ",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-WebDMZ</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "198.51.100.2",
+          "url": "http://198.51.100.2:8080"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-WebDMZ</h1></body></html>",
+      "time": "2026-11-03T09:18:12.642Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC05",
+      "source": "Main-Guest",
+      "target": "10.10.10.7",
+      "source_ip": "10.10.100.11",
+      "expected": "deny",
+      "command": "ping 10.10.10.7",
+      "completion": "statistics",
+      "output": "ping 10.10.10.7\n\nPinging 10.10.10.7 with 32 bytes of data:\n\nReply from 10.10.100.1: Destination host unreachable.\nReply from 10.10.100.1: Destination host unreachable.\nReply from 10.10.100.1: Destination host unreachable.\nReply from 10.10.100.1: Destination host unreachable.\n\nPing statistics for 10.10.10.7:\n    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),\n",
+      "time": "2026-11-03T09:18:16.355Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "Main-PC10-A",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.10.7",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-03T09:18:28.381Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "Main-Guest",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.100.11",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "deny",
+      "initiated": true,
+      "events": [],
+      "page": "",
+      "time": "2026-11-03T09:18:40.376Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "Main-PC10-A",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.10.7",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:18:52.408Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "Main-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:19:04.412Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC05",
+      "source": "DBP-Guest",
+      "target": "10.20.10.7",
+      "source_ip": "10.20.100.11",
+      "expected": "deny",
+      "command": "ping 10.20.10.7",
+      "completion": "statistics",
+      "output": "ping 10.20.10.7\n\nPinging 10.20.10.7 with 32 bytes of data:\n\nReply from 10.20.100.1: Destination host unreachable.\nReply from 10.20.100.1: Destination host unreachable.\nReply from 10.20.100.1: Destination host unreachable.\nReply from 10.20.100.1: Destination host unreachable.\n\nPing statistics for 10.20.10.7:\n    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),\n",
+      "time": "2026-11-03T09:19:08.234Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "DBP-PC10",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.20.10.7",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-03T09:19:20.254Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "DBP-Guest",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.20.100.11",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "deny",
+      "initiated": true,
+      "events": [],
+      "page": "",
+      "time": "2026-11-03T09:19:32.249Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "DBP-PC10",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.20.10.7",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:19:44.251Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "DBP-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.20.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:19:56.248Z"
+    },
+    {
+      "kind": "ping",
+      "group": "TC05",
+      "source": "BHTQ-Guest",
+      "target": "10.30.10.7",
+      "source_ip": "10.30.100.11",
+      "expected": "deny",
+      "command": "ping 10.30.10.7",
+      "completion": "statistics",
+      "output": "ping 10.30.10.7\n\nPinging 10.30.10.7 with 32 bytes of data:\n\nReply from 10.30.100.1: Destination host unreachable.\nReply from 10.30.100.1: Destination host unreachable.\nReply from 10.30.100.1: Destination host unreachable.\nReply from 10.30.100.1: Destination host unreachable.\n\nPing statistics for 10.30.10.7:\n    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),\n",
+      "time": "2026-11-03T09:20:00.133Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "BHTQ-PC10",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.30.10.7",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-03T09:20:12.157Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC05",
+      "source": "BHTQ-Guest",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.30.100.11",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "deny",
+      "initiated": true,
+      "events": [],
+      "page": "",
+      "time": "2026-11-03T09:20:24.169Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "BHTQ-PC10",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.30.10.7",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:20:36.181Z"
+    },
+    {
+      "kind": "http",
+      "group": "TC06",
+      "source": "BHTQ-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.30.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-03T09:20:48.186Z"
+    }
+  ],
+  "snapshots": [
+    {
+      "node": "Main-GW",
+      "command": "show ip ospf neighbor",
+      "result": {
+        "first": 0,
+        "second": "\n\nNeighbor ID     Pri   State           Dead Time   Address         Interface\n10.20.255.1       1   FULL/DR         00:00:34    10.255.0.2      GigabitEthernet0/1\n10.10.255.1       0   FULL/  -        00:00:34    10.255.0.9      GigabitEthernet0/0\n10.30.255.1       1   FULL/DR         00:00:34    10.255.0.6      GigabitEthernet0/2\n\n"
+      }
+    },
+    {
+      "node": "Main-GW",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 10.255.0.9 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 40 subnets, 8 masks\nS       10.10.0.0/16 is directly connected, Null0\nO       10.10.10.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.20.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.30.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.40.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.50.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.60.0/25 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.70.0/27 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.90.0/24 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.100.0/23 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.110.0/24 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.120.0/24 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nO       10.10.255.1/32 [110/2] via 10.255.0.9, 00:15:49, GigabitEthernet0/0\nC       10.10.255.2/32 is directly connected, Loopback0\nS       10.20.0.0/16 is directly connected, Null0\nO       10.20.10.0/25 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.20.0/25 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.30.0/25 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.70.0/28 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.90.0/24 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.100.0/23 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.110.0/24 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.120.0/24 [110/11] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nO       10.20.255.1/32 [110/20] via 10.255.0.2, 00:09:49, GigabitEthernet0/1\nS       10.30.0.0/16 is directly connected, Null0\nO       10.30.10.0/25 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.20.0/25 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.30.0/25 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.70.0/28 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.90.0/24 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.100.0/23 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.110.0/24 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.120.0/24 [110/11] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nO       10.30.255.1/32 [110/20] via 10.255.0.6, 00:09:49, GigabitEthernet0/2\nC       10.255.0.0/30 is directly connected, GigabitEthernet0/1\nL       10.255.0.1/32 is directly connected, GigabitEthernet0/1\nC       10.255.0.4/30 is directly connected, GigabitEthernet0/2\nL       10.255.0.5/32 is directly connected, GigabitEthernet0/2\nC       10.255.0.8/30 is directly connected, GigabitEthernet0/0\nL       10.255.0.10/32 is directly connected, GigabitEthernet0/0\nS*   0.0.0.0/0 [1/0] via 10.255.0.9\n\n\n"
+      }
+    },
+    {
+      "node": "Main-Core",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 10.255.0.14 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 52 subnets, 8 masks\nS       10.10.0.0/16 is directly connected, Null0\nC       10.10.10.0/25 is directly connected, GigabitEthernet0/0.10\nL       10.10.10.1/32 is directly connected, GigabitEthernet0/0.10\nC       10.10.20.0/25 is directly connected, GigabitEthernet0/0.20\nL       10.10.20.1/32 is directly connected, GigabitEthernet0/0.20\nC       10.10.30.0/25 is directly connected, GigabitEthernet0/0.30\nL       10.10.30.1/32 is directly connected, GigabitEthernet0/0.30\nC       10.10.40.0/25 is directly connected, GigabitEthernet0/0.40\nL       10.10.40.1/32 is directly connected, GigabitEthernet0/0.40\nC       10.10.50.0/25 is directly connected, GigabitEthernet0/0.50\nL       10.10.50.1/32 is directly connected, GigabitEthernet0/0.50\nC       10.10.60.0/25 is directly connected, GigabitEthernet0/0.60\nL       10.10.60.1/32 is directly connected, GigabitEthernet0/0.60\nC       10.10.70.0/27 is directly connected, GigabitEthernet0/0.70\nL       10.10.70.1/32 is directly connected, GigabitEthernet0/0.70\nS       10.10.80.0/27 [1/0] via 10.255.0.14\nC       10.10.90.0/24 is directly connected, GigabitEthernet0/0.90\nL       10.10.90.1/32 is directly connected, GigabitEthernet0/0.90\nC       10.10.100.0/23 is directly connected, GigabitEthernet0/0.100\nL       10.10.100.1/32 is directly connected, GigabitEthernet0/0.100\nC       10.10.110.0/24 is directly connected, GigabitEthernet0/0.110\nL       10.10.110.1/32 is directly connected, GigabitEthernet0/0.110\nC       10.10.120.0/24 is directly connected, GigabitEthernet0/0.120\nL       10.10.120.1/32 is directly connected, GigabitEthernet0/0.120\nC       10.10.255.1/32 is directly connected, Loopback0\nO       10.10.255.2/32 [110/2] via 10.255.0.10, 00:15:50, GigabitEthernet0/1\nS       10.20.0.0/16 [1/0] via 10.255.0.10\nO       10.20.10.0/25 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.20.0/25 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.30.0/25 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.70.0/28 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.90.0/24 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.100.0/23 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.110.0/24 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.120.0/24 [110/12] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.20.255.1/32 [110/21] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nS       10.30.0.0/16 [1/0] via 10.255.0.10\nO       10.30.10.0/25 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.20.0/25 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.30.0/25 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.70.0/28 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.90.0/24 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.100.0/23 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.110.0/24 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.120.0/24 [110/12] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.30.255.1/32 [110/21] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nO       10.255.0.0/30 [110/11] via 10.255.0.10, 00:09:39, GigabitEthernet0/1\nO       10.255.0.4/30 [110/11] via 10.255.0.10, 00:09:49, GigabitEthernet0/1\nC       10.255.0.8/30 is directly connected, GigabitEthernet0/1\nL       10.255.0.9/32 is directly connected, GigabitEthernet0/1\nC       10.255.0.12/30 is directly connected, GigabitEthernet0/2\nL       10.255.0.13/32 is directly connected, GigabitEthernet0/2\nS*   0.0.0.0/0 [1/0] via 10.255.0.14\n\n\n"
+      }
+    },
+    {
+      "node": "Main-Core",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list MAIN-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (4 match(es))\n    20 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq www (11 match(es))\n    70 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.10.0 0.0.0.127 host 10.10.80.10 eq www (7 match(es))\n    110 permit icmp 10.10.10.0 0.0.0.127 10.10.10.0 0.0.0.127\n    120 permit icmp 10.10.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    130 permit icmp 10.10.10.0 0.0.0.127 10.20.10.0 0.0.0.127 (8 match(es))\n    140 permit icmp 10.10.10.0 0.0.0.127 10.30.10.0 0.0.0.127 (8 match(es))\n    150 deny ip any 10.0.0.0 0.255.255.255\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.10.0 0.0.0.127 any eq www (6 match(es))\n    200 permit tcp 10.10.10.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.10.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit icmp 10.10.20.0 0.0.0.127 10.10.10.0 0.0.0.127\n    120 permit icmp 10.10.20.0 0.0.0.127 10.10.20.0 0.0.0.127\n    130 permit icmp 10.10.20.0 0.0.0.127 10.20.10.0 0.0.0.127\n    140 permit icmp 10.10.20.0 0.0.0.127 10.30.10.0 0.0.0.127\n    150 deny ip any 10.0.0.0 0.255.255.255\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.20.0 0.0.0.127 any eq www\n    200 permit tcp 10.10.20.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.20.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.30.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.30.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.30.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V40-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.40.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.40.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.40.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.40.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V50-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.50.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.50.0 0.0.0.127 any eq www\n    160 permit tcp 10.10.50.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.50.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V60-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.60.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.60.0 0.0.0.127 any eq www\n    160 permit tcp 10.10.60.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.60.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (27 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.10.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.10.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.10.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list MAIN-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq www\n    70 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.120.0 0.0.0.255 any eq www\n    160 permit tcp 10.10.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.10.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-SERVER-IN\n    10 permit udp host 10.10.70.10 eq bootps any eq bootps (18 match(es))\n    20 permit udp host 10.10.70.10 eq bootps any eq bootpc\n    30 permit udp host 10.10.70.10 eq domain 10.0.0.0 0.255.255.255 (1 match(es))\n    40 permit tcp 10.10.70.0 0.0.0.31 any established (12 match(es))\n    50 permit icmp 10.10.70.0 0.0.0.31 any echo-reply\n    60 permit udp host 10.10.70.10 host 192.0.2.100 eq domain\n    70 permit tcp host 10.10.70.10 host 192.0.2.100 eq domain\n    80 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 123\n    90 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 514\n    100 deny ip any 10.0.0.0 0.255.255.255 (19 match(es))\n    110 deny ip any 172.16.0.0 0.15.255.255\n    120 deny ip any 192.168.0.0 0.0.255.255\n    130 permit tcp 10.10.70.0 0.0.0.31 any eq www\n    140 permit tcp 10.10.70.0 0.0.0.31 any eq 443\n    150 deny ip any any\nExtended IP access list MAIN-MGMT-IN\n    10 permit ip host 10.10.90.11 any\n    20 permit tcp 10.10.90.0 0.0.0.255 host 10.10.90.11 established\n    30 permit icmp 10.10.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    40 deny ip any any\nExtended IP access list MAIN-CAMERA-IN\n    10 permit tcp 10.10.110.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.10.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.10.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    },
+    {
+      "node": "DBP-GW",
+      "command": "show ip ospf neighbor",
+      "result": {
+        "first": 0,
+        "second": "\n\nNeighbor ID     Pri   State           Dead Time   Address         Interface\n10.10.255.2       1   FULL/BDR        00:00:34    10.255.0.1      GigabitEthernet0/1\n\n"
+      }
+    },
+    {
+      "node": "DBP-GW",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 10.255.0.1 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 43 subnets, 8 masks\nO       10.10.10.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.20.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.30.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.40.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.50.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.60.0/25 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.70.0/27 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.90.0/24 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.100.0/23 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.110.0/24 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.120.0/24 [110/12] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.10.255.2/32 [110/11] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nS       10.20.0.0/16 is directly connected, Null0\nC       10.20.10.0/25 is directly connected, GigabitEthernet0/0.10\nL       10.20.10.1/32 is directly connected, GigabitEthernet0/0.10\nC       10.20.20.0/25 is directly connected, GigabitEthernet0/0.20\nL       10.20.20.1/32 is directly connected, GigabitEthernet0/0.20\nC       10.20.30.0/25 is directly connected, GigabitEthernet0/0.30\nL       10.20.30.1/32 is directly connected, GigabitEthernet0/0.30\nC       10.20.70.0/28 is directly connected, GigabitEthernet0/0.70\nL       10.20.70.1/32 is directly connected, GigabitEthernet0/0.70\nC       10.20.90.0/24 is directly connected, GigabitEthernet0/0.90\nL       10.20.90.1/32 is directly connected, GigabitEthernet0/0.90\nC       10.20.100.0/23 is directly connected, GigabitEthernet0/0.100\nL       10.20.100.1/32 is directly connected, GigabitEthernet0/0.100\nC       10.20.110.0/24 is directly connected, GigabitEthernet0/0.110\nL       10.20.110.1/32 is directly connected, GigabitEthernet0/0.110\nC       10.20.120.0/24 is directly connected, GigabitEthernet0/0.120\nL       10.20.120.1/32 is directly connected, GigabitEthernet0/0.120\nC       10.20.255.1/32 is directly connected, Loopback0\nO       10.30.10.0/25 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.20.0/25 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.30.0/25 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.70.0/28 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.90.0/24 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.100.0/23 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.110.0/24 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.120.0/24 [110/21] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.30.255.1/32 [110/30] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nC       10.255.0.0/30 is directly connected, GigabitEthernet0/1\nL       10.255.0.2/32 is directly connected, GigabitEthernet0/1\nO       10.255.0.4/30 [110/20] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO       10.255.0.8/30 [110/11] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\nO*E2 0.0.0.0/0 [110/1] via 10.255.0.1, 00:09:49, GigabitEthernet0/1\n\n\n"
+      }
+    },
+    {
+      "node": "DBP-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list DBP-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain (1 match(es))\n    50 permit tcp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.20.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (6 match(es))\n    140 permit icmp 10.20.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.20.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.20.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.20.10.0 0.0.0.127 any eq www (6 match(es))\n    220 permit tcp 10.20.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.20.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list DBP-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.20.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.20.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.20.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list DBP-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.20.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.20.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (27 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.20.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.20.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.20.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list DBP-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq www\n    70 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.120.0 0.0.0.255 any eq www\n    160 permit tcp 10.20.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.20.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-SERVER-IN\n    10 permit udp host 10.20.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.20.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.20.70.6 eq domain 10.0.0.0 0.255.255.255 (1 match(es))\n    40 permit tcp 10.20.70.0 0.0.0.15 any established\n    50 permit icmp 10.20.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.20.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.20.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.20.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (11 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.20.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.20.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list DBP-MGMT-IN\n    10 permit tcp 10.20.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.20.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list DBP-CAMERA-IN\n    10 permit tcp 10.20.110.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.20.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.20.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": "show ip ospf neighbor",
+      "result": {
+        "first": 0,
+        "second": "\n\nNeighbor ID     Pri   State           Dead Time   Address         Interface\n10.10.255.2       1   FULL/BDR        00:00:34    10.255.0.5      GigabitEthernet0/1\n\n"
+      }
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 10.255.0.5 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 43 subnets, 8 masks\nO       10.10.10.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.20.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.30.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.40.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.50.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.60.0/25 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.70.0/27 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.90.0/24 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.100.0/23 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.110.0/24 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.120.0/24 [110/12] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.10.255.2/32 [110/11] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.10.0/25 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.20.0/25 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.30.0/25 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.70.0/28 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.90.0/24 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.100.0/23 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.110.0/24 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.120.0/24 [110/21] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO       10.20.255.1/32 [110/30] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nS       10.30.0.0/16 is directly connected, Null0\nC       10.30.10.0/25 is directly connected, GigabitEthernet0/0.10\nL       10.30.10.1/32 is directly connected, GigabitEthernet0/0.10\nC       10.30.20.0/25 is directly connected, GigabitEthernet0/0.20\nL       10.30.20.1/32 is directly connected, GigabitEthernet0/0.20\nC       10.30.30.0/25 is directly connected, GigabitEthernet0/0.30\nL       10.30.30.1/32 is directly connected, GigabitEthernet0/0.30\nC       10.30.70.0/28 is directly connected, GigabitEthernet0/0.70\nL       10.30.70.1/32 is directly connected, GigabitEthernet0/0.70\nC       10.30.90.0/24 is directly connected, GigabitEthernet0/0.90\nL       10.30.90.1/32 is directly connected, GigabitEthernet0/0.90\nC       10.30.100.0/23 is directly connected, GigabitEthernet0/0.100\nL       10.30.100.1/32 is directly connected, GigabitEthernet0/0.100\nC       10.30.110.0/24 is directly connected, GigabitEthernet0/0.110\nL       10.30.110.1/32 is directly connected, GigabitEthernet0/0.110\nC       10.30.120.0/24 is directly connected, GigabitEthernet0/0.120\nL       10.30.120.1/32 is directly connected, GigabitEthernet0/0.120\nC       10.30.255.1/32 is directly connected, Loopback0\nO       10.255.0.0/30 [110/20] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nC       10.255.0.4/30 is directly connected, GigabitEthernet0/1\nL       10.255.0.6/32 is directly connected, GigabitEthernet0/1\nO       10.255.0.8/30 [110/11] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\nO*E2 0.0.0.0/0 [110/1] via 10.255.0.5, 00:09:44, GigabitEthernet0/1\n\n\n"
+      }
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list BHTQ-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain (1 match(es))\n    50 permit tcp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.30.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (7 match(es))\n    140 permit icmp 10.30.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.30.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.30.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.30.10.0 0.0.0.127 any eq www (5 match(es))\n    220 permit tcp 10.30.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.30.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list BHTQ-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.30.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.30.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.30.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list BHTQ-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.30.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.30.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (27 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.30.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.30.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.30.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list BHTQ-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq www\n    70 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.120.0 0.0.0.255 any eq www\n    160 permit tcp 10.30.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.30.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-SERVER-IN\n    10 permit udp host 10.30.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.30.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.30.70.6 eq domain 10.0.0.0 0.255.255.255 (1 match(es))\n    40 permit tcp 10.30.70.0 0.0.0.15 any established\n    50 permit icmp 10.30.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.30.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.30.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.30.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (11 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.30.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.30.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list BHTQ-MGMT-IN\n    10 permit tcp 10.30.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.30.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list BHTQ-CAMERA-IN\n    10 permit tcp 10.30.110.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.30.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.30.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    },
+    {
+      "node": "Main-Edge",
+      "command": "show ip nat translations",
+      "result": {
+        "first": 0,
+        "second": "Pro  Inside global     Inside local       Outside local      Outside global\nudp 198.51.100.2:1024  10.20.100.11:1025  192.0.2.100:53     192.0.2.100:53\nudp 198.51.100.2:1025  10.10.100.11:1025  192.0.2.100:53     192.0.2.100:53\nudp 198.51.100.2:1026  10.30.100.11:1025  192.0.2.100:53     192.0.2.100:53\ntcp 198.51.100.2:1024  10.20.10.7:1026    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1025  10.20.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1026  10.10.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1027  10.30.10.7:1026    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1028  10.10.10.7:1028    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1029  10.30.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:8080  10.10.80.10:80     ---                ---\ntcp 198.51.100.2:8080  10.10.80.10:80     192.0.2.100:1025   192.0.2.100:1025\n\n\n"
+      }
+    },
+    {
+      "node": "Main-Edge",
+      "command": "show ip nat statistics",
+      "result": {
+        "first": 0,
+        "second": "Total translations: 11 (1 static, 10 dynamic, 11 extended)\nOutside Interfaces: GigabitEthernet0/1 , GigabitEthernet0/2\nInside Interfaces: GigabitEthernet0/0\nHits: 53  Misses: 63\nExpired translations: 0\nDynamic mappings:\n\n"
+      }
+    },
+    {
+      "node": "Main-Edge",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks\nS       10.10.0.0/16 [1/0] via 10.255.0.17\nS       10.20.0.0/16 [1/0] via 10.255.0.17\nS       10.30.0.0/16 [1/0] via 10.255.0.17\nC       10.255.0.16/30 is directly connected, GigabitEthernet0/0\nL       10.255.0.18/32 is directly connected, GigabitEthernet0/0\n     198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC       198.51.100.0/30 is directly connected, GigabitEthernet0/2\nL       198.51.100.2/32 is directly connected, GigabitEthernet0/2\n     203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC       203.0.113.0/30 is directly connected, GigabitEthernet0/1\nL       203.0.113.2/32 is directly connected, GigabitEthernet0/1\nS*   0.0.0.0/0 [1/0] via 198.51.100.1\n\n\n"
+      }
+    },
+    {
+      "node": "Main-FW",
+      "command": "show zone-pair security",
+      "result": {
+        "first": 0,
+        "second": "Zone-pair name LAN-OUT\n    Source-Zone LAN  Destination-Zone OUTSIDE \n    service-policy PM-INTERNET\n\nZone-pair name LAN-DMZ\n    Source-Zone LAN  Destination-Zone DMZ \n    service-policy PM-LAN-DMZ\n\nZone-pair name OUT-DMZ\n    Source-Zone OUTSIDE  Destination-Zone DMZ \n    service-policy PM-PUBLISHED-WEB\n\nZone-pair name DMZ-OUT\n    Source-Zone DMZ  Destination-Zone OUTSIDE \n    service-policy PM-DMZ-UPDATE\n\n\n"
+      }
+    },
+    {
+      "node": "Main-FW",
+      "command": "show policy-map type inspect zone-pair",
+      "result": {
+        "first": 3,
+        "second": "\n"
+      }
+    },
+    {
+      "node": "Main-FW",
+      "command": "show ip route",
+      "result": {
+        "first": 0,
+        "second": "Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 10.255.0.18 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 6 subnets, 3 masks\nS       10.10.0.0/16 [1/0] via 10.255.0.13\nC       10.10.80.0/27 is directly connected, FastEthernet1/0\nS       10.20.0.0/16 [1/0] via 10.255.0.13\nS       10.30.0.0/16 [1/0] via 10.255.0.13\nC       10.255.0.12/30 is directly connected, FastEthernet0/0\nC       10.255.0.16/30 is directly connected, FastEthernet0/1\nS*   0.0.0.0/0 [1/0] via 10.255.0.18\n\n\n"
+      }
+    }
+  ]
+}

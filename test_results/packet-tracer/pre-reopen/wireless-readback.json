@@ -1,0 +1,140 @@
+[
+  {
+    "node": "Main-Guest",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.10.100.1",
+    "dns": [
+      "192.0.2.100"
+    ],
+    "profile_ssid": "Main_Guest",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "Main_Guest",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.0035.0002"
+    ]
+  },
+  {
+    "node": "Main-Staff",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.10.120.1",
+    "dns": [
+      "10.10.70.10"
+    ],
+    "profile_ssid": "Main_Staff",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "Main_Staff",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.0036.0002"
+    ]
+  },
+  {
+    "node": "DBP-Guest",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.20.100.1",
+    "dns": [
+      "192.0.2.100"
+    ],
+    "profile_ssid": "DBP_Guest",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "DBP_Guest",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.0037.0002"
+    ]
+  },
+  {
+    "node": "BHTQ-Guest",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.30.100.1",
+    "dns": [
+      "192.0.2.100"
+    ],
+    "profile_ssid": "BHTQ_Guest",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "BHTQ_Guest",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.0039.0002"
+    ]
+  },
+  {
+    "node": "DBP-Staff",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.20.120.1",
+    "dns": [
+      "10.20.70.6"
+    ],
+    "profile_ssid": "DBP_Staff",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "DBP_Staff",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.0038.0002"
+    ]
+  },
+  {
+    "node": "BHTQ-Staff",
+    "scope": "Saved configuration; live association is in wireless-associations.json",
+    "wireless_card_models": [
+      "PT-HOST-NM-1W-AC"
+    ],
+    "port_ips": [
+      ""
+    ],
+    "gateway": "10.30.120.1",
+    "dns": [
+      "10.30.70.6"
+    ],
+    "profile_ssid": "BHTQ_Staff",
+    "profile_auth": "4",
+    "profile_encrypt": "4",
+    "ap_ssid": "BHTQ_Staff",
+    "ap_auth": "4",
+    "ap_encrypt": "4",
+    "ap_macs": [
+      "0200.003A.0002"
+    ]
+  }
+]

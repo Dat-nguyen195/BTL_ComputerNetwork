@@ -1,0 +1,154 @@
+[
+  {
+    "node": "Main-Infra",
+    "configured": true
+  },
+  {
+    "node": "Main-HIS",
+    "configured": true
+  },
+  {
+    "node": "Main-PACS",
+    "configured": true
+  },
+  {
+    "node": "Main-LIS",
+    "configured": true
+  },
+  {
+    "node": "Main-CRM",
+    "configured": true
+  },
+  {
+    "node": "Main-DB",
+    "configured": true
+  },
+  {
+    "node": "Main-Backup",
+    "configured": true
+  },
+  {
+    "node": "Main-Monitor",
+    "configured": true
+  },
+  {
+    "node": "Main-WebDMZ",
+    "configured": true
+  },
+  {
+    "node": "Main-ProxyDMZ",
+    "configured": true
+  },
+  {
+    "node": "DBP-Infra",
+    "configured": true
+  },
+  {
+    "node": "DBP-Local",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-Infra",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-Local",
+    "configured": true
+  },
+  {
+    "node": "Web-Lab",
+    "configured": true
+  },
+  {
+    "node": "Main-PC10-A",
+    "configured": true
+  },
+  {
+    "node": "Main-PC10-B",
+    "configured": true
+  },
+  {
+    "node": "Main-PC20",
+    "configured": true
+  },
+  {
+    "node": "Main-PC30",
+    "configured": true
+  },
+  {
+    "node": "Main-PC40",
+    "configured": true
+  },
+  {
+    "node": "Main-Guest",
+    "configured": true
+  },
+  {
+    "node": "Main-Staff",
+    "configured": true
+  },
+  {
+    "node": "DBP-PC10",
+    "configured": true
+  },
+  {
+    "node": "DBP-Guest",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-PC10",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-Guest",
+    "configured": true
+  },
+  {
+    "node": "Main-Admin",
+    "configured": true
+  },
+  {
+    "node": "Main-NVR",
+    "configured": true
+  },
+  {
+    "node": "DBP-NVR",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-NVR",
+    "configured": true
+  },
+  {
+    "node": "Main-PC50",
+    "configured": true
+  },
+  {
+    "node": "Main-PC60",
+    "configured": true
+  },
+  {
+    "node": "DBP-PC20",
+    "configured": true
+  },
+  {
+    "node": "DBP-PC30",
+    "configured": true
+  },
+  {
+    "node": "DBP-Staff",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-PC20",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-PC30",
+    "configured": true
+  },
+  {
+    "node": "BHTQ-Staff",
+    "configured": true
+  }
+]

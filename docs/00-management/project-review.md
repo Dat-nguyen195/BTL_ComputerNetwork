@@ -1,5 +1,17 @@
 # Review toàn dự án sau hoàn thiện GNS3
 
+**Chốt kỹ thuật 05/11/2026:** đã đồng bộ `.pkt` chính về đúng bản evidence32+4; sửa recipe XeLaTeX/font và bỏ PDF local lỗi do pdfLaTeX; bổ sung phụ lục IP/VLAN, BOM, sơ đồ vật lý và demo vào báo cáo. Đã chạy trực tiếp GNS3209/209 và137/137 sau restart controller, sửa PID/socket Docker và tự mở project closed. [Bằng chứng mới](../../test_results/runtime/controller-restart/README.md), [hướng dẫn bộ nộp](../../submission/README.md). Các mục ngày trước bên dưới là lịch sử; phê duyệt học phần/biên nhận BKeL do nhóm thực hiện.
+
+**Bổ sung WAN đã kiểm:** MPLS L3VPN có module11 nút/10 link, Linux namespaces/QEMU chạy28/28 và sau dựng lại28/28; có PCAP hai nhãn. Project GNS3 riêng dùng chung cấu hình, chưa chạy native module mới. Chi tiết: [bằng chứng MPLS](../../test_results/mpls/README.md). Giá WAN có thêm nguồn lịch sử, vẫn chưa là báo giá hợp đồng hiện hành.
+
+
+**Thông tin nhóm đã chốt theo nhóm trưởng:** lớp L08, nhóm 2; BTL2 do Nguyễn Thành Đạt (nhóm trưởng, 2410709) và Phạm Tiến Đạt (2410723) thực hiện. Ba thành viên Nguyễn Phúc Bảo Đạt, Bùi Công Danh, Nguyễn Minh Đạt thực hiện BTL1. Xem [danh sách và email](team-members.md). TV1–TV5 là năm vai trò trong kế hoạch ban đầu.
+
+
+**Kết quả kỹ thuật Packet Tracer04/11/2026:** native58 node/53 cáp/sáu Wi-Fi đã lưu/mở lại; 32/32 quan sát phù hợp kỳ vọng,19 client DHCP và18 pool có sức chứa. Bốn HTTP chọn ISP1 thủ công/khôi phục ISP2 đạt; không có tự động failover trên Packet Tracer. Chi tiết ở [hồ sơ Packet Tracer](../../test_results/packet-tracer/README.md). Phê duyệt nhóm/thông tin nhân sự/BKeL vẫn chờ xác nhận. Các ghi nhận đang dựng/đang chờ bên dưới là lịch sử.
+
+**Bổ sung04/11/2026:** đã đối chiếu100 task, kiểm nguồn/đường dẫn/hash trên Windows và giữ GNS3 cùng PDF12 trang đúng QA trước đó. Packet Tracer đã có native tổng,32 quan sát sau reopen và bốn HTTP chọn ISP thủ công đạt; [bằng chứng riêng](../../test_results/packet-tracer/README.md) giữ các lần lỗi và giới hạn profile. Phụ lục PDF hai trang đã render/đọc riêng. Chưa chạy lại GNS3 trên Windows hoặc ký duyệt học phần.
+
 **02/11/2026.** Đã đối chiếu đề gốc5 trang, bảy Step và sáu nhóm demo. [Báo cáo PDF](../06-report/final/report.pdf), [source chỉnh sửa](../06-report/source/report.md), [project GNS3](../../simulation/gns3/hospital-3sites.gns3) và [evidence](../../test_results/runtime/README.md) đã có thật.
 
 **Kết luận:** mô hình chức năng ba cơ sở hoạt động trong phạm vi đã thử; sáu nhóm demo, OSPF, đủ18 pool DHCP/DNS, IDS/IPS rule mẫu, NAT/PBR, lỗi upstream ISP và mở lại project đều đạt ở hai run cuối. Không khẳng định triển khai bệnh viện thật đã sẵn sàng hoặc mọi yêu cầu vật lý/HA đã chạy.
@@ -31,3 +43,9 @@
 Nhóm kiểm thông tin đăng ký và quy định2–3 người trong đề so với vai tròTV1–TV5; yêu cầu nhân sự/lịch của nhóm được giữ riêng, không tự xác nhận giảng viên đã duyệt. Kiểm bản PDF/project đúng checksum, chạy demo trên máy sẽ trình bày và tự nộp BKeL. Với triển khai thực cần khảo sát, báo giá/SLA, năng lực xDSL thực, GPON/RF/HA/crypto và ứng dụng y tế.
 
 [Review trước GNS3](project-review-before-gns3.md) và [review TV2](tv2-review.md) giữ lịch sử phát hiện, không phải trạng thái cuối. Các phê duyệt học phần của thành viên/giảng viên vẫn cần người có trách nhiệm thực hiện.
+
+## Chốt nội dung báo cáo theo thông tin nhóm trưởng
+
+Ngày 04/11/2026 đã cập nhật lớp L08, nhóm 2, đủ năm họ tên/MSSV/email, Nguyễn Thành Đạt là nhóm trưởng. Phân công lại: BTL1 gồm Nguyễn Phúc Bảo Đạt, Bùi Công Danh, Nguyễn Minh Đạt; BTL2 gồm Nguyễn Thành Đạt và Phạm Tiến Đạt. Cảnh báo cũ về việc năm người cùng làm BTL2 được thay bằng phân công cụ thể này, không ghi nhận một phê duyệt của giảng viên chưa có.
+
+Báo cáo chính bổ sung mô hình/kết quả Packet Tracer thay cho mô tả chưa chạy, dẫn phụ lục riêng và giữ GNS3 làm bằng chứng PBR/failover tự động/IDS-IPS. Hồ sơ WAN bổ sung nguồn VNPT và mô tả ranh giới CE/PE, VRF, underlay/overlay của phương án MPLS/SD-WAN. MPLS đã bổ sung28+28 bằng chứng thực thi Linux trong lần tiếp theo; giá thương mại ba site và SD-WAN vẫn chưa xác nhận. Mốc BKeL cần đối chiếu cổng học phần; chưa thực hiện nộp.
