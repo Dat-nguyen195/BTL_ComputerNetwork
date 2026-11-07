@@ -1,0 +1,98 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - text: Anonymous
+        - emphasis [ref=e6]: GitHub
+      - link "Donate on Ko-fi to help cover hosting costs" [ref=e7] [cursor=pointer]:
+        - /url: https://ko-fi.com/tdurieux
+      - button "Toggle navigation" [ref=e10] [cursor=pointer]
+      - text: Switch to dark mode
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - button "Show files" [ref=e123] [cursor=pointer]:
+        - generic [ref=e26]: Files
+      - generic:
+        - generic:
+          - generic: Files
+          - button "Close files" [active]
+        - generic:
+          - generic:
+            - textbox "Search files"
+            - generic: Ctrl+K
+        - generic:
+          - generic "api-divergence-903d1c27"
+          - generic: 504 files
+          - generic "2027-05-30T17:00:00.000Z": Available until May 31, 2027
+        - generic:
+          - generic:
+            - list:
+              - listitem:
+                - generic:
+                  - generic: bundle
+                  - generic: "32"
+              - listitem:
+                - generic:
+                  - generic: preview
+                  - generic: "468"
+              - 'listitem "Size: 7B"':
+                - link ".gitignore":
+                  - /url: /r/api-divergence-903d1c27/.gitignore
+                  - generic [aria-hidden]: 
+              - 'listitem "Size: 349B"':
+                - link "assemble_package.py":
+                  - /url: /r/api-divergence-903d1c27/assemble_package.py
+                  - generic [aria-hidden]: 
+              - 'listitem "Size: 15.0KiB"':
+                - link "PREVIEW_MANIFEST.json":
+                  - /url: /r/api-divergence-903d1c27/PREVIEW_MANIFEST.json
+                  - generic [aria-hidden]: 
+              - 'listitem "Size: 403.25B"':
+                - link "README.md":
+                  - /url: /r/api-divergence-903d1c27/README.md
+                  - generic [aria-hidden]: 
+        - generic:
+          - generic "2026-11-05T14:14:37.351Z": Anonymized Nov 5, 2026
+          - generic "2026-11-05T14:14:37.419Z": Settings saved Nov 5, 2026
+          - generic "2026-11-05T14:14:39.805Z": Snapshot ready Nov 5, 2026
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - list "Path" [ref=e85]:
+            - listitem [ref=e86]: README.md
+          - generic [ref=e87]:
+            - link "View raw current file" [ref=e88] [cursor=pointer]:
+              - /url: /api/repo/api-divergence-903d1c27/file/README.md?v=6f4c7f50
+            - link "Download current file" [ref=e91] [cursor=pointer]:
+              - /url: /api/repo/api-divergence-903d1c27/file/README.md?v=6f4c7f50&download=true
+            - link "Download repository as ZIP" [ref=e94] [cursor=pointer]:
+              - /url: /api/repo/api-divergence-903d1c27/zip
+              - generic [ref=e97]: Download repository
+        - generic [ref=e98]:
+          - heading "Anonymous replication artifact — 5 November 2026" [level=1] [ref=e99]
+          - paragraph [ref=e100]: This snapshot provides the updated replication package supplied with the revised manuscript. The complete archive is byte-identical to the dated supplementary attachment. Frozen measurements, margins and primary verdicts are unchanged; subsequent evidence and reporting audits are kept separate.
+          - heading "Obtain and verify the complete package" [level=2] [ref=e101]
+          - paragraph [ref=e102]: "Download this repository as ZIP, extract it, enter its top-level folder, and run:"
+          - code [ref=e104]: python3 assemble_package.py python3 -m zipfile -e falsefriends-replication-20261105.zip extracted cd extracted/falsefriends python3 src/verify_submission_packet.py python3 artifact/reproduce.py --verify-only
+          - paragraph [ref=e105]: The assembler uses only the Python standard library. It checks each transport part and the complete archive before creating the ZIP, without model calls. Use the anonymous repository's download control to obtain all parts together.
+          - list [ref=e106]:
+            - listitem [ref=e107]:
+              - text: "Current attachment:"
+              - code [ref=e108]: falsefriends-replication-20261105.zip
+            - listitem [ref=e109]: "Size: 194,529,480 bytes"
+            - listitem [ref=e110]:
+              - text: "SHA-256:"
+              - code [ref=e111]: e0e30b2f52f87a9d7936be992c3c26f7dbaec008c50a76d898430ea40c7c32f5
+          - paragraph [ref=e112]: The 31 transport parts are each at most 6 MiB, and the final part is smaller. Reassemble them before extraction or numerical reproduction.
+          - heading "Browse code and methods" [level=2] [ref=e113]
+          - paragraph [ref=e114]:
+            - code [ref=e115]: preview/
+            - text: contains byte-identical package files of at most 1 MiB; large data remain in the complete archive.
+            - code [ref=e116]: PREVIEW_MANIFEST.json
+            - text: records original member paths and checksums. Follow the reproduction instructions inside the extracted complete package, rather than running analyses in the partial preview.
+          - heading "Changes in this revision" [level=2] [ref=e117]
+          - paragraph [ref=e118]: The reporting audit reconciles divergence-band counts, placebo populations and original/normalized grading. The synthesis generates the three-state evidence summary and separate Haiku NEW/POOLED table from saved analyses. An auxiliary P6 export now preserves percentage-point units without multiplying them again. No new model calls, refitting or inferential tests were added for these reports. Secondary theory, protocol history and scoped diagnostics are retained.
+          - paragraph [ref=e119]: The package was checked with 32 passing tests, 538 distributed payload files, 195 provenance references and 200 frozen artifact files. The tested runtime is Python 3.12.3; dependency versions and full numerical reproduction instructions are in the complete package. Frozen condition means and matched-reader results remain reproducible offline without API keys.
+          - heading "Scope and interpretation" [level=2] [ref=e120]
+          - paragraph [ref=e121]: Four readers cover the frozen study; Sonnet remains a separate matched subset. NEW evidence covers only complete Haiku exports, with incomplete open-reader exports and no independent returned-model identity verification from that export. POOLED includes original groups and is not independent confirmation. Wide P1 intervals remain inconclusive; the summary's P4 status concerns its slope only, without replacing the full frozen criterion. MAE comparisons are descriptive. Scoped executable audits do not replace independent human annotation, and changed witness selections have no new measured reader outcomes.
+          - paragraph [ref=e122]: This reviewer distribution grants no new license over third-party material. Public release is planned after acceptance, subject to coauthor agreement.

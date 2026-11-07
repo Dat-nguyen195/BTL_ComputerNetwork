@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - separator
+      - link "ICPC 2027, Research Track" [ref=e5] [cursor=pointer]:
+        - /url: ../
+      - generic [ref=e8]:
+        - link "Submission deadline" [ref=e9] [cursor=pointer]:
+          - /url: ../deadlines
+        - text: in 22 hours
+      - heading "#11 Not found" [level=1] [ref=e11]
+      - navigation "Submission search"
+      - separator
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - generic [ref=e16]:
+            - text: You must
+            - link "sign in" [ref=e17] [cursor=pointer]:
+              - /url: ../signin?redirect=paper%2F11
+            - text: to access this page
+    - main [ref=e18]:
+      - separator
+  - contentinfo [ref=e19]:
+    - link "HotCRP" [ref=e20] [cursor=pointer]:
+      - /url: https://hotcrp.com/
