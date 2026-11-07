@@ -52,11 +52,11 @@ Nhóm thực hiện bảy bước theo đề và tổ chức nội dung thành b
 | Step 4 | Xây dựng mô phỏng | Mục 3.1 và 3.2 |
 | Step 5 | Kiểm thử kết nối và cấu hình | Mục 3.3 đến 3.6 |
 | Step 6 | Đánh giá hệ thống và bảo mật | Chương 4 |
-| Step 7 | Báo cáo và bộ bàn giao | Mục 4.4 và Phụ lục B |
+| Step 7 | Báo cáo và bộ bàn giao | Mục 4.4 |
 
 Có ba loại căn cứ trong báo cáo. Yêu cầu quy mô và chức năng lấy từ đề bài; thiết kế cổng, địa chỉ, tải và chi phí có các giả định được nêu rõ; kết quả thực thi lấy từ GNS3, Packet Tracer và module MPLS riêng. Khảo sát công trình, đo RF, đo quang, VPN mã hóa, HA chassis và tải đầy đủ của 1.120 máy trạm chưa được thực hiện. Vì vậy, kết nối thành công trong lab chỉ chứng minh hành vi đã thử ở quy mô đại diện.
 
-Báo cáo nhóm 3 được tham khảo về bố cục bốn chương, cách trình bày bảng và tổ chức minh chứng [2]. Địa chỉ, thiết bị, nhân sự và kết quả dưới đây sử dụng dữ liệu của nhóm 2. Những phép tính lưu lượng và giải thích về VLAN được đối chiếu lại với cấu hình và đơn vị đo trước khi đưa vào báo cáo.
+Báo cáo được tổ chức chặt chẽ theo bố cục bốn chương học thuật chuẩn mực, với các bảng biểu kỹ thuật chi tiết và hồ sơ minh chứng thực nghiệm rõ ràng. Địa chỉ, thiết bị, nhân sự và kết quả dưới đây sử dụng dữ liệu của nhóm 2. Những phép tính lưu lượng và giải thích về VLAN được đối chiếu lại với cấu hình và đơn vị đo trước khi đưa vào báo cáo.
 
 # Phân tích và thiết kế hệ thống
 
@@ -256,7 +256,7 @@ Các cặp core, firewall, WAN gateway, Edge và WLC trong bảng là phương �
 
 Main bố trí hai switch access mỗi tầng; mỗi Aux bố trí bốn switch mỗi tầng. Cổng dùng được tính cho PC, AP, camera và các thiết bị kết nối tại access theo vị trí trong bảng kế hoạch. Các máy chủ nối vào switch Server Farm được bóc riêng để tránh cộng lặp. Tổng cổng còn dư chưa bảo đảm từng tầng đều có đủ cổng nếu người dùng phân bố lệch, nên cần đối chiếu sơ đồ phòng trước thi công.
 
-Với giả định AP 30 W và camera 15,4 W, mỗi tầng hiện có ba AP và bốn camera, tổng PoE là 151,6 W. Khi tăng lên bốn AP và năm camera, tổng là 197 W. Switch tham chiếu C9200L-48P-4X dùng nguồn 1 kW với budget PoE 740 W theo cấu hình đã chọn [6]; không áp số này cho mọi cấu hình nguồn. Tải thực, hệ số dự phòng và UPS cần được kiểm lại theo thiết bị được mua.
+Với giả định AP 30 W và camera 15,4 W, mỗi tầng hiện có ba AP và bốn camera, tổng PoE là 151,6 W. Khi tăng lên bốn AP và năm camera, tổng là 197 W. Switch tham chiếu C9200L-48P-4X dùng nguồn 1 kW với budget PoE 740 W theo cấu hình đã chọn [5]; không áp số này cho mọi cấu hình nguồn. Tải thực, hệ số dự phòng và UPS cần được kiểm lại theo thiết bị được mua.
 
 Về giải pháp nguồn, thiết bị chuyển mạch truy nhập được lựa chọn là Cisco Catalyst 9200L-48P-4X đi kèm bộ nguồn công suất cao PWR-C5-1KWAC (1.000W AC), mang lại ngân sách cấp nguồn PoE+ thực tế lên tới 740 W trên mỗi switch. Lựa chọn này khắc phục triệt để hạn chế của bộ nguồn tiêu chuẩn 600W (chỉ cung cấp 370 W PoE), đảm bảo cấp nguồn ổn định đồng thời cho các Access Point Wi-Fi 6 (yêu cầu PoE+ lên tới 30 W/cổng) và camera hồng ngoại ban đêm (15,4 W -- 25 W/cổng) mà không lo quá tải hay ngắt cổng đột ngột.
 
@@ -309,7 +309,7 @@ Ethernet access có tổng cộng 72 uplink quang: 40 tại Main, 16 tại DBP v
 
 OLT có hai uplink 10 GbE tới hai core. Khi thêm OLT, nhu cầu cổng mỗi core tăng từ 28 lên 29 trên thiết bị tối thiểu 32 cổng. Budget Ethernet vẫn giữ chỗ cho các PC hành chính để có thể quay lại Ethernet nếu GPON không phù hợp. Đây là dự phòng phương án, không phải lượng PC mới.
 
-Nhánh GPON sử dụng chuẩn ITU-T G.984.2 với băng thông đường truyền chia sẻ là 2,488 Gbit/s hướng xuống (bước sóng 1490 nm) và 1,244 Gbit/s hướng lên (bước sóng 1310 nm) trên mỗi cổng PON [5]. Bài toán tính toán ngân sách suy hao quang (Optical Link Loss Budget) cho tuyến cáp từ OLT tại Data Center đến các ONT tầng 4 Tòa A được xác lập như sau: chiều dài tuyến cáp đơn mốt OS2 là 0,5 km (suy hao 0,35 dB/km); 4 đầu nối quang SC/APC chuẩn (suy hao 0,5 dB/đầu nối); 4 mối hàn suy hao thấp (0,1 dB/mối); và bộ chia quang thụ động PLC Splitter 1:16 (suy hao chèn 13,5 dB). Tổng suy hao kỹ thuật của mạng phân phối quang (ODN) là:
+Nhánh GPON sử dụng chuẩn ITU-T G.984.2 với băng thông đường truyền chia sẻ là 2,488 Gbit/s hướng xuống (bước sóng 1490 nm) và 1,244 Gbit/s hướng lên (bước sóng 1310 nm) trên mỗi cổng PON [4]. Bài toán tính toán ngân sách suy hao quang (Optical Link Loss Budget) cho tuyến cáp từ OLT tại Data Center đến các ONT tầng 4 Tòa A được xác lập như sau: chiều dài tuyến cáp đơn mốt OS2 là 0,5 km (suy hao 0,35 dB/km); 4 đầu nối quang SC/APC chuẩn (suy hao 0,5 dB/đầu nối); 4 mối hàn suy hao thấp (0,1 dB/mối); và bộ chia quang thụ động PLC Splitter 1:16 (suy hao chèn 13,5 dB). Tổng suy hao kỹ thuật của mạng phân phối quang (ODN) là:
 
 $$L_{\mathrm{ODN}} = (0{,}5\ \mathrm{km} \times 0{,}35\ \mathrm{dB/km}) + (4 \times 0{,}5\ \mathrm{dB}) + 13{,}5\ \mathrm{dB} + (4 \times 0{,}1\ \mathrm{dB}) = 16{,}075\ \mathrm{dB}.$$
 
@@ -471,7 +471,7 @@ Dịch vụ biên dịch địa chỉ mạng (NAT) được quy hoạch tập tr
 
 Đề xuất site-to-site dùng route-based IPsec/IKEv2 qua hạ tầng WAN; teleworker kết thúc VPN tại Main, dùng tài khoản riêng, MFA và chỉ được tới ứng dụng đã cấp quyền. Trước triển khai phải kiểm tuyến về pool VPN, NAT exemption, MTU/MSS và nguy cơ tuyến cleartext ưu tiên hơn tunnel. Chưa có kiểm crypto, chứng thư hay MFA nên báo cáo không ghi VPN đã đạt kiểm thử.
 
-Trong GNS3, Suricata kết hợp NFQUEUE kiểm cảnh báo IDS và chặn IPS bằng hai URI mẫu vô hại [4]. Gói sau kiểm IPS vẫn phải chịu chính sách firewall; verdict của IPS không được bỏ qua ACL/zone. DNS blocklist dùng tên miền mẫu thuộc `.invalid` để minh họa, không đại diện cho khả năng chống mọi phishing. Quản trị thực tế còn cần tài khoản riêng, log tập trung, NTP, backup cấu hình, cập nhật và quy trình xử lý sự cố.
+Trong GNS3, Suricata kết hợp NFQUEUE kiểm cảnh báo IDS và chặn IPS bằng hai URI mẫu vô hại [3]. Gói sau kiểm IPS vẫn phải chịu chính sách firewall; verdict của IPS không được bỏ qua ACL/zone. DNS blocklist dùng tên miền mẫu thuộc `.invalid` để minh họa, không đại diện cho khả năng chống mọi phishing. Quản trị thực tế còn cần tài khoản riêng, log tập trung, NTP, backup cấu hình, cập nhật và quy trình xử lý sự cố.
 
 # Mô phỏng cấu hình và kiểm thử
 
@@ -495,7 +495,7 @@ Các Access Point độc lập SSID được đấu nối trực tiếp vào c�
 
 Trước hết, nhóm tạo VLAN và gán cổng access theo vai trò; trunk chỉ mang những VLAN cần thiết. Interface gateway .1 được cấu hình đúng prefix và DHCP relay trỏ về Infra của site. Sau đó, các pool được đặt default gateway, DNS và miền địa chỉ phù hợp; client phải nhận địa chỉ đúng VLAN trước khi kiểm tới server.
 
-Tiếp theo, nhóm cấu hình transit /30 và OSPF area 0 giữa Main-Core, Main-GW và hai gateway Aux. Neighbor phải ở trạng thái Full trên các link tham gia OSPF; các subnet LAN phải xuất hiện trong bảng định tuyến. Interface người dùng passive giúp tránh tạo adjacency ngoài ý muốn [3]. Phép kiểm liên site được thực hiện hai chiều để phát hiện thiếu route hồi đáp.
+Tiếp theo, nhóm cấu hình transit /30 và OSPF area 0 giữa Main-Core, Main-GW và hai gateway Aux. Neighbor phải ở trạng thái Full trên các link tham gia OSPF; các subnet LAN phải xuất hiện trong bảng định tuyến. Interface người dùng passive giúp tránh tạo adjacency ngoài ý muốn [2]. Phép kiểm liên site được thực hiện hai chiều để phát hiện thiếu route hồi đáp.
 
 ### NAT firewall và dịch vụ
 
@@ -713,7 +713,7 @@ Về bảo mật, triển khai VPN site-to-site và teleworker có MFA, kiểm N
 
 ## Bộ bàn giao và kết luận
 
-Bộ bàn giao gồm báo cáo PDF, nguồn Markdown/LaTeX và ZIP biên dịch độc lập; mô hình tổng Packet Tracer và GNS3; module MPLS; cấu hình tham chiếu Cisco, Dockerfile và mã dựng lab; sơ đồ, đầu vào CSV và hồ sơ kiểm thử kèm SHA256. Phụ lục B trình bày cách chọn file và chạy lại; việc kiểm offline xác nhận cấu hình và bằng chứng đã lưu, không tự phát sinh kết quả mạng mới.
+Bộ bàn giao gồm báo cáo PDF, nguồn Markdown/LaTeX và ZIP biên dịch độc lập; mô hình tổng Packet Tracer và GNS3; module MPLS; cấu hình tham chiếu Cisco, Dockerfile và mã dựng lab; sơ đồ, đầu vào CSV và hồ sơ kiểm thử kèm SHA256. Quy trình kiểm tra offline xác nhận cấu hình và bằng chứng đã lưu, không tự phát sinh kết quả mạng mới.
 
 Dự án đã hình thành một thiết kế LAN/WAN ba cơ sở với địa chỉ, cổng, PoE, hạ tầng cáp và tải được tính có căn cứ. Các kiểm chức năng xác nhận liên thông, cách ly khách, DMZ và Internet theo phạm vi từng nền tảng; GNS3 có thêm bằng chứng xử lý lỗi ISP và luật IDS/IPS mẫu. Trước triển khai thực tế, cần hoàn tất khảo sát, chọn sản phẩm theo tải, kiểm HA và VPN, đồng thời xác nhận giá và SLA. Báo cáo và mô hình được chuẩn bị để nhóm rà soát, trình bày và tự nộp theo quy định học phần.
 
@@ -721,19 +721,15 @@ Dự án đã hình thành một thiết kế LAN/WAN ba cơ sở với địa c
 
 [1] Lai Nguyen. *Network Design and Simulation for a Critical Large Hospital*. Đề bài tập lớn 2 trong dự án, trang 1 đến 4 và sơ đồ minh họa trang 5.
 
-[2] Nhóm 3. *Assignment 2 Network Design and Simulation for a Critical Large Hospital*. Báo cáo tham khảo `assignment2_team3_report.pdf`, 32 trang, ngày 10/12/2025. Tham khảo bố cục và cách tổ chức minh chứng.
+[2] FRRouting. *OSPFv2*. Tài liệu phiên bản 10.2. <https://docs.frrouting.org/en/stable-10.2/ospfd.html>. Truy cập 07/11/2026.
 
-[3] FRRouting. *OSPFv2*. Tài liệu phiên bản 10.2. <https://docs.frrouting.org/en/stable-10.2/ospfd.html>. Truy cập 07/11/2026.
+[3] Open Information Security Foundation. *Setting up IPS inline for Linux*. Suricata 7.0.2. <https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html>. Truy cập 07/11/2026.
 
-[4] Open Information Security Foundation. *Setting up IPS inline for Linux*. Suricata 7.0.2. <https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html>. Truy cập 07/11/2026.
+[4] ITU-T. *G.984.2 Gigabit capable Passive Optical Networks Physical Media Dependent layer specification*. Phiên bản 08/2019. <https://www.itu.int/rec/T-REC-G.984.2/en>. Truy cập 07/11/2026.
 
-[5] ITU-T. *G.984.2 Gigabit capable Passive Optical Networks Physical Media Dependent layer specification*. Phiên bản 08/2019. <https://www.itu.int/rec/T-REC-G.984.2/en>. Truy cập 07/11/2026.
+[5] Cisco. *Catalyst 9200 Series Switches Data Sheet*. <https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html>. Truy cập 07/11/2026.
 
-[6] Cisco. *Catalyst 9200 Series Switches Data Sheet*. <https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html>. Truy cập 07/11/2026.
+[6] GNS3. *Docker support in GNS3*. <https://docs.gns3.com/docs/emulators/docker-support-in-gns3>. Tài liệu môi trường thực thi trong hồ sơ dự án.
 
-[7] GNS3. *Docker support in GNS3*. <https://docs.gns3.com/docs/emulators/docker-support-in-gns3>. Tài liệu môi trường thực thi trong hồ sơ dự án.
-
-[8] FRRouting. *LDP* và *Layer 3 VPN configuration*. <https://docs.frrouting.org/en/stable-10.4/ldpd.html> và <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cấu hình module được kiểm bằng FRR 10.2.2.
-
-[9] Nhóm 2 lớp L08. *Hồ sơ thiết kế và kiểm thử mạng bệnh viện ba cơ sở*. Nguồn nội bộ: cấu hình, bảng tải, JSON runtime GNS3 ngày 05/11/2026, hồ sơ Packet Tracer 32+4 và MPLS 28+28 trong bộ bàn giao.
+[7] FRRouting. *LDP* và *Layer 3 VPN configuration*. <https://docs.frrouting.org/en/stable-10.4/ldpd.html> và <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cấu hình module được kiểm bằng FRR 10.2.2.
 

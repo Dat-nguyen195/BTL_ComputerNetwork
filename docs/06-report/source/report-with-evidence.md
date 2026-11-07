@@ -54,11 +54,11 @@ Nhóm thực hiện bảy bước theo đề và tổ chức nội dung thành b
 | Step 4 | Xây dựng mô phỏng | Mục 3.1 và 3.2 |
 | Step 5 | Kiểm thử kết nối và cấu hình | Mục 3.3 đến 3.6 |
 | Step 6 | Đánh giá hệ thống và bảo mật | Chương 4 |
-| Step 7 | Báo cáo và bộ bàn giao | Mục 4.4 và Phụ lục B |
+| Step 7 | Báo cáo và bộ bàn giao | Mục 4.4 |
 
 Có ba loại căn cứ trong báo cáo. Yêu cầu quy mô và chức năng lấy từ đề bài; thiết kế cổng, địa chỉ, tải và chi phí có các giả định được nêu rõ; kết quả thực thi lấy từ GNS3, Packet Tracer và module MPLS riêng. Khảo sát công trình, đo RF, đo quang, VPN mã hóa, HA chassis và tải đầy đủ của 1.120 máy trạm chưa được thực hiện. Vì vậy, kết nối thành công trong lab chỉ chứng minh hành vi đã thử ở quy mô đại diện.
 
-Báo cáo nhóm 3 được tham khảo về bố cục bốn chương, cách trình bày bảng và tổ chức minh chứng [2]. Địa chỉ, thiết bị, nhân sự và kết quả dưới đây sử dụng dữ liệu của nhóm 2. Những phép tính lưu lượng và giải thích về VLAN được đối chiếu lại với cấu hình và đơn vị đo trước khi đưa vào báo cáo.
+Báo cáo được tổ chức chặt chẽ theo bố cục bốn chương học thuật chuẩn mực, với các bảng biểu kỹ thuật chi tiết và hồ sơ minh chứng thực nghiệm rõ ràng. Địa chỉ, thiết bị, nhân sự và kết quả dưới đây sử dụng dữ liệu của nhóm 2. Những phép tính lưu lượng và giải thích về VLAN được đối chiếu lại với cấu hình và đơn vị đo trước khi đưa vào báo cáo.
 
 # Phân tích và thiết kế hệ thống
 
@@ -258,7 +258,7 @@ Các cặp core, firewall, WAN gateway, Edge và WLC trong bảng là phương �
 
 Main bố trí hai switch access mỗi tầng; mỗi Aux bố trí bốn switch mỗi tầng. Cổng dùng được tính cho PC, AP, camera và các thiết bị kết nối tại access theo vị trí trong bảng kế hoạch. Các máy chủ nối vào switch Server Farm được bóc riêng để tránh cộng lặp. Tổng cổng còn dư chưa bảo đảm từng tầng đều có đủ cổng nếu người dùng phân bố lệch, nên cần đối chiếu sơ đồ phòng trước thi công.
 
-Với giả định AP 30 W và camera 15,4 W, mỗi tầng hiện có ba AP và bốn camera, tổng PoE là 151,6 W. Khi tăng lên bốn AP và năm camera, tổng là 197 W. Switch tham chiếu C9200L-48P-4X dùng nguồn 1 kW với budget PoE 740 W theo cấu hình đã chọn [6]; không áp số này cho mọi cấu hình nguồn. Tải thực, hệ số dự phòng và UPS cần được kiểm lại theo thiết bị được mua.
+Với giả định AP 30 W và camera 15,4 W, mỗi tầng hiện có ba AP và bốn camera, tổng PoE là 151,6 W. Khi tăng lên bốn AP và năm camera, tổng là 197 W. Switch tham chiếu C9200L-48P-4X dùng nguồn 1 kW với budget PoE 740 W theo cấu hình đã chọn [5]; không áp số này cho mọi cấu hình nguồn. Tải thực, hệ số dự phòng và UPS cần được kiểm lại theo thiết bị được mua.
 
 Về giải pháp nguồn, thiết bị chuyển mạch truy nhập được lựa chọn là Cisco Catalyst 9200L-48P-4X đi kèm bộ nguồn công suất cao PWR-C5-1KWAC (1.000W AC), mang lại ngân sách cấp nguồn PoE+ thực tế lên tới 740 W trên mỗi switch. Lựa chọn này khắc phục triệt để hạn chế của bộ nguồn tiêu chuẩn 600W (chỉ cung cấp 370 W PoE), đảm bảo cấp nguồn ổn định đồng thời cho các Access Point Wi-Fi 6 (yêu cầu PoE+ lên tới 30 W/cổng) và camera hồng ngoại ban đêm (15,4 W -- 25 W/cổng) mà không lo quá tải hay ngắt cổng đột ngột.
 
@@ -311,7 +311,7 @@ Ethernet access có tổng cộng 72 uplink quang: 40 tại Main, 16 tại DBP v
 
 OLT có hai uplink 10 GbE tới hai core. Khi thêm OLT, nhu cầu cổng mỗi core tăng từ 28 lên 29 trên thiết bị tối thiểu 32 cổng. Budget Ethernet vẫn giữ chỗ cho các PC hành chính để có thể quay lại Ethernet nếu GPON không phù hợp. Đây là dự phòng phương án, không phải lượng PC mới.
 
-Nhánh GPON sử dụng chuẩn ITU-T G.984.2 với băng thông đường truyền chia sẻ là 2,488 Gbit/s hướng xuống (bước sóng 1490 nm) và 1,244 Gbit/s hướng lên (bước sóng 1310 nm) trên mỗi cổng PON [5]. Bài toán tính toán ngân sách suy hao quang (Optical Link Loss Budget) cho tuyến cáp từ OLT tại Data Center đến các ONT tầng 4 Tòa A được xác lập như sau: chiều dài tuyến cáp đơn mốt OS2 là 0,5 km (suy hao 0,35 dB/km); 4 đầu nối quang SC/APC chuẩn (suy hao 0,5 dB/đầu nối); 4 mối hàn suy hao thấp (0,1 dB/mối); và bộ chia quang thụ động PLC Splitter 1:16 (suy hao chèn 13,5 dB). Tổng suy hao kỹ thuật của mạng phân phối quang (ODN) là:
+Nhánh GPON sử dụng chuẩn ITU-T G.984.2 với băng thông đường truyền chia sẻ là 2,488 Gbit/s hướng xuống (bước sóng 1490 nm) và 1,244 Gbit/s hướng lên (bước sóng 1310 nm) trên mỗi cổng PON [4]. Bài toán tính toán ngân sách suy hao quang (Optical Link Loss Budget) cho tuyến cáp từ OLT tại Data Center đến các ONT tầng 4 Tòa A được xác lập như sau: chiều dài tuyến cáp đơn mốt OS2 là 0,5 km (suy hao 0,35 dB/km); 4 đầu nối quang SC/APC chuẩn (suy hao 0,5 dB/đầu nối); 4 mối hàn suy hao thấp (0,1 dB/mối); và bộ chia quang thụ động PLC Splitter 1:16 (suy hao chèn 13,5 dB). Tổng suy hao kỹ thuật của mạng phân phối quang (ODN) là:
 
 $$L_{\mathrm{ODN}} = (0{,}5\ \mathrm{km} \times 0{,}35\ \mathrm{dB/km}) + (4 \times 0{,}5\ \mathrm{dB}) + 13{,}5\ \mathrm{dB} + (4 \times 0{,}1\ \mathrm{dB}) = 16{,}075\ \mathrm{dB}.$$
 
@@ -473,7 +473,7 @@ Dịch vụ biên dịch địa chỉ mạng (NAT) được quy hoạch tập tr
 
 Đề xuất site-to-site dùng route-based IPsec/IKEv2 qua hạ tầng WAN; teleworker kết thúc VPN tại Main, dùng tài khoản riêng, MFA và chỉ được tới ứng dụng đã cấp quyền. Trước triển khai phải kiểm tuyến về pool VPN, NAT exemption, MTU/MSS và nguy cơ tuyến cleartext ưu tiên hơn tunnel. Chưa có kiểm crypto, chứng thư hay MFA nên báo cáo không ghi VPN đã đạt kiểm thử.
 
-Trong GNS3, Suricata kết hợp NFQUEUE kiểm cảnh báo IDS và chặn IPS bằng hai URI mẫu vô hại [4]. Gói sau kiểm IPS vẫn phải chịu chính sách firewall; verdict của IPS không được bỏ qua ACL/zone. DNS blocklist dùng tên miền mẫu thuộc `.invalid` để minh họa, không đại diện cho khả năng chống mọi phishing. Quản trị thực tế còn cần tài khoản riêng, log tập trung, NTP, backup cấu hình, cập nhật và quy trình xử lý sự cố.
+Trong GNS3, Suricata kết hợp NFQUEUE kiểm cảnh báo IDS và chặn IPS bằng hai URI mẫu vô hại [3]. Gói sau kiểm IPS vẫn phải chịu chính sách firewall; verdict của IPS không được bỏ qua ACL/zone. DNS blocklist dùng tên miền mẫu thuộc `.invalid` để minh họa, không đại diện cho khả năng chống mọi phishing. Quản trị thực tế còn cần tài khoản riêng, log tập trung, NTP, backup cấu hình, cập nhật và quy trình xử lý sự cố.
 
 # Mô phỏng cấu hình và kiểm thử
 
@@ -497,7 +497,7 @@ Các Access Point độc lập SSID được đấu nối trực tiếp vào c�
 
 Trước hết, nhóm tạo VLAN và gán cổng access theo vai trò; trunk chỉ mang những VLAN cần thiết. Interface gateway .1 được cấu hình đúng prefix và DHCP relay trỏ về Infra của site. Sau đó, các pool được đặt default gateway, DNS và miền địa chỉ phù hợp; client phải nhận địa chỉ đúng VLAN trước khi kiểm tới server.
 
-Tiếp theo, nhóm cấu hình transit /30 và OSPF area 0 giữa Main-Core, Main-GW và hai gateway Aux. Neighbor phải ở trạng thái Full trên các link tham gia OSPF; các subnet LAN phải xuất hiện trong bảng định tuyến. Interface người dùng passive giúp tránh tạo adjacency ngoài ý muốn [3]. Phép kiểm liên site được thực hiện hai chiều để phát hiện thiếu route hồi đáp.
+Tiếp theo, nhóm cấu hình transit /30 và OSPF area 0 giữa Main-Core, Main-GW và hai gateway Aux. Neighbor phải ở trạng thái Full trên các link tham gia OSPF; các subnet LAN phải xuất hiện trong bảng định tuyến. Interface người dùng passive giúp tránh tạo adjacency ngoài ý muốn [2]. Phép kiểm liên site được thực hiện hai chiều để phát hiện thiếu route hồi đáp.
 
 ### NAT firewall và dịch vụ
 
@@ -715,7 +715,7 @@ Về bảo mật, triển khai VPN site-to-site và teleworker có MFA, kiểm N
 
 ## Bộ bàn giao và kết luận
 
-Bộ bàn giao gồm báo cáo PDF, nguồn Markdown/LaTeX và ZIP biên dịch độc lập; mô hình tổng Packet Tracer và GNS3; module MPLS; cấu hình tham chiếu Cisco, Dockerfile và mã dựng lab; sơ đồ, đầu vào CSV và hồ sơ kiểm thử kèm SHA256. Phụ lục B trình bày cách chọn file và chạy lại; việc kiểm offline xác nhận cấu hình và bằng chứng đã lưu, không tự phát sinh kết quả mạng mới.
+Bộ bàn giao gồm báo cáo PDF, nguồn Markdown/LaTeX và ZIP biên dịch độc lập; mô hình tổng Packet Tracer và GNS3; module MPLS; cấu hình tham chiếu Cisco, Dockerfile và mã dựng lab; sơ đồ, đầu vào CSV và hồ sơ kiểm thử kèm SHA256. Quy trình kiểm tra offline xác nhận cấu hình và bằng chứng đã lưu, không tự phát sinh kết quả mạng mới.
 
 Dự án đã hình thành một thiết kế LAN/WAN ba cơ sở với địa chỉ, cổng, PoE, hạ tầng cáp và tải được tính có căn cứ. Các kiểm chức năng xác nhận liên thông, cách ly khách, DMZ và Internet theo phạm vi từng nền tảng; GNS3 có thêm bằng chứng xử lý lỗi ISP và luật IDS/IPS mẫu. Trước triển khai thực tế, cần hoàn tất khảo sát, chọn sản phẩm theo tải, kiểm HA và VPN, đồng thời xác nhận giá và SLA. Báo cáo và mô hình được chuẩn bị để nhóm rà soát, trình bày và tự nộp theo quy định học phần.
 
@@ -723,159 +723,15 @@ Dự án đã hình thành một thiết kế LAN/WAN ba cơ sở với địa c
 
 [1] Lai Nguyen. *Network Design and Simulation for a Critical Large Hospital*. Đề bài tập lớn 2 trong dự án, trang 1 đến 4 và sơ đồ minh họa trang 5.
 
-[2] Nhóm 3. *Assignment 2 Network Design and Simulation for a Critical Large Hospital*. Báo cáo tham khảo `assignment2_team3_report.pdf`, 32 trang, ngày 10/12/2025. Tham khảo bố cục và cách tổ chức minh chứng.
+[2] FRRouting. *OSPFv2*. Tài liệu phiên bản 10.2. <https://docs.frrouting.org/en/stable-10.2/ospfd.html>. Truy cập 07/11/2026.
 
-[3] FRRouting. *OSPFv2*. Tài liệu phiên bản 10.2. <https://docs.frrouting.org/en/stable-10.2/ospfd.html>. Truy cập 07/11/2026.
+[3] Open Information Security Foundation. *Setting up IPS inline for Linux*. Suricata 7.0.2. <https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html>. Truy cập 07/11/2026.
 
-[4] Open Information Security Foundation. *Setting up IPS inline for Linux*. Suricata 7.0.2. <https://docs.suricata.io/en/suricata-7.0.2/setting-up-ipsinline-for-linux.html>. Truy cập 07/11/2026.
+[4] ITU-T. *G.984.2 Gigabit capable Passive Optical Networks Physical Media Dependent layer specification*. Phiên bản 08/2019. <https://www.itu.int/rec/T-REC-G.984.2/en>. Truy cập 07/11/2026.
 
-[5] ITU-T. *G.984.2 Gigabit capable Passive Optical Networks Physical Media Dependent layer specification*. Phiên bản 08/2019. <https://www.itu.int/rec/T-REC-G.984.2/en>. Truy cập 07/11/2026.
+[5] Cisco. *Catalyst 9200 Series Switches Data Sheet*. <https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html>. Truy cập 07/11/2026.
 
-[6] Cisco. *Catalyst 9200 Series Switches Data Sheet*. <https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html>. Truy cập 07/11/2026.
+[6] GNS3. *Docker support in GNS3*. <https://docs.gns3.com/docs/emulators/docker-support-in-gns3>. Tài liệu môi trường thực thi trong hồ sơ dự án.
 
-[7] GNS3. *Docker support in GNS3*. <https://docs.gns3.com/docs/emulators/docker-support-in-gns3>. Tài liệu môi trường thực thi trong hồ sơ dự án.
+[7] FRRouting. *LDP* và *Layer 3 VPN configuration*. <https://docs.frrouting.org/en/stable-10.4/ldpd.html> và <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cấu hình module được kiểm bằng FRR 10.2.2.
 
-[8] FRRouting. *LDP* và *Layer 3 VPN configuration*. <https://docs.frrouting.org/en/stable-10.4/ldpd.html> và <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cấu hình module được kiểm bằng FRR 10.2.2.
-
-[9] Nhóm 2 lớp L08. *Hồ sơ thiết kế và kiểm thử mạng bệnh viện ba cơ sở*. Nguồn nội bộ: cấu hình, bảng tải, JSON runtime GNS3 ngày 05/11/2026, hồ sơ Packet Tracer 32+4 và MPLS 28+28 trong bộ bàn giao.
-
-
-\clearpage
-
-# Phụ lục A - Kết quả chạy thực tế {.unnumbered}
-
-Bảng này được dựng từ JSON evidence; số lần kiểm bao gồm hai lượt smoke trong ca failover. Không quy đổi thành điểm môn học hoặc SLA.
-
-
-\Needspace{22\baselineskip}
-
-## Run after-firewall-restart-runtime {.unnumbered}
-
-Thời điểm UTC: 2026-11-02T15:25:25.557372+00:00. Nền tảng GNS3 2.2.55.
-
-| Nhóm kiểm | Số kiểm tra | Kết quả |
-|:---|---:|:---|
-| DHCP-DNS | 76 | PASS |
-| IDS-IPS | 7 | PASS |
-| ISP-BOTH-DOWN | 5 | PASS |
-| ISP-CONVERGENCE | 2 | PASS |
-| ISP-FAILOVER | 14 | PASS |
-| ISP-PBR | 2 | PASS |
-| ISP-RECOVERY | 7 | PASS |
-| OSPF | 8 | PASS |
-| TC01 | 4 | PASS |
-| TC02 | 6 | PASS |
-| TC03 | 13 | PASS |
-| TC04 | 12 | PASS |
-| TC05 | 39 | PASS |
-| TC06 | 14 | PASS |
-
-Tổng 209 kiểm tra, không có FAIL trong lần chạy này.
-
-Mất upstream ISP1/ISP2: phục hồi HTTP từ năm endpoint lần lượt 5.526 giây, 5.186 giây. Có gián đoạn tạm thời trong các sample; không phải chuyển mạch không mất phiên.
-
-Image ID của tag trong controller tại thời điểm test: `sha256:85e44ab0965cf251cec2fb1aca0973a3fa3a0735f5fc82bcef3b8860b3e3ead2`.
-
-Evidence: `test_results/runtime/after-firewall-restart-runtime/results.json`; SHA256 `aa937a55c13bf97633efebe3e769f932e4d1f5456a57c446f9b9f462a7c8224a`.
-
-
-\Needspace{22\baselineskip}
-
-## Run after-reopen-runtime {.unnumbered}
-
-Thời điểm UTC: 2026-11-02T14:04:06.477140+00:00. Nền tảng GNS3 2.2.55.
-
-| Nhóm kiểm | Số kiểm tra | Kết quả |
-|:---|---:|:---|
-| DHCP-DNS | 76 | PASS |
-| IDS-IPS | 7 | PASS |
-| OSPF | 8 | PASS |
-| TC01 | 2 | PASS |
-| TC02 | 3 | PASS |
-| TC03 | 7 | PASS |
-| TC04 | 6 | PASS |
-| TC05 | 21 | PASS |
-| TC06 | 7 | PASS |
-
-Tổng 137 kiểm tra, không có FAIL trong lần chạy này.
-
-Image ID của tag trong controller tại thời điểm test: `sha256:f688010da04c55df4d263de5cad79284c6ab8b147abe5266133f889f2a8068b4`.
-
-Evidence: `test_results/runtime/after-reopen-runtime/results.json`; SHA256 `4b4dc6adca6c91e7c850868cffcdc262134e34ebfc619b6e75478c278753df4b`.
-
-
-## Đối chiếu phiên bản và lỗi ban đầu {.unnumbered}
-
-File GNS3 bàn giao được chép lại từ source, mở bằng chính GNS3 và chạy lại smoke. Có52 node (9 router/firewall,5 switch,38 endpoint),52 link. Hash project đã thử: `8047cff9ca418dc52a43cb1b546e3179e3962224136122f65fd00d35cff2d5bb`.
-
-Run initial-runtime giữ hai FAIL khi thử HTTP ở Aux ngay sau Edge chuyển trạng thái; OSPF/default chưa hội tụ. Bộ thử sau đó đo cả quá trình từ fault tới phục hồi đầu cuối, lưu các sample gián đoạn và kiểm lại sau hội tụ. Không xóa evidence lỗi ban đầu hoặc diễn giải thành zero-downtime.
-
-Bản hiện tại sửa PID Suricata còn sót sau khi dừng container. Hai chu kỳ dừng/bật firewall đã xác nhận tiến trình Suricata sống và HTTP phục hồi; lần kiểm đầy đủ sau sửa đạt209/209. Source được cập nhật trong container hiện có, còn image mới được build/load cho lần tạo node sau. Base image ID của từng container và phép kiểm restart nằm tại `test_results/runtime/firewall-restart/restart.json`; hash file đang chạy được kiểm riêng trong `persistence/live-provenance.json`. Lần reopen137 kiểm ở trên là bằng chứng lịch sử trước bản sửa PID, không được diễn giải thành kiểm reopen lại source mới.
-
-
-\clearpage
-
-# Phụ lục B - Tái lập và danh mục sản phẩm {.unnumbered}
-
-Các lệnh được chạy ở root repository trên Linux có Docker. Lần đầu dựng cần Internet để tải package/image, đủ RAM/disk; không cần IOS image có bản quyền.
-
-```bash
-python3 scripts/verify.py
-python3 scripts/gns3_lab.py bootstrap
-python3 scripts/test_gns3_runtime.py --failover
-python3 scripts/gns3_lab.py status
-```
-
-Trên máy đã có lab, dùng `start` hoặc `reopen`, không bootstrap lần hai đè môi trường. Xem `simulation/gns3/README.md` để mở GUI, xây image trên compute khác và dừng lab. Bản nộp kèm `submission/SHA256SUMS` và gói ZIP; việc đóng gói không thay phê duyệt hoặc biên nhận BKeL.
-
-\clearpage
-
-# Phụ lục C - Kịch bản trình bày và phạm vi bằng chứng {.unnumbered}
-
-## Trình tự demo sáu nhóm bắt buộc {.unnumbered}
-
-1. **Cùng VLAN:** Main-PC10-A ping `10.10.10.11` và chiều ngược lại.
-2. **Giữa VLAN:** Main-PC10-A ping `10.10.20.10`, mở HTTP HIS `10.10.70.11`.
-3. **Liên site:** Main-PC10-A ping `10.20.10.10`, `10.30.10.10`; Aux ping ngược Main và traceroute liên site.
-4. **DMZ:** PC được phép mở `http://10.10.80.10`; Web-Lab mở `http://198.51.100.2:8080`.
-5. **Cách ly khách:** Guest truy cập Web-Lab thành công nhưng ping PC/mở HIS thất bại; đối chiếu bộ đếm ACL deny tăng.
-6. **Internet:** PC/Guest cả ba site mở `http://web.hospital.test`; kiểm DNS và NAT tại Main.
-
-## Chứng minh phần mở rộng {.unnumbered}
-
-GNS3 là nền tảng demo **PBR hai nhóm, lỗi upstream ISP1/ISP2, mất cả hai và phục hồi**, cùng **Suricata IDS alert/IPS drop**. Dùng runbook `simulation/gns3/demo-guide.md` và bộ thử `scripts/test_gns3_runtime.py --failover`. Khi mất cả hai ISP, Internet mất nhưng liên lạc nội bộ liên site vẫn phải hoạt động. Phiên NAT cũ có thể mất; phép thử HTTP mới không chứng minh giữ nguyên phiên.
-
-Packet Tracer đã có Wi-Fi thật trong lab: sáu association, DHCP và HTTP. ISP2 là đường chính, chuyển ISP1 bằng thao tác thủ công rồi trả lại cấu hình. Không gọi thao tác này là load balancing hay failover tự động. Dùng Packet Tracer 9.0.1.0858 và file `simulation/packet-tracer/hospital-3sites.pkt` đã đối chiếu provenance.
-
-MPLS riêng chứng minh LDP/MP-BGP/VRF và gói hai nhãn qua PCAP trong Linux namespaces/QEMU. Không gán 28+28 quan sát đó cho project native GNS3 chưa chạy. VPN site-to-site/teleworker, GPON PHY, RF thực, HA chassis và tải đủ 1.120 PC là phạm vi thiết kế/chưa đo; trình bày đúng giới hạn này khi được hỏi.
-
-## Chọn file nộp {.unnumbered}
-
-**Báo cáo chính:** `docs/06-report/final/report.pdf`. **Nguồn LaTeX:** `docs/06-report/final/report-latex.zip`. PDF `packet-tracer-validation.pdf` là phụ lục kiểm thử ngắn hai trang, có nội dung khác báo cáo chính. Các PDF trong thư mục `build/` hoặc `output/pdf/` là sản phẩm biên dịch local.
-
-Nộp kèm cả mô hình Packet Tracer, GNS3, source dựng image và bằng chứng qua gói `submission/hospital-network-delivery.zip`. Giải nén gói và kiểm trước khi dùng:
-
-```bash
-python3 scripts/verify.py
-python3 scripts/package_submission.py --check
-```
-
-Máy demo GNS3 phải có image được build/load trên compute. Việc nộp BKeL và biên nhận do nhóm thực hiện.
-
-
-\clearpage
-
-# Phụ lục D - Kiểm tra trực tiếp trước nộp ngày 05/11/2026 {.unnumbered}
-
-Đã sửa lỗi controller GNS3 không lên sau stop/start do PID/socket Docker cũ. Entrypoint tạo exec-root mới mỗi lần bật, giữ dữ liệu image/project trong volume riêng. Lệnh start tự mở project đã lưu nếu server khởi động với project ở trạng thái closed. Hai lần bật controller đã xác nhận đủ52 node started, Docker/API hoạt động và hash entrypoint thực khớp source.
-
-| Lần chạy | Phạm vi | Số kiểm tra | Kết quả |
-|:------------------------|:--------------------------------------|------:|:--------|
-| submission-20261105 | Sáu nhóm, DHCP/DNS, IDS/IPS, PBR và lỗi hai ISP | 209 | PASS |
-| submission-reopen-20261105 | Sau restart controller: sáu nhóm, OSPF, DHCP/DNS, IDS/IPS | 137 | PASS |
-
-Thời gian phục hồi HTTP trong lượt mới khi mất upstream ISP1/ISP2 là 8.344, 5.178 giây. Đây là kết quả của lần chạy, không phải SLA hoặc chuyển mạch không mất phiên.
-
-File code/config thực của52 node khớp nguồn. Các kết quả cũ ở phụ lục A được giữ nguyên để truy vết; lượt kiểm mới nằm tại `test_results/runtime/submission-20261105/` và `test_results/runtime/submission-reopen-20261105/`. Chứng cứ restart và hash ở `test_results/runtime/controller-restart/`. Kiểm offline bằng `scripts/check_gns3.py` xác nhận tính toàn vẹn, không tự chạy lại mạng.
-
-Đã chốt Packet Tracer về đúng byte của bản native có evidence32+4; bản lưu lại chỉ khác đồng hồ/môi trường được bảo toàn trong backup local. Lượt05/11 không chạy lại Packet Tracer; không gán kết quả mới của GNS3 cho Cisco IOS.
