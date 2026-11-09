@@ -149,7 +149,7 @@ kế}\label{bux1ed1i-cux1ea3nh-vuxe0-nhiux1ec7m-vux1ee5-thiux1ebft-kux1ebf}}
 
 Trong bệnh viện, mạng máy tính liên kết tiếp nhận, khám chữa bệnh, xét
 nghiệm, chẩn đoán hình ảnh và quản trị. Một giao dịch có thể đi từ máy
-trạm tại cơ sở phụ đến HIS tại cơ sở chính, tra cứu dữ liệu và trả kết
+trạm tại cơ sở phụ đến hệ thống HIS (Hospital Information System) tại cơ sở chính, tra cứu dữ liệu và trả kết
 quả cho nhân viên. Vì vậy, thiết kế phải xét đồng thời đường đi dữ liệu,
 khả năng phục hồi khi sự cố, phân quyền truy cập và khả năng mở rộng;
 việc ping được giữa hai máy chỉ là một phần của yêu cầu.
@@ -185,7 +185,7 @@ BHTQ
 \endlastfoot
 Công trình & Hai tòa A/B, mỗi tòa 5 tầng, 10 phòng/tầng & Một tòa 2 tầng
 & Một tòa 2 tầng \\
-Khu kỹ thuật & DC/IT/MDF riêng, cách hai tòa khoảng 50 m & IT/MDF tại
+Khu kỹ thuật & DC/IT/MDF (Main Distribution Frame -- phòng phân phối chính) riêng, cách hai tòa khoảng 50 m & IT/MDF tại
 tầng 1 & IT/MDF tại tầng 1 \\
 Máy trạm hiện tại & 600 & 260 & 260 \\
 Server hiện tại & 10 & 2 & 2 \\
@@ -223,14 +223,14 @@ Sản phẩm kiểm chứng
 Step1: khảo sát và chọn kiến trúc & Chương 2: checklist, phân tầng, vùng
 tải cao, Wi-Fi và server & Thiết kế vật lý, vùng mạng và giả định khảo
 sát \\
-Step2: thiết bị, IP, sơ đồ cáp/WAN & Chương 2: BOM, VLAN,
-quang/Ethernet/GPON, WAN & Bảng cổng, sơ đồ Main/Aux và bảng địa chỉ \\
+Step2: thiết bị, IP, sơ đồ cáp/WAN & Chương 2: BOM (Bill of Materials), VLAN (Virtual Local Area Network),
+quang/Ethernet/GPON (Gigabit Passive Optical Network), WAN & Bảng cổng, sơ đồ Main/Aux và bảng địa chỉ \\
 Step3: throughput và băng thông ISP & Chương 2: công thức, kịch bản tải
 và dự phòng & CSV đầu vào và script tính tải \\
-Step4: mô phỏng & Chương 3: GNS3, Packet Tracer và module MPLS & Project
+Step4: mô phỏng & Chương 3: GNS3, Packet Tracer và module MPLS (Multiprotocol Label Switching) & Project
 native và cấu hình tái lập \\
-Step5: kiểm thử & Chương 3: sáu nhóm bắt buộc, DHCP/DNS, NAT, ISP và
-IDS/IPS & JSON, CLI, ảnh/PCAP theo từng nền tảng \\
+Step5: kiểm thử & Chương 3: sáu nhóm bắt buộc, DHCP (Dynamic Host Configuration Protocol)/DNS (Domain Name System), NAT (Network Address Translation), ISP và
+IDS/IPS (Intrusion Detection/Prevention System) & JSON, CLI, ảnh/PCAP theo từng nền tảng \\
 Step6: đánh giá & Chương 4: độ tin cậy, mở rộng, phần mềm và bảo mật &
 Hạn chế, rủi ro và lộ trình cải tiến \\
 Step7: bàn giao & Cuối chương 4 và phụ lục & PDF, nguồn LaTeX, project
@@ -239,7 +239,7 @@ và hướng dẫn; nhóm tự nộp BKeL \\
 
 Thiết kế giữ hai leased line Main--Aux và hai đường xDSL tại Main, có cơ
 chế phân tải. Tất cả Internet của Aux đi qua Main. Công nghệ WAN mới
-được phân tích bằng các phương án Metro-E, MPLS L3VPN, SD-WAN và IPsec;
+được phân tích bằng các phương án Metro-E, MPLS L3VPN, SD-WAN và IPsec (Internet Protocol Security);
 module MPLS được kiểm riêng. VPN site-to-site và teleworker là hai
 phương án đề xuất đầy đủ, chưa có bằng chứng chạy crypto. GPON được đưa
 vào phương án hybrid cho hành chính; mạng mô phỏng kiểm chức năng IP,
@@ -266,10 +266,10 @@ thống}\label{phuxe2n-tuxedch-vuxe0-thiux1ebft-kux1ebf-hux1ec7-thux1ed1ng}}
 liệu}\label{phuxe2n-tuxedch-yuxeau-cux1ea7u-nghiux1ec7p-vux1ee5-vuxe0-luux1ed3ng-dux1eef-liux1ec7u}}
 
 Thiết kế phân loại lưu lượng theo nguồn, đích, mức nhạy cảm và yêu cầu
-phục vụ. HIS/LIS/CRM cần kết nối ổn định từ các cơ sở; RIS-PACS có thể
+phục vụ. HIS, LIS (Laboratory Information System), CRM (Customer Relationship Management) cần kết nối ổn định từ các cơ sở; RIS (Radiology Information System) kết hợp PACS (Picture Archiving and Communication System) có thể
 tạo các đợt truyền ảnh lớn; cập nhật và backup có thể chiếm đường truyền
 trong thời gian dài. Khách cần Internet nhưng không có quyền đến máy
-nhân viên hoặc server nội bộ. Camera ghi về NVR tại từng cơ sở để tránh
+nhân viên hoặc server nội bộ. Camera ghi về NVR (Network Video Recorder -- đầu ghi hình mạng) tại từng cơ sở để tránh
 đưa toàn bộ video thường xuyên qua WAN.
 
 \begin{longtable}[]{@{}
@@ -301,9 +301,9 @@ Quản trị & Thiết bị mạng, giám sát, backup & VLAN 90, quyền riêng
 và truy cập từ máy được phép \\
 \end{longtable}
 
-Các vị trí có nguy cơ trở thành điểm nghẽn của hệ thống bao gồm uplink tại IDF, Server Farm, các đường WAN liên site và Internet Edge tại Main Site. Hiệu năng toàn hệ thống không chỉ phụ thuộc vào tốc độ cổng mạng mà còn chịu ảnh hưởng bởi băng thông WAN, năng lực xử lý của firewall khi bật các chức năng bảo mật, CPU/RAM server, dung lượng và hiệu năng I/O của hệ thống lưu trữ PACS, cùng số lượng người dùng đồng thời.
+Các vị trí có nguy cơ trở thành điểm nghẽn của hệ thống bao gồm uplink tại IDF (Intermediate Distribution Frame -- tủ phân phối trung gian), Server Farm, các đường WAN liên site và Internet Edge tại Main Site. Hiệu năng toàn hệ thống không chỉ phụ thuộc vào tốc độ cổng mạng mà còn chịu ảnh hưởng bởi băng thông WAN, năng lực xử lý của firewall khi bật các chức năng bảo mật, CPU/RAM server, dung lượng và hiệu năng I/O của hệ thống lưu trữ PACS, cùng số lượng người dùng đồng thời.
 
-Trong mô hình hiện tại, nhóm sử dụng PBR kết hợp PAT để phân phối lưu lượng Internet theo nhóm địa chỉ nguồn giữa hai ISP và thử nghiệm failover khi một đường gặp sự cố. Cơ chế này không bảo đảm cân bằng tải động hoặc phân phối lưu lượng đều giữa các ISP.
+Trong mô hình hiện tại, nhóm sử dụng PBR (Policy-Based Routing) kết hợp PAT (Port Address Translation) để phân phối lưu lượng Internet theo nhóm địa chỉ nguồn giữa hai ISP và thử nghiệm failover khi một đường gặp sự cố. Cơ chế này không bảo đảm cân bằng tải động hoặc phân phối lưu lượng đều giữa các ISP.
 
 Đối với hệ thống HIS/Web, cân bằng tải ở tầng ứng dụng yêu cầu nhiều application server, health check, cơ chế quản lý hoặc đồng bộ session và xử lý các phụ thuộc dữ liệu. Đây là nội dung được đề xuất cho giai đoạn phát triển tiếp theo.
 
@@ -318,17 +318,17 @@ Các điểm nghẽn nêu trên mới được xác định dựa trên phân t�
 công}\label{checklist-trux1b0ux1edbc-thi-cuxf4ng}}
 
 Khảo sát số người/thiết bị theo phòng, lượng khách đồng thời và lease
-Wi-Fi; ứng dụng HIS/RIS-PACS/LIS/CRM/DB, tải ảnh DICOM và thời điểm
-backup; SLA, tải thiết yếu khi lỗi và lịch bảo trì. Kiểm diện tích
-rack/MDF/IDF, nguồn và UPS, điều hòa, tiếp địa, phòng cháy, khóa cửa và
+Wi-Fi; ứng dụng HIS/RIS-PACS/LIS/CRM/DB, tải ảnh DICOM (Digital Imaging and Communications in Medicine) và thời điểm
+backup; SLA (Service Level Agreement), tải thiết yếu khi lỗi và lịch bảo trì. Kiểm diện tích
+rack/MDF/IDF, nguồn và UPS (Uninterruptible Power Supply -- bộ lưu điện), điều hòa, tiếp địa, phòng cháy, khóa cửa và
 kiểm soát người vào. Khảo sát ống/máng cáp, chiều dài, tuyến A/B độc
-lập, vị trí ODF/patch panel và nhãn; chiều dài Cat6 phải đáp ứng giới
+lập, vị trí ODF (Optical Distribution Frame -- giá phân phối quang)/patch panel và nhãn; chiều dài Cat6 phải đáp ứng giới
 hạn thiết bị/cabling được chọn.
 
 Khảo sát RF theo vật liệu tường, nhiễu, kênh, công suất, roaming và khả
 năng các thiết bị y tế; khảo sát góc camera, vùng riêng tư, ánh sáng,
 đường truyền và thời hạn lưu. Checklist không được đánh dấu đã khảo sát
-khi chưa có biên bản hoặc số đo. Số AP, camera và chiều dài cáp bên dưới
+khi chưa có biên bản hoặc số đo. Số AP (Access Point -- điểm truy cập không dây), camera và chiều dài cáp bên dưới
 là đầu vào thiết kế cần xác nhận.
 
 \hypertarget{phuxe2n-bux1ed5-khoaphuxf2ng-vuxe0-tux1ea3i-muxe1y-trux1ea1m}{%
@@ -397,7 +397,7 @@ cao}\label{phuxe2n-tux1ea7ng-vuxe0-vuxf9ng-tux1ea3i-cao}}
 
 Dùng cấu trúc core/distribution/access ở Main; hai cơ sở phụ dùng
 collapsed core/access. Mỗi IDF có patch panel, uplink quang và UPS.
-Server Farm, DMZ, người dùng, quản trị, khách, camera và Wi-Fi nhân viên
+Server Farm, DMZ (Demilitarized Zone), người dùng, quản trị, khách, camera và Wi-Fi nhân viên
 thuộc các VLAN riêng. DMZ chỉ kết thúc trên firewall, không bridge vào
 core hoặc trunk campus.
 
@@ -406,12 +406,12 @@ Thiết kế ưu tiên liên kết 10 GbE ở access uplink/server và 40 GbE li
 core; không suy throughput ứng dụng từ tốc độ cổng. Hai ISP dùng PBR
 phân nhóm nguồn, PAT theo egress và probe độc lập. PBR không bảo đảm
 chia tải 50/50 hoặc cộng tốc độ cho một phiên. Cân bằng tải ứng dụng
-HIS/Web là hướng bổ sung khi có yêu cầu session, health check và HA ứng
+HIS/Web là hướng bổ sung khi có yêu cầu session, health check và HA (High Availability -- độ sẵn sàng cao) ứng
 dụng cụ thể.
 
-Wi-Fi dùng SSID Staff/VLAN 120, Guest/VLAN 100 và quản trị AP/VLAN 90.
-AP/WLC sản xuất cần WPA2/WPA3 Enterprise tùy khả năng client,
-802.1X/RADIUS, ACL và cách ly khách cùng lớp 2. GNS3 kiểm host
+Wi-Fi dùng SSID (Service Set Identifier) Staff/VLAN 120, Guest/VLAN 100 và quản trị AP/VLAN 90.
+AP/WLC (Wireless LAN Controller -- bộ điều khiển mạng không dây) sản xuất cần WPA2/WPA3-Enterprise tùy khả năng client,
+802.1X/RADIUS (Remote Authentication Dial-In User Service), ACL (Access Control List -- danh sách kiểm soát truy cập) và cách ly khách cùng lớp 2. GNS3 kiểm host
 Staff/Guest đại diện qua VLAN có dây. Packet Tracer đã kiểm sáu client
 Wi-Fi thật trong lab với WPA2-PSK/AES, DHCP và HTTP; chưa kiểm RF thực,
 WLC, 802.1X hoặc roaming. AP-PT một SSID không được coi là WLC nhiều
@@ -478,7 +478,7 @@ năm}\label{port-budget-hiux1ec7n-tux1ea1i-5-nux103m}}
 
 PC tăng tổng 20\%. AP/camera là giả định 3 AP + 4 camera/tầng hiện tại;
 tăng và làm tròn từng tầng lên 4 AP + 5 camera, vì thiết bị không chia lẻ.
-Đây là dự trù cổng/PoE, không phải sizing RF đã được đo. NVR Main nối
+Đây là dự trù cổng/PoE (Power over Ethernet -- cấp nguồn qua cáp mạng), không phải sizing RF đã được đo. NVR Main nối
 switch Server Farm; NVR Aux có 1 cổng access tại MDF tầng 1, không bỏ
 sót trong budget.
 
@@ -531,7 +531,7 @@ tầng 2 dùng 165/192. Không đặt toàn bộ PC/server vào 12 thiết bị 
 tổng cổng không tự tạo HA cho từng máy.
 
 \hypertarget{poe-ap-vuxe0-uplink}{%
-\subsubsection{PoE, AP và uplink}\label{poe-ap-vuxe0-uplink}}
+\subsubsection{PoE (Power over Ethernet), AP và uplink}\label{poe-ap-vuxe0-uplink}}
 
 C9200L-48P-4X với nguồn PWR-C5-1KWAC có 740 W PoE theo
 \href{https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html}{Cisco
@@ -578,13 +578,13 @@ PoE/quang, license, công suất
 \endlastfoot
 Core L3 & 2 & ≥32 cổng 1/10 G và ≥2 cổng 40 G/core; 20 access + 2 Server
 Farm + 2 FW + 2 WAN + 2 WLC=28/32 & 10 G SR, core-core 2 × 40 G;
-OSPF/SVI/ACL/HA license theo model; W chờ datasheet \\
+OSPF (Open Shortest Path First)/SVI (Switch Virtual Interface)/ACL/HA license theo model; W chờ datasheet \\
 Access & 20 & 48 × 1 G+4 × 10 G; 2 uplink riêng tới 2 core; C9200L-48P-4X
 tham chiếu & 740 W PSE với PSU 1 kW; Essentials/L2 theo chức năng, quang
 ở mục 5; W thực phải cộng tải PoE \\
 Switch Server Farm & 2 & ≥24 × 10 G/switch; mỗi switch 10 NIC server + 1
 NVR + 2 uplink core + 2 inter-switch=15/24 sau tăng trưởng & VLAN 70/90/110;
-không bridge DMZ; DAC/SFP+, công suất/license theo model \\
+không bridge DMZ; DAC/SFP+ (Small Form-factor Pluggable Plus), công suất/license theo model \\
 Switch DMZ tách riêng & 2 & ≥24 cổng 1/10 G; chỉ DMZ server và cổng DMZ
 FW; không uplink L2 trực tiếp Core & VLAN 80, quản trị OOB nếu cần; HA
 link/NIC theo model, chưa chạy \\
@@ -610,7 +610,7 @@ NVR & 1 hệ & ≥64 kênh và ingest đáp ứng 200 Mbps + headroom 5 năm & �
 GB usable sau RAID theo camera plan; model/ổ/license/W chưa chọn \\
 \end{longtable}
 
-Hai switch Server Farm không tự tạo dual-homing: LACP qua hai chassis
+Hai switch Server Farm không tự tạo dual-homing: LACP (Link Aggregation Control Protocol) qua hai chassis
 chỉ khi stack/MLAG được hỗ trợ/cấu hình; nếu không dùng NIC
 active/standby phù hợp. DMZ nằm sau FW, tuyệt đối không kéo VLAN 80 vào
 trunk campus hoặc uplink DMZ thẳng Core.
@@ -679,7 +679,7 @@ PoE, license, công suất/giá
 \bottomrule\noalign{}
 \endlastfoot
 Distribution L3 & 2 dự trù & ≥16 cổng 10 G; 8 access + 1 WAN + 2
-interconnect=11/16; SVI, ACL, OSPF, HSRP theo thiết kế HA riêng &
+interconnect=11/16; SVI, ACL, OSPF, HSRP (Hot Standby Router Protocol) theo thiết kế HA riêng &
 SFP+/DAC, license/W/giá OPEN; TV1/TV2 \\
 Access & 8 & 48 × 1 G+4 × 10 G, 2 uplink độc lập; 4 switch/tầng &
 C9200L-48P-4X tham chiếu 740 W; giá OPEN; TV2 \\
@@ -731,8 +731,8 @@ Patch panel 48 cổng & 20 & 8 & Khớp tổng cổng access; đầu nối/patch
 và nhãn phải bóc tách thêm \\
 Rack/UPS/ODF/patch cord & OPEN & OPEN & Main 10 IDF + MDF; Aux MDF tầng
 1+IDF tầng 2; W/runtime UPS/chiều dài chờ khảo sát \\
-GPON OLT/splitter/ONT & 1 OLT, 2 splitter, 20 → 24 ONT & Chưa áp dụng
-tại Aux & Bổ sung cho phương án hybrid; đối soát riêng chi phí ODN \\
+GPON OLT (Optical Line Terminal)/splitter/ONT (Optical Network Terminal) & 1 OLT, 2 splitter, 20 → 24 ONT & Chưa áp dụng
+tại Aux & Bổ sung cho phương án hybrid; đối soát riêng chi phí ODN (Optical Distribution Network) \\
 \end{longtable}
 
 SR trên OM3 phải kiểm cự ly/connector theo optics được chọn; không lấy
@@ -762,8 +762,8 @@ core-core dự trù, không phải tốc độ của model 3650/2960 trong .pkt.
 FastEthernet của 2960-24TT chỉ 100 Mbps, không được ghi Fa0/1 là 1 GbE.
 
 Mỗi access có 2 uplink: một tới Core1 qua tuyến A, một tới Core2 qua
-tuyến B. Với core độc lập, dùng trunk độc lập + RSTP, gateway HA cần
-HSRP/VRRP được cấu hình riêng; không ghép một LACP xuyên hai core chưa
+tuyến B. Với core độc lập, dùng trunk độc lập + RSTP (Rapid Spanning Tree Protocol), gateway HA cần
+HSRP/VRRP (Virtual Router Redundancy Protocol) được cấu hình riêng; không ghép một LACP xuyên hai core chưa
 stack/virtual hóa.
 \href{https://www.cisco.com/c/en/us/support/docs/lan-switching/gigabit-etherchannel-gec/222012-etherchannel-designs.html}{Cisco
 EtherChannel designs} phân biệt một switch vật lý với một logical
@@ -881,7 +881,7 @@ ITU-T G.984.2 mô tả GPON 2,488 Gbit/s xuống và 1,244 Gbit/s lên; đây l�
 dung lượng chia sẻ mỗi PON, không phải tốc độ bảo đảm mỗi PC. Một ONT
 4GE có 4 cổng 1 GbE nhưng không bảo đảm 4Gbps đồng thời qua GPON. Năm
 thứ 5 mỗi PON phục vụ tối đa 48 PC hành chính; cần đo lưu lượng, DBA và
-QoS trước chốt cấu hình. PACS/backup không được chuyển sang nhánh này
+QoS (Quality of Service -- chất lượng dịch vụ) trước chốt cấu hình. PACS/backup không được chuyển sang nhánh này
 chỉ từ tính tải Web bình quân.
 
 Ví dụ kỹ thuật để kiểm công thức, không phải kết quả khảo sát: tuyến
@@ -901,7 +901,7 @@ Nguồn chuẩn:
 \href{https://www.itu.int/rec/dologin_pub.asp?id=T-REC-G.984.2-201908-I\%21\%21PDF-E\&lang=e\&type=items}{ITU-T
 G.984.2 (08/2019), PMD và Annex A}. Giá OLT/ONT/ODN/UPS/license chưa có
 báo giá; bổ sung CAPEX riêng và đối soát phần cáp/SFP bị trùng trước
-tổng hợp TCO.
+tổng hợp TCO (Total Cost of Ownership -- tổng chi phí sở hữu).
 
 \hypertarget{phuxe2n-tuxedch-dux1ef1-phuxf2ng-cux1ed5ng-vuxe0-lux1ef1a-chux1ecdn-ux111ux1b0ux1eddng-truyux1ec1n}{%
 \subsubsection{Phân tích dự phòng cổng và lựa chọn đường
@@ -1210,7 +1210,7 @@ Main-DB & 10.10.70.15/27 & Database của ứng dụng & Không bật Web/công 
 Internet \\
 Main-Backup & 10.10.70.16/27 & Backup, repository cập nhật & Thiết kế;
 chưa có backup job \\
-Main-Monitor & 10.10.70.17/27 & Syslog, NTP, giám sát & Bật dịch vụ nếu
+Main-Monitor & 10.10.70.17/27 & Syslog, NTP (Network Time Protocol), giám sát & Bật dịch vụ nếu
 công cụ hỗ trợ \\
 Main-WebDMZ & 10.10.80.10/27 & Web công bố & HTTP 80; static PAT
 ISP2:8080 \\
@@ -1474,10 +1474,10 @@ Khoản cần báo giá
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2 Metro-E/leased Ethernet P2P & Bám hai kết nối Main--Aux; chạy routed
+2 Metro-E/leased Ethernet P2P (Point-to-Point) & Bám hai kết nối Main--Aux; chạy routed
 OSPF nếu handoff hỗ trợ & Mỗi nhánh một tuyến, chưa có dự phòng; SLA/độ
 trễ theo hợp đồng & Hòa mạng, hai kênh, CPE/quang, SLA, bảo trì \\
-MPLS L3VPN ba site & Nhà mạng cung cấp L3VPN và VRF, thuận tiện mở thêm
+MPLS L3VPN ba site & Nhà mạng cung cấp L3VPN và VRF (Virtual Routing and Forwarding), thuận tiện mở thêm
 site & Chốt PE/CE và handoff; không mặc định mã hóa payload; đã có
 module MPLS Linux riêng & Ba access port/cước, QoS, CPE, hỗ trợ \\
 SD-WAN trên leased/MPLS & Chính sách ứng dụng, quản lý overlay tập trung
@@ -1563,7 +1563,7 @@ phí}\label{cuxe1c-ux111ux1b0ux1eddng-truyux1ec1n-bux1ed5-sung-vuxe0-chi-phuxed}
 Internet business + IPsec phù hợp làm đường dự phòng hoặc kết nối chi
 nhánh khi chấp nhận chất lượng phụ thuộc Internet. CAPEX gồm CPE/router
 có crypto; OPEX gồm cước Internet từng site, IP tĩnh, license và hỗ trợ.
-4G/5G cần modem/SIM/antenna và data plan; CGNAT, quota, tín hiệu và độ
+4G/5G cần modem/SIM/antenna và data plan; CGNAT (Carrier-Grade NAT), quota, tín hiệu và độ
 trễ thay đổi phải được thử, ưu tiên tải thiết yếu thay vì truyền
 PACS/backup toàn tải. Radio điểm--điểm cần khảo sát tầm nhìn và tuyến,
 thiết bị/antenna/chống sét, nguồn và điều kiện khai thác; không mặc định
@@ -1581,7 +1581,7 @@ chọn}\label{cux103n-cux1ee9-lux1ef1a-chux1ecdn}}
 
 Baseline dùng hai leased line với OSPF để giữ cấu trúc đề và thuận tiện
 kiểm trên hai nền tảng. MPLS L3VPN được dựng riêng để minh họa WAN mới
-có VRF, MP-BGP và chuyển tiếp nhãn. SD-WAN phù hợp khi cần chính sách
+có VRF, MP-BGP (Multiprotocol Border Gateway Protocol) và chuyển tiếp nhãn. SD-WAN phù hợp khi cần chính sách
 ứng dụng và quản lý nhiều đường/site, nhưng cần controller, license và
 underlay; OSPF/PBR hiện tại không được gọi là SD-WAN. Lựa chọn mua sắm
 cuối cùng phải so báo giá cùng băng thông, SLA, số điểm và thuế; bảng
@@ -1863,7 +1863,7 @@ Main-GW hai chiều BHTQ-GW & 10.255.0.5 hai chiều 10.255.0.6 &
 
 10.255.1.0/29 là đề xuất dự trữ mới, không phải interface/prefix đang
 hoạt động. Trước bật phải thêm vào IP plan và checker, kiểm không
-overlap VPN pool 10.255.100.0/24. Chọn VTI + IKEv2 trên nền tảng hỗ trợ;
+overlap VPN pool 10.255.100.0/24. Chọn VTI (Virtual Tunnel Interface) + IKEv2 trên nền tảng hỗ trợ;
 chứng thư định danh từng peer, AES-GCM-256 cho ESP, DH/PFS group19 nếu
 cả hai đầu hỗ trợ. Proposal IKE cụ thể phải đối chiếu image; không đưa
 một bộ lệnh IOS XE mới vào 2911 rồi coi đã chạy.
@@ -1931,7 +1931,7 @@ Pool 10.255.100.2--10.255.100.254, .1 dự trữ; certificate gateway, tài
 khoản riêng và MFA/AAA. Chọn IKEv2 remote-access hoặc TLS VPN sau khi
 kiểm server/client tương thích. Nếu dùng IKEv2 phía sau Main-Edge, cần
 mapping/ACL UDP 500/4500 đúng FW; chưa thêm các rule đó vào baseline.
-Không công bố RDP/SSH quản trị trực tiếp ra ngoài.
+Không công bố RDP (Remote Desktop Protocol)/SSH (Secure Shell) quản trị trực tiếp ra ngoài.
 
 Split tunnel chỉ tới HIS/CRM đã duyệt; DNS/suffix và tuyến split được
 ghi trên client. Không cho teleworker tới DB, management, camera hoặc
@@ -2055,7 +2055,7 @@ logic; Ethernet đại diện leased line/xDSL, không đo tín hiệu hoặc t�
 thi}\label{mpls-l3vpn---phux1ea7n-wan-mux1edbi-ux111uxe3-thux1ef1c-thi}}
 
 Module simulation/mpls/ có 11 nút/10 liên kết: ba CE Main/DBP/BHTQ, ba
-PE, một P, ba PC và Web-Lab. Provider dùng OSPF area 0 và LDP; ba PE
+PE, một P, ba PC và Web-Lab. Provider dùng OSPF area 0 và LDP (Label Distribution Protocol); ba PE
 trao đổi VPNv4 bằng MP-BGP AS 65000. VRF HOSPITAL/table 1001 dùng
 RT 65000:100, RD 65000:1/2/3; CE dùng eBGP AS 65101--65103. Ba LAN đại diện
 giữ 10.10.10.0/25, 10.20.10.0/25, 10.30.10.0/25. Internet hai Aux vẫn đi
@@ -2916,8 +2916,6 @@ project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Ch�
 thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc
 ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang,
 license và triển khai thật vẫn phải có bằng chứng riêng.
-
-\clearpage
 
 \hypertarget{tuxe1i-lux1eadp-vuxe0-danh-mux1ee5c-buxe0n-giao}{%
 \subsection{Tái lập và danh mục bàn
