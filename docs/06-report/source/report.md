@@ -47,20 +47,6 @@ Mức tăng trưởng của đề là 20% trong cả năm năm, không phải 20
 
 Bằng chứng gồm thiết kế/phép tính, runtime GNS3 Linux/FRR và mô phỏng Cisco Packet Tracer 9.0.1.0858. GNS3 có 209 kiểm tích hợp đạt sau sửa firewall; 137 kiểm reopen là bằng chứng lịch sử trước sửa PID. Packet Tracer tổng ba cơ sở đã lưu/mở lại, có 58 thiết bị, 53 cáp và sáu association Wi-Fi; 32 quan sát phù hợp kỳ vọng và bốn HTTP chuyển ISP thủ công đạt. File Packet Tracer gốc của mô hình tham chiếu vẫn được bảo toàn riêng. Khảo sát và đo triển khai thực chưa thực hiện. Lượt kiểm trực tiếp bổ sung ngày 05/11/2026 và kiểm sau restart controller được trình bày riêng ở phụ lục G; các kết quả lịch sử ở phụ lục A vẫn được giữ nguyên.
 
-## Thành viên và phạm vi thực hiện BTL2
-
-Lớp L08 - Nhóm 2. Nhóm trưởng: Nguyễn Thành Đạt (2410709).
-
-| Họ và tên | MSSV | Email | Phân công |
-|:-------------------------|:-------------|:-----------------------------------------|:-----------------|
-| Nguyễn Thành Đạt | 2410709 | <dat.nguyen19052006@hcmut.edu.vn> | BTL2; nhóm trưởng |
-| Nguyễn Phúc Bảo Đạt | 2410696 | <dat.nguyen662006@hcmut.edu.vn> | BTL1 |
-| Bùi Công Danh | 2410448 | <danh.buicong@hcmut.edu.vn> | BTL1 |
-| Nguyễn Minh Đạt | 2410694 | <dat.nguyen2410694@hcmut.edu.vn> | BTL1 |
-| Phạm Tiến Đạt | 2410723 | <dat.pham123qwe@hcmut.edu.vn> | BTL2 |
-
-Theo phân công lại của nhóm, BTL1 do Nguyễn Phúc Bảo Đạt, Bùi Công Danh và Nguyễn Minh Đạt thực hiện; BTL2 do Nguyễn Thành Đạt và Phạm Tiến Đạt thực hiện. Báo cáo này trình bày BTL2, đồng thời ghi đủ danh sách nhóm. Các nhãn TV1–TV5 trong kế hoạch là vai trò kỹ thuật, không phải năm người cùng thực hiện BTL2.
-
 \clearpage
 
 # Phân tích và thiết kế hệ thống

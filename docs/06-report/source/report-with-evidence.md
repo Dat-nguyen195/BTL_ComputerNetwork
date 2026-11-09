@@ -46,19 +46,6 @@ Thiết kế giữ hai leased line Main–Aux và hai đường xDSL tại Main,
 Mức tăng trưởng của đề là 20% trong cả năm năm, không phải 20% mỗi năm. Số PC tương lai là 720+312+312=1.344. Server dự trù theo từng cơ sở là 12+3+3=18. Số máy trong mô phỏng chỉ là đại diện chức năng; không dùng 38 endpoint để tuyên bố đã chạy tải của 1.120 PC hiện tại hoặc 1.344 PC tương lai.
 
 
-## Thành viên và phạm vi thực hiện BTL2
-
-Lớp L08 - Nhóm 2. Nhóm trưởng: Nguyễn Thành Đạt (2410709).
-
-| Họ và tên | MSSV | Email | Phân công |
-|:-------------------------|:-------------|:-----------------------------------------|:-----------------|
-| Nguyễn Thành Đạt | 2410709 | <dat.nguyen19052006@hcmut.edu.vn> | BTL2; nhóm trưởng |
-| Nguyễn Phúc Bảo Đạt | 2410696 | <dat.nguyen662006@hcmut.edu.vn> | BTL1 |
-| Bùi Công Danh | 2410448 | <danh.buicong@hcmut.edu.vn> | BTL1 |
-| Nguyễn Minh Đạt | 2410694 | <dat.nguyen2410694@hcmut.edu.vn> | BTL1 |
-| Phạm Tiến Đạt | 2410723 | <dat.pham123qwe@hcmut.edu.vn> | BTL2 |
-
-
 \clearpage
 
 # Phân tích và thiết kế hệ thống

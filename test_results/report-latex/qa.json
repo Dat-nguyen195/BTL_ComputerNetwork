@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "timestamp_utc": "2026-11-09T03:44:59.597843+00:00",
-  "pages": 47,
+  "pages": 48,
   "compiler": "XeLaTeX / MiKTeX on Windows; Pandoc",
   "build": "3 passes; expanded four-chapter report and appendices A-G; reused unchanged reviewed diagram PDFs",
   "standalone_bundle": "Final ZIP extracted to tmp/pdfs/standalone-rewrite; XeLaTeX 3 passes; exit 0",
@@ -60,7 +60,8 @@
       44,
       45,
       46,
-      47
+      47,
+      48
     ],
     "checks": [
       "All final pages rendered by Poppler at 45 dpi and inspected in contact sheets",
@@ -76,19 +77,19 @@
     ]
   },
   "sha256": {
-    "docs/06-report/final/report.pdf": "9d020e3cbac99c21258fd1eea178135b6e491c5711657e9d678fcb8b1a20787c",
-    "docs/06-report/final/report-latex.zip": "dc81eb9bc29a1c29957ecda82a8fe74dcc5a2409d4b74747c27cc6a8dff8d0ba",
-    "docs/06-report/source/report.md": "c4a2c3f9be1f4274ed6210c8352656b60a1c3328964a317a693d3e4af50a5b28",
+    "docs/06-report/final/report.pdf": "228d690f22a35ee217c2803bdd5438028b14ffd60b2c661fcba46783019e5bd9",
+    "docs/06-report/final/report-latex.zip": "e6e30b794e94c47be41a4d220d83ef32223349529e54b30a1f5496c9f69f3470",
+    "docs/06-report/source/report.md": "69b130d50efffb7792908915822beb333da6288cc5221f8ab17e38e03c3f52c3",
     "docs/06-report/source/design-appendices.md": "7cd62406152a03009979c64a201c9bbaa88330a1eae24f8c6d5a221dd963f4b1",
-    "docs/06-report/source/report-with-evidence.md": "d0b2c1dbb686c2267ff8bd4de9af1ca4191294da2bfa948bc633f077edb9eaf5",
+    "docs/06-report/source/report-with-evidence.md": "ea1d39b79b6b92103d6b0366ee4d37ae08c4aa94898c368fcf7dbdf14bfe369c",
     "scripts/build_report.py": "dc203973300b0a2cad81da8aef019b9c649f40682eb4ec8e42141b24d4420085",
     ".vscode/settings.json": "84ae92cefe7ea12e3d9696fd5c37c939555957e317939d12e5c307dd3796ddaf",
     ".latexmkrc": "8c3fec9cf80477c143ba3ed1d8678ebaebee210e255790f3ae86fc7a33530584",
     "test_results/runtime/controller-restart/restart.json": "71a0574b8f20897257036eb6a69d2f95c48704df7240728f35d91098696846e3",
-    "docs/06-report/latex/report.tex": "61e2d916a77b30322f99c03930865b6ff137f409796b31c680b3eb2f0150a494",
+    "docs/06-report/latex/report.tex": "e5228bc83aba4b8d7891dedc2668d015173e9ba8eb6b4a7fad7d1eb2c58bcbab",
     "docs/06-report/latex/header.tex": "293bfca2a62520e84fd20053c1caa8aa972f66eb9d7b80679c4291bdb8037a37",
-    "docs/06-report/latex/cover.tex": "bdabd44adbdc7fee44eec7a32b655d7561072c1ba0dc41617ca57d31270cdbdf",
-    "docs/06-report/latex/metadata.tex": "7707c7a6b6109f9ad850783e0377177715a1b1913774b39fd2e07ee8f7317692",
+    "docs/06-report/latex/cover.tex": "18ef96d2b0cc1c19d6e06d77f59175bc1a063778f636df91071fc3cb68754b54",
+    "docs/06-report/latex/metadata.tex": "d0519ca8e867a7b7e7b0808e87727d0c335c1a75186b152ce3c5b4911ad535cc",
     "docs/06-report/latex/fonts.tex": "2935e22d1c11be3c5c5b804c2531b4e56207df5c55785f949381469716c2ed1e",
     "docs/06-report/latex/.latexmkrc": "c5344489a85195810a394eac20d5850925f07882779db0b1bfa147da21021760",
     "docs/06-report/latex/README.md": "97c0722da604f3f36d9a8f4368aae4963db6793b1696f1e9242c0d28943c938a",
