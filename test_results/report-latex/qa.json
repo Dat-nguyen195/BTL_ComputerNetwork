@@ -77,8 +77,8 @@
     ]
   },
   "sha256": {
-    "docs/06-report/final/report.pdf": "228d690f22a35ee217c2803bdd5438028b14ffd60b2c661fcba46783019e5bd9",
-    "docs/06-report/final/report-latex.zip": "e6e30b794e94c47be41a4d220d83ef32223349529e54b30a1f5496c9f69f3470",
+    "docs/06-report/final/report.pdf": "2497d7a1f0b2b4676454e9d7051c43ccbd34fdfbb599789168429d7b458bb293",
+    "docs/06-report/final/report-latex.zip": "3d8fa1d45a25c62719f52aa43e090b17275c07a1f14552750c5e77ce34b91c30",
     "docs/06-report/source/report.md": "69b130d50efffb7792908915822beb333da6288cc5221f8ab17e38e03c3f52c3",
     "docs/06-report/source/design-appendices.md": "7cd62406152a03009979c64a201c9bbaa88330a1eae24f8c6d5a221dd963f4b1",
     "docs/06-report/source/report-with-evidence.md": "ea1d39b79b6b92103d6b0366ee4d37ae08c4aa94898c368fcf7dbdf14bfe369c",
@@ -88,8 +88,8 @@
     "test_results/runtime/controller-restart/restart.json": "71a0574b8f20897257036eb6a69d2f95c48704df7240728f35d91098696846e3",
     "docs/06-report/latex/report.tex": "e5228bc83aba4b8d7891dedc2668d015173e9ba8eb6b4a7fad7d1eb2c58bcbab",
     "docs/06-report/latex/header.tex": "293bfca2a62520e84fd20053c1caa8aa972f66eb9d7b80679c4291bdb8037a37",
-    "docs/06-report/latex/cover.tex": "18ef96d2b0cc1c19d6e06d77f59175bc1a063778f636df91071fc3cb68754b54",
-    "docs/06-report/latex/metadata.tex": "d0519ca8e867a7b7e7b0808e87727d0c335c1a75186b152ce3c5b4911ad535cc",
+    "docs/06-report/latex/cover.tex": "906b8fa9a18147bb1a15eadab6478b30f3a900b6415f6830a51dd17b8286ef69",
+    "docs/06-report/latex/metadata.tex": "9a6bad275646cd695256f74671088765dc13e42be75b7790d3b4ddc106641420",
     "docs/06-report/latex/fonts.tex": "2935e22d1c11be3c5c5b804c2531b4e56207df5c55785f949381469716c2ed1e",
     "docs/06-report/latex/.latexmkrc": "c5344489a85195810a394eac20d5850925f07882779db0b1bfa147da21021760",
     "docs/06-report/latex/README.md": "97c0722da604f3f36d9a8f4368aae4963db6793b1696f1e9242c0d28943c938a",
