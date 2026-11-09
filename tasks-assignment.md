@@ -125,7 +125,7 @@ Task chính giữ điều kiện reviewer/biên bản như quy tắc dưới đ�
   - [x] Sản phẩm đã có: [README.md](docs/06-report/source/README.md).
   - [ ] Còn để nghiệm thu: Nguồn Markdown/LaTeX và5 contributions đã có; chờ nhóm.
 - [ ] **W1-TV5-04** - Thu thập kết quả khảo sát/thiết kế/tính toán của từng người, viết bản thô đầu tiên phần giới thiệu và Step 1-3, kiểm nhất quán quy mô và thuật ngữ bệnh viện. **Hạn 31/10; đầu ra:** `docs/06-report/draft/` bản 0.1.
-  - [x] Sản phẩm đã có: [report.md](docs/06-report/source/report.md).
+  - [x] Sản phẩm đã có: [report.tex](docs/06-report/latex/report.tex).
   - [ ] Còn để nghiệm thu: Bản hiện tại thay bản nháp lịch sử0.1; chưa có biên bản phát hành cũ.
 - [ ] **W1-TV5-05** - Chuẩn bị khung đánh giá Step 6 theo tin cậy, nâng cấp, phần mềm, an toàn/bảo mật; tổng hợp vướng mắc G1 và phát hành biên bản để TV1 duyệt. **Hạn 01/11; đầu ra:** `evaluation.md`, `risks.md`, meeting notes.
   - [x] Sản phẩm đã có: [evaluation.md](docs/05-evaluation/evaluation.md).
@@ -215,7 +215,7 @@ Task chính giữ điều kiện reviewer/biên bản như quy tắc dưới đ�
   - [x] Sản phẩm đã có: [TV1-wan-routing.md](docs/06-report/contributions/TV1-wan-routing.md).
   - [ ] Còn để nghiệm thu: Đủ5 contribution; chưa có xác nhận giao nhận cá nhân.
 - [ ] **W2-TV5-02** - **Chủ trì tổng hợp báo cáo thô**: Step 1-3 hoàn chỉnh và Step 4 bản đầu; chèn sơ đồ, BOM và công thức có giả định, không ghi smoke test là test nghiệm thu cuối. **Hạn 07/11; đầu ra:** báo cáo thô 0.2 trong `draft/`.
-  - [x] Sản phẩm đã có: [report.md](docs/06-report/source/report.md).
+  - [x] Sản phẩm đã có: [report.tex](docs/06-report/latex/report.tex).
   - [ ] Còn để nghiệm thu: Báo cáo hiện tại thay nháp0.2; không tạo giả ngày phát hành cũ.
 - [ ] **W2-TV5-03** - Chuẩn hóa heading, mục lục, số bảng/hình, thuật ngữ và danh mục tài liệu; yêu cầu người có chuyên môn xác nhận nội dung trước khi ghép. **Hạn 07/11; đầu ra:** nguồn báo cáo có định dạng thống nhất và review log.
   - [x] Sản phẩm đã có: [README.md](docs/06-report/latex/README.md).
@@ -311,7 +311,7 @@ Task chính giữ điều kiện reviewer/biên bản như quy tắc dưới đ�
   - [x] Sản phẩm đã có: [test-matrix.md](test_results/test-matrix.md).
   - [ ] Còn để nghiệm thu: Liên kết6 test tới evidence/report có; chờ TV4 xác nhận.
 - [ ] **W3-TV5-02** - Thu phần hoàn chỉnh TV1-TV4, tổng hợp bản thô đầy đủ Step 1-5, chuẩn hóa chương tính tải, NAT và kiểm thử, ghi rõ dữ kiện/giả định/design only. **Hạn 15/11; đầu ra:** báo cáo thô 0.3 trong `draft/`.
-  - [x] Sản phẩm đã có: [report-with-evidence.md](docs/06-report/source/report-with-evidence.md).
+  - [x] Sản phẩm đã có: [report.tex](docs/06-report/latex/report.tex).
   - [ ] Còn để nghiệm thu: Đủ Step1–5; bản hiện tại thay nháp0.3.
 - [ ] **W3-TV5-03** - Chủ trì **Step 6**: dùng dữ liệu test để đánh giá tin cậy, nâng cấp, đa dạng phần mềm, an toàn/bảo mật; lập bảng yêu cầu → bằng chứng → kết luận/giới hạn. **Hạn 15/11; đầu ra:** `evaluation.md` có nhận xét thành viên kỹ thuật.
   - [x] Sản phẩm đã có: [evaluation.md](docs/05-evaluation/evaluation.md).
@@ -404,7 +404,7 @@ Task chính giữ điều kiện reviewer/biên bản như quy tắc dưới đ�
 ### TV5 - Documentation & Report Specialist, chủ trì báo cáo
 
 - [ ] **W4-TV5-01** - **Chủ trì thu nhận đầy đủ phần nội dung cuối của TV1-TV4**, bổ sung phần khảo sát/đánh giá mình phụ trách; khóa danh sách thiếu nội dung và tổng hợp báo cáo thô hoàn chỉnh. **Hạn 17/11; đầu ra:** source và draft đầy đủ 7 Step.
-  - [x] Sản phẩm đã có: [report.md](docs/06-report/source/report.md).
+  - [x] Sản phẩm đã có: [report.tex](docs/06-report/latex/report.tex).
   - [ ] Còn để nghiệm thu: Đủ7 Step/5 contributions; chưa có xác nhận giao nhận nhóm.
 - [ ] **W4-TV5-02** - **Tổng hợp, biên tập và căn chỉnh báo cáo chính thức**: bìa/nhân sự, mục lục, heading, bảng/hình, công thức, nguồn, phụ lục, font tiếng Việt và phân trang; xuất PDF review cho cả nhóm/TV1. **Hạn 19/11; đầu ra:** PDF review và nguồn chỉnh sửa được.
   - [x] Sản phẩm đã có: [metadata.tex](docs/06-report/latex/metadata.tex).

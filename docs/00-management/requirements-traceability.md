@@ -13,6 +13,6 @@
 |4 |2 | [Native GNS3](../../simulation/gns3/hospital-3sites.gns3), image source và [hướng dẫn](../../simulation/gns3/README.md) | GNS3 52 node/52 link,209+137 kiểm trực tiếp ngày05/11; Packet Tracer tổng58 node/53 cáp và sáu Wi-Fi đã lưu/mở lại |
 |5 |2 | [Sáu nhóm bắt buộc](../../test_results/test-matrix.md), [JSON/PCAP](../../test_results/runtime/README.md) | PASS GNS3 Linux; Packet Tracer có 32 quan sát đúng kỳ vọng và 4 HTTP ISP thủ công; RF/throughput chưa đo |
 |6 |2 | [Evaluation](../05-evaluation/evaluation.md), [risks](../05-evaluation/risks.md), report và best practices | Đánh giá dựa thiết kế và runtime có giới hạn |
-|7 |1 | [PDF](../06-report/final/report.pdf), [source](../06-report/source/report.md), project và [manifest](../../submission/manifest.md) | Bộ nộp đã chốt kỹ thuật; nhóm tự upload BKeL và lưu biên nhận |
+|7 |1 | [PDF](../06-report/final/report.pdf), [source LaTeX](../06-report/latex/report.tex), project và [manifest](../../submission/manifest.md) | Bộ nộp đã chốt kỹ thuật; nhóm tự upload BKeL và lưu biên nhận |
 
 Quy mô600/260/260 PC,10/2/2 server, Main2x5 tầng và Aux2 tầng, tăng20% trong5 năm được giữ trong nguồn thiết kế. GPON được bổ sung cho80→96 PC hành chính trong tổng Main, không bỏ yêu cầu. Hai ISP/leased line được mô hình chức năng bằng Ethernet; không suy DSL/quang/RF thực từ mô phỏng IP. PhầnVPN là đề xuất đủ hai loại; crypto NOT RUN. Lớp L08, nhóm 2; danh sách năm người và phân công BTL2 cho Nguyễn Thành Đạt/Phạm Tiến Đạt được ghi trong [hồ sơ nhóm](team-members.md). Deadline BKeL vẫn cần đối chiếu cổng học phần.

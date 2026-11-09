@@ -1,6 +1,6 @@
 # Nội dung tổng hợp TV5 - khảo sát và đánh giá
 
-**02/11/2026. Nội dung kỹ thuật đã biên tập; chưa ký duyệt/nộp BKeL.** [Báo cáo nguồn](../source/report.md) tổng hợp đóng gópTV1–TV4, [PDF](../final/report.pdf) và phụ lục bằng chứng thực.
+**02/11/2026. Nội dung kỹ thuật đã biên tập; chưa ký duyệt/nộp BKeL.** [Báo cáo nguồn LaTeX](../latex/report.tex) tổng hợp đóng gópTV1–TV4, [PDF](../final/report.pdf) và phụ lục bằng chứng thực.
 
 Phân tích đúng quy mô3 site và tăng trưởng20%/5 năm; checklist gồm công trình/cáp/rack/nguồn/UPS, workload y tế, RF/camera, tuyến và SLA. Checklist là kế hoạch khảo sát, không phải biên bản đo. Kiến trúc hybrid Ethernet/GPON có phân vùng Server Farm/DMZ/firewall, Staff/Guest/management/camera.
 

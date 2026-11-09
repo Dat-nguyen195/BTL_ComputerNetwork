@@ -34,7 +34,7 @@ GNS3 có runtime lưu ngày02/11; Windows hiện tại không chạy lại mạn
 | W1-TV5-01 | CÓ SẢN PHẨM | [survey-checklist.md](../../docs/01-survey/survey-checklist.md) | Có checklist; chưa khảo sát thực địa |
 | W1-TV5-02 | CÓ SẢN PHẨM | [requirements-traceability.md](../../docs/00-management/requirements-traceability.md) | Chờ nhóm xác nhận đăng ký5 người/lịch/hạn |
 | W1-TV5-03 | CÓ SẢN PHẨM | [README.md](../../docs/06-report/source/README.md) | Nguồn Markdown/LaTeX và5 contributions đã có; chờ nhóm |
-| W1-TV5-04 | CÓ SẢN PHẨM | [report.md](../../docs/06-report/source/report.md) | Bản hiện tại thay bản nháp lịch sử0.1; chưa có biên bản phát hành cũ |
+| W1-TV5-04 | CÓ SẢN PHẨM | [report.tex](../../docs/06-report/latex/report.tex) | Bản hiện tại thay bản nháp lịch sử0.1; chưa có biên bản phát hành cũ |
 | W1-TV5-05 | CÓ SẢN PHẨM | [evaluation.md](../../docs/05-evaluation/evaluation.md) | Có evaluation/risks; G1 chưa xác nhận |
 | W2-TV1-01 | CÓ SẢN PHẨM | [result.md](../../test_results/TC03-inter-site/result.md) | OSPF/ping hai chiều có trên cả hai; Packet Tracer sau warmup/reopen đạt, chờ nhóm đọc chéo |
 | W2-TV1-02 | CÓ SẢN PHẨM | [dual-isp-failover.md](../../test_results/supplemental/dual-isp-failover.md) | PBR/NAT upstream GNS3 đã chạy; probe Packet Tracer từ chối IP SLA/PBR, dự phòng thủ công |
@@ -57,7 +57,7 @@ GNS3 có runtime lưu ngày02/11; Windows hiện tại không chạy lại mạn
 | W2-TV4-04 | CÓ SẢN PHẨM | [README.md](../../simulation/gns3/README.md) | Version2.2.55/Linux/FRR và giới hạn đã ghi |
 | W2-TV4-05 | CÓ SẢN PHẨM | [reopen.json](../../test_results/runtime/persistence/reopen.json) | Reopen137 kiểm là lịch sử trước sửa PID; G2 chờ nhóm |
 | W2-TV5-01 | CÓ SẢN PHẨM | [TV1-wan-routing.md](../../docs/06-report/contributions/TV1-wan-routing.md) | Đủ5 contribution; chưa có xác nhận giao nhận cá nhân |
-| W2-TV5-02 | CÓ SẢN PHẨM | [report.md](../../docs/06-report/source/report.md) | Báo cáo hiện tại thay nháp0.2; không tạo giả ngày phát hành cũ |
+| W2-TV5-02 | CÓ SẢN PHẨM | [report.tex](../../docs/06-report/latex/report.tex) | Báo cáo hiện tại thay nháp0.2; không tạo giả ngày phát hành cũ |
 | W2-TV5-03 | CÓ SẢN PHẨM | [README.md](../../docs/06-report/latex/README.md) | Có heading/mục lục/font và QA PDF; LaTeX dùng XeLaTeX |
 | W2-TV5-04 | CÓ SẢN PHẨM | [risks.md](../../docs/05-evaluation/risks.md) | Có SPOF/xDSL/phần mềm/giới hạn; chờ G2 |
 | W2-TV5-05 | CÓ SẢN PHẨM | [requirements-traceability.md](../../docs/00-management/requirements-traceability.md) | Đủ truy vết/hướng dẫn; G2 chưa họp/xác nhận |
@@ -82,7 +82,7 @@ GNS3 có runtime lưu ngày02/11; Windows hiện tại không chạy lại mạn
 | W3-TV4-04 | MỘT PHẦN | [README.md](../../test_results/supplemental/README.md) | ISP/IDS mẫu PASS GNS3; VPN/HA và PT NOT RUN |
 | W3-TV4-05 | CÓ SẢN PHẨM | [TV4-capacity-testing.md](../../docs/06-report/contributions/TV4-capacity-testing.md) | Có evidence/reopen/contribution; source PID mới chưa reopen lại trọn trên máy này |
 | W3-TV5-01 | CÓ SẢN PHẨM | [test-matrix.md](../../test_results/test-matrix.md) | Liên kết6 test tới evidence/report có; chờ TV4 xác nhận |
-| W3-TV5-02 | CÓ SẢN PHẨM | [report-with-evidence.md](../../docs/06-report/source/report-with-evidence.md) | Đủ Step1–5; bản hiện tại thay nháp0.3 |
+| W3-TV5-02 | CÓ SẢN PHẨM | [report.tex](../../docs/06-report/latex/report.tex) | Đủ Step1–5; bản hiện tại thay nháp0.3 |
 | W3-TV5-03 | CÓ SẢN PHẨM | [evaluation.md](../../docs/05-evaluation/evaluation.md) | Có đánh giá Step6; chờ nhận xét thành viên |
 | W3-TV5-04 | CÓ SẢN PHẨM | [risks.md](../../docs/05-evaluation/risks.md) | Có vấn đề/hướng phát triển; giả định chờ xác nhận |
 | W3-TV5-05 | CÓ SẢN PHẨM | [review-log.md](../../docs/06-report/review-log.md) | Có QA kỹ thuật; G3 chưa có quyết định nhóm |
@@ -106,7 +106,7 @@ GNS3 có runtime lưu ngày02/11; Windows hiện tại không chạy lại mạn
 | W4-TV4-03 | CÓ SẢN PHẨM | [demo-guide.md](../../simulation/gns3/demo-guide.md) | Có version/dependency/mapping/lệnh/giới hạn; PT có assembly runbook |
 | W4-TV4-04 | MỘT PHẦN | [reopen.json](../../test_results/runtime/persistence/reopen.json) | Reopen GNS3 lịch sử137; cần demo lại trên máy trình bày |
 | W4-TV4-05 | CÓ SẢN PHẨM | [manifest.md](../../submission/manifest.md) | Manifest/checksum kiểm được; G4 chờ TV1/nhóm |
-| W4-TV5-01 | CÓ SẢN PHẨM | [report.md](../../docs/06-report/source/report.md) | Đủ7 Step/5 contributions; chưa có xác nhận giao nhận nhóm |
+| W4-TV5-01 | CÓ SẢN PHẨM | [report.tex](../../docs/06-report/latex/report.tex) | Đủ7 Step/5 contributions; chưa có xác nhận giao nhận nhóm |
 | W4-TV5-02 | MỘT PHẦN | [metadata.tex](../../docs/06-report/latex/metadata.tex) | Có PDF/LaTeX/logo, L08/nhóm2 và hai người thực hiện; dòng giảng viên chưa có dữ liệu được ẩn |
 | W4-TV5-03 | CÓ SẢN PHẨM | [review-log.md](../../docs/06-report/review-log.md) | Có evaluation/QA; chuyên môn và TV1 chờ xác nhận |
 | W4-TV5-04 | CÓ SẢN PHẨM | [report.pdf](../../docs/06-report/final/report.pdf) | PDF chính đầy đủ, phụ lục Packet Tracer2 trang, native cả hai và gói/checksum có; chờ phê duyệt nhóm/BKeL |

@@ -12,7 +12,7 @@
 
 **Bổ sung04/11/2026:** đã đối chiếu100 task, kiểm nguồn/đường dẫn/hash trên Windows và giữ GNS3 cùng PDF12 trang đúng QA trước đó. Packet Tracer đã có native tổng,32 quan sát sau reopen và bốn HTTP chọn ISP thủ công đạt; [bằng chứng riêng](../../test_results/packet-tracer/README.md) giữ các lần lỗi và giới hạn profile. Phụ lục PDF hai trang đã render/đọc riêng. Chưa chạy lại GNS3 trên Windows hoặc ký duyệt học phần.
 
-**02/11/2026.** Đã đối chiếu đề gốc5 trang, bảy Step và sáu nhóm demo. [Báo cáo PDF](../06-report/final/report.pdf), [source chỉnh sửa](../06-report/source/report.md), [project GNS3](../../simulation/gns3/hospital-3sites.gns3) và [evidence](../../test_results/runtime/README.md) đã có thật.
+**02/11/2026.** Đã đối chiếu đề gốc5 trang, bảy Step và sáu nhóm demo. [Báo cáo PDF](../06-report/final/report.pdf), [source chỉnh sửa](../06-report/latex/report.tex), [project GNS3](../../simulation/gns3/hospital-3sites.gns3) và [evidence](../../test_results/runtime/README.md) đã có thật.
 
 **Kết luận:** mô hình chức năng ba cơ sở hoạt động trong phạm vi đã thử; sáu nhóm demo, OSPF, đủ18 pool DHCP/DNS, IDS/IPS rule mẫu, NAT/PBR, lỗi upstream ISP và mở lại project đều đạt ở hai run cuối. Không khẳng định triển khai bệnh viện thật đã sẵn sàng hoặc mọi yêu cầu vật lý/HA đã chạy.
 

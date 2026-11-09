@@ -15,7 +15,7 @@ python3 scripts/verify.py
 python3 scripts/package_submission.py --check
 ```
 
-Kiểm offline xác nhận cấu hình và bằng chứng đã lưu; không tự chạy mạng. Muốn thử trực tiếp dùng runbook GNS3. Bản PDF trong `latex/build/` hoặc `output/pdf/` chỉ là bản build local. `packet-tracer-validation.pdf` là phụ lục kiểm thử ngắn hai trang, khác nội dung báo cáo chính. Nguồn nội dung ở `docs/06-report/source/`, LaTeX sinh ở `docs/06-report/latex/`.
+Kiểm offline xác nhận cấu hình và bằng chứng đã lưu; không tự chạy mạng. Muốn thử trực tiếp dùng runbook GNS3. Bản PDF trong `latex/build/` hoặc `output/pdf/` chỉ là bản build local. `packet-tracer-validation.pdf` là phụ lục kiểm thử ngắn hai trang, khác nội dung báo cáo chính. Nguồn báo cáo chính được biên soạn bằng LaTeX tại [docs/06-report/latex/report.tex](docs/06-report/latex/report.tex).
 
 [Đối chiếu đặc tả và trạng thái chốt](docs/00-management/project-review.md), [manifest](submission/manifest.md) ghi giới hạn và sản phẩm. VPN crypto, RF/quang/DSL PHY, HA chassis và workload y tế thực chưa được đo. Gói được chuẩn bị để nhóm tự nộp BKeL; chưa có biên nhận nộp.
 
