@@ -301,13 +301,13 @@ Quản trị & Thiết bị mạng, giám sát, backup & VLAN 90, quyền riêng
 và truy cập từ máy được phép \\
 \end{longtable}
 
-Các vị trí có nguy cơ nghẽn là uplink IDF, Server Farm, đường liên site
-và Edge Internet. Tăng tốc một cổng không giải quyết được mọi điểm
-nghẽn: băng thông WAN, khả năng kiểm tra gói của firewall, dung lượng và
-hiệu năng lưu trữ đĩa PACS và số người dùng đồng thời phải được xem xét
-riêng. Cân bằng tải ISP ở Edge giải quyết chọn đường ra; cân bằng tải
-HIS/Web cần health check ứng dụng và quản lý phiên, là hạng mục phát
-triển tiếp.
+Các vị trí có nguy cơ trở thành điểm nghẽn của hệ thống bao gồm uplink tại IDF, Server Farm, các đường WAN liên site và Internet Edge tại Main Site. Hiệu năng toàn hệ thống không chỉ phụ thuộc vào tốc độ cổng mạng mà còn chịu ảnh hưởng bởi băng thông WAN, năng lực xử lý của firewall khi bật các chức năng bảo mật, CPU/RAM server, dung lượng và hiệu năng I/O của hệ thống lưu trữ PACS, cùng số lượng người dùng đồng thời.
+
+Trong mô hình hiện tại, nhóm sử dụng PBR kết hợp PAT để phân phối lưu lượng Internet theo nhóm địa chỉ nguồn giữa hai ISP và thử nghiệm failover khi một đường gặp sự cố. Cơ chế này không bảo đảm cân bằng tải động hoặc phân phối lưu lượng đều giữa các ISP.
+
+Đối với hệ thống HIS/Web, cân bằng tải ở tầng ứng dụng yêu cầu nhiều application server, health check, cơ chế quản lý hoặc đồng bộ session và xử lý các phụ thuộc dữ liệu. Đây là nội dung được đề xuất cho giai đoạn phát triển tiếp theo.
+
+Các điểm nghẽn nêu trên mới được xác định dựa trên phân tích kiến trúc; cần thực hiện đo tải và benchmark để xác định mức độ ảnh hưởng thực tế.
 
 \hypertarget{khux1ea3o-suxe1t-vuxe0-lux1ef1a-chux1ecdn-kiux1ebfn-truxfac-step1}{%
 \subsection{Khảo sát và lựa chọn kiến trúc
