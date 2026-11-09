@@ -30,7 +30,7 @@ def main():
     if not tex.is_file():
         p.error(f'Missing LaTeX source: {tex}')
 
-    output = ROOT / 'output/pdf'
+    output = LATEX_DIR / 'build'
     output.mkdir(parents=True, exist_ok=True)
 
     print(f'Compiling {tex.relative_to(ROOT)} with {a.engine}...')
@@ -52,8 +52,6 @@ def main():
     final_pdf.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(output / 'report.pdf', final_pdf)
     shutil.copy2(output / 'report.pdf', LATEX_DIR / 'report.pdf')
-    (LATEX_DIR / 'build').mkdir(parents=True, exist_ok=True)
-    shutil.copy2(output / 'report.pdf', LATEX_DIR / 'build/report.pdf')
 
     # Create standalone ZIP bundle
     bundle = FINAL_DIR / 'report-latex.zip'
