@@ -411,7 +411,7 @@ dụng cụ thể.
 
 Wi-Fi dùng SSID Staff/VLAN 120, Guest/VLAN 100 và quản trị AP/VLAN 90.
 AP/WLC sản xuất cần WPA2/WPA3 Enterprise tùy khả năng client,
-802.1X/RADIUS, ACL và cách ly khách cùng lớp2. GNS3 kiểm host
+802.1X/RADIUS, ACL và cách ly khách cùng lớp 2. GNS3 kiểm host
 Staff/Guest đại diện qua VLAN có dây. Packet Tracer đã kiểm sáu client
 Wi-Fi thật trong lab với WPA2-PSK/AES, DHCP và HTTP; chưa kiểm RF thực,
 WLC, 802.1X hoặc roaming. AP-PT một SSID không được coi là WLC nhiều
@@ -476,8 +476,8 @@ liệu được xác nhận trước khi chốt mua sắm.
 \subsubsection{Port budget hiện tại / 5
 năm}\label{port-budget-hiux1ec7n-tux1ea1i-5-nux103m}}
 
-PC tăng tổng 20\%. AP/camera là giả định 3 AP+4 camera/tầng hiện tại;
-tăng và làm tròn từng tầng lên4 AP+5 camera, vì thiết bị không chia lẻ.
+PC tăng tổng 20\%. AP/camera là giả định 3 AP + 4 camera/tầng hiện tại;
+tăng và làm tròn từng tầng lên 4 AP + 5 camera, vì thiết bị không chia lẻ.
 Đây là dự trù cổng/PoE, không phải sizing RF đã được đo. NVR Main nối
 switch Server Farm; NVR Aux có 1 cổng access tại MDF tầng 1, không bỏ
 sót trong budget.
@@ -510,23 +510,23 @@ NVR trên access
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Dùng hiện tại→5 năm
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Dư5 năm
+Dư 5 năm
 \end{minipage} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Main & 20 ×48=960 & 600 → 720 & 30 → 40 & 40 → 50 & 0 & 0 & 670 → 810 &
+Main & 20 × 48 = 960 & 600 → 720 & 30 → 40 & 40 → 50 & 0 & 0 & 670 → 810 &
 150 \\
-DBP, mỗi site & 8 ×48=384 & 260 → 312 & 6 → 8 & 8 → 10 & 2 → 3 & 1 & 277
+DBP, mỗi site & 8 × 48 = 384 & 260 → 312 & 6 → 8 & 8 → 10 & 2 → 3 & 1 & 277
 → 334 & 50 \\
-BHTQ, mỗi site & 8 ×48=384 & 260 → 312 & 6 → 8 & 8 → 10 & 2 → 3 & 1 &
+BHTQ, mỗi site & 8 × 48 = 384 & 260 → 312 & 6 → 8 & 8 → 10 & 2 → 3 & 1 &
 277 → 334 & 50 \\
 \end{longtable}
 
-Mỗi tầng Main có 2 switch,5 năm 72 PC+4 AP+5 camera=81/96 cổng. Aux 4
-switch/tầng: tầng 1 tối đa156 PC+4 AP+5 camera+3 server+1 NVR=169/192;
-tầng 2 dùng165/192. Không đặt toàn bộ PC/server vào12 thiết bị mạng chỉ
+Mỗi tầng Main có 2 switch,5 năm 72 PC + 4 AP + 5 camera=81/96 cổng. Aux 4
+switch/tầng: tầng 1 tối đa 156 PC + 4 AP + 5 camera + 3 server + 1 NVR=169/192;
+tầng 2 dùng 165/192. Không đặt toàn bộ PC/server vào 12 thiết bị mạng chỉ
 để khớp số minh họa của đề. Switch hỏng vẫn làm mất host nối vào nó; dư
 tổng cổng không tự tạo HA cho từng máy.
 
@@ -535,8 +535,8 @@ tổng cổng không tự tạo HA cho từng máy.
 
 C9200L-48P-4X với nguồn PWR-C5-1KWAC có 740 W PoE theo
 \href{https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html}{Cisco
-datasheet}. Bản48 PL với nguồn600 W mới là 370 W; không nhầm hai SKU.48
-P có 48 ×1 G và 4 ×10 G uplink; model thực, license, nguồn và khả năng
+datasheet}. Bản 48 PL với nguồn 600 W mới là 370 W; không nhầm hai SKU.48
+P có 48 × 1 G và 4 × 10 G uplink; model thực, license, nguồn và khả năng
 cung cấp phải chốt theo báo giá.
 
 PSE budget giả định 30 W/AP và 15,4 W/camera. Mỗi tầng hiện tại 151,6
@@ -546,10 +546,10 @@ W, đều dư trên giấy. Phải kiểm từng switch/cổng, phân phối thi
 đã mất một PSU. Có thể đổi một phần sang switch không PoE sau thiết kế
 chi tiết và đối soát BOM.
 
-AP tham chiếu9115AXI có uplink100 M/1 G/2,5 G theo
+AP tham chiếu 9115AXI có uplink 100 M/1 G/2,5 G theo
 \href{https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html}{Cisco
 AP datasheet}. Baseline switch 48 P chỉ cấp 1 GbE tới AP, không cam
-kết2,5 GbE. Nếu đo RF/dung lượng yêu cầu hơn1 G/AP, thay switch có mGig
+kết 2,5 GbE. Nếu đo RF/dung lượng yêu cầu hơn 1 G/AP, thay switch có mGig
 và tính lại PoE/license/BOM.42 AP hiện tại và 56 AP dự trù theo từng
 tầng; mỗi WLC dự trù phải quản lý≥64 AP để không thiếu khi failover.
 
@@ -576,37 +576,37 @@ PoE/quang, license, công suất
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Core L3 & 2 & ≥32 cổng 1/10 G và≥2 cổng 40 G/core;20 access+2 Server
-Farm+2 FW+2 WAN+2 WLC=28/32 & 10 G SR, core-core 2 ×40 G;
+Core L3 & 2 & ≥32 cổng 1/10 G và ≥2 cổng 40 G/core; 20 access + 2 Server
+Farm + 2 FW + 2 WAN + 2 WLC=28/32 & 10 G SR, core-core 2 × 40 G;
 OSPF/SVI/ACL/HA license theo model; W chờ datasheet \\
-Access & 20 & 48 ×1 G+4 ×10 G;2 uplink riêng tới 2 core; C9200L-48P-4X
+Access & 20 & 48 × 1 G+4 × 10 G; 2 uplink riêng tới 2 core; C9200L-48P-4X
 tham chiếu & 740 W PSE với PSU 1 kW; Essentials/L2 theo chức năng, quang
 ở mục 5; W thực phải cộng tải PoE \\
-Switch Server Farm & 2 & ≥24 ×10 G/switch; mỗi switch 10 NIC server+1
-NVR+2 uplink core+2 inter-switch=15/24 sau tăng trưởng & VLAN 70/90/110;
+Switch Server Farm & 2 & ≥24 × 10 G/switch; mỗi switch 10 NIC server + 1
+NVR + 2 uplink core + 2 inter-switch=15/24 sau tăng trưởng & VLAN 70/90/110;
 không bridge DMZ; DAC/SFP+, công suất/license theo model \\
 Switch DMZ tách riêng & 2 & ≥24 cổng 1/10 G; chỉ DMZ server và cổng DMZ
 FW; không uplink L2 trực tiếp Core & VLAN 80, quản trị OOB nếu cần; HA
 link/NIC theo model, chưa chạy \\
-Server ứng dụng & 10, dự trù 12 & 8 nội bộ+2 DMZ hiện tại; CPU, RAM,
-storage chờ khảo sát workload & NIC10 G dual nếu chọn; license OS/DB và
+Server ứng dụng & 10, dự trù 12 & 8 nội bộ + 2 DMZ hiện tại; CPU, RAM,
+storage chờ khảo sát workload & NIC 10 G dual nếu chọn; license OS/DB và
 W chờ chốt \\
-Firewall & 2 dự trùHA & ≥4 cổng 10 G; sizing theo throughput khi bật
+Firewall & 2 dự trù HA & ≥4 cổng 10 G; sizing theo throughput khi bật
 inspect, IPS, crypto và session, không chỉ tốc độ port & Security, VPN
 và IPS subscription, SFP+, W chờ model; lab 1 FW \\
-WAN gateway & 2 dự trù & OSPF, handoff2 leased lines, IPsec nếu chọn;≥2
-WAN+2 LAN10 G & License/crypto/CPE theo nhà mạng; lab 1 gateway Main \\
-Internet Edge /modem & 2 Edge+2 modem & PBR/PAT/tracking và 2 xDSL;
+WAN gateway & 2 dự trù & OSPF, handoff 2 leased lines, IPsec nếu chọn;≥2
+WAN + 2 LAN 10 G & License/crypto/CPE theo nhà mạng; lab 1 gateway Main \\
+Internet Edge /modem & 2 Edge + 2 modem & PBR/PAT/tracking và 2 xDSL;
 modem theo ISP; năng lực theo TV4 & Model, license, public IP/PSU chờ
 chốt; lab 1 Edge \\
-WLC & 2 dự trù & Mỗi controller≥64 AP và 2 uplink10 G; controller
-compatibility phải kiểm & License cho 56 AP dự trù, điều kiệnHA chờ báo
+WLC & 2 dự trù & Mỗi controller≥64 AP và 2 uplink 10 G; controller
+compatibility phải kiểm & License cho 56 AP dự trù, điều kiện HA chờ báo
 giá; không cộng trùng license \\
-AP & 30 → 40 & Wi-Fi 6, PoE+, uplink1 G trong baseline; RF chưa đo & 30
+AP & 30 → 40 & Wi-Fi 6, PoE+, uplink 1 G trong baseline; RF chưa đo & 30
 W PSE giả định; controller và software compatibility chưa chốt \\
-Camera & 40 → 50 & 4 MP/H.265/PoEaf giả định;1 access port/camera & 15,4
-W PSE; bitrate4 Mbps giả định, nguồn/vendor chưa chọn \\
-NVR & 1 hệ & ≥64 kênh và ingest đáp ứng200 Mbps+headroom5 năm & ≥85.050
+Camera & 40 → 50 & 4 MP/H.265/PoEaf giả định; 1 access port/camera & 15,4
+W PSE; bitrate 4 Mbps giả định, nguồn/vendor chưa chọn \\
+NVR & 1 hệ & ≥64 kênh và ingest đáp ứng 200 Mbps + headroom 5 năm & ≥85.050
 GB usable sau RAID theo camera plan; model/ổ/license/W chưa chọn \\
 \end{longtable}
 
@@ -644,7 +644,7 @@ PoE 740W với nguồn phù hợp \\
 Wi-Fi sản xuất tham chiếu & Cisco Catalyst 9115AXI & Wi-Fi 6, uplink tới
 2,5G; baseline access giới hạn 1G \\
 AP mô phỏng & AccessPoint-PT & Một SSID/AP; AP Staff và Guest riêng \\
-Camera tham chiếu & AXIS P3267-LVE & 2592×1944, H.265, PoE class 3; cấu
+Camera tham chiếu & AXIS P3267-LVE & 2592 × 1944, H.265, PoE class 3; cấu
 hình stream theo sizing \\
 \end{longtable}
 
@@ -678,20 +678,20 @@ PoE, license, công suất/giá
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Distribution L3 & 2 dự trù & ≥16 cổng 10 G;8 access+1 WAN+2
-interconnect=11/16; SVI, ACL, OSPF, HSRP theo thiết kếHA riêng &
+Distribution L3 & 2 dự trù & ≥16 cổng 10 G; 8 access + 1 WAN + 2
+interconnect=11/16; SVI, ACL, OSPF, HSRP theo thiết kế HA riêng &
 SFP+/DAC, license/W/giá OPEN; TV1/TV2 \\
-Access & 8 & 48 ×1 G+4 ×10 G,2 uplink độc lập;4 switch/tầng &
-C9200L-48P-4X tham chiếu740 W; giá OPEN; TV2 \\
+Access & 8 & 48 × 1 G+4 × 10 G, 2 uplink độc lập; 4 switch/tầng &
+C9200L-48P-4X tham chiếu 740 W; giá OPEN; TV2 \\
 WAN router & 1 & 1 leased line về Main, OSPF/IPsec nếu chọn; sizing theo
 TV4 & Một tuyến/site vẫn SPOF; license/W/giá OPEN; TV1 \\
-Server cục bộ & 2 → 3 & Infra .70.6, Local .70.7; thêm máy thứ3 khi cần
+Server cục bộ & 2 → 3 & Infra .70.6, Local .70.7; thêm máy thứ 3 khi cần
 & CPU, RAM, disk, NIC, license, W và giá OPEN; TV3 \\
 AP & 6 → 8 & Như Main, local switching VLAN 100/120, Internet vẫn qua
 Main & PoE/RF/license/giá OPEN; TV2 \\
 Camera & 8 → 10 & Như Main; ghi local & 15,4 W PSE; giá OPEN; TV3/TV2 \\
 NVR & 1 & ≥16 kênh;5 năm 40 Mbps video trước headroom & ≥17.010 GB
-usable sau RAID,1 access port; giá OPEN; TV3 \\
+usable sau RAID, 1 access port; giá OPEN; TV3 \\
 \end{longtable}
 
 \hypertarget{quang-cuxe1p-rack-vuxe0-thux1ee5-ux111ux1ed9ng}{%
@@ -717,26 +717,26 @@ Cách tính /giới hạn
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Link access10 G & 40 & 16 & Mỗi switch 2 uplink;
+Link access 10 G & 40 & 16 & Mỗi switch 2 uplink;
 \href{../../02-design/campus-uplinks.csv}{72 link/port/tuyến A-B} \\
 SFP+ SR cho link access & 80+8 spare=88 & 32+4 spare=36 & 2 module/link,
-spare10\% làm tròn; chưa gồm uplink dịch vụ \\
-Fiber trục & Mỗi IDF2 tuyến12 sợi OM3, tổng 20 tuyến giả định & 2
-tuyến12 sợi tới IDF tầng 2, patch phù hợp tầng 1 & Main mỗi tuyến dùng4
-sợi; Aux tuyến tầng 2 dùng8 sợi; tuyến A/B phải đi ống riêng sau khảo
+spare 10\% làm tròn; chưa gồm uplink dịch vụ \\
+Fiber trục & Mỗi IDF 2 tuyến 12 sợi OM3, tổng 20 tuyến giả định & 2
+tuyến 12 sợi tới IDF tầng 2, patch phù hợp tầng 1 & Main mỗi tuyến dùng 4
+sợi; Aux tuyến tầng 2 dùng 8 sợi; tuyến A/B phải đi ống riêng sau khảo
 sát \\
-Cat6,305 m/thùng & 88 thùng & 37 thùng & Main 810/Aux 334 drop×30 m×1,1
-÷305, làm tròn;30 m là giả định, chưa đo \\
-Patch panel48 cổng & 20 & 8 & Khớp tổng cổng access; đầu nối/patch cord
+Cat6, 305 m/thùng & 88 thùng & 37 thùng & Main 810/Aux 334 drop × 30 m × 1,1
+÷ 305, làm tròn; 30 m là giả định, chưa đo \\
+Patch panel 48 cổng & 20 & 8 & Khớp tổng cổng access; đầu nối/patch cord
 và nhãn phải bóc tách thêm \\
-Rack/UPS/ODF/patch cord & OPEN & OPEN & Main 10 IDF+MDF; AuxMDF tầng
+Rack/UPS/ODF/patch cord & OPEN & OPEN & Main 10 IDF + MDF; Aux MDF tầng
 1+IDF tầng 2; W/runtime UPS/chiều dài chờ khảo sát \\
 GPON OLT/splitter/ONT & 1 OLT, 2 splitter, 20 → 24 ONT & Chưa áp dụng
 tại Aux & Bổ sung cho phương án hybrid; đối soát riêng chi phí ODN \\
 \end{longtable}
 
 SR trên OM3 phải kiểm cự ly/connector theo optics được chọn; không lấy
-khoảng cách50 m giữa tòa làm chiều dài mọi tuyến.40 G/DAC/Server/FW/WLC
+khoảng cách 50 m giữa tòa làm chiều dài mọi tuyến. 40 G/DAC/Server/FW/WLC
 optics chưa nằm trong 80/32 module access, cần dòng báo giá riêng. Toàn
 bộ giá tạm chưa có nguồn của bản mô hình tham chiếu được chuyển OPEN;
 chưa tính tổng hoặc tuyên bố giá thị trường.
@@ -755,27 +755,27 @@ cáp}\label{tux1ed5-chux1ee9c-mdf-idf-vuxe0-tuyux1ebfn-cuxe1p}}
 \subsubsection{MDF /IDF và cáp
 baseline}\label{mdf-idf-vuxe0-cuxe1p-baseline}}
 
-Main có 10 IDF,2 access48 port/IDF; mỗi Aux 4 access/tầng,8/site. Active
+Main có 10 IDF, 2 access 48 port/IDF; mỗi Aux 4 access/tầng,8/site. Active
 Ethernet dùng Cat6 từ access tới PC/AP/camera, dự trù 1 GbE; cáp quang
-OM3 duplex10 GbE từ access tới core/distribution.40 GbE chỉ là liên kết
-core-core dự trù, không phải tốc độ của model3650/2960 trong .pkt. Cổng
+OM3 duplex 10 GbE từ access tới core/distribution. 40 GbE chỉ là liên kết
+core-core dự trù, không phải tốc độ của model 3650/2960 trong .pkt. Cổng
 FastEthernet của 2960-24TT chỉ 100 Mbps, không được ghi Fa0/1 là 1 GbE.
 
-Mỗi access có 2 uplink: một tới Core1 qua tuyếnA, một tới Core2 qua
-tuyếnB. Với core độc lập, dùng trunk độc lập +RSTP, gatewayHA cần
+Mỗi access có 2 uplink: một tới Core1 qua tuyến A, một tới Core2 qua
+tuyến B. Với core độc lập, dùng trunk độc lập + RSTP, gateway HA cần
 HSRP/VRRP được cấu hình riêng; không ghép một LACP xuyên hai core chưa
 stack/virtual hóa.
 \href{https://www.cisco.com/c/en/us/support/docs/lan-switching/gigabit-etherchannel-gec/222012-etherchannel-designs.html}{Cisco
 EtherChannel designs} phân biệt một switch vật lý với một logical
-switch/stack. Bản .pkt mô hình tham chiếu ghép2 link về cùng một core
-nên LACP đúng phạm vi nhưng không có chassisHA.
+switch/stack. Bản .pkt mô hình tham chiếu ghép 2 link về cùng một core
+nên LACP đúng phạm vi nhưng không có chassis HA.
 
 \href{../../02-design/campus-uplinks.csv}{Danh mục 72 link} ghi từng
-switch/cổng/core/tuyến, gồm 40 Main,16 DBP,16 BHTQ. Tên Te là tên cổng
+switch/cổng/core/tuyến, gồm 40 Main, 16 DBP, 16 BHTQ. Tên Te là tên cổng
 đề xuất sản xuất, phải remap theo model mua; không dùng chúng như output
-từ Packet Tracer. Main 2 switch/IDF→4 link duplex=8 sợi, chia4
-sợi/tuyếnA và 4/tuyếnB; dự trù hai cáp12 sợi hai ống độc lập mỗi IDF.
-Auxtầng 2 có 4 switch→8 link duplex,8 sợi/tuyếnA và 8/tuyếnB, hai cáp12
+từ Packet Tracer. Main 2 switch/IDF→4 link duplex=8 sợi, chia 4
+sợi/tuyến A và 4/tuyến B; dự trù hai cáp 12 sợi hai ống độc lập mỗi IDF.
+Aux tầng 2 có 4 switch→8 link duplex, 8 sợi/tuyến A và 8/tuyến B, hai cáp 12
 sợi. Đi chung một ống không tạo dự phòng chống đứt cả tuyến.
 
 Cat6 dự trù 30 m/drop và 10\% hao hụt để tính BOM, không phải khảo sát.
@@ -810,7 +810,7 @@ tăng trưởng 20\%: 96 PC qua GPON và 24 PC qua Ethernet, tổng VLAN 60 vẫ
 120 PC. Các PC này nằm trong tổng 600 → 720 của Main, không cộng thêm
 vào quy mô bệnh viện.
 
-Mỗi tòa 5 tầng, mỗi tầng 2 ONT x4 cổng GE =8 PC; 10 tầng =80 PC. Năm thứ
+Mỗi tòa 5 tầng, mỗi tầng 2 ONT x 4 cổng GE = 8 PC; 10 tầng = 80 PC. Năm thứ
 5 thêm 2 ONT mỗi tòa (phân phối sau khảo sát), tổng 24 ONT x4GE =96 PC.
 Hai splitter hiện có 32 nhánh, dùng 20 hiện tại/24 tương lai; không phải
 thêm splitter chỉ vì tăng 20\%. Một OLT là SPOF của nhánh hành chính,
@@ -856,7 +856,7 @@ uplink OLT chỉ cho VLAN 60 và VLAN 90 quản trị, không bridge VLAN
 80/Server Farm/Guest. VLAN translation/GEM/T-CONT theo CLI nhà sản xuất
 được chọn; không tự tạo lệnh vendor chưa kiểm. ONT isolation, chống
 rogue ONU và ngắt cổng chưa provision là điều kiện FAT. Quản trị chỉ từ
-Main-Admin10.10.90.11; thay tài khoản mặc định, tắt quản trị từ user
+Main-Admin 10.10.90.11; thay tài khoản mặc định, tắt quản trị từ user
 port, log về giám sát.
 
 Bảng campus hiện dành 810/960 cổng Main theo cách giữ toàn bộ chỗ
@@ -880,17 +880,17 @@ quang}\label{bux103ng-thuxf4ng-vuxe0-nguxe2n-suxe1ch-quang}}
 ITU-T G.984.2 mô tả GPON 2,488 Gbit/s xuống và 1,244 Gbit/s lên; đây là
 dung lượng chia sẻ mỗi PON, không phải tốc độ bảo đảm mỗi PC. Một ONT
 4GE có 4 cổng 1 GbE nhưng không bảo đảm 4Gbps đồng thời qua GPON. Năm
-thứ5 mỗi PON phục vụ tối đa48 PC hành chính; cần đo lưu lượng, DBA và
+thứ 5 mỗi PON phục vụ tối đa 48 PC hành chính; cần đo lưu lượng, DBA và
 QoS trước chốt cấu hình. PACS/backup không được chuyển sang nhánh này
 chỉ từ tính tải Web bình quân.
 
 Ví dụ kỹ thuật để kiểm công thức, không phải kết quả khảo sát: tuyến
-dài0,5km, suy hao sợi0,35dB/km, splitter1:16 tối đa13,5dB giả định, 4
-đầu nối x0,5dB, 4 mối hàn x0,1dB.
+dài 0,5 km, suy hao sợi 0,35 dB/km, splitter 1:16 tối đa 13,5 dB giả định, 4
+đầu nối x 0,5 dB, 4 mối hàn x 0,1 dB.
 
-L\_ODN = 0,5×0,35 + 13,5 + 4×0,5 + 4×0,1 = 16,075 dB.
+L\_ODN = 0,5 × 0,35 + 13,5 + 4 × 0,5 + 4 × 0,1 = 16,075 dB.
 
-Với dự phòng 3dB: L\_design =19,075dB; so với class B+13--28dB, ví dụ
+Với dự phòng 3dB: L\_design = 19,075 dB; so với class B+ 13--28 dB, ví dụ
 nằm trong cửa sổ, dư 8,925dB ở đầu suy hao cao. Phải thay bằng Tx
 min/max, Rx sensitivity/overload, insertion loss của thiết bị thực; đo
 cả tuyến ngắn để tránh quá tải receiver. Dự phòng 3dB không thay suy hao
@@ -944,7 +944,7 @@ Khối Main là 10.10.0.0/16, DBP là 10.20.0.0/16, BHTQ là 10.30.0.0/16.
 VLAN PC tại Main và ba VLAN PC mỗi Aux dùng /25 với pool .7--.126, đúng
 120 lease/pool. Main có 100 → 120 PC mỗi VLAN; Aux có 90/90/80 →
 108/108/96 PC. VLAN server 70 dùng /27 Main, /28 Aux; VLAN 90 quản trị
-và110 camera dùng /24; Guest100 dùng /23, Staff120 dùng /24. VLAN 80 DMZ
+và 110 camera dùng /24; Guest 100 dùng /23, Staff 120 dùng /24. VLAN 80 DMZ
 chỉ có tại Main, /27.
 
 Hai leased line Main--DBP và Main--BHTQ là 10.255.0.0/30 và
@@ -1166,7 +1166,7 @@ PC cùng VLAN & PC cùng VLAN & Ping hai chiều \\
 PC nghiệp vụ & VLAN khác được phép / HIS & Ping/HTTP theo ACL \\
 Main PC, Aux PC & PC khác site & Ping hai chiều; traceroute qua WAN \\
 PC được phép & DMZ Web & HTTP tới \nolinkurl{10.10.80.10} \\
-Web-Lab bên ngoài & ISP2 TCP8080 & PAT tới DMZ Web TCP80 \\
+Web-Lab bên ngoài & ISP2 TCP 8080 & PAT tới DMZ Web TCP 80 \\
 Guest mỗi site & PC/HIS/DMZ nội bộ & Chặn; ACL deny tăng \\
 PC/Guest mỗi site & Web-Lab & DNS và HTTP thành công \\
 \end{longtable}
@@ -1314,7 +1314,7 @@ video}\label{vlan-quyux1ec1n-vuxe0-luux1ed3ng-video}}
 Mỗi site VLAN 110 /24, gateway .110.1, NVR appliance .110.11; camera
 tĩnh dự trù .110.100--.254. Chưa bật DHCP camera trong baseline. NVR
 không nằm trong 14 server ứng dụng; Main nối switch Server Farm hỗ
-trợVLAN 110, Aux dùng1 port access tại MDF tầng 1. DMZswitch không phục
+trợ VLAN 110, Aux dùng 1 port access tại MDF tầng 1. DMZ switch không phục
 vụ NVR/camera.
 
 \begin{longtable}[]{@{}
@@ -1335,11 +1335,11 @@ Chính sách
 \endlastfoot
 Camera & NVR cùng site/VLAN 110 & Ghi hình local; port RTSP/ONVIF theo
 vendor sau chọn model \\
-Main-Admin10.10.90.11 & NVR/camera được cấp quyền & Qua mạng riêng; ACL
+Main-Admin 10.10.90.11 & NVR/camera được cấp quyền & Qua mạng riêng; ACL
 CAMERA cho trả lời; ứng dụng/xác thực chưa triển khai \\
 Nhân viên/khách/Internet & Camera/NVR & Không có quyền mặc định; không
 port-forward NVR ra Internet \\
-Camera/NVR & Main-Monitor10.10.70.17 & UDP123 đồng bộ giờ; Internet trực
+Camera/NVR & Main-Monitor 10.10.70.17 & UDP 123 đồng bộ giờ; Internet trực
 tiếp bị chặn \\
 \end{longtable}
 
@@ -1353,12 +1353,11 @@ bệnh viện xác nhận quyền riêng tư.
 \subsubsection{Cáp và PoE}\label{cuxe1p-vuxe0-poe}}
 
 Mỗi camera 1 port access và 1 Cat6 drop về IDF tầng, tốc độ đàm phán
-theo model. Dự trù PSE15,4 W/camera: hiện4/tầng 61,6 W,5 năm 5/tầng 77
-W. CộngAP 30 W:151,6 W hiện tại và 197 W/tầng 5 năm. C9200L-48P-4X +PSU
-1 kW có 740 W, không phải370 W;
+theo model. Dự trù PSE 15,4 W/camera: hiện 4/tầng 61,6 W, 5 năm 5/tầng 77
+W. Cộng AP 30 W: 151,6 W hiện tại và 197 W/tầng 5 năm. C9200L-48P-4X + PSU 1 kW có 740 W, không phải 370 W;
 \href{../../02-design/equipment-bom.md}{BOM} ghi nguồn và ngân sách từng
 tầng. Kiểm tải từng cổng/switch/UPS, cáp/rack/ODF và điều kiện hỏng
-nguồn, không dùng tổngPoE để tự xác nhậnHA.
+nguồn, không dùng tổng PoE để tự xác nhận HA.
 
 \hypertarget{lux1b0u-trux1eef-thux1eadp-phuxe2n-vuxe0-tux103ng-trux1b0ux1edfng}{%
 \subsubsection{Lưu trữ thập phân và tăng
@@ -1400,12 +1399,12 @@ DBP & 8 → 10 & 32 → 40 Mbps & 10.368 GB & 13.608 → 17.010 GB \\
 BHTQ & 8 → 10 & 32 → 40 Mbps & 10.368 GB & 13.608 → 17.010 GB \\
 \end{longtable}
 
-Ví dụ số học: Main 12 ×10 TB RAID6 cho 100 TB lý thuyết trước
-filesystem; Aux 4 ×12 TB RAID6 cho 24 TB. Kiểm usable thật,
-NVRbay/channels/maximum ingest/ổ được hãng hỗ trợ, rebuild/hot spare và
-license trước mua. Ví dụ10 ×8 TB RAID6=64 TB của bản mô hình tham chiếu
+Ví dụ số học: Main 12 × 10 TB RAID6 cho 100 TB lý thuyết trước
+filesystem; Aux 4 × 12 TB RAID6 cho 24 TB. Kiểm usable thật,
+NVR bay/channels/maximum ingest/ổ được hãng hỗ trợ, rebuild/hot spare và
+license trước mua. Ví dụ 10 × 8 TB RAID6=64 TB của bản mô hình tham chiếu
 thiếu ngay hiện tại dưới bộ giả định 5\%/80\%; không giữ cấu hình đó rồi
-tuyên bố đủ 62,2 TB/HA. Main cần≥64 kênh/Aux≥16 kênh để chứa50/10 camera
+tuyên bố đủ 62,2 TB/HA. Main cần≥64 kênh/Aux≥16 kênh để chứa 50/10 camera
 dự trù; model/giá chưa chốt.
 
 \hypertarget{wan-ospf-vuxe0-lux1ef1a-chux1ecdn-cuxf4ng-nghux1ec7}{%
@@ -1764,8 +1763,8 @@ dịch vụ tại địa chỉ hoặc đủ cho PACS chưa khảo sát.
 \subsubsection{Diễn giải sizing và tải khi sự
 cố}\label{diux1ec5n-giux1ea3i-sizing-vuxe0-tux1ea3i-khi-sux1ef1-cux1ed1}}
 
-Ví dụ Main: 600×500 + 10×1.000 = 310.000 MB download/ngày. Trong 3 giờ
-cao điểm, phần 80\% tương ứng 310.000×8×0,8/10.800 = 183,70 Mbps. Nhân
+Ví dụ Main: 600 × 500 + 10 × 1.000 = 310.000 MB download/ngày. Trong 3 giờ
+cao điểm, phần 80\% tương ứng 310.000 × 8 × 0,8/10.800 = 183,70 Mbps. Nhân
 tăng trưởng 1,2 rồi chia hệ số sử dụng 0,70 cho 314,92 Mbps thiết kế.
 Hai Aux được tính cùng cách; tổng Internet tập trung là 583,11 Mbps
 download và 142,22 Mbps upload trước khách và tải chưa biết.
@@ -1794,11 +1793,11 @@ Khi còn một đường
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2×100/20 Mbps & 200/40 Mbps & Thiếu cả hai chiều so với 583,11/142,22 &
+2 × 100/20 Mbps & 200/40 Mbps & Thiếu cả hai chiều so với 583,11/142,22 &
 Thiếu thêm; không đáp ứng đủ tải \\
-2×500/500 Mbps & 1.000/1.000 Mbps & Tổng đủ trên phép tính, còn phải
+2 × 500/500 Mbps & 1.000/1.000 Mbps & Tổng đủ trên phép tính, còn phải
 kiểm từng nhóm PBR & 500 Mbps down thấp hơn nhu cầu tổng \\
-2×750/250 Mbps & 1.500/500 Mbps & Có dư địa tổng cho ví dụ 300 khách &
+2 × 750/250 Mbps & 1.500/500 Mbps & Có dư địa tổng cho ví dụ 300 khách &
 750 Mbps down sát 735,49, chưa gồm tải bổ sung \\
 \end{longtable}
 
@@ -1912,7 +1911,7 @@ xạ sang CLI của model thực và kiểm tương thích hai đầu.
 \NormalTok{  address\_pool = 10.255.100.2{-}10.255.100.254}
 \NormalTok{  authentication = individual account + certificate + MFA}
 \NormalTok{  split\_routes = HIS 10.10.70.11/32, CRM 10.10.70.14/32}
-\NormalTok{  permit = TCP443 to approved applications}
+\NormalTok{  permit = TCP 443 to approved applications}
 \NormalTok{  deny = database, management, camera, remaining LAN}
 \end{Highlighting}
 \end{Shaded}
@@ -1931,7 +1930,7 @@ Endpoint công bố dự kiến dùng ISP2, không chạy trên Main-GW WAN priv
 Pool 10.255.100.2--10.255.100.254, .1 dự trữ; certificate gateway, tài
 khoản riêng và MFA/AAA. Chọn IKEv2 remote-access hoặc TLS VPN sau khi
 kiểm server/client tương thích. Nếu dùng IKEv2 phía sau Main-Edge, cần
-mapping/ACL UDP500/4500 đúng FW; chưa thêm các rule đó vào baseline.
+mapping/ACL UDP 500/4500 đúng FW; chưa thêm các rule đó vào baseline.
 Không công bố RDP/SSH quản trị trực tiếp ra ngoài.
 
 Split tunnel chỉ tới HIS/CRM đã duyệt; DNS/suffix và tuyến split được
@@ -1957,7 +1956,7 @@ Route pool tại Main-Edge nếu cần chuyển tiếp & 10.255.100.0/24 qua
 10.255.0.17 \\
 Từ Aux tới pool & Chỉ quảng bá prefix pool nếu use case được duyệt,
 không redistribute toàn bộ static \\
-ACL/VPN zone & Chỉ pool→HIS .11/CRM .14 TCP443; HTTP80 chỉ trong lab;
+ACL/VPN zone & Chỉ pool→HIS .11/CRM .14 TCP 443; HTTP 80 chỉ trong lab;
 deny DB/admin/camera \\
 NAT exemption & Giữ source private cho pool hai chiều internal; không để
 PAT trước khi mã hóa \\
@@ -2011,16 +2010,16 @@ số PASS không phải phép đo throughput.
 \subsubsection{GNS3 - nền tảng kiểm dual ISP và
 IDS/IPS}\label{gns3---nux1ec1n-tux1ea3ng-kiux1ec3m-dual-isp-vuxe0-idsips}}
 
-Mô hình thực thi có 9 router/firewall Linux/FRR,5 switch VLAN và38
-endpoint đại diện, bao gồm14 server nội bộ và Web-Lab. Cấu hình được
+Mô hình thực thi có 9 router/firewall Linux/FRR, 5 switch VLAN và 38
+endpoint đại diện, bao gồm 14 server nội bộ và Web-Lab. Cấu hình được
 sinh từ IP/cabling/endpoint/ACL đã review; phần dịch IOS sang Linux chỉ
 hỗ trợ cú pháp có trong repository và dừng khi gặp cú pháp ngoài phạm
 vi. Điều này không chứng minh CLI IOS được chấp nhận hoặc hành vi timer
 giống Cisco.
 
 Switch Linux thực hiện bridge VLAN filtering; router-on-a-stick
-dùng802.1Q; FRR chạy OSPF thật. DHCP relay chuyển yêu cầu tới Infra từng
-site; dnsmasq phục vụ đủ18 pool và DNS. HTTP trả tên node và địa chỉ
+dùng 802.1Q; FRR chạy OSPF thật. DHCP relay chuyển yêu cầu tới Infra từng
+site; dnsmasq phục vụ đủ 18 pool và DNS. HTTP trả tên node và địa chỉ
 client để kiểm NAT. Firewall iptables conntrack tách LAN/OUTSIDE/DMZ;
 ACL ingress tại gateway kiểm east-west. NAT tập trung tại Edge, exempt
 traffic nội bộ. Static PAT chỉ ISP2:8080 tới 10.10.80.10:80, giữ đường
@@ -2057,13 +2056,13 @@ thi}\label{mpls-l3vpn---phux1ea7n-wan-mux1edbi-ux111uxe3-thux1ef1c-thi}}
 
 Module simulation/mpls/ có 11 nút/10 liên kết: ba CE Main/DBP/BHTQ, ba
 PE, một P, ba PC và Web-Lab. Provider dùng OSPF area 0 và LDP; ba PE
-trao đổi VPNv4 bằng MP-BGP AS65000. VRF HOSPITAL/table1001 dùng
-RT65000:100, RD65000:1/2/3; CE dùng eBGP AS65101--65103. Ba LAN đại diện
+trao đổi VPNv4 bằng MP-BGP AS 65000. VRF HOSPITAL/table 1001 dùng
+RT 65000:100, RD 65000:1/2/3; CE dùng eBGP AS 65101--65103. Ba LAN đại diện
 giữ 10.10.10.0/25, 10.20.10.0/25, 10.30.10.0/25. Internet hai Aux vẫn đi
 qua Main/PAT198.51.100.2.
 
 Đã chạy thực trên Linux namespaces trong QEMU/WHPX, Alpine3.22.7,
-kernel6.12.114-lts và FRR10.2.2. Lượt validated đạt 28/28, sau xóa/dựng
+kernel6.12.114-lts và FRR 10.2.2. Lượt validated đạt 28/28, sau xóa/dựng
 lại đạt 28/28: sáu ping hai chiều liên site, ba HTTP/PAT tại Main,
 MP-BGP/LDP/VRF, provider không truy cập LAN, tắt/khôi phục đường DBP và
 bắt gói MPLS. PCAP có EtherType0x8847 và hai nhãn transport/VPN trên
@@ -2260,7 +2259,7 @@ Suricata được đưa vào mô hình Linux để kiểm IDS/IPS bằng hai URI
 một marker phát cảnh báo, một marker phải bị chặn. NFQUEUE repeat đánh
 dấu và đưa gói trở lại các luật firewall; verdict accept của IPS không
 được dùng để bỏ qua ACL/zone policy. DNS có miền thử .invalid bị
-trả0.0.0.0 để minh họa blocklist. Đây chỉ là bằng chứng rule mẫu, không
+trả 0.0.0.0 để minh họa blocklist. Đây chỉ là bằng chứng rule mẫu, không
 chứng minh phát hiện mọi tấn công/phishing hoặc hiệu năng bảo vệ bệnh
 viện.
 
@@ -2273,7 +2272,7 @@ tự động ở mục kết quả đo trong chương 3.
 
 Khi lỗi ISP, có thời gian gián đoạn do probe, route default và OSPF hội
 tụ; không cam kết chuyển mạch tức thời. Bộ test đo phục hồi HTTP từ năm
-endpoint trong ngân sách thử45 giây, không coi45 giây là SLA. Phiên NAT
+endpoint trong ngân sách thử 45 giây, không coi45 giây là SLA. Phiên NAT
 cũ qua ISP hỏng có thể mất; thử HTTP phiên mới không chứng minh session
 preservation. Internet thật, TLS, RF, GPON PHY, dung lượng đường truyền
 và ứng dụng y tế không nằm trong phép thử này.
@@ -2603,7 +2602,7 @@ SHA256
 đầu}\label{ux111ux1ed1i-chiux1ebfu-phiuxean-bux1ea3n-vuxe0-lux1ed7i-ban-ux111ux1ea7u}}
 
 File GNS3 bàn giao được chép lại từ source, mở bằng chính GNS3 và chạy
-lại smoke. Có52 node (9 router/firewall,5 switch,38 endpoint),52 link.
+lại smoke. Có 52 node (9 router/firewall, 5 switch, 38 endpoint), 52 link.
 Hash project đã thử:
 \nolinkurl{8047cff9ca418dc52a43cb1b546e3179e3962224136122f65fd00d35cff2d5bb}.
 
@@ -2615,7 +2614,7 @@ zero-downtime.
 
 Bản hiện tại sửa PID Suricata còn sót sau khi dừng container. Hai chu kỳ
 dừng/bật firewall đã xác nhận tiến trình Suricata sống và HTTP phục hồi;
-lần kiểm đầy đủ sau sửa đạt209/209. Source được cập nhật trong container
+lần kiểm đầy đủ sau sửa đạt 209/209. Source được cập nhật trong container
 hiện có, còn image mới được build/load cho lần tạo node sau. Base image
 ID của từng container và phép kiểm restart nằm tại
 \nolinkurl{test_results/runtime/firewall-restart/restart.json}; hash
@@ -2627,7 +2626,7 @@ reopen lại source mới.
 Đã sửa lỗi controller GNS3 không lên sau stop/start do PID/socket Docker
 cũ. Entrypoint tạo exec-root mới mỗi lần bật, giữ dữ liệu image/project
 trong volume riêng. Lệnh start tự mở project đã lưu nếu server khởi động
-với project ở trạng thái closed. Hai lần bật controller đã xác nhận đủ52
+với project ở trạng thái closed. Hai lần bật controller đã xác nhận đủ 52
 node started, Docker/API hoạt động và hash entrypoint thực khớp source.
 
 \begin{longtable}[]{@{}
@@ -2659,7 +2658,7 @@ Thời gian phục hồi HTTP trong lượt mới khi mất upstream ISP1/ISP2 l
 8.344, 5.178 giây. Đây là kết quả của lần chạy, không phải SLA hoặc
 chuyển mạch không mất phiên.
 
-File code/config thực của52 node khớp nguồn. Các kết quả cũ ở mục kết
+File code/config thực của 52 node khớp nguồn. Các kết quả cũ ở mục kết
 quả đo trong chương 3 được giữ nguyên để truy vết; lượt kiểm mới nằm tại
 \nolinkurl{test_results/runtime/submission-20261105/} và
 \nolinkurl{test_results/runtime/submission-reopen-20261105/}. Chứng cứ
@@ -2900,7 +2899,7 @@ phát triển mà không nhầm với kết quả đã chứng minh.
 \subsection{Bàn giao và quy trình nộp
 (Step7)}\label{buxe0n-giao-vuxe0-quy-truxecnh-nux1ed9p-step7}}
 
-Bộ bàn giao gồm project .gns3, module MPLS L3VPN và evidence28+28, mô
+Bộ bàn giao gồm project .gns3, module MPLS L3VPN và evidence 28+28, mô
 hình tổng .pkt, phụ lục kiểm thử Packet Tracer, Dockerfile/source cấu
 hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG,
 đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn
@@ -2951,7 +2950,7 @@ ZIP; việc đóng gói không thay phê duyệt hoặc biên nhận BKeL.
 \tightlist
 \item
   Lai Nguyen. \emph{Network Design and Simulation for a Critical Large
-  Hospital}. Đề gốc trong workspace, trang1--4; trang5 minh họa.
+  Hospital}. Đề gốc trong workspace, trang 1--4; trang 5 minh họa.
 \item
   GNS3. \emph{Docker support in GNS3} và \emph{Controller API v2}.
   \url{https://docs.gns3.com/docs/emulators/docker-support-in-gns3} ;
@@ -2966,11 +2965,11 @@ ZIP; việc đóng gói không thay phê duyệt hoặc biên nhận BKeL.
   ITU-T. \emph{G.984.2 (08/2019), GPON PMD, Annex A}.
   \url{https://www.itu.int/rec/T-REC-G.984.2/en}.
 \item
-  Cisco. \emph{Catalyst9200 Series Switches Data Sheet}.
+  Cisco. \emph{Catalyst 9200 Series Switches Data Sheet}.
   \url{https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html}.
 \end{enumerate}
 
-Nguồn tham khảo kỹ thuật được đối chiếu ngày02/11/2026. Các bảng chi phí
+Nguồn tham khảo kỹ thuật được đối chiếu ngày 02/11/2026. Các bảng chi phí
 là giả định dự toán đã ghi rõ, không được trích dẫn như báo giá nhà cung
 cấp.
 
@@ -2987,13 +2986,13 @@ Handoff Ethernet trong lab không chứng minh underlay MPLS của nhà mạng.
 Nguồn MPLS: FRRouting, \emph{LDP} và \emph{Layer 3 VPN configuration},
 \url{https://docs.frrouting.org/en/stable-10.4/ldpd.html},
 \url{https://docs.frrouting.org/en/stable-10.4/bgp.html\#layer-3-vpn-configuration}.
-Cú pháp đã kiểm bằng FRR10.2.2 trong module.
+Cú pháp đã kiểm bằng FRR 10.2.2 trong module.
 
 Tham khảo giá có nguồn: VNPT Hải Phòng, \emph{Báo giá TSL Metronet}, tài
 liệu ghi năm 2020 (ngày/tháng trống), 100 Mbps nội
-hạt31.343.000VNĐ/điểm. Đây là dữ liệu lịch sử, không phải báo giá hiện
-hành TP.HCM hoặc gói đủ tải Aux 134,10 Mbps. Nguồn và các mức20/50 Mbps
-nằm trong docs/02-design/wan-options-cost.md; không nội suy giá150--200
+hạt 31.343.000 VNĐ/điểm. Đây là dữ liệu lịch sử, không phải báo giá hiện
+hành TP.HCM hoặc gói đủ tải Aux 134,10 Mbps. Nguồn và các mức 20/50 Mbps
+nằm trong docs/02-design/wan-options-cost.md; không nội suy giá 150--200
 Mbps từ bảng cũ.
 
 \clearpage
