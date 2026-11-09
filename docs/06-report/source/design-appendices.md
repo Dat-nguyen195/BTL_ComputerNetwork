@@ -128,23 +128,17 @@ Khách vẫn được DHCP/DNS; kiểm Internet thành công trước khi dùng 
 SFP/DAC cho Server Farm, FW, WLC, core 40G và GPON được bóc riêng; 88/36 module chỉ tính access. Dự toán Cat6 giữ chỗ Ethernet để rollback GPON, không cộng thêm 80 PC vào quy mô. Tuyến A/B phải đi đường vật lý độc lập; hai sợi của cùng cáp duplex không được coi là hai tuyến dự phòng.
 
 \clearpage
-```{=latex}
-\begin{landscape}
-```
 
 # Phụ lục E - Sơ đồ vật lý Main Site
 
-![Hai tòa A/B, MDF riêng cách khoảng 50m, IDF từng tầng và hai tuyến uplink. Đây là sơ đồ thiết kế, vị trí và chiều dài thực cần khảo sát.](../../02-design/diagrams/exports/physical-main.svg){width=100% height=125mm keepaspectratio=true}
+![Hai tòa A/B, MDF riêng cách khoảng 50m, IDF từng tầng và hai tuyến uplink. Đây là sơ đồ thiết kế, vị trí và chiều dài thực cần khảo sát.](../../02-design/diagrams/exports/physical-main.svg){width=100%}
 
 \clearpage
 
 ## Sơ đồ vật lý cho mỗi cơ sở DBP/BHTQ
 
-![Hai tầng của mỗi Aux, MDF/IT ở tầng 1, IDF tầng 2, camera/NVR local và một leased line về Main.](../../02-design/diagrams/exports/physical-aux.svg){width=100% height=125mm keepaspectratio=true}
+![Hai tầng của mỗi Aux, MDF/IT ở tầng 1, IDF tầng 2, camera/NVR local và một leased line về Main.](../../02-design/diagrams/exports/physical-aux.svg){width=100%}
 
-```{=latex}
-\end{landscape}
-```
 
 \clearpage
 

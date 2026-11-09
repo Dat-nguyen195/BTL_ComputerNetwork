@@ -9,18 +9,21 @@ from pathlib import Path
 import shutil
 import subprocess
 import zipfile
+from integrate_report import integrate, NAMES
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/06-report/source/report.md'
 LATEX_FILES = ('report.tex', 'header.tex', 'cover.tex', 'metadata.tex', 'README.md',
                'fonts.tex', '.latexmkrc', 'assets/logo-bach-khoa.png',
                'assets/topology.pdf', 'assets/physical-main.pdf', 'assets/physical-aux.pdf')
+LATEX_FILES += tuple('assets/'+n+'.pdf' for n in NAMES)
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime-run',default='after-firewall-restart-runtime');p.add_argument('--reopen-run',default='after-reopen-runtime')
     p.add_argument('--engine', choices=['xelatex', 'tectonic'], default='xelatex')
+    p.add_argument('--reuse-diagrams', action='store_true', help='Reuse reviewed vector PDF diagrams when SVG sources have not changed')
     a=p.parse_args()
     runs=[]
     for name in [a.runtime_run,a.reopen_run]:
@@ -70,18 +73,27 @@ def main():
                      'File code/config thực của52 node khớp nguồn. Các kết quả cũ ở phụ lục A được giữ nguyên để truy vết; lượt kiểm mới nằm tại `test_results/runtime/submission-20261105/` và `test_results/runtime/submission-reopen-20261105/`. Chứng cứ restart và hash ở `test_results/runtime/controller-restart/`. Kiểm offline bằng `scripts/check_gns3.py` xác nhận tính toàn vẹn, không tự chạy lại mạng.\n',
                      'Đã chốt Packet Tracer về đúng byte của bản native có evidence32+4; bản lưu lại chỉ khác đồng hồ/môi trường được bảo toàn trong backup local. Lượt05/11 không chạy lại Packet Tracer; không gán kết quả mới của GNS3 cho Cisco IOS.\n']
     assembled=text.replace('# Phạm vi, yêu cầu', r'\clearpage'+'\n\n# Phạm vi, yêu cầu',1)+'\n'.join(appendix)
+    assembled=integrate(assembled)
     tmp=ROOT/'tmp/pdfs';tmp.mkdir(parents=True,exist_ok=True)
     latex=ROOT/'docs/06-report/latex';assets=latex/'assets'
     if not (assets/'logo-bach-khoa.png').is_file():p.error('Missing supplied Bach Khoa logo')
-    import cairosvg
+    if not a.reuse_diagrams:
+        import cairosvg
     for name, source in [('topology', ROOT/'docs/06-report/source/topology.svg'),
                          ('physical-main', ROOT/'docs/02-design/diagrams/exports/physical-main.svg'),
                          ('physical-aux', ROOT/'docs/02-design/diagrams/exports/physical-aux.svg')]:
-        cairosvg.svg2pdf(url=str(source), write_to=str(assets/(name+'.pdf')))
-    assembled=assembled.replace('## Packet Tracer - mô hình Cisco ba cơ sở', '!['+'Mô hình chức năng; cấu trúc vật lý và GPON có sơ đồ riêng trong bộ thiết kế.'+'](topology.svg){width=100%}\n\n## Packet Tracer - mô hình Cisco ba cơ sở')
+        if a.reuse_diagrams:
+            if not (assets/(name+'.pdf')).is_file():
+                p.error('Missing existing vector diagram: '+name)
+        else:
+            cairosvg.svg2pdf(url=str(source), write_to=str(assets/(name+'.pdf')))
+    assembled=assembled.replace('\n## Packet Tracer - mô hình Cisco ba cơ sở', '\n!['+'Mô hình chức năng; cấu trúc vật lý và GPON có sơ đồ riêng trong bộ thiết kế.'+'](topology.svg){width=100%}\n\n## Packet Tracer - mô hình Cisco ba cơ sở')
+    if '](topology.svg)' not in assembled and 'wan-cisco.pdf' not in assembled:
+        assembled=assembled.replace('### Packet Tracer - mô hình Cisco ba cơ sở', '![Sơ đồ logic mô hình ba cơ sở và Internet tập trung.](topology.svg){width=100%}\n\n### Packet Tracer - mô hình Cisco ba cơ sở')
     (ROOT/'docs/06-report/source/report-with-evidence.md').write_text(assembled)
     build_input=tmp/'report-build.md'
     pdf_text=re.sub(r'\A---\n.*?\n---\n', '', assembled, count=1, flags=re.S)
+    pdf_text=pdf_text.replace('(../latex/assets/', '(assets/')
     for name in ('topology', 'physical-main', 'physical-aux'):
         pdf_text=pdf_text.replace('('+name+'.svg)', '(assets/'+name+'.pdf)')
         pdf_text=pdf_text.replace('(../../02-design/diagrams/exports/'+name+'.svg)', '(assets/'+name+'.pdf)')

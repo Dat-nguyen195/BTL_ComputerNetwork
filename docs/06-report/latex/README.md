@@ -49,4 +49,6 @@ Từ root, dùng Python có CairoSVG, Pandoc và XeLaTeX:
 python3 scripts/build_report.py
 ```
 
+Nếu các SVG không thay đổi và đã có PDF vector được kiểm tra trong `assets`, có thể dùng `python -X utf8 scripts/build_report.py --reuse-diagrams` để tái sử dụng hình, không cần CairoSVG. Không dùng tùy chọn này sau khi sửa sơ đồ SVG. Bản ngày 09/11/2026 tổ chức nội dung thành bốn chương theo bố cục tham khảo nhóm 3; các bằng chứng runtime vẫn giữ ngày chạy và nền tảng gốc.
+
 Script cập nhật Markdown ghép bằng chứng, LaTeX, hình vector, `output/pdf/report.pdf`, PDF chính thức và ZIP nguồn. Windows có thể dùng `python -X utf8 scripts/build_report.py --engine tectonic`. Sau thay đổi cần render/kiểm PDF, cập nhật QA/hash rồi đóng gói lại bằng `scripts/package_submission.py`. Bản PDF local do build editor chỉ để xem trước; không dùng file PDF cũ nằm cạnh `report.tex` để nộp.

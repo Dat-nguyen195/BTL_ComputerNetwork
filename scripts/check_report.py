@@ -28,7 +28,7 @@ def main():
     tex = (latex / 'report.tex').read_text(encoding='utf-8')
     assert tex.startswith('% !TeX program = xelatex'), 'Missing editor engine hint'
     assert 'requires XeLaTeX' in tex, 'Missing readable pdfLaTeX diagnostic'
-    assert all(name in tex for name in ('physical-main.pdf', 'physical-aux.pdf'))
+    assert all(name in tex for name in ('main-cisco.pdf', 'aux-cisco.pdf','wan-cisco.pdf','gpon-cisco.pdf','security-cisco.pdf','wifi-cisco.pdf','mpls-cisco.pdf','vpn-cisco.pdf'))
     assert '$pdf_mode = 5' in (latex / '.latexmkrc').read_text(encoding='utf-8')
     print(f"OK: report/PDF/source hashes match recorded {qa['pages']}-page visual QA; standalone LaTeX bundle matches source")
     print('This check validates existing QA evidence; it does not render or recompile the PDF.')
