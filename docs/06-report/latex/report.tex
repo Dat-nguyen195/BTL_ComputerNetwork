@@ -455,6 +455,19 @@ Hiện chưa có biên bản khảo sát hiện trường. Các đại lượng 
 số AP/camera và số khách là giả định thiết kế có nhãn, phải thay bằng dữ
 liệu được xác nhận trước khi chốt mua sắm.
 
+\hypertarget{dinh-huong-thiet-ke-mang-khong-day-tieu-chuan-bao-mat-va-phan-vung-he-thong}{%
+\subsubsection{Định hướng thiết kế mạng không dây, tiêu chuẩn bảo mật và phân vùng hệ thống}\label{dinh-huong-thiet-ke-mang-khong-day-tieu-chuan-bao-mat-va-phan-vung-he-thong}}
+
+Để đáp ứng yêu cầu về khả năng truy cập không dây, an toàn thông tin và quản lý tập trung các dịch vụ trong môi trường bệnh viện, nhóm lựa chọn phương án phân tách mạng theo chức năng và mức độ tin cậy. Kiến trúc này hướng đến việc cung cấp kết nối cho nhân viên, khách và các thiết bị chuyên dụng, đồng thời kiểm soát quyền truy cập đến các hệ thống y tế quan trọng.
+
+\textbf{Thiết kế mạng không dây (Wireless Network).} Hệ thống Wi-Fi được tổ chức thành các mạng logic riêng biệt dành cho nhân viên và khách. SSID Staff được ánh xạ tới VLAN 120, SSID Guest tới VLAN 100, trong khi VLAN 90 được sử dụng cho quản trị thiết bị mạng. Phương án triển khai thực tế đề xuất xác thực WPA2/WPA3-Enterprise kết hợp 802.1X/RADIUS tùy khả năng thiết bị, đồng thời áp dụng chính sách cách ly khách và kiểm soát truy cập. Nhóm dự trù 30 Access Point tại Main Site và 6 Access Point tại mỗi Auxiliary Site. Số lượng và vị trí triển khai cuối cùng cần được xác nhận thông qua khảo sát vùng phủ sóng RF. Thiết kế chi tiết được trình bày tại mục 2.7.
+
+\textbf{Áp dụng các biện pháp bảo mật mạng (Network Security).} Nhóm áp dụng nguyên tắc phân quyền truy cập theo vai trò và phân vùng mạng nhằm hạn chế truy cập trái phép. Firewall được bố trí để kiểm soát lưu lượng giữa LAN, Internet và DMZ; các Access Control List (ACL) được sử dụng tại gateway để kiểm soát kết nối giữa những VLAN khác nhau. Hệ thống cũng đề xuất IDS/IPS, VPN và các cơ chế xác thực phù hợp cho giai đoạn triển khai thực tế. Cơ chế kiểm soát truy cập và phương án bảo mật được trình bày tại mục 2.10.
+
+\textbf{Phân vùng máy chủ và thiết bị mạng (Network Segmentation).} Các hệ thống HIS, PACS, LIS, CRM và Database được bố trí trong Server Farm thuộc VLAN 70. Những dịch vụ cần công bố ra bên ngoài, như Web Server, được đặt trong vùng DMZ thuộc VLAN 80 và được kiểm soát qua Firewall. Các vùng quản trị, Wi-Fi khách, Wi-Fi nhân viên và camera được tách thành những VLAN riêng biệt nhằm hạn chế phạm vi truy cập và hỗ trợ quản lý. Hệ thống camera sử dụng VLAN 110 và lưu trữ dữ liệu tại NVR của từng cơ sở. Quy hoạch địa chỉ và phân vùng được trình bày trong mục 2.4--2.6; chính sách truy cập chi tiết được trình bày tại mục 2.10.
+
+\textbf{Phạm vi triển khai và kiểm chứng.} Trong môi trường mô phỏng, nhóm đã kiểm thử kết nối Wi-Fi đại diện, DHCP/DNS, truy cập giữa các VLAN theo chính sách, truy cập DMZ và khả năng cách ly Guest khỏi mạng nội bộ. Một số chức năng production như khảo sát RF thực tế, xác thực 802.1X/WPA3-Enterprise, VPN mã hóa hoàn chỉnh và Firewall HA chưa được kiểm chứng đầy đủ. Những giới hạn này được trình bày trong Chương 3 và phần đánh giá hệ thống tại Chương 4.
+
 \hypertarget{thiux1ebft-bux1ecb-vuxe0-hux1ea1-tux1ea7ng-vux1eadt-luxfd-step2}{%
 \subsection{Thiết bị và hạ tầng vật lý
 (Step2)}\label{thiux1ebft-bux1ecb-vuxe0-hux1ea1-tux1ea7ng-vux1eadt-luxfd-step2}}
