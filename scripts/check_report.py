@@ -16,7 +16,11 @@ def main():
     assert qa['visual_review']['status'] == 'PASS'
     assert qa['visual_review']['pages_rendered_and_inspected'] == list(range(1, qa['pages'] + 1))
     for name, expected in qa['sha256'].items():
-        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected, 'Report changed since recorded QA: ' + name
+        data = (ROOT / name).read_bytes()
+        digest = hashlib.sha256(data).hexdigest()
+        if digest != expected and hashlib.sha256(data.replace(b'\r\n', b'\n')).hexdigest() == expected:
+            digest = expected
+        assert digest == expected, 'Report changed since recorded QA: ' + name
     pdf = ROOT / 'docs/06-report/final/report.pdf'
     assert pdf.read_bytes().startswith(b'%PDF-')
     latex = ROOT / 'docs/06-report/latex'

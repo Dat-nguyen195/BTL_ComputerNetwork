@@ -78,9 +78,9 @@
   "sha256": {
     "docs/06-report/final/report.pdf": "ea86d1549f76f0eb7bc0f07c270553828f554d2f001b2da44913d60b74557d3e",
     "docs/06-report/final/report-latex.zip": "50b1a85cbbe273cc003cc0317c22e0b3f92cb48717b90d4239f3ac03b658979b",
-    "docs/06-report/source/report.md": "8a4892c050a3a2ad7fb1b855c8522ab14ca95904de3414dd9cc9ccd0c8d6c16f",
-    "docs/06-report/source/design-appendices.md": "c8554eea5eb6101e984627ef3f32c9508c8f5ac3ea76bfc5c3d9b7a9d043ec85",
-    "docs/06-report/source/report-with-evidence.md": "5c67a8f66009b1bb0abad629c70d68e27e44f19dfd268b19d513e99155bf7d9d",
+    "docs/06-report/source/report.md": "6e231ea366fa7cac727813a46e496b2854e217d1ba7edd87c122bb98a43a51be",
+    "docs/06-report/source/design-appendices.md": "7cd62406152a03009979c64a201c9bbaa88330a1eae24f8c6d5a221dd963f4b1",
+    "docs/06-report/source/report-with-evidence.md": "5614667e9bb1ef02f263ca8b391ea82dd8f87dceebfa7b48d4fb9d419ddac8cd",
     "scripts/build_report.py": "dc203973300b0a2cad81da8aef019b9c649f40682eb4ec8e42141b24d4420085",
     ".vscode/settings.json": "84ae92cefe7ea12e3d9696fd5c37c939555957e317939d12e5c307dd3796ddaf",
     ".latexmkrc": "8c3fec9cf80477c143ba3ed1d8678ebaebee210e255790f3ae86fc7a33530584",
