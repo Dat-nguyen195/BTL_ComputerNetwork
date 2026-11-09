@@ -514,6 +514,8 @@ Các phương án dự phòng này bổ sung cho hai leased line của baseline.
 
 Baseline dùng hai leased line với OSPF để giữ cấu trúc đề và thuận tiện kiểm trên hai nền tảng. MPLS L3VPN được dựng riêng để minh họa WAN mới có VRF, MP-BGP và chuyển tiếp nhãn. SD-WAN phù hợp khi cần chính sách ứng dụng và quản lý nhiều đường/site, nhưng cần controller, license và underlay; OSPF/PBR hiện tại không được gọi là SD-WAN. Lựa chọn mua sắm cuối cùng phải so báo giá cùng băng thông, SLA, số điểm và thuế; bảng TCO trên chỉ là kịch bản giả định.
 
+Trên cơ sở so sánh TCO giả định và yêu cầu kỹ thuật hiện tại, nhóm ưu tiên Metro-E/Leased Line kết hợp OSPF làm phương án WAN cơ sở. MPLS L3VPN và SD-WAN có thêm những khả năng quản lý, định tuyến và mở rộng, nhưng cũng phát sinh chi phí và độ phức tạp triển khai. Vì vậy, nhóm chưa tích hợp hai công nghệ này vào mô hình WAN chính. Quyết định thương mại cuối cùng cần được xác nhận bằng báo giá và SLA thực tế.
+
 ## Tính thông lượng và đề xuất băng thông (Step3)
 
 ### Dữ liệu gốc và giả định phải chốt
