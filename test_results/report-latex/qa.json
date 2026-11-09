@@ -78,13 +78,13 @@
     ]
   },
   "sha256": {
-    "docs/06-report/final/report.pdf": "d6cabe5a7178567849ba98b1a3ca2b674d992fdcc26d831b63118d7511665dba",
-    "docs/06-report/final/report-latex.zip": "40e404b5aebb9fc07a2a27c63ea76f7290bf10c4490b46884099ffb30408fd15",
+    "docs/06-report/final/report.pdf": "b2b10bfee021915141db07dd89c0452f50e8e9a0aa6d51de8222489c28ce38bc",
+    "docs/06-report/final/report-latex.zip": "d409868641391b07ff5257cc6a668ed044623607715f6bd246e7b92865fe801b",
     "scripts/build_report.py": "ccf531cf051804b8099aa2f842b9605d15632f9b081c79fc26f2a278f4866cb7",
     ".vscode/settings.json": "84ae92cefe7ea12e3d9696fd5c37c939555957e317939d12e5c307dd3796ddaf",
     ".latexmkrc": "efe90f4d5c390ec8d8f3b42e3539c9cc591ffa80b424de5736993d19fe1bfb8e",
     "test_results/runtime/controller-restart/restart.json": "71a0574b8f20897257036eb6a69d2f95c48704df7240728f35d91098696846e3",
-    "docs/06-report/latex/report.tex": "fdedb3382c0d39422d3f1e2592f791c254e7be69656c946c94b3f323d1fb3bbc",
+    "docs/06-report/latex/report.tex": "4003d67c51ef5d9bd81bea69145ad97de98a2d9cf1f75c038eec944ce9fbfe36",
     "docs/06-report/latex/header.tex": "293bfca2a62520e84fd20053c1caa8aa972f66eb9d7b80679c4291bdb8037a37",
     "docs/06-report/latex/cover.tex": "906b8fa9a18147bb1a15eadab6478b30f3a900b6415f6830a51dd17b8286ef69",
     "docs/06-report/latex/metadata.tex": "9a6bad275646cd695256f74671088765dc13e42be75b7790d3b4ddc106641420",

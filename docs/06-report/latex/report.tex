@@ -558,15 +558,18 @@ tầng; mỗi WLC dự trù phải quản lý≥64 AP để không thiếu khi f
 OPEN)}\label{bom-main-sux1ed1-lux1b0ux1ee3ng-ux111ux1ec1-xuux1ea5t-giuxe1-open}}
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1845}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0874}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3883}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3398}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.15}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.11}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.20}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.28}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.26}}@{}}
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
-Hạng mục
+Thiết bị
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-SL
+Số lượng đề xuất
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Vai trò
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Spec/cổng/uplink tối thiểu
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -576,37 +579,37 @@ PoE/quang, license, công suất
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Core L3 & 2 & ≥32 cổng 1/10 G và ≥2 cổng 40 G/core; 20 access + 2 Server
+Core L3 Switch & 2 & Backbone, định tuyến và tập trung mạng & ≥32 cổng 1/10 G và ≥2 cổng 40 G/core; 20 access + 2 Server
 Farm + 2 FW + 2 WAN + 2 WLC=28/32 & 10 G SR, core-core 2 × 40 G;
 OSPF (Open Shortest Path First)/SVI (Switch Virtual Interface)/ACL/HA license theo model; W chờ datasheet \\
-Access & 20 & 48 × 1 G+4 × 10 G; 2 uplink riêng tới 2 core; C9200L-48P-4X
+Access Switch & 20 & Kết nối PC, AP, camera & 48 × 1 G+4 × 10 G; 2 uplink riêng tới 2 core; C9200L-48P-4X
 tham chiếu & 740 W PSE với PSU 1 kW; Essentials/L2 theo chức năng, quang
 ở mục 5; W thực phải cộng tải PoE \\
-Switch Server Farm & 2 & ≥24 × 10 G/switch; mỗi switch 10 NIC server + 1
+Server Farm Switch & 2 & Kết nối các server nội bộ & ≥24 × 10 G/switch; mỗi switch 10 NIC server + 1
 NVR + 2 uplink core + 2 inter-switch=15/24 sau tăng trưởng & VLAN 70/90/110;
 không bridge DMZ; DAC/SFP+ (Small Form-factor Pluggable Plus), công suất/license theo model \\
-Switch DMZ tách riêng & 2 & ≥24 cổng 1/10 G; chỉ DMZ server và cổng DMZ
+DMZ Switch & 2 & Kết nối server ở vùng DMZ & ≥24 cổng 1/10 G; chỉ DMZ server và cổng DMZ
 FW; không uplink L2 trực tiếp Core & VLAN 80, quản trị OOB nếu cần; HA
 link/NIC theo model, chưa chạy \\
-Server ứng dụng & 10, dự trù 12 & 8 nội bộ + 2 DMZ hiện tại; CPU, RAM,
+Server ứng dụng & 10, dự trù 12 & Máy chủ dịch vụ nội bộ và DMZ & 8 nội bộ + 2 DMZ hiện tại; CPU, RAM,
 storage chờ khảo sát workload & NIC 10 G dual nếu chọn; license OS/DB và
 W chờ chốt \\
-Firewall & 2 dự trù HA & ≥4 cổng 10 G; sizing theo throughput khi bật
+Firewall & 2 dự trù HA & Kiểm soát LAN/DMZ/Internet & ≥4 cổng 10 G; sizing theo throughput khi bật
 inspect, IPS, crypto và session, không chỉ tốc độ port & Security, VPN
 và IPS subscription, SFP+, W chờ model; lab 1 FW \\
-WAN gateway & 2 dự trù & OSPF, handoff 2 leased lines, IPsec nếu chọn;≥2
+WAN Gateway & 2 dự trù & Kết nối DBP và BHTQ & OSPF, handoff 2 leased lines, IPsec nếu chọn;≥2
 WAN + 2 LAN 10 G & License/crypto/CPE theo nhà mạng; lab 1 gateway Main \\
-Internet Edge /modem & 2 Edge + 2 modem & PBR/PAT/tracking và 2 xDSL;
+Internet Edge & 1 cặp thiết bị dự trù & Kết nối hai đường ISP & PBR/PAT/tracking và 2 xDSL;
 modem theo ISP; năng lực theo TV4 & Model, license, public IP/PSU chờ
 chốt; lab 1 Edge \\
-WLC & 2 dự trù & Mỗi controller≥64 AP và 2 uplink 10 G; controller
+WLC & 2 dự trù & Quản lý các AP & Mỗi controller≥64 AP và 2 uplink 10 G; controller
 compatibility phải kiểm & License cho 56 AP dự trù, điều kiện HA chờ báo
 giá; không cộng trùng license \\
-AP & 30 → 40 & Wi-Fi 6, PoE+, uplink 1 G trong baseline; RF chưa đo & 30
+AP & 30 → 40 & Cung cấp Wi-Fi & Wi-Fi 6, PoE+, uplink 1 G trong baseline; RF chưa đo & 30
 W PSE giả định; controller và software compatibility chưa chốt \\
-Camera & 40 → 50 & 4 MP/H.265/PoEaf giả định; 1 access port/camera & 15,4
+Camera & 40 → 50 & Giám sát & 4 MP/H.265/PoEaf giả định; 1 access port/camera & 15,4
 W PSE; bitrate 4 Mbps giả định, nguồn/vendor chưa chọn \\
-NVR & 1 hệ & ≥64 kênh và ingest đáp ứng 200 Mbps + headroom 5 năm & ≥85.050
+NVR & 1 hệ thống & Ghi hình cục bộ & ≥64 kênh và ingest đáp ứng 200 Mbps + headroom 5 năm & ≥85.050
 GB usable sau RAID theo camera plan; model/ổ/license/W chưa chọn \\
 \end{longtable}
 
