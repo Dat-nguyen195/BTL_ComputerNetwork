@@ -64,7 +64,7 @@ Thiết kế phân loại lưu lượng theo nguồn, đích, mức nhạy cảm
 | Camera | NVR cục bộ | VLAN 110, không công bố trực tiếp Internet |
 | Quản trị | Thiết bị mạng, giám sát, backup | VLAN 90, quyền riêng, log và truy cập từ máy được phép |
 
-Các vị trí có nguy cơ nghẽn là uplink IDF, Server Farm, đường liên site và Edge Internet. Tăng tốc một cổng không giải quyết được mọi điểm nghẽn: băng thông WAN, khả năng kiểm tra gói của firewall, dung lượng đĩa PACS và số người dùng đồng thời phải được xem xét riêng. Cân bằng tải ISP ở Edge giải quyết chọn đường ra; cân bằng tải HIS/Web cần health check ứng dụng và quản lý phiên, là hạng mục phát triển tiếp.
+Các vị trí có nguy cơ nghẽn là uplink IDF, Server Farm, đường liên site và Edge Internet. Tăng tốc một cổng không giải quyết được mọi điểm nghẽn: băng thông WAN, khả năng kiểm tra gói của firewall, dung lượng và hiệu năng lưu trữ đĩa PACS và số người dùng đồng thời phải được xem xét riêng. Cân bằng tải ISP ở Edge giải quyết chọn đường ra; cân bằng tải HIS/Web cần health check ứng dụng và quản lý phiên, là hạng mục phát triển tiếp.
 
 ## Khảo sát và lựa chọn kiến trúc (Step1)
 
