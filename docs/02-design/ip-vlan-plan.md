@@ -9,8 +9,8 @@
 
 1. **Khối địa chỉ tổng thể:** Sử dụng dải địa chỉ Private RFC 1918 lớp A `10.0.0.0/8`, phân chia phân cấp theo từng địa điểm (Site-based hierarchical addressing):
    - **Main Site (Trung tâm TP.HCM):** `10.10.0.0/16` (Vùng địa chỉ dự trữ quy mô lớn cho 600 máy trạm, 10 server, Wi-Fi, camera và quản trị).
-   - **Auxiliary Site 1 - DBP (Điện Biên Phủ):** `10.20.0.0/16` (260 máy trạm, 2 server, Wi-Fi, camera và quản trị).
-   - **Auxiliary Site 2 - BHTQ (Bà Huyện Thanh Quan):** `10.30.0.0/16` (260 máy trạm, 2 server, Wi-Fi, camera và quản trị).
+   - **Auxiliary Site 1 - DBP:** `10.20.0.0/16` (260 máy trạm, 2 server, Wi-Fi, camera và quản trị).
+   - **Auxiliary Site 2 - BHTQ:** `10.30.0.0/16` (260 máy trạm, 2 server, Wi-Fi, camera và quản trị).
    - **Mạng WAN Transit & Điểm-Điểm (P2P):** `10.255.0.0/24` (Dành riêng cho các kết nối L3 leased lines, core-to-firewall, firewall-to-edge).
    - **Dải cấp phát VPN Teleworker Pool:** `10.255.100.0/24` (Dành cho người dùng từ xa kết nối VPN Client-to-Site vào Main).
 2. **Nguyên tắc phân rã VLSM (Variable Length Subnet Mask):**

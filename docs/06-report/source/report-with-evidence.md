@@ -1,6 +1,6 @@
 ---
 title: "THIẾT KẾ VÀ MÔ PHỎNG MẠNG BỆNH VIỆN BA CƠ SỞ"
-subtitle: "Báo cáo kỹ thuật - Main, Điện Biên Phủ và Bà Huyện Thanh Quan"
+subtitle: "Báo cáo kỹ thuật - Main, DBP và BHTQ"
 author: "L08 - Nhóm 2 | Nguyễn Thành Đạt và Phạm Tiến Đạt"
 date: "09/11/2026"
 ---
@@ -11,7 +11,7 @@ date: "09/11/2026"
 
 Trong bệnh viện, mạng máy tính liên kết tiếp nhận, khám chữa bệnh, xét nghiệm, chẩn đoán hình ảnh và quản trị. Một giao dịch có thể đi từ máy trạm tại cơ sở phụ đến HIS tại cơ sở chính, tra cứu dữ liệu và trả kết quả cho nhân viên. Vì vậy, thiết kế phải xét đồng thời đường đi dữ liệu, khả năng phục hồi khi sự cố, phân quyền truy cập và khả năng mở rộng; việc ping được giữa hai máy chỉ là một phần của yêu cầu.
 
-Theo tình huống của đề, đơn vị tư vấn CCC thiết kế mạng cho bệnh viện gồm Main Site tại TP.HCM, cơ sở Điện Biên Phủ (DBP) và cơ sở Bà Huyện Thanh Quan (BHTQ). Báo cáo này trình bày quá trình chuyển yêu cầu thành kiến trúc, quy hoạch thiết bị và địa chỉ, tính tải, xây dựng mô phỏng và kiểm chứng. Bố cục bốn chương tham khảo cách tổ chức của báo cáo nhóm 3; dữ liệu thiết kế, cấu hình và kết quả thuộc dự án của nhóm 2.
+Theo tình huống của đề, đơn vị tư vấn CCC thiết kế mạng cho bệnh viện gồm Main Site tại TP.HCM, cơ sở DBP và cơ sở BHTQ. Báo cáo này trình bày quá trình chuyển yêu cầu thành kiến trúc, quy hoạch thiết bị và địa chỉ, tính tải, xây dựng mô phỏng và kiểm chứng; toàn bộ dữ liệu thiết kế, cấu hình và kết quả thuộc dự án của nhóm 2.
 
 ## Tình huống và đặc điểm hạ tầng
 
@@ -1143,8 +1143,6 @@ VNPT, *Dịch vụ Mạng riêng ảo*, <https://vnpt.vn/doanh-nghiep/san-pham-d
 Nguồn MPLS: FRRouting, *LDP* và *Layer 3 VPN configuration*, <https://docs.frrouting.org/en/stable-10.4/ldpd.html>, <https://docs.frrouting.org/en/stable-10.4/bgp.html#layer-3-vpn-configuration>. Cú pháp đã kiểm bằng FRR10.2.2 trong module.
 
 Tham khảo giá có nguồn: VNPT Hải Phòng, *Báo giá TSL Metronet*, tài liệu ghi năm 2020 (ngày/tháng trống), 100 Mbps nội hạt31.343.000VNĐ/điểm. Đây là dữ liệu lịch sử, không phải báo giá hiện hành TP.HCM hoặc gói đủ tải Aux 134,10 Mbps. Nguồn và các mức20/50 Mbps nằm trong docs/02-design/wan-options-cost.md; không nội suy giá150–200 Mbps từ bảng cũ.
-
-Tài liệu tham khảo bố cục: *Báo cáo Assignment 2 nhóm 3*, lớp L09, ngày 10/12/2025, do người dùng cung cấp. Chỉ tham khảo cách tổ chức bốn chương; không sử dụng kết quả kiểm thử, thông tin nhóm hoặc số liệu thiết kế của nhóm 3 làm bằng chứng cho nhóm 2.
 
 \clearpage
 
