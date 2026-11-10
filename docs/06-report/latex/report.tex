@@ -314,22 +314,11 @@ Các điểm nghẽn nêu trên mới được xác định dựa trên phân t�
 (Step1)}\label{khux1ea3o-suxe1t-vuxe0-lux1ef1a-chux1ecdn-kiux1ebfn-truxfac-step1}}
 
 \hypertarget{checklist-trux1b0ux1edbc-thi-cuxf4ng}{%
-\subsubsection{Checklist trước thi
-công}\label{checklist-trux1b0ux1edbc-thi-cuxf4ng}}
+\subsubsection{Khung khảo sát hiện trường trước thi công}\label{checklist-trux1b0ux1edbc-thi-cuxf4ng}}
 
-Khảo sát số người/thiết bị theo phòng, lượng khách đồng thời và lease
-Wi-Fi; ứng dụng HIS/RIS-PACS/LIS/CRM/DB, tải ảnh DICOM (Digital Imaging and Communications in Medicine) và thời điểm
-backup; SLA (Service Level Agreement), tải thiết yếu khi lỗi và lịch bảo trì. Kiểm diện tích
-rack/MDF/IDF, nguồn và UPS (Uninterruptible Power Supply -- bộ lưu điện), điều hòa, tiếp địa, phòng cháy, khóa cửa và
-kiểm soát người vào. Khảo sát ống/máng cáp, chiều dài, tuyến A/B độc
-lập, vị trí ODF (Optical Distribution Frame -- giá phân phối quang)/patch panel và nhãn; chiều dài Cat6 phải đáp ứng giới
-hạn thiết bị/cabling được chọn.
+Khảo sát hiện trường trước thi công nhằm lượng hóa các điều kiện biên thực tế của cơ sở y tế, xác lập cơ sở dữ liệu kỹ thuật chuẩn xác trước khi triển khai hệ thống mạng. Quá trình khảo sát được tổ chức theo bốn nhóm trọng tâm: (1)~Nghiệp vụ và ứng dụng y tế (HIS, RIS-PACS, LIS, CRM, DB), lưu lượng truyền ảnh DICOM (Digital Imaging and Communications in Medicine), thời điểm sao lưu định kỳ và cam kết chất lượng dịch vụ SLA (Service Level Agreement); (2)~Hạ tầng phụ trợ gồm không gian phòng máy, tủ rack MDF (Main Distribution Frame -- tủ phân phối trung tâm)/IDF (Intermediate Distribution Frame -- tủ phân phối trung gian), nguồn điện lưới, UPS (Uninterruptible Power Supply -- bộ lưu điện), điều hòa vi khí hậu, tiếp địa chống sét, phòng cháy chữa cháy và kiểm soát an ninh vật lý; (3)~Hệ thống truyền dẫn gồm tuyến ống, máng cáp, trục đứng kỹ thuật, giải pháp phân tách hai tuyến A/B độc lập, vị trí ODF (Optical Distribution Frame -- giá phân phối quang), patch panel và nhãn cáp; (4)~Môi trường truyền sóng không dây RF và camera an ninh gồm vật liệu che chắn, độ suy hao, can nhiễu, vùng phủ sóng AP (Access Point -- điểm truy cập không dây) và vị trí góc nhìn camera giám sát.
 
-Khảo sát RF theo vật liệu tường, nhiễu, kênh, công suất, roaming và khả
-năng các thiết bị y tế; khảo sát góc camera, vùng riêng tư, ánh sáng,
-đường truyền và thời hạn lưu. Checklist không được đánh dấu đã khảo sát
-khi chưa có biên bản hoặc số đo. Số AP (Access Point -- điểm truy cập không dây), camera và chiều dài cáp bên dưới
-là đầu vào thiết kế cần xác nhận.
+Mọi số liệu về quy mô thiết bị, số AP, camera và chiều dài cáp trong mô hình ban đầu đều là giả định thiết kế; các hạng mục này chỉ được chuẩn hóa thành quyết định mua sắm và thi công sau khi hoàn tất các biên bản khảo sát hiện trường tương ứng (chi tiết đầu ra nghiệm thu tại mục 2.2.4).
 
 \hypertarget{phuxe2n-bux1ed5-khoaphuxf2ng-vuxe0-tux1ea3i-muxe1y-trux1ea1m}{%
 \subsubsection{Phân bổ khoa/phòng và tải máy
@@ -1580,34 +1569,22 @@ giá một modem với toàn bộ giải pháp leased line.
 \subsubsection{Căn cứ lựa
 chọn}\label{cux103n-cux1ee9-lux1ef1a-chux1ecdn}}
 
-Baseline dùng hai leased line với OSPF để giữ cấu trúc đề và thuận tiện
-kiểm trên hai nền tảng. MPLS L3VPN được dựng riêng để minh họa WAN mới
-có VRF, MP-BGP (Multiprotocol Border Gateway Protocol) và chuyển tiếp nhãn. SD-WAN phù hợp khi cần chính sách
-ứng dụng và quản lý nhiều đường/site, nhưng cần controller, license và
-underlay; OSPF/PBR hiện tại không được gọi là SD-WAN. Lựa chọn mua sắm
-cuối cùng phải so báo giá cùng băng thông, SLA, số điểm và thuế; bảng
-TCO trên chỉ là kịch bản giả định.
-
-Trên cơ sở so sánh TCO giả định và yêu cầu kỹ thuật hiện tại, nhóm ưu
-tiên Metro-E/Leased Line kết hợp OSPF làm phương án WAN cơ sở. MPLS
-L3VPN và SD-WAN có thêm những khả năng quản lý, định tuyến và mở rộng,
-nhưng cũng phát sinh chi phí và độ phức tạp triển khai. Vì vậy, nhóm
-chưa tích hợp hai công nghệ này vào mô hình WAN chính. Quyết định thương
-mại cuối cùng cần được xác nhận bằng báo giá và SLA thực tế.
+Baseline sử dụng hai tuyến Leased Line kết hợp OSPF nhằm bảo đảm tính đơn giản và thuận tiện kiểm chứng thực nghiệm trên cả hai nền tảng GNS3 và Packet Tracer. Mô hình MPLS L3VPN được triển khai độc lập nhằm minh họa khả năng phân tách định tuyến ảo hóa VRF, MP-BGP (Multiprotocol Border Gateway Protocol) và gán nhãn MPLS. Trong khi đó, SD-WAN chỉ phát huy tối đa hiệu quả khi có nhu cầu điều phối lưu lượng theo ứng dụng trên diện rộng nhưng đòi hỏi chi phí đầu tư controller và license khá lớn. Do đó, nhóm lựa chọn Metro-E/Leased Line làm kiến trúc WAN cơ sở; các giải pháp MPLS hay SD-WAN được đề xuất cho lộ trình nâng cấp dài hạn khi có báo giá và cam kết SLA thương mại chính thức.
 
 \hypertarget{tuxednh-thuxf4ng-lux1b0ux1ee3ng-vuxe0-ux111ux1ec1-xuux1ea5t-bux103ng-thuxf4ng-step3}{%
 \subsection{Tính thông lượng và đề xuất băng thông
 (Step3)}\label{tuxednh-thuxf4ng-lux1b0ux1ee3ng-vuxe0-ux111ux1ec1-xuux1ea5t-bux103ng-thuxf4ng-step3}}
 
-Tính thông lượng và hoạch định băng thông (Step 3) nhằm lượng hóa nhu cầu truyền dẫn của bệnh viện, làm căn cứ định cỡ các tuyến WAN liên site và Internet biên. Nhằm bảo đảm tính khách quan khi thẩm định, nhóm phân định tường minh giữa số liệu gốc từ đặc tả bài toán và các giả định kỹ thuật đề xuất.
+Hoạch định băng thông (Step 3) nhằm lượng hóa nhu cầu truyền dẫn của bệnh viện, làm căn cứ định cỡ các tuyến WAN liên site và Internet biên trên cơ sở phân định tường minh giữa số liệu gốc đặc tả và các giả định thiết kế.
 
 \hypertarget{dux1eef-liux1ec7u-ux111ux1ea7u-vuxe0o-vuxe0-giux1ea3-ux111ux1ecbnh-thiux1ebft-kux1ebf}{%
 \subsubsection{Dữ liệu đầu vào và giả định thiết kế}\label{dux1eef-liux1ec7u-ux111ux1ea7u-vuxe0o-vuxe0-giux1ea3-ux111ux1ecbnh-thiux1ebft-kux1ebf}}
 
-Nguồn dữ liệu được tổ chức thành hai danh mục: Bảng A liệt kê các thông số định mức trích từ đặc tả bài tập (\textit{Assignment 2 Specification}); Bảng B tập hợp các giả định kỹ thuật do nhóm thiết kế xác lập.
+Do đặc tả chưa xác định rõ phạm vi áp dụng của các định mức Server và Guest Wi-Fi, nhóm thống nhất sử dụng định mức trên từng server và từng thiết bị khách để tính toán. Các giá trị này là giả định thiết kế nhằm phục vụ quy hoạch băng thông, chưa phải kết quả đo lưu lượng thực tế. Nguồn dữ liệu được tổ chức thành hai danh mục: Bảng A liệt kê các thông số định mức trích từ đặc tả bài tập (\textit{Assignment 2 Specification}); Bảng B tập hợp các giả định kỹ thuật do nhóm thiết kế xác lập.
 
 \textbf{Bảng A -- Dữ liệu từ đặc tả bài toán (Assignment Specification)}
 \begingroup\small
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.22}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.38}}
@@ -1630,6 +1607,7 @@ Tăng trưởng dài hạn & 20\% trong toàn bộ chu kỳ 5 năm & Hệ số q
 
 \textbf{Bảng B -- Giả định kỹ thuật của nhóm thiết kế (Engineering Assumptions)}
 \begingroup\small
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.22}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.36}}
@@ -1653,14 +1631,14 @@ Luồng dữ liệu biên & Tạm quy toàn bộ tải ra Internet biên & [Gi�
 \hypertarget{phux1b0ux1a1ng-phuxe1p-tuxednh-thuxf4ng-lux1b0ux1ee3ng-vuxe0-bux103ng-thuxf4ng}{%
 \subsubsection{Phương pháp tính thông lượng và băng thông}\label{phux1b0ux1a1ng-phuxe1p-tuxednh-thuxf4ng-lux1b0ux1ee3ng-vuxe0-bux103ng-thuxf4ng}}
 
-Nhóm sử dụng chuẩn thập phân viễn thông: $1\text{ MB} = 10^6\text{ byte}$, $1\text{ byte} = 8\text{ bit}$. Phương pháp tính tuân theo hai công thức cốt lõi:
+Nhóm sử dụng chuẩn thập phân viễn thông: $1\text{ MB} = 10^6\text{ Byte}$, $1\text{ Byte} = 8\text{ bit}$, $1\text{ Mbps} = 10^6\text{ bit/s}$. Công thức tính thông lượng trung bình trong cửa sổ cao điểm và băng thông thiết kế được xác lập tường minh như sau:
 \begin{equation}
-B_{\text{peak}} = \frac{D \times 8 \times 0{,}8}{3 \times 3.600} = \frac{D \times 6{,}4}{10.800}\text{ (Mbps)}, \qquad
-B_{\text{design}} = \frac{B_{\text{peak}} \times 1{,}2}{0{,}70} = B_{\text{peak}} \times \frac{12}{7}\text{ (Mbps)}
+B_{\text{peak}} = \frac{D \times 10^6 \times 8 \times P}{T_{\text{peak}} \times 10^6} = \frac{D \times 8 \times P}{T_{\text{peak}}}\text{ (Mbps)}, \qquad
+B_{\text{design}} = \frac{B_{\text{peak}} \times (1 + g)}{U} = B_{\text{peak}} \times \frac{12}{7}\text{ (Mbps)}
 \end{equation}
-Trong đó $D$ là dung lượng ngày; $P = 0{,}8$ trong $T_{\text{peak}} = 10.800\text{ s}$ (3h cao điểm); tăng trưởng 5 năm $g = 20\%$ ($1{,}2$); ngưỡng tải mục tiêu $U = 70\%$ ($0{,}70$, tạo 30\% headroom).
+Trong đó $D$ là tổng dung lượng dữ liệu phát sinh trong một ngày (MB/ngày); $P = 0{,}8$ là tỷ lệ dung lượng dồn vào các giờ cao điểm (80\%); $T_{\text{peak}} = 3\text{ h} = 10.800\text{ s}$ là độ dài cửa sổ cao điểm; $g = 0{,}20$ (20\% tăng trưởng dự trù sau 5 năm); ngưỡng tải mục tiêu $U = 70\%$ ($0{,}70$, tạo 30\% biên an toàn).
 
-\noindent\textbf{Bản chất kỹ thuật:} $B_{\text{peak}}$ là \textbf{thông lượng trung bình trong cửa sổ cao điểm} (\textit{busy-hour average}), \textbf{không phải tải tức thời cực đại} (\textit{instantaneous burst}). Do mạng có tính bộc phát (bursty), hệ số $U = 0{,}70$ bảo đảm hệ thống vận hành an toàn trong mô hình hàng đợi $M/M/1$, hạn chế nghẽn bộ đệm (bufferbloat), giảm trễ và rớt gói.
+\noindent\textbf{Bản chất kỹ thuật:} $B_{\text{peak}}$ là \textbf{thông lượng trung bình trong cửa sổ cao điểm} (\textit{busy-hour average}), \textbf{không phải tải tức thời cực đại} (\textit{instantaneous burst}). Do lưu lượng mạng có tính bộc phát (bursty), ngưỡng tải mục tiêu $U = 0{,}70$ là chuẩn quy hoạch kỹ thuật dựa trên mô hình hàng đợi $M/M/1$ nhằm duy trì hàng đợi ở trạng thái ổn định, hạn chế nghẽn bộ đệm (bufferbloat), giảm trễ hàng đợi và xác suất rớt gói.
 
 \noindent\textbf{Ví dụ tính cho Main Site (chưa tính khách):}
 $D_{\text{down}} = 600 \times 500 + 10 \times 1.000 = 310.000\text{ MB/ng}$; $D_{\text{up}} = 600 \times 100 + 10 \times 2.000 = 80.000\text{ MB/ng}$.
@@ -1675,13 +1653,13 @@ Thiết kế: $B_{\text{design, down}} = 183{,}7037 \times \frac{12}{7} \approx 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.16}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.08}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.07}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.15}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.08}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
   >{\raggedleft\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.20}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.20}}@{}}
 \toprule\noalign{}
-\textbf{Cơ sở} & \textbf{PC} & \textbf{Srv} & \textbf{Down (MB/ng)} & \textbf{Up (MB/ng)} & \textbf{Peak Down/Up} & \textbf{Design Down/Up} \\
+\textbf{Cơ sở} & \textbf{PC} & \textbf{Server} & \textbf{Down (MB/ng)} & \textbf{Up (MB/ng)} & \textbf{Peak Down/Up} & \textbf{Design Down/Up} \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -1697,16 +1675,15 @@ BHTQ Site & 260 & 2 & 132.000 & 30.000 & 78,22 / 17,78 Mbps & 134,10 / 30,48 Mbp
 \noindent\textbf{Ý nghĩa kỹ thuật:} Số liệu trên là tải cơ sở đã biết theo kịch bản bảo thủ (áp dụng cho từng server), chưa gồm khách Wi-Fi và các workload y tế chuyên biệt (PACS, sao lưu, camera). Mức băng thông toàn viện \textbf{583,11 Mbps down} và \textbf{142,22 Mbps up} là ``phong bì quy hoạch'' (\textit{planning envelope}) tại Internet Edge Main Site nếu toàn bộ dữ liệu đi ra ngoài, không phải lưu lượng đo đạc runtime trên một cổng mạng.
 
 \hypertarget{phuxe2n-loux1ea1i-lux1b0u-lux1b0ux1ee3ng-vuxe0-phuxe2n-tuxedch-kux1ecbch-bux1ea3n}{%
-\subsubsection{Phân loại lưu lượng và phân tích kịch bản}\label{phuxe2n-loux1ea1i-lux1b0u-lux1b0ux1ee3ng-vuxe0-phuxe2n-tuxedch-kux1ecbch-bux1ea3n}}
+\subsubsection{Phân loại lưu lượng và phân tích ba kịch bản vận hành, tăng trưởng}\label{phuxe2n-loux1ea1i-lux1b0u-lux1b0ux1ee3ng-vuxe0-phuxe2n-tuxedch-kux1ecbch-bux1ea3n}}
 
 \noindent\textbf{Ranh giới lưu lượng:} (1)~\textit{LAN nội bộ:} Giữa client và server cùng site (như PC Main truy cập HIS local), chỉ qua switch nội bộ, tác động 0\% lên WAN/Internet. (2)~\textit{WAN liên site:} Máy trạm DBP/BHTQ truy cập server trung tâm (HIS/LIS/DB) tại Main qua kênh riêng (Metro-E/Leased Line), không ra Internet. (3)~\textit{Internet biên:} Dịch vụ y tế công, bảo hiểm, y văn, email qua Edge Router và Firewall tại Main. (4)~\textit{Nguyên tắc không cộng trùng:} Yêu cầu client và phản hồi server là hai chiều của cùng một phiên; không tính lặp hai lần trên cùng chặng truyền dẫn.
 
-\noindent\textbf{Phân tích 4 kịch bản vận hành và mở rộng:}
+\noindent\textbf{Phân tích ba kịch bản vận hành và mở rộng:}
 \begin{itemize}\tightlist
-\item \textbf{A (Baseline):} 1.120 PC, 14 server, $N = 0$. Thiết kế: \textbf{583,11 Mbps down / 142,22 Mbps up}.
-\item \textbf{B (Khách Wi-Fi):} Mỗi khách/ngày thêm $\Delta B_{\text{peak}} \approx 0{,}2963\text{ Mbps}$ và $\Delta B_{\text{design}} \approx 0{,}5079\text{ Mbps}$ down. Minh họa $N = 300$ khách/ngày toàn viện, nhu cầu download thiết kế tăng thêm $152{,}38\text{ Mbps}$ lên mức \textbf{735,49 Mbps} (upload khách chưa có số liệu đặc tả).
-\item \textbf{C (Tăng trưởng 5 năm đối chiếu Step 2):} Hạ tầng phần cứng Step 2 sau 5 năm gồm 1.344 PC và 18 server ($D_{\text{down, 5y}} = 690.000\text{ MB/ng}$, $D_{\text{up, 5y}} = 170.400\text{ MB/ng}$). Tính với $U = 0{,}70$ trực tiếp: $B_{\text{design, down}} = \frac{690.000 \times 6{,}4 / 10.800}{0{,}70} \approx 584{,}13\text{ Mbps}$; $B_{\text{design, up}} \approx 144{,}25\text{ Mbps}$. So với nhân hệ số $1{,}2$ ở Step 3 ($583{,}11 / 142{,}22\text{ Mbps}$), sai lệch chỉ $+0{,}17\%$ down và $+1{,}43\%$ up (do server Step 2 làm tròn từ 14 lên 18 máy, tức $+28{,}6\%$). Kết quả khẳng định tính nhất quán toán học giữa quy hoạch cổng Step 2 và băng thông Step 3.
-\item \textbf{D (Diễn giải định mức Server):} Cụm từ ``Servers \ldots{} total'' có 3 cách hiểu: (1)~\textit{Từng server (Baseline):} 14 server $\rightarrow B_{\text{design}} = 583{,}11 / 142{,}22\text{ Mbps}$; (2)~\textit{Toàn hệ thống:} 14 server dùng chung 1.000/2.000 MB $\rightarrow B_{\text{design}} = 569{,}90 / 115{,}81\text{ Mbps}$; (3)~\textit{Từng cơ sở:} 3 cơ sở dùng 3.000/6.000 MB $\rightarrow B_{\text{design}} = 571{,}94 / 119{,}87\text{ Mbps}$. Nhóm chọn phương án từng server làm baseline bảo thủ an toàn nhất.
+\item \textbf{A (Baseline -- Cơ sở):} 1.120 PC, 14 server, $N = 0$. Băng thông thiết kế toàn hệ thống: \textbf{583,11 Mbps down / 142,22 Mbps up}.
+\item \textbf{B (Khách Wi-Fi vãng lai):} Mỗi khách/ngày thêm định mức 500 MB download, tương ứng $\Delta B_{\text{peak}} \approx 0{,}2963\text{ Mbps}$ và $\Delta B_{\text{design}} \approx 0{,}5079\text{ Mbps}$ down. Khi minh họa với $N = 300$ khách/ngày toàn viện ($N = N_M + N_D + N_B$), nhu cầu download thiết kế tăng thêm $152{,}38\text{ Mbps}$, nâng tổng download thiết kế lên mức \textbf{735,49 Mbps} (định mức upload cho khách chưa có dữ liệu trong đặc tả nên không cộng thêm).
+\item \textbf{C (Tăng trưởng 5 năm đối chiếu Step 2):} Hạ tầng phần cứng quy hoạch tại Step 2 sau 5 năm gồm 1.344 PC và 18 server ($D_{\text{down, 5y}} = 1.344 \times 500 + 18 \times 1.000 = 690.000\text{ MB/ng}$, $D_{\text{up, 5y}} = 1.344 \times 100 + 18 \times 2.000 = 170.400\text{ MB/ng}$). Tính với $U = 0{,}70$ trực tiếp: $B_{\text{design, down}} = (690.000 \times 6{,}4 / 10.800) / 0{,}70 \approx 584{,}13\text{ Mbps}$; $B_{\text{design, up}} \approx 144{,}25\text{ Mbps}$. So với phương pháp nhân hệ số $1{,}2$ ở Step 3 ($583{,}11 / 142{,}22\text{ Mbps}$), sai lệch chỉ $+0{,}17\%$ down và $+1{,}43\%$ up (do số server ở Step 2 làm tròn nguyên từ 14 lên 18 máy, tương đương tăng 28,6\%). Kết quả khẳng định tính nhất quán toán học giữa quy hoạch cổng Step 2 và mô hình băng thông Step 3.
 \end{itemize}
 
 \hypertarget{ux111ux1ec1-xuux1ea5t-bux103ng-thuxf4ng-internet-vuxe0-wan}{%
@@ -1714,6 +1691,7 @@ BHTQ Site & 260 & 2 & 132.000 & 30.000 & 78,22 / 17,78 Mbps & 134,10 / 30,48 Mbp
 
 \textbf{Bảng đánh giá năng lực các kịch bản ISP giả định}
 \begingroup\small
+\setlength{\LTpre}{3pt}\setlength{\LTpost}{3pt}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.22}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.18}}
@@ -1727,20 +1705,18 @@ BHTQ Site & 260 & 2 & 132.000 & 30.000 & 78,22 / 17,78 Mbps & 134,10 / 30,48 Mbp
 \endlastfoot
 $2 \times 100/20\text{ Mbps}$ & $200 / 40\text{ Mbps}$ & Không đáp ứng ($200 < 583{,}11$; $40 < 142{,}22$). Thiếu hụt nghiêm trọng cả hai chiều. & Còn $100/20\text{ Mbps}$, rơi vào nghẽn trầm trọng, tê liệt dịch vụ y tế. \\
 $2 \times 500/500\text{ Mbps}$ & $1.000 / 1.000\text{ Mbps}$ & Đủ tổng thông lượng lý thuyết ($1.000 > 583{,}11$ và $1.000 > 142{,}22$). Cần PBR phân nhóm hợp lý. & Đường còn lại $500\text{ Mbps}$ down thấp hơn nhu cầu cơ sở $583{,}11\text{ Mbps}$ (thiếu $\approx 83\text{ Mbps}$). Cần QoS ngắt guest. \\
-$2 \times 750/250\text{ Mbps}$ & $1.500 / 500\text{ Mbps}$ & Đạt dư địa tối ưu cho toàn viện kể cả khi có 300 khách Wi-Fi ($1.500 > 735{,}49$; $500 > 142{,}22$). & Một đường $750\text{ Mbps}$ down vẫn gánh đủ toàn bộ tải thiết kế có khách ($750 \ge 735{,}49\text{ Mbps}$), duy trì thông suốt. \\
+$2 \times 750/250\text{ Mbps}$ & $1.500 / 500\text{ Mbps}$ & Đạt biên dự phòng thuận lợi cho toàn viện kể cả khi có 300 khách Wi-Fi ($1.500 > 735{,}49$; $500 > 142{,}22$). & Một đường $750\text{ Mbps}$ down đáp ứng tải thiết kế danh định có khách ($750 \ge 735{,}49\text{ Mbps}$), là phương án dự phòng tốt nhất trong các gói khảo sát. \\
 \end{longtable}
 \endgroup
 
-\noindent\textbf{Phân tích kỹ thuật chuyên sâu:} (1)~\textit{Multi-homing 2 ISP:} PBR và PAT không gộp băng thông cho kết nối đơn lẻ; mỗi phiên đi theo một ISP riêng. Vì PBR tĩnh không tự cân bằng động 50/50, từng đường truyền phải có đủ biên dự phòng. (2)~\textit{Giới hạn xDSL:} Cáp đồng xDSL suy hao cự ly và bất đối xứng, upload hiếm khi vượt vài chục Mbps, không đáp ứng $142{,}22\text{ Mbps}$. Kiến nghị quy trình RFC đổi sang FTTH Doanh nghiệp hoặc DIA quang đối xứng có SLA.
+\noindent\textbf{Phân tích kỹ thuật chuyên sâu:} (1)~\textit{Multi-homing 2 ISP:} PBR và PAT không gộp băng thông cho kết nối đơn lẻ; mỗi phiên đi theo một ISP riêng. Vì PBR tĩnh không tự cân bằng động 50/50, từng đường truyền phải có đủ biên dự phòng. (2)~\textit{Giới hạn xDSL:} Cáp đồng xDSL suy hao cự ly và upload thấp, không đáp ứng $142{,}22\text{ Mbps}$. Kiến nghị chuyển đổi sang FTTH Doanh nghiệp hoặc DIA quang đối xứng có SLA.
 
-\noindent\textbf{Đề xuất sizing WAN liên cơ sở:} Đối với DBP và BHTQ, tải cơ sở là $134{,}10\text{ Mbps}$ download và $30{,}48\text{ Mbps}$ upload. Nhóm đề xuất trang bị kênh WAN đối xứng tối thiểu \textbf{200 Mbps} (Metro Ethernet hoặc MPLS L3VPN) về Main Site, cung cấp biên dự phòng 49\% chiều down và rất rộng cho chiều up trước khi tích hợp PACS.
+\noindent\textbf{Đề xuất sizing WAN liên cơ sở:} Đối với DBP và BHTQ, tải cơ sở là $134{,}10\text{ Mbps}$ download và $30{,}48\text{ Mbps}$ upload. Nhóm đề xuất trang bị kênh WAN đối xứng tối thiểu \textbf{200 Mbps} (Metro Ethernet hoặc MPLS L3VPN) về Main Site, cung cấp biên dự phòng ban đầu khoảng 49\% chiều down và dư dả cho chiều up trước khi tích hợp các luồng chụp chiếu PACS tập trung.
 
 \hypertarget{giux1edbi-hux1ea1n-vuxe0-ux111iux1ec1u-kiux1ec7n-triux1ec3n-khai}{%
 \subsubsection{Giới hạn và điều kiện triển khai}\label{giux1edbi-hux1ea1n-vuxe0-ux111iux1ec1u-kiux1ec7n-triux1ec3n-khai}}
 
-Các giới hạn và tham số chưa được lượng hóa trong bài tập lớn cần khảo sát trước khi triển khai: (1)~\textit{PACS/DICOM:} Cần khảo sát tần suất chụp ảnh dung lượng lớn; (2)~\textit{Tỷ lệ luồng LAN/WAN/Internet:} Cần đo kiểm thực tế bằng NetFlow/sFlow; (3)~\textit{Khách Wi-Fi:} Cần đo khách đồng thời và mức upload; (4)~\textit{Xung tải tức thời (Burstiness):} Cần đo lưu lượng đỉnh mili-giây để định cỡ bộ đệm; (5)~\textit{Hạ tầng và SLA viễn thông:} Cần khảo sát quang, IP tĩnh, MTTR và giá cước; (6)~\textit{Năng lực Firewall thực tế:} Suy giảm khi bật DPI/IPS, SSL Inspection và VPN IPsec; (7)~\textit{Chính sách QoS:} Ưu tiên HIS/LIS, ngắt khách khi đứt đường.
-
-\noindent\textbf{Khuyến nghị hành động tiếp theo:} Nhóm đề xuất (1) thực hiện đo kiểm PoC đo thông lượng firewall dưới tải thực tế, và (2) lấy báo giá kèm cam kết SLA từ ít nhất hai nhà mạng độc lập trước khi ký hợp đồng dịch vụ.
+Các giới hạn và tham số chưa được lượng hóa trong bài tập lớn cần khảo sát trước khi triển khai: (1)~\textit{PACS/DICOM:} Cần khảo sát tần suất chụp ảnh dung lượng lớn; (2)~\textit{Tỷ lệ luồng LAN/WAN/Internet:} Cần đo kiểm thực tế bằng NetFlow/sFlow; (3)~\textit{Khách Wi-Fi:} Cần đo khách đồng thời và mức upload; (4)~\textit{Xung tải tức thời (Burstiness):} Cần đo lưu lượng đỉnh mili-giây để định cỡ bộ đệm; (5)~\textit{Hạ tầng và SLA viễn thông:} Cần khảo sát quang, IP tĩnh, MTTR và giá cước; (6)~\textit{Năng lực Firewall thực tế:} Suy giảm khi bật DPI/IPS, SSL Inspection và VPN IPsec; (7)~\textit{Chính sách QoS:} Ưu tiên HIS/LIS, ngắt khách khi đứt đường. Nhóm đề xuất thực hiện đo kiểm PoC đo thông lượng firewall dưới tải thực tế và lấy báo giá kèm cam kết SLA từ ít nhất hai nhà mạng độc lập trước khi ký hợp đồng dịch vụ.
 
 \hypertarget{chuxednh-suxe1ch-bux1ea3o-mux1eadt-vuxe0-phux1b0ux1a1ng-uxe1n-vpn}{%
 \subsection{Chính sách bảo mật và phương án
