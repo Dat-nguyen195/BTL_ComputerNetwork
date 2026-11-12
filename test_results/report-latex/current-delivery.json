@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-12",
+  "report_pages": 51,
+  "latex_bundle_matches_source": true,
+  "sha256": {
+    "docs/06-report/final/report.pdf": "1f39c46b7006c58da388ccf178ddbd87b3186bd16bf4065fe672253e45391216",
+    "docs/06-report/final/report-latex.zip": "71d3120001719813bdc98dfd8393fc801311557653786721a9b8d9a10455dbf8",
+    "simulation/packet-tracer/hospital-3sites.pkt": "b3c4c0b7f4ea5f12b5b611d044b07666a837335bd9253a1f0b2a6dda4db03268",
+    "file_cisco.pkt": "48afaee7f47e898ac56e88734d09a72eed2ec50099db119d234f4d8cf906c0d1"
+  },
+  "note": "Updated report screenshots and edited Packet Tracer file. Earlier report QA and Packet Tracer runtime hashes describe their historical snapshots, not these updated files. No new Packet Tracer runtime test performed by this commit."
+}

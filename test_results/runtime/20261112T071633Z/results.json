@@ -1,0 +1,2722 @@
+{
+  "run_id": "20261112T071633Z",
+  "timestamp_utc": "2026-11-12T07:18:15.937954+00:00",
+  "platform": {
+    "local": false,
+    "version": "2.2.55"
+  },
+  "image_id": "sha256:f9d9f911933b03a6316cfc943cb1315919ba70a9df97409bed41b887a7755a83",
+  "project_id": "55ac9e6a-caa2-5f46-b475-be6bd3c8affd",
+  "source_sha256": {
+    "simulation\\gns3\\hospital-3sites.gns3": "8047cff9ca418dc52a43cb1b546e3179e3962224136122f65fd00d35cff2d5bb",
+    "simulation\\gns3\\runtime-manifest.json": "f0ef68bc787178d69657c78570b093057aae29cde6930f1dae533d3eb7ece4d5",
+    "simulation\\gns3\\runtime\\node.py": "767e52b00dd3d2700b594d72d6567c848e06c30069404eb0c7c73bd4512b6048",
+    "scripts\\test_gns3_runtime.py": "40e03fb0515755bc00fb07a290131800da83fce5385b72e60965bf799dc7240f"
+  },
+  "scope": "Actual GNS3 Linux/FRR/iptables/DHCP/DNS/HTTP; not Cisco IOS or clinical workload",
+  "duration_seconds": 101.97,
+  "versions": {
+    "Main-Core": {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show version"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 71aac30dcb08d5009f52b483a57634d96d8277246b5cc774080cb16a2ca21704\n",
+      "duration_seconds": 0.22
+    },
+    "Main-FW": {
+      "node": "Main-FW",
+      "command": [
+        "iptables",
+        "--version"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.213
+    },
+    "Main-Infra": {
+      "node": "Main-Infra",
+      "command": [
+        "dnsmasq",
+        "--version"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: dc847831dd587c436106eb222c7321ca1eeab2bf9cc9c2dd4f9a38ee8a320e76\n",
+      "duration_seconds": 0.215
+    },
+    "Suricata": {
+      "node": "Main-FW",
+      "command": [
+        "suricata",
+        "--build-info"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.202
+    }
+  },
+  "cases": [
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.20.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.252,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.251,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.251,
+      "group": "TC02",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.11"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.253,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3479cd8c3e3799b6a7116ad3a9ad601407ea7fa597c54c015116674f908ba9a2\n",
+      "duration_seconds": 0.256,
+      "group": "TC01",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.277,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.284,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.285,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.293,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.294,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "2",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.303,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://203.0.113.2:8080"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea48003955ca2704a4c2ab4c0b559ff0dfa974742e2f72ffa4739cee3425f590\n",
+      "duration_seconds": 0.305,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.315,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8080"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea48003955ca2704a4c2ab4c0b559ff0dfa974742e2f72ffa4739cee3425f590\n",
+      "duration_seconds": 0.315,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.317,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Web-Lab",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://198.51.100.2:8081"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea48003955ca2704a4c2ab4c0b559ff0dfa974742e2f72ffa4739cee3425f590\n",
+      "duration_seconds": 0.316,
+      "group": "TC04",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.324,
+      "group": "TC04",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.268,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.268,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.273,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.284,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.284,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.286,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.285,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.29,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.70.11"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.301,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.284,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.268,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.285,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.285,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.289,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.283,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.10.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.249,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.245,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ping",
+        "-n",
+        "-c",
+        "1",
+        "-W",
+        "1",
+        "10.20.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.252,
+      "group": "TC05",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.278,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.288,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.289,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.314,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.315,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.323,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.229,
+      "group": "TC06",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "traceroute",
+        "-I",
+        "-n",
+        "-m",
+        "10",
+        "-w",
+        "1",
+        "10.30.10.10"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.231,
+      "group": "TC03",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 71aac30dcb08d5009f52b483a57634d96d8277246b5cc774080cb16a2ca21704\n",
+      "duration_seconds": 0.24,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 71aac30dcb08d5009f52b483a57634d96d8277246b5cc774080cb16a2ca21704\n",
+      "duration_seconds": 0.213,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 972f3d704cbb38f27700c076d71e95e45e7d7421aac16408921cf5966836a826\n",
+      "duration_seconds": 0.223,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 972f3d704cbb38f27700c076d71e95e45e7d7421aac16408921cf5966836a826\n",
+      "duration_seconds": 0.223,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 14bfa1f3d560a8f54a3a72b6fabbef6468efe79ee83c8f570331eb4b0d2fe06d\n",
+      "duration_seconds": 0.233,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 14bfa1f3d560a8f54a3a72b6fabbef6468efe79ee83c8f570331eb4b0d2fe06d\n",
+      "duration_seconds": 0.236,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip ospf neighbor"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 8df8d101d38c918ba31e6ca8e043a3b17fff6262214e3b394a42445511384db8\n",
+      "duration_seconds": 0.21,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "vtysh",
+        "-c",
+        "show ip route ospf"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 8df8d101d38c918ba31e6ca8e043a3b17fff6262214e3b394a42445511384db8\n",
+      "duration_seconds": 0.202,
+      "group": "OSPF",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.212,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.235,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.22,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 7aad49b33739f022da59f84ec9429d8800d193047954778a9d882edbc61a14b2\n",
+      "duration_seconds": 0.234,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.223,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.217,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.219,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC10",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: f02639dd78dafaba28aa6b1ba4379d58f3b073ec09880736b6e8688a9a8ac23a\n",
+      "duration_seconds": 0.215,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 09ae0650da0210c8ab3e7435189d5ea51ac80877d1de1471469c1b7e9da693a8\n",
+      "duration_seconds": 0.269,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 09ae0650da0210c8ab3e7435189d5ea51ac80877d1de1471469c1b7e9da693a8\n",
+      "duration_seconds": 0.257,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 09ae0650da0210c8ab3e7435189d5ea51ac80877d1de1471469c1b7e9da693a8\n",
+      "duration_seconds": 0.225,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 09ae0650da0210c8ab3e7435189d5ea51ac80877d1de1471469c1b7e9da693a8\n",
+      "duration_seconds": 0.2,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3b1218ec36ca1f96ed1fd6e38a9a1ebed2a260fdf0416834077ed4b2e8a1b72f\n",
+      "duration_seconds": 0.225,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3b1218ec36ca1f96ed1fd6e38a9a1ebed2a260fdf0416834077ed4b2e8a1b72f\n",
+      "duration_seconds": 0.225,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3b1218ec36ca1f96ed1fd6e38a9a1ebed2a260fdf0416834077ed4b2e8a1b72f\n",
+      "duration_seconds": 0.236,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3b1218ec36ca1f96ed1fd6e38a9a1ebed2a260fdf0416834077ed4b2e8a1b72f\n",
+      "duration_seconds": 0.253,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 947c83b92139aa9b8167cb0c947670139bbf6e69b68cfe6e71642902f9dfb408\n",
+      "duration_seconds": 0.213,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 947c83b92139aa9b8167cb0c947670139bbf6e69b68cfe6e71642902f9dfb408\n",
+      "duration_seconds": 0.23,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.30.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 947c83b92139aa9b8167cb0c947670139bbf6e69b68cfe6e71642902f9dfb408\n",
+      "duration_seconds": 0.203,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 947c83b92139aa9b8167cb0c947670139bbf6e69b68cfe6e71642902f9dfb408\n",
+      "duration_seconds": 0.222,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.217,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.219,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.221,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 5c53417a8157f1aaacc54bc09b71f4e9ec409927adb13c63adb43fb1a5a8f8e6\n",
+      "duration_seconds": 0.238,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.225,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.213,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.217,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC10",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9b0e067df6e70dc97c15905a0c3d10ec0af34e3a17e8bc623f3094c370d4a026\n",
+      "duration_seconds": 0.221,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: e2c8c1a690400a99e49ff8bfe41e961f3069f7e0f86f608119f97ed11d3ee5df\n",
+      "duration_seconds": 0.225,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: e2c8c1a690400a99e49ff8bfe41e961f3069f7e0f86f608119f97ed11d3ee5df\n",
+      "duration_seconds": 0.239,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: e2c8c1a690400a99e49ff8bfe41e961f3069f7e0f86f608119f97ed11d3ee5df\n",
+      "duration_seconds": 0.213,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: e2c8c1a690400a99e49ff8bfe41e961f3069f7e0f86f608119f97ed11d3ee5df\n",
+      "duration_seconds": 0.238,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 36983b60fd465b783fce8787c03cf42d731098b480bc600e90478eedabf97686\n",
+      "duration_seconds": 0.237,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 36983b60fd465b783fce8787c03cf42d731098b480bc600e90478eedabf97686\n",
+      "duration_seconds": 0.247,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 36983b60fd465b783fce8787c03cf42d731098b480bc600e90478eedabf97686\n",
+      "duration_seconds": 0.25,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 36983b60fd465b783fce8787c03cf42d731098b480bc600e90478eedabf97686\n",
+      "duration_seconds": 0.255,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 996cfad17d95318b70deb76a81c5f2e2c0a3142d015f2026e08ae60a99068ed0\n",
+      "duration_seconds": 0.244,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 996cfad17d95318b70deb76a81c5f2e2c0a3142d015f2026e08ae60a99068ed0\n",
+      "duration_seconds": 0.231,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.20.70.6",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 996cfad17d95318b70deb76a81c5f2e2c0a3142d015f2026e08ae60a99068ed0\n",
+      "duration_seconds": 0.218,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 996cfad17d95318b70deb76a81c5f2e2c0a3142d015f2026e08ae60a99068ed0\n",
+      "duration_seconds": 0.23,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.226,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.222,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.236,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.213,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.227,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.219,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.213,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.231,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3479cd8c3e3799b6a7116ad3a9ad601407ea7fa597c54c015116674f908ba9a2\n",
+      "duration_seconds": 0.217,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3479cd8c3e3799b6a7116ad3a9ad601407ea7fa597c54c015116674f908ba9a2\n",
+      "duration_seconds": 0.223,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3479cd8c3e3799b6a7116ad3a9ad601407ea7fa597c54c015116674f908ba9a2\n",
+      "duration_seconds": 0.209,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-B",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3479cd8c3e3799b6a7116ad3a9ad601407ea7fa597c54c015116674f908ba9a2\n",
+      "duration_seconds": 0.233,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.229,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.251,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.229,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.238,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9650bd08f994403c11d7f3567d8ec04c9b32b87a802a79927466f8abd3b28651\n",
+      "duration_seconds": 0.202,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9650bd08f994403c11d7f3567d8ec04c9b32b87a802a79927466f8abd3b28651\n",
+      "duration_seconds": 0.228,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9650bd08f994403c11d7f3567d8ec04c9b32b87a802a79927466f8abd3b28651\n",
+      "duration_seconds": 0.236,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC30",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 9650bd08f994403c11d7f3567d8ec04c9b32b87a802a79927466f8abd3b28651\n",
+      "duration_seconds": 0.246,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6a1709d01ea68d7f7c1fb24e3a3fcd44123ec54e247018ac7bdf38b3a2085afc\n",
+      "duration_seconds": 0.206,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6a1709d01ea68d7f7c1fb24e3a3fcd44123ec54e247018ac7bdf38b3a2085afc\n",
+      "duration_seconds": 0.207,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6a1709d01ea68d7f7c1fb24e3a3fcd44123ec54e247018ac7bdf38b3a2085afc\n",
+      "duration_seconds": 0.219,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC40",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6a1709d01ea68d7f7c1fb24e3a3fcd44123ec54e247018ac7bdf38b3a2085afc\n",
+      "duration_seconds": 0.226,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6407ed85d2d1db63fdd657d9fdb4181c82299e289b3bb2dd5e8613f86aab2d56\n",
+      "duration_seconds": 0.239,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6407ed85d2d1db63fdd657d9fdb4181c82299e289b3bb2dd5e8613f86aab2d56\n",
+      "duration_seconds": 0.234,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6407ed85d2d1db63fdd657d9fdb4181c82299e289b3bb2dd5e8613f86aab2d56\n",
+      "duration_seconds": 0.232,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC50",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6407ed85d2d1db63fdd657d9fdb4181c82299e289b3bb2dd5e8613f86aab2d56\n",
+      "duration_seconds": 0.229,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: b9aa83c1812a7e7d81d8e808c60de498e355384303bc02ca646f9fefdca260c2\n",
+      "duration_seconds": 0.202,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: b9aa83c1812a7e7d81d8e808c60de498e355384303bc02ca646f9fefdca260c2\n",
+      "duration_seconds": 0.209,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: b9aa83c1812a7e7d81d8e808c60de498e355384303bc02ca646f9fefdca260c2\n",
+      "duration_seconds": 0.221,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC60",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: b9aa83c1812a7e7d81d8e808c60de498e355384303bc02ca646f9fefdca260c2\n",
+      "duration_seconds": 0.229,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "ip",
+        "-4",
+        "-o",
+        "addr",
+        "show",
+        "eth0"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6c52194f3a99abc7aa9b6768c04b5a656707430171e67131dd9c20bca0ad8808\n",
+      "duration_seconds": 0.209,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "default"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6c52194f3a99abc7aa9b6768c04b5a656707430171e67131dd9c20bca0ad8808\n",
+      "duration_seconds": 0.211,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@10.10.70.10",
+        "web.hospital.test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6c52194f3a99abc7aa9b6768c04b5a656707430171e67131dd9c20bca0ad8808\n",
+      "duration_seconds": 0.218,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Staff",
+      "command": [
+        "cat",
+        "/tmp/dhclient.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6c52194f3a99abc7aa9b6768c04b5a656707430171e67131dd9c20bca0ad8808\n",
+      "duration_seconds": 0.234,
+      "group": "DHCP-DNS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Core",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "MAIN-V100-IN"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 71aac30dcb08d5009f52b483a57634d96d8277246b5cc774080cb16a2ca21704\n",
+      "duration_seconds": 0.221,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "DBP-GW",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "DBP-V100-IN"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 14bfa1f3d560a8f54a3a72b6fabbef6468efe79ee83c8f570331eb4b0d2fe06d\n",
+      "duration_seconds": 0.227,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": [
+        "iptables",
+        "-nvx",
+        "-L",
+        "BHTQ-V100-IN"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 8df8d101d38c918ba31e6ca8e043a3b17fff6262214e3b394a42445511384db8\n",
+      "duration_seconds": 0.235,
+      "group": "TC05",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10/hospital-ids-test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.261,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10/hospital-ips-test"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.241,
+      "group": "IDS-IPS",
+      "expected": "blocked/nonzero",
+      "description": "",
+      "status": "PASS"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://10.10.80.10/"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.226,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-FW",
+      "command": [
+        "cat",
+        "/tmp/suricata/fast.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.221,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-FW",
+      "command": [
+        "cat",
+        "/tmp/suricata/fast.log"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.236,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-FW",
+      "command": [
+        "tail",
+        "-n",
+        "200",
+        "/tmp/suricata/eve.json"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.23,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-Guest",
+      "command": [
+        "dig",
+        "+short",
+        "+tries=1",
+        "+time=1",
+        "@192.0.2.100",
+        "phishing-test.invalid"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: ea50c305a028431093de399a81a4f1211d55bece1381f4da482776cb902a211b\n",
+      "duration_seconds": 0.232,
+      "group": "IDS-IPS",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC10-A",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 3afe23b308ce7348f5498437ec92555ea1c0655f3780182ccd36dac3a69d4cb6\n",
+      "duration_seconds": 0.226,
+      "group": "ISP-PBR",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "Main-PC20",
+      "command": [
+        "curl",
+        "--noproxy",
+        "*",
+        "--connect-timeout",
+        "2",
+        "--max-time",
+        "3",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "http://192.0.2.100"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 52ffdfa23c55571af84e1e304eb5954c4e37a518580662af9501842bff603a8f\n",
+      "duration_seconds": 0.245,
+      "group": "ISP-PBR",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "down"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 00d83213623922199cb1480a907cc399cd9c3a60ead0ab05bbf233dec7948c04\n",
+      "duration_seconds": 0.213,
+      "group": "ISP-FAILOVER",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "node": "ISP1",
+      "command": [
+        "ip",
+        "link",
+        "set",
+        "eth1",
+        "up"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 00d83213623922199cb1480a907cc399cd9c3a60ead0ab05bbf233dec7948c04\n",
+      "duration_seconds": 0.238,
+      "group": "ISP-RECOVERY",
+      "expected": "success",
+      "description": "",
+      "status": "FAIL"
+    },
+    {
+      "group": "HARNESS",
+      "status": "FAIL",
+      "error": "RuntimeError('Edge health failed to converge to [True, True]')"
+    }
+  ],
+  "captures": {
+    "Main-FW-iptables-save--c": {
+      "node": "Main-FW",
+      "command": [
+        "iptables-save",
+        "-c"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.218
+    },
+    "Main-FW-tail--n-300-/tmp/suricata/eve.json": {
+      "node": "Main-FW",
+      "command": [
+        "tail",
+        "-n",
+        "300",
+        "/tmp/suricata/eve.json"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.213
+    },
+    "Main-FW-cat-/tmp/suricata/hospital.rules": {
+      "node": "Main-FW",
+      "command": [
+        "cat",
+        "/tmp/suricata/hospital.rules"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 759efd7d22337e9ff1587bb5837579ac17199acd67072617dbb463f8ecd4f1fd\n",
+      "duration_seconds": 0.237
+    },
+    "Main-Edge-conntrack--L": {
+      "node": "Main-Edge",
+      "command": [
+        "conntrack",
+        "-L"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 120a7a766c9a135615063c3246b084af69304adae0b701b76e298c9143565b09\n",
+      "duration_seconds": 0.213
+    },
+    "Main-Edge-ip-rule-show": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "rule",
+        "show"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 120a7a766c9a135615063c3246b084af69304adae0b701b76e298c9143565b09\n",
+      "duration_seconds": 0.277
+    },
+    "Main-Edge-ip-route-show-table-101": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "table",
+        "101"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 120a7a766c9a135615063c3246b084af69304adae0b701b76e298c9143565b09\n",
+      "duration_seconds": 0.208
+    },
+    "Main-Edge-ip-route-show-table-102": {
+      "node": "Main-Edge",
+      "command": [
+        "ip",
+        "route",
+        "show",
+        "table",
+        "102"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 120a7a766c9a135615063c3246b084af69304adae0b701b76e298c9143565b09\n",
+      "duration_seconds": 0.224
+    },
+    "Main-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "Main-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: dc847831dd587c436106eb222c7321ca1eeab2bf9cc9c2dd4f9a38ee8a320e76\n",
+      "duration_seconds": 0.213
+    },
+    "DBP-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "DBP-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 6fcfb2841dff2205fa43e68896020014bce8daf0ef52bcad580dbe93070b0719\n",
+      "duration_seconds": 0.217
+    },
+    "BHTQ-Infra-cat-/var/lib/misc/dnsmasq.leases": {
+      "node": "BHTQ-Infra",
+      "command": [
+        "cat",
+        "/var/lib/misc/dnsmasq.leases"
+      ],
+      "returncode": 1,
+      "output": "Error: No such container: 390d3553878b18db7f1e5b8a1f554174d74e37f073cb01a1c2819ab1784acfd3\n",
+      "duration_seconds": 0.218
+    }
+  }
+}

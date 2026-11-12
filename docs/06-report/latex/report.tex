@@ -2357,26 +2357,26 @@ Main-PC10-B & 10.10.10.8 & ping & allow \\
 \end{longtable}
 }
 
-Trích nguyên văn kết quả CLI đã lưu:
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC01:
+Main-PC10-A ping Main-PC10-B (10.10.10.7), nhận đủ 4/4 gói, không mất
+gói.}]{assets/tc01-a-to-b.png}
+\caption{TC01: Main-PC10-A ping Main-PC10-B (10.10.10.7), nhận đủ 4/4
+gói, không mất gói.}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ping 10.10.10.7}
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC01:
+Main-PC10-B ping Main-PC10-A (10.10.10.8), nhận đủ 4/4 gói, không mất
+gói.}]{assets/tc01-b-to-a.png}
+\caption{TC01: Main-PC10-B ping Main-PC10-A (10.10.10.8), nhận đủ 4/4
+gói, không mất gói.}
+\end{figure}
 
-\NormalTok{Pinging 10.10.10.7 with 32 bytes of data:}
-
-\NormalTok{Reply from 10.10.10.7: bytes=32 time\textless{}1ms TTL=128}
-\NormalTok{Reply from 10.10.10.7: bytes=32 time\textless{}1ms TTL=128}
-\NormalTok{Reply from 10.10.10.7: bytes=32 time=10ms TTL=128}
-\NormalTok{Reply from 10.10.10.7: bytes=32 time\textless{}1ms TTL=128}
-
-\NormalTok{Ping statistics for 10.10.10.7:}
-\NormalTok{    Packets: Sent = 4, Received = 4, Lost = 0 (0\% loss),}
-\end{Highlighting}
-\end{Shaded}
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản
-trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+Kết quả hai chiều cho thấy hai máy trạm trong cùng VLAN10 liên lạc thành
+công, với tỷ lệ mất gói 0\% trong mỗi lượt ping.
 
 \subsubsection{TC02: quan sát đầu
 cuối}\label{tc02-quan-suxe1t-ux111ux1ea7u-cuux1ed1i}
@@ -2395,26 +2395,40 @@ Main-PC10-A & http://10.10.70.11 & http & allow \\
 \end{longtable}
 }
 
-Trích nguyên văn kết quả CLI đã lưu:
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC02:
+Main-PC10-A thuộc VLAN10 ping Main-PC20 (10.10.20.7) thuộc VLAN20, nhận
+đủ 4/4 gói, không mất gói.}]{assets/tc02-v10-to-v20.png}
+\caption{TC02: Main-PC10-A thuộc VLAN10 ping Main-PC20 (10.10.20.7)
+thuộc VLAN20, nhận đủ 4/4 gói, không mất gói.}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ping 10.10.20.7}
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC02:
+Main-PC20 thuộc VLAN20 ping Main-PC10-A (10.10.10.8) thuộc VLAN10, nhận
+đủ 4/4 gói, không mất gói.}]{assets/tc02-v20-to-v10.png}
+\caption{TC02: Main-PC20 thuộc VLAN20 ping Main-PC10-A (10.10.10.8)
+thuộc VLAN10, nhận đủ 4/4 gói, không mất gói.}
+\end{figure}
 
-\NormalTok{Pinging 10.10.20.7 with 32 bytes of data:}
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC02:
+Main-PC10-A truy cập http://10.10.70.11 và nhận trang
+HOSPITAL-LAB-Main-HIS.}]{assets/tc02-his-http.png}
+\caption{TC02: Main-PC10-A truy cập http://10.10.70.11 và nhận trang
+HOSPITAL-LAB-Main-HIS.}
+\end{figure}
 
-\NormalTok{Reply from 10.10.20.7: bytes=32 time\textless{}1ms TTL=127}
-\NormalTok{Reply from 10.10.20.7: bytes=32 time\textless{}1ms TTL=127}
-\NormalTok{Reply from 10.10.20.7: bytes=32 time\textless{}1ms TTL=127}
-\NormalTok{Reply from 10.10.20.7: bytes=32 time\textless{}1ms TTL=127}
+Kết quả ping hai chiều cho thấy kết nối được phép giữa VLAN10 và VLAN20
+hoạt động, với tỷ lệ mất gói 0\% trong mỗi lượt. Trình duyệt trên
+Main-PC10-A hiển thị trang HOSPITAL-LAB-Main-HIS tại địa chỉ
+10.10.70.11, minh chứng máy trạm VLAN10 truy cập được dịch vụ HTTP đại
+diện HIS trong VLAN70.
 
-\NormalTok{Ping statistics for 10.10.20.7:}
-\NormalTok{    Packets: Sent = 4, Received = 4, Lost = 0 (0\% loss),}
-\end{Highlighting}
-\end{Shaded}
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản
-trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\clearpage
 
 \subsubsection{TC03: quan sát đầu
 cuối}\label{tc03-quan-suxe1t-ux111ux1ea7u-cuux1ed1i}
@@ -2434,26 +2448,21 @@ BHTQ-PC10 & 10.10.10.8 & ping & allow \\
 \end{longtable}
 }
 
-Trích nguyên văn kết quả CLI đã lưu:
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC03:
+từ Main ping DBP-PC10 (10.20.10.7) và BHTQ-PC10 (10.30.10.7); mỗi lượt
+nhận đủ 4/4 gói, tỷ lệ mất gói 0\%.}]{assets/tc03-main-to-aux.png}
+\caption{TC03: từ Main ping DBP-PC10 (10.20.10.7) và BHTQ-PC10
+(10.30.10.7); mỗi lượt nhận đủ 4/4 gói, tỷ lệ mất gói 0\%.}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ping 10.20.10.7}
+Ảnh minh chứng kết nối từ Main tới cả hai cơ sở phụ DBP và BHTQ. Hai
+lượt ping đều nhận đủ bốn gói phản hồi, cho thấy đường đi và đường trả
+lời ICMP giữa Main với từng cơ sở phụ hoạt động. Các lượt khởi tạo ping
+từ DBP/BHTQ về Main trong bảng được ghi nhận riêng trong hồ sơ kiểm thử.
 
-\NormalTok{Pinging 10.20.10.7 with 32 bytes of data:}
-
-\NormalTok{Reply from 10.20.10.7: bytes=32 time\textless{}1ms TTL=125}
-\NormalTok{Reply from 10.20.10.7: bytes=32 time=13ms TTL=125}
-\NormalTok{Reply from 10.20.10.7: bytes=32 time\textless{}1ms TTL=125}
-\NormalTok{Reply from 10.20.10.7: bytes=32 time=12ms TTL=125}
-
-\NormalTok{Ping statistics for 10.20.10.7:}
-\NormalTok{    Packets: Sent = 4, Received = 4, Lost = 0 (0\% loss),}
-\end{Highlighting}
-\end{Shaded}
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản
-trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\clearpage
 
 \subsubsection{TC04: quan sát đầu
 cuối}\label{tc04-quan-suxe1t-ux111ux1ea7u-cuux1ed1i}
@@ -2471,8 +2480,32 @@ Web-Lab & http://198.51.100.2:8080 & http & allow \\
 \end{longtable}
 }
 
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản
-trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC04:
+Main-PC10-A truy cập http://10.10.80.10 và nhận trang
+HOSPITAL-LAB-Main-WebDMZ.}]{assets/tc04-internal-webdmz.png}
+\caption{TC04: Main-PC10-A truy cập http://10.10.80.10 và nhận trang
+HOSPITAL-LAB-Main-WebDMZ.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC04:
+Web-Lab truy cập http://198.51.100.2:8080 và nhận trang
+HOSPITAL-LAB-Main-WebDMZ.}]{assets/tc04-external-webdmz.png}
+\caption{TC04: Web-Lab truy cập http://198.51.100.2:8080 và nhận trang
+HOSPITAL-LAB-Main-WebDMZ.}
+\end{figure}
+
+Trình duyệt trên Main-PC10-A hiển thị trang HOSPITAL-LAB-Main-WebDMZ tại
+địa chỉ 10.10.80.10, minh chứng máy trạm nội bộ truy cập được dịch vụ
+HTTP của server trong vùng DMZ. Từ phía ngoài, Web-Lab mở địa chỉ công
+bố 198.51.100.2:8080 và nhận cùng trang WebDMZ. Kết quả này phù hợp với
+cấu hình static PAT chuyển tiếp cổng 8080 trên địa chỉ ngoài của
+Main-Edge phía ISP2 tới cổng HTTP 80 của server 10.10.80.10.
+
+\clearpage
 
 \subsubsection{TC05: quan sát đầu
 cuối}\label{tc05-quan-suxe1t-ux111ux1ea7u-cuux1ed1i}
@@ -2497,26 +2530,64 @@ BHTQ-Guest & http://10.10.70.11 & http & deny \\
 \end{longtable}
 }
 
-Trích nguyên văn kết quả CLI đã lưu:
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio,alt={TC05:
+Guest ping PC nội bộ 10.10.10.8 không thành công; gateway 10.10.100.1
+trả Destination host unreachable, không nhận được gói Echo Reply từ
+đích.}]{assets/tc05-guest-ping-denied.png}
+\caption{TC05: Guest ping PC nội bộ 10.10.10.8 không thành công; gateway
+10.10.100.1 trả Destination host unreachable, không nhận được gói Echo
+Reply từ đích.}
+\end{figure}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ping 10.10.10.8}
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC05:
+Main-Guest truy cập HIS tại http://10.10.70.11 nhận Request
+Timeout.}]{assets/tc05-guest-his-denied.png}
+\caption{TC05: Main-Guest truy cập HIS tại http://10.10.70.11 nhận
+Request Timeout.}
+\end{figure}
 
-\NormalTok{Pinging 10.10.10.8 with 32 bytes of data:}
+Hai ảnh ghi nhận Guest không liên lạc được với PC nội bộ và không mở
+được dịch vụ HIS. Ảnh truy cập HIS từ Main-PC10-A ở TC02 là đối chứng
+cho thấy dịch vụ này hoạt động từ nguồn được phép. Việc xác định gói bị
+ACL chặn cần đối chiếu thêm cấu hình và counter, không chỉ dựa vào thông
+báo timeout.
 
-\NormalTok{Reply from 10.10.100.1: Destination host unreachable.}
-\NormalTok{Reply from 10.10.100.1: Destination host unreachable.}
-\NormalTok{Reply from 10.10.100.1: Destination host unreachable.}
-\NormalTok{Reply from 10.10.100.1: Destination host unreachable.}
+\clearpage
 
-\NormalTok{Ping statistics for 10.10.10.8:}
-\NormalTok{    Packets: Sent = 4, Received = 0, Lost = 4 (100\% loss),}
-\end{Highlighting}
-\end{Shaded}
+\paragraph{Đối chứng: Guest vẫn truy cập được
+Web-Lab}\label{ux111ux1ed1i-chux1ee9ng-guest-vux1eabn-truy-cux1eadp-ux111ux1b0ux1ee3c-web-lab}
 
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản
-trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC05:
+Main-Guest mở http://192.0.2.100 và nhận trang
+HOSPITAL-LAB-Web-Lab.}]{assets/tc05-guest-web-ip.png}
+\caption{TC05: Main-Guest mở http://192.0.2.100 và nhận trang
+HOSPITAL-LAB-Web-Lab.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\linewidth,height=\textheight,keepaspectratio,alt={TC05:
+Main-Guest mở http://web.hospital.test và nhận trang
+HOSPITAL-LAB-Web-Lab.}]{assets/tc05-guest-web-dns.png}
+\caption{TC05: Main-Guest mở http://web.hospital.test và nhận trang
+HOSPITAL-LAB-Web-Lab.}
+\end{figure}
+
+Main-Guest vẫn truy cập được Web-Lab bằng cả địa chỉ IP và tên miền. Hai
+kết quả đối chứng cho thấy kết nối HTTP ra mạng Internet mô phỏng và
+phân giải tên phục vụ lượt truy cập này hoạt động. Kết hợp với các thử
+nghiệm bị từ chối phía trên, kết quả phù hợp chính sách cách ly Guest
+khỏi mạng nghiệp vụ nhưng vẫn cho phép truy cập Web bên ngoài. Các ảnh
+minh chứng tại Main; kết quả DBP và BHTQ trong bảng được ghi nhận riêng
+trong hồ sơ kiểm thử.
+
+\clearpage
 
 \subsubsection{TC06: quan sát đầu
 cuối}\label{tc06-quan-suxe1t-ux111ux1ea7u-cuux1ed1i}
@@ -2924,16 +2995,16 @@ phát triển mà không nhầm với kết quả đã chứng minh.
 \subsection{Bàn giao và quy trình nộp
 (Step7)}\label{buxe0n-giao-vuxe0-quy-truxecnh-nux1ed9p-step7}
 
-Bộ bàn giao gồm project .gns3, module MPLS L3VPN và evidence28+28, mô
-hình tổng .pkt, phụ lục kiểm thử Packet Tracer, Dockerfile/source cấu
-hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG,
-đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn
-Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung
-đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology;
-có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình
-GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker
-trước buổi demo; người nhận cần dựng image trước khi mở project trên
-GNS3 khác.
+Sản phẩm bàn giao của bài tập lớn gồm báo cáo PDF và mô hình mạng mô
+phỏng, thể hiện phương án thiết kế cho Main Site, DBP và BHTQ cùng kết
+quả kiểm thử. Mô hình Packet Tracer được sử dụng để kiểm tra cấu hình và
+các chức năng kết nối cơ bản; các mô hình GNS3 và MPLS bổ sung phần kiểm
+chứng tương ứng đã trình bày trong báo cáo. Các tệp cấu hình, sơ đồ mạng
+và hướng dẫn chạy được cung cấp kèm theo để hỗ trợ việc mở mô hình, đối
+chiếu thiết kế và tái hiện các thí nghiệm trong buổi trình bày. Trước
+khi nộp lên BKeL, nhóm cần kiểm tra tính thống nhất giữa báo cáo và mô
+hình, lưu cấu hình thiết bị và xác nhận các tệp bàn giao có thể mở được
+trên môi trường sử dụng để demo.
 
 Thông tin lớp L08, nhóm 2 và phân công BTL2 hai thành viên đã được cập
 nhật theo nhóm trưởng. Trước nộp, nhóm kiểm nhận xét và phê duyệt, file

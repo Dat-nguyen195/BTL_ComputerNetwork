@@ -798,23 +798,11 @@ Bốn lượt HTTP bổ sung gồm ba nguồn Main-PC10-A, DBP-Guest, BHTQ-Staff
 | Main-PC10-A | 10.10.10.7 | ping | allow |
 | Main-PC10-B | 10.10.10.8 | ping | allow |
 
-Trích nguyên văn kết quả CLI đã lưu:
+![TC01: Main-PC10-A ping Main-PC10-B (10.10.10.7), nhận đủ 4/4 gói, không mất gói.](../latex/assets/tc01-a-to-b.png){width=85%}
 
-```text
-ping 10.10.10.7
+![TC01: Main-PC10-B ping Main-PC10-A (10.10.10.8), nhận đủ 4/4 gói, không mất gói.](../latex/assets/tc01-b-to-a.png){width=85%}
 
-Pinging 10.10.10.7 with 32 bytes of data:
-
-Reply from 10.10.10.7: bytes=32 time<1ms TTL=128
-Reply from 10.10.10.7: bytes=32 time<1ms TTL=128
-Reply from 10.10.10.7: bytes=32 time=10ms TTL=128
-Reply from 10.10.10.7: bytes=32 time<1ms TTL=128
-
-Ping statistics for 10.10.10.7:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-```
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+Kết quả hai chiều cho thấy hai máy trạm trong cùng VLAN10 liên lạc thành công, với tỷ lệ mất gói 0% trong mỗi lượt ping.
 
 ### TC02: quan sát đầu cuối
 
@@ -824,23 +812,15 @@ Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là 
 | Main-PC20 | 10.10.10.8 | ping | allow |
 | Main-PC10-A | http://10.10.70.11 | http | allow |
 
-Trích nguyên văn kết quả CLI đã lưu:
+![TC02: Main-PC10-A thuộc VLAN10 ping Main-PC20 (10.10.20.7) thuộc VLAN20, nhận đủ 4/4 gói, không mất gói.](../latex/assets/tc02-v10-to-v20.png){width=85%}
 
-```text
-ping 10.10.20.7
+![TC02: Main-PC20 thuộc VLAN20 ping Main-PC10-A (10.10.10.8) thuộc VLAN10, nhận đủ 4/4 gói, không mất gói.](../latex/assets/tc02-v20-to-v10.png){width=85%}
 
-Pinging 10.10.20.7 with 32 bytes of data:
+![TC02: Main-PC10-A truy cập http://10.10.70.11 và nhận trang HOSPITAL-LAB-Main-HIS.](../latex/assets/tc02-his-http.png){width=85%}
 
-Reply from 10.10.20.7: bytes=32 time<1ms TTL=127
-Reply from 10.10.20.7: bytes=32 time<1ms TTL=127
-Reply from 10.10.20.7: bytes=32 time<1ms TTL=127
-Reply from 10.10.20.7: bytes=32 time<1ms TTL=127
+Kết quả ping hai chiều cho thấy kết nối được phép giữa VLAN10 và VLAN20 hoạt động, với tỷ lệ mất gói 0% trong mỗi lượt. Trình duyệt trên Main-PC10-A hiển thị trang HOSPITAL-LAB-Main-HIS tại địa chỉ 10.10.70.11, minh chứng máy trạm VLAN10 truy cập được dịch vụ HTTP đại diện HIS trong VLAN70.
 
-Ping statistics for 10.10.20.7:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-```
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\clearpage
 
 ### TC03: quan sát đầu cuối
 
@@ -851,23 +831,11 @@ Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là 
 | Main-PC10-A | 10.30.10.7 | ping | allow |
 | BHTQ-PC10 | 10.10.10.8 | ping | allow |
 
-Trích nguyên văn kết quả CLI đã lưu:
+![TC03: từ Main ping DBP-PC10 (10.20.10.7) và BHTQ-PC10 (10.30.10.7); mỗi lượt nhận đủ 4/4 gói, tỷ lệ mất gói 0%.](../latex/assets/tc03-main-to-aux.png){width=85%}
 
-```text
-ping 10.20.10.7
+Ảnh minh chứng kết nối từ Main tới cả hai cơ sở phụ DBP và BHTQ. Hai lượt ping đều nhận đủ bốn gói phản hồi, cho thấy đường đi và đường trả lời ICMP giữa Main với từng cơ sở phụ hoạt động. Các lượt khởi tạo ping từ DBP/BHTQ về Main trong bảng được ghi nhận riêng trong hồ sơ kiểm thử.
 
-Pinging 10.20.10.7 with 32 bytes of data:
-
-Reply from 10.20.10.7: bytes=32 time<1ms TTL=125
-Reply from 10.20.10.7: bytes=32 time=13ms TTL=125
-Reply from 10.20.10.7: bytes=32 time<1ms TTL=125
-Reply from 10.20.10.7: bytes=32 time=12ms TTL=125
-
-Ping statistics for 10.20.10.7:
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-```
-
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+\clearpage
 
 ### TC04: quan sát đầu cuối
 
@@ -876,7 +844,13 @@ Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là 
 | Main-PC10-A | http://10.10.80.10 | http | allow |
 | Web-Lab | http://198.51.100.2:8080 | http | allow |
 
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+![TC04: Main-PC10-A truy cập http://10.10.80.10 và nhận trang HOSPITAL-LAB-Main-WebDMZ.](../latex/assets/tc04-internal-webdmz.png){width=85%}
+
+![TC04: Web-Lab truy cập http://198.51.100.2:8080 và nhận trang HOSPITAL-LAB-Main-WebDMZ.](../latex/assets/tc04-external-webdmz.png){width=85%}
+
+Trình duyệt trên Main-PC10-A hiển thị trang HOSPITAL-LAB-Main-WebDMZ tại địa chỉ 10.10.80.10, minh chứng máy trạm nội bộ truy cập được dịch vụ HTTP của server trong vùng DMZ. Từ phía ngoài, Web-Lab mở địa chỉ công bố 198.51.100.2:8080 và nhận cùng trang WebDMZ. Kết quả này phù hợp với cấu hình static PAT chuyển tiếp cổng 8080 trên địa chỉ ngoài của Main-Edge phía ISP2 tới cổng HTTP 80 của server 10.10.80.10.
+
+\clearpage
 
 ### TC05: quan sát đầu cuối
 
@@ -892,23 +866,23 @@ Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là 
 | BHTQ-PC10 | http://10.10.70.11 | http | allow |
 | BHTQ-Guest | http://10.10.70.11 | http | deny |
 
-Trích nguyên văn kết quả CLI đã lưu:
+![TC05: Guest ping PC nội bộ 10.10.10.8 không thành công; gateway 10.10.100.1 trả Destination host unreachable, không nhận được gói Echo Reply từ đích.](../latex/assets/tc05-guest-ping-denied.png){width=80%}
 
-```text
-ping 10.10.10.8
+![TC05: Main-Guest truy cập HIS tại http://10.10.70.11 nhận Request Timeout.](../latex/assets/tc05-guest-his-denied.png){width=85%}
 
-Pinging 10.10.10.8 with 32 bytes of data:
+Hai ảnh ghi nhận Guest không liên lạc được với PC nội bộ và không mở được dịch vụ HIS. Ảnh truy cập HIS từ Main-PC10-A ở TC02 là đối chứng cho thấy dịch vụ này hoạt động từ nguồn được phép. Việc xác định gói bị ACL chặn cần đối chiếu thêm cấu hình và counter, không chỉ dựa vào thông báo timeout.
 
-Reply from 10.10.100.1: Destination host unreachable.
-Reply from 10.10.100.1: Destination host unreachable.
-Reply from 10.10.100.1: Destination host unreachable.
-Reply from 10.10.100.1: Destination host unreachable.
+\clearpage
 
-Ping statistics for 10.10.10.8:
-    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
-```
+#### Đối chứng: Guest vẫn truy cập được Web-Lab
 
-Các quan sát thuộc lần kiểm sau mở lại ngày 04/11/2026. Bảng là bản trình bày evidence đã lưu; hồ sơ chưa có ảnh chụp giao diện cho từng ca.
+![TC05: Main-Guest mở http://192.0.2.100 và nhận trang HOSPITAL-LAB-Web-Lab.](../latex/assets/tc05-guest-web-ip.png){width=85%}
+
+![TC05: Main-Guest mở http://web.hospital.test và nhận trang HOSPITAL-LAB-Web-Lab.](../latex/assets/tc05-guest-web-dns.png){width=85%}
+
+Main-Guest vẫn truy cập được Web-Lab bằng cả địa chỉ IP và tên miền. Hai kết quả đối chứng cho thấy kết nối HTTP ra mạng Internet mô phỏng và phân giải tên phục vụ lượt truy cập này hoạt động. Kết hợp với các thử nghiệm bị từ chối phía trên, kết quả phù hợp chính sách cách ly Guest khỏi mạng nghiệp vụ nhưng vẫn cho phép truy cập Web bên ngoài. Các ảnh minh chứng tại Main; kết quả DBP và BHTQ trong bảng được ghi nhận riêng trong hồ sơ kiểm thử.
+
+\clearpage
 
 ### TC06: quan sát đầu cuối
 
@@ -1099,7 +1073,7 @@ Kết quả mô phỏng là cơ sở kiểm chứng chức năng và hoàn thi�
 ## Bàn giao và quy trình nộp (Step7)
 
 
-Bộ bàn giao gồm project .gns3, module MPLS L3VPN và evidence28+28, mô hình tổng .pkt, phụ lục kiểm thử Packet Tracer, Dockerfile/source cấu hình để dựng lại, bộ Cisco tham chiếu, file TV2 gốc, sơ đồ drawio/SVG, đầu vào CSV, công cụ tính tải/kiểm tra, báo cáo PDF cùng nguồn Markdown/LaTeX và evidence JSON/log kèm SHA256. Bộ LaTeX chứa nội dung đầy đủ, logo Bách Khoa do người dùng cung cấp trên bìa và hình topology; có thể biên dịch trực tiếp bằng XeLaTeX. Không cần IOS image cho mô hình GNS3 nguồn mở. Chạy lại lệnh hướng dẫn trên môi trường Linux có Docker trước buổi demo; người nhận cần dựng image trước khi mở project trên GNS3 khác.
+Sản phẩm bàn giao của bài tập lớn gồm báo cáo PDF và mô hình mạng mô phỏng, thể hiện phương án thiết kế cho Main Site, DBP và BHTQ cùng kết quả kiểm thử. Mô hình Packet Tracer được sử dụng để kiểm tra cấu hình và các chức năng kết nối cơ bản; các mô hình GNS3 và MPLS bổ sung phần kiểm chứng tương ứng đã trình bày trong báo cáo. Các tệp cấu hình, sơ đồ mạng và hướng dẫn chạy được cung cấp kèm theo để hỗ trợ việc mở mô hình, đối chiếu thiết kế và tái hiện các thí nghiệm trong buổi trình bày. Trước khi nộp lên BKeL, nhóm cần kiểm tra tính thống nhất giữa báo cáo và mô hình, lưu cấu hình thiết bị và xác nhận các tệp bàn giao có thể mở được trên môi trường sử dụng để demo.
 
 Thông tin lớp L08, nhóm 2 và phân công BTL2 hai thành viên đã được cập nhật theo nhóm trưởng. Trước nộp, nhóm kiểm nhận xét và phê duyệt, file project/PDF đúng checksum, sau đó tự nộp BKeL và lưu biên nhận. Chưa thực hiện nộp BKeL, không tạo biên nhận hoặc chữ ký giả. Những việc ngoài workspace như khảo sát hiện trường, báo giá/SLA, đo RF/quang, license và triển khai thật vẫn phải có bằng chứng riêng.
 

@@ -17,6 +17,14 @@ LATEX_FILES = ('report.tex', 'header.tex', 'cover.tex', 'metadata.tex', 'README.
                'fonts.tex', '.latexmkrc', 'assets/logo-bach-khoa.png',
                'assets/topology.pdf', 'assets/physical-main.pdf', 'assets/physical-aux.pdf')
 LATEX_FILES += tuple('assets/'+n+'.pdf' for n in NAMES)
+LATEX_FILES += ('assets/tc01-a-to-b.png', 'assets/tc01-b-to-a.png')
+LATEX_FILES += ('assets/tc02-v10-to-v20.png', 'assets/tc02-v20-to-v10.png')
+LATEX_FILES += ('assets/tc02-his-http.png',)
+LATEX_FILES += ('assets/tc03-main-to-aux.png',)
+LATEX_FILES += ('assets/tc04-internal-webdmz.png',)
+LATEX_FILES += ('assets/tc04-external-webdmz.png',)
+LATEX_FILES += ('assets/tc05-guest-ping-denied.png', 'assets/tc05-guest-his-denied.png',
+                'assets/tc05-guest-web-ip.png', 'assets/tc05-guest-web-dns.png')
 
 
 def main():
