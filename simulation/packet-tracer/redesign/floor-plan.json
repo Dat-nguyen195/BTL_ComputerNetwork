@@ -1,0 +1,937 @@
+{
+  "schema": 1,
+  "scope": "Native representative topology, production port/AP/camera quantities remain in design; no per-floor VLAN requirement",
+  "canvas": [
+    3600,
+    2600
+  ],
+  "existing_node_names_preserved": true,
+  "positions": {
+    "ISP1": [
+      1450,
+      220
+    ],
+    "ISP2": [
+      2150,
+      220
+    ],
+    "INET-Core": [
+      1800,
+      125
+    ],
+    "Web-Access": [
+      1800,
+      60
+    ],
+    "Web-Lab": [
+      2100,
+      60
+    ],
+    "Main-Edge": [
+      1800,
+      410
+    ],
+    "Main-FW": [
+      1800,
+      570
+    ],
+    "DMZ-Access": [
+      2110,
+      570
+    ],
+    "Main-WebDMZ": [
+      2040,
+      700
+    ],
+    "Main-ProxyDMZ": [
+      2200,
+      700
+    ],
+    "Main-Core": [
+      1800,
+      770
+    ],
+    "Main-Access": [
+      1800,
+      910
+    ],
+    "Main-GW": [
+      2300,
+      1520
+    ],
+    "Main-Infra": [
+      1430,
+      1080
+    ],
+    "Main-HIS": [
+      1610,
+      1080
+    ],
+    "Main-PACS": [
+      1790,
+      1080
+    ],
+    "Main-LIS": [
+      1970,
+      1080
+    ],
+    "Main-CRM": [
+      1430,
+      1200
+    ],
+    "Main-DB": [
+      1610,
+      1200
+    ],
+    "Main-Backup": [
+      1790,
+      1200
+    ],
+    "Main-Monitor": [
+      1970,
+      1200
+    ],
+    "Main-Admin": [
+      1440,
+      1370
+    ],
+    "Main-NVR": [
+      1610,
+      1370
+    ],
+    "DBP-GW": [
+      760,
+      1800
+    ],
+    "DBP-Access": [
+      760,
+      1910
+    ],
+    "DBP-Infra": [
+      300,
+      1820
+    ],
+    "DBP-Local": [
+      460,
+      1820
+    ],
+    "DBP-NVR": [
+      300,
+      1940
+    ],
+    "BHTQ-GW": [
+      2840,
+      1800
+    ],
+    "BHTQ-Access": [
+      2840,
+      1910
+    ],
+    "BHTQ-Infra": [
+      3140,
+      1820
+    ],
+    "BHTQ-Local": [
+      3300,
+      1820
+    ],
+    "BHTQ-NVR": [
+      3300,
+      1940
+    ],
+    "Main-Guest": [
+      350,
+      610
+    ],
+    "Main-Staff": [
+      350,
+      790
+    ],
+    "DBP-Guest": [
+      500,
+      2160
+    ],
+    "DBP-Staff": [
+      500,
+      2400
+    ],
+    "BHTQ-Guest": [
+      3090,
+      2160
+    ],
+    "BHTQ-Staff": [
+      3090,
+      2400
+    ],
+    "Main-PC10-A": [
+      220,
+      515
+    ],
+    "Main-Guest-AP": [
+      470,
+      570
+    ],
+    "Main-A-F1-CAM": [
+      720,
+      515
+    ],
+    "Main-A-F1-SW": [
+      1050,
+      590
+    ],
+    "Main-PC10-B": [
+      220,
+      695
+    ],
+    "Main-Staff-AP": [
+      470,
+      750
+    ],
+    "Main-A-F2-CAM": [
+      720,
+      695
+    ],
+    "Main-A-F2-SW": [
+      1050,
+      770
+    ],
+    "Main-PC20": [
+      220,
+      875
+    ],
+    "Main-A-F3-AP": [
+      470,
+      930
+    ],
+    "Main-A-F3-CAM": [
+      720,
+      875
+    ],
+    "Main-A-F3-SW": [
+      1050,
+      950
+    ],
+    "Main-PC30": [
+      220,
+      1055
+    ],
+    "Main-A-F4-AP": [
+      470,
+      1110
+    ],
+    "Main-A-F4-CAM": [
+      720,
+      1055
+    ],
+    "Main-A-F4-SW": [
+      1050,
+      1130
+    ],
+    "Main-PC40": [
+      220,
+      1235
+    ],
+    "Main-A-F5-AP": [
+      470,
+      1290
+    ],
+    "Main-A-F5-CAM": [
+      720,
+      1235
+    ],
+    "Main-A-F5-SW": [
+      1050,
+      1310
+    ],
+    "Main-PC50": [
+      3320,
+      515
+    ],
+    "Main-B-F1-AP": [
+      3070,
+      570
+    ],
+    "Main-B-F1-CAM": [
+      2820,
+      515
+    ],
+    "Main-B-F1-SW": [
+      2510,
+      590
+    ],
+    "Main-PC60": [
+      3320,
+      695
+    ],
+    "Main-B-F2-AP": [
+      3070,
+      750
+    ],
+    "Main-B-F2-CAM": [
+      2820,
+      695
+    ],
+    "Main-B-F2-SW": [
+      2510,
+      770
+    ],
+    "Main-B-F3-PC": [
+      3320,
+      875
+    ],
+    "Main-B-F3-AP": [
+      3070,
+      930
+    ],
+    "Main-B-F3-CAM": [
+      2820,
+      875
+    ],
+    "Main-B-F3-SW": [
+      2510,
+      950
+    ],
+    "Main-B-F4-PC": [
+      3320,
+      1055
+    ],
+    "Main-B-F4-AP": [
+      3070,
+      1110
+    ],
+    "Main-B-F4-CAM": [
+      2820,
+      1055
+    ],
+    "Main-B-F4-SW": [
+      2510,
+      1130
+    ],
+    "Main-B-F5-PC": [
+      3320,
+      1235
+    ],
+    "Main-B-F5-AP": [
+      3070,
+      1290
+    ],
+    "Main-B-F5-CAM": [
+      2820,
+      1235
+    ],
+    "Main-B-F5-SW": [
+      2510,
+      1310
+    ],
+    "DBP-PC10": [
+      250,
+      2100
+    ],
+    "DBP-PC20": [
+      250,
+      2175
+    ],
+    "DBP-Guest-AP": [
+      530,
+      2210
+    ],
+    "DBP-F1-CAM": [
+      810,
+      2220
+    ],
+    "DBP-F1-SW": [
+      1200,
+      2140
+    ],
+    "DBP-PC30": [
+      250,
+      2340
+    ],
+    "DBP-Staff-AP": [
+      530,
+      2450
+    ],
+    "DBP-F2-CAM": [
+      810,
+      2460
+    ],
+    "DBP-F2-SW": [
+      1200,
+      2380
+    ],
+    "BHTQ-PC10": [
+      3300,
+      2100
+    ],
+    "BHTQ-PC20": [
+      3300,
+      2175
+    ],
+    "BHTQ-Guest-AP": [
+      3020,
+      2210
+    ],
+    "BHTQ-F1-CAM": [
+      2740,
+      2220
+    ],
+    "BHTQ-F1-SW": [
+      2350,
+      2140
+    ],
+    "BHTQ-PC30": [
+      3300,
+      2340
+    ],
+    "BHTQ-Staff-AP": [
+      3020,
+      2450
+    ],
+    "BHTQ-F2-CAM": [
+      2740,
+      2460
+    ],
+    "BHTQ-F2-SW": [
+      2350,
+      2380
+    ],
+    "Main-A-DIST": [
+      1200,
+      910
+    ],
+    "Main-B-DIST": [
+      2400,
+      910
+    ],
+    "Main-IoTMgmt": [
+      1810,
+      1370
+    ],
+    "DBP-IoTMgmt": [
+      460,
+      1940
+    ],
+    "BHTQ-IoTMgmt": [
+      3140,
+      1940
+    ]
+  },
+  "floors": [
+    {
+      "id": "MAIN-A-F1",
+      "site": "Main",
+      "building": "A",
+      "floor": 1,
+      "switch": "Main-A-F1-SW",
+      "distribution": "Main-A-DIST",
+      "distribution_port": "FastEthernet0/1",
+      "vlan": 10,
+      "pcs": [
+        {
+          "node": "Main-PC10-A",
+          "vlan": 10,
+          "old_switch_port": 9,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-Guest-AP",
+      "ap_new": false,
+      "ap_vlan": 100,
+      "ap_old_port": 20,
+      "camera": "Main-A-F1-CAM",
+      "camera_ip": "10.10.110.100",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        100,
+        470,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-A-F2",
+      "site": "Main",
+      "building": "A",
+      "floor": 2,
+      "switch": "Main-A-F2-SW",
+      "distribution": "Main-A-DIST",
+      "distribution_port": "FastEthernet0/2",
+      "vlan": 10,
+      "pcs": [
+        {
+          "node": "Main-PC10-B",
+          "vlan": 10,
+          "old_switch_port": 10,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-Staff-AP",
+      "ap_new": false,
+      "ap_vlan": 120,
+      "ap_old_port": 21,
+      "camera": "Main-A-F2-CAM",
+      "camera_ip": "10.10.110.101",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        100,
+        650,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-A-F3",
+      "site": "Main",
+      "building": "A",
+      "floor": 3,
+      "switch": "Main-A-F3-SW",
+      "distribution": "Main-A-DIST",
+      "distribution_port": "FastEthernet0/3",
+      "vlan": 20,
+      "pcs": [
+        {
+          "node": "Main-PC20",
+          "vlan": 20,
+          "old_switch_port": 11,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-A-F3-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-A-F3-CAM",
+      "camera_ip": "10.10.110.102",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        100,
+        830,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-A-F4",
+      "site": "Main",
+      "building": "A",
+      "floor": 4,
+      "switch": "Main-A-F4-SW",
+      "distribution": "Main-A-DIST",
+      "distribution_port": "FastEthernet0/4",
+      "vlan": 30,
+      "pcs": [
+        {
+          "node": "Main-PC30",
+          "vlan": 30,
+          "old_switch_port": 12,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-A-F4-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-A-F4-CAM",
+      "camera_ip": "10.10.110.103",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        100,
+        1010,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-A-F5",
+      "site": "Main",
+      "building": "A",
+      "floor": 5,
+      "switch": "Main-A-F5-SW",
+      "distribution": "Main-A-DIST",
+      "distribution_port": "FastEthernet0/5",
+      "vlan": 40,
+      "pcs": [
+        {
+          "node": "Main-PC40",
+          "vlan": 40,
+          "old_switch_port": 13,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-A-F5-AP",
+      "ap_new": true,
+      "ap_vlan": 100,
+      "ap_old_port": null,
+      "camera": "Main-A-F5-CAM",
+      "camera_ip": "10.10.110.104",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        100,
+        1190,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-B-F1",
+      "site": "Main",
+      "building": "B",
+      "floor": 1,
+      "switch": "Main-B-F1-SW",
+      "distribution": "Main-B-DIST",
+      "distribution_port": "FastEthernet0/1",
+      "vlan": 50,
+      "pcs": [
+        {
+          "node": "Main-PC50",
+          "vlan": 50,
+          "old_switch_port": 18,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-B-F1-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-B-F1-CAM",
+      "camera_ip": "10.10.110.105",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        2500,
+        470,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-B-F2",
+      "site": "Main",
+      "building": "B",
+      "floor": 2,
+      "switch": "Main-B-F2-SW",
+      "distribution": "Main-B-DIST",
+      "distribution_port": "FastEthernet0/2",
+      "vlan": 60,
+      "pcs": [
+        {
+          "node": "Main-PC60",
+          "vlan": 60,
+          "old_switch_port": 19,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "Main-B-F2-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-B-F2-CAM",
+      "camera_ip": "10.10.110.106",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        2500,
+        650,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-B-F3",
+      "site": "Main",
+      "building": "B",
+      "floor": 3,
+      "switch": "Main-B-F3-SW",
+      "distribution": "Main-B-DIST",
+      "distribution_port": "FastEthernet0/3",
+      "vlan": 10,
+      "pcs": [
+        {
+          "node": "Main-B-F3-PC",
+          "vlan": 10,
+          "old_switch_port": null,
+          "new_port": "FastEthernet0/1",
+          "new": true
+        }
+      ],
+      "ap": "Main-B-F3-AP",
+      "ap_new": true,
+      "ap_vlan": 100,
+      "ap_old_port": null,
+      "camera": "Main-B-F3-CAM",
+      "camera_ip": "10.10.110.107",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        2500,
+        830,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-B-F4",
+      "site": "Main",
+      "building": "B",
+      "floor": 4,
+      "switch": "Main-B-F4-SW",
+      "distribution": "Main-B-DIST",
+      "distribution_port": "FastEthernet0/4",
+      "vlan": 20,
+      "pcs": [
+        {
+          "node": "Main-B-F4-PC",
+          "vlan": 20,
+          "old_switch_port": null,
+          "new_port": "FastEthernet0/1",
+          "new": true
+        }
+      ],
+      "ap": "Main-B-F4-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-B-F4-CAM",
+      "camera_ip": "10.10.110.108",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        2500,
+        1010,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "MAIN-B-F5",
+      "site": "Main",
+      "building": "B",
+      "floor": 5,
+      "switch": "Main-B-F5-SW",
+      "distribution": "Main-B-DIST",
+      "distribution_port": "FastEthernet0/5",
+      "vlan": 60,
+      "pcs": [
+        {
+          "node": "Main-B-F5-PC",
+          "vlan": 60,
+          "old_switch_port": null,
+          "new_port": "FastEthernet0/1",
+          "new": true
+        }
+      ],
+      "ap": "Main-B-F5-AP",
+      "ap_new": true,
+      "ap_vlan": 120,
+      "ap_old_port": null,
+      "camera": "Main-B-F5-CAM",
+      "camera_ip": "10.10.110.109",
+      "gateway": "10.10.110.1",
+      "manager": "Main-IoTMgmt",
+      "manager_ip": "10.10.110.12",
+      "box": [
+        2500,
+        1190,
+        1000,
+        170
+      ]
+    },
+    {
+      "id": "DBP-F1",
+      "site": "DBP",
+      "building": null,
+      "floor": 1,
+      "switch": "DBP-F1-SW",
+      "distribution": "DBP-Access",
+      "distribution_port": "FastEthernet0/12",
+      "vlan": 10,
+      "pcs": [
+        {
+          "node": "DBP-PC10",
+          "vlan": 10,
+          "old_switch_port": 3,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        },
+        {
+          "node": "DBP-PC20",
+          "vlan": 20,
+          "old_switch_port": 6,
+          "new_port": "FastEthernet0/4",
+          "new": false
+        }
+      ],
+      "ap": "DBP-Guest-AP",
+      "ap_new": false,
+      "ap_vlan": 100,
+      "ap_old_port": 9,
+      "camera": "DBP-F1-CAM",
+      "camera_ip": "10.20.110.100",
+      "gateway": "10.20.110.1",
+      "manager": "DBP-IoTMgmt",
+      "manager_ip": "10.20.110.12",
+      "box": [
+        100,
+        2050,
+        1300,
+        220
+      ]
+    },
+    {
+      "id": "DBP-F2",
+      "site": "DBP",
+      "building": null,
+      "floor": 2,
+      "switch": "DBP-F2-SW",
+      "distribution": "DBP-Access",
+      "distribution_port": "FastEthernet0/13",
+      "vlan": 30,
+      "pcs": [
+        {
+          "node": "DBP-PC30",
+          "vlan": 30,
+          "old_switch_port": 7,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "DBP-Staff-AP",
+      "ap_new": false,
+      "ap_vlan": 120,
+      "ap_old_port": 10,
+      "camera": "DBP-F2-CAM",
+      "camera_ip": "10.20.110.101",
+      "gateway": "10.20.110.1",
+      "manager": "DBP-IoTMgmt",
+      "manager_ip": "10.20.110.12",
+      "box": [
+        100,
+        2290,
+        1300,
+        220
+      ]
+    },
+    {
+      "id": "BHTQ-F1",
+      "site": "BHTQ",
+      "building": null,
+      "floor": 1,
+      "switch": "BHTQ-F1-SW",
+      "distribution": "BHTQ-Access",
+      "distribution_port": "FastEthernet0/12",
+      "vlan": 10,
+      "pcs": [
+        {
+          "node": "BHTQ-PC10",
+          "vlan": 10,
+          "old_switch_port": 3,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        },
+        {
+          "node": "BHTQ-PC20",
+          "vlan": 20,
+          "old_switch_port": 6,
+          "new_port": "FastEthernet0/4",
+          "new": false
+        }
+      ],
+      "ap": "BHTQ-Guest-AP",
+      "ap_new": false,
+      "ap_vlan": 100,
+      "ap_old_port": 9,
+      "camera": "BHTQ-F1-CAM",
+      "camera_ip": "10.30.110.100",
+      "gateway": "10.30.110.1",
+      "manager": "BHTQ-IoTMgmt",
+      "manager_ip": "10.30.110.12",
+      "box": [
+        2200,
+        2050,
+        1300,
+        220
+      ]
+    },
+    {
+      "id": "BHTQ-F2",
+      "site": "BHTQ",
+      "building": null,
+      "floor": 2,
+      "switch": "BHTQ-F2-SW",
+      "distribution": "BHTQ-Access",
+      "distribution_port": "FastEthernet0/13",
+      "vlan": 30,
+      "pcs": [
+        {
+          "node": "BHTQ-PC30",
+          "vlan": 30,
+          "old_switch_port": 7,
+          "new_port": "FastEthernet0/1",
+          "new": false
+        }
+      ],
+      "ap": "BHTQ-Staff-AP",
+      "ap_new": false,
+      "ap_vlan": 120,
+      "ap_old_port": 10,
+      "camera": "BHTQ-F2-CAM",
+      "camera_ip": "10.30.110.101",
+      "gateway": "10.30.110.1",
+      "manager": "BHTQ-IoTMgmt",
+      "manager_ip": "10.30.110.12",
+      "box": [
+        2200,
+        2290,
+        1300,
+        220
+      ]
+    }
+  ],
+  "managers": [
+    {
+      "node": "Main-IoTMgmt",
+      "ip": "10.10.110.12",
+      "gateway": "10.10.110.1",
+      "switch": "Main-Access",
+      "switch_port": "FastEthernet0/22",
+      "application_server_counted": false
+    },
+    {
+      "node": "DBP-IoTMgmt",
+      "ip": "10.20.110.12",
+      "gateway": "10.20.110.1",
+      "switch": "DBP-Access",
+      "switch_port": "FastEthernet0/11",
+      "application_server_counted": false
+    },
+    {
+      "node": "BHTQ-IoTMgmt",
+      "ip": "10.30.110.12",
+      "gateway": "10.30.110.1",
+      "switch": "BHTQ-Access",
+      "switch_port": "FastEthernet0/11",
+      "application_server_counted": false
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "commands": [
+    {
+      "time": "2026-11-12T04:17:32.459Z",
+      "command": "show running-config",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Building configuration...\n\nCurrent configuration : 12308 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\nno service timestamps debug datetime msec\nno service password-encryption\n!\nhostname Main-Core\n!\n!\n!\n!\n!\n!\n!\n!\nip cef\nno ipv6 cef\n!\n!\n!\n!\nlicense udi pid CISCO2911/K9 sn FTX1524H595-\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nspanning-tree mode pvst\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.10.255.1 255.255.255.255\n!\ninterface GigabitEthernet0/0\n description Trunk-to-TV2-Main-test-switch\n no ip address\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/0.10\n encapsulation dot1Q 10\n ip address 10.10.10.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V10-IN in\n!\ninterface GigabitEthernet0/0.20\n encapsulation dot1Q 20\n ip address 10.10.20.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V20-IN in\n!\ninterface GigabitEthernet0/0.30\n encapsulation dot1Q 30\n ip address 10.10.30.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V30-IN in\n!\ninterface GigabitEthernet0/0.40\n encapsulation dot1Q 40\n ip address 10.10.40.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V40-IN in\n!\ninterface GigabitEthernet0/0.50\n encapsulation dot1Q 50\n ip address 10.10.50.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V50-IN in\n!\ninterface GigabitEthernet0/0.60\n encapsulation dot1Q 60\n ip address 10.10.60.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V60-IN in\n!\ninterface GigabitEthernet0/0.70\n encapsulation dot1Q 70\n ip address 10.10.70.1 255.255.255.224\n ip access-group MAIN-SERVER-IN in\n!\ninterface GigabitEthernet0/0.90\n encapsulation dot1Q 90\n ip address 10.10.90.1 255.255.255.0\n ip access-group MAIN-MGMT-IN in\n!\ninterface GigabitEthernet0/0.100\n encapsulation dot1Q 100\n ip address 10.10.100.1 255.255.254.0\n ip helper-address 10.10.70.10\n ip access-group MAIN-V100-IN in\n!\ninterface GigabitEthernet0/0.110\n encapsulation dot1Q 110\n ip address 10.10.110.1 255.255.255.0\n ip access-group MAIN-CAMERA-IN in\n!\ninterface GigabitEthernet0/0.120\n encapsulation dot1Q 120\n ip address 10.10.120.1 255.255.255.0\n ip helper-address 10.10.70.10\n ip access-group MAIN-V120-IN in\n!\ninterface GigabitEthernet0/1\n description To-Main-GW-Gi0/0\n ip address 10.255.0.9 255.255.255.252\n ip ospf network point-to-point\n ip ospf priority 1\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/2\n description To-Main-FW-Gi0/0\n ip address 10.255.0.13 255.255.255.252\n duplex auto\n speed auto\n!\ninterface Vlan1\n no ip address\n!\nrouter ospf 1\n router-id 10.10.255.1\n log-adjacency-changes\n passive-interface default\n no passive-interface GigabitEthernet0/1\n network 10.10.0.0 0.0.255.255 area 0\n network 10.255.0.8 0.0.0.3 area 0\n!\nip classless\nip route 10.10.0.0 255.255.0.0 Null0 254\nip route 10.20.0.0 255.255.0.0 10.255.0.10 \nip route 10.30.0.0 255.255.0.0 10.255.0.10 \nip route 10.10.80.0 255.255.255.224 10.255.0.14 \nip route 0.0.0.0 0.0.0.0 GigabitEthernet0/2 10.255.0.14 \n!\nip flow-export version 9\n!\n!\nip access-list extended MAIN-V10-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.10.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.80.10 eq www\n permit icmp 10.10.10.0 0.0.0.127 10.10.10.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.10.0 0.0.0.127 any eq www\n permit tcp 10.10.10.0 0.0.0.127 any eq 443\n permit icmp 10.10.10.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V20-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.20.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.80.10 eq www\n permit icmp 10.10.20.0 0.0.0.127 10.10.10.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.10.20.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.20.10.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.30.10.0 0.0.0.127\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.20.0 0.0.0.127 any eq www\n permit tcp 10.10.20.0 0.0.0.127 any eq 443\n permit icmp 10.10.20.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V30-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.30.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.80.10 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq 11112\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.30.0 0.0.0.127 any eq www\n permit tcp 10.10.30.0 0.0.0.127 any eq 443\n permit icmp 10.10.30.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V40-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.40.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.40.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.80.10 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq 443\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.40.0 0.0.0.127 any eq www\n permit tcp 10.10.40.0 0.0.0.127 any eq 443\n permit icmp 10.10.40.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V50-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.50.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.50.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.50.0 0.0.0.127 any eq www\n permit tcp 10.10.50.0 0.0.0.127 any eq 443\n permit icmp 10.10.50.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V60-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.60.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.60.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.60.0 0.0.0.127 any eq www\n permit tcp 10.10.60.0 0.0.0.127 any eq 443\n permit icmp 10.10.60.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V100-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.100.0 0.0.1.255 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n permit tcp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.100.0 0.0.1.255 any eq www\n permit tcp 10.10.100.0 0.0.1.255 any eq 443\n permit icmp 10.10.100.0 0.0.1.255 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V120-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.120.0 0.0.0.255 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq www\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq 443\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq www\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq 443\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.120.0 0.0.0.255 any eq www\n permit tcp 10.10.120.0 0.0.0.255 any eq 443\n permit icmp 10.10.120.0 0.0.0.255 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-SERVER-IN\n permit udp host 10.10.70.10 eq bootps any eq bootps\n permit udp host 10.10.70.10 eq bootps any eq bootpc\n permit udp host 10.10.70.10 eq domain 10.0.0.0 0.255.255.255\n permit tcp 10.10.70.0 0.0.0.31 any established\n permit icmp 10.10.70.0 0.0.0.31 any echo-reply\n permit udp host 10.10.70.10 host 192.0.2.100 eq domain\n permit tcp host 10.10.70.10 host 192.0.2.100 eq domain\n permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 123\n permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 514\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n permit tcp 10.10.70.0 0.0.0.31 any eq www\n permit tcp 10.10.70.0 0.0.0.31 any eq 443\n deny ip any any\nip access-list extended MAIN-MGMT-IN\n permit ip host 10.10.90.11 any\n permit tcp 10.10.90.0 0.0.0.255 host 10.10.90.11 established\n permit icmp 10.10.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n deny ip any any\nip access-list extended MAIN-CAMERA-IN\n permit tcp 10.10.110.0 0.0.0.255 host 10.10.90.11 established\n permit icmp 10.10.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n permit udp 10.10.110.0 0.0.0.255 host 10.10.70.17 eq 123\n deny ip any any\n!\n!\n!\n!\n!\nline con 0\n logging synchronous\n!\nline aux 0\n!\nline vty 0 4\n login\n transport input none\n!\n!\n!\nend\n\n\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:32.907Z",
+      "command": "configure terminal",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Enter configuration commands, one per line.  End with CNTL/Z.\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:32.908Z",
+      "command": "ip domain-name hospital.test",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:32.909Z",
+      "command": "username labadmin privilege 1 secret HospitalLab2026Only",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:32.909Z",
+      "command": "crypto key generate rsa general-keys modulus 1024",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "The name for the keys will be: Main-Core.hospital.test\n\n% The key modulus size is 1024 bits\n% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]\n*Jan 1 10:3:48.878: %SSH-5-ENABLED: SSH 1.99 has been enabled\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.735Z",
+      "command": "ip ssh version 2",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.735Z",
+      "command": "ip ssh time-out 60",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.736Z",
+      "command": "ip ssh authentication-retries 2",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.736Z",
+      "command": "ip access-list standard MGMT-SSH-ONLY",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.737Z",
+      "command": "permit host 10.10.90.11",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.737Z",
+      "command": "deny any log",
+      "mode": "",
+      "result": {
+        "first": 2,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.743Z",
+      "command": "exit",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.743Z",
+      "command": "line vty 0 4",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.744Z",
+      "command": "login local",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.744Z",
+      "command": "transport input ssh",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.745Z",
+      "command": "access-class MGMT-SSH-ONLY in",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.745Z",
+      "command": "exec-timeout 5 0",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.746Z",
+      "command": "end",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.749Z",
+      "command": "write memory",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:17:57.749Z",
+      "command": "show ip ssh",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "SSH Enabled - version 2.0\nAuthentication timeout: 60 secs; Authentication retries: 2\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:25.475Z",
+      "command": "ip access-list standard MGMT-SSH-ONLY",
+      "mode": "global",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:25.476Z",
+      "command": "deny any",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:25.477Z",
+      "command": "end",
+      "mode": "",
+      "result": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:25.478Z",
+      "command": "write memory",
+      "mode": "enable",
+      "result": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "SSH-ADMIN-ALLOW",
+      "time": "2026-11-12T04:18:37.665Z",
+      "source": "Main-Admin",
+      "source_ip": "10.10.90.11",
+      "destination": "10.10.90.1",
+      "protocol": "SSH/TCP22",
+      "expected": "allow as privilege1",
+      "output": "ssh -l labadmin 10.10.90.1\n\nPassword: \n\n\n\nMain-Core>show ip interface brief\nInterface              IP-Address      OK? Method Status                Protocol \nGigabitEthernet0/0     unassigned      YES unset  up                    up \nGigabitEthernet0/0.10  10.10.10.1      YES manual up                    up \nGigabitEthernet0/0.20  10.10.20.1      YES manual up                    up \nGigabitEthernet0/0.30  10.10.30.1      YES manual up                    up \nGigabitEthernet0/0.40  10.10.40.1      YES manual up                    up \nGigabitEthernet0/0.50  10.10.50.1      YES manual up                    up \nGigabitEthernet0/0.60  10.10.60.1      YES manual up                    up \nGigabitEthernet0/0.70  10.10.70.1      YES manual up                    up \nGigabitEthernet0/0.90  10.10.90.1      YES manual up                    up \nGigabitEthernet0/0.100 10.10.100.1     YES manual up                    up \nGigabitEthernet0/0.110 10.10.110.1     YES manual up                    up \nGigabitEthernet0/0.120 10.10.120.1     YES manual up                    up \nGigabitEthernet0/1     10.255.0.9      YES manual up                    up \nGigabitEthernet0/2     10.255.0.13     YES manual up                    up \nLoopback0              10.10.255.1     YES manual up                    up \nVlan1                  unassigned      YES unset  up                    down\nMain-Core>"
+    },
+    {
+      "id": "TELNET-ADMIN-DENY",
+      "time": "2026-11-12T04:25:17.666Z",
+      "source": "Main-Admin",
+      "source_ip": "10.10.90.11",
+      "destination": "10.10.90.1",
+      "protocol": "Telnet/TCP23",
+      "command": "telnet 10.10.90.1",
+      "expected": "deny",
+      "output": "telnet 10.10.90.1\nTrying 10.10.90.1 ...Open\n\n[Connection to 10.10.90.1 closed by foreign host]\nC:\\>"
+    },
+    {
+      "id": "SSH-NONADMIN-DENY",
+      "time": "2026-11-12T04:25:22.666Z",
+      "source": "Main-PC10-A",
+      "source_ip": "10.10.10.8",
+      "destination": "10.10.90.1",
+      "protocol": "SSH/TCP22",
+      "command": "ssh -l labadmin 10.10.90.1",
+      "expected": "deny",
+      "output": "ssh -l labadmin 10.10.90.1\n\n% Connection timed out; remote host not responding\nC:\\>"
+    }
+  ],
+  "snapshots": [
+    {
+      "time": "2026-11-12T04:18:37.667Z",
+      "command": "show ssh",
+      "result": {
+        "first": 0,
+        "second": "Connection      Version Mode Encryption\t\tHmac\tState             Username\n0               1.99    IN   aes128-cbc      hmac-sha1     Session Started         labadmin\n0               1.99    OUT  aes128-cbc      hmac-sha1     Session Started         labadmin\n%No SSHv1 server connections running.\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:37.667Z",
+      "command": "show users",
+      "result": {
+        "first": 0,
+        "second": "    Line       User       Host(s)              Idle       Location\n 390 vty 0     labadmin   idle                 00:00:11 \n\n  Interface    User               Mode         Idle     Peer Address\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:37.667Z",
+      "command": "show access-lists MGMT-SSH-ONLY",
+      "result": {
+        "first": 0,
+        "second": "Standard IP access list MGMT-SSH-ONLY\n    permit host 10.10.90.11 (2 match(es))\n    deny any\n\n\n"
+      }
+    },
+    {
+      "time": "2026-11-12T04:18:37.668Z",
+      "command": "show ip ssh",
+      "result": {
+        "first": 0,
+        "second": "SSH Enabled - version 2.0\nAuthentication timeout: 60 secs; Authentication retries: 2\n\n"
+      }
+    },
+    {
+      "command": "show access-lists MGMT-SSH-ONLY",
+      "result": {
+        "first": 0,
+        "second": "Standard IP access list MGMT-SSH-ONLY\n    permit host 10.10.90.11 (3 match(es))\n    deny any\n\n\n"
+      }
+    },
+    {
+      "command": "show access-lists MGMT-SSH-ONLY",
+      "result": {
+        "first": 0,
+        "second": "Standard IP access list MGMT-SSH-ONLY\n    permit host 10.10.90.11 (3 match(es))\n    deny any\n\n\n"
+      }
+    },
+    {
+      "command": "show running-config",
+      "stage": "final",
+      "result": {
+        "first": 0,
+        "second": "Building configuration...\n\nCurrent configuration : 12592 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\nno service timestamps debug datetime msec\nno service password-encryption\n!\nhostname Main-Core\n!\n!\n!\n!\n!\n!\n!\n!\nip cef\nno ipv6 cef\n!\n!\n!\nusername labadmin secret 5 $1$mERr$klpgxUWe9hxy7VZwwglcV0\n!\n!\nlicense udi pid CISCO2911/K9 sn FTX1524H595-\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nip ssh version 2\nip ssh authentication-retries 2\nip ssh time-out 60\nip domain-name hospital.test\n!\n!\nspanning-tree mode pvst\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.10.255.1 255.255.255.255\n!\ninterface GigabitEthernet0/0\n description Trunk-to-TV2-Main-test-switch\n no ip address\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/0.10\n encapsulation dot1Q 10\n ip address 10.10.10.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V10-IN in\n!\ninterface GigabitEthernet0/0.20\n encapsulation dot1Q 20\n ip address 10.10.20.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V20-IN in\n!\ninterface GigabitEthernet0/0.30\n encapsulation dot1Q 30\n ip address 10.10.30.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V30-IN in\n!\ninterface GigabitEthernet0/0.40\n encapsulation dot1Q 40\n ip address 10.10.40.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V40-IN in\n!\ninterface GigabitEthernet0/0.50\n encapsulation dot1Q 50\n ip address 10.10.50.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V50-IN in\n!\ninterface GigabitEthernet0/0.60\n encapsulation dot1Q 60\n ip address 10.10.60.1 255.255.255.128\n ip helper-address 10.10.70.10\n ip access-group MAIN-V60-IN in\n!\ninterface GigabitEthernet0/0.70\n encapsulation dot1Q 70\n ip address 10.10.70.1 255.255.255.224\n ip access-group MAIN-SERVER-IN in\n!\ninterface GigabitEthernet0/0.90\n encapsulation dot1Q 90\n ip address 10.10.90.1 255.255.255.0\n ip access-group MAIN-MGMT-IN in\n!\ninterface GigabitEthernet0/0.100\n encapsulation dot1Q 100\n ip address 10.10.100.1 255.255.254.0\n ip helper-address 10.10.70.10\n ip access-group MAIN-V100-IN in\n!\ninterface GigabitEthernet0/0.110\n encapsulation dot1Q 110\n ip address 10.10.110.1 255.255.255.0\n ip access-group MAIN-CAMERA-IN in\n!\ninterface GigabitEthernet0/0.120\n encapsulation dot1Q 120\n ip address 10.10.120.1 255.255.255.0\n ip helper-address 10.10.70.10\n ip access-group MAIN-V120-IN in\n!\ninterface GigabitEthernet0/1\n description To-Main-GW-Gi0/0\n ip address 10.255.0.9 255.255.255.252\n ip ospf network point-to-point\n ip ospf priority 1\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/2\n description To-Main-FW-Gi0/0\n ip address 10.255.0.13 255.255.255.252\n duplex auto\n speed auto\n!\ninterface Vlan1\n no ip address\n!\nrouter ospf 1\n router-id 10.10.255.1\n log-adjacency-changes\n passive-interface default\n no passive-interface GigabitEthernet0/1\n network 10.10.0.0 0.0.255.255 area 0\n network 10.255.0.8 0.0.0.3 area 0\n!\nip classless\nip route 10.10.0.0 255.255.0.0 Null0 254\nip route 10.20.0.0 255.255.0.0 10.255.0.10 \nip route 10.30.0.0 255.255.0.0 10.255.0.10 \nip route 10.10.80.0 255.255.255.224 10.255.0.14 \nip route 0.0.0.0 0.0.0.0 GigabitEthernet0/2 10.255.0.14 \n!\nip flow-export version 9\n!\n!\nip access-list extended MAIN-V10-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.10.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.10.0 0.0.0.127 host 10.10.80.10 eq www\n permit icmp 10.10.10.0 0.0.0.127 10.10.10.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n permit icmp 10.10.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.10.0 0.0.0.127 any eq www\n permit tcp 10.10.10.0 0.0.0.127 any eq 443\n permit icmp 10.10.10.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V20-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.20.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.20.0 0.0.0.127 host 10.10.80.10 eq www\n permit icmp 10.10.20.0 0.0.0.127 10.10.10.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.10.20.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.20.10.0 0.0.0.127\n permit icmp 10.10.20.0 0.0.0.127 10.30.10.0 0.0.0.127\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.20.0 0.0.0.127 any eq www\n permit tcp 10.10.20.0 0.0.0.127 any eq 443\n permit icmp 10.10.20.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V30-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.30.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.80.10 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq www\n permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq 11112\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.30.0 0.0.0.127 any eq www\n permit tcp 10.10.30.0 0.0.0.127 any eq 443\n permit icmp 10.10.30.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V40-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.40.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.40.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.80.10 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq www\n permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq 443\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.40.0 0.0.0.127 any eq www\n permit tcp 10.10.40.0 0.0.0.127 any eq 443\n permit icmp 10.10.40.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V50-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.50.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.50.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.50.0 0.0.0.127 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.50.0 0.0.0.127 any eq www\n permit tcp 10.10.50.0 0.0.0.127 any eq 443\n permit icmp 10.10.50.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V60-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.60.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.60.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq www\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq 443\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq www\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq 443\n permit tcp 10.10.60.0 0.0.0.127 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.60.0 0.0.0.127 any eq www\n permit tcp 10.10.60.0 0.0.0.127 any eq 443\n permit icmp 10.10.60.0 0.0.0.127 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V100-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.100.0 0.0.1.255 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n permit tcp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.100.0 0.0.1.255 any eq www\n permit tcp 10.10.100.0 0.0.1.255 any eq 443\n permit icmp 10.10.100.0 0.0.1.255 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-V120-IN\n permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n permit udp 10.10.120.0 0.0.0.255 eq bootpc host 10.10.70.10 eq bootps\n permit udp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq www\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq 443\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq www\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq 443\n permit tcp 10.10.120.0 0.0.0.255 host 10.10.80.10 eq www\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n deny ip any 169.254.0.0 0.0.255.255\n permit tcp 10.10.120.0 0.0.0.255 any eq www\n permit tcp 10.10.120.0 0.0.0.255 any eq 443\n permit icmp 10.10.120.0 0.0.0.255 host 192.0.2.100\n deny ip any any\nip access-list extended MAIN-SERVER-IN\n permit udp host 10.10.70.10 eq bootps any eq bootps\n permit udp host 10.10.70.10 eq bootps any eq bootpc\n permit udp host 10.10.70.10 eq domain 10.0.0.0 0.255.255.255\n permit tcp 10.10.70.0 0.0.0.31 any established\n permit icmp 10.10.70.0 0.0.0.31 any echo-reply\n permit udp host 10.10.70.10 host 192.0.2.100 eq domain\n permit tcp host 10.10.70.10 host 192.0.2.100 eq domain\n permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 123\n permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 514\n deny ip any 10.0.0.0 0.255.255.255\n deny ip any 172.16.0.0 0.15.255.255\n deny ip any 192.168.0.0 0.0.255.255\n permit tcp 10.10.70.0 0.0.0.31 any eq www\n permit tcp 10.10.70.0 0.0.0.31 any eq 443\n deny ip any any\nip access-list extended MAIN-MGMT-IN\n permit ip host 10.10.90.11 any\n permit tcp 10.10.90.0 0.0.0.255 host 10.10.90.11 established\n permit icmp 10.10.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n deny ip any any\nip access-list extended MAIN-CAMERA-IN\n permit tcp 10.10.110.0 0.0.0.255 host 10.10.90.11 established\n permit icmp 10.10.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n permit udp 10.10.110.0 0.0.0.255 host 10.10.70.17 eq 123\n deny ip any any\nip access-list standard MGMT-SSH-ONLY\n permit host 10.10.90.11\n deny any\n!\n!\n!\n!\n!\nline con 0\n logging synchronous\n!\nline aux 0\n!\nline vty 0 4\n access-class MGMT-SSH-ONLY in\n exec-timeout 5 0\n login local\n transport input ssh\n!\n!\n!\nend\n\n\n\n"
+      }
+    },
+    {
+      "command": "show access-lists MGMT-SSH-ONLY",
+      "stage": "after-suite",
+      "result": {
+        "first": 0,
+        "second": "Standard IP access list MGMT-SSH-ONLY\n    permit host 10.10.90.11 (3 match(es))\n    deny any\n\n\n"
+      }
+    }
+  ]
+}

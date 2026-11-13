@@ -29,5 +29,3 @@ Split tunnel chỉ tới HIS/CRM đã duyệt; DNS/suffix và tuyến split đư
 | ACL/VPN zone | Chỉ pool→HIS .11/CRM .14 TCP443; HTTP80 chỉ trong lab; deny DB/admin/camera |
 | NAT exemption | Giữ source private cho pool↔internal; không để PAT trước khi mã hóa |
 | Vòng đời | Tài khoản theo người, hết hạn, thu hồi certificate, log đăng nhập/thoát và session |
-
-Kiểm [SUPP-03](../../test_results/supplemental/vpn.md): SA/counter encrypt/decrypt, capture underlay không thấy payload ứng dụng, truy cập đúng vai trò, sai mật khẩu/certificate/MFA bị từ chối, pool không overlap, thu hồi account, MTU và reconnect. Ping thành công chưa chứng minh IPsec. Khóa thật không đưa vào Git; chưa có reviewer phê duyệt hoặc PASS cho VPN.

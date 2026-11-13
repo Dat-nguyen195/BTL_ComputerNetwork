@@ -1,0 +1,32 @@
+{
+  "time": "2026-11-12T10:15:47.481667+00:00",
+  "scope": "Design pool label only; no VPN runtime configuration changed",
+  "old_pool": "10.255.100.0/24",
+  "ip_plan_pool": "10.250.0.0/24",
+  "files": [
+    {
+      "relative_path": "scripts/build_cisco_diagrams.py",
+      "before_sha256": "92d909fc6e338139709ed7e27e63cf1e8833ceec3c05e93a374a7ededc1ba1ab",
+      "archive": "test_results/topology-redesign/20261112-162237/history/pre-redesign-files/scripts/build_cisco_diagrams.py",
+      "after_sha256": "bab7eff8a28551b1b1049c60687fc28fdeb96f81efdb98a96d4b67a4b5b04359"
+    },
+    {
+      "relative_path": "docs/02-design/diagrams/hospital-cisco.drawio",
+      "before_sha256": "5aaced1b6ae76c8b247ddd055b8a1d7849d88900aca0fcb489b7b17a3995b3e4",
+      "archive": "test_results/topology-redesign/20261112-162237/history/pre-redesign-files/docs/02-design/diagrams/hospital-cisco.drawio",
+      "after_sha256": "da487ca6f5373635012fffec3a9f67ed22cc66a61ce8cb1bcf3c8669015cddf2"
+    },
+    {
+      "relative_path": "docs/02-design/diagrams/exports/vpn-cisco.svg",
+      "before_sha256": "ee41bafa728ab357705e560bdbed174a2617a7523e163324b726a78ecd426ca7",
+      "archive": "test_results/topology-redesign/20261112-162237/history/pre-redesign-files/docs/02-design/diagrams/exports/vpn-cisco.svg",
+      "after_sha256": "83daef41881e31f67d5b6e422f7f71d19eadfa0a2a88499bead9ac8ca18ba86c"
+    },
+    {
+      "relative_path": "docs/06-report/latex/assets/vpn-cisco.pdf",
+      "before_sha256": "18470eb9bdaf3400b5c4d62053376187e0f57de087e62caa0544b51c3c9b134e",
+      "archive": "test_results/topology-redesign/20261112-162237/history/pre-redesign-files/docs/06-report/latex/assets/vpn-cisco.pdf",
+      "after_sha256": "3d0952233131260369e10940ccf2e965964a0b95bb41bdd5912c8a6804126558"
+    }
+  ]
+}

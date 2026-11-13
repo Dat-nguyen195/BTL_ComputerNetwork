@@ -1,0 +1,14 @@
+{
+  "saved_at_utc": "2026-11-12T14:26:27.750034+00:00",
+  "candidate_sha256": "183953558f045e378ddbbed3205da84e357865381f03f95b4dc625cf79e0b31a",
+  "candidate_bytes": 515495,
+  "closed": true,
+  "reopened": true,
+  "smoke_status": "PASS",
+  "note": "Pre-close snapshot. No main promotion yet.",
+  "closed_at_utc": "2026-11-12T14:27:14.176763+00:00",
+  "close_observation": "Native File/Exit -> save Yes; all application windows disappeared",
+  "reopened_pid": 77813,
+  "smoke_retry": "12/12 with controls; initial2 Guest Web controls retained history/reopen-initial",
+  "promoted_at_utc": "2026-11-12T14:40:22.131435+00:00"
+}

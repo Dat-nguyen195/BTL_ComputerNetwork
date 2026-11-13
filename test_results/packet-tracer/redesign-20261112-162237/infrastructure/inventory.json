@@ -1,0 +1,462 @@
+[
+  {
+    "name": "Power Distribution Device0",
+    "type": "Power Distribution Device",
+    "model": "Power Distribution Device"
+  },
+  {
+    "name": "BHTQ-GW",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "DBP-GW",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "INET-Core",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "ISP1",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "ISP2",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "Main-Core",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "Main-Edge",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "Main-FW",
+    "type": "Router",
+    "model": "2811"
+  },
+  {
+    "name": "Main-GW",
+    "type": "Router",
+    "model": "2911"
+  },
+  {
+    "name": "BHTQ-Access",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "DBP-Access",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "DMZ-Access",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-Access",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Web-Access",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-Infra",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-HIS",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-PACS",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-LIS",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-CRM",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-DB",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-Backup",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-Monitor",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-WebDMZ",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-ProxyDMZ",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "DBP-Infra",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "DBP-Local",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "BHTQ-Infra",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "BHTQ-Local",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Web-Lab",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "Main-PC10-A",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC10-B",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC20",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC30",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC40",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-Guest",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-Staff",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-PC10",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-Guest",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-PC10",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-Guest",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-Admin",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-NVR",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-NVR",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-NVR",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC50",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-PC60",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-PC20",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-PC30",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "DBP-Staff",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-PC20",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-PC30",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "BHTQ-Staff",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-Guest-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "Main-Staff-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "DBP-Guest-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "DBP-Staff-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "BHTQ-Guest-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "BHTQ-Staff-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT-AC"
+  },
+  {
+    "name": "Main-A-F1-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-A-DIST",
+    "type": "MultiLayerSwitch",
+    "model": "3560-24PS"
+  },
+  {
+    "name": "Power Distribution Device1",
+    "type": "Power Distribution Device",
+    "model": "Power Distribution Device"
+  },
+  {
+    "name": "Main-B-DIST",
+    "type": "MultiLayerSwitch",
+    "model": "3560-24PS"
+  },
+  {
+    "name": "Main-A-F2-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-A-F3-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-A-F3-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-A-F4-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-A-F4-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-A-F5-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-A-F5-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-B-F1-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-B-F1-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-B-F2-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-B-F2-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-B-F3-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-B-F3-PC",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-B-F3-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Power Distribution Device2",
+    "type": "Power Distribution Device",
+    "model": "Power Distribution Device"
+  },
+  {
+    "name": "Main-B-F4-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-B-F4-PC",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-B-F4-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "Main-B-F5-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Main-B-F5-PC",
+    "type": "Pc",
+    "model": "PC-PT"
+  },
+  {
+    "name": "Main-B-F5-AP",
+    "type": "AccessPoint",
+    "model": "AccessPoint-PT"
+  },
+  {
+    "name": "DBP-F1-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "DBP-F2-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "BHTQ-F1-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "BHTQ-F2-SW",
+    "type": "Switch",
+    "model": "2960-24TT"
+  },
+  {
+    "name": "Power Distribution Device3",
+    "type": "Power Distribution Device",
+    "model": "Power Distribution Device"
+  },
+  {
+    "name": "Main-IoTMgmt",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "DBP-IoTMgmt",
+    "type": "Server",
+    "model": "Server-PT"
+  },
+  {
+    "name": "BHTQ-IoTMgmt",
+    "type": "Server",
+    "model": "Server-PT"
+  }
+]

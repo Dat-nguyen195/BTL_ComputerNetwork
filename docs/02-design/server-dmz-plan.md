@@ -34,5 +34,3 @@ Tạo bản ghi trên ba DNS nội bộ: `his.hospital.test → 10.10.70.11`, `p
 ## Giới hạn và vận hành
 
 HTTP 80 chỉ chứng minh kết nối dịch vụ trong lab dữ liệu giả; vận hành cần HTTPS và ứng dụng thật, xác thực, log truy cập. Chưa có TLS certificate, database hay DICOM thực; permit 443/11112 không chứng minh đã triển khai chúng. Server cùng VLAN 70 trao đổi tại L2 nên ACL trên gateway không kiểm soát được luồng app→DB cùng subnet; cần host firewall hoặc tách subnet/VRF khi triển khai thật.
-
-Đề xuất backup ứng dụng/DB hằng ngày, bản sao tách quyền và bản sao ngoài site, thử restore theo lịch; RPO/RTO và retention chờ đơn vị bệnh viện xác nhận. HA cần replica, dung lượng, license và test chuyển đổi; hai server DMZ không tự tạo HA. Kiểm DHCP/DNS ở [SUPP-02](../../test_results/supplemental/dhcp-dns.md), DMZ ở [TC04](../../test_results/TC04-dmz/result.md); hiện **NOT RUN**.

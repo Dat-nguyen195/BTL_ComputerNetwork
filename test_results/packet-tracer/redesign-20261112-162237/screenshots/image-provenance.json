@@ -1,0 +1,21 @@
+{
+  "source": "Native Packet Tracer LogicalWorkspace.getWorkspaceImage(\"PNG\") after reopen; byte signedness normalized with &255",
+  "native_source_sha256": "183953558f045e378ddbbed3205da84e357865381f03f95b4dc625cf79e0b31a",
+  "source_png_sha256": "1da7afa3cae1c9b7efa8598ec3f604a7f4295c6982f7ef1c8d75dc3f18993ca4",
+  "native_dimensions": [
+    3640,
+    2650
+  ],
+  "derived": "Main/Aux/building/site rectangular crops only; no generated or redrawn observations",
+  "gui_viewport": "reopened-viewport.png",
+  "iot_report_crop": {
+    "source": "admin-main-registered-cameras.png",
+    "box": [
+      18,
+      75,
+      680,
+      235
+    ],
+    "meaning": "Native GUI URL and first3 of10 Main devices; complete screenshots retained for all3 sites"
+  }
+}

@@ -1,7 +1,5 @@
 # Hướng dẫn vận hành bảo mật
 
-**Cập nhật kiểm chứng:** [GNS3 runtime](../../test_results/runtime/README.md) đã kiểm ACL/firewall/IDS/IPS rule mẫu; hardening, phishing feed, AAA, crypto, restore dữ liệu và HA sản xuất vẫn cần kiểm riêng.
-
 **TV3; 02/11/2026. Hướng dẫn đề xuất; chỉ ACL/ZBF/NAT/relay đã có cấu hình tham chiếu. Chưa nghiệm thu runtime.**
 
 | Hạng mục | Cách thực hiện / tiêu chí kiểm | Tình trạng baseline |
@@ -32,4 +30,4 @@
 
 Deny bất thường: xác định nguồn/đích/thời điểm, kiểm DHCP/VLAN/route trước ACL, đối chiếu hit counter và session. Không bật debug packet toàn mạng khi chưa kiểm tác động. Sự cố nghi ngờ account: cô lập tài khoản, giữ log cần thiết, thay khóa/certificate và kiểm truy cập sau thu hồi. Không tự gửi dữ liệu mạng bệnh viện ra dịch vụ công cộng.
 
-Trước bàn giao: rà credential/key trong text và ảnh; đối chiếu topology–IP–config–test; ghi mọi hạn chế còn lại trong contribution. Bản này không chứng nhận tuân thủ pháp lý hoặc HA. Nghiệm thu theo [test matrix](../../test_results/test-matrix.md) và [approval](../../submission/approval.md).
+Trước bàn giao: rà credential/key trong text và ảnh; đối chiếu topology–IP–config–test; ghi mọi hạn chế còn lại trong báo cáo. Bản này không chứng nhận tuân thủ pháp lý hoặc HA. Nghiệm thu theo [test matrix](../../test_results/test-matrix.md) và [phạm vi bàn giao](../cisco-scope.md).

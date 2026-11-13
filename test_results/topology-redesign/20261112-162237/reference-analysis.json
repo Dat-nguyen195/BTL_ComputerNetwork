@@ -1,0 +1,19 @@
+{
+  "opened_gui_path": "/media/nguyen-dat/New Volume/BTL2.pkt",
+  "user_reference_sha256": "42d56b8c719c1ee2abc3e2b63b39d9bf365126775f81690ea83994f52b6623f8",
+  "github_reference_sha256": "1d5f9fadfe84ec097298ac361f0e5536050ec4052daef9baba0c258de4dc70dc",
+  "print_pdf_sha256": "3e6ab4ec9f357f72f8eb78d2e7ee47b7486438fdad4bfc39c4d4b6c7932684ac",
+  "opened_in_native_gui": true,
+  "user_reference_version": "9.0.1.0858",
+  "github_reference_version": "8.2.2.0400",
+  "observations": [
+    "Print and native show A/B five floors, two floors per Aux; representative AP/webcam per floor; learn layout only",
+    "User reference has28MCUComponent objects vs14in original repository; not presumed additional28network cameras",
+    "Both Aux routers have the same private192.168.30.2/30 side in saved configuration; each connects different100.100.2/24 or100.100.3/24 WAN",
+    "Aux firewalls repeat192.168.40/60 private zone addresses; copied labels/config unsuitable for our unique10.20/16 and10.30/16 plan",
+    "Only one DslModem/Cloud path and one ISP router visible; do not replace own dual ISP",
+    "Reference IoT is registration/control; no evidence of production NVR storage or retention",
+    "No reference config/native/image reused as own work"
+  ],
+  "scope": "Read-only source/GUI analysis. Reference working file content differs from GitHub original; no runtime PASS inferred."
+}

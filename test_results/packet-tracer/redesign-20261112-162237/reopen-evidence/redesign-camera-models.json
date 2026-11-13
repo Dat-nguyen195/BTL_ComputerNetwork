@@ -1,0 +1,192 @@
+[
+  {
+    "type": 24,
+    "models": [
+      "Home-VoIP-PT"
+    ]
+  },
+  {
+    "type": 25,
+    "models": [
+      "Analog-Phone-PT"
+    ]
+  },
+  {
+    "type": 26,
+    "models": []
+  },
+  {
+    "type": 27,
+    "models": [
+      "5505",
+      "5506-X",
+      "ISA-3000"
+    ]
+  },
+  {
+    "type": 28,
+    "models": []
+  },
+  {
+    "type": 29,
+    "models": [
+      "DLC100"
+    ]
+  },
+  {
+    "type": 30,
+    "models": [
+      "HomeRouter-PT-AC"
+    ]
+  },
+  {
+    "type": 31,
+    "models": [
+      "Cell-Tower"
+    ]
+  },
+  {
+    "type": 32,
+    "models": [
+      "Central-Office-Server"
+    ]
+  },
+  {
+    "type": 33,
+    "models": []
+  },
+  {
+    "type": 34,
+    "models": [
+      "802",
+      "803"
+    ]
+  },
+  {
+    "type": 35,
+    "models": [
+      "Sniffer"
+    ]
+  },
+  {
+    "type": 36,
+    "models": [
+      "MCU-PT"
+    ]
+  },
+  {
+    "type": 37,
+    "models": [
+      "SBC-PT"
+    ]
+  },
+  {
+    "type": 38,
+    "models": []
+  },
+  {
+    "type": 39,
+    "models": [
+      "Air Conditioner",
+      "Air Cooler",
+      "Alarm",
+      "Appliance",
+      "Atm Pressure Monitor",
+      "Battery",
+      "Beacon",
+      "Blower",
+      "Bluetooth Speaker",
+      "Carbon Dioxide Detector",
+      "Carbon Monoxide Detector",
+      "Fan",
+      "Ceiling Sprinkler",
+      "Dimmable LED",
+      "Door",
+      "Fire Monitor",
+      "Fire Sprinkler",
+      "Flex Sensor",
+      "Floor Sprinkler",
+      "Furnace",
+      "Garage Door",
+      "Generic Environment Sensor",
+      "Generic Sensor",
+      "Heating Element",
+      "Home Speaker",
+      "Humidifier",
+      "Humidity Monitor",
+      "Humidity Sensor",
+      "Humiture Monitor",
+      "Humiture Sensor",
+      "LCD",
+      "LED",
+      "Lawn Sprinkler",
+      "Light",
+      "Membrane Potentiometer",
+      "Metal Sensor",
+      "Motion Detector",
+      "Motion Sensor",
+      "Motor",
+      "Old Car",
+      "Photo Sensor",
+      "Piezo Speaker",
+      "Portable Music Player",
+      "Potentiometer",
+      "Power Meter",
+      "Push Button",
+      "Push Button Toggle Switch",
+      "RFID Card",
+      "RFID Reader",
+      "RGB LED",
+      "Rocker Switch",
+      "Servo",
+      "Signal Generator",
+      "Siren",
+      "Smart LED",
+      "Smoke Detector",
+      "Smoke Sensor",
+      "Solar Panel",
+      "Sound Frequency Detector",
+      "Sound Sensor",
+      "Speaker",
+      "Street Lamp",
+      "Temperature Monitor",
+      "Temperature Sensor",
+      "Thermostat",
+      "Thing",
+      "Toggle Push Button",
+      "Trip Sensor",
+      "Trip Wire",
+      "Water Detector",
+      "Water Drain",
+      "Water Level Monitor",
+      "Water Sensor",
+      "Webcam",
+      "Wind Detector",
+      "Wind Sensor",
+      "Wind Turbine",
+      "Window"
+    ]
+  },
+  {
+    "type": 40,
+    "models": [
+      "Embedded-Server-PT"
+    ]
+  },
+  {
+    "type": 41,
+    "models": [
+      "WLC-2504",
+      "WLC-3504",
+      "WLC-PT"
+    ]
+  },
+  {
+    "type": 42,
+    "models": []
+  },
+  {
+    "type": 43,
+    "models": []
+  }
+]

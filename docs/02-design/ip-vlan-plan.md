@@ -1,8 +1,5 @@
 # Quy hoạch VLAN và địa chỉ IP toàn diện (VLSM Plan)
 
-**Chủ trì:** TV1 (Trưởng nhóm, WAN & Routing Lead); TV2 (LAN) và TV3 (Security) đọc chéo.
-**Trạng thái:** THIẾT KẾ ĐÃ HIỆU CHỈNH / CÓ BẰNG CHỨNG MÔ PHỎNG GNS3 VÀ PACKET TRACER.
-
 ---
 
 ## 1. Nguyên tắc thiết kế và phân bổ địa chỉ IP (VLSM)

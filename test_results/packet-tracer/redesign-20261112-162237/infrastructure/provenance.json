@@ -1,0 +1,41 @@
+{
+  "scope": "Saved native application state and data stores; collector does not run tests",
+  "collected_at_utc": "2026-11-12T09:48:22.231036+00:00",
+  "clock_note": "Collection time is host UTC. Raw record time is the application JavaScript clock; preserved without correction.",
+  "version": "9.0.1.0858",
+  "native_sha256": "6ae9530944f43f0954695eb3b9d77a6d20a99298015ce0dc2960a7d6df95fa6f",
+  "network_devices": 88,
+  "power_devices": 4,
+  "links": 83,
+  "dhcp_pools": 21,
+  "allocatable_dhcp_pools": 18,
+  "zero_capacity_dhcp_pools": 3,
+  "inactive_dhcp_pools": 15,
+  "dhcp_leases": 19,
+  "embedded_script_sha256": {
+    "hospital-controller.js": "506ef0ef1c900513f87b755d1da938bd8a513b1a9dc4c00dd49535e56efb57a4"
+  },
+  "sha256": {
+    "lab.pkt": "6ae9530944f43f0954695eb3b9d77a6d20a99298015ce0dc2960a7d6df95fa6f",
+    "addresses.json": "8c80a787ae9a49905750316e7618b171438d7068d28a0f31730407d64a93dc00",
+    "config-check.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "final-label-fix.json": "1e306c7eed989279e72f5589461e4853250f84951fa4531a085ed6ffd4540ad1",
+    "hardware.json": "b50ccb26c6f3af8d00650ca4b75317094087b8946d3461191bef3083c8e27c2a",
+    "hospital-results.json": "1b24fc0f296b524719522a3c44e37e83940919cbbf77e9e8a1aafb4cfa76446b",
+    "hospital-spec.json": "b4446091a709283ae8c657f457bf44629c757327e7eefe98c37335f0a45f80b8",
+    "management-ssh.json": "882aa8328bd33f0ca79fe47a59502def621e0689128339fce282428fd71f0d7b",
+    "manual-isp-results.json": "d27452bb1c4c40e63ca11b229eeeae746548a3483ab4135212758b1a789d49a3",
+    "normalization.json": "f75c21a5e0b8df29e26ff7412a0d44ed54fad2f90447616ea4b8b2b011fa40c2",
+    "pretest-snapshots.json": "5beed4f929fa66c2d1e3f51bad51d34a45b0550b7cea2a8bc1dff7ca7470551a",
+    "redesign-expansion.json": "2c317808e0170318f6b80251bd75332277208582624a9caf54624a32b00a9a78",
+    "redesign-layout.json": "3e6444c0f79920cfe53f3a9f248c3a3b04abb253d2d68bbc884a08b333d775dc",
+    "reopen-event-probe.json": "04b6fc195e6fa7414ed5ee19424570c933c42985a080e92ee253a546aa80df92",
+    "services-check.json": "9bd6437739fba6fe2e7edc73236dad2394beee6f2b4aeeed74e254d959409fb6",
+    "warmup-results.json": "62f6006e0207628b6f16beab1a6edfdda4c42337114eee06be6340ab6be6feef",
+    "wireless-associations.json": "140b4e66d514410991bd72c2772d416fc66aa3704ca0383f9a6d3128346ef9f5",
+    "inventory.json": "8dba4d43549bd8a76a4182c5667c9dc0f29e937cb6958190100b1498fc84a319",
+    "dhcp-pools-leases.json": "b3c43d28e2a08773d4ce9811e00510d4e3469c90863ae10fa3cc3893b84bd928",
+    "config-readback.json": "36ebf2f0de2fbf7816ac712e87ceeac59fe6cffe34ea138b0f3b921dd1326649",
+    "wireless-readback.json": "ddd8800b59888a0ce139a413a3b8c6962d593fa778ee2d990cf8033f22ed5903"
+  }
+}

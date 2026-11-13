@@ -29,7 +29,7 @@ Tám ping cho phép đều 4/4; ba ping Guest không phản hồi. HTTP cho phé
 
 ## Giới hạn
 
-- ISP2 là đường PAT chính. ISP1 dự phòng chuyển thủ công; chưa chứng minh tự động failover, IP SLA hoặc PBR trên Packet Tracer. Bằng chứng GNS3 cho các tính năng đó được lưu riêng.
+- ISP2 là đường PAT chính. ISP1 dự phòng chuyển thủ công; chưa chứng minh tự động failover, IP SLA hoặc PBR trên Packet Tracer.
 - Main-FW dùng 2811/profile 2800_advip_12.4, module NM-1FE-TX và ba cổng vật lý LAN/OUTSIDE/DMZ. Tám router còn lại dùng 2911; không chuyển kết quả probe 2911 thành kết luận cho mọi profile.
 - Sáu liên kết dùng card AC, WPA2-PSK/AES với khóa lab công khai HospitalLab2026Only. Chưa đo RF, roaming, AAA/Enterprise hoặc tải vô tuyến thực.
 - Ethernet thay chức năng hai leased line và các đường ISP. Không đo tốc độ xDSL/GPON, tải HIS/PACS, VPN crypto hoặc HA thiết bị từ mô hình này.
@@ -37,7 +37,7 @@ Tám ping cho phép đều 4/4; ba ping Guest không phản hồi. HTTP cho phé
 
 ## Truy vết
 
-Project: `simulation/packet-tracer/hospital-3sites.pkt`.
+Archived project: `test_results/packet-tracer/after-reopen/lab.pkt`.
 SHA256: `45ff85657fc08186f4863d541ac7b12de1bd09a72fbf305c445c01f3cf839289`.
 Evidence: `test_results/packet-tracer/after-reopen/`.
 Giờ thu thập UTC: `2026-11-04T11:02:36.852305+00:00`.

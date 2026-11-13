@@ -8,13 +8,13 @@
       1,
       2
     ],
-    "notes": "Rendered with Poppler at 1400px; Vietnamese glyphs, tables, margins, page breaks and footers inspected; no clipping or overlap"
+    "notes": "Both pages rendered1400px and visually inspected: tables, Vietnamese glyphs, line wrapping, footer/source paths readable."
   },
   "sha256": {
-    "docs/06-report/final/packet-tracer-validation.pdf": "5ff45d5df1746dd4cb54ddf3b1149135936bf246be73b92a31ee67fd66c53189",
-    "docs/06-report/source/packet-tracer-validation.md": "d3d67eb7984e391b9515b6029dbed3dc642988596d86cb10e812729c9fe0f2d2",
-    "scripts/build_packet_report.py": "bee7ee8fe5426dab45dedf3262add2189c7233abd103386f3c88ec413c50b686"
+    "docs/06-report/final/packet-tracer-validation.pdf": "59651864675709e24a197e0b0cf32800e00704b5caa3061bfa5a166a0e536332",
+    "docs/06-report/source/packet-tracer-validation.md": "cf8ce6e8f33c594ffe9c993b67f2e9cfef8bdb0f6c3dce487fc6d7367c3bd0ce",
+    "scripts/build_packet_report.py": "fb59b5e7c36a0479b209ae6560ececf3c4fe3e325774154df4692f1a56ea1e8c"
   },
-  "timestamp_utc": "2026-11-04T15:30:50.426895+00:00",
-  "revision": "L08 group 2; two BTL2 authors; both pages rendered and visually inspected"
+  "timestamp_utc": "2026-11-13T03:15:55.416854+00:00",
+  "revision": "Historical Cisco supplement; archived native path corrected, no new network run"
 }

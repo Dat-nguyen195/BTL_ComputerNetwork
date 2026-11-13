@@ -1,0 +1,7935 @@
+{
+  "started": "2026-11-12T09:45:00.201Z",
+  "status": "INFRASTRUCTURE_DONE_CAMERA_PENDING",
+  "operations": [
+    {
+      "action": "add",
+      "node": "Main-A-DIST",
+      "type": 16,
+      "model": "3560-24PS"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-DIST",
+      "type": 16,
+      "model": "3560-24PS"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F2-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F3-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F3-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F4-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F4-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F5-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-A-F5-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F1-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F1-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F2-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F2-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F3-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F3-PC",
+      "type": 8,
+      "model": "PC-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F3-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F4-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F4-PC",
+      "type": 8,
+      "model": "PC-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F4-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F5-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F5-PC",
+      "type": 8,
+      "model": "PC-PT"
+    },
+    {
+      "action": "add",
+      "node": "Main-B-F5-AP",
+      "type": 7,
+      "model": "AccessPoint-PT"
+    },
+    {
+      "action": "add",
+      "node": "DBP-F1-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "DBP-F2-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "BHTQ-F1-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "BHTQ-F2-SW",
+      "type": 1,
+      "model": "2960-24TT"
+    },
+    {
+      "action": "add",
+      "node": "Main-IoTMgmt",
+      "type": 9,
+      "model": "Server-PT"
+    },
+    {
+      "action": "add",
+      "node": "DBP-IoTMgmt",
+      "type": 9,
+      "model": "Server-PT"
+    },
+    {
+      "action": "add",
+      "node": "BHTQ-IoTMgmt",
+      "type": 9,
+      "model": "Server-PT"
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-DIST",
+      "commands": [
+        {
+          "command": "hostname Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no ip routing",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-MDF",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F3-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F4-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/5",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F5-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/6 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "% Interface range command failed for FastEthernet0/6\n% Command failed on interface FastEthernet0/6. Aborting\n\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-DIST",
+      "commands": [
+        {
+          "command": "hostname Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no ip routing",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-MDF",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F3-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F4-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/5",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F5-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk encapsulation dot1q",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/6 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "% Interface range command failed for FastEthernet0/6\n% Command failed on interface FastEthernet0/6. Aborting\n\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-F1-SW",
+      "commands": [
+        {
+          "command": "hostname Main-A-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC10-A",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-Guest-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F1-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-F2-SW",
+      "commands": [
+        {
+          "command": "hostname Main-A-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC10-B",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-Staff-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F2-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-F3-SW",
+      "commands": [
+        {
+          "command": "hostname Main-A-F3-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F3-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F3-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-A-F3-AP",
+      "ssid": "Main_A_F3_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-F4-SW",
+      "commands": [
+        {
+          "command": "hostname Main-A-F4-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F4-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F4-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-A-F4-AP",
+      "ssid": "Main_A_F4_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "Main-A-F5-SW",
+      "commands": [
+        {
+          "command": "hostname Main-A-F5-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F5-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-F5-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-A-F5-AP",
+      "ssid": "Main_A_F5_AP",
+      "vlan": 100
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-F1-SW",
+      "commands": [
+        {
+          "command": "hostname Main-B-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F1-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F1-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-B-F1-AP",
+      "ssid": "Main_B_F1_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-F2-SW",
+      "commands": [
+        {
+          "command": "hostname Main-B-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-PC60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F2-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F2-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-B-F2-AP",
+      "ssid": "Main_B_F2_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-F3-SW",
+      "commands": [
+        {
+          "command": "hostname Main-B-F3-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F3-PC",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F3-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F3-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-B-F3-AP",
+      "ssid": "Main_B_F3_AP",
+      "vlan": 100
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-F4-SW",
+      "commands": [
+        {
+          "command": "hostname Main-B-F4-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F4-PC",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F4-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F4-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-B-F4-AP",
+      "ssid": "Main_B_F4_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "Main-B-F5-SW",
+      "commands": [
+        {
+          "command": "hostname Main-B-F5-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F5-PC",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F5-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-F5-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "new-ap-profile",
+      "node": "Main-B-F5-AP",
+      "ssid": "Main_B_F5_AP",
+      "vlan": 120
+    },
+    {
+      "action": "configure",
+      "node": "DBP-F1-SW",
+      "commands": [
+        {
+          "command": "hostname DBP-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-Access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-PC10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-PC20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/4 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-Guest-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-F1-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/5 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "DBP-F2-SW",
+      "commands": [
+        {
+          "command": "hostname DBP-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-Access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-PC30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-Staff-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-F2-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "BHTQ-F1-SW",
+      "commands": [
+        {
+          "command": "hostname BHTQ-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-Access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-PC10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-PC20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/4 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-Guest-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-F1-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/5 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "BHTQ-F2-SW",
+      "commands": [
+        {
+          "command": "hostname BHTQ-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V40",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V50",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V60",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V100",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "name FLOOR-V120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-Access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/1",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-PC30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 30",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/1 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-Staff-AP",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/2 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-F2-CAM",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/3 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface range FastEthernet0/4 - 24",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface GigabitEthernet0/2",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface GigabitEthernet0/2, changed state to administratively down\n\n"
+          }
+        },
+        {
+          "command": "line vty 0 4",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "transport input none",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "Main-Access",
+      "commands": [
+        {
+          "command": "interface FastEthernet0/14",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-A-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/15",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-B-DIST",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/22",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description Main-IoTMgmt",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/22 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/22, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/9",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/11",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/12",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/13",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/18",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/19",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/20",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/21",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "DBP-Access",
+      "commands": [
+        {
+          "command": "interface FastEthernet0/12",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/12, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/13",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/13, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/11",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description DBP-IoTMgmt",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/11 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/11, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/6",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/7",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/9",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "configure",
+      "node": "BHTQ-Access",
+      "commands": [
+        {
+          "command": "interface FastEthernet0/12",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-F1-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/12, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/13",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-F2-SW",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode trunk",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport trunk allowed vlan 10,20,30,40,50,60,100,110,120",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/13, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/11",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "description BHTQ-IoTMgmt",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport mode access",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "switchport access vlan 110",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "spanning-tree portfast",
+          "result": {
+            "first": 0,
+            "second": "%Warning: portfast should only be enabled on ports connected to a single\nhost. Connecting hubs, concentrators, switches, bridges, etc... to this\ninterface  when portfast is enabled, can cause temporary bridging loops.\nUse with CAUTION\n\n%Portfast has been configured on FastEthernet0/11 but will only\nhave effect when the interface is in a non-trunking mode.\n\n"
+          }
+        },
+        {
+          "command": "spanning-tree bpduguard enable",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "no shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n%LINK-5-CHANGED: Interface FastEthernet0/11, changed state to down\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/3",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/6",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/7",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/9",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        },
+        {
+          "command": "interface FastEthernet0/10",
+          "result": {
+            "first": 0,
+            "second": "\n"
+          }
+        },
+        {
+          "command": "shutdown",
+          "result": {
+            "first": 0,
+            "second": "\n\n"
+          }
+        }
+      ],
+      "write_memory": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    },
+    {
+      "action": "link",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/14",
+      "target": "Main-A-DIST",
+      "target_port": "GigabitEthernet0/1",
+      "note": "Explicit crossover succeeded after AUTO false; observed count54"
+    },
+    {
+      "action": "link",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/15",
+      "target": "Main-B-DIST",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-DIST",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-A-F1-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/9",
+      "endpoint": "Main-PC10-A"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F1-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC10-A",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/20",
+      "endpoint": "Main-Guest-AP"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F1-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-Guest-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-DIST",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-A-F2-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/10",
+      "endpoint": "Main-PC10-B"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F2-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC10-B",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/21",
+      "endpoint": "Main-Staff-AP"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F2-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-Staff-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-DIST",
+      "source_port": "FastEthernet0/3",
+      "target": "Main-A-F3-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/11",
+      "endpoint": "Main-PC20"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F3-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC20",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F3-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-A-F3-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-DIST",
+      "source_port": "FastEthernet0/4",
+      "target": "Main-A-F4-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/12",
+      "endpoint": "Main-PC30"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F4-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC30",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F4-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-A-F4-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-DIST",
+      "source_port": "FastEthernet0/5",
+      "target": "Main-A-F5-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/13",
+      "endpoint": "Main-PC40"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F5-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC40",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-A-F5-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-A-F5-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-DIST",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-B-F1-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/18",
+      "endpoint": "Main-PC50"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F1-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC50",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F1-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F1-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-DIST",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F2-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/19",
+      "endpoint": "Main-PC60"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F2-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-PC60",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F2-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F2-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-DIST",
+      "source_port": "FastEthernet0/3",
+      "target": "Main-B-F3-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F3-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-B-F3-PC",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F3-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F3-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-DIST",
+      "source_port": "FastEthernet0/4",
+      "target": "Main-B-F4-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F4-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-B-F4-PC",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F4-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F4-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-DIST",
+      "source_port": "FastEthernet0/5",
+      "target": "Main-B-F5-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F5-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "Main-B-F5-PC",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "link",
+      "source": "Main-B-F5-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "Main-B-F5-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/12",
+      "target": "DBP-F1-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/3",
+      "endpoint": "DBP-PC10"
+    },
+    {
+      "action": "link",
+      "source": "DBP-F1-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "DBP-PC10",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/6",
+      "endpoint": "DBP-PC20"
+    },
+    {
+      "action": "link",
+      "source": "DBP-F1-SW",
+      "source_port": "FastEthernet0/4",
+      "target": "DBP-PC20",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/9",
+      "endpoint": "DBP-Guest-AP"
+    },
+    {
+      "action": "link",
+      "source": "DBP-F1-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "DBP-Guest-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/13",
+      "target": "DBP-F2-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/7",
+      "endpoint": "DBP-PC30"
+    },
+    {
+      "action": "link",
+      "source": "DBP-F2-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "DBP-PC30",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/10",
+      "endpoint": "DBP-Staff-AP"
+    },
+    {
+      "action": "link",
+      "source": "DBP-F2-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "DBP-Staff-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/12",
+      "target": "BHTQ-F1-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/3",
+      "endpoint": "BHTQ-PC10"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-F1-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "BHTQ-PC10",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/6",
+      "endpoint": "BHTQ-PC20"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-F1-SW",
+      "source_port": "FastEthernet0/4",
+      "target": "BHTQ-PC20",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/9",
+      "endpoint": "BHTQ-Guest-AP"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-F1-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "BHTQ-Guest-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/13",
+      "target": "BHTQ-F2-SW",
+      "target_port": "GigabitEthernet0/1"
+    },
+    {
+      "action": "unlink",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/7",
+      "endpoint": "BHTQ-PC30"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-F2-SW",
+      "source_port": "FastEthernet0/1",
+      "target": "BHTQ-PC30",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "unlink",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/10",
+      "endpoint": "BHTQ-Staff-AP"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-F2-SW",
+      "source_port": "FastEthernet0/2",
+      "target": "BHTQ-Staff-AP",
+      "target_port": "Port 0"
+    },
+    {
+      "action": "link",
+      "source": "Main-Access",
+      "source_port": "FastEthernet0/22",
+      "target": "Main-IoTMgmt",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "manager-address",
+      "node": "Main-IoTMgmt",
+      "ip": "10.10.110.12",
+      "gateway": "10.10.110.1",
+      "scope": "IoT control appliance outside application-server production count; registration not yet configured"
+    },
+    {
+      "action": "link",
+      "source": "DBP-Access",
+      "source_port": "FastEthernet0/11",
+      "target": "DBP-IoTMgmt",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "manager-address",
+      "node": "DBP-IoTMgmt",
+      "ip": "10.20.110.12",
+      "gateway": "10.20.110.1",
+      "scope": "IoT control appliance outside application-server production count; registration not yet configured"
+    },
+    {
+      "action": "link",
+      "source": "BHTQ-Access",
+      "source_port": "FastEthernet0/11",
+      "target": "BHTQ-IoTMgmt",
+      "target_port": "FastEthernet0"
+    },
+    {
+      "action": "manager-address",
+      "node": "BHTQ-IoTMgmt",
+      "ip": "10.30.110.12",
+      "gateway": "10.30.110.1",
+      "scope": "IoT control appliance outside application-server production count; registration not yet configured"
+    }
+  ],
+  "error": "Error: Link failed Main-Access:FastEthernet0/14 -> Main-A-DIST:GigabitEthernet0/1",
+  "resume_started": "2026-11-12T09:47:12.779Z",
+  "finished": "2026-11-12T09:47:13.149Z"
+}

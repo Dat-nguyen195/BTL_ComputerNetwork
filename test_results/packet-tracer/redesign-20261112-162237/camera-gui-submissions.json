@@ -1,0 +1,154 @@
+{
+  "scope": "GUI configuration submissions; registration acceptance requires saved server membership and runtime UI/traffic verification",
+  "time_utc": "2026-11-12T14:03:47.092Z",
+  "notes": [
+    "Main-A-F1-CAM and Main-A-F2-CAM were configured and individually verified before this batch journal.",
+    "Wrong row selection and incomplete AX read were stopped before entering credentials; preserved here."
+  ],
+  "entries": [
+    {
+      "node": "Main-A-F3-CAM",
+      "ip": "10.10.110.102",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:55:40.977Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147497142",
+      "completed_at": "2026-11-12T13:56:01.058Z"
+    },
+    {
+      "node": "Main-A-F4-CAM",
+      "ip": "10.10.110.103",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:56:02.823Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147498306",
+      "completed_at": "2026-11-12T13:56:23.889Z"
+    },
+    {
+      "node": "Main-A-F5-CAM",
+      "ip": "10.10.110.104",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:56:25.929Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147499470",
+      "completed_at": "2026-11-12T13:56:47.806Z"
+    },
+    {
+      "node": "Main-B-F1-CAM",
+      "ip": "10.10.110.105",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:56:49.901Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147500647",
+      "resumed_after": "Fresh snapshot confirmed original Config was not selected and no camera credentials saved",
+      "completed_at": "2026-11-12T13:58:10.494Z"
+    },
+    {
+      "node": "Main-B-F2-CAM",
+      "ip": "10.10.110.106",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:58:37.037Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147501824",
+      "completed_at": "2026-11-12T13:59:01.078Z"
+    },
+    {
+      "node": "Main-B-F3-CAM",
+      "ip": "10.10.110.107",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:59:03.557Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147503001",
+      "completed_at": "2026-11-12T13:59:28.436Z"
+    },
+    {
+      "node": "Main-B-F4-CAM",
+      "ip": "10.10.110.108",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:59:30.977Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147504178",
+      "completed_at": "2026-11-12T13:59:57.085Z"
+    },
+    {
+      "node": "Main-B-F5-CAM",
+      "ip": "10.10.110.109",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T13:59:59.757Z",
+      "status": "STOPPED_REQUIRES_INSPECTION",
+      "phase": "open",
+      "error": "Error: Wrong selected camera"
+    },
+    {
+      "node": "Main-B-F5-CAM",
+      "ip": "10.10.110.109",
+      "vlan": 110,
+      "server": "10.10.110.12",
+      "started_at": "2026-11-12T14:01:06.322Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "navigation": "Verified saved Workspace List row 97",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147505680",
+      "completed_at": "2026-11-12T14:01:31.314Z"
+    },
+    {
+      "node": "DBP-F1-CAM",
+      "ip": "10.20.110.100",
+      "vlan": 110,
+      "server": "10.20.110.12",
+      "started_at": "2026-11-12T14:01:34.004Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "navigation": "Verified saved Workspace List row 98",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147507042",
+      "completed_at": "2026-11-12T14:01:59.424Z"
+    },
+    {
+      "node": "DBP-F2-CAM",
+      "ip": "10.20.110.101",
+      "vlan": 110,
+      "server": "10.20.110.12",
+      "started_at": "2026-11-12T14:02:02.471Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "navigation": "Verified saved Workspace List row 99",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147508322",
+      "completed_at": "2026-11-12T14:02:28.580Z"
+    },
+    {
+      "node": "BHTQ-F1-CAM",
+      "ip": "10.30.110.100",
+      "vlan": 110,
+      "server": "10.30.110.12",
+      "started_at": "2026-11-12T14:02:31.207Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "navigation": "Verified saved Workspace List row 100",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147509520",
+      "completed_at": "2026-11-12T14:02:58.655Z"
+    },
+    {
+      "node": "BHTQ-F2-CAM",
+      "ip": "10.30.110.101",
+      "vlan": 110,
+      "server": "10.30.110.12",
+      "started_at": "2026-11-12T14:03:01.653Z",
+      "status": "SUBMITTED_NATIVE_VERIFICATION_PENDING",
+      "phase": "saved",
+      "navigation": "Verified saved Workspace List row 101",
+      "window_id": "w-1.30-org-a11y-atspi-accessible-2147510690",
+      "completed_at": "2026-11-12T14:03:27.948Z"
+    }
+  ]
+}

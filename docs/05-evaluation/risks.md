@@ -1,7 +1,5 @@
 # Rủi ro, tồn tại và hướng phát triển
 
-**Cập nhật:** sáu nhóm và các chức năng mạng chính đã kiểm trên GNS3; [review cuối](../00-management/project-review.md) ghi rủi ro còn lại. Gián đoạn hội tụ ISP đã đo, không gọi zero-downtime; OLT/Core/FW/Edge/leased line vẫn SPOF, xDSL cần xác nhận năng lực và GPON/RF cần đo thực.
-
 | ID | Rủi ro / thiếu dữ liệu | Ảnh hưởng | Phụ trách | Hành động | Trạng thái |
 | --- | --- | --- | --- | --- | --- |
 | R01 | Chưa rõ tải server tổng hay từng máy | Sizing ISP/WAN sai | TV4 | Tính kịch bản và xác nhận | OPEN |
@@ -25,4 +23,4 @@ Hướng phát triển: đa dạng nhà mạng/tuyến WAN, HA nguồn/core/fire
 | R12 | DMZ inbound chỉISP2 và thiết bịlab đơn | Ghi rõ chưaHA; không mở thêmISP1 thiếu routing theo phiên | TV1/TV3; OPEN |
 | R13 | Controller/AAA/L2 isolation/IPv6 chưa triển khai | Port/VLAN/quyền đề xuất phải kiểm khi bật; ACLIPv4 không thayL2 | TV2/TV3; OPEN |
 
-Chi tiết và thứ tự xử lý: [review toàn dự án](../00-management/project-review.md). Không ghi rủi ro runtime đã đóng từ kiểm tĩnh.
+Đối chiếu [phạm vi và giới hạn hiện tại](../cisco-scope.md) khi cập nhật trạng thái rủi ro. Không ghi rủi ro runtime đã đóng từ kiểm tĩnh.

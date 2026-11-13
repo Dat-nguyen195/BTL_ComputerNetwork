@@ -5,6 +5,8 @@ desktop.ini
 .idea/
 .vscode/*
 !.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
 *~
 *.swp
 *.tmp
@@ -20,7 +22,7 @@ __pycache__/
 *.py[cod]
 .venv/
 .pytest_cache/
-# GNS3 runtime, captures and licensed images
+# Runtime captures and licensed images
 **/project-files/
 **/snapshots/
 *.qcow2
@@ -50,3 +52,14 @@ tmp/
 # Local assignment/reference PDFs; keep final report PDFs trackable
 /Assignment 2-Network Design For A Company.pdf
 /Reference Multi-site network.pdf
+
+# GUI browser automation scratch (evidence is copied into test_results explicitly)
+/.playwright-mcp/
+
+# User reference topology: preserve locally, exclude from authored delivery.
+/docs/06-report/latex/print.pdf
+
+# Local maintenance tools and removed delivery output
+/scripts/
+/script/
+/submission/

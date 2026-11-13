@@ -1,7 +1,5 @@
 # Kiến trúc 3 site và thiết kế WAN/routing
 
-**Trạng thái hiện tại:** baseline GNS3/Packet Tracer đã có evidence riêng; phần dưới giữ thiết kế IOS ban đầu. [MPLS L3VPN bổ sung](../../simulation/mpls/README.md) đã chạy28+28 trên Linux namespaces/QEMU, có provider OSPF/LDP và MP-BGP/VRF; không áp kết quả này cho baseline IOS hoặc SD-WAN.
-
 **Chủ trì:** TV1; TV2 đọc chéo LAN, TV3 đọc chéo security, TV4 tích hợp. **Cập nhật:** 02/11/2026. **Trạng thái:** THIẾT KẾ/CẤU HÌNH THAM CHIẾU ĐÃ GHÉP SECURITY / CHƯA NGHIỆM THU MÔ PHỎNG.
 
 ## 1. Kiến trúc và phạm vi
@@ -40,7 +38,7 @@ flowchart TB
 
 ## 2. Interface mapping để dựng lab WAN
 
-Cấu hình tham chiếu IOS dùng router 2911, có Serial module tại ba WAN gateway; Main-Core dùng router-on-a-stick trong lab tối thiểu. TV2 có thể thay Core bằng switch L3 và map lại tên cổng, SVI/ACL. Main-FW base chỉ định tuyến; bản hợp nhất ghép IOS ZBF ba vùng, không NAT. Không nạp cấu hình IOS này trực tiếp vào ASA. Khi dựng dùng bản hợp nhất theo [hướng dẫn tổng](../../simulation/README.md).
+Cấu hình tham chiếu IOS dùng router 2911, có Serial module tại ba WAN gateway; Main-Core dùng router-on-a-stick trong lab tối thiểu. TV2 có thể thay Core bằng switch L3 và map lại tên cổng, SVI/ACL. Main-FW base chỉ định tuyến; bản hợp nhất ghép IOS ZBF ba vùng, không NAT. Không nạp cấu hình IOS này trực tiếp vào ASA. Khi dựng dùng bản hợp nhất theo [hướng dẫn tổng](../final-demo.md).
 
 | Link | Đầu A / interface / IP | Đầu B / interface / IP |
 | --- | --- | --- |
@@ -95,8 +93,6 @@ Hai default tại Edge gắn track1/track2. PBR chọn ISP theo nhóm nguồn, d
 | ISP1/2 | Web/probe prefix qua INET-Core; public transit connected | Link hỏng ảnh hưởng đúng nhánh tương ứng |
 | INET-Core | Web/probe connected; public NAT prefix trở về đúng ISP | Phục hồi từng nhánh không cần đổi địa chỉ Web |
 
-Các hàng là expected, không phải output CLI thu được. Kiểm lệnh và feature support trong [hướng dẫn module](../../simulation/modules/tv1-wan/README.md); hồ sơ [TC03](../../test_results/TC03-inter-site/result.md), [TC06](../../test_results/TC06-internet-web/result.md), [dual ISP](../../test_results/supplemental/dual-isp-failover.md) hiện NOT RUN.
-
 ## 6. Nguồn kỹ thuật và giới hạn
 
 - [Cisco: OSPF default route](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13692-21.html): điều kiện originate khi có default trong RIB.
@@ -107,5 +103,3 @@ Các hàng là expected, không phải output CLI thu được. Kiểm lệnh v�
 Chưa thử IOS parser/Packet Tracer cho model cụ thể. Cấu hình sử dụng IP SLA, tracking, PBR verify-availability, NAT route-map và selective redistribution; nếu nền tảng không nhận lệnh, giữ mục đó BLOCKED/DESIGN ONLY và dùng môi trường có image hợp pháp hỗ trợ chức năng. Mỗi nhánh có một leased line; Edge/FW/Core tham chiếu cũng là thiết bị đơn, nên hai ISP không loại bỏ mọi SPOF.
 
 ## Bổ sung GPON trong phương án hybrid
-
-[Thiết kế GPON](gpon-design.md) chọn 80→96 PC VLAN60 Main qua 20→24 ONT; các máy này đã nằm trong tổng PC. Hai uplink OLT bổ sung mỗi Core một cổng (28→29/32), hai splitter1:16 và ODN/OS2 có budget ví dụ, cần đo quang thực. Bảng cổng/cáp Ethernet giữ chỗ dự phòng để rollback. Đây là thiết kế, không phải GPON đã chạy trong GNS3.

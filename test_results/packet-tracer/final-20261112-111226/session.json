@@ -1,0 +1,14 @@
+{
+  "source": "test_results/packet-tracer/runtime-20261112/lab.pkt",
+  "source_sha256": "dddedf3290c6969e5627c08f599c2b6c994da77852c62fed4f6730b7f0225041",
+  "original_main_sha256": "d3d9a112c91acde5e87d7a937a96ee2e7a988ae5c7325ac09b87189aa314897a",
+  "scope": "Working copy for Cisco-only management SSH overlay. No changes to historical source/results.",
+  "status": "PASS",
+  "completed_at_utc": "2026-11-12T04:36:03.290592+00:00",
+  "native_sha256": "e37800126bfa13b68689593c591046ecf2cc933ccb2798504790c1105eebed91",
+  "network_executed": true,
+  "observations": 32,
+  "ssh_cases": 3,
+  "reopened_in_native_gui": true,
+  "main_promoted_exact_bytes": true
+}

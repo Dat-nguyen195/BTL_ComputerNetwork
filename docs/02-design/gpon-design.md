@@ -1,7 +1,5 @@
 # GPON trong thiết kế hạ tầng Main
 
-**Bổ sung ngày 02/11/2026. Trạng thái: thiết kế kỹ thuật; chưa đo quang hoặc triển khai thiết bị thật.** Đề gốc trang 1 yêu cầu GPON cùng 1/10/40GbE. Bản này đưa GPON vào phương án hybrid, không loại yêu cầu GPON khỏi thiết kế. GNS3 kiểm chức năng IP/VLAN, không mô phỏng OMCI, DBA, bước sóng, ranging hoặc suy hao quang.
-
 ## Phạm vi và sơ đồ
 
 Chọn GPON cho **80 PC hành chính của VLAN60 tại Main**; 20 PC VLAN60 còn lại và các VLAN nghiệp vụ/medical, AP, camera, server dùng Ethernet. Sau tăng trưởng 20%: 96 PC qua GPON và 24 PC qua Ethernet, tổng VLAN60 vẫn 120 PC. Các PC này nằm trong tổng 600→720 của Main, không cộng thêm vào quy mô bệnh viện.

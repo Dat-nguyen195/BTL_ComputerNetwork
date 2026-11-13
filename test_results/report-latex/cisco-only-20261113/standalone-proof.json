@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "passes": 3,
+  "standalone_text_matches_delivered_pdf": true,
+  "text_sha256": "458a8fd78e2bbd2359af0c5473135bab73e480f535e9102c6c26ceffb3f29d78",
+  "build_isolation": "Fresh temporary source tree containing all standalone bundle inputs; compiled PDF copied unchanged to final and previews.",
+  "report_pdf_sha256": "69a6817bcd418a97352ba6bba6204249c731153f487cc35a7d48da0a2b688779"
+}

@@ -1,0 +1,1 @@
+Standalone XeLaTeX, 3 passes, no shell escape; PDF synchronized to final and both previews. No overfull boxes, missing glyphs, unresolved citations or references.

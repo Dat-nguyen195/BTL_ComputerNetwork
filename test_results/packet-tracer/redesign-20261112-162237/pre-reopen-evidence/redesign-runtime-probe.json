@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "ping",
+    "group": "REDESIGN-PROBE",
+    "source": "Main-Admin",
+    "target": "10.10.110.12",
+    "source_ip": "10.10.90.11",
+    "expected": "allow",
+    "command": "ping 10.10.110.12",
+    "completion": "statistics",
+    "output": "ping 10.10.110.12\n\nPinging 10.10.110.12 with 32 bytes of data:\n\nRequest timed out.\nReply from 10.10.110.12: bytes=32 time<1ms TTL=127\nReply from 10.10.110.12: bytes=32 time<1ms TTL=127\nReply from 10.10.110.12: bytes=32 time<1ms TTL=127\n\nPing statistics for 10.10.110.12:\n    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),\n",
+    "time": "2026-11-12T14:06:23.652Z"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-12T14:51:11.161585+00:00",
+  "command": "python3 scripts/verify.py",
+  "exit_code": 0,
+  "scope": "Repository offline validation; runtime execution is separately recorded in Packet Tracer raw stores. Package validation runs separately after archive build.",
+  "log": "test_results/topology-redesign/20261112-162237/offline-verification.txt",
+  "log_sha256": "b2abacf07ef346976eb34e80bdd6985c35f925778cee736c9a1c555ce2b3b75f",
+  "native_sha256": "183953558f045e378ddbbed3205da84e357865381f03f95b4dc625cf79e0b31a",
+  "report_sha256": "64410646e5c3b92941f03fc97a22dda878a6a3d07148f2e38110795a3022a87a",
+  "source_zip_sha256": "27babe6aa4c276f2046b5243eba4a49bb9d3c53a693f4d841c7330e440318716",
+  "report_pages": 42,
+  "standalone_text_matches": true
+}

@@ -1,0 +1,12 @@
+% Derived from redesign native and raw runtime records. No synthetic observations.
+\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
+Test & Nguồn--đích / phương pháp & Quan sát và kết luận\\\midrule
+CAM01 & Main: 10.10.110.100--109 → 10.10.110.12 & 10 serial khớp đăng ký; GUI 10 camera kết nối\\
+CAM02 & DBP: 10.20.110.100--101 → 10.20.110.12 & Hai serial khớp; GUI hai camera kết nối\\
+CAM03 & BHTQ: 10.30.110.100--101 → 10.30.110.12 & Hai serial khớp; GUI hai camera kết nối\\
+CAM04 & Main-Admin 10.10.90.11/V90 → ba portal & Ba HTTP có nội dung IoT; đăng nhập GUI thật\\
+CAM05 & Guest V100 ba site → portal local & Trang trống/type7; cùng client vẫn có Web; ACL +12/site\\
+CAM06 & Lưu, đóng, tiến trình mới, mở lại & 14 serial/cấu hình giữ nguyên; 12 HTTP + 3 SSH đạt\\\bottomrule\end{tabularx}
+
+Suite riêng 21 HTTP: 3 Admin cho phép, 3 Guest chặn, 3 Web đối chứng, 3 nghiệp vụ chặn, 3 Staff chặn, 6 HIS/DNS/Web từ PC B-F3/F4/F5. Không cộng vào 32 P0/WIFI.
+Bằng chứng runtime ngày 12/11/2026, không phải lượt chạy mới khi sửa báo cáo. Smoke cuối đủ 12 HTTP + 3 SSH; hai Web đối chứng thiếu nội dung ở lượt đầu được giữ trong lịch sử kiểm thử. Nguồn, đích, IP/VLAN, output và dấu thời gian được đối chiếu trong cùng lượt thử. Serial đã lưu chỉ chứng minh đăng ký; HTTP/GUI bổ sung bằng chứng truy cập, không chứng minh ghi video.

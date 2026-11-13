@@ -53,7 +53,7 @@ Mỗi thiết bị khách/ngày thêm khoảng **0,2963 Mbps peak down**, hoặc
 
 ## Tái lập và phân tích độ nhạy
 
-[capacity.py](../../scripts/capacity.py) đọc [capacity-inputs.csv](capacity-inputs.csv), dùng thư viện chuẩn Python. [Baseline CSV](calculated-baseline.csv) là đầu ra tính toán, không phải log thiết bị. Upload khách chưa biết hiện bằng `UNKNOWN`; tổng upload là **phần đã biết**, không khẳng định tải khách bằng 0. Biến overhead không có trong đề nên mặc định 0, cần chỉ định riêng khi phân tích.
+Công cụ local `scripts/capacity.py` đọc [capacity-inputs.csv](capacity-inputs.csv), dùng thư viện chuẩn Python. [Baseline CSV](calculated-baseline.csv) là đầu ra tính toán, không phải log thiết bị. Upload khách chưa biết hiện bằng `UNKNOWN`; tổng upload là **phần đã biết**, không khẳng định tải khách bằng 0. Biến overhead không có trong đề nên mặc định 0, cần chỉ định riêng khi phân tích.
 
 ```bash
 python3 scripts/capacity.py

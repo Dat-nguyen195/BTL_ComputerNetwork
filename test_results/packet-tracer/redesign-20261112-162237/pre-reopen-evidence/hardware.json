@@ -1,0 +1,42 @@
+{
+  "supported": [
+    "GLC-LH-SMD:../art/PhysicalView/glc-lh-smd.pngThe 1000BASE-LX/LH SFP operates in Gigabit Ethernet ports of Cisco Industrial Ethernet and SmartGrid switches and routers",
+    "HWIC-1GE-SFP:../art/PhysicalView/gModuleHWIC-1GE-SFP.pngThe HWIC-1GE-SFP is a single-wide HWIC with one Small Form-Factor Pluggable (SFP) slot. The SFP slot can be populated with Cisco copper and optical Gigabit Ethernet SFPs to provide 1-port Gigabit Ethernet connectivity on all Cisco Integrated Services Routers",
+    "HWIC-2T:../art/PhysicalView/gModuleHWIC-2T.pngThe HWIC-2T is a Cisco 2-Port Serial High-Speed WAN Interface Card, providing 2 serial ports.",
+    "HWIC-4ESW:../art/PhysicalView/gModuleNM-HWIC-4ESW.pngThe HWIC-4ESW provides four switching ports.",
+    "HWIC-8A:../art/PhysicalView/gModuleHWIC-8A.pngThe HWIC-8A provides up to eight asynchronous EIA-232 connections to console ports.",
+    "HWIC-AP-AG-B:../art/PhysicalView/gModuleHWIC-AP-AG-B.pngThe HWIC-AP-AG-B module is a High-Speed WAN Interface Card providing integrated Access Point functionality in the Cisco 1800 (Modular), Cisco 2800, and Cisco 3800 Integrated Services Routers. It supports Single Band 802.11b/g or Dual Band 802.11a/b/g radios.",
+    "NM-1E:../art/PhysicalView/gModuleNM-1E.pngThe NM-1E features a single Ethernet port that can connect a LAN backbone which can also support either six PRI connections to aggregate ISDN lines, or 24 synchronous/asynchronous ports.",
+    "NM-1E2W:../art/PhysicalView/gModuleNM-1E2W.pngThe NM-1E2W provides a single Ethernet port with two WIC slots that can support a single Ethernet LAN, together with two serial/ISDN backhaul lines, and still allow multiple serial or ISDN in the same chassis.",
+    "NM-1FE-FX:../art/PhysicalView/gModuleNM-1FE-FX.pngThe NM-1FE-FX Module provides one Fast-Ethernet interface for use with multi mode fiber media. Ideal for a wide range of LAN applications, the Fast Ethernet network modules support many internetworking features and standards. Single port network modules offer autosensing 10/100BaseTX or 100BaseFX Ethernet.",
+    "NM-1FE-TX:../art/PhysicalView/gModuleNM-1FE-TX.pngThe NM-1FE-TX Module provides one Fast-Ethernet interface for use with copper media. Ideal for a wide range of LAN applications, the Fast Ethernet network modules support many internetworking features and standards. Single port network modules offer autosensing 10/100BaseTX or 100BaseFX Ethernet. The TX (copper) version supports virtual LAN (VLAN) deployment.",
+    "NM-1FE2W:../art/PhysicalView/gModuleNM-1FE2W.pngThe NM-1FE2W Module provides one Fast-Ethernet interface for use with copper media, in addition to two Wan Interface Card expansion slots. Ideal for a wide range of LAN applications, the Fast Ethernet network modules support many internetworking features and standards. Single port network modules offer autosensing 10/100BaseTX or 100BaseFX Ethernet. The TX (copper) version supports virtual LAN (VLAN) deployment.",
+    "NM-2E2W:../art/PhysicalView/gModuleNM-2E2W.pngThe NM-2E2W provides two Ethernet ports with two WIC slots that can support two Ethernet LANs, together with two serial/ISDN backhaul lines, and still allow multiple serial or ISDN in the same chassis.",
+    "NM-2FE2W:../art/PhysicalView/gModuleNM-2FE2W.pngThe NM-2FE2W Module provides two Fast-Ethernet interfaces for use with copper media, in addition to two Wan Interface Card expansion slots. Ideal for a wide range of LAN applications, the Fast Ethernet network modules support many internetworking features and standards.",
+    "NM-2W:../art/PhysicalView/gModuleNM-2W.pngThe NM-2W Module provides two WAN Interface Card expansion slots. It can be used with a broad range of interface cards, supporting a diverse array of physical media and network protocols.",
+    "NM-4A/S:../art/PhysicalView/gModuleNM-4AS.pngThe 4-port asynchronous/synchronous serial network module provides flexible multi-protocol support, with each port individually configurable in synchronous or asynchronous mode, offering mixed-media dial support in a single chassis. Applications for Asynchronous/Synchronous support include: \tLow speed WAN aggregation (up to 128 Kbps), dial-up modem support, Async or Sync connections to management ports of other equipment, and transport of legacy protocols such as Bi-sync and SDLC.",
+    "NM-4E:../art/PhysicalView/gModuleNM-4E.pngThe NM-4E features four Ethernet ports for multifunction solutions that require higher-density Ethernet than the mixed-media network modules.",
+    "NM-8A/S:../art/PhysicalView/gModuleNM-8AS.pngThe 8-port asynchronous/synchronous serial network module provides flexible multi-protocol support, with each port individually configurable in synchronous or asynchronous mode, offering mixed-media dial support in a single chassis. Applications for Asynchronous/Synchronous support include: \tLow speed WAN aggregation (up to 128 Kbps), dial-up modem support, Async or Sync connections to management ports of other equipment, and transport of legacy protocols such as Bi-sync and SDLC.",
+    "NM-8AM:../art/PhysicalView/gModuleNM-8AM.pngThe NM-8AM Integrated V.92 analog modem network module provides cost-effective analog telephone service connectivity for lower-density remote-access service (RAS), dial-out and fax-out modem access, asynchronous dial-on-demand routing (DDR) plus dial backup, and remote router management. Both the 8-port and 16-port versions use RJ-11 jacks to connect the integrated modems to basic analog telephone lines on the public switched telephone network (PSTN) or private telephony systems.",
+    "NM-Cover:../art/PhysicalView/gModuleNM-Cover.pngThe NM cover plate provides protection for the internal electronic components. It also helps maintain adequate cooling by normalizing airflow.",
+    "NM-ESW-161:../art/PhysicalView/gModuleNM-ESW-161.pngThe NM-ESW-161 provides 16 switching ports.",
+    "WIC-1AM:../art/PhysicalView/gModuleNM-WIC-1AM.pngThe WIC-1AM card features dual RJ-11 connectors, which are used for basic telephone service connections. The WIC-1AM uses one port for connection to a standard telephone line, and the other port can be connected to a basic analog telephone for use when the modem is idle.",
+    "WIC-1ENET:../art/PhysicalView/gModuleNM-WIC-1ENET.pngThe WIC-1ENET is a single-port 10 Mbps Ethernet interface card, for use with 10BASE-T Ethernet LANs.",
+    "WIC-1T:../art/PhysicalView/gModuleNM-WIC-1T.pngThe WIC-1T provides a single port serial connection to remote sites or legacy serial network devices such as Synchronous Data Link Control (SDLC) concentrators, alarm systems, and packet over SONET (POS) devices.",
+    "WIC-2AM:../art/PhysicalView/gModuleNM-WIC-2AM.pngThe WIC-2AM card features dual RJ-11 connectors, which are used for basic telephone service connections. The WIC-2AM has two modem ports to allow multiple data communication connections.",
+    "WIC-2T:../art/PhysicalView/gModuleNM-WIC-2T.pngThe dual-serial port WAN interface cards (WICs) feature Cisco`s new, compact, high-density Smart Serial connector to support a wide variety of electrical interfaces when used with the appropriate transition cable. Two cables are required to support the two ports on the WIC. Each port on a WIC is a different physical interface and can support different protocols such as Point-to-Point protocol (PPP) or Frame Relay and Data Terminal Equipment/Data Communications Equipment (DTE/DCE).",
+    "WIC-Cover:../art/PhysicalView/gModuleWIC-Cover.pngThe WIC cover plate provides protection for the internal electronic components. It also helps maintain adequate cooling by normalizing airflow."
+  ],
+  "slots": [
+    {
+      "index": 0,
+      "type": 18,
+      "module": "None"
+    },
+    {
+      "index": 1,
+      "type": 1,
+      "module": null
+    }
+  ]
+}

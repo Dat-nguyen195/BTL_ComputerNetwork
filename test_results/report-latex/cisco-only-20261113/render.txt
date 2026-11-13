@@ -1,0 +1,1 @@
+All 40 pages rendered with pdftoppm -scale-to 1400 -png, then inspected on 10 contact sheets.

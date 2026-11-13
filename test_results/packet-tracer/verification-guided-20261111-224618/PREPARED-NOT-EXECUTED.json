@@ -1,0 +1,8 @@
+{
+  "status": "PREPARED ONLY; NETWORK TESTS HAVE NOT BEEN EXECUTED",
+  "prepared_at": "2026-11-11T22:46:18.787783+07:00",
+  "source": "simulation/packet-tracer/hospital-3sites.pkt",
+  "source_sha256": "d3d9a112c91acde5e87d7a937a96ee2e7a988ae5c7325ac09b87189aa314897a",
+  "working_copy": "test_results/packet-tracer/verification-guided-20261111-224618/lab.pkt",
+  "note": "Saved native may contain historical embedded results. Run the GUI instructions and save before collecting; collection alone does not establish a new test run."
+}

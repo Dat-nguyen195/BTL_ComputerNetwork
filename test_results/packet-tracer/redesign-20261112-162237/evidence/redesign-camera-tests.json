@@ -1,0 +1,501 @@
+{
+  "started_at": "2026-11-12T14:17:21.364Z",
+  "scope": "Camera authorization and new-floor application regression",
+  "records": [
+    {
+      "kind": "http",
+      "group": "CAM04",
+      "source": "Main-Admin",
+      "url": "http://10.10.110.12",
+      "source_ip": "10.10.90.11",
+      "marker": "IoT",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+          "responseType": 3,
+          "serverIp": "10.10.110.12",
+          "url": "http://10.10.110.12"
+        }
+      ],
+      "page": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+      "time": "2026-11-12T14:17:32.798Z",
+      "source_vlan": 90
+    },
+    {
+      "kind": "http",
+      "group": "CAM05",
+      "source": "Main-Guest",
+      "url": "http://10.10.110.12",
+      "source_ip": "10.10.100.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.10.110.12",
+          "url": "http://10.10.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:17:44.798Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM05-CONTROL",
+      "source": "Main-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:17:56.798Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM-CLINICAL-DENY",
+      "source": "Main-PC10-A",
+      "url": "http://10.10.110.12",
+      "source_ip": "10.10.10.9",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.10.110.12",
+          "url": "http://10.10.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:18:08.798Z",
+      "source_vlan": 10
+    },
+    {
+      "kind": "http",
+      "group": "CAM-STAFF-DENY",
+      "source": "Main-Staff",
+      "url": "http://10.10.110.12",
+      "source_ip": "10.10.120.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.10.110.12",
+          "url": "http://10.10.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:18:20.799Z",
+      "source_vlan": 120
+    },
+    {
+      "kind": "http",
+      "group": "CAM04",
+      "source": "Main-Admin",
+      "url": "http://10.20.110.12",
+      "source_ip": "10.10.90.11",
+      "marker": "IoT",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+          "responseType": 3,
+          "serverIp": "10.20.110.12",
+          "url": "http://10.20.110.12"
+        }
+      ],
+      "page": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+      "time": "2026-11-12T14:18:32.799Z",
+      "source_vlan": 90
+    },
+    {
+      "kind": "http",
+      "group": "CAM05",
+      "source": "DBP-Guest",
+      "url": "http://10.20.110.12",
+      "source_ip": "10.20.100.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.20.110.12",
+          "url": "http://10.20.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:18:44.798Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM05-CONTROL",
+      "source": "DBP-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.20.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:18:56.798Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM-CLINICAL-DENY",
+      "source": "DBP-PC10",
+      "url": "http://10.20.110.12",
+      "source_ip": "10.20.10.7",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.20.110.12",
+          "url": "http://10.20.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:19:08.798Z",
+      "source_vlan": 10
+    },
+    {
+      "kind": "http",
+      "group": "CAM-STAFF-DENY",
+      "source": "DBP-Staff",
+      "url": "http://10.20.110.12",
+      "source_ip": "10.20.120.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.20.110.12",
+          "url": "http://10.20.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:19:20.798Z",
+      "source_vlan": 120
+    },
+    {
+      "kind": "http",
+      "group": "CAM04",
+      "source": "Main-Admin",
+      "url": "http://10.30.110.12",
+      "source_ip": "10.10.90.11",
+      "marker": "IoT",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+          "responseType": 3,
+          "serverIp": "10.30.110.12",
+          "url": "http://10.30.110.12"
+        }
+      ],
+      "page": "<html>\n<head>\n<script>\nfunction validateLogin(form)\n{\n  var userid = document.forms[\"login\"][\"userid\"].value;\n  var password = document.forms[\"login\"][\"pw\"].value;\n  if (userid.length == 0)\n  {\n    alert(\"Please enter the userid.\");\n  }\n  else if (password.length == 0)\n  {\n    alert(\"Please enter the password.\");\n  }\n  else\n  {\n    CHttpFormExtractor.submitIoeLogin(userid, password, function(rtn) { form.submit();});\n  }\n  return false;\n}\n</script>\n</head>\n<body>\n<center>\n<h3>Registration Server Login</h3>\n<table>\n<tr><td>\n<form name=\"login\" method=\"post\" action=\"login_action.php\" onsubmit=\"return validateLogin(this)\">\nUsername: <input type=\"text\" name=\"userid\" id=\"userid\" value=\"\" size=\"20\"><br>\nPassword: <input type=\"password\" name=\"pw\" id=\"pw\" value=\"\" size=\"20\"><br>\n<br>\n<center>\n<input type=\"submit\" value=\"Sign In\">\n</center>\n</form>\n</td></tr>\n</table>\n</center>\n<span>Don't have an IoT account?</span> <a id=\"idA_SignUp\" class=\"TextSemiBold\" href=\"create_account.html\">Sign up now</a>\n</body>\n</html>",
+      "time": "2026-11-12T14:19:32.799Z",
+      "source_vlan": 90
+    },
+    {
+      "kind": "http",
+      "group": "CAM05",
+      "source": "BHTQ-Guest",
+      "url": "http://10.30.110.12",
+      "source_ip": "10.30.100.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.30.110.12",
+          "url": "http://10.30.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:19:44.800Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM05-CONTROL",
+      "source": "BHTQ-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.30.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:19:56.798Z",
+      "source_vlan": 100
+    },
+    {
+      "kind": "http",
+      "group": "CAM-CLINICAL-DENY",
+      "source": "BHTQ-PC10",
+      "url": "http://10.30.110.12",
+      "source_ip": "10.30.10.7",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.30.110.12",
+          "url": "http://10.30.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:20:08.798Z",
+      "source_vlan": 10
+    },
+    {
+      "kind": "http",
+      "group": "CAM-STAFF-DENY",
+      "source": "BHTQ-Staff",
+      "url": "http://10.30.110.12",
+      "source_ip": "10.30.120.11",
+      "marker": "IoT",
+      "expected": "deny",
+      "initiated": true,
+      "events": [
+        {
+          "content": "",
+          "responseType": 7,
+          "serverIp": "10.30.110.12",
+          "url": "http://10.30.110.12"
+        }
+      ],
+      "page": "",
+      "time": "2026-11-12T14:20:20.798Z",
+      "source_vlan": 120
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-HIS",
+      "source": "Main-B-F3-PC",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.10.8",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-12T14:20:32.798Z",
+      "source_vlan": 10
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-DNS-WEB",
+      "source": "Main-B-F3-PC",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.10.8",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:20:44.872Z",
+      "source_vlan": 10
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-HIS",
+      "source": "Main-B-F4-PC",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.20.8",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-12T14:20:56.798Z",
+      "source_vlan": 20
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-DNS-WEB",
+      "source": "Main-B-F4-PC",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.20.8",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:21:08.798Z",
+      "source_vlan": 20
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-HIS",
+      "source": "Main-B-F5-PC",
+      "url": "http://10.10.70.11",
+      "source_ip": "10.10.60.8",
+      "marker": "HOSPITAL-LAB-Main-HIS",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "10.10.70.11",
+          "url": "http://10.10.70.11"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Main-HIS</h1></body></html>",
+      "time": "2026-11-12T14:21:20.799Z",
+      "source_vlan": 60
+    },
+    {
+      "kind": "http",
+      "group": "FLOOR-DNS-WEB",
+      "source": "Main-B-F5-PC",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.60.8",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-12T14:21:32.799Z",
+      "source_vlan": 60
+    }
+  ],
+  "before": [
+    {
+      "node": "Main-Core",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list MAIN-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (7 match(es))\n    20 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq www (11 match(es))\n    70 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.10.0 0.0.0.127 host 10.10.80.10 eq www (7 match(es))\n    110 permit icmp 10.10.10.0 0.0.0.127 10.10.10.0 0.0.0.127\n    120 permit icmp 10.10.10.0 0.0.0.127 10.10.20.0 0.0.0.127 (16 match(es))\n    130 permit icmp 10.10.10.0 0.0.0.127 10.20.10.0 0.0.0.127 (16 match(es))\n    140 permit icmp 10.10.10.0 0.0.0.127 10.30.10.0 0.0.0.127 (16 match(es))\n    150 deny ip any 10.0.0.0 0.255.255.255\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.10.0 0.0.0.127 any eq www (6 match(es))\n    200 permit tcp 10.10.10.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.10.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (4 match(es))\n    20 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit icmp 10.10.20.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    120 permit icmp 10.10.20.0 0.0.0.127 10.10.20.0 0.0.0.127\n    130 permit icmp 10.10.20.0 0.0.0.127 10.20.10.0 0.0.0.127\n    140 permit icmp 10.10.20.0 0.0.0.127 10.30.10.0 0.0.0.127\n    150 deny ip any 10.0.0.0 0.255.255.255\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.20.0 0.0.0.127 any eq www\n    200 permit tcp 10.10.20.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.20.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.30.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.30.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.30.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V40-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.40.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.40.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.40.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.40.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V50-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.50.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.50.0 0.0.0.127 any eq www\n    160 permit tcp 10.10.50.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.50.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V60-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (4 match(es))\n    20 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.60.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.60.0 0.0.0.127 any eq www\n    160 permit tcp 10.10.60.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.60.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (16 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.10.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.10.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.10.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list MAIN-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.10.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.10.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-SERVER-IN\n    10 permit udp host 10.10.70.10 eq bootps any eq bootps (24 match(es))\n    20 permit udp host 10.10.70.10 eq bootps any eq bootpc\n    30 permit udp host 10.10.70.10 eq domain 10.0.0.0 0.255.255.255 (2 match(es))\n    40 permit tcp 10.10.70.0 0.0.0.31 any established (21 match(es))\n    50 permit icmp 10.10.70.0 0.0.0.31 any echo-reply\n    60 permit udp host 10.10.70.10 host 192.0.2.100 eq domain\n    70 permit tcp host 10.10.70.10 host 192.0.2.100 eq domain\n    80 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 123\n    90 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 514\n    100 deny ip any 10.0.0.0 0.255.255.255 (24 match(es))\n    110 deny ip any 172.16.0.0 0.15.255.255\n    120 deny ip any 192.168.0.0 0.0.255.255\n    130 permit tcp 10.10.70.0 0.0.0.31 any eq www\n    140 permit tcp 10.10.70.0 0.0.0.31 any eq 443\n    150 deny ip any any\nExtended IP access list MAIN-MGMT-IN\n    10 permit ip host 10.10.90.11 any (139 match(es))\n    20 permit tcp 10.10.90.0 0.0.0.255 host 10.10.90.11 established\n    30 permit icmp 10.10.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    40 deny ip any any\nExtended IP access list MAIN-CAMERA-IN\n    10 permit tcp 10.10.110.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.10.110.0 0.0.0.255 host 10.10.90.11 echo-reply (3 match(es))\n    30 permit udp 10.10.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\nStandard IP access list MGMT-SSH-ONLY\n    10 permit host 10.10.90.11\n    20 deny any\n\n\n"
+      }
+    },
+    {
+      "node": "DBP-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list DBP-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain (1 match(es))\n    50 permit tcp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.20.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    140 permit icmp 10.20.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.20.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.20.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.20.10.0 0.0.0.127 any eq www (6 match(es))\n    220 permit tcp 10.20.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.20.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list DBP-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.20.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.20.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.20.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list DBP-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.20.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.20.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (16 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.20.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.20.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.20.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list DBP-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain (1 match(es))\n    50 permit tcp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.20.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.20.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-SERVER-IN\n    10 permit udp host 10.20.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.20.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.20.70.6 eq domain 10.0.0.0 0.255.255.255 (2 match(es))\n    40 permit tcp 10.20.70.0 0.0.0.15 any established\n    50 permit icmp 10.20.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.20.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.20.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.20.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (10 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.20.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.20.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list DBP-MGMT-IN\n    10 permit tcp 10.20.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.20.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list DBP-CAMERA-IN\n    10 permit tcp 10.20.110.0 0.0.0.255 host 10.10.90.11 established (13 match(es))\n    20 permit icmp 10.20.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.20.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list BHTQ-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain (1 match(es))\n    50 permit tcp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.30.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    140 permit icmp 10.30.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.30.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.30.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.30.10.0 0.0.0.127 any eq www (5 match(es))\n    220 permit tcp 10.30.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.30.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list BHTQ-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.30.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.30.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.30.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list BHTQ-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.30.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.30.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain (1 match(es))\n    50 permit tcp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (16 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.30.100.0 0.0.1.255 any eq www (5 match(es))\n    110 permit tcp 10.30.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.30.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list BHTQ-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain (1 match(es))\n    50 permit tcp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.30.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.30.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-SERVER-IN\n    10 permit udp host 10.30.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.30.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.30.70.6 eq domain 10.0.0.0 0.255.255.255 (2 match(es))\n    40 permit tcp 10.30.70.0 0.0.0.15 any established\n    50 permit icmp 10.30.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.30.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.30.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.30.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (10 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.30.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.30.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list BHTQ-MGMT-IN\n    10 permit tcp 10.30.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.30.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list BHTQ-CAMERA-IN\n    10 permit tcp 10.30.110.0 0.0.0.255 host 10.10.90.11 established (102 match(es))\n    20 permit icmp 10.30.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.30.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    }
+  ],
+  "after": [
+    {
+      "node": "Main-Core",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list MAIN-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (7 match(es))\n    20 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.10.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain (2 match(es))\n    50 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq www (16 match(es))\n    70 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.10.0 0.0.0.127 host 10.10.80.10 eq www (7 match(es))\n    110 permit icmp 10.10.10.0 0.0.0.127 10.10.10.0 0.0.0.127\n    120 permit icmp 10.10.10.0 0.0.0.127 10.10.20.0 0.0.0.127 (16 match(es))\n    130 permit icmp 10.10.10.0 0.0.0.127 10.20.10.0 0.0.0.127 (16 match(es))\n    140 permit icmp 10.10.10.0 0.0.0.127 10.30.10.0 0.0.0.127 (16 match(es))\n    150 deny ip any 10.0.0.0 0.255.255.255 (24 match(es))\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.10.0 0.0.0.127 any eq www (11 match(es))\n    200 permit tcp 10.10.10.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.10.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (4 match(es))\n    20 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.20.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit icmp 10.10.20.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    120 permit icmp 10.10.20.0 0.0.0.127 10.10.20.0 0.0.0.127\n    130 permit icmp 10.10.20.0 0.0.0.127 10.20.10.0 0.0.0.127\n    140 permit icmp 10.10.20.0 0.0.0.127 10.30.10.0 0.0.0.127\n    150 deny ip any 10.0.0.0 0.255.255.255\n    160 deny ip any 172.16.0.0 0.15.255.255\n    170 deny ip any 192.168.0.0 0.0.255.255\n    180 deny ip any 169.254.0.0 0.0.255.255\n    190 permit tcp 10.10.20.0 0.0.0.127 any eq www (5 match(es))\n    200 permit tcp 10.10.20.0 0.0.0.127 any eq 443\n    210 permit icmp 10.10.20.0 0.0.0.127 host 192.0.2.100\n    220 deny ip any any\nExtended IP access list MAIN-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.30.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.10.30.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.30.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.30.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.30.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V40-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.40.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.40.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.10.40.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.10.40.0 0.0.0.127 any eq www\n    180 permit tcp 10.10.40.0 0.0.0.127 any eq 443\n    190 permit icmp 10.10.40.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list MAIN-V50-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.50.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    50 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.50.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.50.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.50.0 0.0.0.127 any eq www\n    160 permit tcp 10.10.50.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.50.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V60-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (4 match(es))\n    20 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.60.0 0.0.0.127 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.10.60.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.60.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.60.0 0.0.0.127 any eq www (5 match(es))\n    160 permit tcp 10.10.60.0 0.0.0.127 any eq 443\n    170 permit icmp 10.10.60.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.100.0 0.0.1.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain (2 match(es))\n    50 permit tcp 10.10.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (28 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.10.100.0 0.0.1.255 any eq www (10 match(es))\n    110 permit tcp 10.10.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.10.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list MAIN-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.10.120.0 0.0.0.255 eq bootpc host 10.10.70.10 eq bootps\n    40 permit udp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain (1 match(es))\n    50 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.10 eq domain\n    60 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.10.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.10.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255 (12 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.10.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.10.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.10.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list MAIN-SERVER-IN\n    10 permit udp host 10.10.70.10 eq bootps any eq bootps (24 match(es))\n    20 permit udp host 10.10.70.10 eq bootps any eq bootpc\n    30 permit udp host 10.10.70.10 eq domain 10.0.0.0 0.255.255.255 (5 match(es))\n    40 permit tcp 10.10.70.0 0.0.0.31 any established (30 match(es))\n    50 permit icmp 10.10.70.0 0.0.0.31 any echo-reply\n    60 permit udp host 10.10.70.10 host 192.0.2.100 eq domain\n    70 permit tcp host 10.10.70.10 host 192.0.2.100 eq domain\n    80 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 123\n    90 permit udp 10.10.70.0 0.0.0.31 host 10.10.70.17 eq 514\n    100 deny ip any 10.0.0.0 0.255.255.255 (24 match(es))\n    110 deny ip any 172.16.0.0 0.15.255.255\n    120 deny ip any 192.168.0.0 0.0.255.255\n    130 permit tcp 10.10.70.0 0.0.0.31 any eq www\n    140 permit tcp 10.10.70.0 0.0.0.31 any eq 443\n    150 deny ip any any\nExtended IP access list MAIN-MGMT-IN\n    10 permit ip host 10.10.90.11 any (176 match(es))\n    20 permit tcp 10.10.90.0 0.0.0.255 host 10.10.90.11 established\n    30 permit icmp 10.10.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    40 deny ip any any\nExtended IP access list MAIN-CAMERA-IN\n    10 permit tcp 10.10.110.0 0.0.0.255 host 10.10.90.11 established (3 match(es))\n    20 permit icmp 10.10.110.0 0.0.0.255 host 10.10.90.11 echo-reply (3 match(es))\n    30 permit udp 10.10.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\nStandard IP access list MGMT-SSH-ONLY\n    10 permit host 10.10.90.11 (3 match(es))\n    20 deny any\n\n\n"
+      }
+    },
+    {
+      "node": "DBP-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list DBP-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.10.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain (1 match(es))\n    50 permit tcp 10.20.10.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.20.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.20.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    140 permit icmp 10.20.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.20.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.20.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255 (12 match(es))\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.20.10.0 0.0.0.127 any eq www (6 match(es))\n    220 permit tcp 10.20.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.20.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list DBP-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.20.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.20.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.20.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.20.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.20.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.20.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list DBP-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.30.0 0.0.0.127 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    50 permit tcp 10.20.30.0 0.0.0.127 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.20.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.20.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.20.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.100.0 0.0.1.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain (2 match(es))\n    50 permit tcp 10.20.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (28 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.20.100.0 0.0.1.255 any eq www (10 match(es))\n    110 permit tcp 10.20.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.20.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list DBP-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.20.120.0 0.0.0.255 eq bootpc host 10.20.70.6 eq bootps\n    40 permit udp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain (1 match(es))\n    50 permit tcp 10.20.120.0 0.0.0.255 host 10.20.70.6 eq domain\n    60 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.20.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.20.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255 (12 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.20.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.20.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.20.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list DBP-SERVER-IN\n    10 permit udp host 10.20.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.20.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.20.70.6 eq domain 10.0.0.0 0.255.255.255 (2 match(es))\n    40 permit tcp 10.20.70.0 0.0.0.15 any established\n    50 permit icmp 10.20.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.20.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.20.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.20.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.20.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (10 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.20.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.20.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list DBP-MGMT-IN\n    10 permit tcp 10.20.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.20.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list DBP-CAMERA-IN\n    10 permit tcp 10.20.110.0 0.0.0.255 host 10.10.90.11 established (16 match(es))\n    20 permit icmp 10.20.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.20.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    },
+    {
+      "node": "BHTQ-GW",
+      "command": "show access-lists",
+      "result": {
+        "first": 0,
+        "second": "Extended IP access list BHTQ-V10-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (3 match(es))\n    20 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.10.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain (1 match(es))\n    50 permit tcp 10.30.10.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.10.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq www\n    120 permit tcp 10.30.10.0 0.0.0.127 host 10.10.70.12 eq 11112\n    130 permit icmp 10.30.10.0 0.0.0.127 10.10.10.0 0.0.0.127 (15 match(es))\n    140 permit icmp 10.30.10.0 0.0.0.127 10.10.20.0 0.0.0.127\n    150 permit icmp 10.30.10.0 0.0.0.127 10.20.10.0 0.0.0.127\n    160 permit icmp 10.30.10.0 0.0.0.127 10.30.10.0 0.0.0.127\n    170 deny ip any 10.0.0.0 0.255.255.255 (12 match(es))\n    180 deny ip any 172.16.0.0 0.15.255.255\n    190 deny ip any 192.168.0.0 0.0.255.255\n    200 deny ip any 169.254.0.0 0.0.255.255\n    210 permit tcp 10.30.10.0 0.0.0.127 any eq www (5 match(es))\n    220 permit tcp 10.30.10.0 0.0.0.127 any eq 443\n    230 permit icmp 10.30.10.0 0.0.0.127 host 192.0.2.100\n    240 deny ip any any\nExtended IP access list BHTQ-V20-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.20.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.20.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.20.0 0.0.0.127 host 10.10.80.10 eq www\n    110 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq www\n    120 permit tcp 10.30.20.0 0.0.0.127 host 10.10.70.13 eq 443\n    130 deny ip any 10.0.0.0 0.255.255.255\n    140 deny ip any 172.16.0.0 0.15.255.255\n    150 deny ip any 192.168.0.0 0.0.255.255\n    160 deny ip any 169.254.0.0 0.0.255.255\n    170 permit tcp 10.30.20.0 0.0.0.127 any eq www\n    180 permit tcp 10.30.20.0 0.0.0.127 any eq 443\n    190 permit icmp 10.30.20.0 0.0.0.127 host 192.0.2.100\n    200 deny ip any any\nExtended IP access list BHTQ-V30-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.30.0 0.0.0.127 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    50 permit tcp 10.30.30.0 0.0.0.127 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq www\n    70 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq www\n    90 permit tcp 10.30.30.0 0.0.0.127 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.30.0 0.0.0.127 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.30.0 0.0.0.127 any eq www\n    160 permit tcp 10.30.30.0 0.0.0.127 any eq 443\n    170 permit icmp 10.30.30.0 0.0.0.127 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-V100-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.100.0 0.0.1.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain (2 match(es))\n    50 permit tcp 10.30.100.0 0.0.1.255 host 192.0.2.100 eq domain\n    60 deny ip any 10.0.0.0 0.255.255.255 (28 match(es))\n    70 deny ip any 172.16.0.0 0.15.255.255\n    80 deny ip any 192.168.0.0 0.0.255.255\n    90 deny ip any 169.254.0.0 0.0.255.255\n    100 permit tcp 10.30.100.0 0.0.1.255 any eq www (10 match(es))\n    110 permit tcp 10.30.100.0 0.0.1.255 any eq 443\n    120 permit icmp 10.30.100.0 0.0.1.255 host 192.0.2.100\n    130 deny ip any any\nExtended IP access list BHTQ-V120-IN\n    10 permit udp host 0.0.0.0 eq bootpc host 255.255.255.255 eq bootps (2 match(es))\n    20 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 255.255.255.255 eq bootps\n    30 permit udp 10.30.120.0 0.0.0.255 eq bootpc host 10.30.70.6 eq bootps\n    40 permit udp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain (1 match(es))\n    50 permit tcp 10.30.120.0 0.0.0.255 host 10.30.70.6 eq domain\n    60 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq www (5 match(es))\n    70 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.11 eq 443\n    80 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq www\n    90 permit tcp 10.30.120.0 0.0.0.255 host 10.10.70.14 eq 443\n    100 permit tcp 10.30.120.0 0.0.0.255 host 10.10.80.10 eq www\n    110 deny ip any 10.0.0.0 0.255.255.255 (12 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 deny ip any 169.254.0.0 0.0.255.255\n    150 permit tcp 10.30.120.0 0.0.0.255 any eq www (5 match(es))\n    160 permit tcp 10.30.120.0 0.0.0.255 any eq 443\n    170 permit icmp 10.30.120.0 0.0.0.255 host 192.0.2.100\n    180 deny ip any any\nExtended IP access list BHTQ-SERVER-IN\n    10 permit udp host 10.30.70.6 eq bootps any eq bootps (10 match(es))\n    20 permit udp host 10.30.70.6 eq bootps any eq bootpc\n    30 permit udp host 10.30.70.6 eq domain 10.0.0.0 0.255.255.255 (2 match(es))\n    40 permit tcp 10.30.70.0 0.0.0.15 any established\n    50 permit icmp 10.30.70.0 0.0.0.15 any echo-reply\n    60 permit udp host 10.30.70.6 host 192.0.2.100 eq domain\n    70 permit tcp host 10.30.70.6 host 192.0.2.100 eq domain\n    80 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 123\n    90 permit udp 10.30.70.0 0.0.0.15 host 10.10.70.17 eq 514\n    100 permit tcp host 10.30.70.7 host 10.10.70.16 eq 22\n    110 deny ip any 10.0.0.0 0.255.255.255 (10 match(es))\n    120 deny ip any 172.16.0.0 0.15.255.255\n    130 deny ip any 192.168.0.0 0.0.255.255\n    140 permit tcp 10.30.70.0 0.0.0.15 any eq www\n    150 permit tcp 10.30.70.0 0.0.0.15 any eq 443\n    160 deny ip any any\nExtended IP access list BHTQ-MGMT-IN\n    10 permit tcp 10.30.90.0 0.0.0.255 host 10.10.90.11 established\n    20 permit icmp 10.30.90.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 deny ip any any\nExtended IP access list BHTQ-CAMERA-IN\n    10 permit tcp 10.30.110.0 0.0.0.255 host 10.10.90.11 established (105 match(es))\n    20 permit icmp 10.30.110.0 0.0.0.255 host 10.10.90.11 echo-reply\n    30 permit udp 10.30.110.0 0.0.0.255 host 10.10.70.17 eq 123\n    40 deny ip any any\n\n\n"
+      }
+    }
+  ],
+  "completed_at": "2026-11-12T14:21:32.802Z",
+  "status": "COMPLETE_REQUIRES_OFFLINE_REVIEW"
+}

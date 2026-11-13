@@ -1,0 +1,225 @@
+{
+  "status": "PASS_STATIC_TOPOLOGY_AUDIT_ONLY",
+  "runtime_acceptance": "PENDING",
+  "time": "2026-11-12T14:03:49.784767+00:00",
+  "native": "test_results/packet-tracer/redesign-20261112-162237/lab.pkt",
+  "native_sha256": "c14f3d54fbf169054d9bbeeb6ebc669446d641164e5f3a5b91a97c800b4b62a7",
+  "baseline_sha256": "e37800126bfa13b68689593c591046ecf2cc933ccb2798504790c1105eebed91",
+  "before_nodes": 58,
+  "after_nodes": 102,
+  "before_links": 53,
+  "after_links": 97,
+  "added_nodes": [
+    "BHTQ-F1-CAM",
+    "BHTQ-F1-SW",
+    "BHTQ-F2-CAM",
+    "BHTQ-F2-SW",
+    "BHTQ-IoTMgmt",
+    "DBP-F1-CAM",
+    "DBP-F1-SW",
+    "DBP-F2-CAM",
+    "DBP-F2-SW",
+    "DBP-IoTMgmt",
+    "Main-A-DIST",
+    "Main-A-F1-CAM",
+    "Main-A-F1-SW",
+    "Main-A-F2-CAM",
+    "Main-A-F2-SW",
+    "Main-A-F3-AP",
+    "Main-A-F3-CAM",
+    "Main-A-F3-SW",
+    "Main-A-F4-AP",
+    "Main-A-F4-CAM",
+    "Main-A-F4-SW",
+    "Main-A-F5-AP",
+    "Main-A-F5-CAM",
+    "Main-A-F5-SW",
+    "Main-B-DIST",
+    "Main-B-F1-AP",
+    "Main-B-F1-CAM",
+    "Main-B-F1-SW",
+    "Main-B-F2-AP",
+    "Main-B-F2-CAM",
+    "Main-B-F2-SW",
+    "Main-B-F3-AP",
+    "Main-B-F3-CAM",
+    "Main-B-F3-PC",
+    "Main-B-F3-SW",
+    "Main-B-F4-AP",
+    "Main-B-F4-CAM",
+    "Main-B-F4-PC",
+    "Main-B-F4-SW",
+    "Main-B-F5-AP",
+    "Main-B-F5-CAM",
+    "Main-B-F5-PC",
+    "Main-B-F5-SW",
+    "Main-IoTMgmt"
+  ],
+  "original_nodes_preserved": 58,
+  "rewired_cables": 19,
+  "new_cables_net": 44,
+  "changed_original_ios_nodes": [
+    "BHTQ-Access",
+    "DBP-Access",
+    "Main-Access"
+  ],
+  "router_running_startup_unchanged": true,
+  "original_gateways_wireless_profiles_unchanged": true,
+  "type_counts": {
+    "Router": 9,
+    "Switch": 19,
+    "Server": 18,
+    "Pc": 26,
+    "AccessPoint": 14,
+    "MultiLayerSwitch": 2,
+    "MCUComponent": 14
+  },
+  "cameras": [
+    {
+      "node": "Main-A-F1-CAM",
+      "site": "Main",
+      "ip": "10.10.110.100",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-A-F2-CAM",
+      "site": "Main",
+      "ip": "10.10.110.101",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-A-F3-CAM",
+      "site": "Main",
+      "ip": "10.10.110.102",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-A-F4-CAM",
+      "site": "Main",
+      "ip": "10.10.110.103",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-A-F5-CAM",
+      "site": "Main",
+      "ip": "10.10.110.104",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-B-F1-CAM",
+      "site": "Main",
+      "ip": "10.10.110.105",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-B-F2-CAM",
+      "site": "Main",
+      "ip": "10.10.110.106",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-B-F3-CAM",
+      "site": "Main",
+      "ip": "10.10.110.107",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-B-F4-CAM",
+      "site": "Main",
+      "ip": "10.10.110.108",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "Main-B-F5-CAM",
+      "site": "Main",
+      "ip": "10.10.110.109",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.10.110.12"
+    },
+    {
+      "node": "DBP-F1-CAM",
+      "site": "DBP",
+      "ip": "10.20.110.100",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.20.110.12"
+    },
+    {
+      "node": "DBP-F2-CAM",
+      "site": "DBP",
+      "ip": "10.20.110.101",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.20.110.12"
+    },
+    {
+      "node": "BHTQ-F1-CAM",
+      "site": "BHTQ",
+      "ip": "10.30.110.100",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.30.110.12"
+    },
+    {
+      "node": "BHTQ-F2-CAM",
+      "site": "BHTQ",
+      "ip": "10.30.110.101",
+      "vlan": 110,
+      "wired_port": "GigabitEthernet3",
+      "client_mode": "REMOTE_SERVER",
+      "registration_server": "10.30.110.12"
+    }
+  ],
+  "managers": [
+    {
+      "node": "Main-IoTMgmt",
+      "ip": "10.10.110.12",
+      "registration_service": "true",
+      "scope": "Lab IoT control appliance outside 14 production application servers"
+    },
+    {
+      "node": "DBP-IoTMgmt",
+      "ip": "10.20.110.12",
+      "registration_service": "true",
+      "scope": "Lab IoT control appliance outside 14 production application servers"
+    },
+    {
+      "node": "BHTQ-IoTMgmt",
+      "ip": "10.30.110.12",
+      "registration_service": "true",
+      "scope": "Lab IoT control appliance outside 14 production application servers"
+    }
+  ]
+}

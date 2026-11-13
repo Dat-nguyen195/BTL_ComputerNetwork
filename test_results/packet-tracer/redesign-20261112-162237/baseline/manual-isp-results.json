@@ -1,0 +1,252 @@
+{
+  "scope": "Manual ISP1 route/PAT selection and return to ISP2; no automatic failover",
+  "commands": [
+    {
+      "command": "clear ip nat translation *",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "no ip nat inside source list 100 interface GigabitEthernet0/2 overload",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "no ip route 0.0.0.0 0.0.0.0 198.51.100.1",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "ip route 0.0.0.0 0.0.0.0 203.0.113.1",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "ip nat inside source list 100 interface GigabitEthernet0/1 overload",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "end",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "clear ip nat translation *",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "no ip nat inside source list 100 interface GigabitEthernet0/1 overload",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "no ip route 0.0.0.0 0.0.0.0 203.0.113.1",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "ip route 0.0.0.0 0.0.0.0 198.51.100.1",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "ip nat inside source list 100 interface GigabitEthernet0/2 overload",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "end",
+      "response": {
+        "first": 0,
+        "second": "\n"
+      }
+    },
+    {
+      "command": "write memory",
+      "response": {
+        "first": 0,
+        "second": "Building configuration...\n[OK]\n\n"
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "stage": "before",
+      "command": "show ip route",
+      "response": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks\nS       10.10.0.0/16 [1/0] via 10.255.0.17\nS       10.20.0.0/16 [1/0] via 10.255.0.17\nS       10.30.0.0/16 [1/0] via 10.255.0.17\nC       10.255.0.16/30 is directly connected, GigabitEthernet0/0\nL       10.255.0.18/32 is directly connected, GigabitEthernet0/0\n     198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC       198.51.100.0/30 is directly connected, GigabitEthernet0/2\nL       198.51.100.2/32 is directly connected, GigabitEthernet0/2\n     203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC       203.0.113.0/30 is directly connected, GigabitEthernet0/1\nL       203.0.113.2/32 is directly connected, GigabitEthernet0/1\nS*   0.0.0.0/0 [1/0] via 198.51.100.1\n\n\n"
+      }
+    },
+    {
+      "stage": "before",
+      "command": "show ip nat translations",
+      "response": {
+        "first": 0,
+        "second": "Pro  Inside global     Inside local       Outside local      Outside global\ntcp 198.51.100.2:1024  10.10.120.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1025  10.20.10.7:1026    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1026  10.10.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1027  10.20.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1028  10.10.10.8:1028    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1029  10.20.120.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1030  10.30.10.7:1026    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1031  10.30.100.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:1032  10.30.120.11:1026  192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:8080  10.10.80.10:80     ---                ---\ntcp 198.51.100.2:8080  10.10.80.10:80     192.0.2.100:1025   192.0.2.100:1025\n\n\n"
+      }
+    },
+    {
+      "stage": "before",
+      "command": "show running-config",
+      "response": {
+        "first": 0,
+        "second": "Building configuration...\n\nCurrent configuration : 1407 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\nno service timestamps debug datetime msec\nno service password-encryption\n!\nhostname Main-Edge\n!\n!\n!\n!\n!\n!\n!\n!\nip cef\nno ipv6 cef\n!\n!\n!\n!\nlicense udi pid CISCO2911/K9 sn FTX1524H595-\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nspanning-tree mode pvst\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n description ISP2-primary\n ip address 10.255.0.18 255.255.255.252\n ip nat inside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/1\n description ISP1-standby-manual-switch-only\n ip address 203.0.113.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/2\n description ISP2-primary\n ip address 198.51.100.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface Vlan1\n no ip address\n!\nip nat inside source list 100 interface GigabitEthernet0/2 overload\nip nat inside source static tcp 10.10.80.10 80 198.51.100.2 8080 \nip classless\nip route 10.10.0.0 255.255.0.0 10.255.0.17 \nip route 10.20.0.0 255.255.0.0 10.255.0.17 \nip route 10.30.0.0 255.255.0.0 10.255.0.17 \nip route 0.0.0.0 0.0.0.0 198.51.100.1 \n!\nip flow-export version 9\n!\n!\naccess-list 100 deny ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255\naccess-list 100 permit ip 10.10.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.20.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.30.0.0 0.0.255.255 any\n!\n!\n!\n!\n!\nline con 0\n!\nline aux 0\n!\nline vty 0 4\n login\n!\n!\n!\nend\n\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP1-selected",
+      "command": "show ip route",
+      "response": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 203.0.113.1 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks\nS       10.10.0.0/16 [1/0] via 10.255.0.17\nS       10.20.0.0/16 [1/0] via 10.255.0.17\nS       10.30.0.0/16 [1/0] via 10.255.0.17\nC       10.255.0.16/30 is directly connected, GigabitEthernet0/0\nL       10.255.0.18/32 is directly connected, GigabitEthernet0/0\n     198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC       198.51.100.0/30 is directly connected, GigabitEthernet0/2\nL       198.51.100.2/32 is directly connected, GigabitEthernet0/2\n     203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC       203.0.113.0/30 is directly connected, GigabitEthernet0/1\nL       203.0.113.2/32 is directly connected, GigabitEthernet0/1\nS*   0.0.0.0/0 [1/0] via 203.0.113.1\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP1-selected",
+      "command": "show ip nat translations",
+      "response": {
+        "first": 0,
+        "second": "Pro  Inside global     Inside local       Outside local      Outside global\nudp 203.0.113.2:1026   10.20.100.11:1026  192.0.2.100:53     192.0.2.100:53\ntcp 198.51.100.2:8080  10.10.80.10:80     ---                ---\ntcp 203.0.113.2:1024   10.30.120.11:1027  192.0.2.100:80     192.0.2.100:80\ntcp 203.0.113.2:1027   10.20.100.11:1027  192.0.2.100:80     192.0.2.100:80\ntcp 203.0.113.2:1029   10.10.10.8:1029    192.0.2.100:80     192.0.2.100:80\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP1-selected",
+      "command": "show running-config",
+      "response": {
+        "first": 0,
+        "second": "Building configuration...\n\nCurrent configuration : 1406 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\nno service timestamps debug datetime msec\nno service password-encryption\n!\nhostname Main-Edge\n!\n!\n!\n!\n!\n!\n!\n!\nip cef\nno ipv6 cef\n!\n!\n!\n!\nlicense udi pid CISCO2911/K9 sn FTX1524H595-\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nspanning-tree mode pvst\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n description ISP2-primary\n ip address 10.255.0.18 255.255.255.252\n ip nat inside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/1\n description ISP1-standby-manual-switch-only\n ip address 203.0.113.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/2\n description ISP2-primary\n ip address 198.51.100.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface Vlan1\n no ip address\n!\nip nat inside source list 100 interface GigabitEthernet0/1 overload\nip nat inside source static tcp 10.10.80.10 80 198.51.100.2 8080 \nip classless\nip route 10.10.0.0 255.255.0.0 10.255.0.17 \nip route 10.20.0.0 255.255.0.0 10.255.0.17 \nip route 10.30.0.0 255.255.0.0 10.255.0.17 \nip route 0.0.0.0 0.0.0.0 203.0.113.1 \n!\nip flow-export version 9\n!\n!\naccess-list 100 deny ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255\naccess-list 100 permit ip 10.10.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.20.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.30.0.0 0.0.255.255 any\n!\n!\n!\n!\n!\nline con 0\n!\nline aux 0\n!\nline vty 0 4\n login\n!\n!\n!\nend\n\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP2-restored",
+      "command": "show ip route",
+      "response": {
+        "first": 0,
+        "second": "Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP\n       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area\n       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2\n       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP\n       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area\n       * - candidate default, U - per-user static route, o - ODR\n       P - periodic downloaded static route\n\nGateway of last resort is 198.51.100.1 to network 0.0.0.0\n\n     10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks\nS       10.10.0.0/16 [1/0] via 10.255.0.17\nS       10.20.0.0/16 [1/0] via 10.255.0.17\nS       10.30.0.0/16 [1/0] via 10.255.0.17\nC       10.255.0.16/30 is directly connected, GigabitEthernet0/0\nL       10.255.0.18/32 is directly connected, GigabitEthernet0/0\n     198.51.100.0/24 is variably subnetted, 2 subnets, 2 masks\nC       198.51.100.0/30 is directly connected, GigabitEthernet0/2\nL       198.51.100.2/32 is directly connected, GigabitEthernet0/2\n     203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks\nC       203.0.113.0/30 is directly connected, GigabitEthernet0/1\nL       203.0.113.2/32 is directly connected, GigabitEthernet0/1\nS*   0.0.0.0/0 [1/0] via 198.51.100.1\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP2-restored",
+      "command": "show ip nat translations",
+      "response": {
+        "first": 0,
+        "second": "Pro  Inside global     Inside local       Outside local      Outside global\ntcp 198.51.100.2:1030  10.10.10.8:1030    192.0.2.100:80     192.0.2.100:80\ntcp 198.51.100.2:8080  10.10.80.10:80     ---                ---\n\n\n"
+      }
+    },
+    {
+      "stage": "ISP2-restored",
+      "command": "show running-config",
+      "response": {
+        "first": 0,
+        "second": "Building configuration...\n\nCurrent configuration : 1407 bytes\n!\nversion 15.1\nno service timestamps log datetime msec\nno service timestamps debug datetime msec\nno service password-encryption\n!\nhostname Main-Edge\n!\n!\n!\n!\n!\n!\n!\n!\nip cef\nno ipv6 cef\n!\n!\n!\n!\nlicense udi pid CISCO2911/K9 sn FTX1524H595-\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nspanning-tree mode pvst\n!\n!\n!\n!\n!\n!\ninterface GigabitEthernet0/0\n description ISP2-primary\n ip address 10.255.0.18 255.255.255.252\n ip nat inside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/1\n description ISP1-standby-manual-switch-only\n ip address 203.0.113.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface GigabitEthernet0/2\n description ISP2-primary\n ip address 198.51.100.2 255.255.255.252\n ip nat outside\n duplex auto\n speed auto\n!\ninterface Vlan1\n no ip address\n!\nip nat inside source list 100 interface GigabitEthernet0/2 overload\nip nat inside source static tcp 10.10.80.10 80 198.51.100.2 8080 \nip classless\nip route 10.10.0.0 255.255.0.0 10.255.0.17 \nip route 10.20.0.0 255.255.0.0 10.255.0.17 \nip route 10.30.0.0 255.255.0.0 10.255.0.17 \nip route 0.0.0.0 0.0.0.0 198.51.100.1 \n!\nip flow-export version 9\n!\n!\naccess-list 100 deny ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255\naccess-list 100 permit ip 10.10.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.20.0.0 0.0.255.255 any\naccess-list 100 permit ip 10.30.0.0 0.0.255.255 any\n!\n!\n!\n!\n!\nline con 0\n!\nline aux 0\n!\nline vty 0 4\n login\n!\n!\n!\nend\n\n\n\n"
+      }
+    }
+  ],
+  "records": [
+    {
+      "kind": "http",
+      "group": "MANUAL-ISP1",
+      "source": "Main-PC10-A",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.10.8",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-04T10:57:22.188Z"
+    },
+    {
+      "kind": "http",
+      "group": "MANUAL-ISP1",
+      "source": "DBP-Guest",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.20.100.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-04T10:57:34.233Z"
+    },
+    {
+      "kind": "http",
+      "group": "MANUAL-ISP1",
+      "source": "BHTQ-Staff",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.30.120.11",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-04T10:57:46.250Z"
+    },
+    {
+      "kind": "http",
+      "group": "MANUAL-ISP2-RESTORED",
+      "source": "Main-PC10-A",
+      "url": "http://web.hospital.test",
+      "source_ip": "10.10.10.8",
+      "marker": "HOSPITAL-LAB-Web-Lab",
+      "expected": "allow",
+      "initiated": true,
+      "events": [
+        {
+          "content": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+          "responseType": 3,
+          "serverIp": "192.0.2.100",
+          "url": "http://web.hospital.test"
+        }
+      ],
+      "page": "<html><body><h1>HOSPITAL-LAB-Web-Lab</h1></body></html>",
+      "time": "2026-11-04T10:58:02.274Z"
+    }
+  ]
+}

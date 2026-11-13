@@ -1,6 +1,20 @@
 # Camera: tích hợp cáp/PoE TV2 và quyền/lưu trữ TV3
 
-**TV2/TV3; hiệu chỉnh02/11/2026. THIẾT KẾ GIẢ ĐỊNH / CHƯA CAMERA-NVR RUNTIME.** Tiếp nhận giả địnhTiendat4 camera/tầng (Main40, Aux8/site), H.265/4 MP,4 Mbps/camera,30 ngày. Không ghi đây là số lượng/retention khảo sát hoặc yêu cầu pháp lý. Dự trù tăng20% và làm tròn từng tầng:5 camera/tầng, Main50/Aux10. Đầu vào/kết quả trong [campus CSV](campus-inputs.csv)/[budget](campus-budget.csv).
+**TV2/TV3; đồng bộ native ngày 13/11/2026.** Đặc tả yêu cầu đề xuất hệ thống camera; không ấn định số camera, thời gian lưu hoặc demo ghi hình. Thiết kế giả định 4 camera/tầng (Main 40, Aux 8/site), H.265/4 MP, 4 Mbps/camera, 30 ngày. Đây không phải số lượng/retention đã khảo sát. Dự trù tăng 20% và làm tròn từng tầng: 5 camera/tầng, Main 50/Aux 10. Đầu vào/kết quả trong [campus CSV](campus-inputs.csv)/[budget](campus-budget.csv). Packet Tracer đã có đăng ký/quyền quản lý IoT; ghi và lưu video chưa được thực thi.
+
+## Mô hình Packet Tracer hiện tại
+
+File `simulation/packet-tracer/hospital-3sites.pkt` có 102 node/97 cáp, 14 webcam đại diện, mỗi tầng một mẫu. Không dùng 14 mẫu để thay số lượng thiết kế 40/8/8 hoặc tính lại dung lượng production.
+
+| Site | Camera mẫu / IP tĩnh | IoT Registration Server | NVR đại diện thiết kế |
+| --- | --- | --- | --- |
+| Main | 10; `10.10.110.100–109` | Main-IoTMgmt / `10.10.110.12` | Main-NVR / `10.10.110.11` |
+| DBP | 2; `10.20.110.100–101` | DBP-IoTMgmt / `10.20.110.12` | DBP-NVR / `10.20.110.11` |
+| BHTQ | 2; `10.30.110.100–101` | BHTQ-IoTMgmt / `10.30.110.12` | BHTQ-NVR / `10.30.110.11` |
+
+Camera dùng GigabitEthernet3 nối Fa0/3 switch tầng, access VLAN110, mask /24 và gateway `.110.1` cùng site; Wireless0 tắt. Camera đăng ký Remote Server `.110.12` tại site bằng tài khoản lab `hospitalcam`. Server `.12` quản lý đăng ký/trạng thái; PC-PT tên NVR `.11` chỉ đại diện điểm lưu video, không có bản ghi để phát lại trong lab.
+
+Main-Admin `10.10.90.11` mở ba portal HTTP trong Realtime; tài khoản lab `hospitalcam` / `HospitalLab2026Only`, danh sách mong đợi 10/2/2. Nếu Simulation tạm dừng, phải chạy Capture/Forward hoặc chuyển Realtime để gói tin tiếp tục. [Runbook](../final-demo.md) có bước kiểm Admin/Guest và counter ACL. Evidence runtime ngày 12/11 giữ nguyên; đối chiếu native ngày 13/11 là kiểm cấu hình đã lưu, không phải lượt ghi hình mới.
 
 ## VLAN, quyền và luồng video
 
@@ -9,7 +23,7 @@ Mỗi site VLAN110 /24, gateway `.110.1`, NVR appliance `.110.11`; camera tĩnh 
 | Nguồn | Đích /dịch vụ | Chính sách |
 | --- | --- | --- |
 | Camera | NVR cùng site/VLAN110 | Ghi hình local; port RTSP/ONVIF theo vendor sau chọn model |
-| Main-Admin10.10.90.11 | NVR/camera được cấp quyền | Qua mạng riêng; ACL CAMERA cho trả lời; ứng dụng/xác thực chưa triển khai |
+| Main-Admin10.10.90.11 | Portal IoT `.110.12`; NVR/camera được cấp quyền | Portal IoT đã có tài khoản lab và kiểm HTTP; quyền xem video/NVR thực tế vẫn ở mức thiết kế |
 | Nhân viên/khách/Internet | Camera/NVR | Không có quyền mặc định; không port-forward NVR ra Internet |
 | Camera/NVR | Main-Monitor10.10.70.17 | UDP123 đồng bộ giờ; Internet trực tiếp bị chặn |
 

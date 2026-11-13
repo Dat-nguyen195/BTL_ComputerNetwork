@@ -1,0 +1,1264 @@
+{
+  "time": "2026-11-12T14:15:01.021Z",
+  "scope": "Display coordinates and our annotations only; no link/IP/VLAN/hostname/config operations",
+  "annotation_ids": [
+    "{5f822e3f-f496-4636-a4ac-c25178ddd239}",
+    "{09b4ab09-23b4-4a41-aa8e-a421bdd876ba}",
+    "{7bd71b67-73e6-4d0e-8e05-73cf992eeba9}",
+    "{0ec50506-0e96-4f2a-937b-74a5bd7b314e}",
+    "{bf477237-df9a-4f25-b9e9-f447a99e5a15}",
+    "{adb88393-5647-4a87-89b0-f64f242097ab}",
+    "{f3757ae1-1cd6-4e10-801d-14cf5e220dbc}",
+    "{734613c5-2419-4c52-b13f-061571e5fa33}",
+    "{a4933272-79e6-4c3d-91bc-eb247513f483}",
+    "{77d968c7-5065-4074-afb6-09fa8250588d}",
+    "{fa1024f0-e7ec-4dc9-8bc8-bb0eb3456dad}",
+    "{88350d6c-f7f9-4388-a3ec-4fa044388b74}",
+    "{4f851ecc-76b7-4ed3-8bea-bf8276716bf5}",
+    "{4136b525-df51-4c1f-b626-8c2fe96365b8}",
+    "{4b72a5f8-fbd2-4f90-997d-4a053ab13481}",
+    "{c0f27fd9-fb51-44ef-82a0-5ff7af03a7f0}",
+    "{2f80b4b4-2106-4886-8902-dc36b2b09b68}",
+    "{44c36d0a-a404-4234-8421-7e6a89965a96}",
+    "{9c20a54b-456a-41b8-8982-2d8d3f870a4b}",
+    "{f666125a-3d0d-41ca-a5f8-c281319a74bd}",
+    "{36be154f-4aa0-4ee8-a0b5-6d1ad2bbedd9}",
+    "{6c2be357-58c5-48cc-ad39-f6f515e06fd3}",
+    "{7feeb52d-af28-48c5-9ef0-890634d53845}",
+    "{7bbb0b15-519f-4469-852f-84339d50e0d2}",
+    "{0ea49926-4cd2-47fb-a249-0691b32123e2}",
+    "{eaed5525-c161-4b2e-a04c-43f0734863b4}",
+    "{f6340fe4-9b4d-4051-8661-271262648966}",
+    "{0b842cd8-b925-4554-a264-0c7b812d898d}",
+    "{c0296611-6ef8-45fb-92c5-13095e8811dc}",
+    "{b048c03b-496c-4c27-a7f1-bb86497fabcc}",
+    "{b7a0cc65-b257-4f9a-9118-ea2887600521}",
+    "{79144c9c-e4a0-47bc-8de6-98db6640211f}",
+    "{7d94de0c-135d-49f6-a224-c98599c240a1}",
+    "{237b90a9-373e-4ecf-b37c-932f9b6ad567}",
+    "{bebf785b-267d-4f8e-b29b-caa4b7f1cf75}",
+    "{a80d357c-b65d-4355-8953-0d52bb35c3b7}",
+    "{e9cac0ba-8b44-4d04-9e99-e90e960628aa}",
+    "{e0da6648-9a9c-48f2-bc73-f6012a118f53}",
+    "{ea79f4e4-1478-4ff5-a6aa-481d708a6733}",
+    "{23267794-b6ca-4d4a-bfa5-2e0f2bb45bbb}",
+    "{fbde0cdc-d382-4f0e-9381-b93274d224b7}",
+    "{e93976d3-db82-4f09-b239-d43801c18179}",
+    "{045e9653-7f81-4e60-8f3e-d631bae56d42}",
+    "{a9540b20-944b-48bb-8896-17e78dcacac8}",
+    "{32e3c598-00f5-485b-823c-94a965a76e61}",
+    "{f8cfea89-9a6c-4197-a7bd-578867e7d6ae}",
+    "{9ebbc224-dd14-460e-bf10-2e3b5124fae0}",
+    "{c8a430bf-d19f-4eeb-b748-1702d9ac3f67}",
+    "{aaea7ac1-66b1-4ca9-8df3-b89b90179ff5}",
+    "{39249da8-5541-431b-aa8c-6d60406b3d5b}",
+    "{9c60dd4b-bdb5-41fe-9e25-903afee42ddd}",
+    "{65928045-a681-4f00-af2f-f8b0df361fd0}",
+    "{eee96567-41f4-435f-9657-818616d2cea8}",
+    "{337d303b-6e1f-45a8-861a-c568ec4fbccb}",
+    "{78911c1a-b16f-46d0-a649-7e50b9dea397}",
+    "{afc9ca19-0889-4eb4-a8c6-6568f7f15726}",
+    "{8a8aa2ae-affd-4b2b-9513-b4ec9faeed79}",
+    "{d5d7bca5-8189-4101-88e3-8dddb7eb6d5c}",
+    "{d401de90-dced-4dba-9817-50c49ffa1c0e}",
+    "{4d288960-c101-4473-bcdb-7ae63327dfb8}",
+    "{d66ea60b-ae3f-4a43-a5f7-ffe69d37718b}",
+    "{84616ea3-6467-4f04-a294-77696f95b56a}",
+    "{c0d76c5d-5460-40ba-9939-c4d335ae48be}",
+    "{2aa65e2a-f7f7-4e92-a891-4cd4c521ada0}",
+    "{2d6e1d58-bb51-4fbb-a343-c251bba15e30}",
+    "{a938c52e-b2aa-4270-89ce-cb3521a0dc47}",
+    "{dacc1c3a-a13d-49e1-86c0-782b28529e49}",
+    "{0267f662-f046-45b3-b4e3-36f4ba06208e}",
+    "{d0fb43a6-9775-422b-a880-4d65b048cc31}",
+    "{86c932f0-4124-47b3-a12d-bd3806b7df79}",
+    "{ff08424a-86b1-403d-9170-e240211f6052}",
+    "{2a9ac826-4bc0-4cdd-9b91-8e60ef53dc43}",
+    "{2058a785-79b6-432b-883b-b04a5dd46044}",
+    "{5a447848-966b-492b-acfe-b4186fe6917c}",
+    "{58fc47c1-31bb-497b-86a0-53f912891022}",
+    "{a664d3ed-0bce-4361-8476-0ecc623fa1ce}",
+    "{2b233c93-5502-4346-90f8-6248d5e9ee9e}",
+    "{36b771a5-88cd-46c0-a962-d87e6154ff13}",
+    "{11856479-4733-49c9-8b1e-04c2d9ef4b38}",
+    "{528e0ef0-260f-4f80-93d6-08e8cd2d52de}",
+    "{53fa8b86-858d-422d-b547-84475d806e2e}",
+    "{792717a2-4045-4dba-b028-d1193fcff481}",
+    "{bbabb34b-c095-4d41-95df-fdeed3c1cfd1}",
+    "{20b7e0e1-82d4-4238-88db-01a059b1f2f9}",
+    "{d8414e7d-6f65-4ee4-99d6-20e4c36c6612}",
+    "{c67d0f66-a5e9-40e7-aac0-062fe000085f}",
+    "{0296c6ba-8858-4408-80d5-289ba3232f71}",
+    "{b6c7ae20-b7d5-45e6-be85-48605c37920d}",
+    "{0e848602-5426-49d1-9a2f-cb3a3f999399}",
+    "{495b191e-8d6f-4411-a1e2-3b037188a99e}",
+    "{852be79a-9180-47fa-86f6-847d6e6ee19f}",
+    "{720d8c3a-e29a-4522-8493-51ee6cc6c743}",
+    "{9cdffa46-eb58-420f-8a40-8f2862dec704}",
+    "{46aad794-f68f-494b-b8d4-33e500568927}",
+    "{a9a3e768-2466-499e-aabe-54b714763efd}",
+    "{41df9c2f-c9f8-4fca-a977-58dc9cb53554}",
+    "{ba51385d-5dd5-4ff9-b5e4-117b9b40ae85}",
+    "{489af9e5-2a88-4c81-ba22-0d0c45a66d34}",
+    "{4e11b313-08e4-4aa0-9d79-ab34e5873eb4}",
+    "{7036519a-6a4f-4764-844a-4518bdee97fc}",
+    "{4c293acc-f579-43a8-b542-f9d88d061845}",
+    "{349c1fb2-9432-4ba0-b914-09b74edbc3bf}",
+    "{c3ca4eac-9e7b-45f8-b00a-3595093cc14c}",
+    "{f600b04a-51c2-4753-8783-444e7f840fdd}",
+    "{0d87d082-061a-46f6-a8f2-512ba9af6b5a}",
+    "{2f7b9de3-18a9-4ef5-b4da-3ac85e1c2742}",
+    "{475deb26-ddc1-4c25-9203-fb4c608729a9}",
+    "{6a12ebde-2ef3-43e6-b150-638216279771}",
+    "{195db497-da55-4a98-abd9-e768206add23}",
+    "{5960176b-8fcf-472c-8ad2-29933cb166ee}",
+    "{c223695a-c49a-4287-ad42-7e8efd1e1dc2}",
+    "{587f7bdc-8769-401e-8259-d066625a3ee7}",
+    "{049d84cf-f156-4975-875c-81a823fa31f6}",
+    "{14158612-8e0a-471d-b1e6-5e27a59ecb91}",
+    "{c3fc7a08-fc59-4af4-8519-26207357ad1b}",
+    "{6500d918-062b-4626-8bb3-6fcd048774c1}",
+    "{cc3f52ca-8337-4a24-a3c7-441495ee7ac8}",
+    "{ef3a4626-95b6-47b7-bc57-6973fcc3f819}",
+    "{e1349f1e-bf92-4c26-bb5f-20e7599aa123}",
+    "{58caa69d-9d75-426b-a28c-11e930aa9f12}",
+    "{daf4b978-7a9e-4ee8-b24b-8d6ef6c7bb92}",
+    "{7f6bcdd0-7551-43a4-92d7-b74c5b4b90c6}",
+    "{e5306336-1ae0-4166-a903-358aac035354}",
+    "{0dffd7b0-dc81-4d81-a25b-d2ea6bc74d4c}",
+    "{6c46700f-1446-40cf-b65f-46c2ea0c6427}",
+    "{e5692071-59a4-43ed-b7bd-3204948aa2b5}",
+    "{ef8948dc-cfaf-4ede-abf3-29f2a7a981d8}",
+    "{60a2e714-ad1e-4e7b-bbec-0abbc656c051}",
+    "{94a0c943-5c12-4163-ba54-a6abec8fca74}",
+    "{1d720922-7e90-41c7-8810-0c4305ea4568}",
+    "{4ee92ee4-68bd-400e-a058-87ae10c4de0c}",
+    "{edc60283-e565-47fc-a1bc-074428f1f843}",
+    "{b9c76c96-aec7-442d-8fd9-697f0718d531}",
+    "{f14d1b9c-0f91-49ca-be56-8d81abd44e30}"
+  ],
+  "moved": [
+    {
+      "node": "ISP1",
+      "before": [
+        1450,
+        220
+      ],
+      "after": [
+        1450,
+        220
+      ]
+    },
+    {
+      "node": "ISP2",
+      "before": [
+        2150,
+        220
+      ],
+      "after": [
+        2150,
+        220
+      ]
+    },
+    {
+      "node": "INET-Core",
+      "before": [
+        1800,
+        125
+      ],
+      "after": [
+        1800,
+        125
+      ]
+    },
+    {
+      "node": "Web-Access",
+      "before": [
+        1799,
+        60
+      ],
+      "after": [
+        1800,
+        60
+      ]
+    },
+    {
+      "node": "Web-Lab",
+      "before": [
+        2100,
+        60
+      ],
+      "after": [
+        2100,
+        60
+      ]
+    },
+    {
+      "node": "Main-Edge",
+      "before": [
+        1800,
+        410
+      ],
+      "after": [
+        1800,
+        410
+      ]
+    },
+    {
+      "node": "Main-FW",
+      "before": [
+        1800,
+        570
+      ],
+      "after": [
+        1800,
+        570
+      ]
+    },
+    {
+      "node": "DMZ-Access",
+      "before": [
+        2109,
+        570
+      ],
+      "after": [
+        2110,
+        570
+      ]
+    },
+    {
+      "node": "Main-WebDMZ",
+      "before": [
+        2040,
+        700
+      ],
+      "after": [
+        2040,
+        700
+      ]
+    },
+    {
+      "node": "Main-ProxyDMZ",
+      "before": [
+        2200,
+        700
+      ],
+      "after": [
+        2200,
+        700
+      ]
+    },
+    {
+      "node": "Main-Core",
+      "before": [
+        1800,
+        770
+      ],
+      "after": [
+        1800,
+        770
+      ]
+    },
+    {
+      "node": "Main-Access",
+      "before": [
+        1799,
+        910
+      ],
+      "after": [
+        1800,
+        910
+      ]
+    },
+    {
+      "node": "Main-GW",
+      "before": [
+        2300,
+        1520
+      ],
+      "after": [
+        2300,
+        1520
+      ]
+    },
+    {
+      "node": "Main-Infra",
+      "before": [
+        1430,
+        1080
+      ],
+      "after": [
+        1430,
+        1080
+      ]
+    },
+    {
+      "node": "Main-HIS",
+      "before": [
+        1610,
+        1080
+      ],
+      "after": [
+        1610,
+        1080
+      ]
+    },
+    {
+      "node": "Main-PACS",
+      "before": [
+        1790,
+        1080
+      ],
+      "after": [
+        1790,
+        1080
+      ]
+    },
+    {
+      "node": "Main-LIS",
+      "before": [
+        1970,
+        1080
+      ],
+      "after": [
+        1970,
+        1080
+      ]
+    },
+    {
+      "node": "Main-CRM",
+      "before": [
+        1430,
+        1200
+      ],
+      "after": [
+        1430,
+        1200
+      ]
+    },
+    {
+      "node": "Main-DB",
+      "before": [
+        1610,
+        1200
+      ],
+      "after": [
+        1610,
+        1200
+      ]
+    },
+    {
+      "node": "Main-Backup",
+      "before": [
+        1790,
+        1200
+      ],
+      "after": [
+        1790,
+        1200
+      ]
+    },
+    {
+      "node": "Main-Monitor",
+      "before": [
+        1970,
+        1200
+      ],
+      "after": [
+        1970,
+        1200
+      ]
+    },
+    {
+      "node": "Main-Admin",
+      "before": [
+        1440,
+        1370
+      ],
+      "after": [
+        1440,
+        1370
+      ]
+    },
+    {
+      "node": "Main-NVR",
+      "before": [
+        1610,
+        1370
+      ],
+      "after": [
+        1610,
+        1370
+      ]
+    },
+    {
+      "node": "DBP-GW",
+      "before": [
+        760,
+        1800
+      ],
+      "after": [
+        760,
+        1800
+      ]
+    },
+    {
+      "node": "DBP-Access",
+      "before": [
+        759,
+        1910
+      ],
+      "after": [
+        760,
+        1910
+      ]
+    },
+    {
+      "node": "DBP-Infra",
+      "before": [
+        300,
+        1820
+      ],
+      "after": [
+        300,
+        1820
+      ]
+    },
+    {
+      "node": "DBP-Local",
+      "before": [
+        460,
+        1820
+      ],
+      "after": [
+        460,
+        1820
+      ]
+    },
+    {
+      "node": "DBP-NVR",
+      "before": [
+        300,
+        1940
+      ],
+      "after": [
+        300,
+        1940
+      ]
+    },
+    {
+      "node": "BHTQ-GW",
+      "before": [
+        2840,
+        1800
+      ],
+      "after": [
+        2840,
+        1800
+      ]
+    },
+    {
+      "node": "BHTQ-Access",
+      "before": [
+        2839,
+        1910
+      ],
+      "after": [
+        2840,
+        1910
+      ]
+    },
+    {
+      "node": "BHTQ-Infra",
+      "before": [
+        3140,
+        1820
+      ],
+      "after": [
+        3140,
+        1820
+      ]
+    },
+    {
+      "node": "BHTQ-Local",
+      "before": [
+        3300,
+        1820
+      ],
+      "after": [
+        3300,
+        1820
+      ]
+    },
+    {
+      "node": "BHTQ-NVR",
+      "before": [
+        3300,
+        1940
+      ],
+      "after": [
+        3300,
+        1940
+      ]
+    },
+    {
+      "node": "Main-Guest",
+      "before": [
+        350,
+        610
+      ],
+      "after": [
+        350,
+        610
+      ]
+    },
+    {
+      "node": "Main-Staff",
+      "before": [
+        350,
+        790
+      ],
+      "after": [
+        350,
+        790
+      ]
+    },
+    {
+      "node": "DBP-Guest",
+      "before": [
+        500,
+        2160
+      ],
+      "after": [
+        500,
+        2160
+      ]
+    },
+    {
+      "node": "DBP-Staff",
+      "before": [
+        500,
+        2400
+      ],
+      "after": [
+        500,
+        2400
+      ]
+    },
+    {
+      "node": "BHTQ-Guest",
+      "before": [
+        3090,
+        2160
+      ],
+      "after": [
+        3090,
+        2160
+      ]
+    },
+    {
+      "node": "BHTQ-Staff",
+      "before": [
+        3090,
+        2400
+      ],
+      "after": [
+        3090,
+        2400
+      ]
+    },
+    {
+      "node": "Main-PC10-A",
+      "before": [
+        220,
+        515
+      ],
+      "after": [
+        220,
+        515
+      ]
+    },
+    {
+      "node": "Main-Guest-AP",
+      "before": [
+        469,
+        570
+      ],
+      "after": [
+        470,
+        570
+      ]
+    },
+    {
+      "node": "Main-A-F1-CAM",
+      "before": [
+        720,
+        515
+      ],
+      "after": [
+        720,
+        515
+      ]
+    },
+    {
+      "node": "Main-A-F1-SW",
+      "before": [
+        1049,
+        590
+      ],
+      "after": [
+        1050,
+        590
+      ]
+    },
+    {
+      "node": "Main-PC10-B",
+      "before": [
+        220,
+        695
+      ],
+      "after": [
+        220,
+        695
+      ]
+    },
+    {
+      "node": "Main-Staff-AP",
+      "before": [
+        469,
+        750
+      ],
+      "after": [
+        470,
+        750
+      ]
+    },
+    {
+      "node": "Main-A-F2-CAM",
+      "before": [
+        720,
+        695
+      ],
+      "after": [
+        720,
+        695
+      ]
+    },
+    {
+      "node": "Main-A-F2-SW",
+      "before": [
+        1049,
+        770
+      ],
+      "after": [
+        1050,
+        770
+      ]
+    },
+    {
+      "node": "Main-PC20",
+      "before": [
+        220,
+        875
+      ],
+      "after": [
+        220,
+        875
+      ]
+    },
+    {
+      "node": "Main-A-F3-AP",
+      "before": [
+        470,
+        930
+      ],
+      "after": [
+        470,
+        930
+      ]
+    },
+    {
+      "node": "Main-A-F3-CAM",
+      "before": [
+        720,
+        875
+      ],
+      "after": [
+        720,
+        875
+      ]
+    },
+    {
+      "node": "Main-A-F3-SW",
+      "before": [
+        1049,
+        950
+      ],
+      "after": [
+        1050,
+        950
+      ]
+    },
+    {
+      "node": "Main-PC30",
+      "before": [
+        220,
+        1055
+      ],
+      "after": [
+        220,
+        1055
+      ]
+    },
+    {
+      "node": "Main-A-F4-AP",
+      "before": [
+        470,
+        1110
+      ],
+      "after": [
+        470,
+        1110
+      ]
+    },
+    {
+      "node": "Main-A-F4-CAM",
+      "before": [
+        720,
+        1055
+      ],
+      "after": [
+        720,
+        1055
+      ]
+    },
+    {
+      "node": "Main-A-F4-SW",
+      "before": [
+        1049,
+        1130
+      ],
+      "after": [
+        1050,
+        1130
+      ]
+    },
+    {
+      "node": "Main-PC40",
+      "before": [
+        220,
+        1235
+      ],
+      "after": [
+        220,
+        1235
+      ]
+    },
+    {
+      "node": "Main-A-F5-AP",
+      "before": [
+        470,
+        1290
+      ],
+      "after": [
+        470,
+        1290
+      ]
+    },
+    {
+      "node": "Main-A-F5-CAM",
+      "before": [
+        720,
+        1235
+      ],
+      "after": [
+        720,
+        1235
+      ]
+    },
+    {
+      "node": "Main-A-F5-SW",
+      "before": [
+        1049,
+        1310
+      ],
+      "after": [
+        1050,
+        1310
+      ]
+    },
+    {
+      "node": "Main-PC50",
+      "before": [
+        3320,
+        515
+      ],
+      "after": [
+        3320,
+        515
+      ]
+    },
+    {
+      "node": "Main-B-F1-AP",
+      "before": [
+        3070,
+        570
+      ],
+      "after": [
+        3070,
+        570
+      ]
+    },
+    {
+      "node": "Main-B-F1-CAM",
+      "before": [
+        2820,
+        515
+      ],
+      "after": [
+        2820,
+        515
+      ]
+    },
+    {
+      "node": "Main-B-F1-SW",
+      "before": [
+        2509,
+        590
+      ],
+      "after": [
+        2510,
+        590
+      ]
+    },
+    {
+      "node": "Main-PC60",
+      "before": [
+        3320,
+        695
+      ],
+      "after": [
+        3320,
+        695
+      ]
+    },
+    {
+      "node": "Main-B-F2-AP",
+      "before": [
+        3070,
+        750
+      ],
+      "after": [
+        3070,
+        750
+      ]
+    },
+    {
+      "node": "Main-B-F2-CAM",
+      "before": [
+        2820,
+        695
+      ],
+      "after": [
+        2820,
+        695
+      ]
+    },
+    {
+      "node": "Main-B-F2-SW",
+      "before": [
+        2509,
+        770
+      ],
+      "after": [
+        2510,
+        770
+      ]
+    },
+    {
+      "node": "Main-B-F3-PC",
+      "before": [
+        3320,
+        875
+      ],
+      "after": [
+        3320,
+        875
+      ]
+    },
+    {
+      "node": "Main-B-F3-AP",
+      "before": [
+        3070,
+        930
+      ],
+      "after": [
+        3070,
+        930
+      ]
+    },
+    {
+      "node": "Main-B-F3-CAM",
+      "before": [
+        2820,
+        875
+      ],
+      "after": [
+        2820,
+        875
+      ]
+    },
+    {
+      "node": "Main-B-F3-SW",
+      "before": [
+        2509,
+        950
+      ],
+      "after": [
+        2510,
+        950
+      ]
+    },
+    {
+      "node": "Main-B-F4-PC",
+      "before": [
+        3320,
+        1055
+      ],
+      "after": [
+        3320,
+        1055
+      ]
+    },
+    {
+      "node": "Main-B-F4-AP",
+      "before": [
+        3070,
+        1110
+      ],
+      "after": [
+        3070,
+        1110
+      ]
+    },
+    {
+      "node": "Main-B-F4-CAM",
+      "before": [
+        2820,
+        1055
+      ],
+      "after": [
+        2820,
+        1055
+      ]
+    },
+    {
+      "node": "Main-B-F4-SW",
+      "before": [
+        2509,
+        1130
+      ],
+      "after": [
+        2510,
+        1130
+      ]
+    },
+    {
+      "node": "Main-B-F5-PC",
+      "before": [
+        3320,
+        1235
+      ],
+      "after": [
+        3320,
+        1235
+      ]
+    },
+    {
+      "node": "Main-B-F5-AP",
+      "before": [
+        3070,
+        1290
+      ],
+      "after": [
+        3070,
+        1290
+      ]
+    },
+    {
+      "node": "Main-B-F5-CAM",
+      "before": [
+        2820,
+        1235
+      ],
+      "after": [
+        2820,
+        1235
+      ]
+    },
+    {
+      "node": "Main-B-F5-SW",
+      "before": [
+        2509,
+        1310
+      ],
+      "after": [
+        2510,
+        1310
+      ]
+    },
+    {
+      "node": "DBP-PC10",
+      "before": [
+        250,
+        2100
+      ],
+      "after": [
+        250,
+        2100
+      ]
+    },
+    {
+      "node": "DBP-PC20",
+      "before": [
+        250,
+        2175
+      ],
+      "after": [
+        250,
+        2175
+      ]
+    },
+    {
+      "node": "DBP-Guest-AP",
+      "before": [
+        529,
+        2210
+      ],
+      "after": [
+        530,
+        2210
+      ]
+    },
+    {
+      "node": "DBP-F1-CAM",
+      "before": [
+        810,
+        2220
+      ],
+      "after": [
+        810,
+        2220
+      ]
+    },
+    {
+      "node": "DBP-F1-SW",
+      "before": [
+        1199,
+        2140
+      ],
+      "after": [
+        1200,
+        2140
+      ]
+    },
+    {
+      "node": "DBP-PC30",
+      "before": [
+        250,
+        2340
+      ],
+      "after": [
+        250,
+        2340
+      ]
+    },
+    {
+      "node": "DBP-Staff-AP",
+      "before": [
+        529,
+        2450
+      ],
+      "after": [
+        530,
+        2450
+      ]
+    },
+    {
+      "node": "DBP-F2-CAM",
+      "before": [
+        810,
+        2460
+      ],
+      "after": [
+        810,
+        2460
+      ]
+    },
+    {
+      "node": "DBP-F2-SW",
+      "before": [
+        1199,
+        2380
+      ],
+      "after": [
+        1200,
+        2380
+      ]
+    },
+    {
+      "node": "BHTQ-PC10",
+      "before": [
+        3300,
+        2100
+      ],
+      "after": [
+        3300,
+        2100
+      ]
+    },
+    {
+      "node": "BHTQ-PC20",
+      "before": [
+        3300,
+        2175
+      ],
+      "after": [
+        3300,
+        2175
+      ]
+    },
+    {
+      "node": "BHTQ-Guest-AP",
+      "before": [
+        3019,
+        2210
+      ],
+      "after": [
+        3020,
+        2210
+      ]
+    },
+    {
+      "node": "BHTQ-F1-CAM",
+      "before": [
+        2740,
+        2220
+      ],
+      "after": [
+        2740,
+        2220
+      ]
+    },
+    {
+      "node": "BHTQ-F1-SW",
+      "before": [
+        2349,
+        2140
+      ],
+      "after": [
+        2350,
+        2140
+      ]
+    },
+    {
+      "node": "BHTQ-PC30",
+      "before": [
+        3300,
+        2340
+      ],
+      "after": [
+        3300,
+        2340
+      ]
+    },
+    {
+      "node": "BHTQ-Staff-AP",
+      "before": [
+        3019,
+        2450
+      ],
+      "after": [
+        3020,
+        2450
+      ]
+    },
+    {
+      "node": "BHTQ-F2-CAM",
+      "before": [
+        2740,
+        2460
+      ],
+      "after": [
+        2740,
+        2460
+      ]
+    },
+    {
+      "node": "BHTQ-F2-SW",
+      "before": [
+        2349,
+        2380
+      ],
+      "after": [
+        2350,
+        2380
+      ]
+    },
+    {
+      "node": "Main-A-DIST",
+      "before": [
+        1199,
+        910
+      ],
+      "after": [
+        1200,
+        910
+      ]
+    },
+    {
+      "node": "Main-B-DIST",
+      "before": [
+        2399,
+        910
+      ],
+      "after": [
+        2400,
+        910
+      ]
+    },
+    {
+      "node": "Main-IoTMgmt",
+      "before": [
+        1810,
+        1370
+      ],
+      "after": [
+        1810,
+        1370
+      ]
+    },
+    {
+      "node": "DBP-IoTMgmt",
+      "before": [
+        460,
+        1940
+      ],
+      "after": [
+        460,
+        1940
+      ]
+    },
+    {
+      "node": "BHTQ-IoTMgmt",
+      "before": [
+        3140,
+        1940
+      ],
+      "after": [
+        3140,
+        1940
+      ]
+    }
+  ]
+}

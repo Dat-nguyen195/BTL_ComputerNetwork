@@ -1,0 +1,22 @@
+{
+  "started_at_utc": "2026-11-12T03:08:59.013046+00:00",
+  "source": "simulation/packet-tracer/hospital-3sites.pkt",
+  "source_sha256": "d3d9a112c91acde5e87d7a937a96ee2e7a988ae5c7325ac09b87189aa314897a",
+  "scope": "Native Cisco Packet Tracer 9.0.1.0858 GUI execution via agent-desktop. Warmup separate; 32 new records. Inherited manual ISP data remains historical. Original project unchanged.",
+  "status": "PASS",
+  "completed_at_utc": "2026-11-12T03:20:53.309290+00:00",
+  "native_sha256": "dddedf3290c6969e5627c08f599c2b6c994da77852c62fed4f6730b7f0225041",
+  "source_unchanged": true,
+  "network_executed": true,
+  "observations": 32,
+  "wireless_associations": 6,
+  "dhcp_clients": 19,
+  "guest_deny_delta": {
+    "Main": 16,
+    "DBP": 16,
+    "BHTQ": 16
+  },
+  "reopened_in_native_gui": true,
+  "reopened_at_utc": "2026-11-12T03:25:42.292174+00:00",
+  "reopen_observation": "Native saved copy reopened in Packet Tracer; complete three-site topology visible in Viewport. Saved data stores checked offline; suite not executed again after reopen."
+}

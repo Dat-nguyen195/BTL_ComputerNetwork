@@ -1,0 +1,145 @@
+[
+  {
+    "node": "Main-Core",
+    "command": "no description",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-Core",
+    "command": "no ip helper-address 10.10.70.10",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-Core",
+    "command": "no ip access-group MAIN-CAMERA-IN in",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-Core",
+    "command": "no ip ospf network point-to-point",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-Core",
+    "command": "no ip ospf priority",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-GW",
+    "command": "no bandwidth",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-GW",
+    "command": "no ip ospf network point-to-point",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-GW",
+    "command": "no ip ospf priority",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "DBP-GW",
+    "command": "no bandwidth",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "DBP-GW",
+    "command": "no ip helper-address 10.20.70.6",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "DBP-GW",
+    "command": "no ip ospf cost",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "DBP-GW",
+    "command": "no ip access-group DBP-CAMERA-IN in",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "BHTQ-GW",
+    "command": "no bandwidth",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "BHTQ-GW",
+    "command": "no ip helper-address 10.30.70.6",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "BHTQ-GW",
+    "command": "no ip ospf cost",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "BHTQ-GW",
+    "command": "no ip access-group BHTQ-CAMERA-IN in",
+    "response": {
+      "first": 0,
+      "second": "\n"
+    }
+  },
+  {
+    "node": "Main-Infra",
+    "pool": "serverPool",
+    "max_users": 0
+  },
+  {
+    "node": "DBP-Infra",
+    "pool": "serverPool",
+    "max_users": 0
+  },
+  {
+    "node": "BHTQ-Infra",
+    "pool": "serverPool",
+    "max_users": 0
+  }
+]

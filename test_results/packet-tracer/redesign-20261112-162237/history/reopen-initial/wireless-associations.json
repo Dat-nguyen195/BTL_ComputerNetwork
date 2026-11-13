@@ -1,0 +1,62 @@
+[
+  {
+    "node": "Main-Guest",
+    "wireless_port": true,
+    "mac": "0200.0023.0001",
+    "ip": "10.10.100.11",
+    "ssid": "Main_Guest",
+    "ap_mac": "0200.0035.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  },
+  {
+    "node": "Main-Staff",
+    "wireless_port": true,
+    "mac": "0200.0024.0001",
+    "ip": "10.10.120.11",
+    "ssid": "Main_Staff",
+    "ap_mac": "0200.0036.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  },
+  {
+    "node": "DBP-Guest",
+    "wireless_port": true,
+    "mac": "0200.0026.0001",
+    "ip": "10.20.100.11",
+    "ssid": "DBP_Guest",
+    "ap_mac": "0200.0037.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  },
+  {
+    "node": "DBP-Staff",
+    "wireless_port": true,
+    "mac": "0200.0031.0001",
+    "ip": "10.20.120.11",
+    "ssid": "DBP_Staff",
+    "ap_mac": "0200.0038.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  },
+  {
+    "node": "BHTQ-Guest",
+    "wireless_port": true,
+    "mac": "0200.0028.0001",
+    "ip": "10.30.100.11",
+    "ssid": "BHTQ_Guest",
+    "ap_mac": "0200.0039.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  },
+  {
+    "node": "BHTQ-Staff",
+    "wireless_port": true,
+    "mac": "0200.0034.0001",
+    "ip": "10.30.120.11",
+    "ssid": "BHTQ_Staff",
+    "ap_mac": "0200.003A.0002",
+    "auth_type": 4,
+    "encrypt_type": 4
+  }
+]

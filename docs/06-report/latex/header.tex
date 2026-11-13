@@ -4,6 +4,8 @@
 \usepackage{tikz}
 \usepackage{etoolbox}
 \usepackage{needspace}
+\usepackage{caption}
+\usepackage{placeins}
 \usepackage{pdflscape}
 \input{fonts.tex}
 \PassOptionsToPackage{pdflang=vi-VN}{hyperref}
@@ -12,6 +14,12 @@
 \definecolor{BKBlue}{HTML}{082F87}
 \definecolor{BKLightBlue}{HTML}{1489D4}
 \renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listfigurename}{Danh mục hình ảnh}
+\renewcommand{\listtablename}{Danh mục bảng biểu}
+\renewcommand{\refname}{Tài liệu tham khảo}
+\captionsetup{font=small,labelfont=bf,labelsep=colon,skip=5pt,hypcap=false}
+\captionsetup[table]{position=top}
+\newcommand{\tabletitle}[1]{\par\begingroup\captionof{table}{#1}\endgroup\nopagebreak}
 \renewcommand{\figurename}{Hình}
 \renewcommand{\tablename}{Bảng}
 \pagestyle{fancy}
@@ -31,7 +39,7 @@
 \let\originaltableofcontents\tableofcontents
 \renewcommand{\tableofcontents}{%
   \clearpage\pagestyle{plain}\begingroup\footnotesize\setstretch{1}\originaltableofcontents\endgroup
-  \clearpage\pagenumbering{arabic}\pagestyle{fancy}}
+  \clearpage}
 \AtBeginDocument{\hypersetup{
   pdftitle={Thiết kế và mô phỏng mạng bệnh viện ba cơ sở},
   pdfauthor={\ReportTeam},

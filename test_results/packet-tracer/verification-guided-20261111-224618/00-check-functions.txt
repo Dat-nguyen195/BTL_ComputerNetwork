@@ -1,0 +1,1 @@
+dprint(typeof hospital + " / " + typeof captureWireless + " / " + typeof warmupHospitalAndTest);

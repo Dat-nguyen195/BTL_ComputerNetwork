@@ -69,8 +69,6 @@ SR trên OM3 phải kiểm cự ly/connector theo optics được chọn; không
 
 ## 6. Việc còn mở
 
-TV2/TV5 khảo sát cáp/RF/điện trước 05/11; TV3 xác nhận camera/NVR/RPO/RTO trước 06/11; TV1/TV2 thu báo giá/model/license/thuế trước 08/11/2026 (hạn đề xuất). Đối soát TCO WAN để không cộng trùng CPE/Edge/FW/license. HA/40 G/GPON/mGig, tốc độ sản xuất và RF vẫn DESIGN ONLY. [Review TV2](../00-management/tv2-review.md) ghi phát hiện, chỉnh sửa và hạn chế native `.pkt`.
+TV2/TV5 khảo sát cáp/RF/điện trước 05/11; TV3 xác nhận camera/NVR/RPO/RTO trước 06/11; TV1/TV2 thu báo giá/model/license/thuế trước 08/11/2026 (hạn đề xuất). Đối soát TCO WAN để không cộng trùng CPE/Edge/FW/license. HA/40 G/GPON/mGig, tốc độ sản xuất và RF vẫn DESIGN ONLY. [Inventory module gốc](../../simulation/modules/tv2-lan-wireless/audit/inventory.json) ghi cấu trúc thiết bị đã lưu; [phạm vi hiện tại](../cisco-scope.md) ghi giới hạn mô phỏng.
 
 ## Bổ sung GPON trong phương án hybrid
-
-[Thiết kế GPON](gpon-design.md) chọn 80→96 PC VLAN60 Main qua 20→24 ONT; các máy này đã nằm trong tổng PC. Hai uplink OLT bổ sung mỗi Core một cổng (28→29/32), hai splitter1:16 và ODN/OS2 có budget ví dụ, cần đo quang thực. Bảng cổng/cáp Ethernet giữ chỗ dự phòng để rollback. Đây là thiết kế, không phải GPON đã chạy trong GNS3.

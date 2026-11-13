@@ -1,0 +1,642 @@
+[
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "serverPool",
+    "network": "10.10.70.0",
+    "mask": "255.255.255.224",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.10.70.0",
+    "end": "10.10.70.0",
+    "max_users": "0",
+    "leases": []
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V10",
+    "network": "10.10.10.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.10.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.10.7",
+    "end": "10.10.10.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.10.9",
+        "MAC_ADDRESS": "0200.001E.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.001E.0001"
+      },
+      {
+        "IP_ADDRESS": "10.10.10.7",
+        "MAC_ADDRESS": "0200.001F.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.001F.0001"
+      },
+      {
+        "IP_ADDRESS": "10.10.10.8",
+        "MAC_ADDRESS": "00D0.971D.395E",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "00D0.971D.395E"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V20",
+    "network": "10.10.20.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.20.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.20.7",
+    "end": "10.10.20.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.20.7",
+        "MAC_ADDRESS": "0200.0020.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0020.0001"
+      },
+      {
+        "IP_ADDRESS": "10.10.20.8",
+        "MAC_ADDRESS": "0060.3E1E.4A2A",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0060.3E1E.4A2A"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V30",
+    "network": "10.10.30.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.30.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.30.7",
+    "end": "10.10.30.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.30.7",
+        "MAC_ADDRESS": "0200.0021.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0021.0001"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V40",
+    "network": "10.10.40.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.40.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.40.7",
+    "end": "10.10.40.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.40.7",
+        "MAC_ADDRESS": "0200.0022.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0022.0001"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V50",
+    "network": "10.10.50.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.50.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.50.7",
+    "end": "10.10.50.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.50.7",
+        "MAC_ADDRESS": "0200.002D.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.002D.0001"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V60",
+    "network": "10.10.60.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.10.60.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.60.7",
+    "end": "10.10.60.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.60.7",
+        "MAC_ADDRESS": "0200.002E.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.002E.0001"
+      },
+      {
+        "IP_ADDRESS": "10.10.60.8",
+        "MAC_ADDRESS": "00D0.BA8E.92C0",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "00D0.BA8E.92C0"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V100",
+    "network": "10.10.100.0",
+    "mask": "255.255.254.0",
+    "gateway": "10.10.100.1",
+    "dns": "192.0.2.100",
+    "start": "10.10.100.11",
+    "end": "10.10.101.254",
+    "max_users": "500",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.100.11",
+        "MAC_ADDRESS": "0200.0023.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0023.0001"
+      }
+    ]
+  },
+  {
+    "server": "Main-Infra",
+    "enabled": true,
+    "name": "Main-V120",
+    "network": "10.10.120.0",
+    "mask": "255.255.255.0",
+    "gateway": "10.10.120.1",
+    "dns": "10.10.70.10",
+    "start": "10.10.120.11",
+    "end": "10.10.120.254",
+    "max_users": "244",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.10.120.11",
+        "MAC_ADDRESS": "0200.0024.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0024.0001"
+      }
+    ]
+  },
+  {
+    "server": "Main-HIS",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-PACS",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-LIS",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-CRM",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-DB",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-Backup",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-Monitor",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-WebDMZ",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-ProxyDMZ",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "serverPool",
+    "network": "10.20.70.0",
+    "mask": "255.255.255.240",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.20.70.0",
+    "end": "10.20.70.0",
+    "max_users": "0",
+    "leases": []
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "DBP-V10",
+    "network": "10.20.10.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.20.10.1",
+    "dns": "10.20.70.6",
+    "start": "10.20.10.7",
+    "end": "10.20.10.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.20.10.7",
+        "MAC_ADDRESS": "0200.0025.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0025.0001"
+      }
+    ]
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "DBP-V20",
+    "network": "10.20.20.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.20.20.1",
+    "dns": "10.20.70.6",
+    "start": "10.20.20.7",
+    "end": "10.20.20.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.20.20.7",
+        "MAC_ADDRESS": "0200.002F.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.002F.0001"
+      }
+    ]
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "DBP-V30",
+    "network": "10.20.30.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.20.30.1",
+    "dns": "10.20.70.6",
+    "start": "10.20.30.7",
+    "end": "10.20.30.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.20.30.7",
+        "MAC_ADDRESS": "0200.0030.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0030.0001"
+      }
+    ]
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "DBP-V100",
+    "network": "10.20.100.0",
+    "mask": "255.255.254.0",
+    "gateway": "10.20.100.1",
+    "dns": "192.0.2.100",
+    "start": "10.20.100.11",
+    "end": "10.20.101.254",
+    "max_users": "500",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.20.100.11",
+        "MAC_ADDRESS": "0200.0026.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0026.0001"
+      }
+    ]
+  },
+  {
+    "server": "DBP-Infra",
+    "enabled": true,
+    "name": "DBP-V120",
+    "network": "10.20.120.0",
+    "mask": "255.255.255.0",
+    "gateway": "10.20.120.1",
+    "dns": "10.20.70.6",
+    "start": "10.20.120.11",
+    "end": "10.20.120.254",
+    "max_users": "244",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.20.120.11",
+        "MAC_ADDRESS": "0200.0031.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0031.0001"
+      }
+    ]
+  },
+  {
+    "server": "DBP-Local",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "serverPool",
+    "network": "10.30.70.0",
+    "mask": "255.255.255.240",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.30.70.0",
+    "end": "10.30.70.0",
+    "max_users": "0",
+    "leases": []
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "BHTQ-V10",
+    "network": "10.30.10.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.30.10.1",
+    "dns": "10.30.70.6",
+    "start": "10.30.10.7",
+    "end": "10.30.10.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.30.10.7",
+        "MAC_ADDRESS": "0200.0027.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0027.0001"
+      }
+    ]
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "BHTQ-V20",
+    "network": "10.30.20.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.30.20.1",
+    "dns": "10.30.70.6",
+    "start": "10.30.20.7",
+    "end": "10.30.20.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.30.20.7",
+        "MAC_ADDRESS": "0200.0032.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0032.0001"
+      }
+    ]
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "BHTQ-V30",
+    "network": "10.30.30.0",
+    "mask": "255.255.255.128",
+    "gateway": "10.30.30.1",
+    "dns": "10.30.70.6",
+    "start": "10.30.30.7",
+    "end": "10.30.30.126",
+    "max_users": "120",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.30.30.7",
+        "MAC_ADDRESS": "0200.0033.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0033.0001"
+      }
+    ]
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "BHTQ-V100",
+    "network": "10.30.100.0",
+    "mask": "255.255.254.0",
+    "gateway": "10.30.100.1",
+    "dns": "192.0.2.100",
+    "start": "10.30.100.11",
+    "end": "10.30.101.254",
+    "max_users": "500",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.30.100.11",
+        "MAC_ADDRESS": "0200.0028.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0028.0001"
+      }
+    ]
+  },
+  {
+    "server": "BHTQ-Infra",
+    "enabled": true,
+    "name": "BHTQ-V120",
+    "network": "10.30.120.0",
+    "mask": "255.255.255.0",
+    "gateway": "10.30.120.1",
+    "dns": "10.30.70.6",
+    "start": "10.30.120.11",
+    "end": "10.30.120.254",
+    "max_users": "244",
+    "leases": [
+      {
+        "IP_ADDRESS": "10.30.120.11",
+        "MAC_ADDRESS": "0200.0034.0001",
+        "HOST_PORT": "FastEthernet0",
+        "LEASE_TIME": "86400000",
+        "CLIENT_ID": "0200.0034.0001"
+      }
+    ]
+  },
+  {
+    "server": "BHTQ-Local",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Web-Lab",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "0.0.0.0",
+    "mask": "0.0.0.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "0.0.0.0",
+    "end": "0.0.2.0",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "Main-IoTMgmt",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "10.10.110.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.10.110.0",
+    "end": "10.10.111.255",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "DBP-IoTMgmt",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "10.20.110.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.20.110.0",
+    "end": "10.20.111.255",
+    "max_users": "512",
+    "leases": []
+  },
+  {
+    "server": "BHTQ-IoTMgmt",
+    "enabled": false,
+    "name": "serverPool",
+    "network": "10.30.110.0",
+    "mask": "255.255.255.0",
+    "gateway": "0.0.0.0",
+    "dns": "0.0.0.0",
+    "start": "10.30.110.0",
+    "end": "10.30.111.255",
+    "max_users": "512",
+    "leases": []
+  }
+]

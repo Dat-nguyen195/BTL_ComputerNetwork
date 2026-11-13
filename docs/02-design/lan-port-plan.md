@@ -20,6 +20,6 @@ Switch quản trịMain đề xuất10.10.90.32–51 (20 switch), mỗi Aux10.20
 
 ## Native module Tiendat
 
-Giữ nguyên `.pkt` gốc và hash trong [module README](../../simulation/modules/tv2-lan-wireless/README.md). Core3650, accessA/B2960; LACP2 linkmỗiaccess về cùngcore có thể dùng làm functional module, không chứng minh10 GbE hoặc dualcoreHA. Patch accessA/B đặtPC ports1/2 VLAN10/20, APGuestport3 access100, APStaffbổ sungport4 access120; đóng cổng dư. Hostname khác nhau, quản trịswitchA .90.32/B .90.42.
+Giữ nguyên `.pkt` gốc và hash trong [manifest module](../../simulation/modules/tv2-lan-wireless/reference-manifest.json). Core3650, accessA/B2960; LACP2 linkmỗiaccess về cùngcore có thể dùng làm functional module, không chứng minh10 GbE hoặc dualcoreHA. Patch accessA/B đặtPC ports1/2 VLAN10/20, APGuestport3 access100, APStaffbổ sungport4 access120; đóng cổng dư. Hostname khác nhau, quản trịswitchA .90.32/B .90.42.
 
 [TC01](../../test_results/TC01-same-vlan/result.md): PC0↔PC2 VLAN10; [TC02](../../test_results/TC02-inter-vlan/result.md): PC0↔PC1 VLAN10/20 có quyền. IP/gateway trên4 PC gốc chưa lưu; phải cấpDHCP sau khi thêmInfra hoặc dùngIPtĩnh smoke tạm theo module, không ghiPASS từ file gốc. Lưu startup/project, mở lại, thu log/ảnh/hash thật trước nghiệm thu.

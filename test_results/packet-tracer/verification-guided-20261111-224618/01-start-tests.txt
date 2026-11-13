@@ -1,0 +1,5 @@
+var ps=[]; ["Main-Core","DBP-GW","BHTQ-GW"].forEach(function(n){ps.push({node:n,command:"show access-lists",result:ipc.network().getDevice(n).enterCommand("show access-lists","enable")});}); $putData("pretest-snapshots.json",JSON.stringify(ps));
+
+captureWireless();
+
+warmupHospitalAndTest();

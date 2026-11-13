@@ -1,0 +1,2700 @@
+{
+  "native_sha256": "e37800126bfa13b68689593c591046ecf2cc933ccb2798504790c1105eebed91",
+  "network_devices": 58,
+  "serialized_links": 53,
+  "functional_completeness": "P0 functions and Core SSH tested; production VPN/PHY/RF/HA/video remain limited",
+  "layout_completeness": "Flat topology lacks per-building/per-floor access and camera devices",
+  "nodes": [
+    {
+      "name": "Power Distribution Device0",
+      "type": "Power Distribution Device",
+      "model": "Power Distribution Device",
+      "site": "Power",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [],
+      "services_in_saved_state": [],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>3893</X>\n      <Y>3900</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008690719968</MEM_ADDR>\n      <DEV_ADDR>100008692511552</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{eb7c932a-a776-49d0-b47d-0c5396d7e501}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.97325</X_PN>\n      <Y_PN>0.97125</Y_PN>\n      <X>0</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{9ea57c48-fa51-5ae1-98d2-f831f7df37c1}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-GW",
+      "type": "Router",
+      "model": "2911",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "10",
+        "20",
+        "30",
+        "70",
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "interface_ip_config": [
+        "10.30.255.1 255.255.255.255",
+        "10.30.10.1 255.255.255.128",
+        "10.30.20.1 255.255.255.128",
+        "10.30.30.1 255.255.255.128",
+        "10.30.70.1 255.255.255.240",
+        "10.30.90.1 255.255.255.0",
+        "10.30.100.1 255.255.254.0",
+        "10.30.110.1 255.255.255.0",
+        "10.30.120.1 255.255.255.0",
+        "10.255.0.6 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "10.255.0.6"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-GW",
+          "from_port": "GigabitEthernet0/2",
+          "to": "BHTQ-GW",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "BHTQ-GW",
+          "from_port": "GigabitEthernet0/0",
+          "to": "BHTQ-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1841.5</X>\n      <Y>155</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008693949328</MEM_ADDR>\n      <DEV_ADDR>100008690367144</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{28f595f7-1366-5246-951b-752a3ffa6678}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.466</X_PN>\n      <Y_PN>0.05025</Y_PN>\n      <X>10</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{d6e646d7-8499-04ab-9bd2-f862f5eefba4}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-GW",
+      "type": "Router",
+      "model": "2911",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "10",
+        "20",
+        "30",
+        "70",
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "interface_ip_config": [
+        "10.20.255.1 255.255.255.255",
+        "10.20.10.1 255.255.255.128",
+        "10.20.20.1 255.255.255.128",
+        "10.20.30.1 255.255.255.128",
+        "10.20.70.1 255.255.255.240",
+        "10.20.90.1 255.255.255.0",
+        "10.20.100.1 255.255.254.0",
+        "10.20.110.1 255.255.255.0",
+        "10.20.120.1 255.255.255.0",
+        "10.255.0.2 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "10.255.0.2"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-GW",
+          "from_port": "GigabitEthernet0/1",
+          "to": "DBP-GW",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "DBP-GW",
+          "from_port": "GigabitEthernet0/0",
+          "to": "DBP-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>279.5</X>\n      <Y>160</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008700119984</MEM_ADDR>\n      <DEV_ADDR>100008693913160</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{e3667bdc-abe3-52c7-8322-f38fb7757b2d}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0755</X_PN>\n      <Y_PN>0.0515</Y_PN>\n      <X>20</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{0e2a3b83-a6d9-5bba-83d3-f85bb0ec01d1}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "INET-Core",
+      "type": "Router",
+      "model": "2911",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "192.0.2.11 255.255.255.255",
+        "192.0.2.22 255.255.255.255",
+        "192.0.2.130 255.255.255.252",
+        "192.0.2.134 255.255.255.252",
+        "192.0.2.65 255.255.255.192"
+      ],
+      "host_ip_tags": [
+        "192.0.2.130",
+        "192.0.2.134",
+        "192.0.2.65"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "ISP1",
+          "from_port": "GigabitEthernet0/1",
+          "to": "INET-Core",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "ISP2",
+          "from_port": "GigabitEthernet0/1",
+          "to": "INET-Core",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "INET-Core",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Web-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1466.5</X>\n      <Y>1189</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008690521904</MEM_ADDR>\n      <DEV_ADDR>100008700188408</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{e5410911-a3d9-5856-9d00-3761a6c6f7bc}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.37225</X_PN>\n      <Y_PN>0.30875</Y_PN>\n      <X>30</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{43673f64-c738-c9c4-6bd4-f8d70c98e735}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "ISP1",
+      "type": "Router",
+      "model": "2911",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "203.0.113.1 255.255.255.252",
+        "192.0.2.129 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "192.0.2.129",
+        "203.0.113.1"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Edge",
+          "from_port": "GigabitEthernet0/1",
+          "to": "ISP1",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "ISP1",
+          "from_port": "GigabitEthernet0/1",
+          "to": "INET-Core",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1276.5</X>\n      <Y>1054</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008700996304</MEM_ADDR>\n      <DEV_ADDR>100008700829112</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{a32e9901-58ee-50ef-993f-a8abc918bd40}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.32475</X_PN>\n      <Y_PN>0.275</Y_PN>\n      <X>40</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{f4918837-20e1-0606-2ad5-f886b80d97a1}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "ISP2",
+      "type": "Router",
+      "model": "2911",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "198.51.100.1 255.255.255.252",
+        "192.0.2.133 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "192.0.2.133",
+        "198.51.100.1"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Edge",
+          "from_port": "GigabitEthernet0/2",
+          "to": "ISP2",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "ISP2",
+          "from_port": "GigabitEthernet0/1",
+          "to": "INET-Core",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1663.5</X>\n      <Y>1070</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008701249456</MEM_ADDR>\n      <DEV_ADDR>100008701063000</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{f9a88f8c-e23f-5f5f-bf5c-b7c56c29f8ae}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.4215</X_PN>\n      <Y_PN>0.279</Y_PN>\n      <X>50</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4d026e3e-9c43-1498-e5d5-f81235f37e1f}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Core",
+      "type": "Router",
+      "model": "2911",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50",
+        "60",
+        "70",
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "interface_ip_config": [
+        "10.10.255.1 255.255.255.255",
+        "10.10.10.1 255.255.255.128",
+        "10.10.20.1 255.255.255.128",
+        "10.10.30.1 255.255.255.128",
+        "10.10.40.1 255.255.255.128",
+        "10.10.50.1 255.255.255.128",
+        "10.10.60.1 255.255.255.128",
+        "10.10.70.1 255.255.255.224",
+        "10.10.90.1 255.255.255.0",
+        "10.10.100.1 255.255.254.0",
+        "10.10.110.1 255.255.255.0",
+        "10.10.120.1 255.255.255.0",
+        "10.255.0.9 255.255.255.252",
+        "10.255.0.13 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "10.255.0.13",
+        "10.255.0.9"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/1",
+          "to": "Main-GW",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Main-FW",
+          "to_port": "FastEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/0",
+          "to": "Main-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1224.5</X>\n      <Y>461</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008700431776</MEM_ADDR>\n      <DEV_ADDR>100008701314776</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{e808609a-a5eb-5f62-83d9-aa8c267580fe}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.31175</X_PN>\n      <Y_PN>0.12675</Y_PN>\n      <X>60</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{5fe9487a-10de-cdda-a0d6-f8aa837a8db6}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Edge",
+      "type": "Router",
+      "model": "2911",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "10.255.0.18 255.255.255.252",
+        "203.0.113.2 255.255.255.252",
+        "198.51.100.2 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "10.255.0.18",
+        "198.51.100.2",
+        "203.0.113.2"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "DMZ-Access",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Main-Edge",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Edge",
+          "from_port": "GigabitEthernet0/1",
+          "to": "ISP1",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-Edge",
+          "from_port": "GigabitEthernet0/2",
+          "to": "ISP2",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1468.5</X>\n      <Y>929</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008701724432</MEM_ADDR>\n      <DEV_ADDR>100008701598536</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{b786b599-b4a1-5607-824e-96f102f4a10a}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.37275</X_PN>\n      <Y_PN>0.24375</Y_PN>\n      <X>70</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{5f942cda-fde4-18f0-97d7-f8ade200b2e1}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-FW",
+      "type": "Router",
+      "model": "2811",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "10.255.0.14 255.255.255.252",
+        "10.255.0.17 255.255.255.252",
+        "10.10.80.1 255.255.255.224"
+      ],
+      "host_ip_tags": [
+        "10.10.80.1",
+        "10.255.0.14",
+        "10.255.0.17"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Main-FW",
+          "to_port": "FastEthernet0/0",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-FW",
+          "from_port": "FastEthernet0/1",
+          "to": "DMZ-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-FW",
+          "from_port": "FastEthernet1/0",
+          "to": "DMZ-Access",
+          "to_port": "FastEthernet0/24",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1223.5</X>\n      <Y>668</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008807585072</MEM_ADDR>\n      <DEV_ADDR>100008701787736</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{d5224b91-94c3-5f16-becf-a6346dca6f08}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.3115</X_PN>\n      <Y_PN>0.1785</Y_PN>\n      <X>80</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{a83ea854-29ea-ec8a-53d8-f8ef58337feb}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-GW",
+      "type": "Router",
+      "model": "2911",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [
+        "10.10.255.2 255.255.255.255",
+        "10.255.0.10 255.255.255.252",
+        "10.255.0.1 255.255.255.252",
+        "10.255.0.5 255.255.255.252"
+      ],
+      "host_ip_tags": [
+        "10.255.0.1",
+        "10.255.0.10",
+        "10.255.0.5"
+      ],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-GW",
+          "from_port": "GigabitEthernet0/1",
+          "to": "DBP-GW",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-GW",
+          "from_port": "GigabitEthernet0/2",
+          "to": "BHTQ-GW",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eCrossOver"
+        },
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/1",
+          "to": "Main-GW",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eCrossOver"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1221.5</X>\n      <Y>155</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008813672416</MEM_ADDR>\n      <DEV_ADDR>100008813428936</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{c54573a6-3028-59e5-82f8-540322a36b0c}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.311</X_PN>\n      <Y_PN>0.05025</Y_PN>\n      <X>90</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{6d5fa999-3252-71c7-26d9-f8227ed1492a}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Access",
+      "type": "Switch",
+      "model": "2960-24TT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "70",
+        "70",
+        "10",
+        "100",
+        "110",
+        "20",
+        "30",
+        "120",
+        "100",
+        "120",
+        "10,20,30,70,90,100,110,120"
+      ],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "BHTQ-GW",
+          "from_port": "GigabitEthernet0/0",
+          "to": "BHTQ-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "BHTQ-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "BHTQ-Local",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "BHTQ-PC10",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "BHTQ-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "BHTQ-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "BHTQ-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "BHTQ-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "BHTQ-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1839</X>\n      <Y>461</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008814175168</MEM_ADDR>\n      <DEV_ADDR>100008813741984</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{cb2b07d1-8675-56bd-b5fc-00ff28d91027}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.46725</X_PN>\n      <Y_PN>0.12575</Y_PN>\n      <X>100</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{6244f1fc-a124-1206-e6d9-f8d997ba277e}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Access",
+      "type": "Switch",
+      "model": "2960-24TT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "70",
+        "70",
+        "10",
+        "100",
+        "110",
+        "20",
+        "30",
+        "120",
+        "100",
+        "120",
+        "10,20,30,70,90,100,110,120"
+      ],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "DBP-GW",
+          "from_port": "GigabitEthernet0/0",
+          "to": "DBP-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "DBP-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "DBP-Local",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "DBP-PC10",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "DBP-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "DBP-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "DBP-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "DBP-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "DBP-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>274</X>\n      <Y>360</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008807287200</MEM_ADDR>\n      <DEV_ADDR>100008818326880</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{05bd0924-8849-5e70-98b6-7998e26f147b}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.076</X_PN>\n      <Y_PN>0.1005</Y_PN>\n      <X>110</X>\n      <Y>0</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{bcf946d5-3841-137e-7bdb-f8a45001f1f6}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DMZ-Access",
+      "type": "Switch",
+      "model": "2960-24TT",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "80",
+        "80",
+        "80",
+        "999",
+        "80,999",
+        "999"
+      ],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "DMZ-Access",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Main-Edge",
+          "to_port": "GigabitEthernet0/0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-FW",
+          "from_port": "FastEthernet0/1",
+          "to": "DMZ-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DMZ-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Main-WebDMZ",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "DMZ-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "Main-ProxyDMZ",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-FW",
+          "from_port": "FastEthernet1/0",
+          "to": "DMZ-Access",
+          "to_port": "FastEthernet0/24",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1469</X>\n      <Y>671</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008821646832</MEM_ADDR>\n      <DEV_ADDR>100008821284736</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{f81874bb-fc6b-5228-852b-9265eb501e74}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.37475</X_PN>\n      <Y_PN>0.17825</Y_PN>\n      <X>0</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{43c1dea1-6442-d306-10dd-f86d755ed3af}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Access",
+      "type": "Switch",
+      "model": "2960-24TT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [
+        "70",
+        "70",
+        "70",
+        "70",
+        "70",
+        "70",
+        "70",
+        "70",
+        "10",
+        "10",
+        "20",
+        "30",
+        "40",
+        "100",
+        "120",
+        "90",
+        "110",
+        "50",
+        "60",
+        "100",
+        "120",
+        "10,20,30,40,50,60,70,90,100,110,120"
+      ],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Core",
+          "from_port": "GigabitEthernet0/0",
+          "to": "Main-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Main-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "Main-HIS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "Main-PACS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/4",
+          "to": "Main-LIS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "Main-CRM",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "Main-DB",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "Main-Backup",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/8",
+          "to": "Main-Monitor",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "Main-PC10-A",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "Main-PC10-B",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/11",
+          "to": "Main-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/12",
+          "to": "Main-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/13",
+          "to": "Main-PC40",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/16",
+          "to": "Main-Admin",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/17",
+          "to": "Main-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/18",
+          "to": "Main-PC50",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/19",
+          "to": "Main-PC60",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/20",
+          "to": "Main-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/21",
+          "to": "Main-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>789</X>\n      <Y>456</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008824105344</MEM_ADDR>\n      <DEV_ADDR>100008823695904</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{b59880ed-029a-5ed8-b01f-00c5f876de2b}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0029036</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>10</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{a3dc1d23-eada-8f5e-93de-f838931e38f3}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Web-Access",
+      "type": "Switch",
+      "model": "2960-24TT",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "INET-Core",
+          "from_port": "GigabitEthernet0/2",
+          "to": "Web-Access",
+          "to_port": "GigabitEthernet0/1",
+          "type": "eStraightThrough"
+        },
+        {
+          "from": "Web-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Web-Lab",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "SMART_LICENSE_CLIENT"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1453</X>\n      <Y>1402</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008826584560</MEM_ADDR>\n      <DEV_ADDR>100008826295808</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{1742f19d-4556-5182-91fa-9abdc7d8eee5}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0058072</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>20</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{378c0cbc-cb8b-008a-31e0-f82429b7ff8b}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Infra",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.10"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Main-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>550.5</X>\n      <Y>485</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008828896384</MEM_ADDR>\n      <DEV_ADDR>100008826653936</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{a1826952-afb1-525f-b46e-53deaebaa686}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0087108</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>30</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{87f26345-d7f7-9569-aee1-f877f3871a38}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-HIS",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.11"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "Main-HIS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>501.5</X>\n      <Y>684</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008829175232</MEM_ADDR>\n      <DEV_ADDR>100008828917856</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{d8cd9def-74c3-5f43-ab36-b92d97a0654f}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0116144</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>40</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{eb3b06bf-e13c-5062-dae3-f8d97c8d106e}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PACS",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.12"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "Main-PACS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1101.5</X>\n      <Y>541</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008829400032</MEM_ADDR>\n      <DEV_ADDR>100008829187920</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{b3b435ee-db51-5b05-a49f-a5338addb584}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.014518</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>50</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{ef47b1a1-4147-ff52-fce5-f8468f85de4e}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-LIS",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.13"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/4",
+          "to": "Main-LIS",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>512.5</X>\n      <Y>582</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008829615232</MEM_ADDR>\n      <DEV_ADDR>100008829370192</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{75308057-f0cf-5c02-b550-a412e4bc7be0}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0174216</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>60</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{fd3dd475-5dbd-c8c6-1ee8-f8b210f3cccb}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-CRM",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.14"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "Main-CRM",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>498.5</X>\n      <Y>929</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008829830560</MEM_ADDR>\n      <DEV_ADDR>100008829592624</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{4ca35d59-d472-5543-bd09-cb190a9d39c0}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0203252</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>70</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{049d6d5b-1acf-f545-40ea-f8de3c8be093}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-DB",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.15"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "Main-DB",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1103.5</X>\n      <Y>642</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008807510336</MEM_ADDR>\n      <DEV_ADDR>100008829802512</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{892ffadd-48ed-51e8-82f8-f83869816322}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0232288</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>80</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{c0670e9a-1a9a-6d5c-62ec-f8fa52eaa52f}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Backup",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.16"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "Main-Backup",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>504.5</X>\n      <Y>797</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008701632544</MEM_ADDR>\n      <DEV_ADDR>100008830353040</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{9325018e-b45b-59b8-b131-33bd47e20cdd}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0261324</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>90</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{16d66abc-270a-c6ad-86ee-f8d585b14379}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Monitor",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.70.17"
+      ],
+      "gateway": "10.10.70.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/8",
+          "to": "Main-Monitor",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1071.5</X>\n      <Y>754</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008818505360</MEM_ADDR>\n      <DEV_ADDR>100008818337808</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{14804896-a02e-53ec-86e4-7733ef3b8cb1}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.029036</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>100</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{cdf688e5-f265-14d2-aaf0-f870d7aa403b}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-WebDMZ",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.80.10"
+      ],
+      "gateway": "10.10.80.1",
+      "connections": [
+        {
+          "from": "DMZ-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Main-WebDMZ",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1251.5</X>\n      <Y>807</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008818718560</MEM_ADDR>\n      <DEV_ADDR>100008818481808</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{509aa176-ad42-54d2-940a-dcb763417ed5}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0319396</X_PN>\n      <Y_PN>0.00467727</Y_PN>\n      <X>110</X>\n      <Y>10</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{6f103865-8234-9db4-cef2-f874c5627fc0}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-ProxyDMZ",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.80.11"
+      ],
+      "gateway": "10.10.80.1",
+      "connections": [
+        {
+          "from": "DMZ-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "Main-ProxyDMZ",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1296.5</X>\n      <Y>868</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008818938832</MEM_ADDR>\n      <DEV_ADDR>100008818694416</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{81763bd1-abab-522e-96f0-066de734eeb0}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.331</X_PN>\n      <Y_PN>0.231</Y_PN>\n      <X>0</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{6cba1eaf-f67f-9245-f0f4-f81bb9ce452a}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Infra",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.20.70.6"
+      ],
+      "gateway": "10.20.70.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "DBP-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>58.5</X>\n      <Y>390</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008819148816</MEM_ADDR>\n      <DEV_ADDR>100008818949872</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{6ebbad99-7637-5b44-9f93-a26e38b08c9f}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0029036</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>10</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{fa26198f-2058-933e-14f7-f8899f8f3a9d}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Local",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.20.70.7"
+      ],
+      "gateway": "10.20.70.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "DBP-Local",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>105.5</X>\n      <Y>485</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008819371600</MEM_ADDR>\n      <DEV_ADDR>100008819171680</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{ba5c12c4-706b-5cb1-ac84-2cece756b2d1}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0058072</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>20</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4ff74b85-481d-968a-3df9-f838a066f0ec}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Infra",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.30.70.6"
+      ],
+      "gateway": "10.30.70.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "BHTQ-Infra",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1654.5</X>\n      <Y>510</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008832739008</MEM_ADDR>\n      <DEV_ADDR>100008832528528</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{8ba4eac4-ddba-50f7-9131-facf03eb1019}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0087108</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>30</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{c280d2c6-a67a-f2bd-61fb-f8e7d5cd6a14}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Local",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.30.70.7"
+      ],
+      "gateway": "10.30.70.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/2",
+          "to": "BHTQ-Local",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1925.5</X>\n      <Y>640</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008832956240</MEM_ADDR>\n      <DEV_ADDR>100008832709824</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{baa40735-7d0e-5666-8a16-b694efb827ab}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0116144</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>40</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{59627fdd-a78d-f8f4-8afd-f830028e3105}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Web-Lab",
+      "type": "Server",
+      "model": "Server-PT",
+      "site": "Internet",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "192.0.2.100"
+      ],
+      "gateway": "192.0.2.65",
+      "connections": [
+        {
+          "from": "Web-Access",
+          "from_port": "FastEthernet0/1",
+          "to": "Web-Lab",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "TFTP_SERVER",
+        "NTP_SERVER",
+        "HTTP_SERVER",
+        "HTTPS_SERVER",
+        "DNS_SERVER",
+        "FTP_SERVER",
+        "SYSLOG_SERVER",
+        "ACS_SERVER",
+        "EMAIL_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1440.5</X>\n      <Y>1587</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008833173424</MEM_ADDR>\n      <DEV_ADDR>100008832968288</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{e4b6017b-2001-50ac-aa52-01d6830a47e7}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.014518</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>50</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{2d4251af-8b3d-1df2-aeff-f827fbb2eaa4}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC10-A",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.10.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "Main-PC10-A",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>603.5</X>\n      <Y>1144</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008833392160</MEM_ADDR>\n      <DEV_ADDR>100008833199456</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{1f00633e-4ec1-5948-a447-310d912f3ffd}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0174216</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>60</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{95621171-ad06-f6ec-d001-f930c4ee3e09}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC10-B",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.10.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "Main-PC10-B",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>990.5</X>\n      <Y>839</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008833606336</MEM_ADDR>\n      <DEV_ADDR>100008833509968</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{ceb277c6-671b-5a0f-b263-83c889cdcd66}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0203252</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>70</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{ff7aca27-e441-d156-7802-f9e823279803}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC20",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.20.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/11",
+          "to": "Main-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>512.5</X>\n      <Y>1025</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008833790336</MEM_ADDR>\n      <DEV_ADDR>100008833689024</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{7ea11e80-5996-5a20-8d25-ec5461cdcc1e}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0232288</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>80</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4eb94599-3b85-86f2-2003-f9b0e9fe67e1}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC30",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.30.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/12",
+          "to": "Main-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>705.5</X>\n      <Y>1175</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008833963184</MEM_ADDR>\n      <DEV_ADDR>100008833864400</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{389132a0-64c2-55c2-b410-9cb71b132c23}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0261324</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>90</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{20cc0fe8-63b2-4d61-c803-f98fa27e8498}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC40",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.40.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/13",
+          "to": "Main-PC40",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>952.5</X>\n      <Y>953</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008834140176</MEM_ADDR>\n      <DEV_ADDR>100008834045872</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{2834c5d6-ae64-5485-bfcd-9a38c461fef7}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.029036</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>100</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{480b083d-c463-3ff5-7004-f98249cc1854}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Guest",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.100.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>556.5</X>\n      <Y>323</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008834328288</MEM_ADDR>\n      <DEV_ADDR>100008834222864</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{5ace06a8-266a-50c0-bd07-87bf8d8a3f10}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0319396</X_PN>\n      <Y_PN>0.00935454</Y_PN>\n      <X>110</X>\n      <Y>20</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{b373a772-7cee-95d7-1805-f9cfe55eec7e}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Staff",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.120.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>706.5</X>\n      <Y>323</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008834527184</MEM_ADDR>\n      <DEV_ADDR>100008834424816</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{12140e8b-73ba-5c37-9439-9b6e4d1523e0}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.18225</X_PN>\n      <Y_PN>0.093</Y_PN>\n      <X>0</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{41b8cf2c-6552-71ae-d205-f97f2fe0a778}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-PC10",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.20.10.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "DBP-PC10",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>318.5</X>\n      <Y>609</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008834721136</MEM_ADDR>\n      <DEV_ADDR>100008834625920</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{cbfe7438-5e0b-5d01-8331-ee131b55a68f}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0029036</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>10</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4a5325d2-51c0-e6ea-8c06-f9704aa59428}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Guest",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.20.100.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>81.5</X>\n      <Y>227</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008834902496</MEM_ADDR>\n      <DEV_ADDR>100008834797152</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{860b38e3-eb3a-5fe1-b373-3d3a6ed315c4}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0058072</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>20</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{b73cd102-de2d-1ac7-3407-f9a6c0715f4b}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-PC10",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.30.10.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/3",
+          "to": "BHTQ-PC10",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>2060.5</X>\n      <Y>537</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008835098208</MEM_ADDR>\n      <DEV_ADDR>100008834998784</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{939e956f-7234-5475-b621-33c9df84dd4d}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0087108</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>30</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{25a4216a-087f-2235-ee07-f919b5a88f71}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Guest",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.30.100.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1776.5</X>\n      <Y>328</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008835317856</MEM_ADDR>\n      <DEV_ADDR>100008835178528</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{937c600e-0bbc-5f63-a8d0-ecd2b88b7421}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0116144</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>40</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{cfe408ec-2c7e-282d-9608-f9899e073f05}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Admin",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.90.11"
+      ],
+      "gateway": "10.10.90.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/16",
+          "to": "Main-Admin",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>913.5</X>\n      <Y>1059</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008835517920</MEM_ADDR>\n      <DEV_ADDR>100008835413520</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{d2860a68-f50f-59bd-a151-686bdb608165}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.014518</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>50</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{af170307-f0b9-cce0-5009-f9b61738c32c}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-NVR",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.10.110.11"
+      ],
+      "gateway": "10.10.110.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/17",
+          "to": "Main-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>539.5</X>\n      <Y>1105</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008835705968</MEM_ADDR>\n      <DEV_ADDR>100008835605088</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{f1520326-9454-5461-8af7-c6014bb0dbc2}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0174216</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>60</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{b999921b-6215-40f6-f709-f9f11755fe59}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-NVR",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.20.110.11"
+      ],
+      "gateway": "10.20.110.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "DBP-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>161.5</X>\n      <Y>658</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008835887072</MEM_ADDR>\n      <DEV_ADDR>100008835785600</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{3a1eab34-44e3-5870-b8a7-61e38b4cfe51}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0203252</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>70</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{2f79f42a-d905-d3ae-9e0a-f9b9d9d66ad4}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-NVR",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [
+        "10.30.110.11"
+      ],
+      "gateway": "10.30.110.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/5",
+          "to": "BHTQ-NVR",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1831.5</X>\n      <Y>687</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836074928</MEM_ADDR>\n      <DEV_ADDR>100008835963040</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{54bf72d5-c332-5eb3-ac9f-1c6d0a72cf17}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0232288</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>80</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{c5e414c6-1320-db06-450b-f922012a7ca8}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC50",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.50.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/18",
+          "to": "Main-PC50",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>784.5</X>\n      <Y>1157</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836258848</MEM_ADDR>\n      <DEV_ADDR>100008836151616</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{d97e97e4-5136-50a1-a7b1-85281d29fe07}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0261324</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>90</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{5216a050-7aef-eb1d-ec0b-f94f7c527ce5}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-PC60",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.10.60.1",
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/19",
+          "to": "Main-PC60",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>862.5</X>\n      <Y>1131</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836443360</MEM_ADDR>\n      <DEV_ADDR>100008836341904</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{7967c610-d687-51bb-9e8c-87decf0e3de3}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.029036</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>100</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{39ddd6aa-7fea-6219-940c-f9c32948e483}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-PC20",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.20.20.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "DBP-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>257.5</X>\n      <Y>667</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836623552</MEM_ADDR>\n      <DEV_ADDR>100008836519664</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{2220a4fe-5748-57d4-a912-9b67ae803849}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0319396</X_PN>\n      <Y_PN>0.0140318</Y_PN>\n      <X>110</X>\n      <Y>30</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{f91c4c02-dbbe-462c-3c0d-f9e9ebb3faa7}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-PC30",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.20.30.1",
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "DBP-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>66.5</X>\n      <Y>610</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836813680</MEM_ADDR>\n      <DEV_ADDR>100008836685696</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{0d0f94bc-deae-51c7-a4fa-31f828cb631e}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.02225</X_PN>\n      <Y_PN>0.16475</Y_PN>\n      <X>0</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4fb51355-610f-2e86-e40d-f92d0cb64c01}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Staff",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.20.120.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>231.5</X>\n      <Y>227</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008836995552</MEM_ADDR>\n      <DEV_ADDR>100008836889504</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{ad9c7827-5aba-5b1f-86ae-b3de4b04e087}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0029036</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>10</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{1e55d67e-76c5-3559-8c0e-f9b53502ecf7}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-PC20",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.30.20.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/6",
+          "to": "BHTQ-PC20",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>2000.5</X>\n      <Y>601</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837194336</MEM_ADDR>\n      <DEV_ADDR>100008837089984</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{29225e64-901c-5383-9d24-438ad5dc1ade}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0058072</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>20</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{3a54486a-117e-acd7-460f-f9249a9bb310}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-PC30",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.30.30.1",
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/7",
+          "to": "BHTQ-PC30",
+          "to_port": "FastEthernet0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1723.5</X>\n      <Y>656</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837374864</MEM_ADDR>\n      <DEV_ADDR>100008837273408</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{6691cfc8-449c-55c1-b6a9-6e180676bbf9}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0087108</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>30</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{9e41996b-8709-5d57-ee0f-f9cdaf4aa74b}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Staff",
+      "type": "Pc",
+      "model": "PC-PT",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": "10.30.120.1",
+      "connections": [],
+      "services_in_saved_state": [
+        "DNS_CLIENT",
+        "EMAIL_CLIENT",
+        "WIRELESS_CLIENT",
+        "CELLULAR_CLIENT",
+        "DHCP_CLIENT",
+        "NTP_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>2060.5</X>\n      <Y>347</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837553856</MEM_ADDR>\n      <DEV_ADDR>100008837451392</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{74cf3b4c-99a5-5688-af3f-d7750f2d4ba0}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0116144</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>40</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{65875f59-f70d-fa13-9610-f91d0319f5ab}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Guest-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/20",
+          "to": "Main-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>592</X>\n      <Y>396</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837684640</MEM_ADDR>\n      <DEV_ADDR>100008818300512</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{89ba45c1-1be0-516b-9b77-545ef2258f0a}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.014518</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>50</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{caf19100-912f-bc91-5011-f9ba4fd11570}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "Main-Staff-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "Main",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "Main-Access",
+          "from_port": "FastEthernet0/21",
+          "to": "Main-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>742</X>\n      <Y>396</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837740000</MEM_ADDR>\n      <DEV_ADDR>100008837671520</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{b8487da5-aafc-5242-b71f-031f45eb5eb4}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0174216</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>60</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{4e683671-9537-a1f0-6511-f90dc6a8d9e4}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Guest-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "DBP-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>117</X>\n      <Y>300</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837821504</MEM_ADDR>\n      <DEV_ADDR>100008837807104</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{54d9111c-b51f-5d32-9a16-f418b528b093}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0203252</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>70</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{b5919d59-627d-6fe8-7a11-f932b593bdb9}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "DBP-Staff-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "DBP",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "DBP-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "DBP-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>267</X>\n      <Y>300</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837886256</MEM_ADDR>\n      <DEV_ADDR>100008837871168</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{b6367629-4f00-5226-b40c-e41da1586933}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0232288</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>80</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{b50fcac5-aa40-7fd6-8f11-f9f5ce46f7c0}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Guest-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/9",
+          "to": "BHTQ-Guest-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1812</X>\n      <Y>401</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008837950256</MEM_ADDR>\n      <DEV_ADDR>100008837936800</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{96cd5756-f48a-59a2-8197-4125f7c24bdb}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.0261324</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>90</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{8c91e95e-6d0a-27aa-a411-f9fbfede4dae}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    },
+    {
+      "name": "BHTQ-Staff-AP",
+      "type": "AccessPoint",
+      "model": "AccessPoint-PT-AC",
+      "site": "BHTQ",
+      "role": "existing lab network/endpoint",
+      "vlan_config": [],
+      "interface_ip_config": [],
+      "host_ip_tags": [],
+      "gateway": null,
+      "connections": [
+        {
+          "from": "BHTQ-Access",
+          "from_port": "FastEthernet0/10",
+          "to": "BHTQ-Staff-AP",
+          "to_port": "Port 0",
+          "type": "eStraightThrough"
+        }
+      ],
+      "services_in_saved_state": [
+        "WIRELESS_SERVER"
+      ],
+      "test_status": "Original58-node Cisco final run32+3 probes, saved/reopened; no new network test from this parser",
+      "workspace": "<WORKSPACE>\n     <LOGICAL>\n      <X>1962</X>\n      <Y>401</Y>\n      <DEVCLUSTERID>1-1</DEVCLUSTERID>\n      <CUSTOM_IMAGE_LOGICAL />\n      <CUSTOM_IMAGE_PHYSICAL />\n      <MEM_ADDR>100008838012880</MEM_ADDR>\n      <DEV_ADDR>100008837999552</DEV_ADDR>\n     </LOGICAL>\n     <PHYSICAL>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3},{59a05c67-f97d-46ef-977f-3536506e3711},{8b878386-0bbb-5f9f-a2d5-0ea4edbcc5ab}</PHYSICAL>\n     <PHYSICAL_CPUR>\n      <X_PN>0.029036</X_PN>\n      <Y_PN>0.0187091</Y_PN>\n      <X>100</X>\n      <Y>40</Y>\n      <SLOT>0</SLOT>\n      <SUBSLOT>0</SUBSLOT>\n      <PARENT_PATH>{660c9b06-8da8-4920-adcc-5daeea92c6b9},{44ee6848-7ca6-4cc1-a4f3-9b228a1d3327},{62e40a40-b2b6-4d42-95ec-c2318fd008b9},{20f00c01-3a23-4140-b2bd-5a55ff8e9bd3}</PARENT_PATH>\n      <CONTAINER_ID>{59a05c67-f97d-46ef-977f-3536506e3711}</CONTAINER_ID>\n      <ICP_CONTAINER_SCENE_X>0</ICP_CONTAINER_SCENE_X>\n      <ICP_CONTAINER_SCENE_Y>0</ICP_CONTAINER_SCENE_Y>\n      <ORIGINAL_DEVICE_UUID>{a84956f0-7682-3800-b911-f9687267c63e}</ORIGINAL_DEVICE_UUID>\n     </PHYSICAL_CPUR>\n    </WORKSPACE>\n   "
+    }
+  ],
+  "links": [
+    {
+      "from": "Main-GW",
+      "from_port": "GigabitEthernet0/1",
+      "to": "DBP-GW",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "Main-GW",
+      "from_port": "GigabitEthernet0/2",
+      "to": "BHTQ-GW",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "Main-Core",
+      "from_port": "GigabitEthernet0/1",
+      "to": "Main-GW",
+      "to_port": "GigabitEthernet0/0",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "Main-Core",
+      "from_port": "GigabitEthernet0/2",
+      "to": "Main-FW",
+      "to_port": "FastEthernet0/0",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "DMZ-Access",
+      "from_port": "GigabitEthernet0/2",
+      "to": "Main-Edge",
+      "to_port": "GigabitEthernet0/0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Edge",
+      "from_port": "GigabitEthernet0/1",
+      "to": "ISP1",
+      "to_port": "GigabitEthernet0/0",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "Main-Edge",
+      "from_port": "GigabitEthernet0/2",
+      "to": "ISP2",
+      "to_port": "GigabitEthernet0/0",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "ISP1",
+      "from_port": "GigabitEthernet0/1",
+      "to": "INET-Core",
+      "to_port": "GigabitEthernet0/0",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "ISP2",
+      "from_port": "GigabitEthernet0/1",
+      "to": "INET-Core",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eCrossOver"
+    },
+    {
+      "from": "Main-Core",
+      "from_port": "GigabitEthernet0/0",
+      "to": "Main-Access",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-GW",
+      "from_port": "GigabitEthernet0/0",
+      "to": "DBP-Access",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-GW",
+      "from_port": "GigabitEthernet0/0",
+      "to": "BHTQ-Access",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-FW",
+      "from_port": "FastEthernet0/1",
+      "to": "DMZ-Access",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "INET-Core",
+      "from_port": "GigabitEthernet0/2",
+      "to": "Web-Access",
+      "to_port": "GigabitEthernet0/1",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/1",
+      "to": "Main-Infra",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/2",
+      "to": "Main-HIS",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/3",
+      "to": "Main-PACS",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/4",
+      "to": "Main-LIS",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/5",
+      "to": "Main-CRM",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/6",
+      "to": "Main-DB",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/7",
+      "to": "Main-Backup",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/8",
+      "to": "Main-Monitor",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DMZ-Access",
+      "from_port": "FastEthernet0/1",
+      "to": "Main-WebDMZ",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DMZ-Access",
+      "from_port": "FastEthernet0/2",
+      "to": "Main-ProxyDMZ",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/1",
+      "to": "DBP-Infra",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/2",
+      "to": "DBP-Local",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/1",
+      "to": "BHTQ-Infra",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/2",
+      "to": "BHTQ-Local",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Web-Access",
+      "from_port": "FastEthernet0/1",
+      "to": "Web-Lab",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/9",
+      "to": "Main-PC10-A",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/10",
+      "to": "Main-PC10-B",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/11",
+      "to": "Main-PC20",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/12",
+      "to": "Main-PC30",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/13",
+      "to": "Main-PC40",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/3",
+      "to": "DBP-PC10",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/3",
+      "to": "BHTQ-PC10",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/16",
+      "to": "Main-Admin",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/17",
+      "to": "Main-NVR",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/5",
+      "to": "DBP-NVR",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/5",
+      "to": "BHTQ-NVR",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/18",
+      "to": "Main-PC50",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/19",
+      "to": "Main-PC60",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/6",
+      "to": "DBP-PC20",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/7",
+      "to": "DBP-PC30",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/6",
+      "to": "BHTQ-PC20",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/7",
+      "to": "BHTQ-PC30",
+      "to_port": "FastEthernet0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/20",
+      "to": "Main-Guest-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-Access",
+      "from_port": "FastEthernet0/21",
+      "to": "Main-Staff-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/9",
+      "to": "DBP-Guest-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "DBP-Access",
+      "from_port": "FastEthernet0/10",
+      "to": "DBP-Staff-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/9",
+      "to": "BHTQ-Guest-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "BHTQ-Access",
+      "from_port": "FastEthernet0/10",
+      "to": "BHTQ-Staff-AP",
+      "to_port": "Port 0",
+      "type": "eStraightThrough"
+    },
+    {
+      "from": "Main-FW",
+      "from_port": "FastEthernet1/0",
+      "to": "DMZ-Access",
+      "to_port": "FastEthernet0/24",
+      "type": "eStraightThrough"
+    }
+  ]
+}

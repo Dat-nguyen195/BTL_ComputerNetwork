@@ -1,0 +1,11 @@
+{
+  "saved_at_utc": "2026-11-12T14:26:27.750034+00:00",
+  "candidate_sha256": "5c7be3947f2282bdb46f76e80c6e6c620a264c7d615c3f508c494681e483d900",
+  "candidate_bytes": 515495,
+  "closed": true,
+  "reopened": false,
+  "smoke_status": "PENDING",
+  "note": "Pre-close snapshot. No main promotion yet.",
+  "closed_at_utc": "2026-11-12T14:27:14.176763+00:00",
+  "close_observation": "Native File/Exit -> save Yes; all application windows disappeared"
+}

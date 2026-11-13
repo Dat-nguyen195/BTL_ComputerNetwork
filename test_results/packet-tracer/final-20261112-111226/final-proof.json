@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-11-12T04:36:03.290592+00:00",
+  "source_sha256": "dddedf3290c6969e5627c08f599c2b6c994da77852c62fed4f6730b7f0225041",
+  "previous_main_sha256": "d3d9a112c91acde5e87d7a937a96ee2e7a988ae5c7325ac09b87189aa314897a",
+  "native_sha256": "e37800126bfa13b68689593c591046ecf2cc933ccb2798504790c1105eebed91",
+  "reopened_in_native_gui": true,
+  "reopen_observation": "File reopened in Packet Tracer 9.0.1.0858, accepted own embedded IPC script; complete 3-site topology visible in Viewport. Suite not rerun after reopen; saved config/data-store readback checked offline. No subsequent save.",
+  "network_executed": true,
+  "observations": 32,
+  "ssh_cases": 3,
+  "scope": "Only Main-Core management overlay; all forwarding configs, node/link/IP/SSID unchanged. Nonadmin timeout may be caused by upstream ACL. Inherited manual ISP records remain historical.",
+  "sha256": {
+    "screenshots/reopened-main.png": "0f6730adc8b4cd91fd88850cbee773321d4ecfbed42ebe2c46ffaae6528ae8a7",
+    "screenshots/reopened-viewport.png": "eec0320942de81a7a4caf2c4dc6d19b3b432dbcc42e2812bf5a4aeedfbc0e0d2",
+    "screenshots/ssh-admin-readback.png": "ea8f03edd55e7b41911a2d1efe546e4a65368bbaa5b7501c4edf1194472df056",
+    "screenshots/ssh-controls.png": "089d635a65ca5cdc8f82c270dc2f8533e1519d28293b75287c93a48c5f08115a",
+    "screenshots/tests-done.png": "21d27fd6868400fc8f25ae05adb68e13a17383291f8216991b718dda88d31dbf",
+    "configuration.diff": "a588b1316c3352c8b36d15aa41cf4e1084a0e6c0ef8649058a15fa7db9e5a3f8"
+  }
+}

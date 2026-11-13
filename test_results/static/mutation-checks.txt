@@ -1,6 +1,0 @@
-DETECTED: guest allow-all leak
-DETECTED: wrong ACL direction
-DETECTED: stateful inspect removed
-DETECTED: DMZ public moved to wrong ISP
-DETECTED: DHCP pool overlaps gateway
-5/5 intentionally introduced faults detected on temporary copies. No IOS runtime executed.
