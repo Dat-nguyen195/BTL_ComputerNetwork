@@ -560,80 +560,12 @@ Lệnh \texttt{deny any log} không được IOS mô phỏng chấp nhận; đã
 
 \clearpage
 \section{Kiểm thử và bằng chứng (Step 5)}
-\subsection{Ma trận và tiêu chí đạt}
-\par\noindent
-\tabletitle{Ma trận kiểm thử chức năng}
-\begin{tabularx}{\linewidth}{@{}lXXr@{}}\toprule
-Nhóm & Nguồn--đích / giao thức & Tiêu chí & Số\\\midrule
-TC01 & Main-PC10-A/B, ICMP & Hai chiều, mỗi lệnh 4/4 & 2\\
-TC02 & Khác VLAN và HIS & Ping 4/4, HTTP đúng HIS & 3\\
-TC03 & Main--DBP/BHTQ & Hai chiều, OSPF/route phù hợp & 4\\
-TC04 & Nội bộ/ngoài--DMZ HTTP & Marker và Static PAT đúng & 2\\
-TC05 & Guest ba site--PC/HIS & Chặn, positive controls và ACL tăng & 9\\
-TC06 & PC/Guest--Web qua DNS & Đúng Web-Lab, NAT qua Main & 6\\
-WIFI & Staff ba site--HIS/Web & Đúng HTTP, BSSID/IP/SSID & 6\\\bottomrule\end{tabularx}\par
-
-Tổng 32 quan sát Cisco trong mỗi suite đầy đủ. Positive control của TC05 gồm Guest tới Web ngoài và PC cùng site tới HIS; không chỉ coi timeout là bằng chứng firewall. Association sáu client và lease 22 client DHCP (19 cũ + 3 PC tầng mới) được kiểm riêng. Camera và PC mới có suite bổ sung, không cộng vào 32 quan sát P0/WIFI.
-
-Mỗi record lưu nhóm/nguồn/IP, đích URL hoặc IP, command/giao thức, kỳ vọng, output/event, thời gian UTC. Checker đọc output, marker, command/target, completion và counter; không chỉ tin trường PASS. Warmup 8 phép riêng không tính vào 32.
-
-Mỗi lượt kiểm thử lưu riêng bản mô hình, log và thông tin nguồn gốc. SHA256 ràng buộc log với đúng bản mô hình; kiểm tra offline chỉ xác minh dữ liệu đã lưu, không chạy lại mạng.
-
-\input{final-test-summary.tex}
-
-\clearpage
-\subsection{TC01--TC02, DHCP và DNS}
-\tabletitle{Kết quả TC01--TC02: cùng VLAN và liên VLAN}
-\input{final-lan-evidence.tex}
-
-TC01 cần hai PC cùng VLAN, mask/subnet và access port đúng; thành công ở đây không chứng minh OSPF. TC02 kiểm khác VLAN hai chiều và HTTP HIS; HTTP có marker giúp phân biệt đúng server với một trang trống hoặc cached page.
-
-22 client DHCP, gồm 3 PC tầng mới, có IP trong subnet, gateway và lease khớp. Pool cấp phát 18, pool mặc định capacity 0 là 3; không xóa metadata pool khỏi XML để làm đẹp số lượng. Khi lease thay đổi, test lấy địa chỉ runtime qua helper, không hardcode IP của lần cũ.
-
-DNS được đối chứng qua \texttt{http://web.hospital.test/}: event thành công có serverIP 192.0.2.100 và marker Web-Lab. Guest dùng DNS ngoài lab; PC nội bộ dùng DNS đúng site. Điều này chứng minh resolution trong mô hình đã chạy, không chứng minh DNS Internet công cộng hay Google hoạt động.
-
-Cấu hình, địa chỉ và lease được đọc lại để đối chiếu với kết quả ứng dụng. Mỗi quan sát giữ nguyên nguồn, đích và dấu thời gian của lượt thử.
-
-\clearpage
-\subsection{TC03: OSPF và kết nối liên site}
-\tabletitle{Kết quả ICMP giữa Main và hai cơ sở phụ}
-\input{final-ospf-evidence.tex}
-
-Main-GW có ba adjacency FULL, DBP-GW và BHTQ-GW mỗi node một adjacency FULL trong snapshot. Bốn ping Main--hai Aux theo cả hai chiều có thống kê đầy đủ 4/4. Prefix học OSPF và route phản hồi được đối chiếu, thay vì suy route từ màu link xanh.
-
-\input{final-ospf-excerpt.tex}
-Đoạn trên trích các trường Neighbor ID/State/Address từ snapshot mới; bỏ Pri, Dead Time và Interface để dễ đọc. Raw đầy đủ giữ nguyên trong JSON. Cả 9 router giữ nguyên cấu hình so baseline đã có SSH; thay đổi L2 tại MDF/tầng được đối chiếu theo kế hoạch graph riêng. Leased line trong native có băng thông mô phỏng, không phải kết quả đo SLA hay throughput 200 Mbps.
-
-Khi cần tái hiện, mở đúng native, chờ hội tụ rồi chạy \texttt{show ip ospf neighbor}, \texttt{show ip route}; lấy IP PC từ DHCP thực tế và ping cả hai chiều. Nếu mất gói do ARP/warmup, lưu lần đầu và thử lại, không sửa output thành 4/4.
-
-\clearpage
-\subsection{TC04: DMZ HTTP và Static PAT}
-\tabletitle{Kết quả HTTP tới DMZ từ trong và ngoài mạng}
-\input{final-dmz-evidence.tex}
-\input{final-dmz-excerpt.tex}
-Hai record HTTP mới và dòng NAT trích ở trên cùng thuộc lượt cuối. HTTP nội bộ tới 10.10.80.10 và từ Web-Lab qua 198.51.100.2:8080 phải trả marker \texttt{HOSPITAL-LAB-Main-WebDMZ}. Translation tĩnh là TCP public:8080 sang private:80. Snapshot NAT xác nhận mapping; kiểm cả firewall và đường trả lời.
-
-Ping DMZ không đủ chứng minh HTTP; HTTP nội bộ không đủ chứng minh Static PAT từ ngoài. Hai nguồn thử được giữ để phân biệt hai điều kiện. Không dùng port-forward NVR/camera để làm demo Internet.
-
-Kết quả TC04 được đối chiếu với bảng NAT tại Edge, cấu hình ZBF và route chiều trả lời trên mô hình đã lưu.
-
-\clearpage
-\subsection{TC05: Guest Isolation có đối chứng}
-\tabletitle{Kết quả cách ly Guest và bộ đếm ACL}
-\input{final-guest-evidence.tex}
-\input{final-guest-excerpt.tex}
-Đoạn trên trích ba record Main để đối chiếu negative/positive; bảng counter phía trên bao gồm cả ba site. Ở mỗi site, Guest không nhận ICMP từ PC nội bộ và không nhận trang HIS. Cùng Guest vẫn lấy được Web-Lab; PC được phép cùng site lấy được HIS. Hai positive controls loại bớt khả năng lỗi mạng khách hoặc server tắt.
-
-Readback \texttt{show access-lists} trước/sau xác nhận counter dòng deny 10/8 tăng ở cả ba gateway. Binding ACL inbound tại subinterface VLAN100 được kiểm trong running-config. responseType 7 là giá trị raw; không tự gán ý nghĩa enum ngoài tài liệu, kết luận dựa vào tập hợp output/controls/counter.
-
-ACL gateway không chặn hai thiết bị Guest cùng VLAN ở lớp 2. Client isolation/WLC và quyền endpoint cần kiểm production riêng; kết quả này chỉ áp dụng các luồng đã thử.
-
-\clearpage
-\subsection{TC06 và sáu association Wi-Fi}
+\input{step5-restored.tex}
+\subsection{Kiểm thử bổ sung: kết nối Wi-Fi}
 \tabletitle{Đối chiếu sáu client Wi-Fi}
 \input{final-wifi-evidence.tex}
 
-Sáu yêu cầu TC06 từ PC và Guest ba site phân giải tên Web-Lab và nhận đúng marker. Sáu yêu cầu WIFI từ Staff kiểm HIS và Web. Record ứng dụng đi cùng association BSSID/AP, SSID, auth/encrypt và IP lease; không dùng HTTP thành công để suy client đang dùng radio.
+Sáu yêu cầu WIFI từ Staff tại ba cơ sở kiểm truy cập HIS và Web. Record ứng dụng đi cùng association BSSID/AP, SSID, auth/encrypt và IP lease; không dùng HTTP thành công để suy client đang dùng radio.
 
 \textbf{Chuỗi đối chiếu:} port wireless hiện diện $\to$ card PT-HOST-NM-1W-AC $\to$ SSID/profile/AP đồng nhất $\to$ BSSID đúng AP $\to$ lease/gateway đúng VLAN $\to$ ứng dụng đúng quyền. Native AP một SSID cắm access VLAN là cách mô hình hóa trong Packet Tracer, không phải một AP production phát nhiều SSID trunk đã được kiểm.
 
@@ -666,7 +598,7 @@ Quy trình an toàn là sao chép bản đã kiểm sang thư mục run cuối, 
 
 \textbf{Tái lập kiểm thử.} Công cụ kiểm offline chỉ đối chiếu bằng chứng đã lưu. Muốn có lượt thử mới phải thực hiện thao tác mạng trên bản sao mô hình, lưu kết quả và mở lại để kiểm tính nhất quán.
 
-Các đoạn output Cisco trong mục 5.3--5.5 được trích từ kết quả của lượt cuối. Ảnh giao diện sau mở lại và phép thử SSH được đối chiếu với cùng bản mô hình bằng checksum.
+Kết quả bổ sung về Wi-Fi, camera và SSH thuộc mô hình cập nhật. Ảnh giao diện sau mở lại và phép thử SSH được đối chiếu với bản mô hình tương ứng bằng checksum.
 
 \clearpage
 \section{Đánh giá và hướng phát triển (Step 6)}
