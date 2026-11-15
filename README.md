@@ -13,20 +13,10 @@ Evidence Cisco ngày 12/11/2026: 32 quan sát P0/WIFI, 21 HTTP bổ sung, 3 SSH;
 
 Đã kiểm kết nối cùng/khác VLAN, liên site, OSPF, DHCP/DNS, NAT/PAT/DMZ, ACL Guest, Wi-Fi, SSH và quản lý camera IoT. Chuyển ISP trong native là thao tác thủ công. PBR/failover tự động, IDS/IPS, VPN crypto, GPON PHY, RF, HA, ghi video/NVR và throughput sản xuất chưa nghiệm thu. HIS/PACS/LIS chỉ là dịch vụ đại diện.
 
-## Công cụ local
+## Biên dịch báo cáo
 
-Thư mục `scripts/` chỉ giữ trên máy làm việc, được loại khỏi Git. Các lệnh dưới đây dùng khi có đủ công cụ local:
+Nguồn báo cáo nằm tại `docs/06-report/latex/`. Khi dùng Overleaf, tải ZIP LaTeX, chọn Main document `report.tex` và Compiler **XeLaTeX**. Khi dùng VS Code, chọn XeLaTeX và biên dịch đủ lượt để cập nhật mục lục.
 
-```bash
-./project doctor
-./project check
-./project report
-```
-
-`check` kiểm offline, không phát gói hay tự mở Packet Tracer. `report` dùng XeLaTeX nhiều lượt và đồng bộ PDF xem trước/bản cuối. Bản tải từ GitHub có thể mở trực tiếp mô hình và PDF; nguồn LaTeX biên dịch bằng XeLaTeX/latexmk mà không cần `scripts/`.
-
-Nguồn báo cáo nằm tại `docs/06-report/latex/`. Khi dùng Overleaf, tải ZIP LaTeX, chọn Main document `report.tex` và Compiler **XeLaTeX**. Khi dùng VS Code, chọn recipe **XeLaTeX (Vietnamese report)** để cập nhật đủ mục lục.
-
-`configs/` và `simulation/generated/` là cấu hình tham chiếu; mô hình demo chính là file `.pkt` ở trên. `test_results/` giữ bằng chứng kiểm thử và QA báo cáo. Báo cáo PDF và ZIP nguồn LaTeX nằm tại `docs/06-report/final/`.
+`simulation/generated/` giữ cấu hình tham chiếu trong repo; `configs/` chỉ giữ local; mô hình demo chính là file `.pkt` ở trên. `test_results/` giữ bằng chứng kiểm thử và QA báo cáo. Báo cáo PDF và ZIP nguồn LaTeX nằm tại `docs/06-report/final/`.
 
 Xem [cài đặt Ubuntu](docs/07-operations/ubuntu.md) và [thông tin nhóm](docs/00-management/team-members.md). Không kèm bộ cài hoặc image có bản quyền trong repo.

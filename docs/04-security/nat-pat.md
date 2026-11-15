@@ -30,7 +30,7 @@ Main-Edge G0/0 `10.255.0.18` là **inside**; G0/1 `203.0.113.2` và G0/2 `198.51
 | Internet→WebDMZ | 192.0.2.100:p → 198.51.100.2:8080 | Web:p → 10.10.80.10:80; trả về ISP2 và đổi source thành public:8080 |
 | Main↔Aux | IP riêng nguồn → IP riêng đích | Giữ nguyên source/destination; không NAT |
 
-`p/q` là biến cổng, không phải cổng đo được. Lấy giá trị thật từ translation/PDU khi chạy. [Cisco NAT](https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/nat/nat-configuration-guide/nat.html) mô tả mapping theo protocol, inside local IP/port và global IP/port. Cấu hình trong [overlay Edge](../../configs/security/main-edge-dmz.inc):
+`p/q` là biến cổng, không phải cổng đo được. Lấy giá trị thật từ translation/PDU khi chạy. [Cisco NAT](https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr3-fwd/nat/nat-configuration-guide/nat.html) mô tả mapping theo protocol, inside local IP/port và global IP/port. Cấu hình trong [cấu hình Edge hợp nhất](../../simulation/generated/configs/Main-Edge.cfg):
 
 ```ios
 ip nat inside source static tcp 10.10.80.10 80 198.51.100.2 8080 extendable
